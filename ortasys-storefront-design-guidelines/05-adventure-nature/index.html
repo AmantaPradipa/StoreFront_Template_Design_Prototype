@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rimba Trek Adventures · Ekspedisi &amp; Petualangan Alam Bebas</title>
+  <meta name="description" content="Rimba Trek Adventures — Operator ekspedisi alam liar, pendakian gunung APGI, dan eco-lodge terverifikasi multi-supplier. Ditenagai oleh Ortasys S4.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* Ortasys Storefront Preset 05 · Adventure & Nature (05-adventure-nature/DESIGN.md) */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#183B32', hover: '#102D26' },
+            secondary: '#D97736',
+            tertiary: '#E6C99C',
+            accent: '#6D8B63',
+            canvas: '#F2F0E9',
+            surface: { DEFAULT: '#FFFFFF', muted: '#E5E7DE' },
+            ink: { DEFAULT: '#242A27', muted: '#68716A' },
+            line: '#D2D8CF',
+            success: '#34734D',
+            warning: '#B56B24',
+            danger: '#B64138'
+          },
+          fontFamily: {
+            display: ['"Barlow Condensed"', 'system-ui', 'sans-serif'],
+            sans: ['"Manrope"', 'system-ui', 'sans-serif'],
+            mono: ['ui-monospace', 'monospace']
+          },
+          borderRadius: {
+            xs: '4px',
+            sm: '8px',
+            md: '12px',
+            lg: '18px',
+            xl: '24px',
+            pill: '9999px'
+          },
+          boxShadow: {
+            soft: '0 4px 20px -2px rgba(24, 59, 50, 0.08)',
+            elevated: '0 12px 32px -4px rgba(24, 59, 50, 0.16)'
+          },
+          maxWidth: { container: '1240px' }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: 'Manrope', system-ui, sans-serif; background-color: #F2F0E9; color: #242A27; }
+    .font-condensed { font-family: 'Barlow Condensed', system-ui, sans-serif; text-transform: uppercase; letter-spacing: -0.01em; }
+    .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on; }
+    .stepper input::-webkit-outer-spin-button,
+    .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .stepper input { -moz-appearance: textfield; }
+    :focus-visible { outline: 2px solid #D97736; outline-offset: 2px; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+  </style>
+</head>
+<body class="bg-canvas text-ink antialiased">
+
+  <a href="#searchSection" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-secondary focus:text-white focus:px-4 focus:py-2 focus:rounded-xs">Skip to search</a>
+
+  <!-- Illustrative Sample Banner -->
+  <aside class="bg-primary-hover text-tertiary px-4 py-1.5 text-xs font-semibold tracking-wider flex justify-between items-center border-b border-black/20 z-50">
+    <div class="max-w-container mx-auto w-full flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+        <span class="font-condensed tracking-wider text-sm">PROTOTYPE STOREFRONT PRESET 05 // ADVENTURE &amp; NATURE</span>
+        <span class="hidden sm:inline text-white/50 text-[11px]">— Illustrative Sample Data</span>
+      </div>
+      <div class="text-[11px] text-white/70 font-mono">Ditenagai Ortasys S4 B2B Engine</div>
+    </div>
+  </aside>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-primary text-white border-b border-black/20 shadow-md">
+    <div class="max-w-container mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+      <a href="#home" class="flex items-center gap-3 shrink-0 group">
+        <div class="w-10 h-10 rounded-xs bg-secondary flex items-center justify-center text-white shadow-sm transition-transform group-hover:scale-105">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+        </div>
+        <div>
+          <span class="font-condensed text-2xl md:text-3xl font-bold tracking-tight text-white block leading-none">RIMBA TREK</span>
+          <span class="text-[10px] font-bold text-tertiary tracking-[0.2em] uppercase block">ADVENTURES &bull; EXPEDITIONS</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-[14px] font-semibold tracking-wide" aria-label="Main Navigation">
+        <a href="#searchSection" class="text-white hover:text-secondary transition-colors">Cari Ekspedisi</a>
+        <a href="#catalog" class="text-white/80 hover:text-secondary transition-colors">Katalog Jalur</a>
+        <a href="#whyUs" class="text-white/80 hover:text-secondary transition-colors">Standar APGI</a>
+        <a href="#faq" class="text-white/80 hover:text-secondary transition-colors">FAQ Izin &amp; Simaksi</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button type="button" data-open-trip class="relative flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-xs text-sm font-semibold transition border border-white/15">
+          <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+          <span class="font-condensed text-base tracking-wider uppercase">Trip Bag</span>
+          <span data-trip-count class="w-5 h-5 rounded-full bg-secondary text-white text-xs flex items-center justify-center font-bold">0</span>
+        </button>
+
+        <button id="menuBtn" type="button" class="md:hidden w-10 h-10 rounded-xs flex items-center justify-center text-white hover:bg-white/10" aria-label="Buka menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobileNav" class="md:hidden hidden border-t border-white/10 bg-primary px-4 py-4 flex flex-col gap-2 font-semibold text-[15px]">
+      <a href="#searchSection" class="py-2 text-white hover:text-secondary">Cari Ekspedisi</a>
+      <a href="#catalog" class="py-2 text-white/80 hover:text-secondary">Katalog Jalur</a>
+      <a href="#whyUs" class="py-2 text-white/80 hover:text-secondary">Standar APGI</a>
+      <a href="#faq" class="py-2 text-white/80 hover:text-secondary">FAQ Izin &amp; Simaksi</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <!-- ============ TACTICAL EXPEDITION TELEMETRY BANNER (PRESET 05 DNA) ============ -->
+    <section class="relative bg-primary text-white pt-10 pb-8 overflow-hidden border-b-4 border-secondary">
+      <div class="absolute inset-0 z-0 opacity-25 mix-blend-overlay pointer-events-none">
+        <img src="../../assets/khatulistiwa_explorer/rinjani-trail.jpg" alt="Rimba Nature Background" class="w-full h-full object-cover">
+      </div>
+      
+      <div class="max-w-container mx-auto px-4 sm:px-6 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-6 items-end pb-8 border-b border-white/15">
+          <div class="lg:col-span-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-black/30 border border-secondary/50 rounded-xs mb-3">
+              <span class="w-2 h-2 rounded-full bg-secondary"></span>
+              <span class="font-mono text-[11px] font-bold uppercase tracking-widest text-tertiary">FIELD DISPATCH // NUSANTARA WILDERNESS</span>
+            </div>
+            <h1 class="font-condensed text-5xl sm:text-7xl font-extrabold uppercase leading-[0.94] tracking-tight">
+              Jelajahi Jalur Liar Nusantara Dengan Keamanan Penuh.
+            </h1>
+          </div>
+          <div class="lg:col-span-4 text-canvas/85 text-[14px] leading-relaxed border-l-2 border-secondary pl-4">
+            Operasi pendakian gunung aktif, ekspedisi karst kepulauan, dan basecamp eco-lodge. Kuota simaksi dan izin masuk taman nasional dicek langsung secara live.
+          </div>
+        </div>
+
+        <!-- Telemetry Readout Bar -->
+        <div class="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-[11px]">
+          <div class="bg-black/25 p-3 rounded-xs border border-white/10">
+            <span class="text-white/60 block">ELEVATION PEAK REF</span>
+            <span class="text-tertiary font-bold text-[14px]">3.726 MDPL · RINJANI</span>
+          </div>
+          <div class="bg-black/25 p-3 rounded-xs border border-white/10">
+            <span class="text-white/60 block">RANGER CERTIFICATION</span>
+            <span class="text-tertiary font-bold text-[14px]">APGI VERIFIED CREW</span>
+          </div>
+          <div class="bg-black/25 p-3 rounded-xs border border-white/10">
+            <span class="text-white/60 block">PERMIT &amp; SIMAKSI</span>
+            <span class="text-success font-bold text-[14px]">● LIVE API SYNC</span>
+          </div>
+          <div class="bg-black/25 p-3 rounded-xs border border-white/10">
+            <span class="text-white/60 block">SETTLEMENT GATEWAY</span>
+            <span class="text-tertiary font-bold text-[14px]">DOKU &amp; SNAP BI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2-COLUMN STICKY FIELD-STATION WORKSPACE (PRESET 05 DNA) ============ -->
+    <section id="catalog" class="max-w-container mx-auto px-4 sm:px-6 pt-10">
+      <div class="grid lg:grid-cols-12 gap-8 items-start">
+
+        <!-- LEFT 4-COL STICKY FIELD-STATION DISPATCH SEARCH CONSOLE -->
+        <div id="searchSection" class="lg:col-span-4 lg:sticky lg:top-24 bg-surface rounded-sm border-2 border-primary shadow-elevated overflow-hidden" aria-labelledby="searchHeading">
+          <div class="bg-primary text-white p-4 border-b border-black/20 flex items-center justify-between">
+            <div>
+              <span class="font-mono text-[10px] text-secondary font-bold uppercase tracking-widest block">CONSOLE // S4-TREK</span>
+              <h2 id="searchHeading" class="font-condensed text-2xl font-bold uppercase tracking-wide">Field-Station Dispatch</h2>
+            </div>
+            <span class="px-2 py-0.5 bg-secondary text-white font-mono text-[10px] font-bold rounded-xs">LIVE</span>
+          </div>
+
+          <div class="p-5">
+            <!-- Mode Switcher -->
+            <div class="grid grid-cols-2 gap-1.5 rounded-xs bg-surface-muted p-1 border border-line mb-5" role="tablist">
+              <button type="button" role="tab" data-mode="activities" aria-selected="true" class="mode-tab h-9 rounded-xs font-condensed text-sm font-bold uppercase tracking-wider transition bg-primary text-white">Trek &amp; Ekspedisi</button>
+              <button type="button" role="tab" data-mode="hotels" aria-selected="false" class="mode-tab h-9 rounded-xs font-condensed text-sm font-bold uppercase tracking-wider transition text-ink-muted hover:text-ink">Basecamp Lodge</button>
+            </div>
+
+            <form id="searchForm" class="space-y-4" novalidate>
+              <!-- Sector / Trail Input -->
+              <label class="flex flex-col gap-1">
+                <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-ink" data-dest-label>01. Tujuan / Kawasan Konservasi</span>
+                <input id="dest" list="destList" placeholder="Gunung Rinjani, Komodo, Bromo, Ijen…" autocomplete="off" class="h-11 px-3 rounded-xs bg-canvas border border-line text-[13px] font-semibold text-ink focus:bg-white focus:border-secondary focus:outline-none">
+                <datalist id="destList"></datalist>
+              </label>
+
+              <!-- Expedition Window Dates -->
+              <div class="grid grid-cols-2 gap-2.5">
+                <label class="flex flex-col gap-1">
+                  <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-ink">02. Mulai</span>
+                  <input id="checkIn" type="date" aria-describedby="dateRuleHint" class="tnum h-11 px-2.5 rounded-xs bg-canvas border border-line text-[12px] focus:bg-white focus:border-secondary focus:outline-none font-mono">
+                </label>
+                <label class="flex flex-col gap-1" data-hotel-only>
+                  <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-ink">03. Selesai</span>
+                  <input id="checkOut" type="date" aria-describedby="dateRuleHint" class="tnum h-11 px-2.5 rounded-xs bg-canvas border border-line text-[12px] focus:bg-white focus:border-secondary focus:outline-none font-mono">
+                </label>
+              </div>
+
+              <!-- Squad & Tent Matrix -->
+              <div class="pt-1">
+                <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-ink block mb-2">03. Matriks Tim &amp; Tenda</span>
+                <div class="grid grid-cols-3 gap-2">
+                  <div class="flex flex-col gap-1" data-hotel-only>
+                    <span id="lbl-rooms" class="text-[10px] font-bold uppercase text-ink-muted font-condensed">Tenda (1–9)</span>
+                    <div class="stepper flex items-center h-10 rounded-xs bg-canvas border border-line" role="group" aria-labelledby="lbl-rooms">
+                      <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="rooms" data-dir="-1" aria-label="Kurangi unit">−</button>
+                      <input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                      <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="rooms" data-dir="1" aria-label="Tambah unit">+</button>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <span id="lbl-adults" class="text-[10px] font-bold uppercase text-ink-muted font-condensed" data-adults-label>Peserta</span>
+                    <div class="stepper flex items-center h-10 rounded-xs bg-canvas border border-line" role="group" aria-labelledby="lbl-adults">
+                      <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="adults" data-dir="-1" aria-label="Kurangi peserta">−</button>
+                      <input id="adults" type="number" min="1" max="20" value="2" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                      <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="adults" data-dir="1" aria-label="Tambah peserta">+</button>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <span id="lbl-children" class="text-[10px] font-bold uppercase text-ink-muted font-condensed" data-children-label>Remaja</span>
+                    <div class="stepper flex items-center h-10 rounded-xs bg-canvas border border-line" role="group" aria-labelledby="lbl-children">
+                      <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="children" data-dir="-1" aria-label="Kurangi anak">−</button>
+                      <input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                      <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="children" data-dir="1" aria-label="Tambah anak">+</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="formErrors" class="text-[12px] text-danger font-semibold" role="alert" aria-live="assertive"></div>
+
+              <button id="checkBtn" type="submit" class="w-full h-12 rounded-xs bg-secondary hover:bg-[#b85e25] text-white font-condensed text-base uppercase tracking-wider font-bold transition shadow-soft flex items-center justify-center gap-2">
+                <span data-btn-label>Periksa Kuota Simaksi Live</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+
+              <div class="p-3 rounded-xs bg-canvas border border-line space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-success"></span>
+                  <p class="text-[11px] font-bold text-ink">Every price is checked live when you ask for it</p>
+                </div>
+                <p id="summary" class="font-mono text-[11px] text-ink-muted" aria-live="polite">Atur tanggal untuk kalkulasi kuota</p>
+                <p id="dateRuleHint" class="text-[10px] text-ink-muted font-mono">Maks. 30 malam · Kapasitas tenda merata</p>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- RIGHT 8-COL EXPEDITION DOSSIER CATALOG -->
+        <div class="lg:col-span-8">
+          <div class="bg-surface p-5 rounded-xs border border-line flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div>
+              <span class="font-mono text-[11px] font-bold uppercase tracking-widest text-secondary">DIREKTORI OPERASI LAPANGAN</span>
+              <h2 id="catalogHeading" class="font-condensed text-3xl sm:text-4xl font-extrabold uppercase text-primary mt-0.5">Ekspedisi Jalur Pegunungan &amp; Alam Liar</h2>
+              <p id="resultsNote" class="text-[12px] text-ink-muted mt-0.5">Dipandu ranger bersertifikat APGI dengan peralatan standar ekspedisi.</p>
+            </div>
+            <span class="px-2.5 py-1 rounded-xs bg-surface-muted text-ink-muted text-[10px] font-mono uppercase font-bold self-start sm:self-auto">Illustrative Sample Data</span>
+          </div>
+
+          <!-- Sector Filter Bar -->
+          <div id="filterBar" class="mt-4 flex flex-wrap gap-1.5 items-center" role="group" aria-label="Filter Wilayah Ekspedisi">
+            <button type="button" data-filter="all" class="filter-btn h-9 px-3.5 rounded-xs font-condensed text-sm font-bold uppercase tracking-wider bg-primary text-white shadow-xs transition">Semua Sektor</button>
+            <button type="button" data-filter="rinjani" class="filter-btn h-9 px-3.5 rounded-xs font-condensed text-sm font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">TN Gunung Rinjani</button>
+            <button type="button" data-filter="bromo" class="filter-btn h-9 px-3.5 rounded-xs font-condensed text-sm font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Bromo &amp; Ijen</button>
+            <button type="button" data-filter="komodo" class="filter-btn h-9 px-3.5 rounded-xs font-condensed text-sm font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">TN Komodo</button>
+            <button type="button" data-filter="rajaampat" class="filter-btn h-9 px-3.5 rounded-xs font-condensed text-sm font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Raja Ampat</button>
+          </div>
+
+          <!-- 2-Column Topographic Dossier Cards -->
+          <div id="results" class="mt-5 grid sm:grid-cols-2 gap-5"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ 4-COLUMN EXPEDITION GEAR & SAFETY MATRIX (PRESET 05 DNA) ============ -->
+    <section id="whyUs" class="max-w-container mx-auto px-4 sm:px-6 pt-20">
+      <div class="bg-primary text-white rounded-sm p-6 sm:p-10 border-2 border-primary-hover shadow-soft">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-white/15">
+          <div>
+            <span class="font-mono text-xs font-bold uppercase tracking-widest text-secondary">PROTOKOL KESELAMATAN LAPANGAN</span>
+            <h2 class="font-condensed text-3xl sm:text-4xl font-extrabold uppercase mt-1">Matriks Standar Operasional Rimba Trek</h2>
+          </div>
+          <span class="font-mono text-[11px] text-tertiary uppercase">MANDATORY EXPEDITION CHECKLIST</span>
+        </div>
+
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-black/25 border border-white/15 p-5 rounded-xs flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-[11px] text-secondary font-bold">[CHK-01] CREW</span>
+              <h3 class="font-condensed text-xl font-bold uppercase text-white mt-1">Sertifikasi Resmi APGI</h3>
+              <p class="text-xs text-canvas/75 mt-2 leading-relaxed">Seluruh pemimpin ekspedisi wajib memegang lisensi aktif Asosiasi Pemandu Gunung Indonesia dan pelatihan P3K gunung.</p>
+            </div>
+            <span class="mt-4 font-mono text-[10px] text-tertiary uppercase">● Verified Guide Roster</span>
+          </div>
+
+          <div class="bg-black/25 border border-white/15 p-5 rounded-xs flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-[11px] text-secondary font-bold">[CHK-02] PERMIT</span>
+              <h3 class="font-condensed text-xl font-bold uppercase text-white mt-1">Sinkronisasi Simaksi</h3>
+              <p class="text-xs text-canvas/75 mt-2 leading-relaxed">Kuota pendakian dan tiket konservasi taman nasional terhubung langsung lewat Ortasys S4 ke otoritas balai terkait.</p>
+            </div>
+            <span class="mt-4 font-mono text-[10px] text-tertiary uppercase">● Real-Time Quota Lock</span>
+          </div>
+
+          <div class="bg-black/25 border border-white/15 p-5 rounded-xs flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-[11px] text-secondary font-bold">[CHK-03] SHELTER</span>
+              <h3 class="font-condensed text-xl font-bold uppercase text-white mt-1">Tenda Badai Double-Layer</h3>
+              <p class="text-xs text-canvas/75 mt-2 leading-relaxed">Menggunakan tenda ekspedisi berangka aluminium tahan angin kencang, sleeping bag suhu ekstrem, dan logistik segar.</p>
+            </div>
+            <span class="mt-4 font-mono text-[10px] text-tertiary uppercase">● Storm-Grade Gear</span>
+          </div>
+
+          <div class="bg-black/25 border border-white/15 p-5 rounded-xs flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-[11px] text-secondary font-bold">[CHK-04] SETTLEMENT</span>
+              <h3 class="font-condensed text-xl font-bold uppercase text-white mt-1">Gerbang DOKU &amp; SNAP BI</h3>
+              <p class="text-xs text-canvas/75 mt-2 leading-relaxed">Pembayaran ritel transparan tanpa biaya tersembunyi melalui QRIS SNAP BI dan Virtual Account resmi perbankan.</p>
+            </div>
+            <span class="mt-4 font-mono text-[10px] text-tertiary uppercase">● Regulated Settlement</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ SECTION ============ -->
+    <section id="faq" class="max-w-container mx-auto px-4 sm:px-6 pt-16 pb-20">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-10">
+          <span class="text-xs font-bold uppercase tracking-widest text-secondary">Pertanyaan Umum</span>
+          <h2 class="font-condensed text-3xl sm:text-4xl font-extrabold uppercase text-primary mt-1">FAQ Izin, Simaksi &amp; Logistik</h2>
+        </div>
+
+        <div class="space-y-3">
+          <details class="bg-surface rounded-xs border border-line p-5">
+            <summary class="font-condensed text-lg font-bold uppercase text-ink cursor-pointer flex justify-between items-center">
+              <span>Bagaimana mekanisme pengurusan Simaksi TN Rinjani?</span>
+              <span class="faq-icon text-secondary text-xl transition-transform font-mono">+</span>
+            </summary>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Simaksi resmi diproses otomatis secara live melalui integrasi sistem Ortasys dengan sistem e-Rinjani. Kuota yang tampil adalah kuota riil pada tanggal pendakian yang dipilih.</p>
+          </details>
+
+          <details class="bg-surface rounded-xs border border-line p-5">
+            <summary class="font-condensed text-lg font-bold uppercase text-ink cursor-pointer flex justify-between items-center">
+              <span>Apakah perlengkapan kemah dan logistik sudah termasuk?</span>
+              <span class="faq-icon text-secondary text-xl transition-transform font-mono">+</span>
+            </summary>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Ya, setiap paket ekspedisi mencakup tenda dome double-layer tahan badai, matras angin, sleeping bag, makanan bernutrisi tinggi yang dimasak porter, serta peralatan makan.</p>
+          </details>
+
+          <details class="bg-surface rounded-xs border border-line p-5">
+            <summary class="font-condensed text-lg font-bold uppercase text-ink cursor-pointer flex justify-between items-center">
+              <span>Bagaimana kebijakan pembatalan karena faktor cuaca ekstrem?</span>
+              <span class="faq-icon text-secondary text-xl transition-transform font-mono">+</span>
+            </summary>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Apabila jalur ditutup resmi oleh Balai Taman Nasional akibat cuaca ekstrem atau aktivitas vulkanik, reservasi dapat dijadwalkan ulang secara fleksibel tanpa potongan penalti.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-primary-hover text-white/70 text-xs py-12 border-t border-black/30">
+    <div class="max-w-container mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 pb-8 border-b border-white/10">
+        <div>
+          <div class="flex items-center space-x-2 text-white font-condensed text-2xl font-bold uppercase mb-2">
+            <span class="w-6 h-6 rounded-xs bg-secondary flex items-center justify-center text-xs text-white">R</span>
+            <span>RIMBA TREK</span>
+          </div>
+          <p class="text-[11px] text-white/60 leading-relaxed">
+            Storefront Ekspedisi Resmi berbasis Ortasys Travel Distribution System. Menghubungkan petualang dengan operator alam bebas berlisensi APGI.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-condensed text-sm font-bold uppercase text-white tracking-wider mb-2">Destinasi Ekspedisi</h4>
+          <ul class="space-y-1 text-white/60 text-[11px]">
+            <li>TN Gunung Rinjani &amp; Danau Segara Anak</li>
+            <li>TN Bromo Tengger Semeru &amp; Ijen</li>
+            <li>TN Komodo &amp; Pulau Padar</li>
+            <li>Kepulauan Karst Raja Ampat</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-condensed text-sm font-bold uppercase text-white tracking-wider mb-2">Standar &amp; Regulasi</h4>
+          <ul class="space-y-1 text-white/60 text-[11px]">
+            <li>Pemandu Bersertifikat APGI</li>
+            <li>Simaksi &amp; Kuota Konservasi Sah</li>
+            <li>Zero Waste Eco Policy</li>
+            <li>Asuransi Kecelakaan Petualangan</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-condensed text-sm font-bold uppercase text-white tracking-wider mb-2">Settlement Terverifikasi</h4>
+          <p class="text-[11px] text-white/60 mb-2">Diproses melalui gerbang pembayaran resmi:</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 bg-white/10 rounded-xs text-[10px] font-mono font-bold text-white border border-white/15">DOKU Gateway</span>
+            <span class="px-2 py-0.5 bg-white/10 rounded-xs text-[10px] font-mono font-bold text-white border border-white/15">SNAP BI QRIS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between text-[11px] text-white/40 gap-2">
+        <p>&copy; <span id="year"></span> Rimba Trek Adventures. Hak Cipta Dilindungi.</p>
+        <p>Illustrative Prototype Preset 05 · Ortasys S4 White-Label Platform.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ TRIP DRAWER / BAG ============ -->
+  <div id="tripOverlay" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden" aria-hidden="true"></div>
+  <aside id="tripDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-[420px] bg-surface shadow-elevated translate-x-full transition-transform duration-300 flex flex-col border-l border-line" role="dialog" aria-modal="true" aria-labelledby="tripTitle" aria-hidden="true">
+    <div class="bg-primary text-white px-6 h-20 flex items-center justify-between border-b border-black/20">
+      <div>
+        <h2 id="tripTitle" class="font-condensed text-2xl font-bold uppercase tracking-tight">Rencana Ekspedisi Anda</h2>
+        <p class="text-xs text-tertiary">Build Your Trip — Paket Multi-Supplier</p>
+      </div>
+      <button type="button" data-close-trip class="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white" aria-label="Tutup trip bag">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <div id="tripItems" class="flex-1 overflow-y-auto p-5 flex flex-col gap-3"></div>
+
+    <div class="bg-canvas p-6 border-t border-line">
+      <div class="space-y-1.5 text-[12px] font-mono text-ink-muted">
+        <div class="flex justify-between">
+          <span>Subtotal Ekspedisi:</span>
+          <span id="tripSubtotal" class="font-bold text-ink">Rp 0</span>
+        </div>
+        <div class="flex justify-between text-[11px]">
+          <span>Pajak &amp; Simaksi TN:</span>
+          <span class="text-success font-semibold">Termasuk (Net Final)</span>
+        </div>
+        <div class="flex items-baseline justify-between pt-2 border-t border-line/60 text-[14px]">
+          <span class="font-bold text-ink uppercase tracking-wider font-condensed text-base">Total Penyelesaian:</span>
+          <span id="tripTotal" class="text-2xl font-extrabold text-primary">Rp 0</span>
+        </div>
+      </div>
+
+      <button id="payBtn" type="button" class="mt-4 w-full py-3.5 bg-secondary hover:bg-[#b85e25] text-white rounded-xs font-condensed text-lg uppercase tracking-wider font-bold transition shadow-soft disabled:opacity-40">
+        Konfirmasi Pesanan (DOKU / SNAP)
+      </button>
+      <p id="payNote" class="mt-2 text-[11px] text-center text-ink-muted" aria-live="polite">Penyelesaian resmi Bank Indonesia SNAP &amp; DOKU.</p>
+    </div>
+  </aside>
+
+  <!-- ============ DETAIL QUICK-VIEW MODAL ============ -->
+  <div id="detailModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="bg-surface rounded-md max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[90vh]">
+      <div class="relative aspect-[16/9] bg-surface-muted shrink-0">
+        <img id="modalImg" src="" alt="" class="w-full h-full object-cover">
+        <button type="button" data-close-modal class="absolute top-3 right-3 w-8 h-8 rounded-xs bg-surface/90 flex items-center justify-center text-ink hover:bg-surface transition shadow-xs" aria-label="Tutup detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <span id="modalBadge" class="absolute bottom-3 left-3 px-2.5 py-1 rounded-xs bg-primary text-white text-[11px] font-mono font-bold uppercase tracking-wider"></span>
+      </div>
+      <div class="p-6 overflow-y-auto flex-1 flex flex-col gap-3">
+        <span id="modalArea" class="text-[11px] font-bold uppercase tracking-widest text-secondary font-condensed"></span>
+        <h3 id="modalTitle" class="font-condensed text-2xl font-extrabold uppercase text-primary leading-tight"></h3>
+        <p id="modalDesc" class="text-[13px] text-ink-muted leading-relaxed font-normal"></p>
+        <div class="pt-3 border-t border-line">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-condensed mb-2">Fasilitas Ekspedisi &amp; Logistik Termasuk:</h4>
+          <div id="modalAmenities" class="flex flex-wrap gap-1.5 text-[12px]"></div>
+        </div>
+        <div class="pt-3 border-t border-line">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-condensed mb-1">Kebijakan &amp; Keselamatan:</h4>
+          <p id="modalPolicy" class="text-[12px] text-ink-muted"></p>
+        </div>
+      </div>
+      <div class="p-5 border-t border-line bg-canvas flex items-center justify-between gap-4 shrink-0">
+        <div>
+          <p class="text-[11px] text-ink-muted font-mono uppercase tracking-wider">Tarif Kuota Live Sah</p>
+          <p id="modalPrice" class="font-mono text-[20px] font-extrabold text-primary"></p>
+        </div>
+        <button id="modalSelectBtn" type="button" class="h-11 px-6 rounded-xs bg-secondary hover:bg-[#b85e25] text-white font-condensed text-base uppercase font-bold tracking-wider transition shadow-xs">
+          Pilih Ekspedisi
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CHECKOUT CONFIRMATION MODAL ============ -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="checkoutHeading">
+    <div class="bg-surface rounded-md max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[92vh]">
+      <div class="bg-primary text-white flex items-center justify-between px-6 py-4 border-b border-black/20">
+        <div>
+          <h3 id="checkoutHeading" class="font-condensed text-2xl font-bold uppercase tracking-tight">Penyelesaian Reservasi Ekspedisi</h3>
+          <p class="text-xs text-tertiary">Proses Settlement DOKU &amp; SNAP BI</p>
+        </div>
+        <button type="button" data-close-checkout class="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white" aria-label="Tutup penyelesaian">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+
+      <div id="checkoutFormContent" class="p-6 overflow-y-auto flex-1 flex flex-col gap-4">
+        <div class="p-4 rounded-xs bg-canvas border border-line text-[13px]">
+          <div class="flex justify-between font-bold text-ink uppercase tracking-wider font-condensed text-sm">
+            <span>Daftar Trip Bag:</span>
+            <span id="coItemCount" class="font-mono">0 Item</span>
+          </div>
+          <div id="coItemList" class="mt-2 space-y-1 text-[12px] text-ink-muted"></div>
+          <div class="mt-3 pt-2 border-t border-line/60 flex justify-between font-mono font-bold text-ink text-[14px]">
+            <span>Total Pelunasan:</span>
+            <span id="coTotal" class="text-primary font-extrabold text-base">Rp 0</span>
+          </div>
+        </div>
+
+        <form id="coForm" class="flex flex-col gap-3">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-condensed">Data Ketua Tim / Pendaki Utama</h4>
+          <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
+            Nama Lengkap Sesuai KTP / Paspor
+            <input id="coName" type="text" required placeholder="Contoh: Arya Yudhistira" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
+          </label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
+              Email Konfirmasi &amp; Tiket
+              <input id="coEmail" type="email" required placeholder="arya@expedition.com" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
+            </label>
+            <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
+              No. WhatsApp Darurat
+              <input id="coPhone" type="tel" required placeholder="081234567890" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
+            </label>
+          </div>
+
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-condensed mt-2">Kanal Pembayaran Terverifikasi</h4>
+          <div class="space-y-2 text-[12px]">
+            <label class="flex items-center gap-3 p-3 rounded-xs bg-white border border-line cursor-pointer hover:border-secondary">
+              <input type="radio" name="payMethod" value="qris" checked class="accent-secondary">
+              <div class="flex-1">
+                <span class="font-bold text-ink block font-condensed text-sm uppercase">SNAP BI QRIS (Konfirmasi Instan)</span>
+                <span class="text-[11px] text-ink-muted block">BCA, Mandiri, BRI, GoPay, OVO, ShopeePay</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xs bg-white border border-line cursor-pointer hover:border-secondary">
+              <input type="radio" name="payMethod" value="va" class="accent-secondary">
+              <div class="flex-1">
+                <span class="font-bold text-ink block font-condensed text-sm uppercase">DOKU Virtual Account Multi-Bank</span>
+                <span class="text-[11px] text-ink-muted block">Virtual account otomatis terverifikasi tanpa upload bukti</span>
+              </div>
+            </label>
+          </div>
+
+          <button type="submit" id="coSubmitBtn" class="mt-3 w-full py-3.5 bg-secondary hover:bg-[#b85e25] text-white rounded-xs font-condensed text-base uppercase tracking-wider font-bold transition shadow-soft flex items-center justify-center gap-2">
+            <span>Konfirmasi &amp; Terbitkan Izin Jalur</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Confirmation Success State -->
+      <div id="checkoutSuccessContent" class="hidden p-8 flex flex-col items-center text-center gap-4">
+        <div class="w-14 h-14 rounded-full bg-success/15 text-success flex items-center justify-center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <div>
+          <span class="text-[11px] font-bold uppercase tracking-widest text-success font-condensed">Pemesanan Terverifikasi Live API</span>
+          <h4 class="font-condensed text-3xl font-extrabold uppercase text-primary mt-1">Simaksi &amp; Kuota Resmi Terbit</h4>
+          <p class="text-[13px] text-ink-muted mt-1">Kuota pendakian Anda telah terkunci di server pengelola dan ranger APGI telah diberitahukan.</p>
+        </div>
+        <div class="w-full p-4 rounded-xs bg-canvas border border-line text-left text-[12px] space-y-1.5 font-mono">
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Kode Simaksi:</span>
+            <span id="successRef" class="font-bold text-ink">RMB-2026-0001</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Ketua Tim:</span>
+            <span id="successGuest" class="font-bold text-ink">-</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Total Pembayaran:</span>
+            <span id="successAmount" class="font-bold text-primary">Rp 0</span>
+          </div>
+        </div>
+        <div class="w-full flex flex-col gap-2 pt-2">
+          <button type="button" id="btnDownloadVoucher" class="w-full py-3 rounded-xs bg-primary hover:bg-primary-hover text-white font-condensed text-sm uppercase tracking-wider font-bold transition">
+            Unduh E-Simaksi &amp; Dokumen Keselamatan (PDF)
+          </button>
+          <button type="button" data-finish-checkout class="w-full py-2.5 rounded-xs bg-surface-muted hover:bg-line text-ink font-condensed text-sm uppercase tracking-wider font-bold transition">
+            Kembali ke Katalog Ekspedisi
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-primary text-white rounded-xs px-6 py-3 text-[13px] font-bold shadow-elevated" role="status" aria-live="polite"></div>
+
+  <script>
+  (() => {
+    'use strict';
+    /* Data Sampel Ilustratif Preset 05 (Rimba Trek Adventures) */
+    const EXPEDITIONS = [
+      {
+        id: 'rt-rinjani', kind: 'tour', name: 'Rinjani Summit & Crater Rim 3D2N Expedition', area: 'TN Gunung Rinjani · Sembalun', filter: 'rinjani',
+        keys: 'rinjani sembalun gunung kawah segara anak trekking pendakian', img: '../../assets/khatulistiwa_explorer/rinjani-trail.jpg', alt: 'Jalur pendakian punggungan Gunung Rinjani',
+        duration: '3 Hari 2 Malam (Puncak 3.726 MDPL)', level: 'Tingkat Menengah',
+        desc: 'Pendakian jalur Sembalun menuju puncak tertinggi Lombok, bermalam di Plawangan Sembalun, eksplorasi Danau Segara Anak, dan turun melalui Senaru bersama porter profesional.',
+        amenities: ['Pemandu Bersertifikat APGI', 'Tenda Dome Double-Layer Tahan Badai', 'Matras & Sleeping Bag Nyaman', 'Makan 3x Sehari Masakan Segar Porter', 'Simaksi Resmi TNGR & Asuransi'],
+        policy: 'Dapat dijadwalkan ulang bila otoritas TNGR menutup jalur akibat cuaca.',
+        perPerson: 2450000
+      },
+      {
+        id: 'rt-komodo', kind: 'tour', name: 'Komodo Dragon & Padar Island Wilderness Cruise', area: 'Taman Nasional Komodo · Labuan Bajo', filter: 'komodo',
+        keys: 'komodo padar ntt nusa tenggara timur pulau trekking ranger', img: '../../assets/khatulistiwa_explorer/padar.jpg', alt: 'Pemandangan puncak bukit Pulau Padar',
+        duration: '3 Hari 2 Malam Liveaboard', level: 'Tingkat Ringan - Menengah',
+        desc: 'Pelayaran perahu ekspedisi menuju habitat asli satwa purba komodo di Pulau Rinca, trekking matahari terbit di puncak tri-teluk Pulau Padar, dan snorkeling pari manta Manta Point.',
+        amenities: ['Kabin Ber-AC di Kapal Semi-Phinisi', 'Ranger Resmi Balai TN Komodo', 'Peralatan Snorkeling Lengkap', 'Makan Lengkap Chef Kapal', 'Tiket Retribusi Konservasi'],
+        policy: 'Bebas penyesuaian jadwal hingga 7 hari sebelum keberangkatan.',
+        perPerson: 2950000
+      },
+      {
+        id: 'rt-bromo', kind: 'tour', name: 'Bromo Sunrise Caldera & Ijen Blue Fire 3D2N', area: 'TN Bromo Tengger & Kawah Ijen', filter: 'bromo',
+        keys: 'bromo ijen blue fire api biru kawah kawah kawah jawa timur', img: '../../assets/khatulistiwa_explorer/bromo.jpg', alt: 'Kaldera Gunung Bromo dan Batok saat fajar',
+        duration: '3 Hari 2 Malam Ekspedisi Kaldera', level: 'Tingkat Menengah',
+        desc: 'Petualangan melintasi lautan pasir Bromo dengan Jeep 4WD 4x4, menaiki bibir kawah aktif, dilanjutkan pendakian dini hari di Kawah Ijen untuk menyaksikan fenomena kobaran api biru langka.',
+        amenities: ['Jeep 4x4 Khusus Kaldera', 'Masker Gas Respirator Kawah Ijen', 'Guide Lokal Berpengalaman', 'Penginapan Transit Basecamp Bromo', 'Tiket Masuk Resmi TNBTS'],
+        policy: 'Bebas pembatalan hingga H-3 tanpa biaya penalti.',
+        perPerson: 1850000
+      },
+      {
+        id: 'rt-rajaampat', kind: 'tour', name: 'Raja Ampat Misool Marine & Karst Expedition', area: 'Kepulauan Misool · Raja Ampat', filter: 'rajaampat',
+        keys: 'raja ampat misool papua karst laut diving coral ekspedisi', img: '../../assets/khatulistiwa_explorer/raja-ampat.jpg', alt: 'Gugusan pulau karang karst hijau di Raja Ampat',
+        duration: '4 Hari 3 Malam Ekspedisi Karst', level: 'Tingkat Menengah',
+        desc: 'Menembus labirin tebing karst purba Misool, gua tengkorak keramat, danau ubur-ubur tanpa sengat, serta keanekaragaman terumbu karang terkaya di bumi (Jantung Segitiga Karang Dunia).',
+        amenities: ['Speedboat Ekspedisi Mesin Ganda', 'Pemandu Laut Lokal Papua', 'Akomodasi Eco Homestay Terapung', 'Makan Segar Ikan Laut Lokal', 'Biaya PIN Konservasi Raja Ampat'],
+        policy: 'Pemesanan memerlukan konfirmasi kuota H-14 hari.',
+        perPerson: 4850000
+      }
+    ];
+
+    const LODGES = [
+      {
+        id: 'rt-senaru-lodge', name: 'Senaru Foothill Rainforest Eco Lodge', area: 'Senaru · Kaki Gunung Rinjani', filter: 'rinjani',
+        keys: 'senaru rinjani eco lodge kaki gunung basecamp alam', img: '../../assets/mandalika_escape/rinjani.jpg', alt: 'Pemandangan alam perbukitan Senaru Rinjani',
+        stars: 4, room: 'Chalet Bambu Pemandangan Hutan Tropis', meal: 'Termasuk Sarapan Sehat Pendaki & Kopi Robusta', policy: 'Bebas pembatalan hingga H-5 kedatangan.',
+        desc: 'Eco-lodge ramah lingkungan di ketinggian 600 MDPL. Terletak strategis di dekat gerbang pendakian Senaru dan air terjun Sendang Gile, ideal untuk proses aklimatisasi sebelum mendaki.',
+        amenities: ['Air Hangat Tenaga Surya', 'Peralatan Dry Bag & Peta Topografi', 'Restoran Organik Kebun Sendiri', 'Area Api Unggun Malam', 'WiFi Satelit Kuat'],
+        nightly: 1250000
+      },
+      {
+        id: 'rt-komodo-lodge', name: 'Komodo Secluded Coastal Eco Camp', area: 'Pantai Waecicu · Labuan Bajo', filter: 'komodo',
+        keys: 'komodo waecicu eco camp pantai tenda safari glamping', img: '../../assets/mandalika_escape/beach.jpg', alt: 'Tenda safari tepi pantai tenang',
+        stars: 4, room: 'Tenda Safari Glamping Tepi Laut', meal: 'Sarapan dan Makan Malam Tradisional', policy: 'Bebas pembatalan hingga H-7 kedatangan.',
+        desc: 'Basecamp tepi pantai eksklusif dengan tenda safari kanvas berkualitas tinggi. Menghadap langsung ke perairan tenang Taman Nasional Komodo dengan akses perahu langsung ke pulau-pulau liar.',
+        amenities: ['Private Beach & Dermaga Kayu', 'Kayak Laut Gratis', 'Kamar Mandi Semi-Terbuka Bambu', 'Layanan Shuttle Dermaga Bajo', 'Listrik Tenaga Surya 24 Jam'],
+        nightly: 1750000
+      },
+      {
+        id: 'rt-mandalika-base', name: 'Mandalika Coastal Surfer Eco Villa', area: 'Kuta Mandalika · Lombok Selatan', filter: 'rinjani',
+        keys: 'mandalika lombok surfer pantai eco villa basecamp', img: '../../assets/mandalika_escape/palm-bay.jpg', alt: 'Teluk pantai pasir putih Mandalika',
+        stars: 4, room: 'Eco Villa Lumbung Tradisional', meal: 'Sarapan Sehat & Kelapa Segar', policy: 'Bebas pembatalan hingga H-3 kedatangan.',
+        desc: 'Vila kayu beratap alang-alang alami di dekat spot selancar ombak pantai selatan Lombok. Tempat beristirahat dan memulihkan energi setelah perjalanan gunung yang menantang.',
+        amenities: ['Kolam Renang Batu Alami', 'Rak Papan Selancar Aman', 'Dapur Bersama Lengkap', 'Sewa Motor Trail / Scooter', 'WiFi Fiber'],
+        nightly: 1350000
+      }
+    ];
+
+    const LIMITS = { rooms: [1, 9], adults: [1, 20], children: [0, 20] };
+    const MAX_NIGHTS = 30;
+    const idr = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const DAY = 86400000;
+    const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    const addDays = (s, n) => iso(new Date(new Date(s + 'T00:00:00').getTime() + n * DAY));
+    const today = iso(new Date());
+
+    const state = { mode: 'activities', filter: 'all', priced: false, checking: false, checkedAt: null, trip: [] };
+    const el = {
+      form: $('#searchForm'), dest: $('#dest'), checkIn: $('#checkIn'), checkOut: $('#checkOut'),
+      rooms: $('#rooms'), adults: $('#adults'), children: $('#qChildren'), errors: $('#formErrors'), summary: $('#summary'),
+      btn: $('#checkBtn'), results: $('#results')
+    };
+
+    const clamp = (v, [lo, hi]) => Math.min(hi, Math.max(lo, Number.isFinite(v) ? v : lo));
+    const num = k => clamp(parseInt(el[k].value, 10), LIMITS[k]);
+    const nights = () => {
+      if (!el.checkIn.value || !el.checkOut.value) return 0;
+      return Math.round((new Date(el.checkOut.value) - new Date(el.checkIn.value)) / DAY);
+    };
+
+    function validate() {
+      const errs = [];
+      if (!el.checkIn.value) {
+        errs.push('Silakan tentukan tanggal mulai perjalanan / ekspedisi.');
+      } else if (el.checkIn.value < today) {
+        errs.push('Tanggal mulai tidak boleh di masa lampau.');
+      }
+
+      if (state.mode === 'hotels') {
+        if (!el.checkOut.value) errs.push('Silakan tentukan tanggal selesai (check-out).');
+        else {
+          const n = nights();
+          if (n < 1) errs.push('Tanggal selesai harus minimal 1 malam setelah tanggal mulai.');
+          if (n > MAX_NIGHTS) errs.push(`Batas inap maksimal adalah ${MAX_NIGHTS} malam.`);
+        }
+      }
+      return errs;
+    }
+
+    const roomRate = s => Math.round(s.nightly * (1 + 0.15 * Math.max(0, num('adults') - 2) + 0.08 * num('children')) / 1000) * 1000;
+    const stayTotal = s => roomRate(s) * Math.max(1, nights()) * num('rooms');
+    const actTotal = a => (a.perPerson * num('adults') + Math.round(a.perPerson * 0.7) * num('children')) * num('rooms');
+
+    function summaryText() {
+      const r = num('rooms'), a = num('adults'), c = num('children');
+      const g = `${a} Peserta${c ? ` + ${c} Remaja` : ''}`;
+      if (state.mode === 'hotels') {
+        const n = nights();
+        if (!n || n < 1) return 'Pilih tanggal untuk kalkulasi kuota live';
+        return `${n} Malam × ${r} Unit (${g} / unit)`;
+      }
+      return el.checkIn.value ? `${el.checkIn.value} · ${r * a} Peserta Ekspedisi` : 'Pilih tanggal mulai ekspedisi';
+    }
+
+    function renderMode() {
+      $$('.mode-tab').forEach(t => {
+        const on = t.dataset.mode === state.mode;
+        t.setAttribute('aria-selected', on);
+        t.className = `mode-tab h-9 rounded-xs font-condensed text-sm font-bold uppercase tracking-wider transition ${on ? 'bg-primary text-white' : 'text-ink-muted hover:text-ink'}`;
+      });
+      const hotels = state.mode === 'hotels';
+      $$('[data-hotel-only]').forEach(n => n.classList.toggle('hidden', !hotels));
+      
+      $('#catalogHeading').textContent = hotels ? 'Basecamp & Eco Lodge Terkurasi' : 'Ekspedisi Jalur Pegunungan & Alam Liar';
+      $('[data-dest-label]').textContent = hotels ? 'Basecamp / Eco Lodge / Kawasan' : 'Tujuan / Kawasan Konservasi';
+      el.dest.placeholder = hotels ? 'Senaru Lodge, Waecicu Camp, Mandalika…' : 'Gunung Rinjani, Komodo, Bromo, Ijen…';
+
+      const datalistItems = hotels ? LODGES.map(s => s.name) : EXPEDITIONS.map(e => e.name);
+      $('#destList').innerHTML = ['Gunung Rinjani', 'Kawah Ijen', 'Bromo Tengger', 'Taman Nasional Komodo', 'Raja Ampat', ...datalistItems]
+        .map(v => `<option value="${v}">`).join('');
+    }
+
+    function renderResults() {
+      const isHotels = state.mode === 'hotels';
+      const q = el.dest.value.trim().toLowerCase();
+      let list = (isHotels ? LODGES : EXPEDITIONS).filter(it => {
+        const matchQ = !q || (it.name + ' ' + it.area + ' ' + it.keys).toLowerCase().includes(q);
+        const matchFilter = state.filter === 'all' || it.filter === state.filter;
+        return matchQ && matchFilter;
+      });
+      if (!list.length && state.filter === 'all') list = isHotels ? LODGES : EXPEDITIONS;
+
+      if (!list.length) {
+        el.results.innerHTML = `
+          <div class="col-span-full py-12 text-center text-ink-muted bg-surface rounded-xs border border-line">
+            <p class="font-condensed text-2xl font-bold uppercase text-primary">Tidak ada paket ekspedisi yang cocok dengan filter "${state.filter}"</p>
+            <button type="button" data-reset-filter class="mt-3 px-4 py-2 rounded-xs bg-secondary text-white font-condensed text-sm uppercase font-bold tracking-wider">Reset Filter Wilayah</button>
+          </div>`;
+        return;
+      }
+
+      el.results.innerHTML = list.map((it, idx) => {
+        const total = isHotels ? stayTotal(it) : actTotal(it);
+        const sub = isHotels ? `${idr.format(roomRate(it))} / malam` : `${idr.format(it.perPerson)} / pax`;
+        const priceHTML = state.checking
+          ? `<div class="h-8 w-28 bg-surface-muted animate-pulse rounded-xs"></div>`
+          : state.priced
+            ? `<div><p class="tnum font-mono text-[20px] font-extrabold text-primary">${idr.format(total)}</p><p class="tnum font-mono text-[11px] text-ink-muted">${sub}</p></div>`
+            : `<div><p class="text-[12px] text-ink-muted italic font-medium">Cek kuota live</p><p class="text-[11px] text-ink-muted font-mono">Mulai ${idr.format(isHotels ? it.nightly : it.perPerson)}</p></div>`;
+
+        return `
+        <article class="bg-surface rounded-xs border-2 border-line hover:border-primary overflow-hidden shadow-soft flex flex-col transition duration-200 group">
+          <!-- Top Technical Telemetry Bar -->
+          <div class="bg-primary text-white px-3.5 py-2 flex items-center justify-between font-mono text-[10px] uppercase tracking-wider">
+            <span>SEC-0${idx + 1} // ${isHotels ? 'BASECAMP LODGE' : it.level}</span>
+            <span class="text-tertiary font-bold">● LIVE ALLOTMENT</span>
+          </div>
+
+          <div class="relative aspect-[16/10] bg-surface-muted overflow-hidden border-b border-line">
+            <img src="${it.img}" alt="${it.alt}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute bottom-2.5 left-2.5 bg-black/80 text-tertiary text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-xs">
+              ${isHotels ? `${'★'.repeat(it.stars)} Basecamp` : it.duration}
+            </span>
+          </div>
+
+          <div class="p-5 flex flex-col flex-1 gap-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold uppercase tracking-widest text-secondary font-condensed">${it.area}</span>
+              <button type="button" data-detail="${it.id}" class="text-[11px] font-mono font-bold uppercase text-primary hover:text-secondary underline">
+                [Buka Dossier]
+              </button>
+            </div>
+            <h3 class="font-condensed text-2xl font-bold uppercase text-primary leading-tight cursor-pointer hover:text-secondary transition-colors" data-detail="${it.id}">${it.name}</h3>
+            <p class="text-[12px] text-ink-muted line-clamp-2">${it.desc}</p>
+            
+            <!-- Tactical Gear Tags -->
+            <div class="flex flex-wrap gap-1 mt-1 pt-2 border-t border-dashed border-line">
+              ${(it.amenities || []).slice(0, 2).map(a => `<span class="px-2 py-0.5 rounded-xs bg-canvas border border-line text-ink text-[10px] font-mono">${a}</span>`).join('')}
+            </div>
+
+            <div class="mt-auto pt-4 border-t border-line flex items-end justify-between gap-3">
+              ${priceHTML}
+              <button type="button" data-select="${it.id}" class="h-10 px-4 rounded-xs ${state.priced ? 'bg-secondary hover:bg-[#b85e25] text-white' : 'bg-primary hover:bg-primary-hover text-white'} font-condensed text-sm uppercase tracking-wider font-bold transition shadow-xs">
+                ${state.priced ? '+ Masuk Tim' : 'Cek &amp; Masuk'}
+              </button>
+            </div>
+          </div>
+        </article>`;
+      }).join('');
+    }
+
+    function syncBounds() {
+      el.checkIn.min = today;
+      if (el.checkIn.value) {
+        el.checkOut.min = addDays(el.checkIn.value, 1);
+        el.checkOut.max = addDays(el.checkIn.value, MAX_NIGHTS);
+      } else {
+        el.checkOut.min = addDays(today, 1);
+        el.checkOut.removeAttribute('max');
+      }
+    }
+
+    function invalidate() {
+      state.priced = false; el.errors.textContent = '';
+      el.summary.textContent = summaryText();
+      renderResults();
+    }
+
+    $$('.mode-tab').forEach(t => t.addEventListener('click', () => { state.mode = t.dataset.mode; renderMode(); invalidate(); }));
+    $$('[data-step]').forEach(b => b.addEventListener('click', () => {
+      const k = b.dataset.step; el[k].value = clamp(num(k) + Number(b.dataset.dir), LIMITS[k]); invalidate();
+    }));
+    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('change', () => { el[k].value = num(k); invalidate(); }));
+    el.checkIn.addEventListener('change', () => {
+      syncBounds();
+      if (el.checkIn.value && (!el.checkOut.value || el.checkOut.value <= el.checkIn.value)) el.checkOut.value = addDays(el.checkIn.value, 2);
+      invalidate();
+    });
+    el.checkOut.addEventListener('change', invalidate);
+    el.dest.addEventListener('input', renderResults);
+
+    // Filter Buttons
+    $$('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        state.filter = btn.dataset.filter;
+        $$('.filter-btn').forEach(b => {
+          const active = b === btn;
+          b.className = `filter-btn h-9 px-4 rounded-xs font-condensed text-sm font-bold uppercase tracking-wider transition ${active ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`;
+        });
+        renderResults();
+      });
+    });
+
+    el.form.addEventListener('submit', e => {
+      e.preventDefault();
+      const errs = validate();
+      el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
+      if (errs.length) return;
+
+      state.checking = true; el.btn.disabled = true;
+      el.btn.querySelector('[data-btn-label]').textContent = 'Menghubungi Server Kuota APGI…';
+      renderResults();
+
+      setTimeout(() => {
+        state.checking = false; state.priced = true; state.checkedAt = new Date();
+        el.btn.disabled = false; el.btn.querySelector('[data-btn-label]').textContent = 'Cek Kuota Live';
+        el.summary.textContent = `Live Terverifikasi: ${summaryText()}`;
+        renderResults();
+        document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+      }, 650);
+    });
+
+    document.addEventListener('click', e => {
+      const sel = e.target.closest('[data-select]'); if (sel) return selectItem(sel.dataset.select);
+      const det = e.target.closest('[data-detail]'); if (det) return openDetail(det.dataset.detail);
+      const rm = e.target.closest('[data-remove]'); if (rm) { state.trip.splice(Number(rm.dataset.remove), 1); renderTrip(); }
+      const rst = e.target.closest('[data-reset-filter]'); if (rst) {
+        state.filter = 'all';
+        $$('.filter-btn').forEach((b, i) => b.className = `filter-btn h-9 px-4 rounded-xs font-condensed text-sm font-bold uppercase tracking-wider transition ${i === 0 ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`);
+        renderResults();
+      }
+    });
+
+    function selectItem(id) {
+      if (!state.priced) {
+        toast('Memverifikasi kuota ketersediaan multi-supplier...');
+        const errs = validate();
+        if (errs.length) {
+          document.getElementById('searchSection').scrollIntoView({ behavior: 'smooth' });
+          el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
+          return;
+        }
+        state.priced = true;
+        renderResults();
+      }
+      const isHotel = id.startsWith('rt-senaru-lodge') || id.startsWith('rt-komodo-lodge') || id.startsWith('rt-mandalika-base');
+      const it = (isHotels => isHotels ? LODGES : EXPEDITIONS)(isHotel).find(x => x.id === id);
+      const total = isHotel ? stayTotal(it) : actTotal(it);
+      state.trip.push({ id: it.id, name: it.name, area: it.area, detail: summaryText(), total });
+      renderTrip();
+      toast(`Ditambahkan ke Trip Bag: ${it.name}`);
+      closeDetail();
+    }
+
+    function renderTrip() {
+      $$('[data-trip-count]').forEach(n => n.textContent = state.trip.length);
+      const box = $('#tripItems');
+      box.innerHTML = state.trip.length ? state.trip.map((t, i) => `
+        <div class="p-3.5 rounded-xs bg-canvas border border-line flex flex-col gap-1">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <p class="font-condensed text-lg font-bold uppercase text-primary leading-tight">${t.name}</p>
+              <p class="text-[11px] text-ink-muted">${t.area} · ${t.detail}</p>
+            </div>
+            <button type="button" data-remove="${i}" class="text-[11px] font-bold text-danger hover:underline">Hapus</button>
+          </div>
+          <p class="tnum font-mono text-[14px] font-bold text-primary mt-1">${idr.format(t.total)}</p>
+        </div>`).join('')
+        : `<p class="py-12 text-center text-[13px] text-ink-muted font-medium">Trip Bag Anda masih kosong.<br>Cek kuota live dan pilih ekspedisi atau basecamp.</p>`;
+      
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      $('#tripSubtotal').textContent = idr.format(totalVal);
+      $('#tripTotal').textContent = idr.format(totalVal);
+      $('#payBtn').disabled = !state.trip.length;
+    }
+
+    // Detail Quick-View Modal
+    const detailModal = $('#detailModal');
+    let currentDetailItem = null;
+    function openDetail(id) {
+      const isHotel = id.startsWith('rt-senaru-lodge') || id.startsWith('rt-komodo-lodge') || id.startsWith('rt-mandalika-base');
+      const it = (isHotels => isHotels ? LODGES : EXPEDITIONS)(isHotel).find(x => x.id === id);
+      if (!it) return;
+      currentDetailItem = it;
+
+      $('#modalImg').src = it.img;
+      $('#modalImg').alt = it.alt;
+      $('#modalBadge').textContent = isHotel ? `Peringkat Bintang ${'★'.repeat(it.stars)}` : it.level;
+      $('#modalArea').textContent = it.area;
+      $('#modalTitle').textContent = it.name;
+      $('#modalDesc').textContent = it.desc;
+      $('#modalAmenities').innerHTML = (it.amenities || []).map(a => `<span class="px-2.5 py-1 rounded-xs bg-surface-muted text-ink font-mono text-[11px] font-semibold">${a}</span>`).join('');
+      $('#modalPolicy').textContent = it.policy;
+
+      const total = isHotel ? stayTotal(it) : actTotal(it);
+      $('#modalPrice').textContent = state.priced ? idr.format(total) : `Mulai ${idr.format(isHotel ? it.nightly : it.perPerson)}`;
+      detailModal.classList.remove('hidden');
+    }
+    function closeDetail() {
+      detailModal.classList.add('hidden');
+      currentDetailItem = null;
+    }
+    $('[data-close-modal]').addEventListener('click', closeDetail);
+    detailModal.addEventListener('click', e => { if (e.target === detailModal) closeDetail(); });
+    $('#modalSelectBtn').addEventListener('click', () => {
+      if (currentDetailItem) selectItem(currentDetailItem.id);
+    });
+
+    // Checkout Modal
+    const checkoutModal = $('#checkoutModal');
+    function openCheckout() {
+      if (!state.trip.length) return;
+      closeTrip();
+      $('#coItemCount').textContent = `${state.trip.length} Paket Terpilih`;
+      $('#coItemList').innerHTML = state.trip.map(t => `<div class="flex justify-between font-condensed uppercase text-sm"><span>• ${t.name}</span><span class="font-mono font-bold">${idr.format(t.total)}</span></div>`).join('');
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      $('#coTotal').textContent = idr.format(totalVal);
+      $('#checkoutFormContent').classList.remove('hidden');
+      $('#checkoutSuccessContent').classList.add('hidden');
+      checkoutModal.classList.remove('hidden');
+    }
+    function closeCheckout() {
+      checkoutModal.classList.add('hidden');
+    }
+    $('[data-close-checkout]').addEventListener('click', closeCheckout);
+    checkoutModal.addEventListener('click', e => { if (e.target === checkoutModal) closeCheckout(); });
+    $('[data-finish-checkout]').addEventListener('click', () => {
+      closeCheckout();
+      state.trip = [];
+      renderTrip();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    $('#btnDownloadVoucher').addEventListener('click', () => {
+      toast('E-Simaksi & Dokumen Keselamatan sedang diunduh (Simulasi PDF)...');
+    });
+
+    $('#coForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const guestName = $('#coName').value.trim();
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      const randomRef = 'RMB-2026-' + Math.floor(1000 + Math.random() * 9000);
+
+      $('#successRef').textContent = randomRef;
+      $('#successGuest').textContent = guestName;
+      $('#successAmount').textContent = idr.format(totalVal);
+
+      $('#checkoutFormContent').classList.add('hidden');
+      $('#checkoutSuccessContent').classList.remove('hidden');
+    });
+
+    // Drawer Navigation
+    const drawer = $('#tripDrawer'), overlay = $('#tripOverlay');
+    function openTrip() { overlay.classList.remove('hidden'); drawer.classList.remove('translate-x-full'); drawer.setAttribute('aria-hidden', 'false'); }
+    function closeTrip() { overlay.classList.add('hidden'); drawer.classList.add('translate-x-full'); drawer.setAttribute('aria-hidden', 'true'); }
+    $$('[data-open-trip]').forEach(b => b.addEventListener('click', openTrip));
+    $('[data-close-trip]').addEventListener('click', closeTrip);
+    overlay.addEventListener('click', closeTrip);
+
+    $('#payBtn').addEventListener('click', openCheckout);
+
+    let toastTimer;
+    function toast(msg) {
+      const t = $('#toast'); t.textContent = msg; t.classList.remove('hidden');
+      clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.add('hidden'), 2500);
+    }
+
+    $('#menuBtn').addEventListener('click', () => {
+      const open = $('#mobileNav').classList.toggle('hidden') === false;
+      $('#menuBtn').setAttribute('aria-expanded', open);
+    });
+    $('#year').textContent = new Date().getFullYear();
+
+    syncBounds(); renderMode(); invalidate(); renderTrip();
+  })();
+  </script>
+</body>
+</html>

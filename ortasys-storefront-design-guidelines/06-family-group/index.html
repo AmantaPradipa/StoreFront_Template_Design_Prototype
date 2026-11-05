@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TemanTrip Holidays · Liburan Keluarga &amp; Rombongan Praktis</title>
+  <meta name="description" content="TemanTrip Holidays — Spesialis liburan keluarga, vila connecting room, dan tur rombongan multigenerasi ramah anak &amp; lansia. Ditenagai oleh Ortasys S4.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* Ortasys Storefront Preset 06 · Family & Group Travel (06-family-group/DESIGN.md) */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#315B46', hover: '#244735' },
+            secondary: '#E58A55',
+            tertiary: '#F0C98B',
+            accent: '#6B86A5',
+            canvas: '#FBF7EF',
+            surface: { DEFAULT: '#FFFFFF', muted: '#F1E9DC' },
+            ink: { DEFAULT: '#29362F', muted: '#69756D' },
+            line: '#E2D9CC',
+            success: '#34764F',
+            warning: '#A66B25',
+            danger: '#B84A43'
+          },
+          fontFamily: {
+            display: ['"Nunito Sans"', 'system-ui', 'sans-serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            mono: ['ui-monospace', 'monospace']
+          },
+          borderRadius: {
+            xs: '8px',
+            sm: '12px',
+            md: '16px',
+            lg: '24px',
+            xl: '32px',
+            pill: '9999px'
+          },
+          boxShadow: {
+            soft: '0 4px 20px -2px rgba(49, 91, 70, 0.08)',
+            elevated: '0 12px 32px -4px rgba(49, 91, 70, 0.14)'
+          },
+          maxWidth: { container: '1240px' }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #FBF7EF; color: #29362F; }
+    .font-heading { font-family: 'Nunito Sans', system-ui, sans-serif; }
+    .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on; }
+    .stepper input::-webkit-outer-spin-button,
+    .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .stepper input { -moz-appearance: textfield; }
+    :focus-visible { outline: 2px solid #E58A55; outline-offset: 2px; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+  </style>
+</head>
+<body class="bg-canvas text-ink antialiased">
+
+  <a href="#searchSection" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-pill">Skip to search</a>
+
+  <!-- Illustrative Sample Banner -->
+  <aside class="bg-primary text-tertiary px-4 py-1.5 text-xs font-semibold flex justify-between items-center border-b border-primary-hover z-50">
+    <div class="max-w-container mx-auto w-full flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-secondary"></span>
+        <span class="font-heading tracking-wide text-sm font-bold">PRESET 06 // FAMILY &amp; GROUP TRAVEL</span>
+        <span class="hidden sm:inline text-white/60 text-[11px]">— Illustrative Sample Data</span>
+      </div>
+      <div class="text-[11px] text-white/80 font-mono">Ortasys S4 Engine &bull; Multi-Room Ready</div>
+    </div>
+  </aside>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-line shadow-xs">
+    <div class="max-w-container mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+      <a href="#home" class="flex items-center gap-3 shrink-0 group">
+        <div class="w-11 h-11 rounded-full bg-primary flex items-center justify-center text-white shadow-sm transition-transform group-hover:scale-105">
+          <svg class="w-6 h-6 text-tertiary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+        </div>
+        <div>
+          <span class="font-heading text-2xl md:text-3xl font-extrabold tracking-tight text-primary block leading-none">TemanTrip</span>
+          <span class="text-[11px] font-bold text-secondary tracking-wider uppercase block mt-0.5">Family &amp; Group Holidays</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-[14px] font-semibold text-ink" aria-label="Main Navigation">
+        <a href="#searchSection" class="hover:text-primary transition-colors">Cari Liburan</a>
+        <a href="#packages" class="hover:text-primary transition-colors">Vila &amp; Kamar Keluarga</a>
+        <a href="#whyUs" class="hover:text-primary transition-colors">Kenyamanan Multigenerasi</a>
+        <a href="#faq" class="hover:text-primary transition-colors">FAQ Keluarga</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button type="button" data-open-trip class="flex items-center gap-2 bg-surface-muted hover:bg-line text-primary px-4 py-2 rounded-pill text-sm font-bold transition">
+          <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+          <span class="font-heading tracking-wide">Rencana Trip</span>
+          <span data-trip-count class="w-5 h-5 rounded-full bg-primary text-white text-xs flex items-center justify-center font-bold">0</span>
+        </button>
+
+        <button id="menuBtn" type="button" class="md:hidden w-10 h-10 rounded-full flex items-center justify-center text-ink hover:bg-surface-muted" aria-label="Buka menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobileNav" class="md:hidden hidden border-t border-line bg-surface px-4 py-4 flex flex-col gap-2 font-semibold text-[15px]">
+      <a href="#searchSection" class="py-2 text-ink hover:text-primary">Cari Liburan</a>
+      <a href="#packages" class="py-2 text-ink hover:text-primary">Vila &amp; Kamar Keluarga</a>
+      <a href="#whyUs" class="py-2 text-ink hover:text-primary">Kenyamanan Multigenerasi</a>
+      <a href="#faq" class="py-2 text-ink hover:text-primary">FAQ Keluarga</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <!-- ============ WARM FAMILY SCRAPBOOK SPLIT HERO (PRESET 06 DNA) ============ -->
+    <section class="max-w-container mx-auto px-4 sm:px-6 pt-8 pb-6">
+      <div class="bg-primary text-white rounded-3xl p-6 sm:p-10 lg:p-12 shadow-soft border border-line grid lg:grid-cols-12 gap-8 items-center">
+        <!-- Left 6-Col Family Narrative -->
+        <div class="lg:col-span-6 space-y-5">
+          <div class="inline-flex items-center gap-2 bg-white/15 px-3.5 py-1.5 rounded-pill border border-white/20">
+            <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+            <span class="text-xs font-bold text-tertiary uppercase tracking-wider font-heading">Perencana Liburan Rombongan &amp; Keluarga</span>
+          </div>
+          <h1 class="font-heading text-4xl sm:text-5xl font-extrabold leading-[1.08] tracking-tight">
+            Liburan Rombongan Nyaman, Semua Generasi Bahagia.
+          </h1>
+          <p class="text-[15px] sm:text-[16px] text-white/90 leading-relaxed">
+            Mulai dari kakek-nenek hingga balita: kami kurasi vila berpintu penghubung (*connecting doors*), kolam berpagar aman, dan jalur ramah kursi roda.
+          </p>
+          <div class="grid grid-cols-2 gap-3 pt-2 text-xs font-bold text-ink">
+            <div class="bg-surface rounded-2xl p-3.5 flex items-center gap-2.5 shadow-2xs">
+              <span class="w-8 h-8 rounded-full bg-secondary/20 text-secondary flex items-center justify-center font-heading text-sm">✓</span>
+              <span>Connecting Door Dijamin</span>
+            </div>
+            <div class="bg-surface rounded-2xl p-3.5 flex items-center gap-2.5 shadow-2xs">
+              <span class="w-8 h-8 rounded-full bg-primary/15 text-primary flex items-center justify-center font-heading text-sm">✓</span>
+              <span>Ramah Stroller &amp; Lansia</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right 6-Col 2x2 Family Photo Scrapbook Collage -->
+        <div class="lg:col-span-6 grid grid-cols-2 gap-3.5">
+          <div class="rounded-2xl overflow-hidden aspect-[4/3] border-2 border-tertiary/50 bg-surface-muted relative">
+            <img src="../../assets/bagus_travel/ubud.jpg" alt="Vila Keluarga Ubud" class="w-full h-full object-cover">
+            <span class="absolute bottom-2 left-2 px-2.5 py-0.5 rounded-pill bg-surface/95 text-ink text-[10px] font-bold">Vila 3-4 Kamar</span>
+          </div>
+          <div class="rounded-2xl overflow-hidden aspect-[4/3] border-2 border-tertiary/50 bg-surface-muted relative">
+            <img src="../../assets/mandalika_escape/palm-bay.jpg" alt="Resor Pantai Ramah Anak" class="w-full h-full object-cover">
+            <span class="absolute bottom-2 left-2 px-2.5 py-0.5 rounded-pill bg-surface/95 text-ink text-[10px] font-bold">Pantai Landai Aman</span>
+          </div>
+          <div class="rounded-2xl overflow-hidden aspect-[4/3] border-2 border-tertiary/50 bg-surface-muted relative">
+            <img src="../../assets/nusantara_executive/nusa-dua-beach.jpg" alt="Kawasan Multigenerasi Nusa Dua" class="w-full h-full object-cover">
+            <span class="absolute bottom-2 left-2 px-2.5 py-0.5 rounded-pill bg-surface/95 text-ink text-[10px] font-bold">Akses Kursi Roda</span>
+          </div>
+          <div class="rounded-2xl overflow-hidden aspect-[4/3] border-2 border-tertiary/50 bg-surface-muted relative">
+            <img src="../../assets/serenity_umrah_privilege/toba.jpg" alt="Rumah Danau Rombongan" class="w-full h-full object-cover">
+            <span class="absolute bottom-2 left-2 px-2.5 py-0.5 rounded-pill bg-surface/95 text-ink text-[10px] font-bold">Halaman Luas Grup</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3-STEP GUIDED FAMILY PLANNER WIZARD (PRESET 06 DNA) ============ -->
+    <section id="searchSection" class="max-w-container mx-auto px-4 sm:px-6 pt-2 relative z-20" aria-labelledby="searchHeading">
+      <div class="bg-surface rounded-3xl p-6 sm:p-8 border-2 border-line shadow-elevated">
+        <!-- Wizard Header -->
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-line">
+          <div class="flex items-center gap-3">
+            <span class="w-10 h-10 rounded-full bg-tertiary text-primary font-heading font-extrabold text-lg flex items-center justify-center">1-2-3</span>
+            <div>
+              <h2 id="searchHeading" class="font-heading text-2xl sm:text-3xl font-extrabold text-primary">Asisten Perencana Rombongan Keluarga</h2>
+              <p class="text-[13px] text-ink-muted">Ikuti 3 langkah mudah di bawah untuk memeriksa ketersediaan kamar terhubung secara live.</p>
+            </div>
+          </div>
+          <div class="inline-flex rounded-pill bg-surface-muted p-1 border border-line" role="tablist">
+            <button type="button" role="tab" data-mode="hotels" aria-selected="true" class="mode-tab h-9 px-5 rounded-pill font-heading text-sm font-bold transition bg-primary text-white">Vila &amp; Kamar Keluarga</button>
+            <button type="button" role="tab" data-mode="activities" aria-selected="false" class="mode-tab h-9 px-5 rounded-pill font-heading text-sm font-bold transition text-ink-muted hover:text-ink">Tur Rombongan Privat</button>
+          </div>
+        </div>
+
+        <form id="searchForm" class="mt-6" novalidate>
+          <!-- 3 Numbered Step Cards -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+            <!-- STEP 1 CARD: Tujuan & Tanggal -->
+            <div class="lg:col-span-5 rounded-2xl bg-canvas p-5 border border-line flex flex-col justify-between gap-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-7 h-7 rounded-full bg-primary text-white font-heading text-xs font-extrabold flex items-center justify-center">1</span>
+                <span class="font-heading text-sm font-extrabold text-primary uppercase tracking-wide" data-dest-label>Langkah 1 · Pilih Destinasi &amp; Tanggal</span>
+              </div>
+              <label class="flex flex-col gap-1">
+                <span class="text-[11px] font-bold text-ink-muted">Kota / Kawasan Ramah Keluarga</span>
+                <input id="dest" list="destList" placeholder="Bali Ubud, Nusa Dua, Lombok, Danau Toba…" autocomplete="off" class="h-11 px-3.5 rounded-xl bg-white border border-line text-[14px] font-semibold text-ink focus:border-secondary focus:outline-none">
+                <datalist id="destList"></datalist>
+              </label>
+              <div class="grid grid-cols-2 gap-2.5">
+                <label class="flex flex-col gap-1">
+                  <span class="text-[11px] font-bold text-ink-muted">Tanggal Mulai</span>
+                  <input id="checkIn" type="date" aria-describedby="dateRuleHint" class="tnum h-11 px-3 rounded-xl bg-white border border-line text-[12px] focus:border-secondary focus:outline-none font-mono">
+                </label>
+                <label class="flex flex-col gap-1" data-hotel-only>
+                  <span class="text-[11px] font-bold text-ink-muted">Tanggal Selesai</span>
+                  <input id="checkOut" type="date" aria-describedby="dateRuleHint" class="tnum h-11 px-3 rounded-xl bg-white border border-line text-[12px] focus:border-secondary focus:outline-none font-mono">
+                </label>
+              </div>
+            </div>
+
+            <!-- STEP 2 CARD: Rombongan & Kamar -->
+            <div class="lg:col-span-4 rounded-2xl bg-canvas p-5 border border-line flex flex-col justify-between gap-4">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-7 h-7 rounded-full bg-secondary text-white font-heading text-xs font-extrabold flex items-center justify-center">2</span>
+                  <span class="font-heading text-sm font-extrabold text-primary uppercase tracking-wide">Langkah 2 · Susunan Rombongan</span>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2">
+                <div class="flex flex-col gap-1" data-hotel-only>
+                  <span id="lbl-rooms" class="text-[11px] font-bold text-ink-muted font-heading">Unit (1–9)</span>
+                  <div class="stepper flex items-center h-11 rounded-xl bg-white border border-line" role="group" aria-labelledby="lbl-rooms">
+                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="rooms" data-dir="-1" aria-label="Kurangi kamar">−</button>
+                    <input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="rooms" data-dir="1" aria-label="Tambah kamar">+</button>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <span id="lbl-adults" class="text-[11px] font-bold text-ink-muted font-heading" data-adults-label>Dewasa</span>
+                  <div class="stepper flex items-center h-11 rounded-xl bg-white border border-line" role="group" aria-labelledby="lbl-adults">
+                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="adults" data-dir="-1" aria-label="Kurangi dewasa">−</button>
+                    <input id="adults" type="number" min="1" max="20" value="2" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="adults" data-dir="1" aria-label="Tambah dewasa">+</button>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <span id="lbl-children" class="text-[11px] font-bold text-ink-muted font-heading" data-children-label>Anak</span>
+                  <div class="stepper flex items-center h-11 rounded-xl bg-white border border-line" role="group" aria-labelledby="lbl-children">
+                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="children" data-dir="-1" aria-label="Kurangi anak">−</button>
+                    <input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="children" data-dir="1" aria-label="Tambah anak">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Live Headcount Helper Pill -->
+              <div class="px-3.5 py-2 rounded-xl bg-surface border border-line flex items-center justify-between text-xs">
+                <span class="font-semibold text-ink-muted">Total Anggota Rombongan:</span>
+                <span id="totalHeadcountBadge" class="font-heading font-extrabold text-primary">2 Orang (1 Unit)</span>
+              </div>
+            </div>
+
+            <!-- STEP 3 CARD: Verifikasi & Kalkulasi Live -->
+            <div class="lg:col-span-3 rounded-2xl bg-primary/5 p-5 border-2 border-primary/20 flex flex-col justify-between gap-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-7 h-7 rounded-full bg-primary text-white font-heading text-xs font-extrabold flex items-center justify-center">3</span>
+                <span class="font-heading text-sm font-extrabold text-primary uppercase tracking-wide">Langkah 3 · Cek Tarif Live</span>
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-success"></span>
+                  <p class="text-[12px] font-bold text-ink">Every price is checked live</p>
+                </div>
+                <p id="summary" class="font-mono text-[11px] text-ink-muted" aria-live="polite">Pilih tanggal untuk kalkulasi keluarga</p>
+              </div>
+              <button id="checkBtn" type="submit" class="w-full h-12 rounded-pill bg-secondary hover:bg-[#d47843] text-white font-heading text-sm font-extrabold transition shadow-soft flex items-center justify-center gap-2">
+                <span data-btn-label>Cek Tarif Live Keluarga</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <p id="dateRuleHint" class="mt-3 text-[12px] text-ink-muted">Maksimal durasi inap: 30 malam. Setiap kamar/vila yang dipesan mendapatkan alokasi fasilitas keluarga yang setara.</p>
+          <div id="formErrors" class="mt-2 text-[13px] text-danger font-semibold" role="alert" aria-live="assertive"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ 2-COLUMN WIDE FAMILY COMPARISON CARDS (PRESET 06 DNA) ============ -->
+    <section id="packages" class="max-w-container mx-auto px-4 sm:px-6 pt-20">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-5 border-b border-line">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-secondary font-heading">Perbandingan Fasilitas Keluarga</span>
+          <h2 id="sectionHeading" class="font-heading text-3xl sm:text-4xl font-extrabold text-primary mt-1">Pilihan Kamar Terhubung &amp; Vila Rombongan</h2>
+          <p id="resultsNote" class="text-[13px] text-ink-muted mt-1">Dilengkapi matriks kapasitas keluarga dan estimasi biaya per anggota rombongan.</p>
+        </div>
+
+        <!-- Filter Pills -->
+        <div id="filterBar" class="flex flex-wrap gap-2 items-center" role="group" aria-label="Filter Tipe Liburan">
+          <button type="button" data-filter="all" class="filter-btn h-9 px-4 rounded-pill text-[13px] font-bold bg-primary text-white shadow-xs transition">Semua Pilihan</button>
+          <button type="button" data-filter="connecting" class="filter-btn h-9 px-4 rounded-pill text-[13px] font-bold bg-surface border border-line text-ink-muted hover:text-ink transition">Connecting Rooms</button>
+          <button type="button" data-filter="beach" class="filter-btn h-9 px-4 rounded-pill text-[13px] font-bold bg-surface border border-line text-ink-muted hover:text-ink transition">Tepi Pantai &amp; Waterpark</button>
+          <button type="button" data-filter="multigen" class="filter-btn h-9 px-4 rounded-pill text-[13px] font-bold bg-surface border border-line text-ink-muted hover:text-ink transition">Ramah Lansia &amp; Kursi Roda</button>
+        </div>
+      </div>
+
+      <!-- 2-Column Wide Comparison Cards Grid -->
+      <div id="results" class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-7"></div>
+    </section>
+
+    <!-- ============ 3-STEP HORIZONTAL FAMILY JOURNEY TIMELINE (PRESET 06 DNA) ============ -->
+    <section id="whyUs" class="max-w-container mx-auto px-4 sm:px-6 pt-20">
+      <div class="bg-primary text-white rounded-3xl p-8 sm:p-12 border border-line shadow-soft">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-6 border-b border-white/15">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-tertiary font-heading">Alur Liburan Tanpa Repot</span>
+            <h2 class="font-heading text-3xl sm:text-4xl font-extrabold mt-1">3 Langkah Nyaman Bersama TemanTrip</h2>
+          </div>
+          <span class="px-3.5 py-1 rounded-pill bg-white/15 text-tertiary text-xs font-mono">Illustrative Sample Data</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+          <div class="bg-white/10 rounded-2xl p-6 border border-white/15 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 rounded-pill bg-secondary text-white font-heading text-xs font-extrabold">TAHAP 01</span>
+                <span class="text-tertiary font-mono text-xs">Kapasitas Pasti</span>
+              </div>
+              <h3 class="font-heading text-xl font-bold mb-2">Pilih Vila &amp; Connecting Room</h3>
+              <p class="text-xs text-canvas/85 leading-relaxed">Bandingkan konfigurasi tempat tidur, pagar pengaman kolam anak, dan kemudahan akses kursi roda sebelum memesan.</p>
+            </div>
+          </div>
+
+          <div class="bg-white/10 rounded-2xl p-6 border border-white/15 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 rounded-pill bg-tertiary text-primary font-heading text-xs font-extrabold">TAHAP 02</span>
+                <span class="text-tertiary font-mono text-xs">Satu Tagihan</span>
+              </div>
+              <h3 class="font-heading text-xl font-bold mb-2">Penyelesaian Tunggal SNAP BI</h3>
+              <p class="text-xs text-canvas/85 leading-relaxed">Pesan hingga 9 kamar sekaligus dalam satu invoice ritel resmi melalui gerbang pembayaran DOKU dan QRIS SNAP BI.</p>
+            </div>
+          </div>
+
+          <div class="bg-white/10 rounded-2xl p-6 border border-white/15 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 rounded-pill bg-accent text-white font-heading text-xs font-extrabold">TAHAP 03</span>
+                <span class="text-tertiary font-mono text-xs">Siap Disambut</span>
+              </div>
+              <h3 class="font-heading text-xl font-bold mb-2">Fasilitas Anak &amp; Lansia Siap</h3>
+              <p class="text-xs text-canvas/85 leading-relaxed">Begitu e-voucher terbit, permintaan baby crib, kursi makan bayi, dan kamar lantai dasar otomatis tercatat di penginapan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ SECTION ============ -->
+    <section id="faq" class="max-w-container mx-auto px-4 sm:px-6 pt-16 pb-20">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-10">
+          <span class="text-xs font-bold uppercase tracking-wider text-secondary font-heading">Seputar Pertanyaan Liburan</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-primary mt-1">FAQ Liburan Keluarga</h2>
+        </div>
+
+        <div class="space-y-3">
+          <details class="bg-surface rounded-2xl border border-line p-5">
+            <summary class="font-heading text-lg font-bold text-ink cursor-pointer flex justify-between items-center">
+              <span>Apakah kamar terhubung (connecting rooms) pasti didapatkan?</span>
+              <span class="faq-icon text-secondary text-xl font-bold transition-transform font-mono">+</span>
+            </summary>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Ya, untuk paket bertanda "Connecting Rooms", alokasi pintu penghubung langsung terkunci otomatis di sistem extranet hotel Ortasys saat pemesanan selesai dibayar.</p>
+          </details>
+
+          <details class="bg-surface rounded-2xl border border-line p-5">
+            <summary class="font-heading text-lg font-bold text-ink cursor-pointer flex justify-between items-center">
+              <span>Apakah tersedia fasilitas untuk orang tua lanjut usia?</span>
+              <span class="faq-icon text-secondary text-xl font-bold transition-transform font-mono">+</span>
+            </summary>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Semua properti berkategori "Ramah Multigenerasi" memiliki akses tanpa tangga berlebih, lift luas, kamar mandi dengan pegangan tangan (grab bars), dan staf concierge siap sedia.</p>
+          </details>
+
+          <details class="bg-surface rounded-2xl border border-line p-5">
+            <summary class="font-heading text-lg font-bold text-ink cursor-pointer flex justify-between items-center">
+              <span>Bagaimana jika membawa anak di bawah usia 5 tahun?</span>
+              <span class="faq-icon text-secondary text-xl font-bold transition-transform font-mono">+</span>
+            </summary>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Anak usia 0-5 tahun menginap gratis menggunakan tempat tidur yang ada. Jika memerlukan extra crib atau ranjang bayi, Anda dapat meminta fasilitas gratis melalui tim bantuan kami.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-surface border-t border-line py-12 text-xs text-ink-muted">
+    <div class="max-w-container mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-line">
+        <div>
+          <span class="font-heading text-2xl font-bold text-primary block">TemanTrip Holidays</span>
+          <p class="text-[12px] mt-0.5">Platform Liburan Keluarga &amp; Grup Terpercaya · Ditenagai Sistem Distribusi Ortasys S4.</p>
+        </div>
+        <div class="flex gap-6 font-semibold text-ink text-[13px]">
+          <a href="#packages" class="hover:text-primary">Vila Keluarga</a>
+          <a href="#whyUs" class="hover:text-primary">Multigenerasi</a>
+          <a href="#faq" class="hover:text-primary">Bantuan</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] gap-2">
+        <p>Transaksi dilindungi gerbang pembayaran resmi <strong class="text-ink">DOKU</strong> dan <strong class="text-ink">SNAP BI</strong>. Mockup data bersifat ilustratif [PRD 9.2].</p>
+        <p>© <span id="year"></span> TemanTrip Holidays. Hak Cipta Dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ TRIP DRAWER / BAG ============ -->
+  <div id="tripOverlay" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden" aria-hidden="true"></div>
+  <aside id="tripDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-[420px] bg-surface shadow-elevated translate-x-full transition-transform duration-300 flex flex-col border-l border-line" role="dialog" aria-modal="true" aria-labelledby="tripTitle" aria-hidden="true">
+    <div class="bg-primary text-white px-6 h-20 flex items-center justify-between border-b border-primary-hover">
+      <div>
+        <h2 id="tripTitle" class="font-heading text-2xl font-bold">Rencana Liburan Keluarga</h2>
+        <p class="text-xs text-tertiary">Build Your Trip — Paket Rombongan</p>
+      </div>
+      <button type="button" data-close-trip class="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white" aria-label="Tutup rencana liburan">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <div id="tripItems" class="flex-1 overflow-y-auto p-5 flex flex-col gap-3"></div>
+
+    <div class="bg-canvas p-6 border-t border-line">
+      <div class="space-y-1.5 text-[12px] font-mono text-ink-muted">
+        <div class="flex justify-between">
+          <span>Subtotal Rombongan:</span>
+          <span id="tripSubtotal" class="font-bold text-ink">Rp 0</span>
+        </div>
+        <div class="flex justify-between text-[11px]">
+          <span>Pajak &amp; Sarapan Prasmanan:</span>
+          <span class="text-success font-semibold">Termasuk (Net Ritel Final)</span>
+        </div>
+        <div class="flex items-baseline justify-between pt-2 border-t border-line/60 text-[14px]">
+          <span class="font-bold text-ink font-heading text-base">Total Pembayaran:</span>
+          <span id="tripTotal" class="text-2xl font-extrabold text-primary">Rp 0</span>
+        </div>
+      </div>
+
+      <button id="payBtn" type="button" class="mt-4 w-full py-3.5 bg-secondary hover:bg-[#d47843] text-white rounded-pill font-heading text-base font-bold transition shadow-soft disabled:opacity-40">
+        Lanjut ke Pembayaran (DOKU / SNAP)
+      </button>
+      <p id="payNote" class="mt-2 text-[11px] text-center text-ink-muted" aria-live="polite">Pembayaran terstandarisasi Bank Indonesia SNAP BI &amp; DOKU.</p>
+    </div>
+  </aside>
+
+  <!-- ============ DETAIL QUICK-VIEW MODAL ============ -->
+  <div id="detailModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="bg-surface rounded-2xl max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[90vh]">
+      <div class="relative aspect-[16/9] bg-surface-muted shrink-0">
+        <img id="modalImg" src="" alt="" class="w-full h-full object-cover">
+        <button type="button" data-close-modal class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface/90 flex items-center justify-center text-ink hover:bg-surface transition shadow-xs" aria-label="Tutup detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <span id="modalBadge" class="absolute bottom-3 left-3 px-3 py-1 rounded-pill bg-primary text-white text-[11px] font-heading font-bold shadow-xs"></span>
+      </div>
+      <div class="p-6 overflow-y-auto flex-1 flex flex-col gap-3">
+        <span id="modalArea" class="text-[11px] font-bold uppercase tracking-wider text-secondary font-heading"></span>
+        <h3 id="modalTitle" class="font-heading text-2xl font-extrabold text-primary leading-tight"></h3>
+        <p id="modalDesc" class="text-[13px] text-ink-muted leading-relaxed font-normal"></p>
+        <div class="pt-3 border-t border-line">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-heading mb-2">Fasilitas Keluarga &amp; Keamanan Anak:</h4>
+          <div id="modalAmenities" class="flex flex-wrap gap-1.5 text-[12px]"></div>
+        </div>
+        <div class="pt-3 border-t border-line">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-heading mb-1">Kebijakan Pemesanan &amp; Pembatalan:</h4>
+          <p id="modalPolicy" class="text-[12px] text-ink-muted"></p>
+        </div>
+      </div>
+      <div class="p-5 border-t border-line bg-canvas flex items-center justify-between gap-4 shrink-0">
+        <div>
+          <p class="text-[11px] text-ink-muted font-mono">Tarif Ritel Terverifikasi</p>
+          <p id="modalPrice" class="font-mono text-[20px] font-extrabold text-primary"></p>
+        </div>
+        <button id="modalSelectBtn" type="button" class="h-11 px-6 rounded-pill bg-secondary hover:bg-[#d47843] text-white font-heading text-sm font-bold transition shadow-xs">
+          Pilih Paket Ini
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CHECKOUT CONFIRMATION MODAL ============ -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="checkoutHeading">
+    <div class="bg-surface rounded-2xl max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[92vh]">
+      <div class="bg-primary text-white flex items-center justify-between px-6 py-4 border-b border-primary-hover">
+        <div>
+          <h3 id="checkoutHeading" class="font-heading text-2xl font-bold">Konfirmasi Pemesanan Rombongan</h3>
+          <p class="text-xs text-tertiary">Gateway Resmi DOKU &amp; SNAP BI Bank Indonesia</p>
+        </div>
+        <button type="button" data-close-checkout class="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white" aria-label="Tutup checkout">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+
+      <div id="checkoutFormContent" class="p-6 overflow-y-auto flex-1 flex flex-col gap-4">
+        <div class="p-4 rounded-xl bg-canvas border border-line text-[13px]">
+          <div class="flex justify-between font-bold text-ink font-heading text-sm">
+            <span>Ringkasan Item Liburan:</span>
+            <span id="coItemCount" class="font-mono">0 Item</span>
+          </div>
+          <div id="coItemList" class="mt-2 space-y-1 text-[12px] text-ink-muted"></div>
+          <div class="mt-3 pt-2 border-t border-line/60 flex justify-between font-mono font-bold text-ink text-[14px]">
+            <span>Total Pembayaran Final:</span>
+            <span id="coTotal" class="text-primary font-extrabold text-base">Rp 0</span>
+          </div>
+        </div>
+
+        <form id="coForm" class="flex flex-col gap-3">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-heading">Data Penanggung Jawab Rombongan</h4>
+          <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
+            Nama Lengkap Sesuai KTP
+            <input id="coName" type="text" required placeholder="Contoh: Hendra Gunawan" class="h-10 px-3 rounded-xl bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
+          </label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
+              Email Konfirmasi &amp; Voucher
+              <input id="coEmail" type="email" required placeholder="hendra@keluarga.com" class="h-10 px-3 rounded-xl bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
+            </label>
+            <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
+              No. WhatsApp Aktif
+              <input id="coPhone" type="tel" required placeholder="081234567890" class="h-10 px-3 rounded-xl bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
+            </label>
+          </div>
+
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-heading mt-2">Metode Pembayaran Resmi</h4>
+          <div class="space-y-2 text-[12px]">
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-white border border-line cursor-pointer hover:border-secondary">
+              <input type="radio" name="payMethod" value="qris" checked class="accent-secondary">
+              <div class="flex-1">
+                <span class="font-bold text-ink block font-heading text-sm">QRIS SNAP BI (Semua Bank &amp; E-Wallet)</span>
+                <span class="text-[11px] text-ink-muted block">BCA, Mandiri, BRI, BNI, GoPay, OVO, ShopeePay</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-white border border-line cursor-pointer hover:border-secondary">
+              <input type="radio" name="payMethod" value="va" class="accent-secondary">
+              <div class="flex-1">
+                <span class="font-bold text-ink block font-heading text-sm">DOKU Virtual Account Multi-Bank</span>
+                <span class="text-[11px] text-ink-muted block">BCA, Mandiri, BRI, BNI Virtual Account terkonfirmasi instan</span>
+              </div>
+            </label>
+          </div>
+
+          <button type="submit" id="coSubmitBtn" class="mt-3 w-full py-3.5 bg-secondary hover:bg-[#d47843] text-white rounded-pill font-heading text-base font-bold transition shadow-soft flex items-center justify-center gap-2">
+            <span>Bayar &amp; Dapatkan Voucher Keluarga</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Confirmation Success State -->
+      <div id="checkoutSuccessContent" class="hidden p-8 flex flex-col items-center text-center gap-4">
+        <div class="w-14 h-14 rounded-full bg-success/15 text-success flex items-center justify-center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <div>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-success font-heading">Pembayaran Sah Terkonfirmasi</span>
+          <h4 class="font-heading text-3xl font-extrabold text-primary mt-1">Voucher Rombongan Terbit</h4>
+          <p class="text-[13px] text-ink-muted mt-1">Kamar terhubung dan fasilitas ramah anak telah disiapkan oleh pihak penginapan.</p>
+        </div>
+        <div class="w-full p-4 rounded-xl bg-canvas border border-line text-left text-[12px] space-y-1.5 font-mono">
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Kode Booking:</span>
+            <span id="successRef" class="font-bold text-ink">TEMAN-2026-0001</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Nama Pemesan:</span>
+            <span id="successGuest" class="font-bold text-ink">-</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Total Dibayarkan:</span>
+            <span id="successAmount" class="font-bold text-primary font-bold">Rp 0</span>
+          </div>
+        </div>
+        <div class="w-full flex flex-col gap-2 pt-2">
+          <button type="button" id="btnDownloadVoucher" class="w-full py-3 rounded-pill bg-primary hover:bg-primary-hover text-white font-heading text-sm font-bold transition">
+            Unduh E-Voucher &amp; Checklist Keluarga (PDF)
+          </button>
+          <button type="button" data-finish-checkout class="w-full py-2.5 rounded-pill bg-surface-muted hover:bg-line text-ink font-heading text-sm font-semibold transition">
+            Selesai &amp; Kembali ke Beranda
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-primary text-white rounded-pill px-6 py-3 text-[13px] font-bold shadow-elevated" role="status" aria-live="polite"></div>
+
+  <script>
+  (() => {
+    'use strict';
+    /* Data Sampel Ilustratif Preset 06 (TemanTrip Holidays) */
+    const FAMILY_STAYS = [
+      {
+        id: 'ft-ubud-estate', name: 'Kayu Manis 3-Bedroom Family Estate', area: 'Ubud Valley · Bali', filter: 'connecting',
+        keys: 'bali ubud family villa connecting pool anak', img: '../../assets/bagus_travel/ubud.jpg', alt: 'Vila keluarga asri di Ubud',
+        stars: 5, room: '3-Bedroom Connecting Pool Villa', meal: 'Termasuk Sarapan Prasmanan Ramah Anak', policy: 'Bebas pembatalan hingga H-7 tanpa penalti.',
+        desc: 'Vila privat luas dengan kamar tidur utama dan kamar anak berpintu penghubung langsung (connecting door). Dilengkapi kolam renang berpagar pengaman, dapur lengkap untuk MPASI, dan pengasuh anak bersertifikat.',
+        amenities: ['Connecting Room Dijamin', 'Pagar Pengaman Kolam Renang', 'Baby Crib & High Chair Gratis', 'Dapur MPASI Lengkap', 'Stroller-Friendly Path', 'Layanan Pengasuh Bersertifikat'],
+        nightly: 3850000
+      },
+      {
+        id: 'ft-mandalika-resort', name: 'Mandalika Palm Bay Beach Resort', area: 'Kuta Mandalika · Lombok', filter: 'beach',
+        keys: 'lombok mandalika pantai resort kids club waterpark', img: '../../assets/mandalika_escape/palm-bay.jpg', alt: 'Resor tepi pantai berpasir putih',
+        stars: 5, room: 'Family Deluxe Lagoon Suite', meal: 'Termasuk Sarapan Prasmanan & Akses Waterpark', policy: 'Bebas pembatalan hingga H-5 kedatangan.',
+        desc: 'Resor tepi pantai bintang lima dengan waterpark anak mini, kolam laguna landai berpasir, dan kids club harian berfasilitas edukasi. Sangat aman untuk balita bermain ombak tenang teluk selatan.',
+        amenities: ['Kids Club & Mini Waterpark', 'Akses Pantai Landai Aman Balita', 'Kolam Renang Penjaga Berlisensi', 'Menu Prasmanan Khusus Anak', 'Klinik Dokter 24 Jam'],
+        nightly: 2950000
+      },
+      {
+        id: 'ft-nusadua-grand', name: 'Nusa Dua Multigenerational Grand Villa', area: 'Nusa Dua Enclave · Bali', filter: 'multigen',
+        keys: 'nusa dua bali villa lansia kursi roda multigenerasi', img: '../../assets/nusantara_executive/nusa-dua-beach.jpg', alt: 'Kompleks vila megah Nusa Dua',
+        stars: 5, room: '4-Bedroom Multigenerational Villa', meal: 'Sarapan Prasmanan & Afternoon Tea Keluarga', policy: 'Bebas pembatalan hingga H-10 tanpa biaya.',
+        desc: 'Dirancang khusus untuk rombongan 3 generasi (kakek-nenek, orang tua, dan anak-anak). Seluruh lantai dasar bebas undakan tangga, kamar mandi dengan grab bar lansia, dan layanan antar jemput buggy golf.',
+        amenities: ['Akses Bebas Tangga & Ramah Kursi Roda', 'Kamar Mandi Safety Grab Bar', 'Buggy Shuttle Antar-Vila', 'Chef Privat di Dalam Vila', 'WiFi Cepat Streaming Kartun'],
+        nightly: 4650000
+      },
+      {
+        id: 'ft-toba-cottage', name: 'Danau Toba Lakeside Family Residence', area: 'Pulau Samosir · Sumatera Utara', filter: 'multigen',
+        keys: 'toba samosir danau keluarga cottage rombongan', img: '../../assets/serenity_umrah_privilege/toba.jpg', alt: 'Pondok kayu tepi Danau Toba',
+        stars: 4, room: '4-Bedroom Lakeside Wooden House', meal: 'Sarapan Hangat Tradisional Batak', policy: 'Bebas pembatalan hingga H-4 kedatangan.',
+        desc: 'Rumah kayu tradisional berkapasitas 8-12 orang tepat di tepi Danau Toba. Halaman rumput luas untuk anak-anak berlari, perahu kayu keluarga untuk keliling danau, dan udara sejuk pegunungan.',
+        amenities: ['Dermaga Perahu Kayu Privat', 'Halaman Rumput Luas & Barbeque', 'Dapur Keluarga Bersama', 'Pemandangan 360 Danau Toba'],
+        nightly: 2400000
+      }
+    ];
+
+    const FAMILY_ACTIVITIES = [
+      {
+        id: 'ft-bali-safari', kind: 'tour', name: 'Safari Satwa Edukatif & Snorkeling Penyu', area: 'Tanjung Benoa & Bali Safari', filter: 'beach',
+        keys: 'bali safari satwa anak penyu snorkeling edukasi', img: '../../assets/bagus_travel/tanah-lot.jpg', alt: 'Kegiatan edukasi satwa tepi laut',
+        duration: 'Seharian Penuh (09:00 - 17:00)',
+        desc: 'Tur ramah anak mencakup observasi satwa di safari konservasi, penangkaran tukik penyu, dan snorkeling perairan dangkal dipandu pemandu sabar bersertifikat keselamatan anak.',
+        amenities: ['Life Jacket Khusus Anak & Balita', 'Pemandu Edukasi Ramah Anak', 'Makan Siang Buffet Keluarga', 'Kendaraan Ber-AC Nyaman & Car Seat'],
+        policy: 'Bebas penyesuaian jadwal bila anak kurang fit.',
+        perPerson: 750000
+      },
+      {
+        id: 'ft-jogja-heritage', kind: 'tour', name: 'Tur Kereta Kencana Keraton & Kelas Membatik Cilik', area: 'Kraton & Kotagede · Yogyakarta', filter: 'multigen',
+        keys: 'jogja kraton kereta kencana membatik anak keluarga', img: '../../assets/serenity_umrah_privilege/kraton.jpg', alt: 'Keraton dan kereta tradisional',
+        duration: '4 Jam Wisata Edukasi Santai',
+        desc: 'Menaiki kereta kencana keliling kawasan nDalem Keraton, dilanjutkan kelas membatik kain taplak meja bersama maestro batik Kotagede yang menyenangkan untuk balita hingga lansia.',
+        amenities: ['Kereta Kencana Eksklusif Keluarga', 'Alat Batik Canting Aman Anak', 'Hasil Batik Menjadi Souvenir', 'Kudapan Manis & Minuman Kelapa'],
+        policy: 'Bebas pembatalan hingga 24 jam sebelum tur.',
+        perPerson: 425000
+      },
+      {
+        id: 'ft-lombok-gili', kind: 'tour', name: 'Pelayaran Perahu Kaca Tiga Gili Khusus Keluarga', area: 'Gili Air & Meno · Lombok', filter: 'beach',
+        keys: 'lombok gili perahu kaca glass bottom boat anak balita', img: '../../assets/mandalika_escape/gili-boat.jpg', alt: 'Perahu kaca di laut tenang',
+        duration: '5 Jam Wisata Bawah Laut Tanpa Basah',
+        desc: 'Melihat terumbu karang dan penyu berenang langsung dari dasar kaca perahu (glass bottom boat) tanpa perlu berenang, sangat ideal untuk anak kecil dan kakek-nenek.',
+        amenities: ['Glass Bottom Boat Khusus', 'Kapten & Kru Terlatih Penyelamat', 'Makan Siang Tepi Pantai Gili Air', 'Dokumentasi Foto Keluarga'],
+        policy: 'Dapat dijadwalkan ulang bila cuaca laut berangin.',
+        perPerson: 550000
+      }
+    ];
+
+    const LIMITS = { rooms: [1, 9], adults: [1, 20], children: [0, 20] };
+    const MAX_NIGHTS = 30;
+    const idr = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const DAY = 86400000;
+    const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    const addDays = (s, n) => iso(new Date(new Date(s + 'T00:00:00').getTime() + n * DAY));
+    const today = iso(new Date());
+
+    const state = { mode: 'hotels', filter: 'all', priced: false, checking: false, checkedAt: null, trip: [] };
+    const el = {
+      form: $('#searchForm'), dest: $('#dest'), checkIn: $('#checkIn'), checkOut: $('#checkOut'),
+      rooms: $('#rooms'), adults: $('#adults'), children: $('#qChildren'), errors: $('#formErrors'), summary: $('#summary'),
+      btn: $('#checkBtn'), results: $('#results')
+    };
+
+    const clamp = (v, [lo, hi]) => Math.min(hi, Math.max(lo, Number.isFinite(v) ? v : lo));
+    const num = k => clamp(parseInt(el[k].value, 10), LIMITS[k]);
+    const nights = () => {
+      if (!el.checkIn.value || !el.checkOut.value) return 0;
+      return Math.round((new Date(el.checkOut.value) - new Date(el.checkIn.value)) / DAY);
+    };
+
+    function validate() {
+      const errs = [];
+      if (!el.checkIn.value) {
+        errs.push('Silakan tentukan tanggal mulai liburan.');
+      } else if (el.checkIn.value < today) {
+        errs.push('Tanggal check-in tidak boleh sebelum hari ini.');
+      }
+
+      if (state.mode === 'hotels') {
+        if (!el.checkOut.value) errs.push('Silakan tentukan tanggal selesai (check-out).');
+        else {
+          const n = nights();
+          if (n < 1) errs.push('Tanggal selesai harus minimal 1 malam setelah check-in.');
+          if (n > MAX_NIGHTS) errs.push(`Batas inap maksimal adalah ${MAX_NIGHTS} malam.`);
+        }
+      }
+      return errs;
+    }
+
+    const roomRate = s => Math.round(s.nightly * (1 + 0.12 * Math.max(0, num('adults') - 2) + 0.05 * num('children')) / 1000) * 1000;
+    const stayTotal = s => roomRate(s) * Math.max(1, nights()) * num('rooms');
+    const actTotal = a => (a.perPerson * num('adults') + Math.round(a.perPerson * 0.6) * num('children')) * num('rooms');
+
+    function summaryText() {
+      const r = num('rooms'), a = num('adults'), c = num('children');
+      const totalPeople = (a + c) * r;
+      const badge = $('#totalHeadcountBadge');
+      if (badge) badge.textContent = `${totalPeople} Orang (${r} Unit)`;
+      const g = `${a} Dws${c ? ` + ${c} Anak` : ''}`;
+      if (state.mode === 'hotels') {
+        const n = nights();
+        if (!n || n < 1) return 'Pilih tanggal untuk kalkulasi harga keluarga';
+        return `${n} Malam × ${r} Unit (${totalPeople} anggota rombongan)`;
+      }
+      return el.checkIn.value ? `${el.checkIn.value} · ${totalPeople} Peserta Total` : 'Pilih tanggal aktivitas keluarga';
+    }
+
+    function renderMode() {
+      $$('.mode-tab').forEach(t => {
+        const on = t.dataset.mode === state.mode;
+        t.setAttribute('aria-selected', on);
+        t.className = `mode-tab h-9 px-5 rounded-pill font-heading text-sm font-bold transition ${on ? 'bg-primary text-white' : 'text-ink-muted hover:text-ink'}`;
+      });
+      const hotels = state.mode === 'hotels';
+      $$('[data-hotel-only]').forEach(n => n.classList.toggle('hidden', !hotels));
+      
+      $('#sectionHeading').textContent = hotels ? 'Pilihan Kamar Terhubung & Vila Rombongan' : 'Tur Privat Edukatif Khusus Rombongan';
+      $('[data-dest-label]').textContent = hotels ? 'Langkah 1 · Pilih Destinasi & Tanggal' : 'Langkah 1 · Pilih Tur & Tanggal';
+      el.dest.placeholder = hotels ? 'Bali Ubud, Nusa Dua, Lombok, Danau Toba…' : 'Safari Bali, Kereta Keraton, Tiga Gili…';
+
+      const datalistItems = hotels ? FAMILY_STAYS.map(s => s.name) : FAMILY_ACTIVITIES.map(e => e.name);
+      $('#destList').innerHTML = ['Bali Ubud Valley', 'Nusa Dua Bali', 'Kuta Mandalika Lombok', 'Danau Toba Samosir', ...datalistItems]
+        .map(v => `<option value="${v}">`).join('');
+    }
+
+    function renderResults() {
+      const isHotels = state.mode === 'hotels';
+      const q = el.dest.value.trim().toLowerCase();
+      let list = (isHotels ? FAMILY_STAYS : FAMILY_ACTIVITIES).filter(it => {
+        const matchQ = !q || (it.name + ' ' + it.area + ' ' + it.keys).toLowerCase().includes(q);
+        const matchFilter = state.filter === 'all' || it.filter === state.filter;
+        return matchQ && matchFilter;
+      });
+      if (!list.length && state.filter === 'all') list = isHotels ? FAMILY_STAYS : FAMILY_ACTIVITIES;
+
+      if (!list.length) {
+        el.results.innerHTML = `
+          <div class="col-span-full py-12 text-center text-ink-muted bg-surface rounded-3xl border border-line">
+            <p class="font-heading text-2xl font-bold text-primary">Tidak ada paket keluarga yang cocok dengan filter "${state.filter}"</p>
+            <button type="button" data-reset-filter class="mt-3 px-5 py-2.5 rounded-pill bg-secondary text-white font-heading text-sm font-bold">Tampilkan Semua Pilihan</button>
+          </div>`;
+        return;
+      }
+
+      const totalPeople = Math.max(1, (num('adults') + num('children')) * num('rooms'));
+
+      el.results.innerHTML = list.map(it => {
+        const total = isHotels ? stayTotal(it) : actTotal(it);
+        const perPersonEst = Math.round(total / totalPeople);
+        const sub = isHotels ? `${idr.format(roomRate(it))} / malam / unit` : `${idr.format(it.perPerson)} / peserta`;
+        const priceHTML = state.checking
+          ? `<div class="h-10 w-36 bg-surface-muted animate-pulse rounded-xl"></div>`
+          : state.priced
+            ? `<div>
+                <p class="tnum font-mono text-[22px] font-extrabold text-primary">${idr.format(total)}</p>
+                <p class="tnum font-mono text-[11px] text-ink-muted">${sub} · <strong class="text-secondary">~${idr.format(perPersonEst)}/org</strong></p>
+              </div>`
+            : `<div>
+                <p class="text-[13px] text-ink-muted italic font-medium">Klik Cek Tarif Live untuk total rombongan</p>
+                <p class="text-[11px] text-ink-muted font-mono">Tarif dasar mulai ${idr.format(isHotels ? it.nightly : it.perPerson)}</p>
+              </div>`;
+
+        return `
+        <article class="bg-surface rounded-3xl border-2 border-line hover:border-secondary/60 overflow-hidden shadow-soft flex flex-col justify-between transition duration-200 group">
+          <div>
+            <!-- Top Image & Family Badges -->
+            <div class="relative aspect-[16/9] bg-surface-muted overflow-hidden">
+              <img src="${it.img}" alt="${it.alt}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              <div class="absolute top-3.5 left-3.5 flex flex-wrap gap-1.5">
+                <span class="bg-primary text-white text-xs font-heading font-bold px-3.5 py-1 rounded-pill shadow-xs">
+                  ${isHotels ? `${'★'.repeat(it.stars)} Family Verified` : 'Tur Rombongan Privat'}
+                </span>
+                <span class="bg-surface/95 text-ink text-xs font-heading font-bold px-3 py-1 rounded-pill shadow-xs">
+                  ${it.filter === 'connecting' ? 'Connecting Door' : it.filter === 'beach' ? 'Kids Waterpark / Pantai' : 'Ramah Lansia & Stroller'}
+                </span>
+              </div>
+              <span class="absolute bottom-3 right-3 bg-secondary text-white text-[11px] font-bold px-3 py-1 rounded-pill font-mono shadow-xs">
+                Live Allotment
+              </span>
+            </div>
+
+            <!-- Card Body & Family Comfort Matrix -->
+            <div class="p-6 sm:p-7">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-secondary font-heading">${it.area}</span>
+                <button type="button" data-detail="${it.id}" class="text-[12px] font-bold text-primary hover:text-secondary underline font-heading">
+                  Lihat Rincian &amp; Foto →
+                </button>
+              </div>
+              <h3 class="font-heading text-2xl font-extrabold text-ink leading-snug mt-1 cursor-pointer hover:text-primary transition-colors" data-detail="${it.id}">${it.name}</h3>
+              <p class="text-[13px] text-ink-muted mt-1.5 leading-relaxed line-clamp-2">${it.desc}</p>
+
+              <!-- Matriks Kenyamanan Keluarga Box -->
+              <div class="mt-4 p-3.5 rounded-2xl bg-canvas border border-line grid grid-cols-2 gap-2.5 text-[12px]">
+                <div>
+                  <span class="text-[10px] font-bold uppercase text-ink-muted block">Tipe Unit / Durasi</span>
+                  <span class="font-semibold text-ink">${isHotels ? it.room : it.duration}</span>
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold uppercase text-ink-muted block">Konsumsi &amp; Layanan</span>
+                  <span class="font-semibold text-success">${isHotels ? it.meal : 'Termasuk Makan & Pemandu'}</span>
+                </div>
+              </div>
+
+              <!-- Kid/Senior Amenity Chips -->
+              <div class="flex flex-wrap gap-1.5 mt-3.5">
+                ${(it.amenities || []).slice(0, 3).map(a => `<span class="px-3 py-1 rounded-pill bg-surface-muted text-ink text-[11px] font-semibold">${a}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+
+          <div class="px-6 sm:px-7 py-4 bg-canvas/70 border-t border-line flex items-center justify-between gap-4">
+            ${priceHTML}
+            <button type="button" data-select="${it.id}" class="h-11 px-6 rounded-pill ${state.priced ? 'bg-secondary hover:bg-[#d47843] text-white' : 'bg-primary hover:bg-primary-hover text-white'} font-heading text-xs font-extrabold transition shadow-xs shrink-0">
+              ${state.priced ? '+ Masukkan Rencana' : 'Cek &amp; Pilih'}
+            </button>
+          </div>
+        </article>`;
+      }).join('');
+    }
+
+    function syncBounds() {
+      el.checkIn.min = today;
+      if (el.checkIn.value) {
+        el.checkOut.min = addDays(el.checkIn.value, 1);
+        el.checkOut.max = addDays(el.checkIn.value, MAX_NIGHTS);
+      } else {
+        el.checkOut.min = addDays(today, 1);
+        el.checkOut.removeAttribute('max');
+      }
+    }
+
+    function invalidate() {
+      state.priced = false; el.errors.textContent = '';
+      el.summary.textContent = summaryText();
+      renderResults();
+    }
+
+    $$('.mode-tab').forEach(t => t.addEventListener('click', () => { state.mode = t.dataset.mode; renderMode(); invalidate(); }));
+    $$('[data-step]').forEach(b => b.addEventListener('click', () => {
+      const k = b.dataset.step; el[k].value = clamp(num(k) + Number(b.dataset.dir), LIMITS[k]); invalidate();
+    }));
+    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('change', () => { el[k].value = num(k); invalidate(); }));
+    el.checkIn.addEventListener('change', () => {
+      syncBounds();
+      if (el.checkIn.value && (!el.checkOut.value || el.checkOut.value <= el.checkIn.value)) el.checkOut.value = addDays(el.checkIn.value, 2);
+      invalidate();
+    });
+    el.checkOut.addEventListener('change', invalidate);
+    el.dest.addEventListener('input', renderResults);
+
+    // Filter Buttons
+    $$('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        state.filter = btn.dataset.filter;
+        $$('.filter-btn').forEach(b => {
+          const active = b === btn;
+          b.className = `filter-btn h-9 px-4 rounded-pill text-[13px] font-bold transition ${active ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`;
+        });
+        renderResults();
+      });
+    });
+
+    el.form.addEventListener('submit', e => {
+      e.preventDefault();
+      const errs = validate();
+      el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
+      if (errs.length) return;
+
+      state.checking = true; el.btn.disabled = true;
+      el.btn.querySelector('[data-btn-label]').textContent = 'Memeriksa Ketersediaan Multi-Kamar…';
+      renderResults();
+
+      setTimeout(() => {
+        state.checking = false; state.priced = true; state.checkedAt = new Date();
+        el.btn.disabled = false; el.btn.querySelector('[data-btn-label]').textContent = 'Cek Tarif Live Keluarga';
+        el.summary.textContent = `Live Terverifikasi: ${summaryText()}`;
+        renderResults();
+        document.getElementById('packages').scrollIntoView({ behavior: 'smooth' });
+      }, 650);
+    });
+
+    document.addEventListener('click', e => {
+      const sel = e.target.closest('[data-select]'); if (sel) return selectItem(sel.dataset.select);
+      const det = e.target.closest('[data-detail]'); if (det) return openDetail(det.dataset.detail);
+      const rm = e.target.closest('[data-remove]'); if (rm) { state.trip.splice(Number(rm.dataset.remove), 1); renderTrip(); }
+      const rst = e.target.closest('[data-reset-filter]'); if (rst) {
+        state.filter = 'all';
+        $$('.filter-btn').forEach((b, i) => b.className = `filter-btn h-9 px-4 rounded-pill text-[13px] font-bold transition ${i === 0 ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`);
+        renderResults();
+      }
+    });
+
+    function selectItem(id) {
+      if (!state.priced) {
+        toast('Memverifikasi tarif ketersediaan kamar keluarga...');
+        const errs = validate();
+        if (errs.length) {
+          document.getElementById('searchSection').scrollIntoView({ behavior: 'smooth' });
+          el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
+          return;
+        }
+        state.priced = true;
+        renderResults();
+      }
+      const isHotel = id.startsWith('ft-ubud-estate') || id.startsWith('ft-mandalika-resort') || id.startsWith('ft-nusadua-grand') || id.startsWith('ft-toba-cottage');
+      const it = (isHotels => isHotels ? FAMILY_STAYS : FAMILY_ACTIVITIES)(isHotel).find(x => x.id === id);
+      const total = isHotel ? stayTotal(it) : actTotal(it);
+      state.trip.push({ id: it.id, name: it.name, area: it.area, detail: summaryText(), total });
+      renderTrip();
+      toast(`Ditambahkan ke rencana liburan: ${it.name}`);
+      closeDetail();
+    }
+
+    function renderTrip() {
+      $$('[data-trip-count]').forEach(n => n.textContent = state.trip.length);
+      const box = $('#tripItems');
+      box.innerHTML = state.trip.length ? state.trip.map((t, i) => `
+        <div class="p-3.5 rounded-xl bg-canvas border border-line flex flex-col gap-1">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <p class="font-heading font-bold text-primary text-[15px] leading-snug">${t.name}</p>
+              <p class="text-[11px] text-ink-muted">${t.area} · ${t.detail}</p>
+            </div>
+            <button type="button" data-remove="${i}" class="text-[11px] font-bold text-danger hover:underline">Hapus</button>
+          </div>
+          <p class="tnum font-mono text-[14px] font-bold text-primary mt-1">${idr.format(t.total)}</p>
+        </div>`).join('')
+        : `<p class="py-12 text-center text-[13px] text-ink-muted font-medium">Rencana liburan keluarga Anda masih kosong.<br>Cek tarif live dan pilih vila atau tur.</p>`;
+      
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      $('#tripSubtotal').textContent = idr.format(totalVal);
+      $('#tripTotal').textContent = idr.format(totalVal);
+      $('#payBtn').disabled = !state.trip.length;
+    }
+
+    // Detail Quick-View Modal
+    const detailModal = $('#detailModal');
+    let currentDetailItem = null;
+    function openDetail(id) {
+      const isHotel = id.startsWith('ft-ubud-estate') || id.startsWith('ft-mandalika-resort') || id.startsWith('ft-nusadua-grand') || id.startsWith('ft-toba-cottage');
+      const it = (isHotels => isHotels ? FAMILY_STAYS : FAMILY_ACTIVITIES)(isHotel).find(x => x.id === id);
+      if (!it) return;
+      currentDetailItem = it;
+
+      $('#modalImg').src = it.img;
+      $('#modalImg').alt = it.alt;
+      $('#modalBadge').textContent = isHotel ? `Peringkat Bintang ${'★'.repeat(it.stars)}` : it.duration;
+      $('#modalArea').textContent = it.area;
+      $('#modalTitle').textContent = it.name;
+      $('#modalDesc').textContent = it.desc;
+      $('#modalAmenities').innerHTML = (it.amenities || []).map(a => `<span class="px-2.5 py-1 rounded-pill bg-surface-muted text-ink font-semibold text-[11px]">${a}</span>`).join('');
+      $('#modalPolicy').textContent = it.policy;
+
+      const total = isHotel ? stayTotal(it) : actTotal(it);
+      $('#modalPrice').textContent = state.priced ? idr.format(total) : `Mulai ${idr.format(isHotel ? it.nightly : it.perPerson)}`;
+      detailModal.classList.remove('hidden');
+    }
+    function closeDetail() {
+      detailModal.classList.add('hidden');
+      currentDetailItem = null;
+    }
+    $('[data-close-modal]').addEventListener('click', closeDetail);
+    detailModal.addEventListener('click', e => { if (e.target === detailModal) closeDetail(); });
+    $('#modalSelectBtn').addEventListener('click', () => {
+      if (currentDetailItem) selectItem(currentDetailItem.id);
+    });
+
+    // Checkout Modal
+    const checkoutModal = $('#checkoutModal');
+    function openCheckout() {
+      if (!state.trip.length) return;
+      closeTrip();
+      $('#coItemCount').textContent = `${state.trip.length} Paket Terpilih`;
+      $('#coItemList').innerHTML = state.trip.map(t => `<div class="flex justify-between font-heading text-sm"><span>• ${t.name}</span><span class="font-mono font-bold">${idr.format(t.total)}</span></div>`).join('');
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      $('#coTotal').textContent = idr.format(totalVal);
+      $('#checkoutFormContent').classList.remove('hidden');
+      $('#checkoutSuccessContent').classList.add('hidden');
+      checkoutModal.classList.remove('hidden');
+    }
+    function closeCheckout() {
+      checkoutModal.classList.add('hidden');
+    }
+    $('[data-close-checkout]').addEventListener('click', closeCheckout);
+    checkoutModal.addEventListener('click', e => { if (e.target === checkoutModal) closeCheckout(); });
+    $('[data-finish-checkout]').addEventListener('click', () => {
+      closeCheckout();
+      state.trip = [];
+      renderTrip();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    $('#btnDownloadVoucher').addEventListener('click', () => {
+      toast('E-Voucher & Checklist Keluarga sedang diunduh (Simulasi PDF)...');
+    });
+
+    $('#coForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const guestName = $('#coName').value.trim();
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      const randomRef = 'TEMAN-2026-' + Math.floor(1000 + Math.random() * 9000);
+
+      $('#successRef').textContent = randomRef;
+      $('#successGuest').textContent = guestName;
+      $('#successAmount').textContent = idr.format(totalVal);
+
+      $('#checkoutFormContent').classList.add('hidden');
+      $('#checkoutSuccessContent').classList.remove('hidden');
+    });
+
+    // Drawer Navigation
+    const drawer = $('#tripDrawer'), overlay = $('#tripOverlay');
+    function openTrip() { overlay.classList.remove('hidden'); drawer.classList.remove('translate-x-full'); drawer.setAttribute('aria-hidden', 'false'); }
+    function closeTrip() { overlay.classList.add('hidden'); drawer.classList.add('translate-x-full'); drawer.setAttribute('aria-hidden', 'true'); }
+    $$('[data-open-trip]').forEach(b => b.addEventListener('click', openTrip));
+    $('[data-close-trip]').addEventListener('click', closeTrip);
+    overlay.addEventListener('click', closeTrip);
+
+    $('#payBtn').addEventListener('click', openCheckout);
+
+    let toastTimer;
+    function toast(msg) {
+      const t = $('#toast'); t.textContent = msg; t.classList.remove('hidden');
+      clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.add('hidden'), 2500);
+    }
+
+    $('#menuBtn').addEventListener('click', () => {
+      const open = $('#mobileNav').classList.toggle('hidden') === false;
+      $('#menuBtn').setAttribute('aria-expanded', open);
+    });
+    $('#year').textContent = new Date().getFullYear();
+
+    syncBounds(); renderMode(); invalidate(); renderTrip();
+  })();
+  </script>
+</body>
+</html>

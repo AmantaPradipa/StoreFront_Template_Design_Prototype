@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MetroLink Travel · Hotel Bisnis, Transit &amp; Pusat Kota</title>
+  <meta name="description" content="MetroLink Travel — Spesialis akomodasi bisnis, transit cepat, dan fasilitas MICE di pusat kota &amp; hub metropolitan Indonesia. Ditenagai oleh Ortasys S4.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* Ortasys Storefront Preset 08 · Urban & Business Travel (08-urban-business/DESIGN.md) */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#23364D', hover: '#17283B' },
+            secondary: '#3D78A8',
+            tertiary: '#B7C7D5',
+            accent: '#C28A4B',
+            canvas: '#F3F5F7',
+            surface: { DEFAULT: '#FFFFFF', muted: '#E7ECF0' },
+            ink: { DEFAULT: '#202B36', muted: '#65717D' },
+            line: '#D5DDE4',
+            success: '#28734E',
+            warning: '#A66B25',
+            danger: '#B54545'
+          },
+          fontFamily: {
+            display: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            mono: ['ui-monospace', 'monospace']
+          },
+          borderRadius: {
+            xs: '4px',
+            sm: '6px',
+            md: '10px',
+            lg: '16px',
+            xl: '22px',
+            pill: '9999px'
+          },
+          boxShadow: {
+            soft: '0 4px 16px -2px rgba(35, 54, 77, 0.08)',
+            elevated: '0 12px 32px -4px rgba(35, 54, 77, 0.14)'
+          },
+          maxWidth: { container: '1240px' }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #F3F5F7; color: #202B36; }
+    .font-display { font-family: 'IBM Plex Sans', system-ui, sans-serif; }
+    .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on; }
+    .stepper input::-webkit-outer-spin-button,
+    .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .stepper input { -moz-appearance: textfield; }
+    :focus-visible { outline: 2px solid #3D78A8; outline-offset: 2px; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+  </style>
+</head>
+<body class="bg-canvas text-ink antialiased">
+
+  <a href="#searchSection" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-xs">Skip to search</a>
+
+  <!-- Illustrative Sample Banner -->
+  <aside class="bg-primary text-tertiary px-4 py-1.5 text-xs font-semibold flex justify-between items-center border-b border-black/20 z-50">
+    <div class="max-w-container mx-auto w-full flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="inline-block w-2.5 h-2.5 rounded-xs bg-secondary"></span>
+        <span class="font-display tracking-wide text-xs font-bold uppercase">PRESET 08 // URBAN &amp; BUSINESS TRAVEL</span>
+        <span class="hidden sm:inline text-white/60 text-[11px]">— Illustrative Sample Data</span>
+      </div>
+      <div class="text-[11px] text-white/80 font-mono">Ortasys S4 Corporate Engine</div>
+    </div>
+  </aside>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-line shadow-xs">
+    <div class="max-w-container mx-auto px-4 sm:px-6 h-18 flex items-center justify-between gap-4">
+      <a href="#home" class="flex items-center gap-3 shrink-0 group">
+        <div class="w-10 h-10 rounded-xs bg-primary flex items-center justify-center text-white shadow-xs transition-transform group-hover:scale-105">
+          <svg class="w-5 h-5 text-tertiary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+        </div>
+        <div>
+          <span class="font-display text-2xl font-bold tracking-tight text-primary block leading-none">MetroLink</span>
+          <span class="text-[10px] font-bold text-secondary tracking-widest uppercase block mt-1">Urban &amp; Business Travel</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-[13px] font-semibold text-ink" aria-label="Main Navigation">
+        <a href="#searchSection" class="hover:text-secondary transition-colors">Cari Akomodasi</a>
+        <a href="#hotels" class="hover:text-secondary transition-colors">Hotel CBD &amp; Transit</a>
+        <a href="#capabilities" class="hover:text-secondary transition-colors">Standar Korporat</a>
+        <a href="#faq" class="hover:text-secondary transition-colors">FAQ Penagihan &amp; Faktur</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button type="button" data-open-trip class="flex items-center gap-2 bg-surface-muted hover:bg-line text-primary px-3.5 py-2 rounded-xs text-xs font-bold transition">
+          <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+          <span class="font-display tracking-wide uppercase">Booking Bag</span>
+          <span data-trip-count class="w-5 h-5 rounded-xs bg-primary text-white text-xs flex items-center justify-center font-bold font-mono">0</span>
+        </button>
+
+        <button id="menuBtn" type="button" class="md:hidden w-10 h-10 rounded-xs flex items-center justify-center text-ink hover:bg-surface-muted" aria-label="Buka menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobileNav" class="md:hidden hidden border-t border-line bg-surface px-4 py-4 flex flex-col gap-2 font-semibold text-[14px]">
+      <a href="#searchSection" class="py-2 text-ink hover:text-secondary">Cari Akomodasi</a>
+      <a href="#hotels" class="py-2 text-ink hover:text-secondary">Hotel CBD &amp; Transit</a>
+      <a href="#capabilities" class="py-2 text-ink hover:text-secondary">Standar Korporat</a>
+      <a href="#faq" class="py-2 text-ink hover:text-secondary">FAQ Penagihan &amp; Faktur</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <!-- ============ COMPACT EXECUTIVE KPI STRIP HERO (PRESET 08 DNA) ============ -->
+    <section class="bg-primary text-white py-8 border-b border-line">
+      <div class="max-w-container mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-12 gap-6 items-center">
+          <!-- Left 7-Col Executive Header -->
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 bg-white/10 px-2.5 py-1 rounded-xs mb-2.5 border border-white/15">
+              <span class="w-2 h-2 rounded-xs bg-accent"></span>
+              <span class="text-[11px] font-mono font-bold text-tertiary uppercase tracking-wider">METROLINK CORPORATE TERMINAL // S4</span>
+            </div>
+            <h1 class="font-display text-3xl sm:text-4xl font-bold leading-tight tracking-tight">
+              Efisiensi Reservasi Bisnis &amp; Transit Metropolitan.
+            </h1>
+            <p class="text-[14px] text-canvas/80 mt-2 max-w-2xl leading-relaxed">
+              Direktori hotel CBD terkoneksi MRT, konvensi MICE Senayan &amp; Nusa Dua, serta penerbitan faktur pajak PPN resmi via SNAP BI &amp; DOKU.
+            </p>
+          </div>
+
+          <!-- Right 5-Col SLA Metrics Strip -->
+          <div class="lg:col-span-5 grid grid-cols-3 gap-2.5 font-mono text-[11px]">
+            <div class="bg-white/5 border border-white/15 p-3 rounded-xs">
+              <span class="text-tertiary block text-[10px]">SLA SYNC</span>
+              <span class="text-white font-bold text-sm block mt-0.5">&lt; 650ms</span>
+              <span class="text-success text-[10px]">● Live Rate</span>
+            </div>
+            <div class="bg-white/5 border border-white/15 p-3 rounded-xs">
+              <span class="text-tertiary block text-[10px]">WORKSTATION</span>
+              <span class="text-white font-bold text-sm block mt-0.5">1 Gbps</span>
+              <span class="text-white/70 text-[10px]">Dedicated Fiber</span>
+            </div>
+            <div class="bg-white/5 border border-white/15 p-3 rounded-xs">
+              <span class="text-tertiary block text-[10px]">COMPLIANCE</span>
+              <span class="text-white font-bold text-sm block mt-0.5">e-Faktur</span>
+              <span class="text-accent text-[10px]">SNAP BI / DOKU</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INLINE SINGLE-ROW CORPORATE RIBBON SEARCH BAR (PRESET 08 DNA) ============ -->
+    <section id="searchSection" class="max-w-container mx-auto px-4 sm:px-6 pt-5 relative z-20" aria-labelledby="searchHeading">
+      <div class="bg-surface rounded-xs border-2 border-primary shadow-soft overflow-hidden">
+        <!-- Top Compact Toolbar -->
+        <div class="bg-canvas px-4 py-2.5 border-b border-line flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <h2 id="searchHeading" class="font-display text-sm font-bold uppercase tracking-wider text-primary">Query Ketersediaan Korporat</h2>
+            <span class="text-line">|</span>
+            <div class="inline-flex rounded-xs bg-surface-muted p-0.5 border border-line" role="tablist">
+              <button type="button" role="tab" data-mode="hotels" aria-selected="true" class="mode-tab h-7 px-3 rounded-xs font-display text-[11px] font-bold uppercase tracking-wider transition bg-primary text-white">Hotel CBD &amp; Transit</button>
+              <button type="button" role="tab" data-mode="activities" aria-selected="false" class="mode-tab h-7 px-3 rounded-xs font-display text-[11px] font-bold uppercase tracking-wider transition text-ink-muted hover:text-ink">Layanan MICE &amp; Shuttle</button>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 text-[11px] font-mono text-ink-muted">
+            <span class="w-2 h-2 rounded-xs bg-success"></span>
+            <span class="font-bold text-ink">Every price is checked live when you ask for it</span>
+            <span>·</span>
+            <span id="summary" aria-live="polite">Pilih jadwal bisnis</span>
+          </div>
+        </div>
+
+        <form id="searchForm" class="p-3.5 bg-surface" novalidate>
+          <!-- Single-Row Dense Ribbon Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-2.5 items-end">
+            <!-- District Input -->
+            <label class="lg:col-span-3 flex flex-col gap-1">
+              <span class="text-[10px] font-mono font-bold text-ink-muted uppercase tracking-wider" data-dest-label>Distrik Bisnis / Hub</span>
+              <input id="dest" list="destList" placeholder="Thamrin CBD, Senayan JCC, Nusa Dua…" autocomplete="off" class="h-10 px-3 rounded-xs bg-canvas border border-line text-[13px] font-semibold text-ink focus:border-secondary focus:bg-white focus:outline-none">
+              <datalist id="destList"></datalist>
+            </label>
+
+            <!-- Check-In -->
+            <label class="lg:col-span-2 flex flex-col gap-1">
+              <span class="text-[10px] font-mono font-bold text-ink-muted uppercase tracking-wider">Check-in</span>
+              <input id="checkIn" type="date" aria-describedby="dateRuleHint" class="tnum h-10 px-2.5 rounded-xs bg-canvas border border-line text-[12px] focus:border-secondary focus:bg-white focus:outline-none font-mono">
+            </label>
+
+            <!-- Check-Out -->
+            <label class="lg:col-span-2 flex flex-col gap-1" data-hotel-only>
+              <span class="text-[10px] font-mono font-bold text-ink-muted uppercase tracking-wider">Check-out</span>
+              <input id="checkOut" type="date" aria-describedby="dateRuleHint" class="tnum h-10 px-2.5 rounded-xs bg-canvas border border-line text-[12px] focus:border-secondary focus:bg-white focus:outline-none font-mono">
+            </label>
+
+            <!-- Compact Steppers -->
+            <div class="lg:col-span-3 grid grid-cols-3 gap-1.5">
+              <div class="flex flex-col gap-1" data-hotel-only>
+                <span id="lbl-rooms" class="text-[10px] font-mono font-bold text-ink-muted uppercase">Kamar</span>
+                <div class="stepper flex items-center h-10 rounded-xs bg-canvas border border-line" role="group" aria-labelledby="lbl-rooms">
+                  <button type="button" class="w-6 h-full text-[15px] text-primary hover:bg-surface-muted" data-step="rooms" data-dir="-1" aria-label="Kurangi kamar">−</button>
+                  <input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[12px] font-bold focus:outline-none">
+                  <button type="button" class="w-6 h-full text-[15px] text-primary hover:bg-surface-muted" data-step="rooms" data-dir="1" aria-label="Tambah kamar">+</button>
+                </div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <span id="lbl-adults" class="text-[10px] font-mono font-bold text-ink-muted uppercase" data-adults-label>Delegasi</span>
+                <div class="stepper flex items-center h-10 rounded-xs bg-canvas border border-line" role="group" aria-labelledby="lbl-adults">
+                  <button type="button" class="w-6 h-full text-[15px] text-primary hover:bg-surface-muted" data-step="adults" data-dir="-1" aria-label="Kurangi delegasi">−</button>
+                  <input id="adults" type="number" min="1" max="20" value="1" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[12px] font-bold focus:outline-none">
+                  <button type="button" class="w-6 h-full text-[15px] text-primary hover:bg-surface-muted" data-step="adults" data-dir="1" aria-label="Tambah delegasi">+</button>
+                </div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <span id="lbl-children" class="text-[10px] font-mono font-bold text-ink-muted uppercase" data-children-label>Asisten</span>
+                <div class="stepper flex items-center h-10 rounded-xs bg-canvas border border-line" role="group" aria-labelledby="lbl-children">
+                  <button type="button" class="w-6 h-full text-[15px] text-primary hover:bg-surface-muted" data-step="children" data-dir="-1" aria-label="Kurangi tambahan">−</button>
+                  <input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[12px] font-bold focus:outline-none">
+                  <button type="button" class="w-6 h-full text-[15px] text-primary hover:bg-surface-muted" data-step="children" data-dir="1" aria-label="Tambah tambahan">+</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="lg:col-span-2">
+              <button id="checkBtn" type="submit" class="w-full h-10 px-4 rounded-xs bg-primary hover:bg-primary-hover text-white text-xs font-bold tracking-wider uppercase transition flex items-center justify-center gap-1.5">
+                <span data-btn-label>Query Tarif Live</span>
+              </button>
+            </div>
+          </div>
+
+          <p id="dateRuleHint" class="sr-only">Maksimal 30 malam</p>
+          <div id="formErrors" class="mt-2 text-[12px] text-danger font-mono font-semibold" role="alert" aria-live="assertive"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ HIGH-DENSITY TABULAR LEDGER LIST (PRESET 08 DNA) ============ -->
+    <section id="hotels" class="max-w-container mx-auto px-4 sm:px-6 pt-12">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-line">
+        <div>
+          <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-secondary">CORPORATE INVENTORY LEDGER</span>
+          <h2 id="sectionHeading" class="font-display text-2xl sm:text-3xl font-bold text-primary mt-0.5">Hotel CBD &amp; Hub Transit Metropolitan</h2>
+        </div>
+
+        <!-- Filter Pills -->
+        <div id="filterBar" class="flex flex-wrap gap-1.5 items-center" role="group" aria-label="Filter Kawasan Bisnis">
+          <button type="button" data-filter="all" class="filter-btn h-8 px-3.5 rounded-xs text-[11px] font-bold uppercase tracking-wider bg-primary text-white shadow-xs transition">Semua Kawasan</button>
+          <button type="button" data-filter="cbd" class="filter-btn h-8 px-3.5 rounded-xs text-[11px] font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Thamrin &amp; Sudirman CBD</button>
+          <button type="button" data-filter="mice" class="filter-btn h-8 px-3.5 rounded-xs text-[11px] font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Senayan &amp; Bali MICE</button>
+          <button type="button" data-filter="heritage" class="filter-btn h-8 px-3.5 rounded-xs text-[11px] font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Yogyakarta Hub</button>
+        </div>
+      </div>
+
+      <!-- Tabular Header Strip (Desktop) -->
+      <div class="mt-5 hidden lg:grid lg:grid-cols-12 bg-primary text-white px-5 py-2.5 text-[11px] font-mono uppercase tracking-wider rounded-t-xs">
+        <div class="col-span-4">KODE &amp; PROPERTI KORPORAT</div>
+        <div class="col-span-4">KONEKTIVITAS &amp; SPESIFIKASI KERJA</div>
+        <div class="col-span-2">KEBIJAKAN &amp; PAJAK</div>
+        <div class="col-span-2 text-right">TARIF RITEL LIVE</div>
+      </div>
+
+      <!-- Tabular Rows Container -->
+      <div id="results" class="bg-surface border border-line divide-y divide-line shadow-soft rounded-b-xs"></div>
+    </section>
+
+    <!-- ============ 4-COLUMN CORPORATE SLA SPECIFICATION BAR (PRESET 08 DNA) ============ -->
+    <section id="capabilities" class="max-w-container mx-auto px-4 sm:px-6 pt-16">
+      <div class="bg-surface rounded-xs border border-line shadow-soft overflow-hidden">
+        <div class="bg-canvas px-6 py-3.5 border-b border-line flex items-center justify-between">
+          <span class="font-mono text-xs font-bold uppercase tracking-wider text-primary">STANDAR LAYANAN PERJALANAN DINAS // METROLINK</span>
+          <span class="font-mono text-[11px] text-ink-muted">Illustrative Sample Data</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 lg:divide-x divide-line">
+          <div class="p-6">
+            <span class="font-mono text-xs text-secondary font-bold block mb-1.5">SLA 01 // INSTANT API</span>
+            <h3 class="font-display text-base font-bold text-ink">Konfirmasi Tanpa Delay</h3>
+            <p class="text-xs text-ink-muted mt-1.5 leading-relaxed">Alokasi kamar korporat langsung terkunci di sistem front-desk hotel begitu pembayaran terverifikasi.</p>
+          </div>
+          <div class="p-6">
+            <span class="font-mono text-xs text-secondary font-bold block mb-1.5">SLA 02 // TAX INVOICE</span>
+            <h3 class="font-display text-base font-bold text-ink">Dukungan Faktur &amp; NPWP</h3>
+            <p class="text-xs text-ink-muted mt-1.5 leading-relaxed">Bukti pembayaran mencantumkan rincian PPN sah untuk mempermudah klaim reimbursement perusahaan.</p>
+          </div>
+          <div class="p-6">
+            <span class="font-mono text-xs text-secondary font-bold block mb-1.5">SLA 03 // WORKSPACE</span>
+            <h3 class="font-display text-base font-bold text-ink">Jaminan WiFi &amp; Meja Kerja</h3>
+            <p class="text-xs text-ink-muted mt-1.5 leading-relaxed">Seluruh unit telah terverifikasi memiliki kursi ergonomis, pencahayaan kerja, dan koneksi internet stabil.</p>
+          </div>
+          <div class="p-6">
+            <span class="font-mono text-xs text-secondary font-bold block mb-1.5">SLA 04 // SETTLEMENT</span>
+            <h3 class="font-display text-base font-bold text-ink">Gerbang DOKU &amp; SNAP BI</h3>
+            <p class="text-xs text-ink-muted mt-1.5 leading-relaxed">Transaksi aman melalui Virtual Account multi-bank dan QRIS korporat berstandar Bank Indonesia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ SECTION ============ -->
+    <section id="faq" class="max-w-container mx-auto px-4 sm:px-6 pt-16 pb-20">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-10">
+          <span class="text-xs font-bold uppercase tracking-wider text-secondary font-display">Informasi Pemesanan Korporat</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-primary mt-1">FAQ &amp; Penagihan Perusahaan</h2>
+        </div>
+
+        <div class="space-y-3">
+          <details class="bg-surface rounded-xs border border-line p-5">
+            <summary class="font-display text-base font-bold text-ink cursor-pointer flex justify-between items-center">
+              <span>Apakah tersedia penerbitan Faktur Pajak resmi untuk perusahaan?</span>
+              <span class="faq-icon text-secondary text-xl font-bold transition-transform font-mono">+</span>
+            </summary>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Ya, Anda dapat menyertakan Nama Perusahaan dan NPWP pada formulir checkout untuk mendapatkan e-Faktur Pajak resmi yang dikirimkan bersamaan dengan e-voucher hotel.</p>
+          </details>
+
+          <details class="bg-surface rounded-xs border border-line p-5">
+            <summary class="font-display text-base font-bold text-ink cursor-pointer flex justify-between items-center">
+              <span>Bagaimana kebijakan jaminan koneksi internet di kamar eksekutif?</span>
+              <span class="faq-icon text-secondary text-xl font-bold transition-transform font-mono">+</span>
+            </summary>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Seluruh hotel mitra berkategori Bisnis Eksekutif memiliki standar minimum kecepatan internet 100 Mbps di dalam kamar dan akses dedicated fiber di ruang rapat/business lounge.</p>
+          </details>
+
+          <details class="bg-surface rounded-xs border border-line p-5">
+            <summary class="font-display text-base font-bold text-ink cursor-pointer flex justify-between items-center">
+              <span>Apakah bisa mengajukan early check-in untuk penerbangan pagi?</span>
+              <span class="faq-icon text-secondary text-xl font-bold transition-transform font-mono">+</span>
+            </summary>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Layanan early check-in (mulai pukul 09:00 WIB) tersedia di hotel mitra dengan konfirmasi ketersediaan kamar secara live melalui sistem extranet Ortasys.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-surface border-t border-line py-12 text-xs text-ink-muted">
+    <div class="max-w-container mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-line">
+        <div>
+          <span class="font-display text-2xl font-bold text-primary block">MetroLink Travel</span>
+          <p class="text-[12px] mt-0.5">Spesialis Akomodasi Bisnis &amp; Transit Kota · Ditenagai Mesin Distribusi Ortasys S4.</p>
+        </div>
+        <div class="flex gap-6 font-semibold text-ink text-[13px]">
+          <a href="#hotels" class="hover:text-primary">Hotel Bisnis</a>
+          <a href="#capabilities" class="hover:text-primary">Standar Korporat</a>
+          <a href="#faq" class="hover:text-primary">Faktur &amp; FAQ</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] gap-2">
+        <p>Penyelesaian terjamin melalui gateway resmi <strong class="text-ink">DOKU</strong> dan <strong class="text-ink">SNAP BI</strong>. Mockup data bersifat ilustratif [PRD 9.2].</p>
+        <p>© <span id="year"></span> MetroLink Travel. Hak Cipta Dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ TRIP DRAWER / BAG ============ -->
+  <div id="tripOverlay" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden" aria-hidden="true"></div>
+  <aside id="tripDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-[420px] bg-surface shadow-elevated translate-x-full transition-transform duration-300 flex flex-col border-l border-line" role="dialog" aria-modal="true" aria-labelledby="tripTitle" aria-hidden="true">
+    <div class="bg-primary text-white px-6 h-18 flex items-center justify-between border-b border-black/20">
+      <div>
+        <h2 id="tripTitle" class="font-display text-xl font-bold uppercase">Booking Bag Korporat</h2>
+        <p class="text-xs text-tertiary">Build Your Trip — Reservasi Multi-Supplier</p>
+      </div>
+      <button type="button" data-close-trip class="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white" aria-label="Tutup bag">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <div id="tripItems" class="flex-1 overflow-y-auto p-5 flex flex-col gap-3"></div>
+
+    <div class="bg-canvas p-6 border-t border-line">
+      <div class="space-y-1.5 text-[12px] font-mono text-ink-muted">
+        <div class="flex justify-between">
+          <span>Subtotal Item:</span>
+          <span id="tripSubtotal" class="font-bold text-ink">Rp 0</span>
+        </div>
+        <div class="flex justify-between text-[11px]">
+          <span>PPN 11% &amp; Biaya Layanan:</span>
+          <span class="text-success font-semibold">Termasuk (Faktur Resmi)</span>
+        </div>
+        <div class="flex items-baseline justify-between pt-2 border-t border-line/60 text-[14px]">
+          <span class="font-display text-sm font-bold text-ink uppercase">Total Pelunasan:</span>
+          <span id="tripTotal" class="text-2xl font-bold text-primary font-mono">Rp 0</span>
+        </div>
+      </div>
+
+      <button id="payBtn" type="button" class="mt-4 w-full py-3 bg-primary hover:bg-primary-hover text-white rounded-xs text-xs font-bold tracking-wider uppercase transition shadow-soft disabled:opacity-40">
+        Lanjut ke Settlement Korporat
+      </button>
+      <p id="payNote" class="mt-2 text-[11px] text-center text-ink-muted" aria-live="polite">Penyelesaian resmi Bank Indonesia SNAP BI &amp; DOKU.</p>
+    </div>
+  </aside>
+
+  <!-- ============ DETAIL QUICK-VIEW MODAL ============ -->
+  <div id="detailModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="bg-surface rounded-md max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[90vh]">
+      <div class="relative aspect-[16/9] bg-surface-muted shrink-0">
+        <img id="modalImg" src="" alt="" class="w-full h-full object-cover">
+        <button type="button" data-close-modal class="absolute top-3 right-3 w-8 h-8 rounded-xs bg-surface/90 flex items-center justify-center text-ink hover:bg-surface transition shadow-xs" aria-label="Tutup detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <span id="modalBadge" class="absolute bottom-3 left-3 px-2.5 py-1 rounded-xs bg-primary text-white text-[11px] font-display uppercase font-bold tracking-wider"></span>
+      </div>
+      <div class="p-6 overflow-y-auto flex-1 flex flex-col gap-3">
+        <span id="modalArea" class="text-[11px] font-bold uppercase tracking-wider text-secondary font-display"></span>
+        <h3 id="modalTitle" class="font-display text-2xl font-bold text-primary leading-tight"></h3>
+        <p id="modalDesc" class="text-[13px] text-ink-muted leading-relaxed font-normal"></p>
+        <div class="pt-3 border-t border-line">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-display mb-2">Fasilitas Bisnis &amp; Produktivitas:</h4>
+          <div id="modalAmenities" class="flex flex-wrap gap-1.5 text-[12px]"></div>
+        </div>
+        <div class="pt-3 border-t border-line">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-display mb-1">Kebijakan Reservasi Korporat:</h4>
+          <p id="modalPolicy" class="text-[12px] text-ink-muted"></p>
+        </div>
+      </div>
+      <div class="p-5 border-t border-line bg-canvas flex items-center justify-between gap-4 shrink-0">
+        <div>
+          <p class="text-[11px] text-ink-muted font-mono uppercase tracking-wider">Tarif Ritel Terverifikasi</p>
+          <p id="modalPrice" class="font-mono text-[20px] font-bold text-primary"></p>
+        </div>
+        <button id="modalSelectBtn" type="button" class="h-10 px-6 rounded-xs bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider transition shadow-xs">
+          Pilih Akomodasi Ini
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CHECKOUT CONFIRMATION MODAL ============ -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="checkoutHeading">
+    <div class="bg-surface rounded-md max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[92vh]">
+      <div class="bg-primary text-white flex items-center justify-between px-6 py-4 border-b border-black/20">
+        <div>
+          <h3 id="checkoutHeading" class="font-display text-xl font-bold uppercase">Settlement Reservasi Bisnis</h3>
+          <p class="text-xs text-tertiary">Kanal Pembayaran DOKU &amp; SNAP BI</p>
+        </div>
+        <button type="button" data-close-checkout class="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white" aria-label="Tutup checkout">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+
+      <div id="checkoutFormContent" class="p-6 overflow-y-auto flex-1 flex flex-col gap-4">
+        <div class="p-4 rounded-xs bg-canvas border border-line text-[13px]">
+          <div class="flex justify-between font-display text-ink text-sm font-bold uppercase">
+            <span>Rincian Booking Bag:</span>
+            <span id="coItemCount" class="font-mono">0 Item</span>
+          </div>
+          <div id="coItemList" class="mt-2 space-y-1 text-[12px] text-ink-muted"></div>
+          <div class="mt-3 pt-2 border-t border-line/60 flex justify-between font-mono font-bold text-ink text-[14px]">
+            <span>Total Tagihan:</span>
+            <span id="coTotal" class="text-primary font-bold text-base">Rp 0</span>
+          </div>
+        </div>
+
+        <form id="coForm" class="flex flex-col gap-3">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-display">Data Traveler / Perusahaan</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="flex flex-col gap-1 text-[12px] font-medium text-ink">
+              Nama Traveler (Sesuai KTP/Paspor)
+              <input id="coName" type="text" required placeholder="Contoh: Daniel Wibowo" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
+            </label>
+            <label class="flex flex-col gap-1 text-[12px] font-medium text-ink">
+              Nama Perusahaan (Opsional)
+              <input id="coCompany" type="text" placeholder="PT Teknologi Maju Bersama" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
+            </label>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="flex flex-col gap-1 text-[12px] font-medium text-ink">
+              Email Faktur / Konfirmasi
+              <input id="coEmail" type="email" required placeholder="daniel@perusahaan.com" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
+            </label>
+            <label class="flex flex-col gap-1 text-[12px] font-medium text-ink">
+              No. Ponsel / WhatsApp
+              <input id="coPhone" type="tel" required placeholder="081298765432" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
+            </label>
+          </div>
+
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-display mt-2">Metode Pembayaran Korporat</h4>
+          <div class="space-y-2 text-[12px]">
+            <label class="flex items-center gap-3 p-3 rounded-xs bg-white border border-line cursor-pointer hover:border-secondary">
+              <input type="radio" name="payMethod" value="qris" checked class="accent-secondary">
+              <div class="flex-1">
+                <span class="font-display font-bold text-ink block text-sm">QRIS SNAP BI (Penyelesaian Instan Real-time)</span>
+                <span class="text-[11px] text-ink-muted block">BCA, Mandiri, BRI, BNI, Corporate QRIS</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xs bg-white border border-line cursor-pointer hover:border-secondary">
+              <input type="radio" name="payMethod" value="va" class="accent-secondary">
+              <div class="flex-1">
+                <span class="font-display font-bold text-ink block text-sm">DOKU Virtual Account Multi-Bank</span>
+                <span class="text-[11px] text-ink-muted block">Virtual account otomatis terverifikasi tanpa upload struk</span>
+              </div>
+            </label>
+          </div>
+
+          <button type="submit" id="coSubmitBtn" class="mt-3 w-full py-3 bg-primary hover:bg-primary-hover text-white rounded-xs text-xs font-bold uppercase tracking-wider transition shadow-soft flex items-center justify-center gap-2">
+            <span>Konfirmasi &amp; Selesaikan Reservasi</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Confirmation Success State -->
+      <div id="checkoutSuccessContent" class="hidden p-8 flex flex-col items-center text-center gap-4">
+        <div class="w-14 h-14 rounded-xs bg-success/15 text-success flex items-center justify-center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <div>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-success font-display">Terkonfirmasi Otomatis</span>
+          <h4 class="font-display text-2xl font-bold text-primary mt-1">Reservasi Bisnis Berhasil</h4>
+          <p class="text-[13px] text-ink-muted mt-1">E-Voucher dan data reservasi telah terkirim ke email Anda dan tercatat di sistem front desk hotel.</p>
+        </div>
+        <div class="w-full p-4 rounded-xs bg-canvas border border-line text-left text-[12px] space-y-1.5 font-mono">
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Ref. Korporat:</span>
+            <span id="successRef" class="font-bold text-ink">ML-2026-0001</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Nama Traveler:</span>
+            <span id="successGuest" class="font-bold text-ink">-</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Total Tagihan:</span>
+            <span id="successAmount" class="font-bold text-primary font-bold">Rp 0</span>
+          </div>
+        </div>
+        <div class="w-full flex flex-col gap-2 pt-2">
+          <button type="button" id="btnDownloadVoucher" class="w-full py-3 rounded-xs bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider transition">
+            Unduh E-Voucher &amp; Lembar Faktur (PDF)
+          </button>
+          <button type="button" data-finish-checkout class="w-full py-2.5 rounded-xs bg-surface-muted hover:bg-line text-ink text-xs font-semibold uppercase tracking-wider transition">
+            Kembali ke Beranda
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-primary text-white rounded-xs px-6 py-3 text-[13px] font-medium shadow-elevated" role="status" aria-live="polite"></div>
+
+  <script>
+  (() => {
+    'use strict';
+    /* Data Sampel Ilustratif Preset 08 (MetroLink Travel) */
+    const BUSINESS_HOTELS = [
+      {
+        id: 'ml-thamrin', name: 'Grand Thamrin Financial Tower Suites', area: 'Thamrin CBD · Jakarta Pusat', filter: 'cbd',
+        keys: 'jakarta thamrin cbd financial suites mrt bisnis', img: '../../assets/nusantara_executive/jakarta.jpg', alt: 'Gedung pencakar langit modern Thamrin Jakarta',
+        stars: 5, room: 'Executive Corporate King Suite', meal: 'Termasuk Sarapan Prasmanan & Akses Executive Lounge', policy: 'Bebas pembatalan hingga 24 jam sebelum kedatangan.',
+        desc: 'Hotel bisnis terkemuka yang terhubung langsung dengan stasiun MRT Bundaran HI. Dilengkapi meja kerja ergonomis, stopkontak internasional, high-speed fiber internet 1 Gbps, dan ruang rapat privat.',
+        amenities: ['Akses Langsung MRT Bawah Tanah', 'WiFi Fiber Gigabit 1 Gbps', 'Meja Kerja Ergonomis Herman Miller', 'Executive Lounge & Free Cocktails', 'Layanan Laundry Express 3 Jam'],
+        nightly: 2150000
+      },
+      {
+        id: 'ml-senayan', name: 'Senayan MICE & Convention Suites', area: 'Senayan · Jakarta Pusat', filter: 'mice',
+        keys: 'senayan jcc convention suites mice pameran', img: '../../assets/nusantara_executive/jcc.jpg', alt: 'Pusat konvensi megah Senayan JCC',
+        stars: 5, room: 'Deluxe Business Workstation Suite', meal: 'Sarapan Prasmanan & Shuttle Eksklusif JCC', policy: 'Bebas pembatalan hingga 48 jam sebelum jadwal.',
+        desc: 'Bersebelahan langsung dengan kompleks Gelora Bung Karno dan Jakarta Convention Center. Pilihan utama delegasi internasional, pembicara seminar, dan eksekutif pameran MICE.',
+        amenities: ['Shuttle Bus VIP Langsung JCC', 'Kredit Ruang Rapat Gratis 2 Jam', 'Pusat Kebugaran & Kolam Renang', 'Early Check-in Fleksibel', 'Koneksi HDMI & Monitor Kerja'],
+        nightly: 2450000
+      },
+      {
+        id: 'ml-nusadua', name: 'Nusa Dua Corporate Convention Resort', area: 'ITDC Enclave · Bali', filter: 'mice',
+        keys: 'bali nusa dua itdc corporate convention resort ballroom', img: '../../assets/nusantara_executive/nusa-dua-gate.jpg', alt: 'Gerbang megah kawasan ITDC Nusa Dua',
+        stars: 5, room: 'Ocean Breeze Executive Suite', meal: 'Sarapan Prasmanan Internasional', policy: 'Bebas pembatalan hingga H-3 kedatangan.',
+        desc: 'Resor konferensi premium di kawasan keamanan tinggi ITDC Nusa Dua. Memiliki auditorium konferensi 2.000 delegasi, fasilitas golf, dan akses pantai privat setelah jam kerja.',
+        amenities: ['Auditorium Konvensi Bertaraf Internasional', 'Airport VIP Limousine Transfer', 'Business Center 24 Jam', 'Akses Private Beach'],
+        nightly: 3100000
+      },
+      {
+        id: 'ml-kraton', name: 'Yogyakarta Executive Heritage Business Hotel', area: 'Kraton & Malioboro · Yogyakarta', filter: 'heritage',
+        keys: 'jogja yogyakarta malioboro kraton executive business hotel', img: '../../assets/serenity_umrah_privilege/kraton.jpg', alt: 'Hotel bergaya modern heritage di Yogyakarta',
+        stars: 4, room: 'Premier Executive King', meal: 'Sarapan Khas Nusantara & Kontinental', policy: 'Bebas pembatalan hingga 24 jam sebelum check-in.',
+        desc: 'Akomodasi bisnis di pusat kota Yogyakarta, 5 menit dari Stasiun Tugu. Suasana tenang dengan lantai khusus bebas bising (quiet floor), sangat ideal bagi pelaku perjalanan dinas.',
+        amenities: ['Lantai Khusus Bebas Bising', 'Dekat Stasiun Kereta Cepat / Bandara YIA', 'Ruang Rapat Modular Lengkap', 'WiFi Cepat'],
+        nightly: 1350000
+      }
+    ];
+
+    const BUSINESS_TRANSIT = [
+      {
+        id: 'ml-mrt-pass', kind: 'tour', name: 'Jakarta VIP Dedicated Mobility & Chauffeur', area: 'Jabodetabek Metropolitan', filter: 'cbd',
+        keys: 'jakarta vip chauffeur transport mobil dinas', img: '../../assets/nusantara_executive/mrt.jpg', alt: 'Stasiun transit modern kota Jakarta',
+        duration: '10 Jam Mobilitas Dedicated (BBM & Driver)',
+        desc: 'Layanan mobil eksekutif dengan sopir profesional berbahasa Inggris, termasuk BBM, biaya tol, dan rute fleksibel antar-meeting di kawasan segitiga emas Sudirman-Thamrin-Kuningan.',
+        amenities: ['Mobil Eksekutif Nyaman & Bersih', 'Driver Berpengalaman & Berpakaian Rapi', 'Sudah Termasuk Tol & Parkir', 'WiFi Portabel di Dalam Mobil'],
+        policy: 'Bebas pembatalan hingga 24 jam sebelumnya.',
+        perPerson: 850000
+      },
+      {
+        id: 'ml-jcc-shuttle', kind: 'tour', name: 'JCC Senayan Dedicated Delegate VIP Van', area: 'Senayan MICE Hub', filter: 'mice',
+        keys: 'jcc senayan shuttle van delegasi pameran', img: '../../assets/nusantara_executive/jcc-lobby.jpg', alt: 'Lobby eksklusif Jakarta Convention Center',
+        duration: 'Shuttle Pulang-Pergi Seharian Penuh',
+        desc: 'Layanan antar jemput prioritas untuk rombongan delegasi dari hotel mitra menuju gate utama JCC tanpa perlu antre taksi umum.',
+        amenities: ['Drop-Off VIP Khusus Delegasi', 'Van Ber-AC Dingin & Kursi Nyaman', 'Prioritas Jalur Antre'],
+        policy: 'Konfirmasi instan via sistem Ortasys S4.',
+        perPerson: 450000
+      }
+    ];
+
+    const LIMITS = { rooms: [1, 9], adults: [1, 20], children: [0, 20] };
+    const MAX_NIGHTS = 30;
+    const idr = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const DAY = 86400000;
+    const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    const addDays = (s, n) => iso(new Date(new Date(s + 'T00:00:00').getTime() + n * DAY));
+    const today = iso(new Date());
+
+    const state = { mode: 'hotels', filter: 'all', priced: false, checking: false, checkedAt: null, trip: [] };
+    const el = {
+      form: $('#searchForm'), dest: $('#dest'), checkIn: $('#checkIn'), checkOut: $('#checkOut'),
+      rooms: $('#rooms'), adults: $('#adults'), children: $('#qChildren'), errors: $('#formErrors'), summary: $('#summary'),
+      btn: $('#checkBtn'), results: $('#results')
+    };
+
+    const clamp = (v, [lo, hi]) => Math.min(hi, Math.max(lo, Number.isFinite(v) ? v : lo));
+    const num = k => clamp(parseInt(el[k].value, 10), LIMITS[k]);
+    const nights = () => {
+      if (!el.checkIn.value || !el.checkOut.value) return 0;
+      return Math.round((new Date(el.checkOut.value) - new Date(el.checkIn.value)) / DAY);
+    };
+
+    function validate() {
+      const errs = [];
+      if (!el.checkIn.value) {
+        errs.push('Silakan tentukan tanggal check-in.');
+      } else if (el.checkIn.value < today) {
+        errs.push('Tanggal check-in tidak boleh di masa lampau.');
+      }
+
+      if (state.mode === 'hotels') {
+        if (!el.checkOut.value) errs.push('Silakan tentukan tanggal check-out.');
+        else {
+          const n = nights();
+          if (n < 1) errs.push('Tanggal check-out minimal 1 malam setelah check-in.');
+          if (n > MAX_NIGHTS) errs.push(`Maksimal durasi inap adalah ${MAX_NIGHTS} malam.`);
+        }
+      }
+      return errs;
+    }
+
+    const roomRate = s => Math.round(s.nightly * (1 + 0.15 * Math.max(0, num('adults') - 2) + 0.08 * num('children')) / 1000) * 1000;
+    const stayTotal = s => roomRate(s) * Math.max(1, nights()) * num('rooms');
+    const actTotal = a => a.perPerson * num('adults') * num('rooms');
+
+    function summaryText() {
+      const r = num('rooms'), a = num('adults');
+      if (state.mode === 'hotels') {
+        const n = nights();
+        if (!n || n < 1) return 'Pilih tanggal untuk melihat tarif korporat live';
+        return `${n} Malam × ${r} Kamar (${a} Delegasi)`;
+      }
+      return el.checkIn.value ? `${el.checkIn.value} · ${r * a} Delegasi Layanan` : 'Tentukan tanggal mobilitas MICE';
+    }
+
+    function renderMode() {
+      $$('.mode-tab').forEach(t => {
+        const on = t.dataset.mode === state.mode;
+        t.setAttribute('aria-selected', on);
+        t.className = `mode-tab h-7 px-3 rounded-xs font-display text-[11px] font-bold uppercase tracking-wider transition ${on ? 'bg-primary text-white' : 'text-ink-muted hover:text-ink'}`;
+      });
+      const hotels = state.mode === 'hotels';
+      $$('[data-hotel-only]').forEach(n => n.classList.toggle('hidden', !hotels));
+      
+      $('#sectionHeading').textContent = hotels ? 'Hotel CBD & Hub Transit Metropolitan' : 'Layanan MICE & Mobilitas Eksekutif';
+      $('[data-dest-label]').textContent = hotels ? 'Distrik Bisnis / Hub' : 'Area MICE & Tujuan';
+      el.dest.placeholder = hotels ? 'Thamrin CBD, Senayan JCC, Nusa Dua…' : 'Mobilitas Jakarta VIP, Shuttle JCC…';
+
+      const datalistItems = hotels ? BUSINESS_HOTELS.map(s => s.name) : BUSINESS_TRANSIT.map(e => e.name);
+      $('#destList').innerHTML = ['Thamrin CBD Jakarta', 'Senayan JCC Jakarta', 'ITDC Nusa Dua Bali', 'Yogyakarta Pusat', ...datalistItems]
+        .map(v => `<option value="${v}">`).join('');
+    }
+
+    function renderResults() {
+      const isHotels = state.mode === 'hotels';
+      const q = el.dest.value.trim().toLowerCase();
+      let list = (isHotels ? BUSINESS_HOTELS : BUSINESS_TRANSIT).filter(it => {
+        const matchQ = !q || (it.name + ' ' + it.area + ' ' + it.keys).toLowerCase().includes(q);
+        const matchFilter = state.filter === 'all' || it.filter === state.filter;
+        return matchQ && matchFilter;
+      });
+      if (!list.length && state.filter === 'all') list = isHotels ? BUSINESS_HOTELS : BUSINESS_TRANSIT;
+
+      if (!list.length) {
+        el.results.innerHTML = `
+          <div class="p-10 text-center text-ink-muted">
+            <p class="font-display text-lg font-bold text-primary">Tidak ada akomodasi korporat yang cocok dengan filter "${state.filter}"</p>
+            <button type="button" data-reset-filter class="mt-3 px-4 py-2 rounded-xs bg-primary text-white text-xs font-bold uppercase tracking-wider">Reset Filter Kawasan</button>
+          </div>`;
+        return;
+      }
+
+      el.results.innerHTML = list.map((it, idx) => {
+        const total = isHotels ? stayTotal(it) : actTotal(it);
+        const sub = isHotels ? `${idr.format(roomRate(it))} / malam` : `${idr.format(it.perPerson)} / delegasi`;
+        const priceHTML = state.checking
+          ? `<div class="h-7 w-28 bg-surface-muted animate-pulse rounded-xs ml-auto"></div>`
+          : state.priced
+            ? `<div><p class="tnum font-mono text-[19px] font-bold text-primary">${idr.format(total)}</p><p class="tnum font-mono text-[10px] text-ink-muted">${sub}</p></div>`
+            : `<div><p class="font-mono text-[14px] font-bold text-ink">Mulai ${idr.format(isHotels ? it.nightly : it.perPerson)}</p><p class="text-[10px] text-ink-muted italic">Klik Query Tarif Live</p></div>`;
+
+        return `
+        <article class="p-4 sm:p-5 hover:bg-canvas/60 transition grid grid-cols-1 lg:grid-cols-12 gap-4 items-center group">
+          <!-- Col 1-4: Thumbnail & Property Code -->
+          <div class="lg:col-span-4 flex items-center gap-3.5">
+            <div class="w-24 h-20 rounded-xs overflow-hidden bg-surface-muted border border-line shrink-0 relative">
+              <img src="${it.img}" alt="${it.alt}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+              <span class="absolute top-1 left-1 px-1.5 py-0.2 bg-primary/90 text-white font-mono text-[9px] font-bold">ML-0${idx + 1}</span>
+            </div>
+            <div class="min-w-0">
+              <div class="flex items-center gap-1.5">
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-secondary">${it.area}</span>
+                ${isHotels ? `<span class="text-[10px] font-mono text-accent font-bold">${'★'.repeat(it.stars)}</span>` : ''}
+              </div>
+              <h3 class="font-display text-base font-bold text-primary leading-snug cursor-pointer hover:text-secondary transition-colors mt-0.5" data-detail="${it.id}">${it.name}</h3>
+              <button type="button" data-detail="${it.id}" class="text-[11px] font-mono font-semibold text-secondary hover:underline mt-1 inline-block">
+                [Lihat Spesifikasi Teknis]
+              </button>
+            </div>
+          </div>
+
+          <!-- Col 5-8: Connectivity & Workspace Specs -->
+          <div class="lg:col-span-4 space-y-1.5 border-t lg:border-t-0 pt-2 lg:pt-0 border-line">
+            <p class="text-[12px] font-semibold text-ink">${isHotels ? `${it.room} · ${it.meal}` : it.duration}</p>
+            <div class="flex flex-wrap gap-1">
+              ${(it.amenities || []).slice(0, 3).map(a => `<span class="px-2 py-0.5 rounded-xs bg-canvas border border-line text-ink-muted text-[10px] font-mono">${a}</span>`).join('')}
+            </div>
+          </div>
+
+          <!-- Col 9-10: Tax & Cancellation Policy -->
+          <div class="lg:col-span-2 text-[11px] font-mono space-y-1">
+            <span class="inline-block px-2 py-0.5 rounded-xs bg-success/10 text-success font-bold">● PPN &amp; Faktur Ready</span>
+            <p class="text-ink-muted text-[10px] leading-tight">${it.policy}</p>
+          </div>
+
+          <!-- Col 11-12: Tabular Price & Instant Action -->
+          <div class="lg:col-span-2 flex lg:flex-col items-center lg:items-end justify-between gap-2 pt-2 lg:pt-0 border-t lg:border-t-0 border-line text-right">
+            ${priceHTML}
+            <button type="button" data-select="${it.id}" class="h-9 px-4 rounded-xs ${state.priced ? 'bg-primary hover:bg-primary-hover text-white' : 'bg-secondary hover:bg-primary text-white'} text-[11px] font-mono font-bold uppercase tracking-wider transition">
+              ${state.priced ? '+ Booking Bag' : 'Query &amp; Pilih'}
+            </button>
+          </div>
+        </article>`;
+      }).join('');
+    }
+
+    function syncBounds() {
+      el.checkIn.min = today;
+      if (el.checkIn.value) {
+        el.checkOut.min = addDays(el.checkIn.value, 1);
+        el.checkOut.max = addDays(el.checkIn.value, MAX_NIGHTS);
+      } else {
+        el.checkOut.min = addDays(today, 1);
+        el.checkOut.removeAttribute('max');
+      }
+    }
+
+    function invalidate() {
+      state.priced = false; el.errors.textContent = '';
+      el.summary.textContent = summaryText();
+      renderResults();
+    }
+
+    $$('.mode-tab').forEach(t => t.addEventListener('click', () => { state.mode = t.dataset.mode; renderMode(); invalidate(); }));
+    $$('[data-step]').forEach(b => b.addEventListener('click', () => {
+      const k = b.dataset.step; el[k].value = clamp(num(k) + Number(b.dataset.dir), LIMITS[k]); invalidate();
+    }));
+    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('change', () => { el[k].value = num(k); invalidate(); }));
+    el.checkIn.addEventListener('change', () => {
+      syncBounds();
+      if (el.checkIn.value && (!el.checkOut.value || el.checkOut.value <= el.checkIn.value)) el.checkOut.value = addDays(el.checkIn.value, 2);
+      invalidate();
+    });
+    el.checkOut.addEventListener('change', invalidate);
+    el.dest.addEventListener('input', renderResults);
+
+    // Filter Buttons
+    $$('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        state.filter = btn.dataset.filter;
+        $$('.filter-btn').forEach(b => {
+          const active = b === btn;
+          b.className = `filter-btn h-8 px-3.5 rounded-xs text-[11px] font-bold uppercase tracking-wider transition ${active ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`;
+        });
+        renderResults();
+      });
+    });
+
+    el.form.addEventListener('submit', e => {
+      e.preventDefault();
+      const errs = validate();
+      el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
+      if (errs.length) return;
+
+      state.checking = true; el.btn.disabled = true;
+      el.btn.querySelector('[data-btn-label]').textContent = 'Sinkronisasi Tarif Korporat…';
+      renderResults();
+
+      setTimeout(() => {
+        state.checking = false; state.priced = true; state.checkedAt = new Date();
+        el.btn.disabled = false; el.btn.querySelector('[data-btn-label]').textContent = 'Query Tarif Live';
+        el.summary.textContent = `Live Terverifikasi: ${summaryText()}`;
+        renderResults();
+        document.getElementById('hotels').scrollIntoView({ behavior: 'smooth' });
+      }, 650);
+    });
+
+    document.addEventListener('click', e => {
+      const sel = e.target.closest('[data-select]'); if (sel) return selectItem(sel.dataset.select);
+      const det = e.target.closest('[data-detail]'); if (det) return openDetail(det.dataset.detail);
+      const rm = e.target.closest('[data-remove]'); if (rm) { state.trip.splice(Number(rm.dataset.remove), 1); renderTrip(); }
+      const rst = e.target.closest('[data-reset-filter]'); if (rst) {
+        state.filter = 'all';
+        $$('.filter-btn').forEach((b, i) => b.className = `filter-btn h-8 px-3.5 rounded-xs text-[11px] font-bold uppercase tracking-wider transition ${i === 0 ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`);
+        renderResults();
+      }
+    });
+
+    function selectItem(id) {
+      if (!state.priced) {
+        toast('Memverifikasi tarif ketersediaan korporat...');
+        const errs = validate();
+        if (errs.length) {
+          document.getElementById('searchSection').scrollIntoView({ behavior: 'smooth' });
+          el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
+          return;
+        }
+        state.priced = true;
+        renderResults();
+      }
+      const isHotel = id.startsWith('ml-thamrin') || id.startsWith('ml-senayan') || id.startsWith('ml-nusadua') || id.startsWith('ml-kraton');
+      const it = (isHotels => isHotels ? BUSINESS_HOTELS : BUSINESS_TRANSIT)(isHotel).find(x => x.id === id);
+      const total = isHotel ? stayTotal(it) : actTotal(it);
+      state.trip.push({ id: it.id, name: it.name, area: it.area, detail: summaryText(), total });
+      renderTrip();
+      toast(`Ditambahkan ke booking bag: ${it.name}`);
+      closeDetail();
+    }
+
+    function renderTrip() {
+      $$('[data-trip-count]').forEach(n => n.textContent = state.trip.length);
+      const box = $('#tripItems');
+      box.innerHTML = state.trip.length ? state.trip.map((t, i) => `
+        <div class="p-3.5 rounded-xs bg-canvas border border-line flex flex-col gap-1">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <p class="font-display font-bold text-primary text-[14px] leading-snug">${t.name}</p>
+              <p class="text-[11px] text-ink-muted">${t.area} · ${t.detail}</p>
+            </div>
+            <button type="button" data-remove="${i}" class="text-[11px] font-bold text-danger hover:underline">Hapus</button>
+          </div>
+          <p class="tnum font-mono text-[14px] font-bold text-primary mt-1">${idr.format(t.total)}</p>
+        </div>`).join('')
+        : `<p class="py-12 text-center text-[13px] text-ink-muted font-display">Booking bag Anda masih kosong.<br>Pilih akomodasi bisnis atau transportasi MICE.</p>`;
+      
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      $('#tripSubtotal').textContent = idr.format(totalVal);
+      $('#tripTotal').textContent = idr.format(totalVal);
+      $('#payBtn').disabled = !state.trip.length;
+    }
+
+    // Detail Quick-View Modal
+    const detailModal = $('#detailModal');
+    let currentDetailItem = null;
+    function openDetail(id) {
+      const isHotel = id.startsWith('ml-thamrin') || id.startsWith('ml-senayan') || id.startsWith('ml-nusadua') || id.startsWith('ml-kraton');
+      const it = (isHotels => isHotels ? BUSINESS_HOTELS : BUSINESS_TRANSIT)(isHotel).find(x => x.id === id);
+      if (!it) return;
+      currentDetailItem = it;
+
+      $('#modalImg').src = it.img;
+      $('#modalImg').alt = it.alt;
+      $('#modalBadge').textContent = isHotel ? `Peringkat Bintang ${'★'.repeat(it.stars)}` : it.duration;
+      $('#modalArea').textContent = it.area;
+      $('#modalTitle').textContent = it.name;
+      $('#modalDesc').textContent = it.desc;
+      $('#modalAmenities').innerHTML = (it.amenities || []).map(a => `<span class="px-2.5 py-1 rounded-xs bg-surface-muted text-ink font-mono text-[11px] font-semibold">${a}</span>`).join('');
+      $('#modalPolicy').textContent = it.policy;
+
+      const total = isHotel ? stayTotal(it) : actTotal(it);
+      $('#modalPrice').textContent = state.priced ? idr.format(total) : `Mulai ${idr.format(isHotel ? it.nightly : it.perPerson)}`;
+      detailModal.classList.remove('hidden');
+    }
+    function closeDetail() {
+      detailModal.classList.add('hidden');
+      currentDetailItem = null;
+    }
+    $('[data-close-modal]').addEventListener('click', closeDetail);
+    detailModal.addEventListener('click', e => { if (e.target === detailModal) closeDetail(); });
+    $('#modalSelectBtn').addEventListener('click', () => {
+      if (currentDetailItem) selectItem(currentDetailItem.id);
+    });
+
+    // Checkout Modal
+    const checkoutModal = $('#checkoutModal');
+    function openCheckout() {
+      if (!state.trip.length) return;
+      closeTrip();
+      $('#coItemCount').textContent = `${state.trip.length} Item Bisnis`;
+      $('#coItemList').innerHTML = state.trip.map(t => `<div class="flex justify-between font-display text-sm font-semibold"><span>• ${t.name}</span><span class="font-mono font-bold">${idr.format(t.total)}</span></div>`).join('');
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      $('#coTotal').textContent = idr.format(totalVal);
+      $('#checkoutFormContent').classList.remove('hidden');
+      $('#checkoutSuccessContent').classList.add('hidden');
+      checkoutModal.classList.remove('hidden');
+    }
+    function closeCheckout() {
+      checkoutModal.classList.add('hidden');
+    }
+    $('[data-close-checkout]').addEventListener('click', closeCheckout);
+    checkoutModal.addEventListener('click', e => { if (e.target === checkoutModal) closeCheckout(); });
+    $('[data-finish-checkout]').addEventListener('click', () => {
+      closeCheckout();
+      state.trip = [];
+      renderTrip();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    $('#btnDownloadVoucher').addEventListener('click', () => {
+      toast('E-Voucher & Lembar Faktur Pajak sedang diunduh (Simulasi PDF)...');
+    });
+
+    $('#coForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const guestName = $('#coName').value.trim();
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      const randomRef = 'ML-2026-' + Math.floor(1000 + Math.random() * 9000);
+
+      $('#successRef').textContent = randomRef;
+      $('#successGuest').textContent = guestName;
+      $('#successAmount').textContent = idr.format(totalVal);
+
+      $('#checkoutFormContent').classList.add('hidden');
+      $('#checkoutSuccessContent').classList.remove('hidden');
+    });
+
+    // Drawer Navigation
+    const drawer = $('#tripDrawer'), overlay = $('#tripOverlay');
+    function openTrip() { overlay.classList.remove('hidden'); drawer.classList.remove('translate-x-full'); drawer.setAttribute('aria-hidden', 'false'); }
+    function closeTrip() { overlay.classList.add('hidden'); drawer.classList.add('translate-x-full'); drawer.setAttribute('aria-hidden', 'true'); }
+    $$('[data-open-trip]').forEach(b => b.addEventListener('click', openTrip));
+    $('[data-close-trip]').addEventListener('click', closeTrip);
+    overlay.addEventListener('click', closeTrip);
+
+    $('#payBtn').addEventListener('click', openCheckout);
+
+    let toastTimer;
+    function toast(msg) {
+      const t = $('#toast'); t.textContent = msg; t.classList.remove('hidden');
+      clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.add('hidden'), 2500);
+    }
+
+    $('#menuBtn').addEventListener('click', () => {
+      const open = $('#mobileNav').classList.toggle('hidden') === false;
+      $('#menuBtn').setAttribute('aria-expanded', open);
+    });
+    $('#year').textContent = new Date().getFullYear();
+
+    syncBounds(); renderMode(); invalidate(); renderTrip();
+  })();
+  </script>
+</body>
+</html>

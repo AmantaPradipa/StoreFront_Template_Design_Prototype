@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mandalika Escape · Island, Coastal & Eco-Resort Sanctuaries</title>
+  <meta name="description" content="Mandalika Escape — Island and eco-resort sanctuaries across Lombok, Bali, and eastern Indonesia. Powered by Ortasys S4 white-label distribution.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* Ortasys S4 Storefront #2 · Mandalika Escape Tokens (design/mandalika_escape_design.md) */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#065F46', hover: '#064E3B' },
+            secondary: '#57534E',
+            tertiary: { DEFAULT: '#C2410C', hover: '#9A3412' },
+            canvas: '#F4F7F4',
+            surface: { DEFAULT: '#FFFFFF', muted: '#E6EFE9' },
+            ink: '#14261D',
+            line: '#D5E2DA',
+            success: '#15803D',
+            warning: '#B45309',
+            danger: '#DC2626'
+          },
+          fontFamily: {
+            display: ['"Fraunces"', 'Georgia', 'serif'],
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'ui-monospace', 'monospace']
+          },
+          borderRadius: {
+            sm: '10px',
+            md: '16px',
+            lg: '24px',
+            xl: '32px',
+            full: '9999px'
+          },
+          boxShadow: {
+            soft: '0 12px 28px -6px rgba(6, 95, 70, 0.08)',
+            float: '0 20px 40px -10px rgba(6, 95, 70, 0.16)'
+          },
+          maxWidth: { container: '1280px' }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; background-color: #F4F7F4; color: #14261D; }
+    .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on; }
+    .stepper input::-webkit-outer-spin-button,
+    .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .stepper input { -moz-appearance: textfield; }
+    :focus-visible { outline: 2px solid #C2410C; outline-offset: 2px; }
+    .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease; }
+    .js .reveal.is-in { opacity: 1; transform: none; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+    @media (prefers-reduced-motion: reduce) {
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-canvas text-ink antialiased selection:bg-primary/20 selection:text-primary">
+
+  <a href="#searchDock" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:px-5 focus:py-2.5 focus:rounded-full">Skip to search dock</a>
+
+  <!-- ============ FLOATING PILL HEADER BAR ============ -->
+  <div class="sticky top-4 z-40 px-4 sm:px-6">
+    <header class="max-w-container mx-auto h-[68px] px-6 rounded-full bg-surface/95 backdrop-blur-md border border-line shadow-soft flex items-center justify-between gap-4">
+      <a href="#home" class="flex items-center gap-3 shrink-0" aria-label="Mandalika Escape, Home">
+        <span class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-display text-xl font-bold">M</span>
+        <span class="font-display text-[22px] font-semibold tracking-tight text-ink">Mandalika Escape</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-1.5 text-[14px] font-medium" aria-label="Main Navigation">
+        <a href="#home" class="px-4 py-2 rounded-full text-ink font-semibold hover:bg-surface-muted transition-colors" aria-current="page">Home</a>
+        <a href="#tours" class="px-4 py-2 rounded-full text-secondary hover:text-ink hover:bg-surface-muted transition-colors">Tours</a>
+        <a href="#things-to-do" class="px-4 py-2 rounded-full text-secondary hover:text-ink hover:bg-surface-muted transition-colors">Things to do</a>
+        <a href="#hotels" class="px-4 py-2 rounded-full text-secondary hover:text-ink hover:bg-surface-muted transition-colors">Hotels</a>
+        <button type="button" data-open-trip class="ml-2 inline-flex items-center gap-2 h-10 px-5 rounded-full bg-tertiary text-white font-semibold hover:bg-tertiary-hover active:scale-[.98] transition">
+          Build your trip
+          <span data-trip-count class="tnum font-mono text-[12px] bg-white/25 rounded-full min-w-[20px] h-5 flex items-center justify-center px-1.5 font-bold">0</span>
+        </button>
+      </nav>
+
+      <button type="button" id="menuBtn" class="md:hidden w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-muted text-ink" aria-expanded="false" aria-controls="mobileNav" aria-label="Open mobile navigation menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </header>
+
+    <nav id="mobileNav" class="md:hidden hidden mt-2 max-w-container mx-auto p-4 rounded-3xl bg-surface border border-line shadow-float flex flex-col gap-2 font-medium" aria-label="Mobile Navigation">
+      <a href="#home" class="px-4 py-2.5 rounded-full text-ink font-semibold hover:bg-surface-muted">Home</a>
+      <a href="#tours" class="px-4 py-2.5 rounded-full text-secondary hover:bg-surface-muted">Tours</a>
+      <a href="#things-to-do" class="px-4 py-2.5 rounded-full text-secondary hover:bg-surface-muted">Things to do</a>
+      <a href="#hotels" class="px-4 py-2.5 rounded-full text-secondary hover:bg-surface-muted">Hotels</a>
+      <button type="button" data-open-trip class="mt-2 h-11 rounded-full bg-tertiary text-white font-semibold flex items-center justify-center gap-2">
+        Build your trip (<span data-trip-count class="tnum">0</span>)
+      </button>
+    </nav>
+  </div>
+
+  <main id="home" class="max-w-container mx-auto px-4 sm:px-6 pt-8">
+    <!-- ============ ASYMMETRICAL 5:7 SPLIT HERO ============ -->
+    <section class="grid lg:grid-cols-12 gap-8 items-start" aria-labelledby="heroTitle">
+      <!-- LEFT 5 COLUMNS: VERTICAL DOCKED SEARCH CONSOLE -->
+      <div id="searchDock" class="lg:col-span-5 lg:sticky lg:top-24 z-20">
+        <form id="searchForm" class="bg-surface rounded-xl p-6 sm:p-7 border border-line shadow-soft" novalidate>
+          <div class="flex items-center justify-between gap-4">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-muted text-primary text-[12px] font-bold tracking-wide uppercase">
+              <span class="w-2 h-2 rounded-full bg-primary animate-pulse" aria-hidden="true"></span>
+              Live Distribution
+            </span>
+            <div class="inline-flex p-1 rounded-full bg-surface-muted" role="tablist" aria-label="Search Mode">
+              <button type="button" role="tab" data-mode="hotels" aria-selected="true" class="mode-tab h-8 px-4 rounded-full text-[13px] font-bold transition-colors">Hotels</button>
+              <button type="button" role="tab" data-mode="activities" aria-selected="false" class="mode-tab h-8 px-4 rounded-full text-[13px] font-bold transition-colors">Activities</button>
+            </div>
+          </div>
+
+          <h1 id="heroTitle" class="mt-4 font-display text-[30px] sm:text-[34px] font-semibold leading-[1.18] tracking-[-0.015em]">Island, Coastal & Eco-Resort Sanctuaries</h1>
+          <p class="mt-2 text-[14px] text-secondary">Discover secluded beach villas and guided volcanic trails in Kuta Mandalika and eastern islands.</p>
+
+          <div class="mt-6 flex flex-col gap-4">
+            <label class="flex flex-col gap-1.5">
+              <span class="text-[13px] font-bold text-ink" data-dest-label>Destination or resort</span>
+              <input id="dest" name="dest" list="destList" autocomplete="off" placeholder="Kuta Mandalika, Gili Meno, Senggigi…" class="h-12 px-4 rounded-md bg-canvas border border-line text-[14px] placeholder:text-secondary/60 focus:border-primary focus:bg-surface focus:outline-none transition">
+              <datalist id="destList"></datalist>
+            </label>
+
+            <!-- Dual dates or Single date -->
+            <div class="grid grid-cols-2 gap-3" data-hotel-only>
+              <label class="flex flex-col gap-1.5">
+                <span class="text-[13px] font-bold text-ink">Check-in</span>
+                <input id="checkIn" type="date" aria-describedby="dateLimitHint" class="tnum h-12 px-3 rounded-md bg-canvas border border-line text-[13px] focus:border-primary focus:bg-surface focus:outline-none">
+              </label>
+              <label class="flex flex-col gap-1.5">
+                <span class="text-[13px] font-bold text-ink">Check-out</span>
+                <input id="checkOut" type="date" aria-describedby="dateLimitHint" class="tnum h-12 px-3 rounded-md bg-canvas border border-line text-[13px] focus:border-primary focus:bg-surface focus:outline-none">
+              </label>
+            </div>
+
+            <label class="flex flex-col gap-1.5 hidden" data-activity-only>
+              <span class="text-[13px] font-bold text-ink">Activity date</span>
+              <input id="actDate" type="date" class="tnum h-12 px-4 rounded-md bg-canvas border border-line text-[14px] focus:border-primary focus:bg-surface focus:outline-none">
+            </label>
+
+            <!-- Unified 3-column stepper row -->
+            <div class="grid grid-cols-3 gap-2.5 pt-1">
+              <div class="flex flex-col gap-1" data-hotel-only>
+                <span id="lbl-rooms" class="text-[12px] font-bold text-secondary">Rooms (1–9)</span>
+                <div class="stepper flex items-center h-12 rounded-md bg-canvas border border-line" role="group" aria-labelledby="lbl-rooms">
+                  <button type="button" class="w-8 h-full text-[18px] text-primary hover:bg-surface-muted rounded-l-md" data-step="rooms" data-dir="-1" aria-label="Decrease rooms">−</button>
+                  <input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" aria-labelledby="lbl-rooms" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[14px] font-bold focus:outline-none">
+                  <button type="button" class="w-8 h-full text-[18px] text-primary hover:bg-surface-muted rounded-r-md" data-step="rooms" data-dir="1" aria-label="Increase rooms">+</button>
+                </div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <span id="lbl-adults" class="text-[12px] font-bold text-secondary" data-adults-label>Adults (1–20)</span>
+                <div class="stepper flex items-center h-12 rounded-md bg-canvas border border-line" role="group" aria-labelledby="lbl-adults">
+                  <button type="button" class="w-8 h-full text-[18px] text-primary hover:bg-surface-muted rounded-l-md" data-step="adults" data-dir="-1" aria-label="Decrease adults">−</button>
+                  <input id="adults" type="number" min="1" max="20" value="2" inputmode="numeric" aria-labelledby="lbl-adults" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[14px] font-bold focus:outline-none">
+                  <button type="button" class="w-8 h-full text-[18px] text-primary hover:bg-surface-muted rounded-r-md" data-step="adults" data-dir="1" aria-label="Increase adults">+</button>
+                </div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <span id="lbl-children" class="text-[12px] font-bold text-secondary" data-children-label>Kids (0–20)</span>
+                <div class="stepper flex items-center h-12 rounded-md bg-canvas border border-line" role="group" aria-labelledby="lbl-children">
+                  <button type="button" class="w-8 h-full text-[18px] text-primary hover:bg-surface-muted rounded-l-md" data-step="children" data-dir="-1" aria-label="Decrease children">−</button>
+                  <input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" aria-labelledby="lbl-children" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[14px] font-bold focus:outline-none">
+                  <button type="button" class="w-8 h-full text-[18px] text-primary hover:bg-surface-muted rounded-r-md" data-step="children" data-dir="1" aria-label="Increase children">+</button>
+                </div>
+              </div>
+            </div>
+
+            <p id="dateLimitHint" class="text-[12px] text-secondary" data-hotel-only>Max 30 nights. All booked rooms share the same guest configuration.</p>
+            <div id="formErrors" class="text-[13px] text-danger font-semibold" role="alert" aria-live="assertive"></div>
+
+            <div class="pt-4 border-t border-line flex flex-col gap-3">
+              <div class="flex items-center justify-between text-[13px]">
+                <span class="text-secondary font-medium">Guarantee:</span>
+                <span class="font-semibold text-primary">Live price verified on demand</span>
+              </div>
+              <p id="summary" class="tnum font-mono text-[12px] text-secondary bg-surface-muted px-3 py-2 rounded-md" aria-live="polite">Choose your dates to check live rates</p>
+              
+              <button id="checkBtn" type="submit" class="w-full h-12 rounded-full bg-tertiary text-white text-[14px] font-bold hover:bg-tertiary-hover active:scale-[.98] transition shadow-soft flex items-center justify-center gap-2">
+                <span data-btn-label>Check Live Price</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <p class="text-[11px] text-center text-secondary">Every price is checked live when you ask for it.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- RIGHT 7 COLUMNS: BENTO PHOTO MOSAIC -->
+      <div class="lg:col-span-7 flex flex-col gap-6">
+        <div class="grid sm:grid-cols-12 gap-5">
+          <!-- Featured Tile 1: Mount Rinjani from Gili Meno (Large) -->
+          <div class="sm:col-span-12 relative rounded-xl overflow-hidden aspect-[16/9] bg-surface-muted shadow-soft group">
+            <img src="assets/mandalika_escape/rinjani-from-gili.jpg" alt="Mount Rinjani volcano across turquoise waters from Gili Meno island, Lombok" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="eager" width="1920" height="1280">
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+              <div>
+                <span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-[12px] font-bold">Lombok & Gili Islands</span>
+                <h2 class="font-display text-white text-[24px] sm:text-[28px] font-semibold mt-2">Gili Meno & Mount Rinjani Horizon</h2>
+                <p class="text-white/85 text-[14px] mt-1">Direct speedboats, coral reef preserves, and quiet beachfront stays.</p>
+              </div>
+              <span class="hidden sm:inline-flex px-3 py-1.5 rounded-full bg-white text-ink text-[12px] font-bold shrink-0">Live Verified</span>
+            </div>
+          </div>
+
+          <!-- Tile 2: Palm Bay Beach (Small Left) -->
+          <div class="sm:col-span-6 relative rounded-xl overflow-hidden aspect-[4/3] bg-surface-muted shadow-soft group">
+            <img src="assets/mandalika_escape/palm-bay.jpg" alt="Lombok island beach with palm trees and ocean bay" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" width="1920" height="1280">
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-white/80">South Lombok</span>
+              <h3 class="font-display text-[18px] font-semibold">Tanjung Aan & Kuta Coast</h3>
+            </div>
+          </div>
+
+          <!-- Tile 3: Traditional Sade Sasak Houses (Small Right) -->
+          <div class="sm:col-span-6 relative rounded-xl overflow-hidden aspect-[4/3] bg-surface-muted shadow-soft group">
+            <img src="assets/mandalika_escape/sade-houses.jpg" alt="Traditional Sasak village houses with bamboo and thatch in Sade, Lombok" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" width="1920" height="1440">
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-white/80">Cultural Heritage</span>
+              <h3 class="font-display text-[18px] font-semibold">Sade Village Handloom Arts</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote / Core Promise Strip -->
+        <div class="bg-surface rounded-xl p-6 border border-line flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <p class="text-[14px] font-bold text-ink">B2B Wholesale Shield & Transparent Retail</p>
+              <p class="text-[12px] text-secondary">Travelers see only final retail prices. Zero hidden fees, settled via DOKU / SNAP BI.</p>
+            </div>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-surface-muted text-secondary text-[12px] font-semibold whitespace-nowrap">Illustrative Sample Data</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BENTO STAYS & RESORTS SHOWCASE ============ -->
+    <section id="hotels" class="pt-24 sm:pt-28" aria-labelledby="resortsTitle">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <span class="text-[12px] font-bold uppercase tracking-wider text-primary">Eco-Luxury Accommodations</span>
+          <h2 id="resortsTitle" class="mt-1 font-display text-[32px] sm:text-[38px] font-semibold leading-[1.15] text-ink">Sanctuary Resorts & Villas</h2>
+          <p id="resultsNote" class="mt-2 text-[15px] text-secondary max-w-[620px]">Handpicked oceanfront stays in Lombok and neighboring isles. Prices calculate on-demand.</p>
+        </div>
+        <span class="px-4 py-1.5 rounded-full bg-surface-muted text-secondary text-[12px] font-semibold self-start sm:self-auto">Ortasys S4 Live Engine</span>
+      </div>
+
+      <div id="results" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- ============ TOURS & ISLAND EXPERIENCES ============ -->
+    <section id="tours" class="pt-24 sm:pt-28" aria-labelledby="toursTitle">
+      <div class="rounded-xl bg-surface border border-line p-8 sm:p-10 shadow-soft">
+        <div class="max-w-[640px]">
+          <span class="text-[12px] font-bold uppercase tracking-wider text-tertiary">Guided Expeditions</span>
+          <h2 id="toursTitle" class="mt-1 font-display text-[30px] sm:text-[34px] font-semibold text-ink">Island Tours & Marine Days</h2>
+          <p class="mt-2 text-[15px] text-secondary">Small-group or private boat charters across the Gili archipelago, coastal bays, and Mount Rinjani foothills.</p>
+        </div>
+
+        <div id="tourList" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+
+        <div id="things-to-do" class="pt-14 mt-14 border-t border-line">
+          <h3 class="font-display text-[22px] font-semibold text-ink">Curated Things to Do</h3>
+          <p class="text-[14px] text-secondary mt-1">Select any activity to customize your dates in the search console.</p>
+          <div id="thingsList" class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ROUNDED PEBBLE "WHY TRAVEL WITH US" PODS ============ -->
+    <section class="pt-24 sm:pt-28" aria-labelledby="whyTitle">
+      <div class="text-center max-w-[640px] mx-auto">
+        <span class="text-[12px] font-bold uppercase tracking-wider text-primary">Mandalika Concierge</span>
+        <h2 id="whyTitle" class="mt-1 font-display text-[32px] sm:text-[36px] font-semibold text-ink">Why travel with Mandalika Escape</h2>
+        <p class="mt-2 text-[15px] text-secondary">Rooted in Lombok's hospitality heartland, serving mindful travelers globally.</p>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="rounded-lg bg-surface p-7 sm:p-8 border border-line shadow-soft flex flex-col gap-3">
+          <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-[18px]">01</div>
+          <h3 class="font-display text-[20px] font-semibold text-ink">On-Ground Island Roots</h3>
+          <p class="text-[14px] leading-relaxed text-secondary">Born from Kuta Mandalika's surf and sanctuary coast. We maintain direct relationships with local resort managers, boat captains, and weaving villages.</p>
+        </div>
+        <div class="rounded-lg bg-surface p-7 sm:p-8 border border-line shadow-soft flex flex-col gap-3">
+          <div class="w-12 h-12 rounded-full bg-tertiary/10 text-tertiary flex items-center justify-center font-bold text-[18px]">02</div>
+          <h3 class="font-display text-[20px] font-semibold text-ink">Deterministic Live Pricing</h3>
+          <p class="text-[14px] leading-relaxed text-secondary">Every price is checked live when you ask for it. Dynamic rates compute across your exact stay length (up to 30 nights) and room configurations with zero stale caches.</p>
+        </div>
+        <div class="rounded-lg bg-surface p-7 sm:p-8 border border-line shadow-soft flex flex-col gap-3">
+          <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-[18px]">03</div>
+          <h3 class="font-display text-[20px] font-semibold text-ink">Dedicated WhatsApp Concierge</h3>
+          <p class="text-[14px] leading-relaxed text-secondary">From private fast-boat transfers at Bangsal Harbour to sunset surf guides in Gerupuk, our team provides seamless on-ground coordination.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT SECTION ============ -->
+    <section id="about" class="pt-24 sm:pt-28" aria-labelledby="aboutTitle">
+      <div class="rounded-xl bg-surface-muted p-8 sm:p-12 border border-line grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7">
+          <span class="text-[12px] font-bold uppercase tracking-wider text-primary">About Our Agency</span>
+          <h2 id="aboutTitle" class="mt-1 font-display text-[30px] sm:text-[34px] font-semibold text-ink">Crafted for Quiet Island Explorations</h2>
+          <p class="mt-4 text-[15px] leading-relaxed text-secondary">Mandalika Escape operates on the Ortasys multi-supplier distribution network, allowing us to aggregate leading boutique resorts and private local charters while giving our guests a serene, unified booking experience.</p>
+          <p class="mt-3 text-[14px] leading-relaxed text-secondary">All bookings are confirmed instantly, safeguarded by Bank Indonesia standard payment channels (SNAP BI) and DOKU settlement gateways.</p>
+        </div>
+        <div class="lg:col-span-5 rounded-lg overflow-hidden shadow-soft aspect-[4/3]">
+          <img src="assets/mandalika_escape/sade-weaving.jpg" alt="Traditional Ikat handloom weaving in Sade Village, Lombok" class="w-full h-full object-cover" loading="lazy" width="1920" height="1440">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ SECTION ============ -->
+    <section id="faq" class="pt-24 sm:pt-28" aria-labelledby="faqTitle">
+      <div class="max-w-[760px] mx-auto">
+        <div class="text-center">
+          <h2 id="faqTitle" class="font-display text-[30px] sm:text-[34px] font-semibold text-ink">Frequently Asked Questions</h2>
+          <p class="mt-2 text-[15px] text-secondary">Key details on reservations, multi-room group stays, and payment processing.</p>
+        </div>
+
+        <div class="mt-8 rounded-xl bg-surface border border-line divide-y divide-line shadow-soft overflow-hidden">
+          <details class="group p-6">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer text-[17px] font-semibold text-ink">
+              How does live price checking work?
+              <span class="faq-icon text-tertiary text-[22px] leading-none transition-transform" aria-hidden="true">+</span>
+            </summary>
+            <p class="mt-3 text-[14px] leading-relaxed text-secondary">When you enter travel dates and guest numbers, our S4 engine checks real-time availability and dynamic retail rates. Every price is checked live when you ask for it.</p>
+          </details>
+          <details class="group p-6">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer text-[17px] font-semibold text-ink">
+              What are the multi-room and occupancy limits?
+              <span class="faq-icon text-tertiary text-[22px] leading-none transition-transform" aria-hidden="true">+</span>
+            </summary>
+            <p class="mt-3 text-[14px] leading-relaxed text-secondary">You can book 1 to 9 rooms in a single transaction for stays up to 30 nights. Each room supports 1 to 20 adults and 0 to 20 children, with uniform guest distribution across all selected rooms.</p>
+          </details>
+          <details class="group p-6">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer text-[17px] font-semibold text-ink">
+              Which payment methods are accepted?
+              <span class="faq-icon text-tertiary text-[22px] leading-none transition-transform" aria-hidden="true">+</span>
+            </summary>
+            <p class="mt-3 text-[14px] leading-relaxed text-secondary">We support verified Indonesian bank transfers, QRIS, and virtual accounts via SNAP BI and DOKU checkout rails.</p>
+          </details>
+          <details class="group p-6">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer text-[17px] font-semibold text-ink">
+              Can I bundle resort stays with private boat transfers?
+              <span class="faq-icon text-tertiary text-[22px] leading-none transition-transform" aria-hidden="true">+</span>
+            </summary>
+            <p class="mt-3 text-[14px] leading-relaxed text-secondary">Yes! Use the "Build your trip" drawer to combine any resort stay with boat charters or guided hikes, receiving a consolidated itinerary and single checkout voucher.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT CONCIERGE ============ -->
+    <section id="contact" class="pt-24 sm:pt-28 pb-20" aria-labelledby="contactTitle">
+      <div class="rounded-xl bg-primary text-white p-8 sm:p-12 shadow-float grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5">
+          <span class="text-[12px] font-bold uppercase tracking-wider text-emerald-200">Personal Concierge</span>
+          <h2 id="contactTitle" class="mt-1 font-display text-[32px] sm:text-[36px] font-semibold leading-tight">Need a Bespoke Island Itinerary?</h2>
+          <p class="mt-3 text-[15px] text-white/85 leading-relaxed">Reach our Kuta Mandalika travel team for private surf expeditions, honeymoon villa styling, or tailored yacht charters.</p>
+          <div class="mt-6 flex flex-col gap-2 text-[14px] text-emerald-100">
+            <p><strong>Desk:</strong> Kuta Mandalika, Central Lombok, NTB</p>
+            <p><strong>Support:</strong> WhatsApp &amp; Concierge Desk</p>
+          </div>
+        </div>
+        <form id="contactForm" class="lg:col-span-7 bg-white/10 backdrop-blur-md rounded-lg p-6 sm:p-7 border border-white/15 grid sm:grid-cols-2 gap-4" novalidate>
+          <label class="flex flex-col gap-1.5">
+            <span class="text-[13px] font-semibold text-white">Full name</span>
+            <input required name="name" autocomplete="name" class="h-11 px-3.5 rounded-md bg-white text-ink text-[14px] focus:outline-none">
+          </label>
+          <label class="flex flex-col gap-1.5">
+            <span class="text-[13px] font-semibold text-white">Email</span>
+            <input required type="email" name="email" autocomplete="email" class="h-11 px-3.5 rounded-md bg-white text-ink text-[14px] focus:outline-none">
+          </label>
+          <label class="sm:col-span-2 flex flex-col gap-1.5">
+            <span class="text-[13px] font-semibold text-white">Travel wishes</span>
+            <textarea required name="msg" rows="3" placeholder="5 nights in Lombok, private boat to Gili Meno, surf lessons in Gerupuk…" class="px-3.5 py-3 rounded-md bg-white text-ink text-[14px] focus:outline-none"></textarea>
+          </label>
+          <div class="sm:col-span-2 flex items-center justify-between gap-4 pt-1">
+            <button class="h-11 px-7 rounded-full bg-tertiary hover:bg-tertiary-hover text-white text-[14px] font-bold transition shadow-soft">Send Request</button>
+            <p id="contactNote" class="text-[13px] text-emerald-100" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="border-t border-line bg-surface mt-10">
+    <div class="max-w-container mx-auto px-4 sm:px-6 py-12">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div>
+          <span class="font-display text-[26px] font-semibold text-ink">Mandalika Escape</span>
+          <p class="text-[13px] text-secondary mt-1">White-label storefront on the Ortasys S4 multi-supplier distribution network.</p>
+        </div>
+        <nav class="flex flex-wrap gap-5 text-[14px] font-medium text-secondary" aria-label="Footer Navigation">
+          <a href="#about" class="hover:text-primary transition-colors">About us</a>
+          <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+          <a href="#faq" class="hover:text-primary transition-colors">FAQ</a>
+        </nav>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-line grid md:grid-cols-2 gap-4 text-[12px] text-secondary">
+        <p>Payments powered by <strong class="text-ink">DOKU</strong> and <strong class="text-ink">SNAP BI</strong>. Resort names, sample rates and inventory are illustrative sample data [PRD 9.2].</p>
+        <p class="md:text-right">© <span id="year"></span> Mandalika Escape. All rights reserved.</p>
+      </div>
+
+      <p class="mt-4 text-[11px] leading-relaxed text-secondary/80">Image credits:
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Lombok_Island_and_Mount_Rinjani_from_Gili_Meno_Island,_Indonesia.jpg">“Lombok Island and Mount Rinjani from Gili Meno”</a> by Vyacheslav Argenberg, <a class="underline" href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Lombok,_Island_beach_in_the_bay,_Palm_trees,_Indonesia.jpg">“Lombok Island beach in the bay”</a> by Vyacheslav Argenberg, <a class="underline" href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Beach_in_Lombok_8.jpg">“Beach in Lombok 8”</a> by Lasthib, CC0;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Gunung_rinjani.jpg">“Gunung rinjani”</a> by Aldoarianto.87, <a class="underline" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Gili_Islands,_Brigantine,_Bali_Sea,_Indonesia.jpg">“Gili Islands, Brigantine”</a> by Vyacheslav Argenberg, <a class="underline" href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Traditional_Sasak_Village_Sade_houses.JPG">“Sasak Village Sade houses”</a> by Midori, <a class="underline" href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Tenun_Ikat_Lombok_Traditional_Sasak_Village_Sade.JPG">“Tenun Ikat Sade”</a> by Midori, <a class="underline" href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>; all via Wikimedia Commons.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============ TRIP DRAWER (BUILD YOUR TRIP) ============ -->
+  <div id="tripOverlay" class="fixed inset-0 z-50 bg-ink/40 backdrop-blur-sm hidden" aria-hidden="true"></div>
+  <aside id="tripDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-[440px] bg-surface shadow-float translate-x-full transition-transform duration-300 flex flex-col" role="dialog" aria-modal="true" aria-labelledby="tripTitle" aria-hidden="true">
+    <div class="flex items-center justify-between px-6 h-[72px] border-b border-line">
+      <div class="flex items-center gap-2">
+        <h2 id="tripTitle" class="font-display text-[22px] font-semibold text-ink">Build your trip</h2>
+        <span class="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-mono text-[12px] font-bold" data-trip-count>0</span>
+      </div>
+      <button type="button" data-close-trip class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-muted text-secondary hover:text-ink" aria-label="Close trip drawer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <div id="tripItems" class="flex-1 overflow-y-auto px-6 py-4 flex flex-col gap-3"></div>
+
+    <div class="border-t border-line px-6 py-5 bg-surface-muted/50">
+      <div class="flex items-baseline justify-between">
+        <span class="text-[14px] font-semibold text-secondary">Total Package Retail:</span>
+        <span id="tripTotal" class="tnum font-mono text-[22px] font-bold text-ink">Rp 0</span>
+      </div>
+      <button id="payBtn" type="button" class="mt-4 w-full h-12 rounded-full bg-primary hover:bg-primary-hover text-white text-[14px] font-bold disabled:opacity-50 disabled:cursor-not-allowed transition shadow-soft">
+        Checkout with DOKU / SNAP BI
+      </button>
+      <p id="payNote" class="mt-2.5 text-[12px] text-center text-secondary" aria-live="polite">Bank Indonesia SNAP standard payment gateway.</p>
+    </div>
+  </aside>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-ink text-white rounded-full px-6 py-3 text-[14px] shadow-float font-medium" role="status" aria-live="polite"></div>
+
+  <script>
+  (() => {
+    'use strict';
+    /* Sample Resourced Data (PRD 9.2: Illustrative sample data only) */
+    const STAYS = [
+      { id: 'me-mandalika', name: 'Mandalika Sunlit Bay Resort', area: 'Kuta Mandalika · South Lombok', keys: 'mandalika kuta lombok south bay', img: 'assets/mandalika_escape/palm-bay.jpg', alt: 'Ocean bay and palm trees in South Lombok', stars: 5, room: 'Oceanfront Eco Villa', meal: 'Tropical breakfast included', policy: 'Free cancellation until 7 days prior', nightly: 3450000 },
+      { id: 'me-gili', name: 'Gili Meno Sanctuary Villas', area: 'Gili Meno · North Lombok', keys: 'gili meno island sanctuary coral', img: 'assets/mandalika_escape/rinjani-from-gili.jpg', alt: 'Rinjani views from Gili Meno island shore', stars: 5, room: 'Private Coral Pool Bungalow', meal: 'All-inclusive breakfast & transfers', policy: 'Free cancellation until 5 days prior', nightly: 4100000 },
+      { id: 'me-senggigi', name: 'Senggigi Sunset Haven', area: 'Senggigi Coast · West Lombok', keys: 'senggigi west lombok beach haven', img: 'assets/mandalika_escape/beach.jpg', alt: 'Beach coastline in Lombok', stars: 4, room: 'Deluxe Sunset Suite', meal: 'Breakfast included', policy: 'Free cancellation until 3 days prior', nightly: 1950000 },
+      { id: 'me-rinjani', name: 'Rinjani Foothill Eco Lodge', area: 'Senaru Foothills · North Lombok', keys: 'rinjani senaru mountain trekking lodge', img: 'assets/mandalika_escape/rinjani.jpg', alt: 'Gunung Rinjani mountain slopes', stars: 4, room: 'Bamboo Canopy Chalet', meal: 'Organic breakfast & trail pack', policy: 'Free cancellation until 4 days prior', nightly: 1600000 }
+    ];
+
+    const ACTIVITIES = [
+      { id: 'me-gili-boat', kind: 'tour', name: 'Gili Islands Private Boat Charter', area: 'Gili Air, Meno & Trawangan', keys: 'gili boat charter snorkeling', img: 'assets/mandalika_escape/gili-boat.jpg', alt: 'Wooden boat sailing in the clear Bali Sea off Gili Islands', duration: 'Full day · Private captain, snorkeling gear & lunch', perPerson: 850000 },
+      { id: 'me-sade-tour', kind: 'tour', name: 'Sasak Cultural & Sade Village Trail', area: 'Central Lombok', keys: 'sade sasak village weaving culture', img: 'assets/mandalika_escape/sade-houses.jpg', alt: 'Traditional thatched roof houses in Sade village', duration: '5 hours · Local Sasak guide, handloom workshop & transport', perPerson: 550000 },
+      { id: 'me-rinjani-hike', kind: 'tour', name: 'Senaru Crater Rim Sunrise Trek', area: 'Mount Rinjani National Park', keys: 'rinjani senaru hike trek sunrise', img: 'assets/mandalika_escape/rinjani.jpg', alt: 'Panoramic views of Gunung Rinjani summit', duration: '2 Days 1 Night · Guides, porters, camping & meals', perPerson: 2200000 },
+      { id: 'me-surf', kind: 'thing', name: 'Gerupuk Bay Reef Surf Coaching', area: 'South Lombok', keys: 'surf gerupuk reef waves', img: 'assets/mandalika_escape/palm-bay.jpg', alt: 'Coastal waves and palm trees', duration: '3 hours · Boat transfer & certified surf instructor', perPerson: 450000 },
+      { id: 'me-sunset-sail', kind: 'thing', name: 'Tanjung Aan Sunset Catamaran', area: 'South Coast Lombok', keys: 'sunset sail catamaran tanjung aan', img: 'assets/mandalika_escape/beach.jpg', alt: 'Beach in Lombok at sunset', duration: '4 hours · Drinks & canapés', perPerson: 750000 },
+      { id: 'me-weaving', kind: 'thing', name: 'Tenun Ikat Traditional Weaving Class', area: 'Sade Heritage Center', keys: 'weaving tenun ikat textile workshop', img: 'assets/mandalika_escape/sade-weaving.jpg', alt: 'Sasak woman weaving traditional Tenun Ikat fabric', duration: '3 hours · Weaver master & take-home textile souvenir', perPerson: 380000 }
+    ];
+
+    /* S4 Parameters & Bounds */
+    const LIMITS = { rooms: [1, 9], adults: [1, 20], children: [0, 20] };
+    const MAX_NIGHTS = 30;
+    const idr = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const DAY = 86400000;
+    const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    const addDays = (s, n) => iso(new Date(new Date(s + 'T00:00:00').getTime() + n * DAY));
+    const today = iso(new Date());
+
+    const state = { mode: 'hotels', priced: false, checking: false, checkedAt: null, trip: [] };
+    const el = {
+      form: $('#searchForm'), dest: $('#dest'), checkIn: $('#checkIn'), checkOut: $('#checkOut'), actDate: $('#actDate'),
+      rooms: $('#rooms'), adults: $('#adults'), children: $('#qChildren'), errors: $('#formErrors'), summary: $('#summary'),
+      btn: $('#checkBtn'), results: $('#results'), resultsNote: $('#resultsNote')
+    };
+
+    const clamp = (v, [lo, hi]) => Math.min(hi, Math.max(lo, Number.isFinite(v) ? v : lo));
+    const num = k => clamp(parseInt(el[k].value, 10), LIMITS[k]);
+    const nights = () => {
+      if (!el.checkIn.value || !el.checkOut.value) return 0;
+      return Math.round((new Date(el.checkOut.value) - new Date(el.checkIn.value)) / DAY);
+    };
+
+    function validate() {
+      const errs = [];
+      if (state.mode === 'hotels') {
+        if (!el.checkIn.value || !el.checkOut.value) errs.push('Please choose valid check-in and check-out dates.');
+        else {
+          const n = nights();
+          if (el.checkIn.value < today) errs.push('Check-in cannot be set in the past.');
+          if (n < 1) errs.push('Check-out must be at least 1 night after check-in.');
+          if (n > MAX_NIGHTS) errs.push(`Stays cannot exceed ${MAX_NIGHTS} nights in a single booking.`);
+        }
+      } else {
+        if (!el.actDate.value) errs.push('Please select a date for your activity.');
+        else if (el.actDate.value < today) errs.push('Activity date cannot be in the past.');
+      }
+      return errs;
+    }
+
+    const roomRate = s => Math.round(s.nightly * (1 + 0.15 * Math.max(0, num('adults') - 2) + 0.08 * num('children')) / 1000) * 1000;
+    const stayTotal = s => roomRate(s) * nights() * num('rooms');
+    const actTotal = a => a.perPerson * num('adults') + Math.round(a.perPerson * 0.5) * num('children');
+
+    function summaryText() {
+      const r = num('rooms'), a = num('adults'), c = num('children');
+      const g = `${a} Adult${a > 1 ? 's' : ''}${c ? ` + ${c} Child${c > 1 ? 'ren' : ''}` : ''}`;
+      if (state.mode === 'hotels') {
+        const n = nights();
+        if (!n || n < 1) return 'Choose dates to calculate live verified total';
+        return `${n} Night${n > 1 ? 's' : ''} × ${r} Room${r > 1 ? 's' : ''} (${g} / room)`;
+      }
+      return el.actDate.value ? `${el.actDate.value} · ${g}` : 'Choose an activity date to calculate total';
+    }
+
+    function renderMode() {
+      $$('.mode-tab').forEach(t => {
+        const on = t.dataset.mode === state.mode;
+        t.setAttribute('aria-selected', on);
+        t.className = `mode-tab h-8 px-4 rounded-full text-[13px] font-bold transition-colors ${on ? 'bg-primary text-white' : 'text-secondary hover:text-ink'}`;
+      });
+      const hotels = state.mode === 'hotels';
+      $$('[data-hotel-only]').forEach(n => n.classList.toggle('hidden', !hotels));
+      $$('[data-activity-only]').forEach(n => n.classList.toggle('hidden', hotels));
+      $('[data-dest-label]').textContent = hotels ? 'Destination or resort' : 'Destination or activity';
+      $('#destList').innerHTML = (hotels ? ['Kuta Mandalika', 'Gili Meno', 'Senggigi Coast', 'Senaru', ...STAYS.map(s => s.name)] : ['Gili Islands', 'Sade Village', 'Senaru', 'Gerupuk Bay', ...ACTIVITIES.map(a => a.name)])
+        .map(v => `<option value="${v}">`).join('');
+    }
+
+    function renderResults() {
+      const isHotels = state.mode === 'hotels';
+      const q = el.dest.value.trim().toLowerCase();
+      let list = (isHotels ? STAYS : ACTIVITIES).filter(it => !q || (it.name + ' ' + it.area + ' ' + it.keys).toLowerCase().includes(q));
+      if (!list.length) list = isHotels ? STAYS : ACTIVITIES;
+
+      el.results.innerHTML = list.map(it => {
+        const total = isHotels ? stayTotal(it) : actTotal(it);
+        const sub = isHotels ? `${idr.format(roomRate(it))} / room / night` : `${idr.format(it.perPerson)} / person`;
+        const priceHTML = state.checking
+          ? `<div class="h-10 w-32 rounded-full bg-surface-muted animate-pulse"></div>`
+          : state.priced
+            ? `<div><p class="tnum font-mono text-[20px] font-bold text-ink">${idr.format(total)}</p><p class="tnum font-mono text-[12px] text-secondary">${sub}</p></div>`
+            : `<p class="text-[13px] text-secondary italic">Check live price to see rates</p>`;
+
+        return `
+        <article class="bg-surface rounded-xl border border-line overflow-hidden shadow-soft flex flex-col hover:-translate-y-1 transition duration-300">
+          <div class="relative aspect-[4/3] bg-surface-muted overflow-hidden">
+            <img src="${it.img}" alt="${it.alt}" loading="lazy" class="w-full h-full object-cover">
+            ${isHotels ? `<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-ink text-[12px] font-bold">${'★'.repeat(it.stars)}</span>` : ''}
+          </div>
+          <div class="p-5 sm:p-6 flex flex-col flex-1 gap-2">
+            <span class="text-[12px] font-bold uppercase tracking-wider text-primary">${it.area}</span>
+            <h3 class="font-display text-[20px] font-semibold text-ink">${it.name}</h3>
+            <p class="text-[13px] text-secondary mt-1">${isHotels ? `${it.room} · ${it.meal}` : it.duration}</p>
+            <div class="mt-auto pt-4 border-t border-line flex items-end justify-between gap-3">
+              ${priceHTML}
+              <button type="button" data-select="${it.id}" class="h-10 px-5 rounded-full bg-primary hover:bg-primary-hover text-white text-[13px] font-bold active:scale-[.98] transition">Select</button>
+            </div>
+          </div>
+        </article>`;
+      }).join('');
+    }
+
+    function renderTours() {
+      const tours = ACTIVITIES.filter(a => a.kind === 'tour');
+      $('#tourList').innerHTML = tours.map(t => `
+        <div class="rounded-lg bg-surface border border-line p-5 flex flex-col gap-3 shadow-soft">
+          <div class="aspect-[16/9] rounded-md overflow-hidden bg-surface-muted">
+            <img src="${t.img}" alt="${t.alt}" loading="lazy" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-tertiary">${t.area}</span>
+            <h4 class="font-display text-[18px] font-semibold text-ink mt-0.5">${t.name}</h4>
+            <p class="text-[13px] text-secondary mt-1">${t.duration}</p>
+          </div>
+          <div class="mt-auto pt-3 border-t border-line flex items-center justify-between">
+            <span class="tnum font-mono text-[13px] font-bold text-ink">${idr.format(t.perPerson)} / pers</span>
+            <button type="button" data-plan="${t.id}" class="h-9 px-4 rounded-full border border-primary text-primary hover:bg-primary hover:text-white text-[12px] font-bold transition">Plan Tour</button>
+          </div>
+        </div>`).join('');
+
+      const things = ACTIVITIES.filter(a => a.kind === 'thing');
+      $('#thingsList').innerHTML = things.map(t => `
+        <button type="button" data-plan="${t.id}" class="text-left bg-canvas rounded-lg p-4 border border-line hover:border-primary transition group">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-secondary">${t.area}</span>
+          <p class="font-semibold text-[15px] text-ink group-hover:text-primary transition-colors mt-0.5">${t.name}</p>
+          <span class="block text-[12px] text-secondary mt-2">${t.duration}</span>
+        </button>`).join('');
+    }
+
+    function syncBounds() {
+      el.checkIn.min = today; el.actDate.min = today;
+      if (el.checkIn.value) {
+        el.checkOut.min = addDays(el.checkIn.value, 1);
+        el.checkOut.max = addDays(el.checkIn.value, MAX_NIGHTS);
+      } else { el.checkOut.min = addDays(today, 1); el.checkOut.removeAttribute('max'); }
+    }
+
+    function invalidate() {
+      state.priced = false; el.errors.textContent = '';
+      el.summary.textContent = summaryText();
+      renderResults();
+    }
+
+    /* Event Listeners */
+    $$('.mode-tab').forEach(t => t.addEventListener('click', () => { state.mode = t.dataset.mode; renderMode(); invalidate(); }));
+    $$('[data-step]').forEach(b => b.addEventListener('click', () => {
+      const k = b.dataset.step; el[k].value = clamp(num(k) + Number(b.dataset.dir), LIMITS[k]); invalidate();
+    }));
+    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('change', () => { el[k].value = num(k); invalidate(); }));
+    el.checkIn.addEventListener('change', () => {
+      syncBounds();
+      if (el.checkIn.value && (!el.checkOut.value || el.checkOut.value <= el.checkIn.value)) el.checkOut.value = addDays(el.checkIn.value, 2);
+      invalidate();
+    });
+    [el.checkOut, el.actDate].forEach(i => i.addEventListener('change', invalidate));
+    el.dest.addEventListener('input', renderResults);
+
+    el.form.addEventListener('submit', e => {
+      e.preventDefault();
+      const errs = validate();
+      el.errors.innerHTML = errs.map(x => `<p>${x}</p>`).join('');
+      if (errs.length) return;
+
+      state.checking = true; el.btn.disabled = true;
+      el.btn.querySelector('[data-btn-label]').textContent = 'Checking Live Price…';
+      renderResults();
+
+      setTimeout(() => {
+        state.checking = false; state.priced = true; state.checkedAt = new Date();
+        el.btn.disabled = false; el.btn.querySelector('[data-btn-label]').textContent = 'Check Live Price';
+        el.summary.textContent = `Live Verified (${state.checkedAt.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}) · ${summaryText()}`;
+        renderResults();
+        document.getElementById('hotels').scrollIntoView({ behavior: 'smooth' });
+      }, 750);
+    });
+
+    function planActivity(id) {
+      const a = ACTIVITIES.find(x => x.id === id); if (!a) return;
+      state.mode = 'activities'; renderMode();
+      el.dest.value = a.name; invalidate();
+      document.getElementById('searchDock').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => el.actDate.focus({ preventScroll: true }), 400);
+    }
+
+    document.addEventListener('click', e => {
+      const sel = e.target.closest('[data-select]'); if (sel) return selectItem(sel.dataset.select);
+      const plan = e.target.closest('[data-plan]'); if (plan) return planActivity(plan.dataset.plan);
+      const rm = e.target.closest('[data-remove]'); if (rm) { state.trip.splice(Number(rm.dataset.remove), 1); renderTrip(); }
+    });
+
+    function selectItem(id) {
+      if (!state.priced) {
+        toast('Please check live prices for your dates first.');
+        document.getElementById('searchDock').scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+      const isHotel = id.startsWith('me-');
+      const it = (isHotel ? STAYS : ACTIVITIES).find(x => x.id === id);
+      const total = isHotel ? stayTotal(it) : actTotal(it);
+      state.trip.push({ name: it.name, area: it.area, detail: summaryText(), total });
+      renderTrip();
+      toast(`${it.name} added to your trip.`);
+    }
+
+    function renderTrip() {
+      $$('[data-trip-count]').forEach(n => n.textContent = state.trip.length);
+      const box = $('#tripItems');
+      box.innerHTML = state.trip.length ? state.trip.map((t, i) => `
+        <div class="p-4 rounded-lg bg-canvas border border-line flex flex-col gap-2">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <p class="font-display font-semibold text-[16px] text-ink">${t.name}</p>
+              <p class="text-[12px] text-secondary">${t.area}</p>
+              <p class="tnum font-mono text-[11px] text-secondary mt-1">${t.detail}</p>
+            </div>
+            <button type="button" data-remove="${i}" class="text-[12px] font-bold text-danger hover:underline">Remove</button>
+          </div>
+          <p class="tnum font-mono text-[15px] font-bold text-primary mt-1">${idr.format(t.total)}</p>
+        </div>`).join('')
+        : `<p class="py-8 text-center text-[14px] text-secondary">Your trip itinerary is empty.<br>Check live prices and select resorts or tours to add them.</p>`;
+      $('#tripTotal').textContent = idr.format(state.trip.reduce((s, t) => s + t.total, 0));
+      $('#payBtn').disabled = !state.trip.length;
+    }
+
+    const drawer = $('#tripDrawer'), overlay = $('#tripOverlay');
+    function openTrip() {
+      overlay.classList.remove('hidden'); drawer.classList.remove('translate-x-full');
+      drawer.setAttribute('aria-hidden', 'false');
+    }
+    function closeTrip() {
+      overlay.classList.add('hidden'); drawer.classList.add('translate-x-full');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+    $$('[data-open-trip]').forEach(b => b.addEventListener('click', openTrip));
+    $('[data-close-trip]').addEventListener('click', closeTrip);
+    overlay.addEventListener('click', closeTrip);
+
+    $('#payBtn').addEventListener('click', () => {
+      $('#payNote').textContent = 'Connecting to SNAP BI / DOKU secure checkout... (Demo mode)';
+    });
+
+    let toastTimer;
+    function toast(msg) {
+      const t = $('#toast'); t.textContent = msg; t.classList.remove('hidden');
+      clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.add('hidden'), 2600);
+    }
+
+    $('#menuBtn').addEventListener('click', () => {
+      const open = $('#mobileNav').classList.toggle('hidden') === false;
+      $('#menuBtn').setAttribute('aria-expanded', open);
+    });
+
+    $('#contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      $('#contactNote').textContent = 'Thank you! Our Mandalika concierge will respond via email shortly.';
+    });
+    $('#year').textContent = new Date().getFullYear();
+
+    syncBounds(); renderMode(); renderSummary(); renderResults(); renderTours(); renderTrip();
+  })();
+  </script>
+</body>
+</html>
+

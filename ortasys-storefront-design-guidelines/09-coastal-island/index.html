@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nusa Tide Escapes · Liburan Pesisir &amp; Eksplorasi Kepulauan</title>
+  <meta name="description" content="Nusa Tide Escapes — Spesialis liburan pantai, vila tepi laut, dan eksplorasi pulau tropis di seluruh kepulauan Indonesia. Ditenagai oleh Ortasys S4.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* Ortasys Storefront Preset 09 · Coastal & Island Escape (09-coastal-island/DESIGN.md) */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#176B73', hover: '#10545B' },
+            secondary: '#E29A70',
+            tertiary: '#B9D8D3',
+            accent: '#E8C98D',
+            canvas: '#F3F8F6',
+            surface: { DEFAULT: '#FFFFFF', muted: '#E5F0ED' },
+            ink: { DEFAULT: '#20383A', muted: '#647A79' },
+            line: '#D4E3DF',
+            success: '#2F785C',
+            warning: '#A96C2D',
+            danger: '#B34B45'
+          },
+          fontFamily: {
+            display: ['"Fraunces"', 'Georgia', 'serif'],
+            sans: ['"Manrope"', 'system-ui', 'sans-serif'],
+            mono: ['ui-monospace', 'monospace']
+          },
+          borderRadius: {
+            xs: '6px',
+            sm: '10px',
+            md: '16px',
+            lg: '24px',
+            xl: '32px',
+            pill: '9999px'
+          },
+          boxShadow: {
+            soft: '0 4px 20px -2px rgba(23, 107, 115, 0.08)',
+            elevated: '0 12px 32px -4px rgba(23, 107, 115, 0.14)'
+          },
+          maxWidth: { container: '1240px' }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: 'Manrope', system-ui, sans-serif; background-color: #F3F8F6; color: #20383A; }
+    .font-display { font-family: 'Fraunces', Georgia, serif; }
+    .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on; }
+    .stepper input::-webkit-outer-spin-button,
+    .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .stepper input { -moz-appearance: textfield; }
+    :focus-visible { outline: 2px solid #176B73; outline-offset: 2px; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+  </style>
+</head>
+<body class="bg-canvas text-ink antialiased">
+
+  <a href="#searchSection" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-pill">Skip to search</a>
+
+  <!-- Illustrative Sample Banner -->
+  <aside class="bg-primary text-tertiary px-4 py-1.5 text-xs font-semibold flex justify-between items-center border-b border-primary-hover z-50">
+    <div class="max-w-container mx-auto w-full flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-secondary"></span>
+        <span class="font-display tracking-wide text-xs text-white font-bold uppercase">PRESET 09 // COASTAL &amp; ISLAND ESCAPE</span>
+        <span class="hidden sm:inline text-white/60 text-[11px]">— Illustrative Sample Data</span>
+      </div>
+      <div class="text-[11px] text-white/80 font-mono">Ditenagai Mesin B2B Ortasys S4</div>
+    </div>
+  </aside>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-line shadow-xs">
+    <div class="max-w-container mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+      <a href="#home" class="flex items-center gap-3 shrink-0 group">
+        <div class="w-11 h-11 rounded-full bg-primary flex items-center justify-center text-white shadow-2xs transition-transform group-hover:scale-105">
+          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+        </div>
+        <div>
+          <span class="font-display text-2xl font-bold tracking-tight text-primary block leading-none">Nusa Tide</span>
+          <span class="text-[10px] font-bold text-secondary tracking-widest uppercase block mt-1">Coastal &amp; Island Escapes</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-[14px] font-semibold text-ink" aria-label="Main Navigation">
+        <a href="#searchSection" class="hover:text-primary transition-colors">Cari Pantai</a>
+        <a href="#escapes" class="hover:text-primary transition-colors">Vila &amp; Bungalow</a>
+        <a href="#manifesto" class="hover:text-primary transition-colors">Filosofi Pesisir</a>
+        <a href="#faq" class="hover:text-primary transition-colors">FAQ Penyeberangan</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button type="button" data-open-trip class="flex items-center gap-2 bg-surface-muted hover:bg-line text-primary px-4 py-2 rounded-pill text-xs font-bold uppercase tracking-wider transition">
+          <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+          <span class="font-display tracking-wide">Island Bag</span>
+          <span data-trip-count class="w-5 h-5 rounded-full bg-secondary text-white text-xs flex items-center justify-center font-bold font-mono">0</span>
+        </button>
+
+        <button id="menuBtn" type="button" class="md:hidden w-10 h-10 rounded-full flex items-center justify-center text-ink hover:bg-surface-muted" aria-label="Buka menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobileNav" class="md:hidden hidden border-t border-line bg-surface px-4 py-4 flex flex-col gap-2 font-semibold text-[15px]">
+      <a href="#searchSection" class="py-2 text-ink hover:text-primary">Cari Pantai</a>
+      <a href="#escapes" class="py-2 text-ink hover:text-primary">Vila &amp; Bungalow</a>
+      <a href="#manifesto" class="py-2 text-ink hover:text-primary">Filosofi Pesisir</a>
+      <a href="#faq" class="py-2 text-ink hover:text-primary">FAQ Penyeberangan</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <!-- ============ ARCHIPELAGO MAGAZINE HERO + 4-ISLAND HOPPING STRIP (PRESET 09 DNA) ============ -->
+    <section class="max-w-container mx-auto px-4 sm:px-6 pt-8 pb-6">
+      <div class="bg-primary text-white rounded-3xl p-6 sm:p-10 lg:p-12 overflow-hidden relative shadow-soft border border-line">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-4">
+            <div class="inline-flex items-center gap-2 bg-white/15 px-3.5 py-1.5 rounded-pill border border-white/20">
+              <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+              <span class="text-xs font-bold text-tertiary uppercase tracking-wider font-display">Jurnal Pesisir &amp; Kepulauan Nusantara</span>
+            </div>
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.06] tracking-tight">
+              Bebaskan Diri di Hamparan Pasir Putih &amp; Laut Pirus.
+            </h1>
+            <p class="text-[15px] sm:text-[16px] text-canvas/90 max-w-xl leading-relaxed">
+              Bungalow kayu tepi terumbu karang, vila tebing samudra, dan pelayaran katamaran antar-pulau. Setiap harga dicek live saat Anda memintanya.
+            </p>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl overflow-hidden aspect-[16/10] border-2 border-tertiary/40 shadow-elevated relative">
+              <img src="../../assets/mandalika_escape/palm-bay.jpg" alt="Teluk Pasir Putih Mandalika" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-white">
+                <span class="font-display font-bold">Teluk Pasir Putih · Lombok Selatan</span>
+                <span class="px-2.5 py-0.5 rounded-pill bg-secondary text-white font-mono text-[10px]">Fast Boat Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive 4-Island Hopping Strip -->
+        <div class="mt-8 pt-6 border-t border-white/15">
+          <span class="text-[11px] font-mono uppercase tracking-widest text-tertiary block mb-3">Pilih Dermaga / Kepulauan Tujuan (Klik untuk Filter Langsung):</span>
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            <button type="button" data-island-pick="Nusa Penida Bali" data-island-filter="penida" class="bg-white/10 hover:bg-white/20 border border-white/15 rounded-2xl p-2.5 flex items-center gap-3 text-left transition group">
+              <img src="../../assets/bagus_travel/nusa-penida.jpg" alt="Nusa Penida" class="w-12 h-12 rounded-xl object-cover shrink-0 group-hover:scale-105 transition">
+              <div class="min-w-0">
+                <span class="text-[10px] font-mono text-accent uppercase block">Dermaga Sanur</span>
+                <span class="font-display text-sm font-bold text-white truncate block">Nusa Penida</span>
+              </div>
+            </button>
+            <button type="button" data-island-pick="Gili Meno Lombok" data-island-filter="gili" class="bg-white/10 hover:bg-white/20 border border-white/15 rounded-2xl p-2.5 flex items-center gap-3 text-left transition group">
+              <img src="../../assets/mandalika_escape/rinjani-from-gili.jpg" alt="Gili Meno" class="w-12 h-12 rounded-xl object-cover shrink-0 group-hover:scale-105 transition">
+              <div class="min-w-0">
+                <span class="text-[10px] font-mono text-accent uppercase block">Pulau Tanpa Polusi</span>
+                <span class="font-display text-sm font-bold text-white truncate block">Tiga Gili Lombok</span>
+              </div>
+            </button>
+            <button type="button" data-island-pick="Kuta Mandalika Pantai" data-island-filter="mandalika" class="bg-white/10 hover:bg-white/20 border border-white/15 rounded-2xl p-2.5 flex items-center gap-3 text-left transition group">
+              <img src="../../assets/mandalika_escape/palm-bay.jpg" alt="Kuta Mandalika" class="w-12 h-12 rounded-xl object-cover shrink-0 group-hover:scale-105 transition">
+              <div class="min-w-0">
+                <span class="text-[10px] font-mono text-accent uppercase block">Teluk Selatan</span>
+                <span class="font-display text-sm font-bold text-white truncate block">Kuta Mandalika</span>
+              </div>
+            </button>
+            <button type="button" data-island-pick="Nusa Dua ITDC" data-island-filter="penida" class="bg-white/10 hover:bg-white/20 border border-white/15 rounded-2xl p-2.5 flex items-center gap-3 text-left transition group">
+              <img src="../../assets/nusantara_executive/nusa-dua-beach.jpg" alt="Nusa Dua Lagoon" class="w-12 h-12 rounded-xl object-cover shrink-0 group-hover:scale-105 transition">
+              <div class="min-w-0">
+                <span class="text-[10px] font-mono text-accent uppercase block">Laguna Tenang</span>
+                <span class="font-display text-sm font-bold text-white truncate block">Pesisir Nusa Dua</span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SPLIT-DECK HARBOR & BEACHFRONT SEARCH CONSOLE (PRESET 09 DNA) ============ -->
+    <section id="searchSection" class="max-w-container mx-auto px-4 sm:px-6 pt-2 relative z-20" aria-labelledby="searchHeading">
+      <div class="bg-surface rounded-3xl border-2 border-tertiary shadow-elevated overflow-hidden grid lg:grid-cols-12">
+        <!-- Left 4-Col Harbor & Mode Deck -->
+        <div class="lg:col-span-4 bg-surface-muted p-6 sm:p-7 border-b lg:border-b-0 lg:border-r border-line flex flex-col justify-between gap-4">
+          <div>
+            <span class="text-[11px] font-mono font-bold uppercase tracking-widest text-primary block">HARBOR DISPATCH // S4</span>
+            <h2 id="searchHeading" class="font-display text-2xl font-bold text-ink mt-1">Rencanakan Pelayaran &amp; Bungalow</h2>
+            <p class="text-[12px] text-ink-muted mt-1">Pilih jenis suaka pesisir atau pelayaran katamaran di bawah ini:</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2" role="tablist">
+            <button type="button" role="tab" data-mode="hotels" aria-selected="true" class="mode-tab h-11 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition bg-primary text-white shadow-2xs">Vila &amp; Bungalow</button>
+            <button type="button" role="tab" data-mode="activities" aria-selected="false" class="mode-tab h-11 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition bg-surface text-ink-muted hover:text-ink border border-line">Eksplorasi Laut</button>
+          </div>
+
+          <div class="pt-2 border-t border-line flex items-center gap-2 text-[11px] text-ink-muted">
+            <span class="w-2.5 h-2.5 rounded-full bg-success shrink-0"></span>
+            <span class="font-semibold text-ink">Every price is checked live when you ask for it</span>
+          </div>
+        </div>
+
+        <!-- Right 8-Col Tide Dates & Bungalow Form Deck -->
+        <div class="lg:col-span-8 p-6 sm:p-7 flex flex-col justify-between">
+          <form id="searchForm" novalidate>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Island Input -->
+              <label class="sm:col-span-2 flex flex-col gap-1.5">
+                <span class="text-[11px] font-bold text-primary uppercase tracking-wider font-display" data-dest-label>Pulau / Dermaga Pesisir</span>
+                <input id="dest" list="destList" placeholder="Gili Meno, Nusa Penida, Mandalika, Nusa Dua…" autocomplete="off" class="h-11 px-4 rounded-pill bg-canvas border border-line text-[14px] text-ink focus:border-primary focus:bg-white focus:outline-none font-semibold">
+                <datalist id="destList"></datalist>
+              </label>
+
+              <!-- Dates -->
+              <div class="grid grid-cols-2 gap-2.5">
+                <label class="flex flex-col gap-1">
+                  <span class="text-[11px] font-bold text-ink-muted uppercase tracking-wider font-display">Mulai Singgah</span>
+                  <input id="checkIn" type="date" aria-describedby="dateRuleHint" class="tnum h-11 px-3 rounded-pill bg-canvas border border-line text-[12px] focus:border-primary focus:bg-white focus:outline-none font-mono">
+                </label>
+                <label class="flex flex-col gap-1" data-hotel-only>
+                  <span class="text-[11px] font-bold text-ink-muted uppercase tracking-wider font-display">Selesai Singgah</span>
+                  <input id="checkOut" type="date" aria-describedby="dateRuleHint" class="tnum h-11 px-3 rounded-pill bg-canvas border border-line text-[12px] focus:border-primary focus:bg-white focus:outline-none font-mono">
+                </label>
+              </div>
+
+              <!-- Steppers -->
+              <div class="grid grid-cols-3 gap-2">
+                <div class="flex flex-col gap-1" data-hotel-only>
+                  <span id="lbl-rooms" class="text-[10px] font-bold text-ink-muted font-display uppercase">Bungalow</span>
+                  <div class="stepper flex items-center h-11 rounded-pill bg-canvas border border-line px-1" role="group" aria-labelledby="lbl-rooms">
+                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted rounded-full" data-step="rooms" data-dir="-1" aria-label="Kurangi kamar">−</button>
+                    <input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted rounded-full" data-step="rooms" data-dir="1" aria-label="Tambah kamar">+</button>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <span id="lbl-adults" class="text-[10px] font-bold text-ink-muted font-display uppercase" data-adults-label>Dewasa</span>
+                  <div class="stepper flex items-center h-11 rounded-pill bg-canvas border border-line px-1" role="group" aria-labelledby="lbl-adults">
+                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted rounded-full" data-step="adults" data-dir="-1" aria-label="Kurangi tamu">−</button>
+                    <input id="adults" type="number" min="1" max="20" value="2" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted rounded-full" data-step="adults" data-dir="1" aria-label="Tambah tamu">+</button>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <span id="lbl-children" class="text-[10px] font-bold text-ink-muted font-display uppercase" data-children-label>Anak</span>
+                  <div class="stepper flex items-center h-11 rounded-pill bg-canvas border border-line px-1" role="group" aria-labelledby="lbl-children">
+                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted rounded-full" data-step="children" data-dir="-1" aria-label="Kurangi anak">−</button>
+                    <input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted rounded-full" data-step="children" data-dir="1" aria-label="Tambah anak">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="formErrors" class="mt-2 text-[13px] text-danger font-semibold" role="alert" aria-live="assertive"></div>
+
+            <div class="mt-5 pt-4 border-t border-line flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <p id="summary" class="font-mono text-[12px] text-ink-muted" aria-live="polite">Pilih tanggal untuk kalkulasi harga pulau</p>
+                <p id="dateRuleHint" class="text-[11px] text-ink-muted">Maks. 30 malam · Kapasitas bungalow setara</p>
+              </div>
+              <button id="checkBtn" type="submit" class="h-11 px-7 rounded-pill bg-secondary hover:bg-[#d08559] text-white text-xs font-bold tracking-wider uppercase transition shadow-soft flex items-center justify-center gap-2">
+                <span data-btn-label>Cek Ketersediaan Pulau Live</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STAGGERED COASTAL LOOKBOOK CARDS (PRESET 09 DNA) ============ -->
+    <section id="escapes" class="max-w-container mx-auto px-4 sm:px-6 pt-20">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-5 border-b border-line">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-secondary font-display">Koleksi Tepi Pantai &amp; Dermaga</span>
+          <h2 id="sectionHeading" class="font-display text-3xl sm:text-4xl font-bold text-primary mt-1">Bungalow &amp; Vila Tepi Laut Pilihan</h2>
+          <p id="resultsNote" class="text-[13px] text-ink-muted mt-1">Dilengkapi informasi akses pantai, terumbu karang, dan tiket kapal cepat.</p>
+        </div>
+
+        <!-- Filter Pills -->
+        <div id="filterBar" class="flex flex-wrap gap-2 items-center" role="group" aria-label="Filter Wilayah Pesisir">
+          <button type="button" data-filter="all" class="filter-btn h-9 px-4 rounded-pill text-[12px] font-bold uppercase tracking-wider bg-primary text-white shadow-xs transition">Semua Pulau</button>
+          <button type="button" data-filter="gili" class="filter-btn h-9 px-4 rounded-pill text-[12px] font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Kepulauan Gili Lombok</button>
+          <button type="button" data-filter="penida" class="filter-btn h-9 px-4 rounded-pill text-[12px] font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Nusa Penida &amp; Tebing</button>
+          <button type="button" data-filter="mandalika" class="filter-btn h-9 px-4 rounded-pill text-[12px] font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Kuta Mandalika Pantai</button>
+        </div>
+      </div>
+
+      <!-- 2-Column Staggered Coastal Grid -->
+      <div id="results" class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start"></div>
+    </section>
+
+    <!-- ============ 2-COLUMN MARITIME & REEF STEWARDSHIP SPLIT (PRESET 09 DNA) ============ -->
+    <section id="manifesto" class="max-w-container mx-auto px-4 sm:px-6 pt-20">
+      <div class="grid lg:grid-cols-12 gap-6">
+        <div class="lg:col-span-6 bg-primary text-white rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-soft">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-accent block mb-2">MARITIME SAFETY // SYAHBANDAR</span>
+            <h3 class="font-display text-2xl sm:text-3xl font-bold">Kelaikan Kapal Cepat &amp; Katamaran Terverifikasi</h3>
+            <p class="text-sm text-canvas/85 mt-3 leading-relaxed">Seluruh mitra penyeberangan dermaga Sanur, Padang Bai, dan Teluk Nara beroperasi di bawah izin syahbandar resmi dengan pelampung keselamatan lengkap.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/15 flex items-center justify-between text-xs font-mono text-tertiary">
+            <span>● Jaminan Reschedule Cuaca Laut</span>
+            <span>Ortasys S4 Sync</span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 bg-surface rounded-3xl p-8 sm:p-10 border-2 border-tertiary flex flex-col justify-between shadow-soft">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-secondary block mb-2">CORAL REEF &amp; TRANSPARENT SETTLEMENT</span>
+            <h3 class="font-display text-2xl sm:text-3xl font-bold text-primary">Pelestarian Karang &amp; Pembayaran Resmi SNAP BI</h3>
+            <p class="text-sm text-ink-muted mt-3 leading-relaxed">Setiap pemesanan menyertakan kontribusi konservasi terumbu karang lokal. Tarif ritel bersih diselesaikan secara aman melalui gerbang pembayaran DOKU dan QRIS SNAP BI.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-line flex items-center justify-between text-xs font-mono text-primary font-bold">
+            <span>● Zero Hidden Harbor Fees</span>
+            <span>Illustrative Sample Data</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ SECTION ============ -->
+    <section id="faq" class="max-w-container mx-auto px-4 sm:px-6 pt-16 pb-20">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-10">
+          <span class="text-xs font-bold uppercase tracking-wider text-secondary font-display">Panduan Menyeberang Pulau</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-primary mt-1">FAQ &amp; Informasi Maritim</h2>
+        </div>
+
+        <div class="space-y-3">
+          <details class="bg-surface rounded-2xl border border-line p-5">
+            <summary class="font-display text-lg font-bold text-ink cursor-pointer flex justify-between items-center">
+              <span>Bagaimana ketersediaan tiket penyeberangan kapal cepat (fast boat)?</span>
+              <span class="faq-icon text-secondary text-xl font-bold transition-transform font-mono">+</span>
+            </summary>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Tiket kapal cepat terhubung langsung secara real-time dengan operator dermaga Padang Bai, Sanur, dan Bangsal Lombok melalui mesin B2B Ortasys.</p>
+          </details>
+
+          <details class="bg-surface rounded-2xl border border-line p-5">
+            <summary class="font-display text-lg font-bold text-ink cursor-pointer flex justify-between items-center">
+              <span>Apakah perlengkapan snorkeling sudah disediakan di bungalow?</span>
+              <span class="faq-icon text-secondary text-xl font-bold transition-transform font-mono">+</span>
+            </summary>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Ya, seluruh properti mitra tepi pantai menyediakan masker, snorkel, dan fin gratis yang telah disanitasi untuk tamu menjelajah terumbu karang depan penginapan.</p>
+          </details>
+
+          <details class="bg-surface rounded-2xl border border-line p-5">
+            <summary class="font-display text-lg font-bold text-ink cursor-pointer flex justify-between items-center">
+              <span>Bagaimana kebijakan jika terjadi gelombang laut tinggi?</span>
+              <span class="faq-icon text-secondary text-xl font-bold transition-transform font-mono">+</span>
+            </summary>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Apabila syahbandar pelabuhan mengeluarkan peringatan cuaca buruk dan menunda pelayaran, pemesanan Anda dapat dijadwalkan ulang secara fleksibel tanpa biaya penalti.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-surface border-t border-line py-12 text-xs text-ink-muted">
+    <div class="max-w-container mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-line">
+        <div>
+          <span class="font-display text-2xl text-primary font-bold block">Nusa Tide Escapes</span>
+          <p class="text-[12px] mt-0.5">Spesialis Liburan Pesisir &amp; Eksplorasi Kepulauan · Ditenagai Arsitektur Ortasys S4.</p>
+        </div>
+        <div class="flex gap-6 font-semibold text-ink text-[13px]">
+          <a href="#escapes" class="hover:text-primary">Bungalow</a>
+          <a href="#manifesto" class="hover:text-primary">Filosofi</a>
+          <a href="#faq" class="hover:text-primary">Bantuan</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] gap-2">
+        <p>Penyelesaian terjamin melalui gateway resmi <strong class="text-ink">DOKU</strong> dan <strong class="text-ink">SNAP BI</strong>. Mockup data bersifat ilustratif [PRD 9.2].</p>
+        <p>© <span id="year"></span> Nusa Tide Escapes. Hak Cipta Dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ TRIP DRAWER / ISLAND BAG ============ -->
+  <div id="tripOverlay" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden" aria-hidden="true"></div>
+  <aside id="tripDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-[420px] bg-surface shadow-elevated translate-x-full transition-transform duration-300 flex flex-col border-l border-line" role="dialog" aria-modal="true" aria-labelledby="tripTitle" aria-hidden="true">
+    <div class="bg-primary text-white px-6 h-20 flex items-center justify-between border-b border-primary-hover">
+      <div>
+        <h2 id="tripTitle" class="font-display text-2xl font-bold">Island Bag Anda</h2>
+        <p class="text-xs text-tertiary">Build Your Trip — Akomodasi &amp; Tur Pulau</p>
+      </div>
+      <button type="button" data-close-trip class="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white" aria-label="Tutup island bag">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <div id="tripItems" class="flex-1 overflow-y-auto p-5 flex flex-col gap-3"></div>
+
+    <div class="bg-canvas p-6 border-t border-line">
+      <div class="space-y-1.5 text-[12px] font-mono text-ink-muted">
+        <div class="flex justify-between">
+          <span>Subtotal Item:</span>
+          <span id="tripSubtotal" class="font-bold text-ink">Rp 0</span>
+        </div>
+        <div class="flex justify-between text-[11px]">
+          <span>Retribusi Konservasi Laut:</span>
+          <span class="text-success font-semibold">Termasuk (Net Ritel Final)</span>
+        </div>
+        <div class="flex items-baseline justify-between pt-2 border-t border-line/60 text-[14px]">
+          <span class="font-display text-base text-ink font-bold">Total Pembayaran:</span>
+          <span id="tripTotal" class="text-2xl font-bold text-primary font-mono">Rp 0</span>
+        </div>
+      </div>
+
+      <button id="payBtn" type="button" class="mt-4 w-full py-3.5 bg-secondary hover:bg-[#d08559] text-white rounded-pill text-xs font-bold tracking-wider uppercase transition shadow-soft disabled:opacity-40">
+        Konfirmasi Pemesanan (DOKU / SNAP)
+      </button>
+      <p id="payNote" class="mt-2 text-[11px] text-center text-ink-muted" aria-live="polite">Penyelesaian resmi Bank Indonesia SNAP BI &amp; DOKU.</p>
+    </div>
+  </aside>
+
+  <!-- ============ DETAIL QUICK-VIEW MODAL ============ -->
+  <div id="detailModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="bg-surface rounded-2xl max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[90vh]">
+      <div class="relative aspect-[16/9] bg-surface-muted shrink-0">
+        <img id="modalImg" src="" alt="" class="w-full h-full object-cover">
+        <button type="button" data-close-modal class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface/90 flex items-center justify-center text-ink hover:bg-surface transition shadow-xs" aria-label="Tutup detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <span id="modalBadge" class="absolute bottom-3 left-3 px-3 py-1 rounded-pill bg-surface/95 text-ink text-[11px] font-display font-bold shadow-xs"></span>
+      </div>
+      <div class="p-6 overflow-y-auto flex-1 flex flex-col gap-3">
+        <span id="modalArea" class="text-[11px] font-bold uppercase tracking-wider text-secondary font-display"></span>
+        <h3 id="modalTitle" class="font-display text-2xl font-bold text-primary leading-tight"></h3>
+        <p id="modalDesc" class="text-[13px] text-ink-muted leading-relaxed font-normal"></p>
+        <div class="pt-3 border-t border-line">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-display mb-2">Fasilitas Pantai &amp; Layanan Maritim:</h4>
+          <div id="modalAmenities" class="flex flex-wrap gap-1.5 text-[12px]"></div>
+        </div>
+        <div class="pt-3 border-t border-line">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-display mb-1">Kebijakan Pemesanan &amp; Cuaca:</h4>
+          <p id="modalPolicy" class="text-[12px] text-ink-muted"></p>
+        </div>
+      </div>
+      <div class="p-5 border-t border-line bg-canvas flex items-center justify-between gap-4 shrink-0">
+        <div>
+          <p class="text-[11px] text-ink-muted font-mono uppercase tracking-wider">Tarif Kuota Live Terverifikasi</p>
+          <p id="modalPrice" class="font-mono text-[20px] font-bold text-primary"></p>
+        </div>
+        <button id="modalSelectBtn" type="button" class="h-11 px-6 rounded-pill bg-secondary hover:bg-[#d08559] text-white text-xs font-bold uppercase tracking-wider transition shadow-xs">
+          Pilih Akomodasi Ini
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CHECKOUT CONFIRMATION MODAL ============ -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="checkoutHeading">
+    <div class="bg-surface rounded-2xl max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[92vh]">
+      <div class="bg-primary text-white flex items-center justify-between px-6 py-4 border-b border-primary-hover">
+        <div>
+          <h3 id="checkoutHeading" class="font-display text-2xl font-bold">Penyelesaian Reservasi Pulau</h3>
+          <p class="text-xs text-tertiary">Penyelesaian Aman DOKU &amp; SNAP BI</p>
+        </div>
+        <button type="button" data-close-checkout class="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white" aria-label="Tutup checkout">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+
+      <div id="checkoutFormContent" class="p-6 overflow-y-auto flex-1 flex flex-col gap-4">
+        <div class="p-4 rounded-xl bg-canvas border border-line text-[13px]">
+          <div class="flex justify-between font-display text-ink text-sm font-bold">
+            <span>Rincian Island Bag:</span>
+            <span id="coItemCount" class="font-mono">0 Item</span>
+          </div>
+          <div id="coItemList" class="mt-2 space-y-1 text-[12px] text-ink-muted"></div>
+          <div class="mt-3 pt-2 border-t border-line/60 flex justify-between font-mono font-bold text-ink text-[14px]">
+            <span>Total Akhir:</span>
+            <span id="coTotal" class="text-primary font-bold text-base">Rp 0</span>
+          </div>
+        </div>
+
+        <form id="coForm" class="flex flex-col gap-3">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-display">Data Penanggung Jawab Perjalanan</h4>
+          <label class="flex flex-col gap-1 text-[12px] font-medium text-ink">
+            Nama Lengkap Sesuai KTP / Paspor
+            <input id="coName" type="text" required placeholder="Contoh: Rian Pratama" class="h-10 px-3 rounded-xl bg-white border border-line text-[13px] focus:border-primary focus:outline-none">
+          </label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="flex flex-col gap-1 text-[12px] font-medium text-ink">
+              Email Konfirmasi &amp; E-Tiket
+              <input id="coEmail" type="email" required placeholder="rian@pantai.com" class="h-10 px-3 rounded-xl bg-white border border-line text-[13px] focus:border-primary focus:outline-none">
+            </label>
+            <label class="flex flex-col gap-1 text-[12px] font-medium text-ink">
+              No. WhatsApp / Kontak
+              <input id="coPhone" type="tel" required placeholder="081233445566" class="h-10 px-3 rounded-xl bg-white border border-line text-[13px] focus:border-primary focus:outline-none">
+            </label>
+          </div>
+
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-display mt-2">Kanal Pembayaran Resmi</h4>
+          <div class="space-y-2 text-[12px]">
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-white border border-line cursor-pointer hover:border-primary">
+              <input type="radio" name="payMethod" value="qris" checked class="accent-primary">
+              <div class="flex-1">
+                <span class="font-display font-bold text-ink block text-sm">QRIS SNAP BI (Penyelesaian Instan)</span>
+                <span class="text-[11px] text-ink-muted block">BCA, Mandiri, BRI, BNI, GoPay, OVO, ShopeePay</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-white border border-line cursor-pointer hover:border-primary">
+              <input type="radio" name="payMethod" value="va" class="accent-primary">
+              <div class="flex-1">
+                <span class="font-display font-bold text-ink block text-sm">DOKU Virtual Account Multi-Bank</span>
+                <span class="text-[11px] text-ink-muted block">Virtual account otomatis terverifikasi tanpa upload struk</span>
+              </div>
+            </label>
+          </div>
+
+          <button type="submit" id="coSubmitBtn" class="mt-3 w-full py-3.5 bg-secondary hover:bg-[#d08559] text-white rounded-pill text-xs font-bold uppercase tracking-wider transition shadow-soft flex items-center justify-center gap-2">
+            <span>Konfirmasi &amp; Amankan Kamar Tepi Laut</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Confirmation Success State -->
+      <div id="checkoutSuccessContent" class="hidden p-8 flex flex-col items-center text-center gap-4">
+        <div class="w-14 h-14 rounded-full bg-success/15 text-success flex items-center justify-center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <div>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-success font-display">Penyelesaian Berhasil Live</span>
+          <h4 class="font-display text-3xl font-bold text-primary mt-1">Voucher Pulau Resmi Terbit</h4>
+          <p class="text-[13px] text-ink-muted mt-1">Akomodasi tepi pantai dan slot kapal cepat Anda telah terkonfirmasi langsung di dermaga.</p>
+        </div>
+        <div class="w-full p-4 rounded-xl bg-canvas border border-line text-left text-[12px] space-y-1.5 font-mono">
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Ref. Booking:</span>
+            <span id="successRef" class="font-bold text-ink">TIDE-2026-0001</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Nama Tamu:</span>
+            <span id="successGuest" class="font-bold text-ink">-</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Total Pembayaran:</span>
+            <span id="successAmount" class="font-bold text-primary font-bold">Rp 0</span>
+          </div>
+        </div>
+        <div class="w-full flex flex-col gap-2 pt-2">
+          <button type="button" id="btnDownloadVoucher" class="w-full py-3 rounded-pill bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider transition">
+            Unduh E-Voucher &amp; Panduan Dermaga (PDF)
+          </button>
+          <button type="button" data-finish-checkout class="w-full py-2.5 rounded-pill bg-surface-muted hover:bg-line text-ink text-xs font-semibold uppercase tracking-wider transition">
+            Kembali ke Beranda
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-primary text-white rounded-pill px-6 py-3 text-[13px] font-medium shadow-elevated" role="status" aria-live="polite"></div>
+
+  <script>
+  (() => {
+    'use strict';
+    /* Data Sampel Ilustratif Preset 09 (Nusa Tide Escapes) */
+    const COASTAL_STAYS = [
+      {
+        id: 'nt-penida-residence', name: 'Diamond Beach Cliffside Ocean Villa', area: 'Nusa Penida Headland · Bali', filter: 'penida',
+        keys: 'bali nusa penida pantai diamond cliff villa laut ombak', img: '../../assets/bagus_travel/nusa-penida.jpg', alt: 'Pemandangan tebing terjal dan laut biru toska Nusa Penida',
+        stars: 5, room: 'Cliffside Ocean Panorama Villa', meal: 'Termasuk Sarapan Seafood Tropis & Fast Boat Return', policy: 'Bebas pembatalan hingga H-7 tanpa potongan.',
+        desc: 'Vila tebing spektakuler menghadap panorama Diamond Beach. Nikmati kolam renang infinity privat di bibir tebing, angin laut sepoi-sepoi, dan jalur privat menuju pantai berpasir putih lembut.',
+        amenities: ['Tiket Fast Boat Return Sanur Termasuk', 'Private Horizon Plunge Pool', 'Akses Spot Foto Diamond Beach Eksklusif', 'Peralatan Snorkeling Lengkap', 'WiFi Satelit Starlink Cepat'],
+        nightly: 3450000
+      },
+      {
+        id: 'nt-mandalika-bay', name: 'Kuta Mandalika Coastal Breeze Sanctuary', area: 'Kuta Mandalika · Lombok Selatan', filter: 'mandalika',
+        keys: 'lombok mandalika pantai teluk pasir putih surfing santai', img: '../../assets/mandalika_escape/palm-bay.jpg', alt: 'Pohon kelapa dan teluk laut biru berpasir putih',
+        stars: 5, room: 'Beachfront Tropical Coconut Suite', meal: 'Sarapan Prasmanan Tepi Pantai & Air Kelapa Muda', policy: 'Bebas pembatalan hingga H-5 kedatangan.',
+        desc: 'Terletak di teluk tenang berpasir putih merica Kuta Mandalika. Hanya beberapa langkah dari bibir pantai berombak tenang, dinaungi barisan pohon kelapa tropis dengan suasana santai khas pesisir selatan.',
+        amenities: ['Akses Langsung Pantai Berpasir Putih', 'Papan Selancar & Stand-Up Paddle Gratis', 'Restoran Seafood Tepi Ombak', 'Bale-Bale Santai Tepi Laut', 'Shuttle Sirkuit Internasional'],
+        nightly: 2650000
+      },
+      {
+        id: 'nt-gili-cottage', name: 'Gili Meno Secluded Coral Beach Bungalow', area: 'Gili Meno · Lombok Utara', filter: 'gili',
+        keys: 'gili meno pulau terumbu karang penyu bebas polusi bungalow', img: '../../assets/mandalika_escape/rinjani-from-gili.jpg', alt: 'Pantai pulau Gili Meno dengan pemandangan Rinjani',
+        stars: 4, room: 'Island Coral Cottage Tepi Pantai', meal: 'Sarapan dan Penjemputan Perahu Kayu', policy: 'Bebas pembatalan hingga H-3 kedatangan.',
+        desc: 'Bungalow kayu ramah lingkungan di pulau bebas kendaraan bermotor. Beranda langsung menghadap karang laut dangkal habitat penyu liar berlatar siluet megah Gunung Rinjani di kejauhan.',
+        amenities: ['Habitat Penyu Liar di Depan Kamar', 'Sepeda Keliling Pulau Gratis', 'Tenaga Surya & Air Tawar Segar', 'Bebas Polusi Suara Kendaraan', 'Sunset Cocktail Bar'],
+        nightly: 1950000
+      },
+      {
+        id: 'nt-nusadua-lagoon', name: 'Nusa Dua White Sand Beach Pavilion', area: 'ITDC Beachfront · Bali', filter: 'penida',
+        keys: 'bali nusa dua pantai laguna pasir putih paviliun', img: '../../assets/nusantara_executive/nusa-dua-beach.jpg', alt: 'Pantai Nusa Dua berair tenang dan pasir putih',
+        stars: 5, room: 'Lagoon Access Beach Suite', meal: 'Sarapan Internasional & Akses Private Cabana', policy: 'Bebas pembatalan hingga 48 jam sebelum check-in.',
+        desc: 'Paviliun tepi laut eksklusif dengan laguna buatan yang tenang. Air laut dangkal dan ombak yang aman untuk berenang sepanjang hari, dilengkapi payung pantai privat dan layanan minuman dingin.',
+        amenities: ['Private Beach Cabana & Sunbed', 'Lagoon Access Langsung dari Teras', 'Layanan Spa Tepi Pantai', 'Pusat Olahraga Air Non-Motorized'],
+        nightly: 3100000
+      }
+    ];
+
+    const COASTAL_ACTIVITIES = [
+      {
+        id: 'nt-gili-sailing', kind: 'tour', name: 'Pelayaran Katamaran Tradisional Tiga Gili & Snorkeling Penyu', area: 'Gili Air, Meno & Trawangan', filter: 'gili',
+        keys: 'gili perahu layar katamaran snorkeling penyu pulau', img: '../../assets/mandalika_escape/gili-boat.jpg', alt: 'Perahu katamaran tradisional di perairan biru jernih',
+        duration: '6 Jam Eksplorasi Bawah Laut',
+        desc: 'Mengarungi laut biru toska bersama kapten lokal berpengalaman. Snorkeling di spot patung bawah air Nest karya Jason deCaires Taylor dan berenang berdampingan dengan penyu hijau liar.',
+        amenities: ['Kru & Kapten Kapal Berlisensi', 'Set Snorkel, Masker & Fin Kering', 'GoPro Underwater Documentation', 'Makan Siang Ikan Bakar di Gili Air'],
+        policy: 'Jadwal fleksibel menyesuaikan pasang surut air laut.',
+        perPerson: 650000
+      },
+      {
+        id: 'nt-komodo-padar', kind: 'tour', name: 'Ekspedisi Pink Beach & Bukit Padar Komodo', area: 'Taman Nasional Komodo', filter: 'penida',
+        keys: 'komodo padar pink beach pasir merah laut speedboat', img: '../../assets/khatulistiwa_explorer/padar.jpg', alt: 'Pemandangan spektakuler bukit Padar dan tiga teluk',
+        duration: 'Seharian Penuh Speedboat Eksklusif',
+        desc: 'Mendaki bukit ikonis Pulau Padar untuk menikmati panorama tiga teluk berwarna unik, bersantai di hamparan pasir merah muda Pink Beach, dan snorkeling di Manta Point.',
+        amenities: ['Speedboat Berkecepatan Tinggi & Nyaman', 'Tiket Retribusi Konservasi TN Komodo', 'Pemandu Lokal Berlisensi', 'Snack Buah Tropis & Makan Siang'],
+        policy: 'Bebas pembatalan hingga 3 hari sebelum jadwal.',
+        perPerson: 1650000
+      },
+      {
+        id: 'nt-tanahlot-sunset', kind: 'tour', name: 'Sunset Sailing & Seafood Feast Pesisir Tabanan', area: 'Tabanan Coast · Bali', filter: 'mandalika',
+        keys: 'tanah lot sunset perahu layar pantai seafood feast bali', img: '../../assets/bagus_travel/tanah-lot.jpg', alt: 'Pura Tanah Lot dan ombak matahari terbenam',
+        duration: '4 Jam Pelayaran Senja Eksklusif',
+        desc: 'Menikmati pemandangan siluet pura laut Tanah Lot dari sisi perairan saat matahari terbenam ke cakrawala, diakhiri dengan santap malam hidangan laut segar di tepi tebing.',
+        amenities: ['Kapal Layar Katamaran Privat', 'Welcome Drink Kelapa Muda & Canapés', 'Santap Malam Seafood Segar 4-Course'],
+        policy: 'Bebas penyesuaian jadwal bila cuaca laut ekstrem.',
+        perPerson: 850000
+      }
+    ];
+
+    const LIMITS = { rooms: [1, 9], adults: [1, 20], children: [0, 20] };
+    const MAX_NIGHTS = 30;
+    const idr = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const DAY = 86400000;
+    const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    const addDays = (s, n) => iso(new Date(new Date(s + 'T00:00:00').getTime() + n * DAY));
+    const today = iso(new Date());
+
+    const state = { mode: 'hotels', filter: 'all', priced: false, checking: false, checkedAt: null, trip: [] };
+    const el = {
+      form: $('#searchForm'), dest: $('#dest'), checkIn: $('#checkIn'), checkOut: $('#checkOut'),
+      rooms: $('#rooms'), adults: $('#adults'), children: $('#qChildren'), errors: $('#formErrors'), summary: $('#summary'),
+      btn: $('#checkBtn'), results: $('#results')
+    };
+
+    const clamp = (v, [lo, hi]) => Math.min(hi, Math.max(lo, Number.isFinite(v) ? v : lo));
+    const num = k => clamp(parseInt(el[k].value, 10), LIMITS[k]);
+    const nights = () => {
+      if (!el.checkIn.value || !el.checkOut.value) return 0;
+      return Math.round((new Date(el.checkOut.value) - new Date(el.checkIn.value)) / DAY);
+    };
+
+    function validate() {
+      const errs = [];
+      if (!el.checkIn.value) {
+        errs.push('Silakan tentukan tanggal mulai singgah di pulau.');
+      } else if (el.checkIn.value < today) {
+        errs.push('Tanggal check-in tidak boleh sebelum hari ini.');
+      }
+
+      if (state.mode === 'hotels') {
+        if (!el.checkOut.value) errs.push('Silakan tentukan tanggal selesai singgah.');
+        else {
+          const n = nights();
+          if (n < 1) errs.push('Tanggal check-out minimal 1 malam setelah check-in.');
+          if (n > MAX_NIGHTS) errs.push(`Maksimal durasi menginap adalah ${MAX_NIGHTS} malam.`);
+        }
+      }
+      return errs;
+    }
+
+    const roomRate = s => Math.round(s.nightly * (1 + 0.15 * Math.max(0, num('adults') - 2) + 0.08 * num('children')) / 1000) * 1000;
+    const stayTotal = s => roomRate(s) * Math.max(1, nights()) * num('rooms');
+    const actTotal = a => (a.perPerson * num('adults') + Math.round(a.perPerson * 0.6) * num('children')) * num('rooms');
+
+    function summaryText() {
+      const r = num('rooms'), a = num('adults'), c = num('children');
+      const g = `${a} Dewasa${c ? ` + ${c} Anak` : ''}`;
+      if (state.mode === 'hotels') {
+        const n = nights();
+        if (!n || n < 1) return 'Pilih tanggal untuk melihat ketersediaan live';
+        return `${n} Malam × ${r} Kamar (${g} / kamar)`;
+      }
+      return el.checkIn.value ? `${el.checkIn.value} · ${r * a} Tamu Eksplorasi` : 'Pilih tanggal eksplorasi laut';
+    }
+
+    function renderMode() {
+      $$('.mode-tab').forEach(t => {
+        const on = t.dataset.mode === state.mode;
+        t.setAttribute('aria-selected', on);
+        t.className = `mode-tab h-11 px-4 rounded-xl text-xs font-bold uppercase tracking-wider transition ${on ? 'bg-primary text-white shadow-2xs' : 'bg-surface text-ink-muted hover:text-ink border border-line'}`;
+      });
+      const hotels = state.mode === 'hotels';
+      $$('[data-hotel-only]').forEach(n => n.classList.toggle('hidden', !hotels));
+      
+      $('#sectionHeading').textContent = hotels ? 'Bungalow & Vila Tepi Laut Pilihan' : 'Eksplorasi Pulau & Petualangan Bawah Laut';
+      $('[data-dest-label]').textContent = hotels ? 'Pulau / Dermaga Pesisir' : 'Destinasi Eksplorasi Bahari';
+      el.dest.placeholder = hotels ? 'Gili Meno, Nusa Penida, Mandalika, Nusa Dua…' : 'Pelayaran Tiga Gili, Pink Beach Komodo…';
+
+      const datalistItems = hotels ? COASTAL_STAYS.map(s => s.name) : COASTAL_ACTIVITIES.map(e => e.name);
+      $('#destList').innerHTML = ['Gili Meno Lombok', 'Nusa Penida Bali', 'Kuta Mandalika Pantai', 'Nusa Dua ITDC', ...datalistItems]
+        .map(v => `<option value="${v}">`).join('');
+    }
+
+    function renderResults() {
+      const isHotels = state.mode === 'hotels';
+      const q = el.dest.value.trim().toLowerCase();
+      let list = (isHotels ? COASTAL_STAYS : COASTAL_ACTIVITIES).filter(it => {
+        const matchQ = !q || (it.name + ' ' + it.area + ' ' + it.keys).toLowerCase().includes(q);
+        const matchFilter = state.filter === 'all' || it.filter === state.filter;
+        return matchQ && matchFilter;
+      });
+      if (!list.length && state.filter === 'all') list = isHotels ? COASTAL_STAYS : COASTAL_ACTIVITIES;
+
+      if (!list.length) {
+        el.results.innerHTML = `
+          <div class="col-span-full py-12 text-center text-ink-muted bg-surface rounded-3xl border border-line">
+            <p class="font-display text-xl font-bold text-primary">Tidak ada bungalow/vila yang cocok dengan filter "${state.filter}"</p>
+            <button type="button" data-reset-filter class="mt-3 px-4 py-2 rounded-pill bg-primary text-white text-xs font-bold uppercase tracking-wider">Reset Filter Pesisir</button>
+          </div>`;
+        return;
+      }
+
+      el.results.innerHTML = list.map((it, idx) => {
+        const total = isHotels ? stayTotal(it) : actTotal(it);
+        const sub = isHotels ? `${idr.format(roomRate(it))} / malam` : `${idr.format(it.perPerson)} / orang`;
+        const priceHTML = state.checking
+          ? `<div class="h-8 w-28 bg-surface-muted animate-pulse rounded-md"></div>`
+          : state.priced
+            ? `<div><p class="tnum font-mono text-[22px] font-bold text-primary">${idr.format(total)}</p><p class="tnum font-mono text-[11px] text-ink-muted">${sub}</p></div>`
+            : `<div><p class="text-[13px] text-ink-muted italic font-medium">Cek ketersediaan pulau live</p><p class="text-[11px] text-ink-muted font-mono">Mulai ${idr.format(isHotels ? it.nightly : it.perPerson)}</p></div>`;
+
+        const staggerClass = idx % 2 === 1 ? 'md:mt-8' : '';
+        const shorelineTag = it.filter === 'gili' ? 'Terumbu Karang Depan Kamar' : it.filter === 'penida' ? 'Akses Fast Boat Dermaga' : 'Teluk Pasir Putih Landai';
+
+        return `
+        <article class="${staggerClass} bg-surface rounded-3xl border-2 border-line hover:border-primary/50 overflow-hidden shadow-soft flex flex-col transition duration-300 group">
+          <div class="relative aspect-[4/3] bg-surface-muted overflow-hidden p-3 bg-canvas">
+            <div class="relative w-full h-full rounded-2xl overflow-hidden">
+              <img src="${it.img}" alt="${it.alt}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+              <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                <span class="bg-surface/95 text-ink text-xs font-display font-bold px-3 py-1 rounded-pill shadow-xs">
+                  ${isHotels ? `${'★'.repeat(it.stars)} Coastal Stay` : 'Island Hopping'}
+                </span>
+                <span class="bg-primary/90 text-white text-[11px] font-semibold px-3 py-1 rounded-pill shadow-xs">
+                  ${shorelineTag}
+                </span>
+              </div>
+              <span class="absolute bottom-3 right-3 bg-secondary text-white text-[10px] font-mono px-2.5 py-1 rounded-pill font-bold uppercase tracking-wider">
+                Live Allotment
+              </span>
+            </div>
+          </div>
+          <div class="p-6 sm:p-7 flex flex-col flex-1 gap-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-secondary font-display">${it.area}</span>
+              <button type="button" data-detail="${it.id}" class="text-[11px] font-bold text-primary hover:text-secondary flex items-center gap-0.5 font-display uppercase tracking-wider underline">
+                <span>Buka Panduan Pulau</span>
+              </button>
+            </div>
+            <h3 class="font-display text-2xl font-bold text-ink leading-snug cursor-pointer hover:text-primary transition-colors" data-detail="${it.id}">${it.name}</h3>
+            <p class="text-[13px] text-ink-muted leading-relaxed line-clamp-2">${it.desc}</p>
+            <p class="text-[12px] font-semibold text-primary pt-1">${isHotels ? `${it.room} · ${it.meal}` : it.duration}</p>
+            
+            <!-- Inclusions preview tags -->
+            <div class="flex flex-wrap gap-1.5 mt-1">
+              ${(it.amenities || []).slice(0, 3).map(a => `<span class="px-3 py-1 rounded-pill bg-surface-muted text-ink text-[11px] font-semibold">${a}</span>`).join('')}
+            </div>
+
+            <div class="mt-auto pt-5 border-t border-line flex items-end justify-between gap-3">
+              ${priceHTML}
+              <button type="button" data-select="${it.id}" class="h-11 px-6 rounded-pill ${state.priced ? 'bg-secondary hover:bg-[#d08559] text-white' : 'bg-primary hover:bg-primary-hover text-white'} text-xs font-bold uppercase tracking-wider transition shadow-xs">
+                ${state.priced ? '+ Island Bag' : 'Cek &amp; Pilih'}
+              </button>
+            </div>
+          </div>
+        </article>`;
+      }).join('');
+    }
+
+    function syncBounds() {
+      el.checkIn.min = today;
+      if (el.checkIn.value) {
+        el.checkOut.min = addDays(el.checkIn.value, 1);
+        el.checkOut.max = addDays(el.checkIn.value, MAX_NIGHTS);
+      } else {
+        el.checkOut.min = addDays(today, 1);
+        el.checkOut.removeAttribute('max');
+      }
+    }
+
+    function invalidate() {
+      state.priced = false; el.errors.textContent = '';
+      el.summary.textContent = summaryText();
+      renderResults();
+    }
+
+    $$('.mode-tab').forEach(t => t.addEventListener('click', () => { state.mode = t.dataset.mode; renderMode(); invalidate(); }));
+    $$('[data-step]').forEach(b => b.addEventListener('click', () => {
+      const k = b.dataset.step; el[k].value = clamp(num(k) + Number(b.dataset.dir), LIMITS[k]); invalidate();
+    }));
+    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('change', () => { el[k].value = num(k); invalidate(); }));
+    el.checkIn.addEventListener('change', () => {
+      syncBounds();
+      if (el.checkIn.value && (!el.checkOut.value || el.checkOut.value <= el.checkIn.value)) el.checkOut.value = addDays(el.checkIn.value, 2);
+      invalidate();
+    });
+    el.checkOut.addEventListener('change', invalidate);
+    el.dest.addEventListener('input', renderResults);
+
+    // Filter Buttons
+    $$('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        state.filter = btn.dataset.filter;
+        $$('.filter-btn').forEach(b => {
+          const active = b === btn;
+          b.className = `filter-btn h-9 px-4 rounded-pill text-[12px] font-bold uppercase tracking-wider transition ${active ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`;
+        });
+        renderResults();
+      });
+    });
+
+    el.form.addEventListener('submit', e => {
+      e.preventDefault();
+      const errs = validate();
+      el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
+      if (errs.length) return;
+
+      state.checking = true; el.btn.disabled = true;
+      el.btn.querySelector('[data-btn-label]').textContent = 'Memeriksa Kuota Karang Live…';
+      renderResults();
+
+      setTimeout(() => {
+        state.checking = false; state.priced = true; state.checkedAt = new Date();
+        el.btn.disabled = false; el.btn.querySelector('[data-btn-label]').textContent = 'Cek Ketersediaan Live';
+        el.summary.textContent = `Live Terverifikasi: ${summaryText()}`;
+        renderResults();
+        document.getElementById('escapes').scrollIntoView({ behavior: 'smooth' });
+      }, 650);
+    });
+
+    document.addEventListener('click', e => {
+      const sel = e.target.closest('[data-select]'); if (sel) return selectItem(sel.dataset.select);
+      const det = e.target.closest('[data-detail]'); if (det) return openDetail(det.dataset.detail);
+      const rm = e.target.closest('[data-remove]'); if (rm) { state.trip.splice(Number(rm.dataset.remove), 1); renderTrip(); }
+      const rst = e.target.closest('[data-reset-filter]'); if (rst) {
+        state.filter = 'all';
+        $$('.filter-btn').forEach((b, i) => b.className = `filter-btn h-9 px-4 rounded-pill text-[12px] font-bold uppercase tracking-wider transition ${i === 0 ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`);
+        renderResults();
+      }
+      const ip = e.target.closest('[data-island-pick]'); if (ip) {
+        el.dest.value = ip.dataset.islandPick;
+        state.filter = ip.dataset.islandFilter || 'all';
+        $$('.filter-btn').forEach(b => {
+          const active = b.dataset.filter === state.filter;
+          b.className = `filter-btn h-9 px-4 rounded-pill text-[12px] font-bold uppercase tracking-wider transition ${active ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`;
+        });
+        renderResults();
+        document.getElementById('escapes').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    function selectItem(id) {
+      if (!state.priced) {
+        toast('Memverifikasi ketersediaan pulau live...');
+        const errs = validate();
+        if (errs.length) {
+          document.getElementById('searchSection').scrollIntoView({ behavior: 'smooth' });
+          el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
+          return;
+        }
+        state.priced = true;
+        renderResults();
+      }
+      const isHotel = id.startsWith('nt-penida-residence') || id.startsWith('nt-mandalika-bay') || id.startsWith('nt-gili-cottage') || id.startsWith('nt-nusadua-lagoon');
+      const it = (isHotels => isHotels ? COASTAL_STAYS : COASTAL_ACTIVITIES)(isHotel).find(x => x.id === id);
+      const total = isHotel ? stayTotal(it) : actTotal(it);
+      state.trip.push({ id: it.id, name: it.name, area: it.area, detail: summaryText(), total });
+      renderTrip();
+      toast(`Ditambahkan ke island bag: ${it.name}`);
+      closeDetail();
+    }
+
+    function renderTrip() {
+      $$('[data-trip-count]').forEach(n => n.textContent = state.trip.length);
+      const box = $('#tripItems');
+      box.innerHTML = state.trip.length ? state.trip.map((t, i) => `
+        <div class="p-3.5 rounded-xl bg-canvas border border-line flex flex-col gap-1">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <p class="font-display font-bold text-primary text-[15px] leading-snug">${t.name}</p>
+              <p class="text-[11px] text-ink-muted">${t.area} · ${t.detail}</p>
+            </div>
+            <button type="button" data-remove="${i}" class="text-[11px] font-bold text-danger hover:underline">Hapus</button>
+          </div>
+          <p class="tnum font-mono text-[14px] font-bold text-primary mt-1">${idr.format(t.total)}</p>
+        </div>`).join('')
+        : `<p class="py-12 text-center text-[13px] text-ink-muted font-display">Island bag Anda masih kosong.<br>Pilih akomodasi tepi laut atau tur perahu.</p>`;
+      
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      $('#tripSubtotal').textContent = idr.format(totalVal);
+      $('#tripTotal').textContent = idr.format(totalVal);
+      $('#payBtn').disabled = !state.trip.length;
+    }
+
+    // Detail Quick-View Modal
+    const detailModal = $('#detailModal');
+    let currentDetailItem = null;
+    function openDetail(id) {
+      const isHotel = id.startsWith('nt-penida-residence') || id.startsWith('nt-mandalika-bay') || id.startsWith('nt-gili-cottage') || id.startsWith('nt-nusadua-lagoon');
+      const it = (isHotels => isHotels ? COASTAL_STAYS : COASTAL_ACTIVITIES)(isHotel).find(x => x.id === id);
+      if (!it) return;
+      currentDetailItem = it;
+
+      $('#modalImg').src = it.img;
+      $('#modalImg').alt = it.alt;
+      $('#modalBadge').textContent = isHotel ? `Peringkat Bintang ${'★'.repeat(it.stars)}` : it.duration;
+      $('#modalArea').textContent = it.area;
+      $('#modalTitle').textContent = it.name;
+      $('#modalDesc').textContent = it.desc;
+      $('#modalAmenities').innerHTML = (it.amenities || []).map(a => `<span class="px-2.5 py-1 rounded-pill bg-surface-muted text-ink font-semibold text-[11px]">${a}</span>`).join('');
+      $('#modalPolicy').textContent = it.policy;
+
+      const total = isHotel ? stayTotal(it) : actTotal(it);
+      $('#modalPrice').textContent = state.priced ? idr.format(total) : `Mulai ${idr.format(isHotel ? it.nightly : it.perPerson)}`;
+      detailModal.classList.remove('hidden');
+    }
+    function closeDetail() {
+      detailModal.classList.add('hidden');
+      currentDetailItem = null;
+    }
+    $('[data-close-modal]').addEventListener('click', closeDetail);
+    detailModal.addEventListener('click', e => { if (e.target === detailModal) closeDetail(); });
+    $('#modalSelectBtn').addEventListener('click', () => {
+      if (currentDetailItem) selectItem(currentDetailItem.id);
+    });
+
+    // Checkout Modal
+    const checkoutModal = $('#checkoutModal');
+    function openCheckout() {
+      if (!state.trip.length) return;
+      closeTrip();
+      $('#coItemCount').textContent = `${state.trip.length} Item Pulau`;
+      $('#coItemList').innerHTML = state.trip.map(t => `<div class="flex justify-between font-display text-sm font-semibold"><span>• ${t.name}</span><span class="font-mono font-bold">${idr.format(t.total)}</span></div>`).join('');
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      $('#coTotal').textContent = idr.format(totalVal);
+      $('#checkoutFormContent').classList.remove('hidden');
+      $('#checkoutSuccessContent').classList.add('hidden');
+      checkoutModal.classList.remove('hidden');
+    }
+    function closeCheckout() {
+      checkoutModal.classList.add('hidden');
+    }
+    $('[data-close-checkout]').addEventListener('click', closeCheckout);
+    checkoutModal.addEventListener('click', e => { if (e.target === checkoutModal) closeCheckout(); });
+    $('[data-finish-checkout]').addEventListener('click', () => {
+      closeCheckout();
+      state.trip = [];
+      renderTrip();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    $('#btnDownloadVoucher').addEventListener('click', () => {
+      toast('E-Voucher & Panduan Dermaga sedang diunduh (Simulasi PDF)...');
+    });
+
+    $('#coForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const guestName = $('#coName').value.trim();
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      const randomRef = 'TIDE-2026-' + Math.floor(1000 + Math.random() * 9000);
+
+      $('#successRef').textContent = randomRef;
+      $('#successGuest').textContent = guestName;
+      $('#successAmount').textContent = idr.format(totalVal);
+
+      $('#checkoutFormContent').classList.add('hidden');
+      $('#checkoutSuccessContent').classList.remove('hidden');
+    });
+
+    // Drawer Navigation
+    const drawer = $('#tripDrawer'), overlay = $('#tripOverlay');
+    function openTrip() { overlay.classList.remove('hidden'); drawer.classList.remove('translate-x-full'); drawer.setAttribute('aria-hidden', 'false'); }
+    function closeTrip() { overlay.classList.add('hidden'); drawer.classList.add('translate-x-full'); drawer.setAttribute('aria-hidden', 'true'); }
+    $$('[data-open-trip]').forEach(b => b.addEventListener('click', openTrip));
+    $('[data-close-trip]').addEventListener('click', closeTrip);
+    overlay.addEventListener('click', closeTrip);
+
+    $('#payBtn').addEventListener('click', openCheckout);
+
+    let toastTimer;
+    function toast(msg) {
+      const t = $('#toast'); t.textContent = msg; t.classList.remove('hidden');
+      clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.add('hidden'), 2500);
+    }
+
+    $('#menuBtn').addEventListener('click', () => {
+      const open = $('#mobileNav').classList.toggle('hidden') === false;
+      $('#menuBtn').setAttribute('aria-expanded', open);
+    });
+    $('#year').textContent = new Date().getFullYear();
+
+    syncBounds(); renderMode(); invalidate(); renderTrip();
+  })();
+  </script>
+</body>
+</html>

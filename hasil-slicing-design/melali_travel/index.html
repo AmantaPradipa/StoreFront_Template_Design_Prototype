@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>melali travel · Modern Indonesian Eco-Luxury &amp; Open Trip Platform</title>
+  <meta name="description" content="Melali Travel — Strangers Today, Travel Buddies Tomorrow. Curated open trips and accommodations across Indonesia." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --color-surface-dark: #000000;
+      --color-surface-pure: #FFFFFF;
+      --color-surface-offwhite: #FAFAFA;
+      --color-surface-frame: #E7E7E7;
+      --color-pastel-cyan: #E4F1FB;
+      --color-brand-blue: #0284C7;
+      --color-rating-gold: #F59E0B;
+    }
+  </style>
+
+  <style>
+    :root {
+      color-scheme: light;
+    }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #FAFAFA;
+      color: #000000;
+    }
+    .font-display {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+    .tnum {
+      font-variant-numeric: tabular-nums;
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    html {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+
+<body class="bg-[#FAFAFA] text-black antialiased selection:bg-[#E4F1FB] selection:text-black">
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 1: HERO SECTION (Match Image #2 Exactly)                          -->
+  <!-- ========================================================================= -->
+  <section id="hero-section" class="relative w-full min-h-screen min-h-svh flex flex-col justify-between overflow-hidden bg-black text-white">
+    <!-- Aerial Island Backdrop Image -->
+    <div class="absolute inset-0 w-full h-full">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBqalrBQmi4hTgAoMALCEA8vtWkYsoc3KzdMdpZPyOAtxKgVGdQbebKNvL6757qlod53MBcCuUbsl5VCd5lB83rjelBW2y3AfS8Rkj6xzn3IuI7OCICGjLDgBBwlhGQ55v6mUDXpOcYT0A0RDUJGOK6Lz9wcopLgBiz0nFRibE3AkKz1bYplePfCqoj8ziAh8sqJx00n2lLRqb2OFm6Nub1QxLIuhMbLJrHbWxz7Y"
+           onerror="this.src='../../assets/mandalika_escape/palm-bay.jpg'"
+           alt="Aerial view of Indonesian tropical archipelago lagoon"
+           class="w-full h-full object-cover object-center scale-105 transition-transform duration-1000" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/80"></div>
+    </div>
+
+    <!-- Top Navigation Container (Header Row + Dedicated Centered Segmented Row) -->
+    <header class="relative z-30 w-full pt-6 px-4 sm:px-8 lg:px-16">
+      <!-- Row 1: Top Navigation (Left Menu & Dropdowns, Right Quick Contact) -->
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+        <!-- Left: Menu Pill + Dropdowns -->
+        <div class="flex items-center gap-1.5 bg-white/20 backdrop-blur-md p-1.5 rounded-full border border-white/30 shadow-md">
+          <button id="navMenuBtn" type="button" class="flex items-center gap-1.5 px-3.5 py-1.5 bg-white text-black rounded-full font-display font-bold text-xs hover:bg-white/90 active:scale-95 transition shadow-sm">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+            <span>Menu</span>
+          </button>
+          
+          <!-- Open Trip Dropdown Trigger -->
+          <div class="relative">
+            <button id="openTripTrigger" type="button" class="px-3 py-1.5 font-display font-semibold text-xs text-white hover:text-white/80 transition flex items-center gap-1">
+              <span>Open Trip</span>
+              <svg class="w-3 h-3 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+            </button>
+            <div id="openTripMenu" class="hidden absolute left-0 mt-2 w-48 bg-white text-black rounded-2xl p-2 shadow-2xl border border-slate-200 text-xs font-sans space-y-1">
+              <a href="#catalog-section" onclick="filterByLocation('uluwatu')" class="block px-3 py-2 rounded-xl hover:bg-slate-100 font-medium">Uluwatu Coastline</a>
+              <a href="#catalog-section" onclick="filterByLocation('labuan-bajo')" class="block px-3 py-2 rounded-xl hover:bg-slate-100 font-medium">Toba Lake &amp; Bajo</a>
+              <a href="#catalog-section" onclick="filterByLocation('sumba')" class="block px-3 py-2 rounded-xl hover:bg-slate-100 font-medium">Sumba Adventure</a>
+            </div>
+          </div>
+
+          <!-- Private Trip Dropdown Trigger -->
+          <div class="relative">
+            <button id="privateTripTrigger" type="button" class="px-3 py-1.5 font-display font-semibold text-xs text-white hover:text-white/80 transition flex items-center gap-1">
+              <span>Private Trip</span>
+              <svg class="w-3 h-3 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+            </button>
+            <div id="privateTripMenu" class="hidden absolute left-0 mt-2 w-52 bg-white text-black rounded-2xl p-2 shadow-2xl border border-slate-200 text-xs font-sans space-y-1">
+              <a href="#planner-section" class="block px-3 py-2 rounded-xl hover:bg-slate-100 font-medium">Custom Group Itinerary</a>
+              <a href="#planner-section" class="block px-3 py-2 rounded-xl hover:bg-slate-100 font-medium">Private Yacht Charter</a>
+              <a href="#planner-section" class="block px-3 py-2 rounded-xl hover:bg-slate-100 font-medium">Corporate &amp; Squad Retreat</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Language / Contact -->
+        <div class="flex items-center gap-2">
+          <div class="hidden sm:flex items-center gap-2 bg-white/15 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 text-xs font-semibold">
+            <span class="font-mono text-[11px] text-white/90">ID • EN</span>
+          </div>
+          <button type="button" onclick="document.getElementById('planner-section').scrollIntoView({behavior: 'smooth'})" class="hidden md:inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-md hover:bg-white/25 px-4 py-2 rounded-full border border-white/20 text-xs font-display font-semibold transition">
+            <span>Explore</span>
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Row 2: DEAD-CENTER SEGMENTED CONTROLS (Accommodation · Flights · Hotels) matching Image #2 -->
+      <div class="mt-8 sm:mt-10 flex justify-center w-full">
+        <div class="inline-flex items-center gap-2 bg-black/55 backdrop-blur-md px-4 py-2 rounded-full border border-white/25 shadow-2xl text-xs font-medium">
+          <button type="button" class="segment-tab flex items-center gap-1.5 px-3 py-1 rounded-full text-white/80 hover:text-white transition" data-mode="acc">
+            <span class="text-sm">🛏</span>
+            <span>Accommodation</span>
+          </button>
+          <span class="text-white/30">•</span>
+          <button type="button" class="segment-tab flex items-center gap-1.5 px-3 py-1 rounded-full text-white/80 hover:text-white transition" data-mode="flights">
+            <span class="text-sm">✈</span>
+            <span>Flights</span>
+          </button>
+          <span class="text-white/30">•</span>
+          <button type="button" class="segment-tab flex items-center gap-1.5 px-3 py-1 rounded-full text-white font-bold bg-white/20 transition" data-mode="hotels">
+            <span class="text-sm">🏨</span>
+            <span>Hotels</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Center Monolithic Lowercase Brand with Authentic White Target Crosshair (Image #2) -->
+    <div class="relative z-10 w-full my-auto px-4 sm:px-8 text-center flex flex-col items-center justify-center pt-4 pb-8">
+      <!-- White Target Crosshair Symbol directly matching Image #2 -->
+      <div class="mb-1 text-white flex items-center justify-center">
+        <svg class="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="24" cy="24" r="14" stroke="currentColor" />
+          <path d="M24 4v7M24 37v7M4 24h7M37 24h7" stroke-linecap="round" />
+          <circle cx="24" cy="24" r="3.5" fill="currentColor" />
+        </svg>
+      </div>
+
+      <!-- Lowercase "melali travel" wordmark matching Image #2 -->
+      <h1 class="font-display font-extrabold text-7xl sm:text-9xl text-white tracking-tighter leading-[0.82] drop-shadow-2xl select-none lowercase">
+        melali<br />
+        <span class="tracking-tight">travel</span>
+      </h1>
+    </div>
+
+    <!-- Bottom Utility Deck matching Image #2 verbatim -->
+    <div class="relative z-20 w-full px-4 sm:px-8 lg:px-16 pb-8 sm:pb-10">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-end justify-between gap-6 mb-6">
+        <!-- Left Subtitle matching Image #2:
+             "Melali offers open trips in Indonesia. Strangers Today, Travel Buddies Tomorrow." -->
+        <div class="max-w-md text-left">
+          <p class="font-sans text-sm sm:text-[15px] text-white/95 leading-relaxed font-normal">
+            Melali offers open trips in Indonesia.<br />
+            Strangers Today, Travel Buddies Tomorrow.
+          </p>
+        </div>
+
+        <!-- Right Badge matching Image #2:
+             "★ 5K+ People Satisfied | Unforgettable accommodations for any budget." -->
+        <div class="flex items-center gap-3 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-xs">
+          <div class="inline-flex items-center gap-1 text-amber-400 font-bold">
+            <span>★</span>
+            <span class="text-white font-display">5K+ People Satisfied</span>
+          </div>
+          <span class="text-white/40">|</span>
+          <span class="text-white/80 text-[11px] font-sans">Unforgettable accommodations for any budget.</span>
+        </div>
+      </div>
+
+      <!-- Bottom Fast Links Bar with Right Arrows (Image #2) -->
+      <div class="max-w-7xl mx-auto pt-4 border-t border-white/20 flex flex-wrap items-center justify-between gap-4 text-white/85 text-xs font-display font-medium">
+        <a href="#planner-section" class="hover:text-white transition flex items-center gap-1 group">
+          <span>Special Vacation</span>
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+        <a href="#why-us" onclick="document.getElementById('value-prop-section').scrollIntoView({behavior: 'smooth'})" class="hover:text-white transition flex items-center gap-1 group">
+          <span>Reputable Guide</span>
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+        <a href="#contact-section" onclick="document.getElementById('planner-section').scrollIntoView({behavior: 'smooth'})" class="hover:text-white transition flex items-center gap-1 group">
+          <span>Contact Us</span>
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 2: VALUE PROPOSITION (Match Image #2 Exactly)                     -->
+  <!-- ========================================================================= -->
+  <section id="value-prop-section" class="w-full bg-[#FAFAFA] py-16 sm:py-24 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
+      
+      <!-- Top Indicators: "We are Melali", "★ 5K+ People Satisfied", Avatar group +5 -->
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+        <div class="flex items-center gap-5 text-xs font-display font-bold">
+          <div class="flex items-center gap-1.5 text-sky-600">
+            <svg class="w-4 h-4 text-sky-500" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            <span>We are Melali</span>
+          </div>
+          <div class="flex items-center gap-1 text-slate-700">
+            <span class="text-amber-500">★</span>
+            <span class="tnum">5K+ People Satisfied</span>
+          </div>
+        </div>
+
+        <!-- Overlapping Avatar Group +5 -->
+        <div class="flex items-center gap-2">
+          <div class="flex -space-x-2 overflow-hidden">
+            <div class="inline-block h-7 w-7 rounded-full ring-2 ring-white bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfxQyIa2trIQBqirJriG-e7sz4M4scZOIepee1zbpPNSXw732pLp11TniBHmEbIcKtNJNJOl0YHrmZJOviLghYA2kc39u6k_86LlBq2m6_jDygyGx6RYgaL26DJrZXS1yz6AzGS5H_xwoKT-Yk_3YYbTWLmJ0QEKTCOhSXCDCxAOIbjZUgBKS6MkxVL20GwDddSaX7SCIGpReuze4a1Enk-huwCyl-KYTLpr00w9Y')"></div>
+            <div class="inline-block h-7 w-7 rounded-full ring-2 ring-white bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQDNTeWVM8aLdjRAwi4zP_IyRsrx6RK0b53kFnR6gonUVptsYfp8sHOtQhePYAYLiDGm22Lysm8liXf9TbULh5aIg-FKgZDiss1KOxvu6NXFmA6vYJr6W5lvb61-VmoRqty3-w2rqxYJOsEhq0T0F1J8deSQIQlCftXpBM-RH4-evwH4_3NUdP97KTcur1VM0qXL0yY4mo0FO67t7grLTAVEOb5Jftj4aOG0GI97Q')"></div>
+          </div>
+          <span class="text-[11px] font-mono text-slate-500 font-bold">+5</span>
+        </div>
+      </div>
+
+      <!-- Main Headline: "Melali means Going Places" with concentric rings behind "Places" -->
+      <div class="relative mb-10 max-w-2xl">
+        <h2 class="text-4xl sm:text-6xl font-display font-extrabold text-black tracking-tight leading-tight relative z-10">
+          <span class="bg-[#E4F1FB] px-4 py-1 rounded-2xl inline-block text-black">Melali</span> means<br />
+          Going <span class="relative inline-block">Places
+            <!-- Faint circular compass rings behind "Places" (as shown in Image #2) -->
+            <span class="absolute -top-3 -right-6 w-20 h-20 rounded-full border border-sky-300/40 pointer-events-none -z-10"></span>
+            <span class="absolute -top-6 -right-10 w-28 h-28 rounded-full border border-sky-200/30 pointer-events-none -z-10"></span>
+          </span>
+        </h2>
+
+        <!-- Dotted Line with Blue Crosshair (Image #2) -->
+        <div class="mt-4 flex items-center gap-1.5 max-w-md">
+          <div class="w-2.5 h-2.5 rounded-full bg-sky-500"></div>
+          <div class="h-0.5 flex-1 border-t-2 border-dotted border-sky-400"></div>
+          <!-- Blue target crosshair circle at right of dotted line -->
+          <div class="w-6 h-6 rounded-full border-2 border-sky-500 flex items-center justify-center text-sky-500">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="12" cy="12" r="7"/>
+              <circle cx="12" cy="12" r="2" fill="currentColor"/>
+              <path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2-Column Section Layout matching Image #2 -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Left Column: "● 01 Our Value", "Not Your Boring Travel Agent", Paragraph, "Book a Seat" button -->
+        <div class="lg:col-span-4 space-y-4">
+          <span class="inline-block text-[11px] font-mono font-bold text-slate-500 border border-slate-300 px-2.5 py-0.5 rounded-full">
+            ● 01 Our Value
+          </span>
+          <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-black tracking-tight leading-snug">
+            Not Your Boring<br />Travel Agent
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-xs font-normal">
+            We plan chill, curated trips with good vibes and better people.
+          </p>
+          <div class="pt-2">
+            <button type="button" onclick="openBookingModal('General Open Trip Inquiry', 'Rp 2.450.000', 'Curated Good Vibes Squad')"
+                    class="bg-black hover:bg-neutral-800 active:scale-95 text-white font-display font-bold text-xs px-6 py-3 rounded-full transition shadow-md">
+              Book a Seat
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: 3 Staggered Photo Cards (Image #2) -->
+        <div class="lg:col-span-8 relative">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 items-end">
+            <!-- Card 1: Bangli, East Bali / Panglipuran (Tallest card) -->
+            <div class="group relative rounded-2xl overflow-hidden shadow-md border border-slate-200">
+              <div class="relative h-72 sm:h-80 overflow-hidden bg-slate-100">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqOkg1U6NkNfDz0-1WFoQIbabsO2LH3TVJnC2pQRV8hYHkE6y9OirdEreUpjz2WnSIZMvCjT9NLqAG_KT6L_pESmSUKKYP6Ib2jQwUIreiiE637ieSe1XxpqZB8oxPfgPDwRyTR8vYpnLBXI6kBYjhBBeYo46Ja_mwcDCpPSpnA2FgDPMwjvkWQq7NAAcLQJcqd_wHSoRCjmI3ZZwmR4_2fwSpF_9Gaft0uuu3XJY"
+                     onerror="this.src='../../assets/bagus_travel/ubud.jpg'"
+                     alt="Bangli, East Bali"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span class="absolute bottom-2.5 right-2.5 bg-black/60 backdrop-blur-md text-white text-[10px] font-sans px-2.5 py-0.5 rounded-full">
+                  Panglipuran
+                </span>
+              </div>
+              <div class="p-3 bg-white">
+                <p class="font-display font-bold text-xs text-black">Bangli, East Bali</p>
+                <p class="text-[10px] text-slate-400 mt-0.5">Cultural walk with local guides</p>
+              </div>
+            </div>
+
+            <!-- Card 2: Uluwatu / Sea Temple -->
+            <div class="group relative rounded-2xl overflow-hidden shadow-md border border-slate-200">
+              <div class="relative h-56 sm:h-64 overflow-hidden bg-slate-100">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx9jLcJF32iL13vzqapxa4kGaAdgubNqPBg1vPVHRErIryEGhpFGij3TzfFCI7tL4BVL0CiYen2C1N9HLiaZyIBpiViTSqyEB9yage519rjddrFtc_tFb9OYI9-F8MRjq4di57YaW8fr9E2VSnfXP7RWYOPubwd1c8BsaUPiX7KXfP7Hi3KzfAzu96NyIvqECt6TJ_m6eeroANMScyRYzNp4v4H3ONXa-X9xD0HAs"
+                     onerror="this.src='../../assets/bagus_travel/tanah-lot.jpg'"
+                     alt="Uluwatu Temple"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span class="absolute bottom-2.5 right-2.5 bg-black/60 backdrop-blur-md text-white text-[10px] font-sans px-2.5 py-0.5 rounded-full">
+                  Uluwatu
+                </span>
+              </div>
+            </div>
+
+            <!-- Card 3: Trunyan Lakeside -->
+            <div class="group relative rounded-2xl overflow-hidden shadow-md border border-slate-200">
+              <div class="relative h-64 sm:h-72 overflow-hidden bg-slate-100">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOwaCW_Fz5YqphH8-fpnnYGCHSIyvvN0mjwpmy_y0f1-XMyU2ngn6_iJZG0VQsX2GHU_kBpIAXPpnhFjqLCUuV5L6FchoOWC8ueib2hkejztb5LZiFjfYocf5Va3AkDWcMyL35YRMFnfgGVX-3HOLUAb1KGpIQD7hx0Lp422N1K4EwdOeaETjbj-vJAYXFv7bpCl6d4y9OUFfv9I8IhICkR0CBO7drDhC957wrTiQ"
+                     onerror="this.src='../../assets/serenity_umrah_privilege/toba.jpg'"
+                     alt="Trunyan Lakeside"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span class="absolute bottom-2.5 right-2.5 bg-black/60 backdrop-blur-md text-white text-[10px] font-sans px-2.5 py-0.5 rounded-full">
+                  Trunyan Lakeside
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prev / Next Controls (Image #2) -->
+          <div class="mt-4 flex items-center justify-end gap-1.5 text-xs font-mono">
+            <button id="s2PrevBtn" type="button" class="px-3 py-1 bg-white border border-slate-200 text-slate-700 hover:bg-black hover:text-white rounded-full transition shadow-2xs">
+              ← Prev
+            </button>
+            <button id="s2NextBtn" type="button" class="px-3 py-1 bg-white border border-slate-200 text-slate-700 hover:bg-black hover:text-white rounded-full transition shadow-2xs">
+              Next →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 3: PICK THE PLACE (Match Image #2 Exactly)                        -->
+  <!-- ========================================================================= -->
+  <section id="catalog-section" class="w-full bg-[#FAFAFA] py-16 sm:py-24 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
+      
+      <!-- Top Tag: "● Popular Destination 2026" (Year updated to current year!) -->
+      <div class="mb-2">
+        <span class="inline-block text-[11px] font-mono font-bold text-slate-500 border border-slate-300 px-2.5 py-0.5 rounded-full">
+          ● Popular Destination <span id="currentYearTag">2026</span>
+        </span>
+      </div>
+
+      <!-- Section Title & Subtitle matching Image #2 -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <h2 class="font-display text-4xl sm:text-5xl font-extrabold text-black tracking-tight">
+          Pick the Place
+        </h2>
+        <p class="text-xs text-slate-500 max-w-xs leading-relaxed text-left md:text-right">
+          We have great options for everyone and cozy spots for your squad to enjoy together!
+        </p>
+      </div>
+
+      <!-- Floating Pill Search Console with Industry-Standard Interactive Popovers -->
+      <div class="bg-white rounded-2xl md:rounded-full p-2.5 sm:p-3 shadow-xl border border-slate-200 max-w-5xl mb-12">
+        <form id="discoverSearchForm" class="flex flex-col md:flex-row items-center justify-between divide-y md:divide-y-0 md:divide-x divide-slate-200 gap-2 md:gap-0 text-xs" onsubmit="event.preventDefault(); runDiscovery();">
+          
+          <!-- Field 1: Destination -->
+          <div class="w-full md:w-1/4 px-4 py-2 text-left relative group">
+            <label for="inputDestination" class="block font-display font-bold text-black text-[11px] cursor-pointer">Destination</label>
+            <div class="flex items-center gap-1.5 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-sky-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a8 8 0 00-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 00-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+              <input id="inputDestination" type="text" placeholder="Find a spot ..." autocomplete="off"
+                     class="w-full bg-transparent text-slate-700 placeholder:text-slate-400 focus:outline-none text-xs font-medium cursor-pointer" />
+            </div>
+            <!-- Quick Pick Dropdown -->
+            <div id="destQuickPick" class="hidden absolute left-0 top-full mt-2 w-64 bg-white text-black rounded-2xl p-2.5 shadow-2xl border border-slate-200 z-50 text-xs space-y-1">
+              <p class="font-mono text-[10px] text-slate-400 uppercase tracking-wider px-2 py-1 font-bold">Destinasi Populer</p>
+              <button type="button" onclick="selectSpot('all', 'Semua Destinasi')" class="w-full text-left px-3 py-1.5 rounded-xl hover:bg-slate-100 flex items-center justify-between font-medium"><span>Semua Spot</span><span class="text-slate-400 text-[10px]">3 Spot</span></button>
+              <button type="button" onclick="selectSpot('uluwatu', 'Uluwatu, Bali')" class="w-full text-left px-3 py-1.5 rounded-xl hover:bg-slate-100 flex items-center justify-between font-medium"><span>Uluwatu, Bali</span><span class="text-amber-500 text-[10px] font-bold">★ 4 Slot</span></button>
+              <button type="button" onclick="selectSpot('toba', 'Toba Lake, Sumatra')" class="w-full text-left px-3 py-1.5 rounded-xl hover:bg-slate-100 flex items-center justify-between font-medium"><span>Toba Lake, Sumatra</span><span class="text-amber-500 text-[10px] font-bold">★ 5 Slot</span></button>
+              <button type="button" onclick="selectSpot('sumba', 'West Sumba, NTT')" class="w-full text-left px-3 py-1.5 rounded-xl hover:bg-slate-100 flex items-center justify-between font-medium"><span>West Sumba, NTT</span><span class="text-amber-500 text-[10px] font-bold">★ 2 Slot</span></button>
+            </div>
+          </div>
+
+          <!-- Field 2: Category -->
+          <div class="w-full md:w-1/4 px-4 py-2 text-left relative">
+            <span class="block font-display font-bold text-black text-[11px]">Category</span>
+            <div class="flex items-center justify-between mt-0.5 cursor-pointer">
+              <select id="selectCategory" class="w-full bg-transparent text-slate-700 font-medium focus:outline-none text-xs cursor-pointer appearance-none">
+                <option value="all">Select type ▾</option>
+                <option value="open">Open Trip (Sharing Squad)</option>
+                <option value="private">Private Trip (Bespoke)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Field 3: Price -->
+          <div class="w-full md:w-1/4 px-4 py-2 text-left relative">
+            <span class="block font-display font-bold text-black text-[11px]">Price</span>
+            <div class="flex items-center justify-between mt-0.5 cursor-pointer">
+              <select id="selectPrice" class="w-full bg-transparent text-slate-700 font-medium focus:outline-none text-xs cursor-pointer appearance-none">
+                <option value="all">Select range budget ▾</option>
+                <option value="low">Under Rp 3.000.000</option>
+                <option value="high">Above Rp 3.000.000</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Field 4: Date & Discover Button -->
+          <div class="w-full md:w-1/4 px-4 py-2 flex items-center justify-between gap-3">
+            <div class="text-left flex-1">
+              <span class="block font-display font-bold text-black text-[11px]">Date</span>
+              <input id="inputDate" type="date" class="w-full bg-transparent text-slate-700 focus:outline-none text-xs mt-0.5 font-mono cursor-pointer font-medium" />
+            </div>
+            <!-- "Discover" button matching Image #2 -->
+            <button id="discoverBtn" type="button" onclick="runDiscovery()" class="bg-black hover:bg-neutral-800 text-white font-display font-bold text-xs px-6 py-3 rounded-full transition shadow-md active:scale-95 shrink-0 flex items-center gap-1.5">
+              <span>Discover</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Live Assurance Status Strip -->
+      <div class="max-w-5xl mx-auto -mt-8 mb-10 px-4 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span class="font-bold text-black">Every price is checked live when you ask for it</span>
+          <span class="hidden sm:inline">·</span>
+          <span id="liveResultFeedback">Menampilkan 3 paket perjalanan terverifikasi</span>
+        </div>
+        <span class="text-slate-400">Zero hidden markups</span>
+      </div>
+
+      <!-- 3 Tour Cards (Matches Image #2 layout and copy exactly) -->
+      <div id="tourCardsRow" class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        
+        <!-- CARD 1: Uluwatu (Badung Regency, Bali) -->
+        <article class="tour-item bg-white rounded-2xl p-3 sm:p-3.5 shadow-sm hover:shadow-md transition border border-slate-200" data-destination="uluwatu" data-cat="open" data-budget="2450000">
+          <div class="flex items-center justify-between mb-2">
+            <div>
+              <h3 class="font-display font-bold text-sm text-black">Uluwatu</h3>
+              <p class="text-[10px] text-slate-400">Badung Regency, Bali</p>
+            </div>
+            <span class="bg-amber-100 text-amber-900 font-mono text-[10px] font-bold px-2 py-0.5 rounded-full">
+              ★ 4 Slot left
+            </span>
+          </div>
+
+          <!-- Image with Inset Pill Bar -->
+          <div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 mb-3">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD4FLYbiiEvBwG41E7FGfnNo8m4ubefXDG6R8E-K2Vu0W_h9EtGDGRjIIGELX9m2ws3acFVLQEXiRGZX7v9R7Vr2MUaiQneLJj9RjKEZU2GK1Ttiy9zwqvmgYAWym2FxCEHrZPgOcyoAgMv36V7QGttkVINkae9OxRXX4XRuduEufelqK_L8veZvemTvMEO7ltDT1Uv9CBeuzLzcTd97S35eV0ZXKwjNm6BZannwU"
+                 onerror="this.src='../../assets/bagus_travel/nusa-penida.jpg'"
+                 alt="Uluwatu Coast"
+                 class="w-full h-full object-cover" />
+            <!-- Inset Floating Info Bar at bottom of photo (Image #2) -->
+            <div class="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur-md px-2.5 py-1.5 rounded-lg text-white text-[10px] flex items-center justify-between font-mono">
+              <span class="flex items-center gap-1">⏱ 3D3N</span>
+              <span>Open Trip</span>
+              <span>📅 12-14 August</span>
+            </div>
+          </div>
+
+          <!-- Bottom Button: Expand Circle Button (Image #2) -->
+          <div class="flex items-center justify-start">
+            <button type="button" onclick="openDetailModal('Uluwatu Coastline Tour', 'Badung Regency, Bali', 'Rp 2.450.000', '3D3N · Open Trip · 4 Slot left')"
+                    class="w-8 h-8 rounded-full border border-slate-300 hover:bg-black hover:text-white text-slate-600 flex items-center justify-center transition shadow-2xs" aria-label="Lihat rincian">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 2: Toba Lake (Sumatra) with Specs & "Plan a Trip" Button -->
+        <article class="tour-item bg-white rounded-2xl p-3 sm:p-3.5 shadow-md hover:shadow-lg transition border border-slate-200" data-destination="toba" data-cat="private" data-budget="4200000">
+          <div class="flex items-center justify-between mb-2">
+            <div>
+              <h3 class="font-display font-bold text-sm text-black">Toba Lake</h3>
+              <p class="text-[10px] text-slate-400">Sumatra</p>
+            </div>
+            <span class="bg-amber-100 text-amber-900 font-mono text-[10px] font-bold px-2 py-0.5 rounded-full">
+              ★ 5 Slot left
+            </span>
+          </div>
+
+          <!-- Image with Inset Badge -->
+          <div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 mb-3">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzdzDvA-BcUhplHf23xxZG9dX429EROAKQ7Mh5gIElo1g4nrP0Z6o_fd4HBviG5kcSu0DnKQCv-wP8pIAutK3rhO8V4ljmDCq45OxX93EilaJhy66g_KL6CqY1Ku5KVGdBPaUnpWWqLRlhKL86xTpQgGIQaHzdzwTsyJAQ5l51cKiMsF8jeWDuWyZTm0-9Mn7X-NJuPRmnGyReNG3VPtp11AcwQrZgefqqT7cD_WM"
+                 onerror="this.src='../../assets/serenity_umrah_privilege/toba.jpg'"
+                 alt="Toba Lake"
+                 class="w-full h-full object-cover" />
+            <span class="absolute top-2 right-2 bg-black/60 backdrop-blur-md text-white text-[10px] font-mono px-2 py-0.5 rounded-full">
+              Open Trip
+            </span>
+            <!-- Inset Info Bar -->
+            <div class="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur-md px-2.5 py-1.5 rounded-lg text-white text-[10px] flex items-center justify-between font-mono">
+              <span>⏱ 4D3N</span>
+              <span>Private</span>
+              <span class="text-amber-300">Request closed</span>
+            </div>
+          </div>
+
+          <!-- 3 Specs Row (Image #2) -->
+          <div class="grid grid-cols-3 gap-1 text-[10px] py-1.5 border-t border-slate-100 text-left">
+            <div>
+              <span class="text-slate-400 block">Accommodation</span>
+              <span class="font-semibold text-black">2N at Lakeside Villa</span>
+            </div>
+            <div>
+              <span class="text-slate-400 block">Transport</span>
+              <span class="font-semibold text-black">Private driver</span>
+            </div>
+            <div>
+              <span class="text-slate-400 block">Meals</span>
+              <span class="font-semibold text-black">Full board</span>
+            </div>
+          </div>
+
+          <!-- Buttons: Expand on left + "Plan a Trip" on right (Image #2) -->
+          <div class="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between gap-2">
+            <button type="button" onclick="openDetailModal('Toba Lake Island Tour', 'Sumatra', 'Rp 4.200.000', '4D3N · 2N Lakeside Villa · Full Board')"
+                    class="w-8 h-8 rounded-full border border-slate-300 hover:bg-black hover:text-white text-slate-600 flex items-center justify-center transition shadow-2xs" aria-label="Rincian Toba">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </button>
+            <button type="button" onclick="openBookingModal('Toba Lake Island Tour', 'Rp 4.200.000', '4D3N · Lakeside Villa · Private Driver')"
+                    class="bg-black hover:bg-neutral-800 text-white font-display font-bold text-xs px-5 py-2 rounded-full transition shadow-sm active:scale-95">
+              Plan a Trip
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 3: Sumba Adventure (West Sumba) -->
+        <article class="tour-item bg-white rounded-2xl p-3 sm:p-3.5 shadow-sm hover:shadow-md transition border border-slate-200" data-destination="sumba" data-cat="open" data-budget="3850000">
+          <div class="flex items-center justify-between mb-2">
+            <div>
+              <h3 class="font-display font-bold text-sm text-black">Sumba Adventure</h3>
+              <p class="text-[10px] text-slate-400">West Sumba</p>
+            </div>
+            <span class="bg-amber-100 text-amber-900 font-mono text-[10px] font-bold px-2 py-0.5 rounded-full">
+              ★ 2 Slot left
+            </span>
+          </div>
+
+          <!-- Image with Inset Pill Bar -->
+          <div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 mb-3">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHgHB7sg_RpRUjL59Gf1j_9GFG6xbkrrSd5aoByz7K2uiyP-_n28yGXgo0Qxf6Ha49j1Iycr8-EsoDg8hn1-nZIHOgQR3VwTfgkOwBADrnbEYir_NgYCwGorRAP6X7JMBtIO1GNgmbSthScthDrvnGdt2uPAk6n3BW-7i5UPqvfwcL6kyt-67zsEH6zkXsutDigIPETGE-gRMotImcGOZHP6OecdHvHRl1Zh1Z2WY"
+                 onerror="this.src='../../assets/mandalika_escape/sade-houses.jpg'"
+                 alt="Sumba Conical Village"
+                 class="w-full h-full object-cover" />
+            <span class="absolute top-2 right-2 bg-black/60 backdrop-blur-md text-white text-[10px] font-mono px-2 py-0.5 rounded-full">
+              Open Trip
+            </span>
+            <!-- Inset Info Bar -->
+            <div class="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur-md px-2.5 py-1.5 rounded-lg text-white text-[10px] flex items-center justify-between font-mono">
+              <span>⏱ 5D3N</span>
+              <span>Open Trip</span>
+              <span>📅 12-14 August</span>
+            </div>
+          </div>
+
+          <!-- Bottom Button: Expand Circle Button -->
+          <div class="flex items-center justify-start">
+            <button type="button" onclick="openDetailModal('Sumba Adventure & Wae Rebo', 'West Sumba', 'Rp 3.850.000', '5D3N · Open Trip · 2 Slot left')"
+                    class="w-8 h-8 rounded-full border border-slate-300 hover:bg-black hover:text-white text-slate-600 flex items-center justify-center transition shadow-2xs" aria-label="Lihat rincian Sumba">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Prev / Next Buttons at bottom of Section 3 (Image #2) -->
+      <div class="mt-8 flex items-center justify-end gap-1.5 text-xs font-mono">
+        <button id="s3PrevBtn" type="button" class="px-3.5 py-1.5 bg-white border border-slate-200 text-slate-700 hover:bg-black hover:text-white rounded-full transition shadow-2xs">
+          ← Prev
+        </button>
+        <button id="s3NextBtn" type="button" class="px-3.5 py-1.5 bg-white border border-slate-200 text-slate-700 hover:bg-black hover:text-white rounded-full transition shadow-2xs">
+          Next →
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 4: EXPLORE DESTINATION (Match Image #2 Exactly)                   -->
+  <!-- ========================================================================= -->
+  <section id="destination-section" class="w-full bg-[#FAFBFA] py-16 sm:py-24 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 text-center">
+      
+      <!-- Top Tag: "● Client Experiences" -->
+      <div class="mb-2">
+        <span class="inline-block text-[11px] font-mono font-bold text-slate-500 border border-slate-300 px-3 py-0.5 rounded-full">
+          ● Client Experiences
+        </span>
+      </div>
+
+      <!-- Section Title matching Image #2 -->
+      <h2 class="font-display text-4xl sm:text-5xl font-extrabold text-black tracking-tight mb-12">
+        Explore Destination
+      </h2>
+
+      <!-- 5-Card Horizontal Gallery with Badges at Bottom Right (Image #2) -->
+      <div id="destCarousel" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 mb-8">
+        <!-- 1: Borobudur -->
+        <div class="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition border border-slate-200 cursor-pointer" onclick="openDetailModal('Candi Borobudur Heritage', 'Central Java', 'Rp 1.850.000', 'Day Pass & Guided Tour')">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeenRK_vtisIwwjVf3iYRWGzMcDq61Nuv4wkZu-c7JAJf6PmX6yo762a4DRfwzDulbOlIhXzkclKM25Hx1UvqARJBMwrPTCyuMxU10KyEbrbGbpr3BaHynp-JVbgd0jf23AG4_-2qRzJrqQiB_bOz429COmZnJyIiOTj9y3wHEusW7bYpgewbGZjJblAHVhzD_LWEVZH1tSNmOz8kW1OvhoEL5_IvZrBTyv4Nn9Ag"
+               onerror="this.src='../../assets/bagus_travel/borobudur.jpg'"
+               alt="Borobudur"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <span class="absolute bottom-3 right-3 text-white text-[11px] font-display font-semibold drop-shadow">Borobudur</span>
+        </div>
+
+        <!-- 2: Raja Ampat -->
+        <div class="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition border border-slate-200 cursor-pointer" onclick="openDetailModal('Raja Ampat Karst Paradise', 'West Papua', 'Rp 4.850.000', '4D3N Island Expedition')">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKn1G6SnOw1_JRXbKW11PHrutlU8zzhjPEGwb048OCoK-0gaO-fAEal9njU8Xv210G82gVirN_WfI5K_O3J76_BXMxcKcyPXs7QqqeYqsCVdJ_Q13zKOKoLHVFMIzhgiVqLhqpEmWWV1AagaHpfDwmG825goV2xu2qKUpRwj-2_XNk29Gkz4Rvosmv9rSz8Nws8P6rPdJ1umYHxyVq1ibx0X7jAKZsXJqDzUGG05w"
+               onerror="this.src='../../assets/khatulistiwa_explorer/raja-ampat.jpg'"
+               alt="Raja Ampat"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <span class="absolute bottom-3 right-3 text-white text-[11px] font-display font-semibold drop-shadow">Raja Ampat</span>
+        </div>
+
+        <!-- 3: Wakatobi -->
+        <div class="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition border border-slate-200 cursor-pointer" onclick="openDetailModal('Wakatobi Marine Sanctuary', 'Southeast Sulawesi', 'Rp 3.650.000', '3D2N Diving & Coral Tour')">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB56nBmWD2AKph1K6qHYL4o5NkwAVDqwDCw7wt42ivQ5RIrqwhooPXEIGZyk1y37P6KqU-I0newj5pqhdAhJjcIxvLR4nI9hd2h8c0y6aaD2_vtRYb99SiCjx6-BshSaOf90B8UPn4uUvS-N_DF_c2nsn-xUC7huza5R25Bcqx47rlAqAFQpgxmxozkMMWWulnFng2bfbuRsUnQXNiYao0fMCYfXil0tG6b1O3vBrs"
+               onerror="this.src='../../assets/mandalika_escape/beach.jpg'"
+               alt="Wakatobi"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <span class="absolute bottom-3 right-3 text-white text-[11px] font-display font-semibold drop-shadow">Wakatobi</span>
+        </div>
+
+        <!-- 4: Rinjani -->
+        <div class="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition border border-slate-200 cursor-pointer" onclick="openDetailModal('Gunung Rinjani Crater Rim', 'Lombok', 'Rp 2.450.000', '3D2N Trekking Expedition')">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX5Q_CQcUxVBWj1bfuuQleCaBfw8u1koPbja8OPweulaQJbUePO8C8xNIWs_Uq-m7vh2YY8yLrMDlyO7k0g0zyfMmJjZUNNsH-Uc-s4ay4VYGGJWRLxfHSIHY4YTDL_YYve7eqS_4CWdRTcuBhczeX9uCkp6PuNmmEV-f_OqT6cXfZgNFndHGkFf7kABTcR4wMcc95EZr4zVbY81-ojPeyPQpP6AXc8-Ih2XJPEtw"
+               onerror="this.src='../../assets/mandalika_escape/rinjani.jpg'"
+               alt="Rinjani"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <span class="absolute bottom-3 right-3 text-white text-[11px] font-display font-semibold drop-shadow">Rinjani</span>
+        </div>
+
+        <!-- 5: Pink Beach -->
+        <div class="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition border border-slate-200 cursor-pointer" onclick="openDetailModal('Pink Beach Komodo National Park', 'East Nusa Tenggara', 'Rp 2.850.000', 'Speedboat Day Cruise')">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYtnt3Pb0mFdR6yDqmEPhgMylXqVTed3lB8sPuDLgojjT2iYL1nMgbvf3U6EAWglGe-d-BCKO3nzMgZTQq_M2ukx2GvMR8l6wxdBstfSKYIBACxfrfXa24KYkMPrCOiRUByv7ktqvc-09HwOEoAHlXFZYdatfwKSpwiu_xlxMD56CAAig6YdomKcuDwbGb-bLgo-7I2y3e7AqKGVf4nK2WCAfXyZqY67ZosOm1XQo"
+               onerror="this.src='../../assets/khatulistiwa_explorer/komodo.jpg'"
+               alt="Pink Beach"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <span class="absolute bottom-3 right-3 text-white text-[11px] font-display font-semibold drop-shadow">Pink Beach</span>
+        </div>
+      </div>
+
+      <!-- Centered Carousel Prev / Next Controls (Image #2) -->
+      <div class="flex items-center justify-center gap-1.5 text-xs font-mono mb-8">
+        <button id="destPrevBtn" type="button" class="px-3.5 py-1.5 bg-white border border-slate-200 text-slate-700 hover:bg-black hover:text-white rounded-full transition shadow-2xs">
+          ← Prev
+        </button>
+        <button id="destNextBtn" type="button" class="px-3.5 py-1.5 bg-white border border-slate-200 text-slate-700 hover:bg-black hover:text-white rounded-full transition shadow-2xs">
+          Next →
+        </button>
+      </div>
+
+      <!-- Statement text & "Book a Seat" button (Image #2 verbatim) -->
+      <div class="max-w-md mx-auto space-y-4">
+        <p class="text-xs text-slate-500 leading-relaxed font-sans">
+          Explore the enchanting stories of wanderers who have collected unforgettable memories and delightful experiences.
+        </p>
+        <button type="button" onclick="openBookingModal('General Open Trip Inquiry', 'Rp 2.450.000', 'Wanderer Stories Squad Seat')"
+                class="bg-black hover:bg-neutral-800 active:scale-95 text-white font-display font-bold text-xs px-6 py-2.5 rounded-full transition shadow-sm">
+          Book a Seat
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 5: PLAN A TRIP (Match Image #2 Exactly)                           -->
+  <!-- ========================================================================= -->
+  <section id="planner-section" class="w-full bg-[#E7E7E7] py-16 sm:py-24 border-b border-slate-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
+      
+      <!-- Top Tag: "● Dont waste time !!" (Image #2) -->
+      <div class="mb-2">
+        <span class="inline-block text-[11px] font-mono font-bold text-slate-600 border border-slate-400 px-3 py-0.5 rounded-full">
+          ● Dont waste time !!
+        </span>
+      </div>
+
+      <!-- Section Title & Subtitle matching Image #2 -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <h2 class="font-display text-4xl sm:text-5xl font-extrabold text-black tracking-tight">
+          Plan a Trip
+        </h2>
+        <p class="text-xs text-slate-600 max-w-xs leading-relaxed text-left md:text-right">
+          We have great options for everyone and cozy spots for your squad to enjoy together!
+        </p>
+      </div>
+
+      <!-- Twin White Container Cards matching Image #2 -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        
+        <!-- LEFT CARD (8 cols): Info & Thumbnails -->
+        <div class="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-md border border-slate-200">
+          <div>
+            <!-- Top bar: Logo "melali travel" (left) & "Back to top" button (right) -->
+            <div class="flex items-center justify-between pb-6 border-b border-slate-100">
+              <span class="font-display text-xl lowercase tracking-tighter text-black font-extrabold">melali<br /><span class="text-xs font-mono font-bold text-slate-500 tracking-wider">travel</span></span>
+              <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                      class="px-4 py-1.5 rounded-full border border-slate-300 text-[11px] font-sans font-semibold text-slate-700 hover:bg-black hover:text-white transition">
+                Back to top
+              </button>
+            </div>
+
+            <!-- 3 Rounded Thumbnails in row (Image #2) -->
+            <div class="grid grid-cols-3 gap-3 my-8">
+              <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-2xs">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCMVl6JR8zDoEGSl-cPP3Ier7URrAonv32PoD-Ju41JSzGQf6umWRKgiaQOVUmJCFCsgpQMOVtCc-hUjfZy9Y71HL6Swn4EEOxnQ2Q9q7fPx6dNCVNb-AOUfnX0cBlYvgs96GJYjQZ4MUpe8YM4fN52zgCVH00fM-oWkbo03In_7cz8pbJzhf8spcc04skw-UJ8JaFytOUj5tWoGOxcoN-90Y86ydFHYACKlv0Jmk"
+                     onerror="this.src='../../assets/mandalika_escape/rinjani-from-gili.jpg'"
+                     alt="Waterfall" class="w-full h-full object-cover" />
+              </div>
+              <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-2xs">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_WJPx1LH3gggbVcbNYyScAwAz7DKxwg9DeleG_f7-TTrZG0lcLYHSVQlzO5704r7dEoykRHkXqG6DrTgc8gcKmeUxekmzAenmWLchmlLCUe8IcsTGyoEsLR6WvWvUSvl0P-lVHkg1dkKhYzmRXQ4Y4CabCJq4lTfInBJds7LoyASKk1LvLdE87-s4yvNl4xRd0W_BIhN_rLGn3Mjf6W_o_rWrZoszwB1xosyzP3Q"
+                     onerror="this.src='../../assets/mandalika_escape/gili-boat.jpg'"
+                     alt="Sea turtle over reef" class="w-full h-full object-cover" />
+              </div>
+              <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-2xs">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuBdxQzP72iy-7ErBiUIXc2cw0uZQUv4F-fvwiOKBdUmymPRiN8FbetCZB8HdwWM0Z4NIFpBLur-noD6bT0bdrhZ9xXX5JD4z2YLgdvbrdAULm0pzYWYyNPGnopmV86j4-rsShLzK0Y9vs7t7s57ikHDcK36ofCpCLl6tnh-_Da5P0D-NXUO9Yt_aEv5lQu2L1P1rarUrWd_ztZMpaCUXNUFRsI9J9piWshwhgC6A"
+                     onerror="this.src='../../assets/khatulistiwa_explorer/rinjani-trail.jpg'"
+                     alt="Tropical Forest" class="w-full h-full object-cover" />
+              </div>
+            </div>
+          </div>
+
+          <!-- 3 Information Columns verbatim matching Image #2 -->
+          <div class="pt-6 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-3 gap-6 text-[11px]">
+            <div>
+              <span class="font-display font-bold text-slate-800 block mb-1">Melali Travel</span>
+              <p class="text-slate-500 leading-relaxed">
+                Mountain<br />
+                Beach and Island<br />
+                Adventure Trip
+              </p>
+            </div>
+            <div>
+              <span class="font-display font-bold text-slate-800 block mb-1">Contact Us</span>
+              <p class="text-slate-500 leading-relaxed font-mono">
+                CS 01 + +62 888 9999 0000<br />
+                CS 02 + +62 777 4444 0000
+              </p>
+            </div>
+            <div>
+              <span class="font-display font-bold text-slate-800 block mb-1">Social Media</span>
+              <p class="text-slate-500 leading-relaxed">
+                Instagram + @melalitravel<br />
+                TikTok + Melali Travel
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT CARD (4 cols): Upcoming Trip & "Join Waiting List" Button -->
+        <div class="lg:col-span-4 bg-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-md border border-slate-200">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <p class="font-display font-bold text-sm text-black">Upcoming Trip</p>
+                <p class="text-[11px] text-slate-500 mt-0.5">Special Independence Day</p>
+              </div>
+              <span class="bg-amber-100 text-amber-900 font-mono text-[10px] font-bold px-2 py-0.5 rounded-full">
+                ● Late August
+              </span>
+            </div>
+
+            <!-- Featured Photo (Pink Beach) with Bottom-Right Label -->
+            <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 mb-4 border border-slate-200">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm_qVn1Z2tmF99-6vCQpofQ9nmJHURqX0N9mNxOtiHXSDxgcbPOZOgPX1hUpxIDL835TztQJ2qktCvoiDu9N8d8IRs3IV_qrWpKyynOZUB2PiqY_5KcQ0ma_jEgitTz9FShKdGU8oe1SvI9iM3Pz5vEh-DsWo78RgpP85L_QhrVqZElsdqMqs31v5i6uUumKlQqdN3pE8rvUkQBaIMybOpgtwVzzAsQpFwuF6wjC4"
+                   onerror="this.src='../../assets/khatulistiwa_explorer/padar.jpg'"
+                   alt="Pink Beach"
+                   class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <span class="absolute bottom-2.5 right-2.5 text-white text-[10px] font-display font-semibold drop-shadow">Pink Beach</span>
+            </div>
+
+            <!-- 3 Specs matching Image #2 -->
+            <div class="grid grid-cols-3 gap-1 text-[10px] py-2 border-t border-slate-100 text-left">
+              <div>
+                <span class="text-slate-400 block">Accommodation</span>
+                <span class="font-semibold text-black">Luxeway Villa</span>
+              </div>
+              <div>
+                <span class="text-slate-400 block">Transport</span>
+                <span class="font-semibold text-black">Private cars</span>
+              </div>
+              <div>
+                <span class="text-slate-400 block">Meals</span>
+                <span class="font-semibold text-black">Full board</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Solid Black "Join Waiting List" Button (Image #2) -->
+          <div class="mt-4 pt-3 border-t border-slate-100">
+            <button type="button" onclick="openWaitingListModal()"
+                    class="w-full bg-black hover:bg-neutral-800 text-white font-display font-bold text-xs py-3 rounded-full transition shadow-sm active:scale-95">
+              Join Waiting List
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 6: FOOTER (Match Image #2 verbatim with current year)             -->
+  <!-- ========================================================================= -->
+  <footer id="footer-section" class="w-full bg-[#FAFAFA] py-8 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 text-left">
+      <p class="text-xs text-slate-500 font-sans">
+        Copyright <span id="footerYear">2026</span> Melali all rights reserved
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- ========================================================================= -->
+  <!-- INTERACTIVE MODALS & DIALOGS                                              -->
+  <!-- ========================================================================= -->
+
+  <!-- 1. Detail Modal -->
+  <div id="detailModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200">
+      <div class="p-6">
+        <div class="flex items-start justify-between gap-3 pb-3 border-b border-slate-100">
+          <div>
+            <h3 id="detTitle" class="font-display font-bold text-xl text-black">Nama Destinasi</h3>
+            <p id="detLocation" class="text-xs text-slate-500 mt-0.5 font-sans">Lokasi</p>
+          </div>
+          <button type="button" onclick="closeDetailModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 hover:bg-black hover:text-white flex items-center justify-center transition">
+            ✕
+          </button>
+        </div>
+        <div class="py-4 space-y-3 text-xs text-slate-600 font-sans">
+          <p id="detDesc" class="leading-relaxed">Rincian perjalanan eksklusif bersama kurator Melali Travel.</p>
+          <div class="p-3 bg-slate-50 rounded-2xl border border-slate-200 flex items-center justify-between font-mono">
+            <span>Tarif Ritel Sah:</span>
+            <span id="detPrice" class="font-bold text-sm text-black">Rp 0</span>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-end gap-2">
+          <button type="button" onclick="closeDetailModal()" class="px-4 py-2 rounded-full border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-50 transition">
+            Tutup
+          </button>
+          <button type="button" id="detBookBtn" class="px-5 py-2 rounded-full bg-black text-white text-xs font-display font-bold hover:bg-neutral-800 transition">
+            Pesan Sekarang
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Booking Modal -->
+  <div id="bookingModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-slate-200">
+      <div class="bg-black text-white p-6 flex items-center justify-between">
+        <div>
+          <span class="font-mono text-[10px] text-sky-400 font-bold uppercase tracking-wider block">Reservasi Perjalanan</span>
+          <h3 id="modalTourTitle" class="font-display text-xl font-bold leading-tight">Pemesanan Tiket</h3>
+        </div>
+        <button type="button" onclick="closeBookingModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition">
+          ✕
+        </button>
+      </div>
+
+      <div class="p-6 space-y-4">
+        <div class="p-3 bg-[#FAFAFA] rounded-2xl border border-slate-200 space-y-1 font-sans text-xs">
+          <div class="flex justify-between">
+            <span class="text-slate-500">Paket:</span>
+            <span id="modalTourDetail" class="font-bold text-black">Open Trip</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slate-500">Tarif per Pax:</span>
+            <span id="modalTourPrice" class="font-bold text-black text-sm tnum">Rp 0</span>
+          </div>
+        </div>
+
+        <form id="modalBookingForm" class="space-y-3 text-xs" onsubmit="handleBookingSubmit(event)">
+          <label class="block text-left">
+            <span class="block text-[11px] font-sans font-bold uppercase tracking-wider text-slate-500 mb-1">Nama Lengkap</span>
+            <input id="modalName" type="text" required placeholder="Contoh: Budi Santoso" class="w-full h-10 px-3.5 rounded-xl bg-[#FAFAFA] border border-slate-200 font-medium text-black focus:bg-white focus:border-black focus:outline-none" />
+          </label>
+          <div class="grid grid-cols-2 gap-2.5">
+            <label class="block text-left">
+              <span class="block text-[11px] font-sans font-bold uppercase tracking-wider text-slate-500 mb-1">Email</span>
+              <input id="modalEmail" type="email" required placeholder="budi@travel.com" class="w-full h-10 px-3.5 rounded-xl bg-[#FAFAFA] border border-slate-200 font-medium text-black focus:bg-white focus:border-black focus:outline-none" />
+            </label>
+            <label class="block text-left">
+              <span class="block text-[11px] font-sans font-bold uppercase tracking-wider text-slate-500 mb-1">WhatsApp</span>
+              <input id="modalPhone" type="tel" required placeholder="081234567890" class="w-full h-10 px-3.5 rounded-xl bg-[#FAFAFA] border border-slate-200 font-medium text-black focus:bg-white focus:border-black focus:outline-none" />
+            </label>
+          </div>
+
+          <button type="submit" class="w-full mt-2 bg-black hover:bg-neutral-800 text-white font-display font-bold text-xs py-3.5 rounded-full shadow-md transition active:scale-95">
+            Konfirmasi Reservasi
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Waiting List Modal -->
+  <div id="waitingListModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-slate-200">
+      <div class="bg-black text-white p-6 flex items-center justify-between">
+        <div>
+          <span class="bg-amber-100 text-amber-900 font-mono text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Late August</span>
+          <h3 class="font-display text-xl font-bold leading-tight mt-1">Special Independence Day</h3>
+        </div>
+        <button type="button" onclick="closeWaitingListModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition">
+          ✕
+        </button>
+      </div>
+      <div class="p-6 space-y-4 text-xs font-sans">
+        <p class="text-slate-600 leading-relaxed">
+          Daftarkan kontak Anda untuk mendapatkan prioritas kursi Pink Beach &amp; Luxeway Villa keberangkatan akhir Agustus.
+        </p>
+        <form onsubmit="handleWaitingListSubmit(event)" class="space-y-3">
+          <label class="block text-left">
+            <span class="block text-[11px] font-bold uppercase text-slate-500 mb-1">Nama</span>
+            <input id="wlName" type="text" required placeholder="Nama Anda" class="w-full h-10 px-3.5 rounded-xl bg-[#FAFAFA] border border-slate-200 font-medium text-black focus:bg-white focus:border-black focus:outline-none" />
+          </label>
+          <label class="block text-left">
+            <span class="block text-[11px] font-bold uppercase text-slate-500 mb-1">No. WhatsApp</span>
+            <input id="wlPhone" type="tel" required placeholder="081234567890" class="w-full h-10 px-3.5 rounded-xl bg-[#FAFAFA] border border-slate-200 font-medium text-black focus:bg-white focus:border-black focus:outline-none" />
+          </label>
+          <button type="submit" class="w-full bg-black hover:bg-neutral-800 text-white font-display font-bold text-xs py-3.5 rounded-full shadow-md transition active:scale-95">
+            Daftar Antrean Prioritas
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-black text-white px-5 py-2.5 rounded-full text-xs font-sans font-bold shadow-2xl tracking-wide transition-opacity">
+    Notifikasi
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT LOGIC & EVENT CONTROLLERS                                      -->
+  <!-- ========================================================================= -->
+  <script>
+    // Set Year Dynamically to Current Year (2026)
+    const currentYear = new Date().getFullYear();
+    const yearTagEl = document.getElementById('currentYearTag');
+    if (yearTagEl) yearTagEl.textContent = currentYear;
+    const footerYearEl = document.getElementById('footerYear');
+    if (footerYearEl) footerYearEl.textContent = currentYear;
+
+    // Toast Controller
+    let toastTimer;
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.remove('hidden');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        t.classList.add('hidden');
+      }, 3000);
+    }
+
+    // Modal Controllers
+    function openBookingModal(title, price, detail) {
+      document.getElementById('modalTourTitle').textContent = title;
+      document.getElementById('modalTourPrice').textContent = price;
+      document.getElementById('modalTourDetail').textContent = detail;
+      document.getElementById('bookingModal').classList.remove('hidden');
+    }
+
+    function closeBookingModal() {
+      document.getElementById('bookingModal').classList.add('hidden');
+    }
+
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('modalName').value;
+      closeBookingModal();
+      showToast(`Terima kasih ${name}, pesanan berhasil dicatat! Tim Melali akan menghubungi via WhatsApp.`);
+    }
+
+    // Waiting List Modal
+    function openWaitingListModal() {
+      document.getElementById('waitingListModal').classList.remove('hidden');
+    }
+
+    function closeWaitingListModal() {
+      document.getElementById('waitingListModal').classList.add('hidden');
+    }
+
+    function handleWaitingListSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('wlName').value;
+      closeWaitingListModal();
+      showToast(`Terima kasih ${name}, Anda telah terdaftar di waiting list Special Independence Day!`);
+    }
+
+    // Detail Modal
+    let selectedDetailTour = null;
+    function openDetailModal(title, location, price, desc) {
+      document.getElementById('detTitle').textContent = title;
+      document.getElementById('detLocation').textContent = location;
+      document.getElementById('detPrice').textContent = price;
+      document.getElementById('detDesc').textContent = desc;
+      selectedDetailTour = { title, location, price, desc };
+      document.getElementById('detailModal').classList.remove('hidden');
+    }
+
+    function closeDetailModal() {
+      document.getElementById('detailModal').classList.add('hidden');
+    }
+
+    document.getElementById('detBookBtn').addEventListener('click', () => {
+      if (selectedDetailTour) {
+        closeDetailModal();
+        openBookingModal(selectedDetailTour.title, selectedDetailTour.price, selectedDetailTour.desc);
+      }
+    });
+
+    // Navbar Dropdowns Toggle
+    const openTripTrigger = document.getElementById('openTripTrigger');
+    const openTripMenu = document.getElementById('openTripMenu');
+    openTripTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openTripMenu.classList.toggle('hidden');
+      document.getElementById('privateTripMenu').classList.add('hidden');
+    });
+
+    const privateTripTrigger = document.getElementById('privateTripTrigger');
+    const privateTripMenu = document.getElementById('privateTripMenu');
+    privateTripTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      privateTripMenu.classList.toggle('hidden');
+      openTripMenu.classList.add('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      openTripMenu.classList.add('hidden');
+      privateTripMenu.classList.add('hidden');
+      const qp = document.getElementById('destQuickPick');
+      if (qp) qp.classList.add('hidden');
+    });
+
+    // Segmented Controls Toggle in Hero Header
+    const segmentTabs = document.querySelectorAll('.segment-tab');
+    segmentTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        segmentTabs.forEach(t => {
+          t.classList.remove('bg-white/20', 'font-bold');
+          t.classList.add('text-white/80');
+        });
+        tab.classList.add('bg-white/20', 'font-bold');
+        tab.classList.remove('text-white/80');
+        showToast(`Beralih ke mode pencarian: ${tab.textContent.trim()}`);
+      });
+    });
+
+    // Destination Input Quick Pick Popover Toggle
+    const destInput = document.getElementById('inputDestination');
+    const destQuickPick = document.getElementById('destQuickPick');
+    destInput.addEventListener('click', (e) => {
+      e.stopPropagation();
+      destQuickPick.classList.toggle('hidden');
+    });
+
+    function selectSpot(spotValue, spotLabel) {
+      destInput.value = spotValue === 'all' ? '' : spotLabel;
+      destInput.dataset.val = spotValue;
+      destQuickPick.classList.add('hidden');
+      runDiscovery();
+    }
+
+    function filterByLocation(locKey) {
+      destInput.value = locKey;
+      runDiscovery();
+      document.getElementById('catalog-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Standard Search Engine Execution (Discover)
+    function runDiscovery() {
+      const q = destInput.value.trim().toLowerCase();
+      const cat = document.getElementById('selectCategory').value;
+      const budget = document.getElementById('selectPrice').value;
+
+      const btn = document.getElementById('discoverBtn');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = `<span class="inline-block animate-spin mr-1">↻</span> Searching...`;
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+
+        const items = document.querySelectorAll('.tour-item');
+        let count = 0;
+
+        items.forEach(item => {
+          const itemDest = (item.dataset.destination || '').toLowerCase();
+          const itemCat = item.dataset.cat || '';
+          const itemPrice = parseInt(item.dataset.budget || '0', 10);
+
+          const matchQ = !q || q === 'all' || itemDest.includes(q) || item.innerText.toLowerCase().includes(q);
+          const matchCat = (cat === 'all') || (cat === itemCat);
+          const matchBudget = (budget === 'all') ||
+                              (budget === 'low' && itemPrice <= 3000000) ||
+                              (budget === 'high' && itemPrice > 3000000);
+
+          if (matchQ && matchCat && matchBudget) {
+            item.classList.remove('hidden');
+            count++;
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+
+        const feedbackEl = document.getElementById('liveResultFeedback');
+        if (feedbackEl) {
+          feedbackEl.textContent = `Menemukan ${count} paket perjalanan terverifikasi`;
+        }
+
+        showToast(`Hasil pencarian: ditemukan ${count} paket perjalanan.`);
+      }, 350);
+    }
+
+    // Section 2 Carousel Controls
+    document.getElementById('s2NextBtn').addEventListener('click', () => {
+      showToast('Menampilkan koleksi potret perjalanan berikutnya.');
+    });
+    document.getElementById('s2PrevBtn').addEventListener('click', () => {
+      showToast('Menampilkan koleksi potret perjalanan sebelumnya.');
+    });
+
+    // Section 3 Carousel Controls
+    document.getElementById('s3NextBtn').addEventListener('click', () => {
+      showToast('Menampilkan halaman paket berikutnya.');
+    });
+    document.getElementById('s3PrevBtn').addEventListener('click', () => {
+      showToast('Menampilkan halaman paket sebelumnya.');
+    });
+
+    // Section 4 Destination Carousel Scroll
+    const destCarousel = document.getElementById('destCarousel');
+    document.getElementById('destNextBtn').addEventListener('click', () => {
+      destCarousel.scrollBy({ left: 240, behavior: 'smooth' });
+    });
+    document.getElementById('destPrevBtn').addEventListener('click', () => {
+      destCarousel.scrollBy({ left: -240, behavior: 'smooth' });
+    });
+
+    // Set Default Departure Date to Tomorrow
+    const tmr = new Date();
+    tmr.setDate(tmr.getDate() + 1);
+    const dateField = document.getElementById('inputDate');
+    if (dateField) {
+      dateField.value = tmr.toISOString().split('T')[0];
+      dateField.min = tmr.toISOString().split('T')[0];
+    }
+  </script>
+</body>
+
+</html>

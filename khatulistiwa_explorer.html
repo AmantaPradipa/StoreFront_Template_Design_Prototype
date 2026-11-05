@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khatulistiwa Explorer · Kinetic Expedition & Multi-Stop Trips</title>
+  <meta name="description" content="Khatulistiwa Explorer — Overland volcanic tours, dive expeditions, and custom multi-supplier trips across Indonesia. Powered by Ortasys S4.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* Ortasys S4 Storefront #4 · Khatulistiwa Explorer Tokens (design/khatulistiwa_explorer_design.md) */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#18181B', hover: '#27272A' },
+            secondary: '#52525B',
+            tertiary: { DEFAULT: '#C2410C', hover: '#9A3412' },
+            canvas: '#FEFCE8',
+            surface: { DEFAULT: '#FFFFFF', muted: '#FEF9C3' },
+            ink: '#09090B',
+            borderStrong: '#18181B',
+            success: '#15803D',
+            warning: '#B45309',
+            danger: '#DC2626'
+          },
+          fontFamily: {
+            display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+            sans: ['"Public Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"Space Mono"', 'ui-monospace', 'monospace']
+          },
+          borderRadius: {
+            sm: '4px',
+            md: '8px',
+            lg: '12px',
+            xl: '16px'
+          },
+          boxShadow: {
+            hard: '4px 4px 0px #18181B',
+            hardSm: '2px 2px 0px #18181B',
+            hardLg: '6px 6px 0px #18181B'
+          },
+          maxWidth: { container: '1240px' }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: 'Public Sans', system-ui, sans-serif; background-color: #FEFCE8; color: #09090B; }
+    .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on; }
+    .stepper input::-webkit-outer-spin-button,
+    .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .stepper input { -moz-appearance: textfield; }
+    :focus-visible { outline: 2px solid #C2410C; outline-offset: 2px; }
+    .neo-btn {
+      border: 2px solid #18181B;
+      box-shadow: 4px 4px 0px #18181B;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    .neo-btn:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px #18181B;
+    }
+    .neo-btn:active {
+      transform: translate(4px, 4px);
+      box-shadow: 0px 0px 0px #18181B;
+    }
+    .neo-card {
+      border: 2px solid #18181B;
+      box-shadow: 4px 4px 0px #18181B;
+    }
+    .perforated-border {
+      background-image: radial-gradient(circle, #FEFCE8 5px, transparent 6px);
+      background-size: 20px 20px;
+    }
+  </style>
+</head>
+<body class="bg-canvas text-ink antialiased">
+
+  <a href="#workbench" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:border-2 focus:border-ink">Skip to Workbench</a>
+
+  <!-- ============ BOARDING-PASS TOP HEADER ============ -->
+  <header class="border-b-2 border-borderStrong bg-surface sticky top-0 z-40">
+    <div class="max-w-container mx-auto grid grid-cols-12 items-stretch min-h-[64px]">
+      <div class="col-span-8 sm:col-span-4 px-5 py-3 border-r-2 border-borderStrong flex items-center gap-3">
+        <a href="#home" class="flex items-center gap-2.5 font-display text-[20px] font-bold tracking-tight text-ink">
+          <span class="w-8 h-8 rounded-sm bg-tertiary text-white flex items-center justify-center font-mono font-bold text-base border-2 border-borderStrong shadow-hardSm">K</span>
+          KHATULISTIWA
+        </a>
+      </div>
+
+      <nav class="hidden md:flex col-span-5 px-4 items-center justify-center gap-1 font-display text-[14px] font-bold" aria-label="Main Navigation">
+        <a href="#workbench" class="px-3 py-2 rounded-sm bg-surface-muted border-2 border-borderStrong shadow-hardSm text-ink">Workbench</a>
+        <a href="#hotels" class="px-3 py-2 rounded-sm text-secondary hover:text-ink">Expeditions</a>
+        <a href="#tours" class="px-3 py-2 rounded-sm text-secondary hover:text-ink">Tours &amp; Activities</a>
+        <a href="#why" class="px-3 py-2 rounded-sm text-secondary hover:text-ink">Field Notes</a>
+      </nav>
+
+      <div class="col-span-4 sm:col-span-8 md:col-span-3 px-4 py-2 border-l-2 border-borderStrong flex items-center justify-end gap-3 bg-canvas">
+        <div class="hidden sm:flex flex-col text-right font-mono text-[11px] text-secondary">
+          <span class="font-bold text-ink">TELEMETRY: LIVE</span>
+          <span>CURRENCY: IDR</span>
+        </div>
+        <a href="#tripRail" class="neo-btn h-10 px-4 rounded-sm bg-tertiary text-white font-display text-[13px] font-bold flex items-center gap-2">
+          Trip <span class="bg-black/30 px-1.5 py-0.5 rounded font-mono text-[11px]" data-trip-count>0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home" class="max-w-container mx-auto px-4 sm:px-6 pt-8 pb-20">
+    
+    <!-- ============ FRONT-AND-CENTER EXPEDITION WORKBENCH (FR-1, FR-2, FR-3) ============ -->
+    <section id="workbench" class="neo-card rounded-lg bg-surface p-6 sm:p-8" aria-labelledby="benchTitle">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b-2 border-borderStrong">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-success animate-ping"></span>
+            <span class="font-mono text-[12px] font-bold text-success uppercase tracking-wider">Multi-Supplier Engine Active</span>
+          </div>
+          <h1 id="benchTitle" class="mt-1 font-display text-[28px] sm:text-[34px] font-bold tracking-tight text-ink">Expedition Search Workbench</h1>
+          <p class="font-mono text-[12px] text-secondary mt-0.5">DIRECT CONNECTION // FLIGHTLESS OVERLAND, DIVE &amp; ECO STAYS</p>
+        </div>
+
+        <div class="inline-flex rounded-sm border-2 border-borderStrong bg-surface-muted p-1 self-start sm:self-auto" role="tablist">
+          <button type="button" role="tab" data-mode="hotels" aria-selected="true" class="mode-tab px-5 py-2 font-display text-[13px] font-bold rounded-sm transition-all bg-primary text-white">Hotels &amp; Basecamps</button>
+          <button type="button" role="tab" data-mode="activities" aria-selected="false" class="mode-tab px-5 py-2 font-display text-[13px] font-bold rounded-sm transition-all text-secondary">Tours &amp; Activities</button>
+        </div>
+      </div>
+
+      <form id="searchForm" class="mt-6" novalidate>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4">
+          <!-- Destination Field -->
+          <label class="lg:col-span-4 flex flex-col gap-1">
+            <span class="font-mono text-[12px] font-bold text-ink uppercase" data-dest-label>Target Destination</span>
+            <input id="dest" list="destList" placeholder="Bromo, Komodo, Kawah Ijen, Raja Ampat…" autocomplete="off" class="h-12 px-3.5 rounded-sm bg-canvas border-2 border-borderStrong font-mono text-[13px] focus:bg-white focus:outline-none">
+            <datalist id="destList"></datalist>
+          </label>
+
+          <!-- Dates -->
+          <label class="lg:col-span-2 flex flex-col gap-1" data-hotel-only>
+            <span class="font-mono text-[12px] font-bold text-ink uppercase">Check-in</span>
+            <input id="checkIn" type="date" aria-describedby="dateCapHint" class="tnum h-12 px-3 rounded-sm bg-canvas border-2 border-borderStrong font-mono text-[13px] focus:bg-white focus:outline-none">
+          </label>
+          <label class="lg:col-span-2 flex flex-col gap-1" data-hotel-only>
+            <span class="font-mono text-[12px] font-bold text-ink uppercase">Check-out</span>
+            <input id="checkOut" type="date" aria-describedby="dateCapHint" class="tnum h-12 px-3 rounded-sm bg-canvas border-2 border-borderStrong font-mono text-[13px] focus:bg-white focus:outline-none">
+          </label>
+
+          <label class="lg:col-span-4 flex flex-col gap-1 hidden" data-activity-only>
+            <span class="font-mono text-[12px] font-bold text-ink uppercase">Activity Departure Date</span>
+            <input id="actDate" type="date" class="tnum h-12 px-3.5 rounded-sm bg-canvas border-2 border-borderStrong font-mono text-[13px] focus:bg-white focus:outline-none">
+          </label>
+
+          <!-- Stepper Matrix -->
+          <div class="lg:col-span-4 grid grid-cols-3 gap-2">
+            <div class="flex flex-col gap-1" data-hotel-only>
+              <span id="lbl-rooms" class="font-mono text-[11px] font-bold text-secondary uppercase">Rooms</span>
+              <div class="stepper flex items-center h-12 rounded-sm bg-canvas border-2 border-borderStrong" role="group" aria-labelledby="lbl-rooms">
+                <button type="button" class="w-8 h-full font-bold text-[18px] text-ink hover:bg-surface-muted" data-step="rooms" data-dir="-1" aria-label="Decrease rooms">−</button>
+                <input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" aria-labelledby="lbl-rooms" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                <button type="button" class="w-8 h-full font-bold text-[18px] text-ink hover:bg-surface-muted" data-step="rooms" data-dir="1" aria-label="Increase rooms">+</button>
+              </div>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span id="lbl-adults" class="font-mono text-[11px] font-bold text-secondary uppercase" data-adults-label>Adults</span>
+              <div class="stepper flex items-center h-12 rounded-sm bg-canvas border-2 border-borderStrong" role="group" aria-labelledby="lbl-adults">
+                <button type="button" class="w-8 h-full font-bold text-[18px] text-ink hover:bg-surface-muted" data-step="adults" data-dir="-1" aria-label="Decrease adults">−</button>
+                <input id="adults" type="number" min="1" max="20" value="2" inputmode="numeric" aria-labelledby="lbl-adults" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                <button type="button" class="w-8 h-full font-bold text-[18px] text-ink hover:bg-surface-muted" data-step="adults" data-dir="1" aria-label="Increase adults">+</button>
+              </div>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span id="lbl-children" class="font-mono text-[11px] font-bold text-secondary uppercase" data-children-label>Kids</span>
+              <div class="stepper flex items-center h-12 rounded-sm bg-canvas border-2 border-borderStrong" role="group" aria-labelledby="lbl-children">
+                <button type="button" class="w-8 h-full font-bold text-[18px] text-ink hover:bg-surface-muted" data-step="children" data-dir="-1" aria-label="Decrease children">−</button>
+                <input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" aria-labelledby="lbl-children" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                <button type="button" class="w-8 h-full font-bold text-[18px] text-ink hover:bg-surface-muted" data-step="children" data-dir="1" aria-label="Increase children">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p id="dateCapHint" class="mt-3 font-mono text-[12px] text-secondary" data-hotel-only>PROTOCOL: MAXIMUM 30 NIGHTS PER BOOKING // UNIFORM ROOM OCCUPANCY ENFORCED</p>
+        <div id="formErrors" class="mt-2 font-mono text-[13px] font-bold text-danger" role="alert" aria-live="assertive"></div>
+
+        <!-- Perforated Live Stamp Bar -->
+        <div class="mt-6 pt-5 border-t-2 border-dashed border-borderStrong flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-3 h-3 rounded-full bg-success animate-pulse"></div>
+            <div>
+              <p class="font-mono text-[13px] font-bold text-ink">Every price is checked live when you ask for it</p>
+              <p id="summary" class="font-mono text-[12px] text-secondary">Awaiting date telemetry parameters</p>
+            </div>
+          </div>
+
+          <button id="checkBtn" type="submit" class="neo-btn h-12 px-8 rounded-sm bg-tertiary text-white font-display text-[14px] font-bold tracking-wide flex items-center justify-center gap-2">
+            <span data-btn-label>EXECUTE LIVE PRICE CHECK</span>
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ============ SPLIT GRID: 8 COLS CARDS + 4 COLS STICKY RAIL (FR-4) ============ -->
+    <div class="mt-12 grid lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- LEFT 8 COLUMNS: TICKET-STUB STAYS & EXPEDITIONS -->
+      <section id="hotels" class="lg:col-span-8" aria-labelledby="inventoryTitle">
+        <div class="flex items-center justify-between gap-4 mb-6">
+          <div>
+            <h2 id="inventoryTitle" class="font-display text-[26px] font-bold tracking-tight text-ink">Field Inventory &amp; Expeditions</h2>
+            <p id="resultsNote" class="font-mono text-[12px] text-secondary">SAMPLE MOCKUP DATA ONLY // DYNAMIC RETAIL TOTALS</p>
+          </div>
+          <span class="px-2.5 py-1 rounded-sm bg-surface border border-borderStrong font-mono text-[11px] font-bold">Illustrative Sample Data</span>
+        </div>
+
+        <div id="results" class="grid sm:grid-cols-2 gap-6"></div>
+
+        <!-- TOURS & ACTIVITIES EXPANDED LIST -->
+        <div id="tours" class="mt-14 pt-10 border-t-2 border-borderStrong">
+          <h3 class="font-display text-[22px] font-bold text-ink mb-4">Adrenaline Overland Expeditions</h3>
+          <div id="tourList" class="grid sm:grid-cols-2 gap-4"></div>
+        </div>
+      </section>
+
+      <!-- RIGHT 4 COLUMNS: PERSISTENT "BUILD YOUR TRIP" ITINERARY RAIL (FR-4, FR-6) -->
+      <aside id="tripRail" class="lg:col-span-4 lg:sticky lg:top-24 neo-card rounded-lg bg-surface p-5 sm:p-6" aria-labelledby="railTitle">
+        <div class="flex items-center justify-between pb-4 border-b-2 border-borderStrong">
+          <div>
+            <h2 id="railTitle" class="font-display text-[20px] font-bold text-ink">Build Your Trip Rail</h2>
+            <p class="font-mono text-[11px] text-secondary">MULTI-SUPPLIER ITINERARY BUILDER</p>
+          </div>
+          <span class="w-7 h-7 rounded-full bg-primary text-white font-mono text-[12px] font-bold flex items-center justify-center" data-trip-count>0</span>
+        </div>
+
+        <div id="railItems" class="py-4 divide-y border-dashed border-borderStrong min-h-[160px] flex flex-col gap-3"></div>
+
+        <div class="pt-4 border-t-2 border-borderStrong flex flex-col gap-3">
+          <div class="flex items-baseline justify-between font-mono">
+            <span class="text-[12px] font-bold text-secondary uppercase">Consolidated Total:</span>
+            <span id="railTotal" class="text-[20px] font-bold text-ink">Rp 0</span>
+          </div>
+          <button id="railPayBtn" type="button" class="neo-btn h-12 w-full rounded-sm bg-primary text-white font-display text-[14px] font-bold tracking-wide disabled:opacity-40 disabled:cursor-not-allowed">
+            PROCEED TO SETTLEMENT
+          </button>
+          <div class="font-mono text-[11px] text-secondary text-center">
+            RAILS: DOKU &amp; SNAP BI GUARANTEED
+          </div>
+          <p id="railNote" class="text-[12px] font-mono text-tertiary text-center" aria-live="polite"></p>
+        </div>
+      </aside>
+    </div>
+
+    <!-- ============ 3-BOX BORDERED "WHY TRAVEL WITH US" STRIP ============ -->
+    <section id="why" class="mt-20 pt-10 border-t-2 border-borderStrong" aria-labelledby="whyTitle">
+      <h2 id="whyTitle" class="font-display text-[26px] font-bold text-ink mb-6">Expedition Dispatch · Why Khatulistiwa</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="neo-card rounded-lg bg-surface p-6 flex flex-col gap-3">
+          <span class="font-mono text-[14px] font-bold text-tertiary bg-surface-muted px-2 py-0.5 rounded-sm self-start border border-borderStrong">FIELD PROTOCOL 01</span>
+          <h3 class="font-display text-[20px] font-bold text-ink">Zero Generic Soft Tourism</h3>
+          <p class="text-[14px] text-secondary leading-relaxed">Direct partnerships with volcano park guides, dive masters in Komodo and Raja Ampat, and overland 4WD drivers.</p>
+        </div>
+        <div class="neo-card rounded-lg bg-surface p-6 flex flex-col gap-3">
+          <span class="font-mono text-[14px] font-bold text-tertiary bg-surface-muted px-2 py-0.5 rounded-sm self-start border border-borderStrong">FIELD PROTOCOL 02</span>
+          <h3 class="font-display text-[20px] font-bold text-ink">Live Checked Rates</h3>
+          <p class="text-[14px] text-secondary leading-relaxed">"Every price is checked live when you ask for it". All prices calculated in real-time across your exact rooms and nights.</p>
+        </div>
+        <div class="neo-card rounded-lg bg-surface p-6 flex flex-col gap-3">
+          <span class="font-mono text-[14px] font-bold text-tertiary bg-surface-muted px-2 py-0.5 rounded-sm self-start border border-borderStrong">FIELD PROTOCOL 03</span>
+          <h3 class="font-display text-[20px] font-bold text-ink">B2B Wholesale Shield</h3>
+          <p class="text-[14px] text-secondary leading-relaxed">Operated on the Ortasys multi-supplier core. Net rates are locked; guests receive clean, deterministic retail vouchers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DISPATCH CONTACT ============ -->
+    <section id="contact" class="mt-20 neo-card rounded-lg bg-primary text-white p-8" aria-labelledby="contactTitle">
+      <div class="grid md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-5">
+          <span class="font-mono text-[12px] font-bold text-tertiary uppercase">Communications Station</span>
+          <h2 id="contactTitle" class="mt-1 font-display text-[30px] font-bold">Custom Expedition Inquiries</h2>
+          <p class="mt-3 text-[14px] text-white/80 leading-relaxed">Planning a 14-day trans-Flores overland or deep Raja Ampat liveaboard? Submit your coordinates to our field leaders.</p>
+        </div>
+        <form id="contactForm" class="md:col-span-7 grid sm:grid-cols-2 gap-4" novalidate>
+          <input required name="name" placeholder="Expedition Leader Name" class="h-11 px-3 rounded-sm bg-white text-ink font-mono text-[13px] border-2 border-borderStrong focus:outline-none">
+          <input required type="email" name="email" placeholder="Radio Email Address" class="h-11 px-3 rounded-sm bg-white text-ink font-mono text-[13px] border-2 border-borderStrong focus:outline-none">
+          <textarea required name="msg" rows="3" placeholder="Expedition route details, group size, equipment needs..." class="sm:col-span-2 p-3 rounded-sm bg-white text-ink font-mono text-[13px] border-2 border-borderStrong focus:outline-none"></textarea>
+          <div class="sm:col-span-2 flex items-center justify-between">
+            <button class="neo-btn h-11 px-6 rounded-sm bg-tertiary hover:bg-tertiary-hover text-white font-display text-[13px] font-bold">TRANSMIT BRIEF</button>
+            <p id="contactNote" class="font-mono text-[12px] text-tertiary" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="border-t-2 border-borderStrong bg-surface py-12">
+    <div class="max-w-container mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div>
+          <span class="font-display text-[24px] font-bold text-ink">KHATULISTIWA EXPLORER</span>
+          <p class="font-mono text-[12px] text-secondary mt-1">ORTASYS S4 WHITE-LABEL EXPEDITION ENGINE // SECURED DOKU &amp; SNAP BI</p>
+        </div>
+        <div class="font-mono text-[12px] text-secondary">
+          © <span id="year"></span> KHATULISTIWA EXPLORER. ALL MOCKUP RATES ARE ILLUSTRATIVE.
+        </div>
+      </div>
+      <p class="mt-6 text-[11px] font-mono text-secondary/70 leading-relaxed">
+        Photography credits:
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Mount_Bromo,_Java,_Indonesia,_20220820_0611_9485.jpg">“Mount Bromo”</a> by Jakub Hałun, <a class="underline" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Padar_Island,_Komodo_National_Park,_Indonesia,_20250822_0929_2659.jpg">“Padar Island”</a> by Jakub Hałun, <a class="underline" href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Varanus_komodoensis,_Komodo_Island,_Indonesia,_20250822_1319_2749.jpg">“Komodo Dragon”</a> by Jakub Hałun, <a class="underline" href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Kawah_Ijen,_Java,_Indonesia,_20220821_0608_9712.jpg">“Kawah Ijen”</a> by Jakub Hałun, <a class="underline" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Pulau_Piaynemo,_Raja_Ampat.jpg">“Pulau Piaynemo”</a> by Rizalubun, <a class="underline" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Mt._Barujari_descending_Mt._Rinjani_to_Plawangan_II.JPG">“Mount Rinjani Trail”</a> by Midori, <a class="underline" href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>; all via Wikimedia Commons.
+      </p>
+    </div>
+  </footer>
+
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-primary text-white border-2 border-borderStrong shadow-hard px-6 py-2.5 font-mono text-[13px] font-bold" role="status" aria-live="polite"></div>
+
+  <script>
+  (() => {
+    'use strict';
+    /* Sample Expedition Data (PRD 9.2: Illustrative sample data only) */
+    const STAYS = [
+      { id: 'ke-bromo', name: 'Bromo Caldera Rim Basecamp', area: 'Cemoro Lawang · East Java', keys: 'bromo java caldera volcano lawang', img: 'assets/khatulistiwa_explorer/bromo.jpg', alt: 'Mount Bromo volcanic cone ridges', stars: 4, room: 'Caldera View Chalet', meal: 'Breakfast & Hot Tea', policy: 'Free cancel until 5 days prior', nightly: 1650000 },
+      { id: 'ke-padar', name: 'Komodo Secluded Island Camp', area: 'Padar Island · East Nusa Tenggara', keys: 'padar komodo flores dive island', img: 'assets/khatulistiwa_explorer/padar.jpg', alt: 'Padar island three-colored bays from peak', stars: 4, room: 'Eco Glamping Suite', meal: 'Full Board Expedition Meals', policy: 'Non-refundable', nightly: 3200000 },
+      { id: 'ke-ijen', name: 'Ijen Blue Flame Eco Lodge', area: 'Banyuwangi · East Java', keys: 'ijen sulfur crater banyuwangi flame', img: 'assets/khatulistiwa_explorer/ijen.jpg', alt: 'Kawah Ijen crater slopes and turquoise acid lake', stars: 3, room: 'Volcanic Foothill Cabin', meal: 'Breakfast included', policy: 'Free cancel until 3 days prior', nightly: 1250000 },
+      { id: 'ke-raja', name: 'Piaynemo Coral Lagoon Homestay', area: 'Raja Ampat · Southwest Papua', keys: 'raja ampat piaynemo lagoon dive papua', img: 'assets/khatulistiwa_explorer/raja-ampat.jpg', alt: 'Pulau Piaynemo turquoise karst lagoon islets', stars: 4, room: 'Overwater Lagoon Bungalow', meal: 'Full Board & Dive Tank Included', policy: 'Free cancel until 14 days prior', nightly: 4800000 }
+    ];
+
+    const ACTIVITIES = [
+      { id: 'ke-komodo-trek', kind: 'tour', name: 'Komodo Dragon Wildlife Trek', area: 'Komodo National Park', keys: 'komodo dragon trek wildlife ranger', img: 'assets/khatulistiwa_explorer/komodo.jpg', alt: 'Komodo dragon crawling on sandy trail', duration: 'Full Day · Certified Wildlife Ranger & Boat', perPerson: 1100000 },
+      { id: 'ke-rinjani-summit', kind: 'tour', name: 'Rinjani Crater & Ridge Expedition', area: 'Mount Rinjani Trail', keys: 'rinjani trail crater volcano trek', img: 'assets/khatulistiwa_explorer/rinjani-trail.jpg', alt: 'Steep volcanic trail descending Mount Rinjani crater', duration: '3D2N · Mountain Guides, Porters & Camping', perPerson: 2850000 },
+      { id: 'ke-ijen-night', kind: 'tour', name: 'Kawah Ijen Midnight Blue Fire', area: 'Banyuwangi Crater', keys: 'ijen blue fire night trek', img: 'assets/khatulistiwa_explorer/ijen.jpg', alt: 'Kawah Ijen sulfur miners crater', duration: '8 Hours · Gas Masks & Sulfuric Guide', perPerson: 750000 },
+      { id: 'ke-raja-dive', kind: 'tour', name: 'Piaynemo Manta Ray Lagoon Dive', area: 'Raja Ampat Karst', keys: 'raja ampat manta dive snorkeling', img: 'assets/khatulistiwa_explorer/raja-ampat.jpg', alt: 'Piaynemo karst islands', duration: 'Full Day · 2 Dives, Boat & Marine Fee', perPerson: 2100000 }
+    ];
+
+    const LIMITS = { rooms: [1, 9], adults: [1, 20], children: [0, 20] };
+    const MAX_NIGHTS = 30;
+    const idr = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const DAY = 86400000;
+    const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    const addDays = (s, n) => iso(new Date(new Date(s + 'T00:00:00').getTime() + n * DAY));
+    const today = iso(new Date());
+
+    const state = { mode: 'hotels', priced: false, checking: false, checkedAt: null, trip: [] };
+    const el = {
+      form: $('#searchForm'), dest: $('#dest'), checkIn: $('#checkIn'), checkOut: $('#checkOut'), actDate: $('#actDate'),
+      rooms: $('#rooms'), adults: $('#adults'), children: $('#qChildren'), errors: $('#formErrors'), summary: $('#summary'),
+      btn: $('#checkBtn'), results: $('#results'), resultsNote: $('#resultsNote'),
+      railItems: $('#railItems'), railTotal: $('#railTotal'), railPayBtn: $('#railPayBtn'), railNote: $('#railNote')
+    };
+
+    const clamp = (v, [lo, hi]) => Math.min(hi, Math.max(lo, Number.isFinite(v) ? v : lo));
+    const num = k => clamp(parseInt(el[k].value, 10), LIMITS[k]);
+    const nights = () => {
+      if (!el.checkIn.value || !el.checkOut.value) return 0;
+      return Math.round((new Date(el.checkOut.value) - new Date(el.checkIn.value)) / DAY);
+    };
+
+    function validate() {
+      const errs = [];
+      if (state.mode === 'hotels') {
+        if (!el.checkIn.value || !el.checkOut.value) errs.push('Check-in and Check-out dates are mandatory.');
+        else {
+          const n = nights();
+          if (el.checkIn.value < today) errs.push('Check-in cannot be set prior to current calendar date.');
+          if (n < 1) errs.push('Check-out must be at least 1 day after check-in.');
+          if (n > MAX_NIGHTS) errs.push(`Max allowable duration is ${MAX_NIGHTS} nights. Chosen: ${n}.`);
+        }
+      } else {
+        if (!el.actDate.value) errs.push('Please select departure date for activity.');
+        else if (el.actDate.value < today) errs.push('Departure date cannot be in the past.');
+      }
+      return errs;
+    }
+
+    const roomRate = s => Math.round(s.nightly * (1 + 0.16 * Math.max(0, num('adults') - 2) + 0.08 * num('children')) / 1000) * 1000;
+    const stayTotal = s => roomRate(s) * nights() * num('rooms');
+    const actTotal = a => a.perPerson * num('adults') + Math.round(a.perPerson * 0.5) * num('children');
+
+    function summaryText() {
+      const r = num('rooms'), a = num('adults'), c = num('children');
+      const g = `${a} Adt${c ? ` + ${c} Chd` : ''}`;
+      if (state.mode === 'hotels') {
+        const n = nights();
+        if (!n || n < 1) return 'Set target check-in & check-out dates';
+        return `${n} Nts × ${r} Rms (${g} / Rm)`;
+      }
+      return el.actDate.value ? `${el.actDate.value} · ${g}` : 'Select date to compute telemetry';
+    }
+
+    function renderMode() {
+      $$('.mode-tab').forEach(t => {
+        const on = t.dataset.mode === state.mode;
+        t.setAttribute('aria-selected', on);
+        t.className = `mode-tab px-5 py-2 font-display text-[13px] font-bold rounded-sm transition-all ${on ? 'bg-primary text-white shadow-hardSm' : 'text-secondary'}`;
+      });
+      const hotels = state.mode === 'hotels';
+      $$('[data-hotel-only]').forEach(n => n.classList.toggle('hidden', !hotels));
+      $$('[data-activity-only]').forEach(n => n.classList.toggle('hidden', hotels));
+      $('[data-dest-label]').textContent = hotels ? 'Target Basecamp / Destination' : 'Target Tour / Activity';
+      $('#destList').innerHTML = (hotels ? ['Mount Bromo', 'Padar Island', 'Kawah Ijen', 'Raja Ampat', ...STAYS.map(s => s.name)] : ['Komodo Trek', 'Rinjani Summit', 'Ijen Blue Flame', 'Raja Ampat Dive', ...ACTIVITIES.map(a => a.name)])
+        .map(v => `<option value="${v}">`).join('');
+    }
+
+    function renderResults() {
+      const isHotels = state.mode === 'hotels';
+      const q = el.dest.value.trim().toLowerCase();
+      let list = (isHotels ? STAYS : ACTIVITIES).filter(it => !q || (it.name + ' ' + it.area + ' ' + it.keys).toLowerCase().includes(q));
+      if (!list.length) list = isHotels ? STAYS : ACTIVITIES;
+
+      el.results.innerHTML = list.map(it => {
+        const total = isHotels ? stayTotal(it) : actTotal(it);
+        const sub = isHotels ? `${idr.format(roomRate(it))} / rm / nt` : `${idr.format(it.perPerson)} / person`;
+        const priceHTML = state.checking
+          ? `<div class="h-8 w-28 bg-surface-muted animate-pulse"></div>`
+          : state.priced
+            ? `<div class="font-mono"><p class="text-[18px] font-bold text-ink">${idr.format(total)}</p><p class="text-[11px] text-secondary">${sub}</p></div>`
+            : `<p class="font-mono text-[11px] text-secondary uppercase">[ Check Live Price ]</p>`;
+
+        return `
+        <article class="neo-card rounded-md bg-surface overflow-hidden flex flex-col">
+          <div class="relative aspect-[16/10] bg-surface-muted border-b-2 border-borderStrong">
+            <img src="${it.img}" alt="${it.alt}" loading="lazy" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 px-2 py-0.5 rounded-sm bg-white border border-borderStrong font-mono text-[10px] font-bold uppercase tracking-wider">${it.area}</span>
+          </div>
+          <div class="p-4 flex flex-col flex-1 gap-2">
+            <h3 class="font-display text-[18px] font-bold text-ink leading-snug">${it.name}</h3>
+            <p class="font-mono text-[12px] text-secondary">${isHotels ? `${it.room}` : it.duration}</p>
+            <div class="mt-auto pt-3 border-t-2 border-dashed border-borderStrong flex items-center justify-between gap-2">
+              ${priceHTML}
+              <button type="button" data-select="${it.id}" class="neo-btn h-9 px-4 rounded-sm bg-tertiary text-white font-display text-[12px] font-bold">ADD TO TRIP</button>
+            </div>
+          </div>
+        </article>`;
+      }).join('');
+    }
+
+    function renderTours() {
+      $('#tourList').innerHTML = ACTIVITIES.map(t => `
+        <div class="neo-card rounded-md bg-surface p-4 flex flex-col justify-between gap-3">
+          <div>
+            <span class="font-mono text-[10px] font-bold text-tertiary uppercase">${t.area}</span>
+            <h4 class="font-display text-[16px] font-bold text-ink mt-0.5">${t.name}</h4>
+            <p class="font-mono text-[11px] text-secondary mt-1">${t.duration}</p>
+          </div>
+          <div class="flex items-center justify-between border-t border-borderStrong pt-2">
+            <span class="font-mono text-[12px] font-bold text-ink">${idr.format(t.perPerson)}</span>
+            <button type="button" data-plan="${t.id}" class="neo-btn h-8 px-3 rounded-sm bg-canvas font-display text-[11px] font-bold">CONFIGURE</button>
+          </div>
+        </div>`).join('');
+    }
+
+    function syncBounds() {
+      el.checkIn.min = today; el.actDate.min = today;
+      if (el.checkIn.value) {
+        el.checkOut.min = addDays(el.checkIn.value, 1);
+        el.checkOut.max = addDays(el.checkIn.value, MAX_NIGHTS);
+      } else { el.checkOut.min = addDays(today, 1); el.checkOut.removeAttribute('max'); }
+    }
+
+    function invalidate() {
+      state.priced = false; el.errors.textContent = '';
+      el.summary.textContent = summaryText();
+      renderResults();
+    }
+
+    $$('.mode-tab').forEach(t => t.addEventListener('click', () => { state.mode = t.dataset.mode; renderMode(); invalidate(); }));
+    $$('[data-step]').forEach(b => b.addEventListener('click', () => {
+      const k = b.dataset.step; el[k].value = clamp(num(k) + Number(b.dataset.dir), LIMITS[k]); invalidate();
+    }));
+    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('change', () => { el[k].value = num(k); invalidate(); }));
+    el.checkIn.addEventListener('change', () => {
+      syncBounds();
+      if (el.checkIn.value && (!el.checkOut.value || el.checkOut.value <= el.checkIn.value)) el.checkOut.value = addDays(el.checkIn.value, 3);
+      invalidate();
+    });
+    [el.checkOut, el.actDate].forEach(i => i.addEventListener('change', invalidate));
+    el.dest.addEventListener('input', renderResults);
+
+    el.form.addEventListener('submit', e => {
+      e.preventDefault();
+      const errs = validate();
+      el.errors.innerHTML = errs.map(x => `<p>ERR: ${x}</p>`).join('');
+      if (errs.length) return;
+
+      state.checking = true; el.btn.disabled = true;
+      el.btn.querySelector('[data-btn-label]').textContent = 'SYNCING TELEMETRY...';
+      renderResults();
+
+      setTimeout(() => {
+        state.checking = false; state.priced = true; state.checkedAt = new Date();
+        el.btn.disabled = false; el.btn.querySelector('[data-btn-label]').textContent = 'EXECUTE LIVE PRICE CHECK';
+        el.summary.textContent = `LIVE VERIFIED: ${summaryText()}`;
+        renderResults();
+        document.getElementById('hotels').scrollIntoView({ behavior: 'smooth' });
+      }, 700);
+    });
+
+    function planActivity(id) {
+      const a = ACTIVITIES.find(x => x.id === id); if (!a) return;
+      state.mode = 'activities'; renderMode();
+      el.dest.value = a.name; invalidate();
+      document.getElementById('workbench').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => el.actDate.focus({ preventScroll: true }), 400);
+    }
+
+    document.addEventListener('click', e => {
+      const sel = e.target.closest('[data-select]'); if (sel) return selectItem(sel.dataset.select);
+      const plan = e.target.closest('[data-plan]'); if (plan) return planActivity(plan.dataset.plan);
+      const rm = e.target.closest('[data-remove]'); if (rm) { state.trip.splice(Number(rm.dataset.remove), 1); renderRail(); }
+    });
+
+    function selectItem(id) {
+      if (!state.priced) {
+        toast('PLEASE RUN LIVE PRICE CHECK FIRST');
+        document.getElementById('workbench').scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+      const isHotel = id.startsWith('ke-');
+      const it = (isHotel ? STAYS : ACTIVITIES).find(x => x.id === id);
+      const total = isHotel ? stayTotal(it) : actTotal(it);
+      state.trip.push({ name: it.name, area: it.area, detail: summaryText(), total });
+      renderRail();
+      toast(`ADDED // ${it.name}`);
+    }
+
+    function renderRail() {
+      $$('[data-trip-count]').forEach(n => n.textContent = state.trip.length);
+      el.railItems.innerHTML = state.trip.length ? state.trip.map((t, i) => `
+        <div class="py-3 flex flex-col gap-1">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <p class="font-display font-bold text-[14px] text-ink">${t.name}</p>
+              <p class="font-mono text-[10px] text-secondary">${t.area} · ${t.detail}</p>
+            </div>
+            <button type="button" data-remove="${i}" class="font-mono text-[11px] font-bold text-danger hover:underline">DEL</button>
+          </div>
+          <p class="font-mono text-[13px] font-bold text-tertiary">${idr.format(t.total)}</p>
+        </div>`).join('')
+        : `<p class="py-8 font-mono text-[12px] text-secondary text-center">NO ITEMS IN EXPEDITION RAIL<br>SELECT STAYS OR ACTIVITIES</p>`;
+      const sum = state.trip.reduce((s, t) => s + t.total, 0);
+      el.railTotal.textContent = idr.format(sum);
+      el.railPayBtn.disabled = !state.trip.length;
+    }
+
+    el.railPayBtn.addEventListener('click', () => {
+      el.railNote.textContent = 'CHECKOUT DISPATCHED TO DOKU / SNAP BI (DEMO)';
+    });
+
+    let toastTimer;
+    function toast(msg) {
+      const t = $('#toast'); t.textContent = msg; t.classList.remove('hidden');
+      clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.add('hidden'), 2500);
+    }
+
+    $('#contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      $('#contactNote').textContent = 'TRANSMISSION RECEIVED // DISPATCH STANDING BY';
+    });
+    $('#year').textContent = new Date().getFullYear();
+
+    syncBounds(); renderMode(); invalidate(); renderTours(); renderRail();
+  })();
+  </script>
+</body>
+</html>
+

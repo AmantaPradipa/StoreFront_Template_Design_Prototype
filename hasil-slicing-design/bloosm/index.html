@@ -1,0 +1,2120 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloosm · Simplify Your Travel, Maximize Your Fun</title>
+  <meta name="description" content="Bloosm — Modern nature-focused &amp; experiential luxury travel booking platform. Curated alpine expeditions, tropical beach escapes, and budget-friendly travel solutions." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --color-brand-primary: #1C86D4;
+      --color-brand-hover: #1672B5;
+      --color-text-primary: #18181B;
+      --color-text-secondary: #94A3B8;
+      --color-border-subtle: #E2E8F0;
+      --color-border-active: #CBD5E1;
+    }
+  </style>
+
+  <style>
+    :root {
+      color-scheme: light;
+    }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #FFFFFF;
+      color: #18181B;
+    }
+    .font-display {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+    .tnum {
+      font-variant-numeric: tabular-nums;
+    }
+    /* Hide scrollbars cleanly */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    html {
+      -ms-overflow-style: none;
+      scrollbar-width: thin;
+    }
+    .faq-answer {
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-zinc-900 antialiased selection:bg-[#1C86D4] selection:text-white">
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 1: HEADER & HERO (#hero-section)                                  -->
+  <!-- Note: overflow-hidden removed from section tag to allow dropdowns to float -->
+  <!-- ========================================================================= -->
+  <section id="hero-section" class="relative w-full min-h-screen min-h-svh flex flex-col justify-between bg-zinc-950 text-white">
+    <!-- Full-Width Panoramic Alpine Background Image (strictly contained) -->
+    <div class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+      <img id="heroBgImage"
+           src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=80"
+           onerror="this.src='../../assets/khatulistiwa_explorer/rinjani-trail.jpg'"
+           alt="Majestic Alpine snow mountain peak with pine forests in morning sunshine"
+           class="w-full h-full object-cover object-center scale-105 transition-all duration-1000 ease-out" />
+      <!-- Subtle top and bottom dark gradients for text contrast -->
+      <div class="absolute inset-0 bg-gradient-to-b from-black/65 via-black/20 to-black/80 pointer-events-none"></div>
+    </div>
+
+    <!-- Header Navigation (DESIGN.md §4.1) -->
+    <header class="relative z-30 w-full pt-6 px-6 sm:px-10 lg:px-16">
+      <div class="max-w-7xl mx-auto h-20 flex items-center justify-between gap-6">
+        <!-- Left: Navigation Links -->
+        <nav class="hidden md:flex items-center gap-7 text-xs sm:text-sm font-semibold text-white/90" aria-label="Main Navigation">
+          <a href="#destinations-section" class="hover:text-white transition-colors">Destination</a>
+          <a href="#experiences-section" class="hover:text-white transition-colors">Package</a>
+          <a href="#destinations-section" class="hover:text-white transition-colors">Pricing</a>
+          <a href="#footer-section" class="hover:text-white transition-colors">About Us</a>
+        </nav>
+
+        <!-- Center: Plain Wordmark "bloosm" (Clean Geometric Sans-Serif) -->
+        <a href="#hero-section" class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight text-white hover:opacity-90 transition-opacity cursor-pointer" aria-label="Bloosm Travel Home">
+          bloosm
+        </a>
+
+        <!-- Right: Language Switcher & User Account State -->
+        <div class="flex items-center gap-4 sm:gap-6">
+          <!-- Language Capsule & Currency Toggle -->
+          <button id="langBtn" type="button" onclick="toggleLanguage()"
+                  class="flex items-center gap-1.5 bg-white/20 hover:bg-white/30 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-semibold text-white border border-white/25 shadow-xs transition active:scale-95"
+                  title="Toggle Currency and Language">
+            <span id="langFlag">🇺🇸</span>
+            <span id="langText">US / EN ($)</span>
+          </button>
+
+          <!-- Guest State (Login / Register) -->
+          <div id="authGuestState" class="flex items-center gap-3">
+            <button type="button" onclick="openAuthModal('login')" class="text-white text-xs sm:text-sm font-semibold hover:underline">
+              Login
+            </button>
+            <button type="button" onclick="openAuthModal('register')" class="bg-[#1C86D4] hover:bg-[#1672B5] active:scale-95 text-white px-5 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-md transition-all">
+              Register
+            </button>
+          </div>
+
+          <!-- Logged-In User Profile State (Hidden by default, active after login simulation) -->
+          <div id="authUserProfile" class="hidden relative">
+            <button type="button" onclick="toggleUserDropdown()" class="flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-md pl-1.5 pr-3 py-1 rounded-full border border-white/30 text-xs font-bold text-white transition">
+              <div class="w-6 h-6 rounded-full bg-[#1C86D4] text-white flex items-center justify-center text-[11px] font-bold">ER</div>
+              <span id="navUserName">Elena R.</span>
+              <svg class="w-3.5 h-3.5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <!-- Dropdown Menu -->
+            <div id="userDropdownMenu" class="hidden absolute right-0 mt-2 w-52 bg-white rounded-2xl shadow-2xl border border-slate-200 text-zinc-900 py-2 z-50 text-xs">
+              <div class="px-4 py-2 border-b border-slate-100">
+                <p class="font-bold text-zinc-900">Elena Rostova</p>
+                <p class="text-[11px] text-slate-400">elena@bloosm.travel</p>
+              </div>
+              <a href="#destinations-section" onclick="toggleUserDropdown()" class="block px-4 py-2 hover:bg-slate-50 transition-colors">My Nature Expeditions (1)</a>
+              <a href="#experiences-section" onclick="toggleUserDropdown()" class="block px-4 py-2 hover:bg-slate-50 transition-colors">Saved Sanctuaries (4)</a>
+              <a href="#faq-section" onclick="toggleUserDropdown()" class="block px-4 py-2 hover:bg-slate-50 transition-colors">Booking Support &amp; FAQ</a>
+              <div class="border-t border-slate-100 my-1"></div>
+              <button type="button" onclick="handleLogout()" class="w-full text-left px-4 py-2 text-rose-600 hover:bg-rose-50 font-semibold transition-colors">
+                Sign Out
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile Hamburger Trigger -->
+          <button type="button" id="mobileMenuBtn" class="md:hidden text-white p-1 rounded-md hover:bg-white/10" aria-label="Open navigation menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div id="mobileDrawer" class="hidden md:hidden fixed inset-x-4 top-24 bg-white/95 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-slate-200 text-zinc-900 z-50 space-y-4">
+        <nav class="flex flex-col space-y-3 font-display font-bold text-sm">
+          <a href="#destinations-section" onclick="toggleMobileDrawer()" class="py-2 border-b border-slate-100">Destination</a>
+          <a href="#experiences-section" onclick="toggleMobileDrawer()" class="py-2 border-b border-slate-100">Package</a>
+          <a href="#destinations-section" onclick="toggleMobileDrawer()" class="py-2 border-b border-slate-100">Pricing</a>
+          <a href="#footer-section" onclick="toggleMobileDrawer()" class="py-2 border-b border-slate-100">About Us</a>
+        </nav>
+        <div class="pt-2 flex items-center justify-between">
+          <button type="button" onclick="openAuthModal('login'); toggleMobileDrawer();" class="font-bold text-xs">Login</button>
+          <button type="button" onclick="openAuthModal('register'); toggleMobileDrawer();" class="bg-[#1C86D4] text-white px-5 py-2 rounded-xl text-xs font-bold">Register</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Center Copywriting (DESIGN.md §4.1) -->
+    <div class="relative z-10 w-full my-auto px-6 sm:px-10 lg:px-16 text-center pt-8 pb-4">
+      <h1 class="text-center font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-white tracking-tight leading-tight max-w-4xl mx-auto drop-shadow-md">
+        Simplify Your Travel<br />
+        Maximize Your Fun
+      </h1>
+      <p class="text-white/85 text-xs sm:text-base max-w-xl mx-auto text-center mt-4 leading-relaxed font-normal">
+        Discover seamless travel solutions that cater to your every need and desire. Plan your dream vacation explore the uncharted wonders.
+      </p>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- FLOATING SEARCH & BOOKING CONSOLE (ALL CUSTOM DESIGNED DROPDOWNS)         -->
+    <!-- ========================================================================= -->
+    <div class="relative z-30 w-full px-4 sm:px-8 lg:px-16 pb-16 sm:pb-24">
+      <div class="bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-6 max-w-5xl mx-auto border border-white/50 text-zinc-900 relative z-30">
+        <!-- Segmented Tabs Header (Accommodation, Flights, Cars, Tours) -->
+        <div class="flex items-center justify-between pb-3.5 border-b border-slate-200/80 mb-4">
+          <div class="flex items-center gap-3 sm:gap-6 text-xs font-display font-semibold overflow-x-auto pb-1" role="tablist">
+            <button type="button" onclick="switchSearchTab('accommodation')" id="tab-btn-accommodation"
+                    class="search-tab-btn pb-2 border-b-2 border-[#1C86D4] text-[#1C86D4] font-bold flex items-center gap-1.5 transition-all shrink-0 cursor-pointer" role="tab" aria-selected="true">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              <span>Accommodation</span>
+            </button>
+            <button type="button" onclick="switchSearchTab('flights')" id="tab-btn-flights"
+                    class="search-tab-btn pb-2 border-b-2 border-transparent text-slate-400 hover:text-zinc-900 flex items-center gap-1.5 transition-all shrink-0 cursor-pointer" role="tab" aria-selected="false">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+              <span>Flights</span>
+            </button>
+            <button type="button" onclick="switchSearchTab('cars')" id="tab-btn-cars"
+                    class="search-tab-btn pb-2 border-b-2 border-transparent text-slate-400 hover:text-zinc-900 flex items-center gap-1.5 transition-all shrink-0 cursor-pointer" role="tab" aria-selected="false">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"/></svg>
+              <span>Cars</span>
+            </button>
+            <button type="button" onclick="switchSearchTab('tours')" id="tab-btn-tours"
+                    class="search-tab-btn pb-2 border-b-2 border-transparent text-slate-400 hover:text-zinc-900 flex items-center gap-1.5 transition-all shrink-0 cursor-pointer" role="tab" aria-selected="false">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Tours</span>
+            </button>
+          </div>
+          <div class="hidden sm:flex items-center gap-1.5 text-[11px] font-mono text-[#1C86D4]">
+            <span class="w-2 h-2 rounded-full bg-[#1C86D4] animate-pulse"></span>
+            <span>Live Multi-Supplier Rates</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Search Form Container -->
+        <form id="heroSearchForm" onsubmit="handleHeroSearch(event)" class="relative">
+          <!-- 1. ACCOMMODATION TAB INPUTS -->
+          <div id="searchFields-accommodation" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 sm:gap-4 items-center">
+            
+            <!-- Col 1: Destination with Custom Dropdown Popover (Image #1 Fix) -->
+            <div class="lg:col-span-3 relative px-3 py-1.5 border border-slate-200 rounded-xl bg-slate-50/60 focus-within:bg-white focus-within:border-[#1C86D4] transition">
+              <label for="destInput" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans cursor-pointer">Destination</label>
+              <div class="flex items-center gap-2 mt-0.5">
+                <svg class="w-4 h-4 text-[#1C86D4] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <input id="destInput" type="text" placeholder="Select Destination" autocomplete="off"
+                       onclick="openDestPopover(event)" onfocus="openDestPopover(event)" oninput="filterDestSuggestions(this.value)"
+                       class="w-full text-xs sm:text-sm font-bold text-zinc-900 bg-transparent focus:outline-none placeholder:text-slate-400" />
+                <button type="button" id="clearDestBtn" onclick="clearDestInput()" class="hidden text-slate-400 hover:text-zinc-900 text-xs p-1" title="Clear destination">✕</button>
+              </div>
+
+              <!-- Custom Destination Popover Dropdown (Not Cut Off, Smooth Custom Styling) -->
+              <div id="destQuickPickPopover" class="hidden absolute left-0 right-0 sm:-right-24 top-full mt-2 bg-white rounded-3xl shadow-2xl border border-slate-200 p-4 z-50 text-xs max-h-80 overflow-y-auto">
+                <!-- Header with category chips -->
+                <div class="flex items-center justify-between pb-2 border-b border-slate-100 mb-2.5">
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Popular Sanctuaries</span>
+                  <span class="text-[10px] font-mono text-[#1C86D4] font-bold">7 Verified</span>
+                </div>
+
+                <!-- Category quick filters -->
+                <div class="flex items-center gap-1.5 mb-2.5 overflow-x-auto pb-1 text-[10px] font-bold">
+                  <button type="button" onclick="filterDestCategory('all')" class="dest-cat-btn px-2.5 py-1 rounded-full bg-[#1C86D4] text-white transition">All</button>
+                  <button type="button" onclick="filterDestCategory('beach')" class="dest-cat-btn px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 transition">Beach &amp; Reef</button>
+                  <button type="button" onclick="filterDestCategory('alpine')" class="dest-cat-btn px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 transition">Alpine Lake</button>
+                  <button type="button" onclick="filterDestCategory('rainforest')" class="dest-cat-btn px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 transition">Rainforest</button>
+                </div>
+
+                <!-- Destination items with stylized country badge (no raw letter emojis) -->
+                <div class="space-y-1.5" id="destSuggestionsList">
+                  <div onclick="selectDestination('Whitehaven Beach, Australia')" class="dest-item p-2.5 hover:bg-[#1C86D4]/5 border border-transparent hover:border-[#1C86D4]/30 rounded-2xl cursor-pointer flex items-center justify-between transition" data-cat="beach">
+                    <div class="flex items-center gap-3">
+                      <span class="w-8 h-8 rounded-xl bg-blue-50 text-blue-700 font-bold text-[11px] font-mono flex items-center justify-center shrink-0 border border-blue-200">AU</span>
+                      <div>
+                        <span class="font-display font-bold text-zinc-900 block text-xs">Whitehaven Beach</span>
+                        <span class="text-[11px] text-slate-400">Australia · Catamaran Cruise &amp; Reef</span>
+                      </div>
+                    </div>
+                    <span class="text-[10px] font-mono bg-blue-50 text-[#1C86D4] px-2 py-0.5 rounded-full font-bold">4 slots left</span>
+                  </div>
+
+                  <div onclick="selectDestination('Lake Lucerne, Switzerland')" class="dest-item p-2.5 hover:bg-[#1C86D4]/5 border border-transparent hover:border-[#1C86D4]/30 rounded-2xl cursor-pointer flex items-center justify-between transition" data-cat="alpine">
+                    <div class="flex items-center gap-3">
+                      <span class="w-8 h-8 rounded-xl bg-red-50 text-red-700 font-bold text-[11px] font-mono flex items-center justify-center shrink-0 border border-red-200">CH</span>
+                      <div>
+                        <span class="font-display font-bold text-zinc-900 block text-xs">Lake Lucerne</span>
+                        <span class="text-[11px] text-slate-400">Switzerland · Alpine Meadow Picnic</span>
+                      </div>
+                    </div>
+                    <span class="text-[10px] font-mono bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded-full font-bold">Guaranteed</span>
+                  </div>
+
+                  <div onclick="selectDestination('Angel Falls, Venezuela')" class="dest-item p-2.5 hover:bg-[#1C86D4]/5 border border-transparent hover:border-[#1C86D4]/30 rounded-2xl cursor-pointer flex items-center justify-between transition" data-cat="rainforest">
+                    <div class="flex items-center gap-3">
+                      <span class="w-8 h-8 rounded-xl bg-amber-50 text-amber-700 font-bold text-[11px] font-mono flex items-center justify-center shrink-0 border border-amber-200">VE</span>
+                      <div>
+                        <span class="font-display font-bold text-zinc-900 block text-xs">Angel Falls</span>
+                        <span class="text-[11px] text-slate-400">Venezuela · Rainforest Waterfall Trek</span>
+                      </div>
+                    </div>
+                    <span class="text-[10px] font-mono bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full font-bold">Expedition</span>
+                  </div>
+
+                  <div onclick="selectDestination('Slaying Sands Beach, Greece')" class="dest-item p-2.5 hover:bg-[#1C86D4]/5 border border-transparent hover:border-[#1C86D4]/30 rounded-2xl cursor-pointer flex items-center justify-between transition" data-cat="beach">
+                    <div class="flex items-center gap-3">
+                      <span class="w-8 h-8 rounded-xl bg-sky-50 text-sky-700 font-bold text-[11px] font-mono flex items-center justify-center shrink-0 border border-sky-200">GR</span>
+                      <div>
+                        <span class="font-display font-bold text-zinc-900 block text-xs">Slaying Sands Beach</span>
+                        <span class="text-[11px] text-slate-400">Greece · Sunken Coves &amp; Private Villa</span>
+                      </div>
+                    </div>
+                    <span class="text-[10px] font-mono bg-sky-50 text-sky-700 px-2 py-0.5 rounded-full font-bold">Popular</span>
+                  </div>
+
+                  <div onclick="selectDestination('Oceanland Beach, Panama')" class="dest-item p-2.5 hover:bg-[#1C86D4]/5 border border-transparent hover:border-[#1C86D4]/30 rounded-2xl cursor-pointer flex items-center justify-between transition" data-cat="beach">
+                    <div class="flex items-center gap-3">
+                      <span class="w-8 h-8 rounded-xl bg-teal-50 text-teal-700 font-bold text-[11px] font-mono flex items-center justify-center shrink-0 border border-teal-200">PA</span>
+                      <div>
+                        <span class="font-display font-bold text-zinc-900 block text-xs">Oceanland Beach</span>
+                        <span class="text-[11px] text-slate-400">Panama · Coral Archipelago</span>
+                      </div>
+                    </div>
+                    <span class="text-[10px] font-mono bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full font-bold">All-Inclusive</span>
+                  </div>
+
+                  <div onclick="selectDestination('Alta Mountain, Greenland')" class="dest-item p-2.5 hover:bg-[#1C86D4]/5 border border-transparent hover:border-[#1C86D4]/30 rounded-2xl cursor-pointer flex items-center justify-between transition" data-cat="alpine">
+                    <div class="flex items-center gap-3">
+                      <span class="w-8 h-8 rounded-xl bg-indigo-50 text-indigo-700 font-bold text-[11px] font-mono flex items-center justify-center shrink-0 border border-indigo-200">GL</span>
+                      <div>
+                        <span class="font-display font-bold text-zinc-900 block text-xs">Alta Mountain</span>
+                        <span class="text-[11px] text-slate-400">Greenland · Arctic Winter Trail &amp; Aurora</span>
+                      </div>
+                    </div>
+                    <span class="text-[10px] font-mono bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full font-bold">Exclusive</span>
+                  </div>
+
+                  <div onclick="selectDestination('Nusa Penida, Indonesia')" class="dest-item p-2.5 hover:bg-[#1C86D4]/5 border border-transparent hover:border-[#1C86D4]/30 rounded-2xl cursor-pointer flex items-center justify-between transition" data-cat="beach">
+                    <div class="flex items-center gap-3">
+                      <span class="w-8 h-8 rounded-xl bg-rose-50 text-rose-700 font-bold text-[11px] font-mono flex items-center justify-center shrink-0 border border-rose-200">ID</span>
+                      <div>
+                        <span class="font-display font-bold text-zinc-900 block text-xs">Nusa Penida</span>
+                        <span class="text-[11px] text-slate-400">Indonesia · Emerald Coastal Cliffs</span>
+                      </div>
+                    </div>
+                    <span class="text-[10px] font-mono bg-rose-50 text-rose-700 px-2 py-0.5 rounded-full font-bold">Best Value</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Col 2: Custom Bloosm Date Range Picker (Image #2 Fix - No Native Browser Datepicker) -->
+            <div class="lg:col-span-3 relative px-3 py-1.5 border border-slate-200 rounded-xl bg-slate-50/60 focus-within:bg-white focus-within:border-[#1C86D4] transition">
+              <div class="flex items-center justify-between cursor-pointer" onclick="toggleCalendarPopover(event)">
+                <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans">Dates &amp; Duration</span>
+                <span id="durationBadge" class="text-[10px] font-mono text-[#1C86D4] font-bold bg-[#1C86D4]/10 px-2 py-0.5 rounded-full">7 Nights</span>
+              </div>
+              <button type="button" id="datePickerBtn" onclick="toggleCalendarPopover(event)" class="w-full text-left mt-0.5 flex items-center justify-between cursor-pointer focus:outline-none">
+                <div class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-[#1C86D4] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span id="dateRangeSummaryText" class="text-xs sm:text-sm font-bold text-zinc-900 truncate">13 Nov – 20 Nov 2026</span>
+                </div>
+                <svg id="calChevron" class="w-3.5 h-3.5 text-slate-400 shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+
+              <!-- Custom Bloosm Calendar Popover (Styled Harmoniously, Never Cut Off) -->
+              <div id="calendarPopover" class="hidden absolute left-0 sm:-left-8 top-full mt-2 w-80 bg-white rounded-3xl shadow-2xl border border-slate-200 p-4 z-50 text-xs space-y-3">
+                <!-- Quick Preset Pills -->
+                <div class="flex items-center gap-1.5 pb-2 border-b border-slate-100 overflow-x-auto">
+                  <button type="button" onclick="applyDatePreset(3)" class="preset-btn px-2.5 py-1 rounded-full bg-slate-100 hover:bg-[#1C86D4]/10 hover:text-[#1C86D4] text-[10px] font-bold transition">Weekend (3D2N)</button>
+                  <button type="button" onclick="applyDatePreset(7)" class="preset-btn px-2.5 py-1 rounded-full bg-[#1C86D4]/10 text-[#1C86D4] text-[10px] font-bold transition">1 Week (7N)</button>
+                  <button type="button" onclick="applyDatePreset(14)" class="preset-btn px-2.5 py-1 rounded-full bg-slate-100 hover:bg-[#1C86D4]/10 hover:text-[#1C86D4] text-[10px] font-bold transition">2 Weeks (14N)</button>
+                </div>
+
+                <!-- Calendar Month Navigation -->
+                <div class="flex items-center justify-between px-1">
+                  <button type="button" onclick="changeCalMonth(-1)" class="w-7 h-7 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold flex items-center justify-center transition">‹</button>
+                  <span id="calMonthTitle" class="font-display font-extrabold text-sm text-zinc-900">November 2026</span>
+                  <button type="button" onclick="changeCalMonth(1)" class="w-7 h-7 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold flex items-center justify-center transition">›</button>
+                </div>
+
+                <!-- Weekday headers -->
+                <div class="grid grid-cols-7 text-center font-bold text-[10px] text-slate-400">
+                  <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                </div>
+
+                <!-- Days Grid -->
+                <div id="calDaysGrid" class="grid grid-cols-7 text-center gap-1 text-xs font-medium">
+                  <!-- Generated dynamically via JS -->
+                </div>
+
+                <div class="flex items-center justify-between border-t border-slate-100 pt-2.5">
+                  <span id="calSelectedInfo" class="text-[11px] font-mono text-slate-500">7 Nights selected</span>
+                  <button type="button" onclick="closeCalendarPopover()" class="bg-[#1C86D4] hover:bg-[#1672B5] text-white px-4 py-1.5 rounded-xl font-bold text-xs shadow-sm transition">
+                    Apply Dates
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Col 3: Custom Guests & Rooms Stepper Popover (Image #3 Fix - Fully Visible) -->
+            <div class="lg:col-span-2 relative px-3 py-1.5 border border-slate-200 rounded-xl bg-slate-50/60 focus-within:bg-white focus-within:border-[#1C86D4] transition">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans cursor-pointer" onclick="toggleGuestPopover(event)">Guests &amp; Rooms</span>
+              <button type="button" onclick="toggleGuestPopover(event)" class="w-full text-left mt-0.5 flex items-center justify-between cursor-pointer focus:outline-none">
+                <span id="guestSummaryText" class="text-xs sm:text-sm font-bold text-zinc-900 truncate">1 Rm · 2 Adults</span>
+                <svg id="guestChevron" class="w-3.5 h-3.5 text-slate-400 shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+
+              <!-- Guest Stepper Popover (Fully Styled, Not Cut Off) -->
+              <div id="guestStepperPopover" class="hidden absolute left-0 sm:right-0 sm:left-auto top-full mt-2 w-72 bg-white rounded-3xl shadow-2xl border border-slate-200 p-4 z-50 text-xs space-y-3.5">
+                <div class="flex items-center justify-between pb-1 border-b border-slate-100">
+                  <span class="font-bold text-zinc-900">Room &amp; Traveler Setup</span>
+                  <span class="text-[10px] font-mono text-[#1C86D4] font-bold">Max 30 Pax</span>
+                </div>
+
+                <!-- Stepper 1: Rooms -->
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="font-bold text-zinc-900 text-xs">Rooms</p>
+                    <p class="text-[10px] text-slate-400">1 to 9 rooms</p>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button type="button" onclick="stepGuest('rooms', -1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-[#1C86D4] hover:text-white font-bold text-xs flex items-center justify-center transition">−</button>
+                    <span id="valRooms" class="font-mono font-bold w-5 text-center text-zinc-900">1</span>
+                    <button type="button" onclick="stepGuest('rooms', 1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-[#1C86D4] hover:text-white font-bold text-xs flex items-center justify-center transition">+</button>
+                  </div>
+                </div>
+
+                <!-- Stepper 2: Adults -->
+                <div class="flex items-center justify-between border-t border-slate-100 pt-2">
+                  <div>
+                    <p class="font-bold text-zinc-900 text-xs">Adults</p>
+                    <p class="text-[10px] text-slate-400">Age 13+</p>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button type="button" onclick="stepGuest('adults', -1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-[#1C86D4] hover:text-white font-bold text-xs flex items-center justify-center transition">−</button>
+                    <span id="valAdults" class="font-mono font-bold w-5 text-center text-zinc-900">2</span>
+                    <button type="button" onclick="stepGuest('adults', 1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-[#1C86D4] hover:text-white font-bold text-xs flex items-center justify-center transition">+</button>
+                  </div>
+                </div>
+
+                <!-- Stepper 3: Children -->
+                <div class="flex items-center justify-between border-t border-slate-100 pt-2">
+                  <div>
+                    <p class="font-bold text-zinc-900 text-xs">Children</p>
+                    <p class="text-[10px] text-slate-400">Age 0 - 12</p>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button type="button" onclick="stepGuest('children', -1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-[#1C86D4] hover:text-white font-bold text-xs flex items-center justify-center transition">−</button>
+                    <span id="valChildren" class="font-mono font-bold w-5 text-center text-zinc-900">0</span>
+                    <button type="button" onclick="stepGuest('children', 1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-[#1C86D4] hover:text-white font-bold text-xs flex items-center justify-center transition">+</button>
+                  </div>
+                </div>
+
+                <!-- Quick Presets -->
+                <div class="flex items-center gap-1.5 pt-1">
+                  <button type="button" onclick="setGuestPreset(1, 1, 0)" class="flex-1 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-[10px] font-bold text-slate-600 transition">Solo</button>
+                  <button type="button" onclick="setGuestPreset(1, 2, 0)" class="flex-1 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-[10px] font-bold text-slate-600 transition">Couple</button>
+                  <button type="button" onclick="setGuestPreset(2, 4, 1)" class="flex-1 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-[10px] font-bold text-slate-600 transition">Family</button>
+                </div>
+
+                <button type="button" onclick="closeGuestPopover()" class="w-full bg-[#1C86D4] hover:bg-[#1672B5] text-white py-2 rounded-xl font-bold text-xs shadow-sm transition">
+                  Apply Selection
+                </button>
+              </div>
+            </div>
+
+            <!-- Col 4: Custom Bloosm Budget Dropdown (Image #4 Fix - No Native OS Select) -->
+            <div class="lg:col-span-2 relative px-3 py-1.5 border border-slate-200 rounded-xl bg-slate-50/60 focus-within:bg-white focus-within:border-[#1C86D4] transition">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans cursor-pointer" onclick="toggleBudgetPopover(event)">Budget Range</span>
+              <button type="button" id="budgetDropdownBtn" onclick="toggleBudgetPopover(event)" class="w-full text-left mt-0.5 flex items-center justify-between cursor-pointer focus:outline-none">
+                <span id="budgetSelectedText" class="text-xs sm:text-sm font-bold text-zinc-900 truncate">All Budgets</span>
+                <svg id="budgetChevron" class="w-3.5 h-3.5 text-slate-400 shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+
+              <!-- Custom Budget Popover (Clean Rounded Style, Not Cut Off) -->
+              <div id="budgetPopover" class="hidden absolute left-0 right-0 sm:-right-4 top-full mt-2 bg-white rounded-3xl shadow-2xl border border-slate-200 p-2 z-50 text-xs space-y-1">
+                <div onclick="selectBudgetOption('all', 'All Budgets')" class="budget-option-item px-3 py-2 rounded-2xl cursor-pointer flex items-center justify-between bg-[#1C86D4]/10 text-[#1C86D4] font-bold transition" data-val="all">
+                  <div>
+                    <p class="text-xs">All Budgets</p>
+                    <p class="text-[10px] opacity-75 font-normal">Explore all price tiers</p>
+                  </div>
+                  <span class="budget-check text-[#1C86D4] font-bold">✓</span>
+                </div>
+                <div onclick="selectBudgetOption('budget', '< $2,200 (Budget)')" class="budget-option-item px-3 py-2 rounded-2xl cursor-pointer flex items-center justify-between hover:bg-slate-50 text-zinc-800 transition font-medium" data-val="budget">
+                  <div>
+                    <p class="font-bold text-xs">&lt; $2,200</p>
+                    <p class="text-[10px] text-slate-400 font-normal">Budget &amp; Backpacker</p>
+                  </div>
+                  <span class="budget-check hidden text-[#1C86D4] font-bold">✓</span>
+                </div>
+                <div onclick="selectBudgetOption('popular', '$2,200 - $2,600 (Popular)')" class="budget-option-item px-3 py-2 rounded-2xl cursor-pointer flex items-center justify-between hover:bg-slate-50 text-zinc-800 transition font-medium" data-val="popular">
+                  <div>
+                    <p class="font-bold text-xs">$2,200 - $2,600</p>
+                    <p class="text-[10px] text-slate-400 font-normal">Popular curated escapes</p>
+                  </div>
+                  <span class="budget-check hidden text-[#1C86D4] font-bold">✓</span>
+                </div>
+                <div onclick="selectBudgetOption('luxury', '> $2,600 (Luxury)')" class="budget-option-item px-3 py-2 rounded-2xl cursor-pointer flex items-center justify-between hover:bg-slate-50 text-zinc-800 transition font-medium" data-val="luxury">
+                  <div>
+                    <p class="font-bold text-xs">&gt; $2,600</p>
+                    <p class="text-[10px] text-slate-400 font-normal">Ultra-luxury sanctuaries</p>
+                  </div>
+                  <span class="budget-check hidden text-[#1C86D4] font-bold">✓</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Col 5: Search Action Button -->
+            <div class="lg:col-span-2">
+              <button id="heroSearchBtn" type="submit"
+                      class="w-full h-12 bg-[#1C86D4] hover:bg-[#1672B5] active:scale-95 text-white font-display font-bold text-xs sm:text-sm px-5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
+                <span id="searchBtnIcon">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </span>
+                <span id="searchBtnText">Search</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 2. FLIGHTS TAB INPUTS (Adaptive View) -->
+          <div id="searchFields-flights" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 sm:gap-4 items-center">
+            <div class="lg:col-span-3 px-3 py-1.5 border border-slate-200 rounded-xl bg-slate-50/60">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans">Origin City / Airport</span>
+              <input id="flightOriginInput" type="text" value="Jakarta (CGK)" placeholder="e.g. Jakarta, Singapore, Zurich"
+                     class="w-full text-xs sm:text-sm font-bold text-zinc-900 bg-transparent focus:outline-none mt-0.5" />
+            </div>
+            <div class="lg:col-span-3 px-3 py-1.5 border border-slate-200 rounded-xl bg-slate-50/60">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans">Destination Airport</span>
+              <input id="flightDestInput" type="text" value="Athens (ATH), Greece" placeholder="e.g. Athens, Zurich, Sydney"
+                     class="w-full text-xs sm:text-sm font-bold text-zinc-900 bg-transparent focus:outline-none mt-0.5" />
+            </div>
+            <div class="lg:col-span-2 px-3 py-1.5 border border-slate-200 rounded-xl bg-slate-50/60">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans">Flight Date</span>
+              <input id="flightDateInput" type="text" value="13 Nov 2026" class="w-full text-xs font-mono font-semibold text-zinc-900 bg-transparent focus:outline-none mt-0.5" />
+            </div>
+            <div class="lg:col-span-2 px-3 py-1.5 border border-slate-200 rounded-xl bg-slate-50/60">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans">Cabin Class</span>
+              <select id="flightClassSelect" class="w-full text-xs sm:text-sm font-bold text-zinc-900 bg-transparent focus:outline-none mt-0.5 cursor-pointer">
+                <option value="economy">Economy</option>
+                <option value="business" selected>Business Class</option>
+                <option value="first">First Class</option>
+              </select>
+            </div>
+            <div class="lg:col-span-2">
+              <button type="submit" class="w-full h-12 bg-[#1C86D4] hover:bg-[#1672B5] text-white font-display font-bold text-xs sm:text-sm px-5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                <span>Find Flights</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. CARS TAB INPUTS (Adaptive View) -->
+          <div id="searchFields-cars" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 sm:gap-4 items-center">
+            <div class="lg:col-span-4 px-3 py-1.5 border border-slate-200 rounded-xl bg-slate-50/60">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans">Pick-Up Station</span>
+              <input id="carStationInput" type="text" value="Zurich Airport (ZRH) Alpine Hub" placeholder="Select Airport or City"
+                     class="w-full text-xs sm:text-sm font-bold text-zinc-900 bg-transparent focus:outline-none mt-0.5" />
+            </div>
+            <div class="lg:col-span-3 px-3 py-1.5 border border-slate-200 rounded-xl bg-slate-50/60">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans">Vehicle Category</span>
+              <select class="w-full text-xs sm:text-sm font-bold text-zinc-900 bg-transparent focus:outline-none mt-0.5 cursor-pointer">
+                <option>4x4 Overland SUV</option>
+                <option>Luxury Alpine Wagon</option>
+                <option>Electric Explorer Van</option>
+              </select>
+            </div>
+            <div class="lg:col-span-3 px-3 py-1.5 border border-slate-200 rounded-xl bg-slate-50/60">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans">Rental Duration</span>
+              <select class="w-full text-xs sm:text-sm font-bold text-zinc-900 bg-transparent focus:outline-none mt-0.5 cursor-pointer">
+                <option>3 Days (Weekend Pass)</option>
+                <option selected>7 Days (Expedition Week)</option>
+                <option>14 Days (Grand Sanctuary)</option>
+              </select>
+            </div>
+            <div class="lg:col-span-2">
+              <button type="submit" class="w-full h-12 bg-[#1C86D4] hover:bg-[#1672B5] text-white font-display font-bold text-xs sm:text-sm px-5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                <span>Book Vehicle</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 4. TOURS TAB INPUTS (Adaptive View) -->
+          <div id="searchFields-tours" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 sm:gap-4 items-center">
+            <div class="lg:col-span-4 px-3 py-1.5 border border-slate-200 rounded-xl bg-slate-50/60">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans">Expedition Theme</span>
+              <select class="w-full text-xs sm:text-sm font-bold text-zinc-900 bg-transparent focus:outline-none mt-0.5 cursor-pointer">
+                <option>All Curated Nature Escapes</option>
+                <option>Marine &amp; Catamaran Cruises</option>
+                <option>Alpine Lake &amp; Mountain Treks</option>
+                <option>Rainforest &amp; Waterfall Expeditions</option>
+              </select>
+            </div>
+            <div class="lg:col-span-3 px-3 py-1.5 border border-slate-200 rounded-xl bg-slate-50/60">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans">Squad Capacity</span>
+              <select class="w-full text-xs sm:text-sm font-bold text-zinc-900 bg-transparent focus:outline-none mt-0.5 cursor-pointer">
+                <option>Couple (2 Travelers)</option>
+                <option selected>Small Squad (4 - 6 Travelers)</option>
+                <option>Private Bespoke Group</option>
+              </select>
+            </div>
+            <div class="lg:col-span-3 px-3 py-1.5 border border-slate-200 rounded-xl bg-slate-50/60">
+              <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans">Season</span>
+              <select class="w-full text-xs sm:text-sm font-bold text-zinc-900 bg-transparent focus:outline-none mt-0.5 cursor-pointer">
+                <option>August - September 2026</option>
+                <option>Year-End Festive 2026</option>
+                <option>Spring Blossom 2027</option>
+              </select>
+            </div>
+            <div class="lg:col-span-2">
+              <button type="submit" class="w-full h-12 bg-[#1C86D4] hover:bg-[#1672B5] text-white font-display font-bold text-xs sm:text-sm px-5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                <span>Explore Tours</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Bottom-Right Slider Widget (DESIGN.md §4.1) -->
+      <div class="max-w-5xl mx-auto flex items-center justify-between mt-4 text-xs">
+        <div class="hidden sm:flex items-center gap-2 text-white/80 font-mono text-[11px]">
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          <span>Verified B2C Storefront Engine · RateHawk &amp; ETG Connected</span>
+        </div>
+        <div class="inline-flex items-center gap-3 bg-black/40 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 text-xs font-mono text-white/90 ml-auto">
+          <span id="heroSlideIndicator" class="font-bold">01 / 05</span>
+          <div class="flex items-center gap-1 text-white">
+            <button type="button" onclick="prevHeroSlide()" class="p-1 hover:text-[#1C86D4] transition" aria-label="Previous backdrop slide">&lt;</button>
+            <span class="text-white/30">|</span>
+            <button type="button" onclick="nextHeroSlide()" class="p-1 hover:text-[#1C86D4] transition" aria-label="Next backdrop slide">&gt;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 2: SOCIAL PROOF & METRICS (#experiences-section)                  -->
+  <!-- ========================================================================= -->
+  <section id="experiences-section" class="w-full bg-white py-16 sm:py-24 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+
+      <!-- Active Search Results Feedback Banner (Dynamic when search filter runs) -->
+      <div id="searchResultsBanner" class="hidden mb-12 bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 bg-[#1C86D4]/10 text-[#1C86D4] px-2.5 py-0.5 rounded-full text-xs font-bold font-mono">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#1C86D4] animate-ping"></span>
+              Live Rate Verified
+            </span>
+            <span class="text-xs text-slate-500 font-medium">Every price checked live when you ask for it.</span>
+          </div>
+          <p id="searchResultsCount" class="font-display font-extrabold text-lg text-zinc-900 mt-1">
+            Showing all nature destinations
+          </p>
+        </div>
+        <div class="flex items-center gap-3">
+          <span id="searchActiveTag" class="bg-white border border-slate-200 px-3 py-1 rounded-full text-xs font-bold text-zinc-800 shadow-xs">Filter Active</span>
+          <button type="button" onclick="resetAllFilters()" class="text-xs font-bold text-[#1C86D4] hover:underline flex items-center gap-1 cursor-pointer">
+            <span>✕ Reset Filter</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Centered Two-Tone Heading (DESIGN.md §4.2) -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-zinc-900 leading-snug">
+          Bloosm offers creative and budget-friendly travel<br />
+          <span class="text-slate-400 font-medium">solutions that are highly valued by our customers.</span>
+        </h2>
+      </div>
+
+      <!-- Statistical Metrics Bar (3 Columns with Vertical Dividers) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200 max-w-4xl mx-auto text-center py-6 mb-16 border-y border-slate-200">
+        <div class="py-4 md:py-0 px-6">
+          <p class="font-display font-extrabold text-3xl sm:text-4xl text-zinc-900 tnum">500+</p>
+          <p class="text-xs sm:text-sm text-slate-500 font-medium mt-1">Destinations Around / Satisfied Clients</p>
+        </div>
+        <div class="py-4 md:py-0 px-6">
+          <p class="font-display font-extrabold text-3xl sm:text-4xl text-[#1C86D4] tnum">90.5%</p>
+          <p class="text-xs sm:text-sm text-slate-500 font-medium mt-1">Customer Satisfaction Rate</p>
+        </div>
+        <div class="py-4 md:py-0 px-6">
+          <p class="font-display font-extrabold text-3xl sm:text-4xl text-zinc-900 tnum">150+</p>
+          <p class="text-xs sm:text-sm text-slate-500 font-medium mt-1">Luxury Partners / Local Tour Guides</p>
+        </div>
+      </div>
+
+      <!-- 3 Top Nature Experience Cards (1x3 Grid) -->
+      <div id="topExpCardsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <!-- Card 1: Sunset Cruise in Whitehaven Beach -->
+        <article class="exp-card group relative aspect-[3/4] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between p-6"
+                 data-id="whitehaven" data-name="Whitehaven Beach" data-country="Australia" data-region="oceania" data-price="2450">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80"
+               onerror="this.src='../../assets/mandalika_escape/palm-bay.jpg'"
+               alt="Whitehaven Beach Australia"
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/30 pointer-events-none"></div>
+
+          <!-- Top Badge: Flag & Country -->
+          <div class="relative z-10 flex items-center justify-between">
+            <span class="inline-flex items-center gap-1.5 bg-black/40 backdrop-blur-md text-white text-[11px] font-mono px-2.5 py-1 rounded-full border border-white/20">
+              <span class="live-price-tag" data-usd="2450">$2,450 / pax</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-md text-zinc-900 font-display font-bold px-3 py-1 rounded-full text-xs shadow-xs">
+              <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+              <span>Australia</span>
+            </span>
+          </div>
+
+          <!-- Bottom Text Overlay & Frosted Explore More Button -->
+          <div class="relative z-10 space-y-4">
+            <h3 class="font-display font-extrabold text-xl sm:text-2xl text-white leading-tight">
+              Sunset Cruise in Whitehaven Beach
+            </h3>
+            <p class="text-xs text-white/80 line-clamp-2 leading-relaxed">
+              Whitsunday turquoise channels, silica sand coves, and champagne sunset catamaran cruise.
+            </p>
+            <div>
+              <button type="button" onclick="openExpModal('Sunset Cruise in Whitehaven Beach', 'Australia', 2450, '5 Days · Catamaran Cruise &amp; Reef Snorkel', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80')"
+                      class="inline-flex items-center gap-2 bg-white/90 hover:bg-white text-zinc-900 font-display font-bold text-xs px-5 py-2.5 rounded-full shadow-md backdrop-blur-md transition-all active:scale-95 cursor-pointer">
+                <span>Explore More</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Picnic on Lake Lucerne Swiss -->
+        <article class="exp-card group relative aspect-[3/4] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between p-6"
+                 data-id="lucerne" data-name="Lake Lucerne" data-country="Switzerland" data-region="europe" data-price="3150">
+          <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1000&q=80"
+               onerror="this.src='../../assets/serenity_umrah_privilege/toba.jpg'"
+               alt="Lake Lucerne Switzerland"
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/30 pointer-events-none"></div>
+
+          <!-- Top Badge: Switzerland -->
+          <div class="relative z-10 flex items-center justify-between">
+            <span class="inline-flex items-center gap-1.5 bg-black/40 backdrop-blur-md text-white text-[11px] font-mono px-2.5 py-1 rounded-full border border-white/20">
+              <span class="live-price-tag" data-usd="3150">$3,150 / pax</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-md text-zinc-900 font-display font-bold px-3 py-1 rounded-full text-xs shadow-xs">
+              <span class="w-2 h-2 rounded-full bg-red-500"></span>
+              <span>Switzerland</span>
+            </span>
+          </div>
+
+          <!-- Bottom Text Overlay & Frosted Explore More Button -->
+          <div class="relative z-10 space-y-4">
+            <h3 class="font-display font-extrabold text-xl sm:text-2xl text-white leading-tight">
+              Picnic on Lake Lucerne Swiss
+            </h3>
+            <p class="text-xs text-white/80 line-clamp-2 leading-relaxed">
+              Alpine meadows, steamship voyages across crystal mountain lakes, and private Swiss fondue picnics.
+            </p>
+            <div>
+              <button type="button" onclick="openExpModal('Picnic on Lake Lucerne Swiss', 'Switzerland', 3150, '6 Days · Alpine Rail &amp; Lake Cruise', 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1000&q=80')"
+                      class="inline-flex items-center gap-2 bg-white/90 hover:bg-white text-zinc-900 font-display font-bold text-xs px-5 py-2.5 rounded-full shadow-md backdrop-blur-md transition-all active:scale-95 cursor-pointer">
+                <span>Explore More</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Tour the Angel Falls Waterfall -->
+        <article class="exp-card group relative aspect-[3/4] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between p-6"
+                 data-id="angelfalls" data-name="Angel Falls" data-country="Venezuela" data-region="americas" data-price="2780">
+          <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1000&q=80"
+               onerror="this.src='../../assets/mandalika_escape/rinjani-from-gili.jpg'"
+               alt="Angel Falls Waterfall Venezuela"
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/30 pointer-events-none"></div>
+
+          <!-- Top Badge: Venezuela -->
+          <div class="relative z-10 flex items-center justify-between">
+            <span class="inline-flex items-center gap-1.5 bg-black/40 backdrop-blur-md text-white text-[11px] font-mono px-2.5 py-1 rounded-full border border-white/20">
+              <span class="live-price-tag" data-usd="2780">$2,780 / pax</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-md text-zinc-900 font-display font-bold px-3 py-1 rounded-full text-xs shadow-xs">
+              <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+              <span>Venezuela</span>
+            </span>
+          </div>
+
+          <!-- Bottom Text Overlay & Frosted Explore More Button -->
+          <div class="relative z-10 space-y-4">
+            <h3 class="font-display font-extrabold text-xl sm:text-2xl text-white leading-tight">
+              Tour the Angel Falls Waterfall
+            </h3>
+            <p class="text-xs text-white/80 line-clamp-2 leading-relaxed">
+              The world's highest uninterrupted waterfall plunging from Auyán-tepui into pristine tropical rainforest.
+            </p>
+            <div>
+              <button type="button" onclick="openExpModal('Tour the Angel Falls Waterfall', 'Venezuela', 2780, '5 Days · Tepui Hike &amp; River Canoe', 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1000&q=80')"
+                      class="inline-flex items-center gap-2 bg-white/90 hover:bg-white text-zinc-900 font-display font-bold text-xs px-5 py-2.5 rounded-full shadow-md backdrop-blur-md transition-all active:scale-95 cursor-pointer">
+                <span>Explore More</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Empty State UI if no search matches -->
+      <div id="noResultsBox" class="hidden text-center py-16 px-4 bg-slate-50 rounded-3xl border border-dashed border-slate-300 my-8">
+        <div class="w-16 h-16 mx-auto rounded-full bg-slate-100 flex items-center justify-center text-slate-400 mb-3">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-lg text-zinc-800">No Sanctuaries Found</h3>
+        <p class="text-xs text-slate-500 max-w-sm mx-auto mt-1">We couldn't find nature packages matching your specific filter criteria. Try adjusting your destination or budget range.</p>
+        <button type="button" onclick="resetAllFilters()" class="mt-4 bg-[#1C86D4] text-white px-5 py-2 rounded-xl text-xs font-bold shadow-md hover:bg-[#1672B5] transition cursor-pointer">
+          Reset All Filters
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 3: DESTINATION SHOWCASE GRID (#destinations-section)               -->
+  <!-- ========================================================================= -->
+  <section id="destinations-section" class="w-full bg-white py-16 sm:py-24 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+      <!-- Centered Two-Tone Heading (DESIGN.md §4.3) -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-zinc-900 leading-snug">
+          Uncover the marvels that await you at<br />
+          <span class="text-slate-400 font-medium">your carefully chosen destinations.</span>
+        </h2>
+      </div>
+
+      <!-- Asymmetric Bento Layout (1 Tall Feature + 2x2 Matrix) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+        <!-- Left Column: Tall Featured Card (~42% Width -> 5 cols) -->
+        <div class="lg:col-span-5 relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 flex flex-col justify-between p-6 sm:p-8 min-h-[480px] group">
+          <img id="bentoHeroImg"
+               src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80"
+               onerror="this.src='../../assets/khatulistiwa_explorer/raja-ampat.jpg'"
+               alt="Stunning aerial sandbar lagoon"
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/40 pointer-events-none"></div>
+
+          <!-- Top Micro Header -->
+          <div class="relative z-10 flex items-center justify-between">
+            <span class="inline-block bg-white/20 backdrop-blur-md text-white font-mono text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full border border-white/20">
+              FEATURED SANCTUARY
+            </span>
+            <span id="bentoFeatureBadge" class="text-xs font-mono text-white/90">Greece</span>
+          </div>
+
+          <!-- Bottom Text & Floating Switcher Capsule -->
+          <div class="relative z-10 space-y-6">
+            <div>
+              <span id="bentoFeaturePrice" class="inline-block font-mono text-xs font-bold text-emerald-300 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/20 mb-2 live-price-tag" data-usd="2500">$2,500 / pax</span>
+              <h3 id="bentoFeatureTitle" class="font-display text-2xl sm:text-4xl font-extrabold text-white leading-tight max-w-xs drop-shadow-md">
+                Enjoy the stunning natural beauty.
+              </h3>
+            </div>
+
+            <!-- Floating Switcher Capsule (5 Thumbnails) -->
+            <div class="bg-white/90 backdrop-blur-md p-2 rounded-full border border-white/40 shadow-lg inline-flex items-center gap-2">
+              <button type="button" onclick="switchBentoView(0)" class="bento-thumb w-8 h-8 rounded-full overflow-hidden border-2 border-[#1C86D4] transition" aria-label="View Slaying Sands">
+                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=200&q=80" alt="Greece" class="w-full h-full object-cover" />
+              </button>
+              <button type="button" onclick="switchBentoView(1)" class="bento-thumb w-8 h-8 rounded-full overflow-hidden border-2 border-transparent hover:border-[#1C86D4] transition" aria-label="View Oceanland">
+                <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=200&q=80" alt="Panama" class="w-full h-full object-cover" />
+              </button>
+              <button type="button" onclick="switchBentoView(2)" class="bento-thumb w-8 h-8 rounded-full overflow-hidden border-2 border-transparent hover:border-[#1C86D4] transition" aria-label="View Alta Mountain">
+                <img src="https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=200&q=80" alt="Greenland" class="w-full h-full object-cover" />
+              </button>
+              <button type="button" onclick="switchBentoView(3)" class="bento-thumb w-8 h-8 rounded-full overflow-hidden border-2 border-transparent hover:border-[#1C86D4] transition" aria-label="View Nusa Penida">
+                <img src="../../assets/bagus_travel/nusa-penida.jpg" alt="Indonesia" class="w-full h-full object-cover" />
+              </button>
+              <button type="button" onclick="switchBentoView(4)" class="bento-thumb w-8 h-8 rounded-full overflow-hidden border-2 border-transparent hover:border-[#1C86D4] transition" aria-label="View Raja Ampat">
+                <img src="../../assets/khatulistiwa_explorer/raja-ampat.jpg" alt="Raja Ampat" class="w-full h-full object-cover" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: 2x2 Bento Matrix (~58% Width -> 7 cols) -->
+        <div id="bentoCardsContainer" class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+          <!-- Item 1 (Top-Left): Slaying Sands Beach -->
+          <article class="bento-card bg-white rounded-3xl p-4 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                   data-id="slaying-sands" data-name="Slaying Sands Beach" data-country="Greece" data-region="europe" data-price="2500"
+                   onclick="openExpModal('Slaying Sands Beach', 'Greece', 2500, '7 Days &amp; 6 Nights • Flight + Hotel Included', 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80')">
+            <div>
+              <div class="relative h-44 rounded-2xl overflow-hidden mb-3.5 bg-slate-100">
+                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80"
+                     onerror="this.src='../../assets/bagus_travel/tanah-lot.jpg'"
+                     alt="Slaying Sands Beach Greece"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span class="absolute top-2.5 right-2.5 bg-white/95 text-zinc-900 font-display font-bold text-[10px] px-2.5 py-1 rounded-full shadow-xs">
+                  Greece
+                </span>
+              </div>
+              <div class="flex justify-between items-baseline px-1">
+                <h3 class="font-display font-bold text-base text-zinc-900 group-hover:text-[#1C86D4] transition-colors">Slaying Sands Beach</h3>
+                <span class="font-display font-extrabold text-base text-zinc-900 tnum live-price-tag" data-usd="2500">$2,500</span>
+              </div>
+              <p class="text-[11px] text-slate-400 px-1 mt-0.5">7 Days &amp; 6 Nights • Flight + Hotel</p>
+            </div>
+          </article>
+
+          <!-- Item 2 (Top-Right): Oceanland Beach -->
+          <article class="bento-card bg-white rounded-3xl p-4 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                   data-id="oceanland" data-name="Oceanland Beach" data-country="Panama" data-region="americas" data-price="2100"
+                   onclick="openExpModal('Oceanland Beach Resort', 'Panama', 2100, '5 Days &amp; 4 Nights • All Inclusive Escape', 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=800&q=80')">
+            <div>
+              <div class="relative h-44 rounded-2xl overflow-hidden mb-3.5 bg-slate-100">
+                <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=800&q=80"
+                     onerror="this.src='../../assets/mandalika_escape/beach.jpg'"
+                     alt="Oceanland Beach Panama"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span class="absolute top-2.5 right-2.5 bg-white/95 text-zinc-900 font-display font-bold text-[10px] px-2.5 py-1 rounded-full shadow-xs">
+                  Panama
+                </span>
+              </div>
+              <div class="flex justify-between items-baseline px-1">
+                <h3 class="font-display font-bold text-base text-zinc-900 group-hover:text-[#1C86D4] transition-colors">Oceanland Beach</h3>
+                <span class="font-display font-extrabold text-base text-zinc-900 tnum live-price-tag" data-usd="2100">$2,100</span>
+              </div>
+              <p class="text-[11px] text-slate-400 px-1 mt-0.5">5 Days &amp; 4 Nights • All Inclusive</p>
+            </div>
+          </article>
+
+          <!-- Item 3 (Bottom-Left): Alta Mountain -->
+          <article class="bento-card bg-white rounded-3xl p-4 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                   data-id="alta-mountain" data-name="Alta Mountain" data-country="Greenland" data-region="europe" data-price="2870"
+                   onclick="openExpModal('Alta Mountain Winter Expedition', 'Greenland', 2870, '6 Days &amp; 5 Nights • Winter Arctic Trek', 'https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=800&q=80')">
+            <div>
+              <div class="relative h-44 rounded-2xl overflow-hidden mb-3.5 bg-slate-100">
+                <img src="https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=800&q=80"
+                     onerror="this.src='../../assets/khatulistiwa_explorer/bromo.jpg'"
+                     alt="Alta Mountain Greenland"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span class="absolute top-2.5 right-2.5 bg-white/95 text-zinc-900 font-display font-bold text-[10px] px-2.5 py-1 rounded-full shadow-xs">
+                  Greenland
+                </span>
+              </div>
+              <div class="flex justify-between items-baseline px-1">
+                <h3 class="font-display font-bold text-base text-zinc-900 group-hover:text-[#1C86D4] transition-colors">Alta Mountain</h3>
+                <span class="font-display font-extrabold text-base text-zinc-900 tnum live-price-tag" data-usd="2870">$2,870</span>
+              </div>
+              <p class="text-[11px] text-slate-400 px-1 mt-0.5">6 Days &amp; 5 Nights • Arctic Trek</p>
+            </div>
+          </article>
+
+          <!-- Item 4 (Bottom-Right): Nusa Penida Coastal Sanctuary -->
+          <article class="bento-card bg-white rounded-3xl p-4 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                   data-id="nusa-penida" data-name="Nusa Penida" data-country="Indonesia" data-region="asia" data-price="1850"
+                   onclick="openExpModal('Nusa Penida Sanctuary', 'Indonesia', 1850, '4 Days &amp; 3 Nights • Emerald Lagoon Retreat', '../../assets/bagus_travel/nusa-penida.jpg')">
+            <div>
+              <div class="relative h-44 rounded-2xl overflow-hidden mb-3.5 bg-slate-100">
+                <img src="../../assets/bagus_travel/nusa-penida.jpg"
+                     alt="Nusa Penida Indonesia"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span class="absolute top-2.5 right-2.5 bg-white/95 text-zinc-900 font-display font-bold text-[10px] px-2.5 py-1 rounded-full shadow-xs">
+                  Indonesia
+                </span>
+              </div>
+              <div class="flex justify-between items-baseline px-1">
+                <h3 class="font-display font-bold text-base text-zinc-900 group-hover:text-[#1C86D4] transition-colors">Nusa Penida</h3>
+                <span class="font-display font-extrabold text-base text-zinc-900 tnum live-price-tag" data-usd="1850">$1,850</span>
+              </div>
+              <p class="text-[11px] text-slate-400 px-1 mt-0.5">4 Days &amp; 3 Nights • Lagoon Villa</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 4: NATURELY FAQ ACCORDION (#faq-section)                          -->
+  <!-- ========================================================================= -->
+  <section id="faq-section" class="w-full bg-white py-16 sm:py-24 border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-6 sm:px-10 lg:px-16">
+      <!-- Centered Two-Tone Heading (DESIGN.md §4.4) -->
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-zinc-900 leading-snug">
+          Answer to Your Naturely<br />
+          <span class="text-slate-400 font-medium">Travel Questions</span>
+        </h2>
+      </div>
+
+      <!-- Accordion Container (DESIGN.md §4.4) -->
+      <div class="divide-y divide-slate-200 border-y border-slate-200">
+        <!-- Item 1: Active / Open by default -->
+        <div class="faq-item py-4">
+          <button type="button" onclick="toggleFaq(this)" class="w-full font-display font-bold text-sm sm:text-base text-zinc-900 flex justify-between items-center text-left gap-4 py-1 hover:text-[#1C86D4] transition-colors cursor-pointer" aria-expanded="true">
+            <span>What services are available on this website?</span>
+            <span class="faq-icon font-mono text-xl font-bold text-[#1C86D4] shrink-0">−</span>
+          </button>
+          <div class="faq-answer mt-2.5 text-slate-500 text-xs sm:text-sm leading-relaxed">
+            We offer flight bookings, hotel reservations, car rentals, tour packages and customizable itineraries for international and domestic travel.
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="faq-item py-4">
+          <button type="button" onclick="toggleFaq(this)" class="w-full font-display font-bold text-sm sm:text-base text-zinc-900 flex justify-between items-center text-left gap-4 py-1 hover:text-[#1C86D4] transition-colors cursor-pointer" aria-expanded="false">
+            <span>How can I book a trip through this website?</span>
+            <span class="faq-icon font-mono text-xl font-bold text-slate-400 shrink-0">+</span>
+          </button>
+          <div class="faq-answer hidden mt-2.5 text-slate-500 text-xs sm:text-sm leading-relaxed">
+            You can select your preferred nature destination, choose your travel dates and squad size, and complete your reservation through our verified global multi-supplier booking engine.
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="faq-item py-4">
+          <button type="button" onclick="toggleFaq(this)" class="w-full font-display font-bold text-sm sm:text-base text-zinc-900 flex justify-between items-center text-left gap-4 py-1 hover:text-[#1C86D4] transition-colors cursor-pointer" aria-expanded="false">
+            <span>Can I cancel or reschedule my trip?</span>
+            <span class="faq-icon font-mono text-xl font-bold text-slate-400 shrink-0">+</span>
+          </button>
+          <div class="faq-answer hidden mt-2.5 text-slate-500 text-xs sm:text-sm leading-relaxed">
+            Yes. Flexible cancellations and date reschedules are supported up to 7 days prior to departure across our nature sanctuaries without unexpected penalties.
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="faq-item py-4">
+          <button type="button" onclick="toggleFaq(this)" class="w-full font-display font-bold text-sm sm:text-base text-zinc-900 flex justify-between items-center text-left gap-4 py-1 hover:text-[#1C86D4] transition-colors cursor-pointer" aria-expanded="false">
+            <span>Do you offer discounts for group bookings?</span>
+            <span class="faq-icon font-mono text-xl font-bold text-slate-400 shrink-0">+</span>
+          </button>
+          <div class="faq-answer hidden mt-2.5 text-slate-500 text-xs sm:text-sm leading-relaxed">
+            Absolutely. Special squad rates and exclusive private guide allocations apply automatically for expeditions booked for groups of 6 travelers or more.
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="faq-item py-4">
+          <button type="button" onclick="toggleFaq(this)" class="w-full font-display font-bold text-sm sm:text-base text-zinc-900 flex justify-between items-center text-left gap-4 py-1 hover:text-[#1C86D4] transition-colors cursor-pointer" aria-expanded="false">
+            <span>What should I do if I encounter issues during my trip?</span>
+            <span class="faq-icon font-mono text-xl font-bold text-slate-400 shrink-0">+</span>
+          </button>
+          <div class="faq-answer hidden mt-2.5 text-slate-500 text-xs sm:text-sm leading-relaxed">
+            Our 24/7 expedition concierge is permanently on standby via dedicated WhatsApp emergency line and on-site verified guides to resolve any logistics on the spot.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 5: CALL TO ACTION BANNER (#cta-section)                           -->
+  <!-- ========================================================================= -->
+  <section id="cta-section" class="w-full py-8 sm:py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-10 lg:px-16">
+      <div class="relative h-80 sm:h-96 rounded-3xl overflow-hidden flex flex-col items-center justify-center text-center px-6 shadow-2xl">
+        <!-- Crater Lake & Emerald Mountain Backdrop -->
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80"
+             onerror="this.src='../../assets/khatulistiwa_explorer/padar.jpg'"
+             alt="Majestic crater lake surrounded by dramatic peaks"
+             class="absolute inset-0 w-full h-full object-cover scale-105 transition-transform duration-1000" />
+        <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
+
+        <!-- Headline & Action Button (DESIGN.md §4.5) -->
+        <div class="relative z-10 max-w-xl mx-auto space-y-6">
+          <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight leading-tight drop-shadow-md">
+            Start your thrilling journey<br />
+            into nature today.
+          </h2>
+          <div>
+            <button type="button" onclick="openInquiryModal()"
+                    class="bg-white hover:bg-slate-100 active:scale-95 text-zinc-900 font-display font-bold text-xs sm:text-sm px-8 py-3.5 rounded-full shadow-2xl transition-all duration-200 cursor-pointer">
+              Get in Touch
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 6: CORPORATE FOOTER (#footer-section)                             -->
+  <!-- ========================================================================= -->
+  <footer id="footer-section" class="w-full bg-white border-t border-slate-200 pt-14 pb-8 px-6 sm:px-10 lg:px-16">
+    <div class="max-w-7xl mx-auto space-y-12">
+      <!-- 1. Top Row: Brand Promise & Official Contacts (DESIGN.md §4.6) -->
+      <div class="flex flex-col md:flex-row md:items-start justify-between gap-8 pb-10 border-b border-slate-200">
+        <div class="max-w-md">
+          <h3 class="font-display font-extrabold text-xl sm:text-2xl text-zinc-900 leading-snug">
+            Easy booking and personalized<br />
+            <span class="text-slate-400 font-medium">services for unforgettable trips</span>
+          </h3>
+          <!-- Newsletter Subscription Input -->
+          <form onsubmit="handleNewsletterSubmit(event)" class="mt-4 flex items-center gap-2 max-w-sm">
+            <input id="newsletterEmail" type="email" required placeholder="Enter your email..."
+                   class="w-full h-10 px-3.5 rounded-xl border border-slate-200 text-xs font-medium focus:outline-none focus:border-[#1C86D4]" />
+            <button type="submit" class="h-10 px-4 bg-[#1C86D4] hover:bg-[#1672B5] text-white rounded-xl text-xs font-bold shrink-0 transition cursor-pointer">
+              Subscribe
+            </button>
+          </form>
+        </div>
+        <div class="text-xs sm:text-sm text-slate-500 space-y-1.5 md:text-right font-sans">
+          <p><a href="mailto:bloosm@travel.id" class="hover:text-zinc-900 transition-colors">bloosm@travel.id</a></p>
+          <p><a href="tel:+62218123456789" class="hover:text-zinc-900 transition-colors font-mono">(021) 812-3456-789</a></p>
+          <p>Jakarta 123, Indonesia</p>
+        </div>
+      </div>
+
+      <!-- 2. Middle Navigation Row: Symmetric Nav & Center Wordmark -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 font-display font-semibold text-xs text-slate-600">
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="#destinations-section" class="hover:text-zinc-900 transition-colors">Destination</a>
+          <a href="#experiences-section" class="hover:text-zinc-900 transition-colors">Tour Package</a>
+          <a href="#experiences-section" class="hover:text-zinc-900 transition-colors">Our Story</a>
+        </div>
+
+        <!-- Center Plain Wordmark "bloosm" -->
+        <a href="#hero-section" class="font-display font-extrabold text-xl tracking-tight text-zinc-900 hover:text-[#1C86D4] transition-colors" aria-label="Bloosm Travel Home">
+          bloosm
+        </a>
+
+        <div class="flex flex-wrap items-center gap-6 justify-end">
+          <a href="#destinations-section" class="hover:text-zinc-900 transition-colors">Account</a>
+          <a href="#destinations-section" class="hover:text-zinc-900 transition-colors">Pricing</a>
+          <a href="#faq-section" class="hover:text-zinc-900 transition-colors">Term</a>
+        </div>
+      </div>
+
+      <!-- 3. Bottom Legal Baseline -->
+      <div class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-sans">
+        <p>&copy; <span id="footerYear">2026</span> Bloosm Travel. All rights reserved. Powered by Ortasys Storefront Engine.</p>
+        <div class="flex items-center gap-5">
+          <a href="#faq-section" class="hover:text-zinc-600 transition-colors">Terms &amp; Conditions</a>
+          <span>•</span>
+          <a href="#faq-section" class="hover:text-zinc-600 transition-colors">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ========================================================================= -->
+  <!-- INTERACTIVE MODALS & CONCIERGE DIALOGS                                    -->
+  <!-- ========================================================================= -->
+
+  <!-- 1. Rich Expedition & Booking Modal with Dynamic Price Calculation -->
+  <div id="expModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200 my-8">
+      <!-- Modal Header with Photo Header -->
+      <div class="relative h-44 bg-zinc-900 text-white p-6 flex flex-col justify-between overflow-hidden">
+        <img id="modalImg" src="" alt="Expedition view" class="absolute inset-0 w-full h-full object-cover opacity-60" />
+        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-black/30"></div>
+        <div class="relative z-10 flex items-center justify-between">
+          <span id="expModalCountry" class="font-mono text-[10px] bg-[#1C86D4] text-white font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+            Featured Expedition
+          </span>
+          <button type="button" onclick="closeExpModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition cursor-pointer" aria-label="Close modal">
+            ✕
+          </button>
+        </div>
+        <div class="relative z-10">
+          <h3 id="expModalTitle" class="font-display text-xl sm:text-2xl font-bold leading-tight">Expedition Details</h3>
+          <p id="expModalDetail" class="text-xs text-white/80 mt-0.5 font-medium">All Inclusive Package</p>
+        </div>
+      </div>
+
+      <!-- Booking Configuration Form -->
+      <div id="bookingFormContainer" class="p-6 space-y-4 text-xs">
+        <!-- Interactive Guests & Nights Adjuster -->
+        <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-slate-500 font-medium">Rate per Person:</span>
+            <span id="expModalRatePerPax" class="font-mono font-bold text-zinc-900">$2,450</span>
+          </div>
+          <div class="flex items-center justify-between border-t border-slate-200/60 pt-2">
+            <span class="text-slate-500 font-medium">Travelers (Pax):</span>
+            <div class="flex items-center gap-2">
+              <button type="button" onclick="stepBookingPax(-1)" class="w-6 h-6 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 font-bold flex items-center justify-center cursor-pointer">−</button>
+              <span id="bookingPaxVal" class="font-mono font-bold w-4 text-center">2</span>
+              <button type="button" onclick="stepBookingPax(1)" class="w-6 h-6 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 font-bold flex items-center justify-center cursor-pointer">+</button>
+            </div>
+          </div>
+          <div class="flex items-center justify-between border-t border-slate-200/60 pt-2 font-mono">
+            <div>
+              <span class="text-slate-900 font-bold block">Live Total Amount:</span>
+              <span class="text-[10px] text-slate-400">Incl. 11% eco conservation &amp; taxes</span>
+            </div>
+            <span id="bookingTotalCalc" class="text-base font-extrabold text-[#1C86D4]">$5,439</span>
+          </div>
+        </div>
+
+        <form onsubmit="handleExpBookSubmit(event)" class="space-y-3">
+          <div class="grid grid-cols-2 gap-3">
+            <label class="block text-left">
+              <span class="block text-[11px] font-bold uppercase text-slate-400 mb-1 font-sans">Lead Traveler</span>
+              <input id="expName" type="text" required placeholder="John Doe" value="Elena Rostova"
+                     class="w-full h-10 px-3.5 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-[#1C86D4]" />
+            </label>
+            <label class="block text-left">
+              <span class="block text-[11px] font-bold uppercase text-slate-400 mb-1 font-sans">Contact Email</span>
+              <input id="expEmail" type="email" required placeholder="john@example.com" value="elena@bloosm.travel"
+                     class="w-full h-10 px-3.5 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-[#1C86D4]" />
+            </label>
+          </div>
+
+          <label class="block text-left">
+            <span class="block text-[11px] font-bold uppercase text-slate-400 mb-1 font-sans">Payment Method</span>
+            <div class="grid grid-cols-3 gap-2">
+              <label class="border border-slate-200 rounded-xl p-2 text-center cursor-pointer hover:border-[#1C86D4] flex flex-col items-center">
+                <input type="radio" name="payMethod" value="snap" checked class="accent-[#1C86D4]" />
+                <span class="font-bold text-[10px] mt-1">SNAP BI QRIS</span>
+              </label>
+              <label class="border border-slate-200 rounded-xl p-2 text-center cursor-pointer hover:border-[#1C86D4] flex flex-col items-center">
+                <input type="radio" name="payMethod" value="doku" class="accent-[#1C86D4]" />
+                <span class="font-bold text-[10px] mt-1">DOKU Wallet</span>
+              </label>
+              <label class="border border-slate-200 rounded-xl p-2 text-center cursor-pointer hover:border-[#1C86D4] flex flex-col items-center">
+                <input type="radio" name="payMethod" value="cc" class="accent-[#1C86D4]" />
+                <span class="font-bold text-[10px] mt-1">Credit Card</span>
+              </label>
+            </div>
+          </label>
+
+          <button id="btnSubmitBooking" type="submit" class="w-full mt-2 bg-[#1C86D4] hover:bg-[#1672B5] text-white font-display font-bold text-xs py-3.5 rounded-xl shadow-md transition-all active:scale-95 cursor-pointer">
+            Confirm Nature Expedition &amp; Issue Voucher
+          </button>
+        </form>
+      </div>
+
+      <!-- Confirmation Success Screen (Shown after booking) -->
+      <div id="bookingSuccessContainer" class="hidden p-6 text-center space-y-4">
+        <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-2xl">
+          ✓
+        </div>
+        <div>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-emerald-600 font-bold">RESERVATION CONFIRMED</span>
+          <h4 class="font-display font-extrabold text-xl text-zinc-900 mt-1">Expedition Booked Successfully!</h4>
+          <p class="text-xs text-slate-500 mt-1">Your reservation code has been generated through the Ortasys booking engine.</p>
+        </div>
+        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-left font-mono text-xs space-y-2">
+          <div class="flex justify-between">
+            <span class="text-slate-400">Booking Ref:</span>
+            <span id="resCode" class="font-bold text-zinc-900">BL-2026-8942</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slate-400">Sanctuary:</span>
+            <span id="resSanctuary" class="font-bold text-zinc-900">Whitehaven Beach</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slate-400">Travelers:</span>
+            <span id="resPax" class="font-bold text-zinc-900">2 Guests</span>
+          </div>
+          <div class="flex justify-between border-t border-slate-200 pt-2">
+            <span class="text-slate-400">Settlement:</span>
+            <span class="font-bold text-emerald-600">Verified Live via SNAP BI</span>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <button type="button" onclick="simulateVoucherDownload()" class="w-1/2 py-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 font-bold text-xs transition cursor-pointer">
+            Download Voucher
+          </button>
+          <button type="button" onclick="closeExpModal()" class="w-1/2 py-2.5 rounded-xl bg-[#1C86D4] text-white font-bold text-xs shadow-md hover:bg-[#1672B5] transition cursor-pointer">
+            Close &amp; Explore More
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Concierge Inquiry / Get in Touch Modal -->
+  <div id="inquiryModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-slate-200">
+      <div class="bg-zinc-900 text-white p-6 flex items-center justify-between">
+        <div>
+          <span class="font-mono text-[10px] text-[#1C86D4] font-bold uppercase tracking-widest">CONCIERGE INQUIRY</span>
+          <h3 class="font-display text-xl font-bold leading-tight mt-0.5">Plan with Nature Experts</h3>
+        </div>
+        <button type="button" onclick="closeInquiryModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition cursor-pointer">
+          ✕
+        </button>
+      </div>
+      <form onsubmit="handleInquirySubmit(event)" class="p-6 space-y-3.5 text-xs font-sans">
+        <label class="block">
+          <span class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Your Name</span>
+          <input id="inqName" type="text" required placeholder="Elena Rostova" value="Elena Rostova"
+                 class="w-full h-10 px-3.5 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-[#1C86D4]" />
+        </label>
+        <label class="block">
+          <span class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Email / WhatsApp</span>
+          <input id="inqContact" type="text" required placeholder="elena@nature.com" value="+62 812-9876-5432"
+                 class="w-full h-10 px-3.5 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-[#1C86D4]" />
+        </label>
+        <label class="block">
+          <span class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Destination Wishlist</span>
+          <textarea rows="3" placeholder="Tell us about the sights, dates, and mountains on your bucket list..."
+                    class="w-full p-3 rounded-xl border border-slate-200 font-medium focus:outline-none focus:border-[#1C86D4]">We are interested in a 6-day catamaran &amp; alpine private tour with photography guides.</textarea>
+        </label>
+        <button type="submit" class="w-full bg-[#1C86D4] hover:bg-[#1672B5] text-white font-display font-bold text-xs py-3.5 rounded-xl shadow-md transition-all active:scale-95 cursor-pointer">
+          Submit Expedition Inquiry
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. Auth (Login / Register) Modal -->
+  <div id="authModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-slate-200">
+      <div class="p-6 pb-2 flex items-center justify-between border-b border-slate-100">
+        <div class="flex gap-4 text-sm font-display font-bold">
+          <button id="authTabLogin" type="button" onclick="switchAuthTab('login')" class="pb-2 border-b-2 border-[#1C86D4] text-[#1C86D4] cursor-pointer">Login</button>
+          <button id="authTabRegister" type="button" onclick="switchAuthTab('register')" class="pb-2 border-b-2 border-transparent text-slate-400 hover:text-zinc-900 cursor-pointer">Create Account</button>
+        </div>
+        <button type="button" onclick="closeAuthModal()" class="w-7 h-7 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center cursor-pointer">✕</button>
+      </div>
+      <form onsubmit="handleAuthSubmit(event)" class="p-6 space-y-3.5 text-xs">
+        <label class="block">
+          <span class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Email Address</span>
+          <input id="authEmail" type="email" required placeholder="traveler@bloosm.com" value="elena@bloosm.travel"
+                 class="w-full h-10 px-3.5 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-[#1C86D4]" />
+        </label>
+        <label class="block">
+          <span class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Password</span>
+          <input type="password" required value="secret12345"
+                 class="w-full h-10 px-3.5 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-[#1C86D4]" />
+        </label>
+        <button type="submit" id="authSubmitBtn" class="w-full bg-[#1C86D4] hover:bg-[#1672B5] text-white font-display font-bold text-xs py-3.5 rounded-xl shadow-md transition-all active:scale-95 cursor-pointer">
+          Sign In to Bloosm
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Feedback -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-zinc-900 text-white px-5 py-2.5 rounded-full text-xs font-sans font-bold shadow-2xl tracking-wide flex items-center gap-2 border border-zinc-700">
+    <span class="w-2 h-2 rounded-full bg-[#1C86D4]"></span>
+    <span id="toastMsg">Notification</span>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT APP CONTROLLERS & ENGINE LOGIC                                 -->
+  <!-- ========================================================================= -->
+  <script>
+    'use strict';
+
+    // State Variables
+    let isIdrCurrency = false;
+    const USD_TO_IDR_RATE = 16000;
+    let activeBookingPriceUsd = 2450;
+    let activeBookingPax = 2;
+    let activeBookingTitle = "Sunset Cruise in Whitehaven Beach";
+
+    // Calendar state (custom date picker)
+    let calYear = 2026;
+    let calMonth = 10; // November (0-indexed)
+    let calStartDate = '2026-11-13';
+    let calEndDate = '2026-11-20';
+
+    // Budget state (custom dropdown)
+    let selectedBudgetValue = 'all';
+
+    // Set Copyright Year
+    const currentYear = new Date().getFullYear();
+    const footerYear = document.getElementById('footerYear');
+    if (footerYear) footerYear.textContent = currentYear;
+
+    // Toast Notification System
+    let toastTimer;
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      const m = document.getElementById('toastMsg');
+      m.textContent = msg;
+      t.classList.remove('hidden');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        t.classList.add('hidden');
+      }, 3500);
+    }
+
+    // Format Currency Helper
+    function formatCurrency(usdAmount) {
+      if (isIdrCurrency) {
+        const idrVal = Math.round(usdAmount * USD_TO_IDR_RATE);
+        return 'Rp ' + idrVal.toLocaleString('id-ID');
+      }
+      return '$' + usdAmount.toLocaleString('en-US');
+    }
+
+    function updateAllPriceDisplays() {
+      document.querySelectorAll('.live-price-tag').forEach(el => {
+        const usd = parseFloat(el.getAttribute('data-usd') || 0);
+        if (usd > 0) {
+          const suffix = el.textContent.includes('/ pax') ? ' / pax' : '';
+          el.textContent = formatCurrency(usd) + suffix;
+        }
+      });
+      recalcBookingTotal();
+    }
+
+    // Language & Currency Switcher
+    function toggleLanguage() {
+      isIdrCurrency = !isIdrCurrency;
+      const langText = document.getElementById('langText');
+      const langFlag = document.getElementById('langFlag');
+      if (isIdrCurrency) {
+        langFlag.textContent = '🇮🇩';
+        langText.textContent = 'ID / IDR (Rp)';
+        showToast('Mata uang dialihkan ke Rupiah (IDR). Kurs live: 1 USD = Rp 16.000');
+      } else {
+        langFlag.textContent = '🇺🇸';
+        langText.textContent = 'US / EN ($)';
+        showToast('Currency switched to US Dollar ($ USD). Live rates active.');
+      }
+      updateAllPriceDisplays();
+    }
+
+    // Mobile Drawer Toggle
+    function toggleMobileDrawer() {
+      const d = document.getElementById('mobileDrawer');
+      d.classList.toggle('hidden');
+    }
+    document.getElementById('mobileMenuBtn').addEventListener('click', toggleMobileDrawer);
+
+    // =========================================================================
+    // SEARCH ENGINE & TABS LOGIC
+    // =========================================================================
+
+    function switchSearchTab(tabKey) {
+      const tabs = ['accommodation', 'flights', 'cars', 'tours'];
+      tabs.forEach(k => {
+        const btn = document.getElementById(`tab-btn-${k}`);
+        const fields = document.getElementById(`searchFields-${k}`);
+        if (k === tabKey) {
+          btn.className = 'search-tab-btn pb-2 border-b-2 border-[#1C86D4] text-[#1C86D4] font-bold flex items-center gap-1.5 transition-all shrink-0 cursor-pointer';
+          btn.setAttribute('aria-selected', 'true');
+          if (fields) fields.classList.remove('hidden');
+        } else {
+          btn.className = 'search-tab-btn pb-2 border-b-2 border-transparent text-slate-400 hover:text-zinc-900 flex items-center gap-1.5 transition-all shrink-0 cursor-pointer';
+          btn.setAttribute('aria-selected', 'false');
+          if (fields) fields.classList.add('hidden');
+        }
+      });
+      closeAllPopovers();
+      showToast(`Switched search mode to: ${tabKey.toUpperCase()}`);
+    }
+
+    function closeAllPopovers() {
+      closeDestPopover();
+      closeCalendarPopover();
+      closeGuestPopover();
+      closeBudgetPopover();
+    }
+
+    // 1. Destination Popover Controls
+    function openDestPopover(e) {
+      if (e) e.stopPropagation();
+      closeCalendarPopover();
+      closeGuestPopover();
+      closeBudgetPopover();
+      document.getElementById('destQuickPickPopover').classList.remove('hidden');
+    }
+
+    function closeDestPopover() {
+      const p = document.getElementById('destQuickPickPopover');
+      if (p) p.classList.add('hidden');
+    }
+
+    function selectDestination(destName) {
+      const input = document.getElementById('destInput');
+      input.value = destName;
+      document.getElementById('clearDestBtn').classList.remove('hidden');
+      closeDestPopover();
+      showToast(`Selected destination: ${destName}`);
+    }
+
+    function clearDestInput() {
+      const input = document.getElementById('destInput');
+      input.value = '';
+      document.getElementById('clearDestBtn').classList.add('hidden');
+      input.focus();
+    }
+
+    function filterDestSuggestions(query) {
+      const items = document.querySelectorAll('#destSuggestionsList .dest-item');
+      const q = query.toLowerCase();
+      document.getElementById('clearDestBtn').classList.toggle('hidden', query.trim() === '');
+      items.forEach(it => {
+        const txt = it.textContent.toLowerCase();
+        it.style.display = txt.includes(q) ? 'flex' : 'none';
+      });
+    }
+
+    function filterDestCategory(cat) {
+      document.querySelectorAll('.dest-cat-btn').forEach(b => {
+        b.className = 'dest-cat-btn px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 transition';
+      });
+      event.target.className = 'dest-cat-btn px-2.5 py-1 rounded-full bg-[#1C86D4] text-white transition';
+
+      const items = document.querySelectorAll('#destSuggestionsList .dest-item');
+      items.forEach(it => {
+        if (cat === 'all' || it.getAttribute('data-cat') === cat) {
+          it.style.display = 'flex';
+        } else {
+          it.style.display = 'none';
+        }
+      });
+    }
+
+    // 2. Custom Bloosm Date Range Picker & Calendar
+    function toggleCalendarPopover(e) {
+      if (e) e.stopPropagation();
+      const p = document.getElementById('calendarPopover');
+      const isHidden = p.classList.contains('hidden');
+      closeAllPopovers();
+      if (isHidden) {
+        p.classList.remove('hidden');
+        document.getElementById('calChevron').classList.add('rotate-180');
+        renderCalendarGrid();
+      }
+    }
+
+    function closeCalendarPopover() {
+      const p = document.getElementById('calendarPopover');
+      if (p) p.classList.add('hidden');
+      const c = document.getElementById('calChevron');
+      if (c) c.classList.remove('rotate-180');
+    }
+
+    function changeCalMonth(delta) {
+      calMonth += delta;
+      if (calMonth < 0) {
+        calMonth = 11;
+        calYear--;
+      } else if (calMonth > 11) {
+        calMonth = 0;
+        calYear++;
+      }
+      renderCalendarGrid();
+    }
+
+    function renderCalendarGrid() {
+      const grid = document.getElementById('calDaysGrid');
+      grid.innerHTML = '';
+
+      const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      document.getElementById('calMonthTitle').textContent = `${monthNames[calMonth]} ${calYear}`;
+
+      const firstDayIndex = new Date(calYear, calMonth, 1).getDay(); // Sunday is 0
+      const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+
+      // Empty leading days
+      for (let i = 0; i < firstDayIndex; i++) {
+        const empty = document.createElement('div');
+        empty.className = 'h-8';
+        grid.appendChild(empty);
+      }
+
+      // Day cells
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dObj = new Date(calYear, calMonth, day);
+        const dStr = dObj.toISOString().split('T')[0];
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = day;
+        btn.className = 'h-8 w-8 mx-auto rounded-full text-xs font-semibold flex items-center justify-center transition cursor-pointer ';
+
+        const isStart = calStartDate && dStr === calStartDate;
+        const isEnd = calEndDate && dStr === calEndDate;
+        const isInRange = calStartDate && calEndDate && dStr > calStartDate && dStr < calEndDate;
+
+        if (isStart || isEnd) {
+          btn.className += 'bg-[#1C86D4] text-white font-bold shadow-xs scale-105';
+        } else if (isInRange) {
+          btn.className += 'bg-[#1C86D4]/15 text-[#1C86D4] font-bold rounded-none';
+        } else {
+          btn.className += 'hover:bg-slate-100 text-zinc-800';
+        }
+
+        btn.onclick = () => handleDateClick(dStr);
+        grid.appendChild(btn);
+      }
+
+      updateCalendarInfo();
+    }
+
+    function handleDateClick(dStr) {
+      if (!calStartDate || (calStartDate && calEndDate)) {
+        calStartDate = dStr;
+        calEndDate = null;
+      } else if (calStartDate && !calEndDate) {
+        if (dStr < calStartDate) {
+          calStartDate = dStr;
+        } else {
+          calEndDate = dStr;
+        }
+      }
+      renderCalendarGrid();
+    }
+
+    function formatShortDate(d) {
+      const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      return `${d.getDate()} ${months[d.getMonth()]}`;
+    }
+
+    function updateCalendarInfo() {
+      if (calStartDate && calEndDate) {
+        const d1 = new Date(calStartDate);
+        const d2 = new Date(calEndDate);
+        const diff = Math.max(1, Math.round((d2 - d1) / (1000 * 60 * 60 * 24)));
+        document.getElementById('calSelectedInfo').textContent = `${diff} Nights selected`;
+        document.getElementById('durationBadge').textContent = `${diff} Nights`;
+        document.getElementById('dateRangeSummaryText').textContent = `${formatShortDate(d1)} – ${formatShortDate(d2)} ${d2.getFullYear()}`;
+      } else if (calStartDate) {
+        const d1 = new Date(calStartDate);
+        document.getElementById('calSelectedInfo').textContent = `Check-in: ${formatShortDate(d1)}`;
+      }
+    }
+
+    function applyDatePreset(days) {
+      const d1 = new Date(2026, 10, 13);
+      const d2 = new Date(2026, 10, 13 + days);
+      calStartDate = d1.toISOString().split('T')[0];
+      calEndDate = d2.toISOString().split('T')[0];
+      calYear = d1.getFullYear();
+      calMonth = d1.getMonth();
+      renderCalendarGrid();
+      showToast(`Dates set: ${days} Nights pass.`);
+    }
+
+    // 3. Guest & Room Stepper Popover
+    let guestCounts = { rooms: 1, adults: 2, children: 0 };
+
+    function toggleGuestPopover(e) {
+      if (e) e.stopPropagation();
+      const p = document.getElementById('guestStepperPopover');
+      const isHidden = p.classList.contains('hidden');
+      closeAllPopovers();
+      if (isHidden) {
+        p.classList.remove('hidden');
+        document.getElementById('guestChevron').classList.add('rotate-180');
+      }
+    }
+
+    function closeGuestPopover() {
+      const p = document.getElementById('guestStepperPopover');
+      if (p) p.classList.add('hidden');
+      const c = document.getElementById('guestChevron');
+      if (c) c.classList.remove('rotate-180');
+    }
+
+    function stepGuest(type, change) {
+      if (type === 'rooms') {
+        guestCounts.rooms = Math.max(1, Math.min(9, guestCounts.rooms + change));
+        document.getElementById('valRooms').textContent = guestCounts.rooms;
+      } else if (type === 'adults') {
+        guestCounts.adults = Math.max(1, Math.min(20, guestCounts.adults + change));
+        document.getElementById('valAdults').textContent = guestCounts.adults;
+      } else if (type === 'children') {
+        guestCounts.children = Math.max(0, Math.min(10, guestCounts.children + change));
+        document.getElementById('valChildren').textContent = guestCounts.children;
+      }
+      updateGuestSummary();
+    }
+
+    function setGuestPreset(r, a, c) {
+      guestCounts.rooms = r;
+      guestCounts.adults = a;
+      guestCounts.children = c;
+      document.getElementById('valRooms').textContent = r;
+      document.getElementById('valAdults').textContent = a;
+      document.getElementById('valChildren').textContent = c;
+      updateGuestSummary();
+    }
+
+    function updateGuestSummary() {
+      const totalGuests = guestCounts.adults + guestCounts.children;
+      const txt = `${guestCounts.rooms} Rm · ${totalGuests} Guests`;
+      document.getElementById('guestSummaryText').textContent = txt;
+    }
+
+    // 4. Custom Bloosm Budget Dropdown
+    function toggleBudgetPopover(e) {
+      if (e) e.stopPropagation();
+      const p = document.getElementById('budgetPopover');
+      const isHidden = p.classList.contains('hidden');
+      closeAllPopovers();
+      if (isHidden) {
+        p.classList.remove('hidden');
+        document.getElementById('budgetChevron').classList.add('rotate-180');
+      }
+    }
+
+    function closeBudgetPopover() {
+      const p = document.getElementById('budgetPopover');
+      if (p) p.classList.add('hidden');
+      const c = document.getElementById('budgetChevron');
+      if (c) c.classList.remove('rotate-180');
+    }
+
+    function selectBudgetOption(val, labelText) {
+      selectedBudgetValue = val;
+      document.getElementById('budgetSelectedText').textContent = labelText;
+
+      document.querySelectorAll('.budget-option-item').forEach(it => {
+        const itemVal = it.getAttribute('data-val');
+        const check = it.querySelector('.budget-check');
+        if (itemVal === val) {
+          it.className = 'budget-option-item px-3 py-2 rounded-2xl cursor-pointer flex items-center justify-between bg-[#1C86D4]/10 text-[#1C86D4] font-bold transition';
+          check.classList.remove('hidden');
+        } else {
+          it.className = 'budget-option-item px-3 py-2 rounded-2xl cursor-pointer flex items-center justify-between hover:bg-slate-50 text-zinc-800 transition font-medium';
+          check.classList.add('hidden');
+        }
+      });
+
+      closeBudgetPopover();
+      showToast(`Budget filter: ${labelText}`);
+    }
+
+    // Global outside click dismisser
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('#destQuickPickPopover') && !e.target.closest('#destInput')) {
+        closeDestPopover();
+      }
+      if (!e.target.closest('#calendarPopover') && !e.target.closest('#datePickerBtn')) {
+        closeCalendarPopover();
+      }
+      if (!e.target.closest('#guestStepperPopover') && !e.target.closest('#guestSummaryText')) {
+        closeGuestPopover();
+      }
+      if (!e.target.closest('#budgetPopover') && !e.target.closest('#budgetDropdownBtn')) {
+        closeBudgetPopover();
+      }
+      if (!e.target.closest('#authUserProfile')) {
+        const m = document.getElementById('userDropdownMenu');
+        if (m) m.classList.add('hidden');
+      }
+    });
+
+    // Handle Search Execution with Live Multi-Supplier Filter
+    function handleHeroSearch(e) {
+      e.preventDefault();
+      const destQuery = document.getElementById('destInput').value.trim().toLowerCase();
+      const budgetFilter = selectedBudgetValue;
+
+      const btn = document.getElementById('heroSearchBtn');
+      const btnText = document.getElementById('searchBtnText');
+      const btnIcon = document.getElementById('searchBtnIcon');
+
+      // Visual Loading state
+      btnText.textContent = 'Searching...';
+      btnIcon.innerHTML = `<svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>`;
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btnText.textContent = 'Search';
+        btnIcon.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>`;
+        btn.disabled = false;
+
+        executeFilter(destQuery, budgetFilter);
+      }, 350);
+    }
+
+    // Catalog Filter Execution
+    function executeFilter(destQuery, budgetFilter) {
+      let matchedCount = 0;
+
+      // Filter Section 2 cards
+      document.querySelectorAll('.exp-card').forEach(card => {
+        const name = (card.getAttribute('data-name') || '').toLowerCase();
+        const country = (card.getAttribute('data-country') || '').toLowerCase();
+        const price = parseFloat(card.getAttribute('data-price') || 0);
+
+        let matchesDest = !destQuery || name.includes(destQuery) || country.includes(destQuery);
+        let matchesBudget = true;
+        if (budgetFilter === 'budget') matchesBudget = price < 2200;
+        else if (budgetFilter === 'popular') matchesBudget = price >= 2200 && price <= 2600;
+        else if (budgetFilter === 'luxury') matchesBudget = price > 2600;
+
+        if (matchesDest && matchesBudget) {
+          card.classList.remove('hidden');
+          matchedCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Filter Section 3 Bento cards
+      document.querySelectorAll('.bento-card').forEach(card => {
+        const name = (card.getAttribute('data-name') || '').toLowerCase();
+        const country = (card.getAttribute('data-country') || '').toLowerCase();
+        const price = parseFloat(card.getAttribute('data-price') || 0);
+
+        let matchesDest = !destQuery || name.includes(destQuery) || country.includes(destQuery);
+        let matchesBudget = true;
+        if (budgetFilter === 'budget') matchesBudget = price < 2200;
+        else if (budgetFilter === 'popular') matchesBudget = price >= 2200 && price <= 2600;
+        else if (budgetFilter === 'luxury') matchesBudget = price > 2600;
+
+        if (matchesDest && matchesBudget) {
+          card.classList.remove('hidden');
+          matchedCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Update Search Results Banner
+      const banner = document.getElementById('searchResultsBanner');
+      const countLabel = document.getElementById('searchResultsCount');
+      const noResultsBox = document.getElementById('noResultsBox');
+
+      banner.classList.remove('hidden');
+      if (destQuery || budgetFilter !== 'all') {
+        countLabel.textContent = `Found ${matchedCount} verified sanctuaries matching your search`;
+        document.getElementById('searchActiveTag').textContent = destQuery ? `"${destQuery}"` : `Budget: ${budgetFilter}`;
+      } else {
+        countLabel.textContent = `Showing all ${matchedCount} curated nature sanctuaries`;
+        document.getElementById('searchActiveTag').textContent = 'All Sanctuaries';
+      }
+
+      noResultsBox.classList.toggle('hidden', matchedCount > 0);
+
+      // Scroll smoothly to results
+      document.getElementById('experiences-section').scrollIntoView({ behavior: 'smooth' });
+      showToast(`Filter applied: ${matchedCount} sanctuaries available.`);
+    }
+
+    function resetAllFilters() {
+      document.getElementById('destInput').value = '';
+      selectedBudgetValue = 'all';
+      document.getElementById('budgetSelectedText').textContent = 'All Budgets';
+      selectBudgetOption('all', 'All Budgets');
+      document.getElementById('clearDestBtn').classList.add('hidden');
+      document.getElementById('searchResultsBanner').classList.add('hidden');
+      document.getElementById('noResultsBox').classList.add('hidden');
+
+      document.querySelectorAll('.exp-card').forEach(c => c.classList.remove('hidden'));
+      document.querySelectorAll('.bento-card').forEach(c => c.classList.remove('hidden'));
+
+      showToast('All search filters reset to default catalog view.');
+    }
+
+    // =========================================================================
+    // HERO BACKDROP SLIDER
+    // =========================================================================
+
+    const heroSlides = [
+      {
+        url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=80",
+        fallback: "../../assets/khatulistiwa_explorer/rinjani-trail.jpg",
+        alt: "Alpine snow mountain peak with pine forests"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80",
+        fallback: "../../assets/mandalika_escape/palm-bay.jpg",
+        alt: "Tropical white sand beach and turquoise water"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=2000&q=80",
+        fallback: "../../assets/serenity_umrah_privilege/toba.jpg",
+        alt: "Lake Lucerne Swiss mountain reflections"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=2000&q=80",
+        fallback: "../../assets/mandalika_escape/beach.jpg",
+        alt: "Tropical ocean sunset and secluded islands"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80",
+        fallback: "../../assets/khatulistiwa_explorer/padar.jpg",
+        alt: "Panoramic volcanic crater lake under evening glow"
+      }
+    ];
+
+    let currentHeroSlide = 0;
+    function updateHeroSlide(idx) {
+      currentHeroSlide = (idx + heroSlides.length) % heroSlides.length;
+      const s = heroSlides[currentHeroSlide];
+      const img = document.getElementById('heroBgImage');
+      img.src = s.url;
+      img.alt = s.alt;
+      img.onerror = () => { img.src = s.fallback; };
+      document.getElementById('heroSlideIndicator').textContent = `0${currentHeroSlide + 1} / 05`;
+    }
+
+    function nextHeroSlide() { updateHeroSlide(currentHeroSlide + 1); }
+    function prevHeroSlide() { updateHeroSlide(currentHeroSlide - 1); }
+
+    // =========================================================================
+    // BENTO SHOWCASE SWITCHER (SECTION 3)
+    // =========================================================================
+
+    const bentoData = [
+      {
+        title: "Enjoy the stunning natural beauty.",
+        badge: "Greece",
+        usdPrice: 2500,
+        url: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
+        fallback: "../../assets/khatulistiwa_explorer/raja-ampat.jpg"
+      },
+      {
+        title: "Pristine Caribbean Reefs & Coves.",
+        badge: "Panama",
+        usdPrice: 2100,
+        url: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80",
+        fallback: "../../assets/mandalika_escape/beach.jpg"
+      },
+      {
+        title: "Arctic Silence & Snow Pinnacles.",
+        badge: "Greenland",
+        usdPrice: 2870,
+        url: "https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=1200&q=80",
+        fallback: "../../assets/khatulistiwa_explorer/bromo.jpg"
+      },
+      {
+        title: "Emerald Sea Cliffs & Sacred Waters.",
+        badge: "Indonesia",
+        usdPrice: 1850,
+        url: "../../assets/bagus_travel/nusa-penida.jpg",
+        fallback: "../../assets/bagus_travel/nusa-penida.jpg"
+      },
+      {
+        title: "The Ultimate Coral Maze Sanctuary.",
+        badge: "Raja Ampat",
+        usdPrice: 3200,
+        url: "../../assets/khatulistiwa_explorer/raja-ampat.jpg",
+        fallback: "../../assets/khatulistiwa_explorer/raja-ampat.jpg"
+      }
+    ];
+
+    function switchBentoView(idx) {
+      const data = bentoData[idx];
+      const img = document.getElementById('bentoHeroImg');
+      img.src = data.url;
+      img.onerror = () => { img.src = data.fallback; };
+      document.getElementById('bentoFeatureTitle').textContent = data.title;
+      document.getElementById('bentoFeatureBadge').textContent = data.badge;
+
+      const priceTag = document.getElementById('bentoFeaturePrice');
+      priceTag.setAttribute('data-usd', data.usdPrice);
+      priceTag.textContent = formatCurrency(data.usdPrice) + ' / pax';
+
+      const buttons = document.querySelectorAll('.bento-thumb');
+      buttons.forEach((btn, i) => {
+        if (i === idx) {
+          btn.classList.add('border-[#1C86D4]');
+          btn.classList.remove('border-transparent');
+        } else {
+          btn.classList.remove('border-[#1C86D4]');
+          btn.classList.add('border-transparent');
+        }
+      });
+      showToast(`Featured Sanctuary updated: ${data.badge}`);
+    }
+
+    // =========================================================================
+    // FAQ ACCORDION
+    // =========================================================================
+
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const icon = item.querySelector('.faq-icon');
+
+      const isHidden = answer.classList.contains('hidden');
+
+      // Close other items
+      document.querySelectorAll('.faq-item').forEach(other => {
+        if (other !== item) {
+          other.querySelector('.faq-answer').classList.add('hidden');
+          other.querySelector('.faq-icon').textContent = '+';
+          other.querySelector('.faq-icon').classList.remove('text-[#1C86D4]');
+          other.querySelector('.faq-icon').classList.add('text-slate-400');
+          other.querySelector('button').setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      if (isHidden) {
+        answer.classList.remove('hidden');
+        icon.textContent = '−';
+        icon.classList.add('text-[#1C86D4]');
+        icon.classList.remove('text-slate-400');
+        btn.setAttribute('aria-expanded', 'true');
+      } else {
+        answer.classList.add('hidden');
+        icon.textContent = '+';
+        icon.classList.remove('text-[#1C86D4]');
+        icon.classList.add('text-slate-400');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    // =========================================================================
+    // EXPEDITION BOOKING MODAL WITH DYNAMIC TOTAL CALCULATION
+    // =========================================================================
+
+    function openExpModal(title, country, baseUsdPrice, detail, imageUrl) {
+      activeBookingTitle = title;
+      activeBookingPriceUsd = baseUsdPrice;
+      activeBookingPax = 2;
+
+      document.getElementById('expModalTitle').textContent = title;
+      document.getElementById('expModalCountry').textContent = country;
+      document.getElementById('expModalDetail').textContent = detail;
+      document.getElementById('modalImg').src = imageUrl || 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80';
+
+      document.getElementById('bookingPaxVal').textContent = activeBookingPax;
+      recalcBookingTotal();
+
+      // Reset views
+      document.getElementById('bookingFormContainer').classList.remove('hidden');
+      document.getElementById('bookingSuccessContainer').classList.add('hidden');
+
+      document.getElementById('expModal').classList.remove('hidden');
+    }
+
+    function closeExpModal() {
+      document.getElementById('expModal').classList.add('hidden');
+    }
+
+    function stepBookingPax(change) {
+      activeBookingPax = Math.max(1, Math.min(10, activeBookingPax + change));
+      document.getElementById('bookingPaxVal').textContent = activeBookingPax;
+      recalcBookingTotal();
+    }
+
+    function recalcBookingTotal() {
+      document.getElementById('expModalRatePerPax').textContent = formatCurrency(activeBookingPriceUsd) + ' / pax';
+      const subtotal = activeBookingPriceUsd * activeBookingPax;
+      const tax = Math.round(subtotal * 0.11);
+      const grandTotal = subtotal + tax;
+
+      document.getElementById('bookingTotalCalc').textContent = formatCurrency(grandTotal);
+    }
+
+    function handleExpBookSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('expName').value;
+      const refCode = 'BL-2026-' + Math.floor(1000 + Math.random() * 9000);
+
+      document.getElementById('resCode').textContent = refCode;
+      document.getElementById('resSanctuary').textContent = activeBookingTitle;
+      document.getElementById('resPax').textContent = `${activeBookingPax} Guests (${name})`;
+
+      document.getElementById('bookingFormContainer').classList.add('hidden');
+      document.getElementById('bookingSuccessContainer').classList.remove('hidden');
+
+      showToast(`Booking ${refCode} confirmed! Voucher ready.`);
+    }
+
+    function simulateVoucherDownload() {
+      showToast('Generating official Bloosm PDF E-Voucher with Ortasys Booking Barcode...');
+    }
+
+    // =========================================================================
+    // CONCIERGE & AUTH MODAL HANDLERS
+    // =========================================================================
+
+    function openInquiryModal() {
+      document.getElementById('inquiryModal').classList.remove('hidden');
+    }
+
+    function closeInquiryModal() {
+      document.getElementById('inquiryModal').classList.add('hidden');
+    }
+
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('inqName').value;
+      closeInquiryModal();
+      showToast(`Thank you ${name}! Our nature concierge team will reach out within 2 hours.`);
+    }
+
+    function openAuthModal(tab) {
+      document.getElementById('authModal').classList.remove('hidden');
+      switchAuthTab(tab);
+    }
+
+    function closeAuthModal() {
+      document.getElementById('authModal').classList.add('hidden');
+    }
+
+    function switchAuthTab(tab) {
+      const loginTab = document.getElementById('authTabLogin');
+      const regTab = document.getElementById('authTabRegister');
+      const btn = document.getElementById('authSubmitBtn');
+
+      if (tab === 'login') {
+        loginTab.className = "pb-2 border-b-2 border-[#1C86D4] text-[#1C86D4] cursor-pointer";
+        regTab.className = "pb-2 border-b-2 border-transparent text-slate-400 hover:text-zinc-900 cursor-pointer";
+        btn.textContent = "Sign In to Bloosm";
+      } else {
+        regTab.className = "pb-2 border-b-2 border-[#1C86D4] text-[#1C86D4] cursor-pointer";
+        loginTab.className = "pb-2 border-b-2 border-transparent text-slate-400 hover:text-zinc-900 cursor-pointer";
+        btn.textContent = "Create Bloosm Account";
+      }
+    }
+
+    function handleAuthSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('authEmail').value;
+      closeAuthModal();
+
+      document.getElementById('authGuestState').classList.add('hidden');
+      document.getElementById('authUserProfile').classList.remove('hidden');
+      const shortName = email.split('@')[0];
+      document.getElementById('navUserName').textContent = shortName.charAt(0).toUpperCase() + shortName.slice(1);
+
+      showToast(`Welcome back, ${shortName}! VIP Nature Access granted.`);
+    }
+
+    function toggleUserDropdown() {
+      const m = document.getElementById('userDropdownMenu');
+      m.classList.toggle('hidden');
+    }
+
+    function handleLogout() {
+      document.getElementById('userDropdownMenu').classList.add('hidden');
+      document.getElementById('authUserProfile').classList.add('hidden');
+      document.getElementById('authGuestState').classList.remove('hidden');
+      showToast('You have signed out of your Bloosm account.');
+    }
+
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletterEmail').value;
+      document.getElementById('newsletterEmail').value = '';
+      showToast(`Subscribed ${email} to Bloosm Nature Expeditions!`);
+    }
+
+    // =========================================================================
+    // INITIALIZATION ON DOM READY
+    // =========================================================================
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCalendarGrid();
+      updateGuestSummary();
+    });
+  </script>
+</body>
+
+</html>

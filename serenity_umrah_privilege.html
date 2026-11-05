@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serenity Safar &amp; Family Privilege · Guided Heritage &amp; Group Travel</title>
+  <meta name="description" content="Serenity Safar &amp; Family Privilege — Spacious multi-generational family vacations and guided cultural sanctuaries across Indonesia. Powered by Ortasys S4.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Mono:ital,wght@0,500;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* Ortasys S4 Storefront #5 · Serenity Safar Tokens (design/serenity_umrah_privilege_design.md) */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#4A1D34', hover: '#351324' },
+            secondary: '#6B5B53',
+            tertiary: { DEFAULT: '#0F766E', hover: '#115E59' },
+            canvas: '#FDFBF7',
+            surface: { DEFAULT: '#FFFFFF', muted: '#F5EFE6' },
+            ink: '#27151E',
+            line: '#E6DDD3',
+            success: '#15803D',
+            warning: '#B45309',
+            danger: '#BE123C'
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+            mono: ['"DM Mono"', 'ui-monospace', 'monospace']
+          },
+          borderRadius: {
+            sm: '8px',
+            md: '12px',
+            lg: '20px',
+            xl: '28px',
+            full: '9999px'
+          },
+          boxShadow: {
+            soft: '0 10px 30px -6px rgba(74, 29, 52, 0.07)',
+            float: '0 20px 40px -10px rgba(74, 29, 52, 0.15)'
+          },
+          maxWidth: { container: '1180px' }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: 'Source Sans 3', system-ui, sans-serif; background-color: #FDFBF7; color: #27151E; font-size: 16px; }
+    .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on; }
+    .stepper input::-webkit-outer-spin-button,
+    .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .stepper input { -moz-appearance: textfield; }
+    :focus-visible { outline: 2px solid #0F766E; outline-offset: 2px; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+  </style>
+</head>
+<body class="bg-canvas text-ink antialiased">
+
+  <a href="#familySearch" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-primary focus:text-white focus:px-5 focus:py-3 focus:rounded-md">Skip to guided family search</a>
+
+  <!-- ============ TWO-TIER SANCTUARY HEADER ============ -->
+  <header class="border-b border-line bg-surface sticky top-0 z-40">
+    <!-- Top Assistance Bar -->
+    <div class="bg-surface-muted border-b border-line/60 px-4 sm:px-6 py-2 text-[13px] text-secondary">
+      <div class="max-w-container mx-auto flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+          <span>Family &amp; Group Concierge: Up to 9 Rooms · 20 Guests/Room</span>
+        </div>
+        <div class="flex items-center gap-4 text-xs font-medium">
+          <span>Assisted WhatsApp Booking: +62 812-SERENITY</span>
+          <span>•</span>
+          <span>DOKU &amp; SNAP BI Certified</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div class="max-w-container mx-auto px-4 sm:px-6 h-[72px] flex items-center justify-between gap-4">
+      <a href="#home" class="flex items-center gap-3 shrink-0" aria-label="Serenity Safar, Home">
+        <span class="w-11 h-11 rounded-lg bg-primary text-white flex items-center justify-center font-display text-2xl font-bold">S</span>
+        <div>
+          <span class="font-display text-[22px] font-bold tracking-tight text-ink block leading-tight">Serenity Safar</span>
+          <span class="text-[11px] uppercase tracking-wider text-secondary font-medium block">Family &amp; Heritage Privilege</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-2 text-[15px] font-semibold" aria-label="Sanctuary Navigation">
+        <a href="#home" class="px-4 py-2 rounded-md text-ink hover:bg-surface-muted transition-colors" aria-current="page">Home</a>
+        <a href="#tours" class="px-4 py-2 rounded-md text-secondary hover:text-ink hover:bg-surface-muted transition-colors">Heritage Tours</a>
+        <a href="#things-to-do" class="px-4 py-2 rounded-md text-secondary hover:text-ink hover:bg-surface-muted transition-colors">Family Activities</a>
+        <a href="#hotels" class="px-4 py-2 rounded-md text-secondary hover:text-ink hover:bg-surface-muted transition-colors">Sanctuary Stays</a>
+        <button type="button" data-open-trip class="ml-2 inline-flex items-center gap-2 h-11 px-5 rounded-md bg-tertiary text-white font-semibold hover:bg-tertiary-hover active:scale-[.98] transition">
+          Build your trip
+          <span data-trip-count class="tnum font-mono text-[12px] bg-white/20 rounded-full min-w-[20px] h-5 flex items-center justify-center px-1 font-bold">0</span>
+        </button>
+      </nav>
+
+      <button type="button" id="menuBtn" class="md:hidden w-11 h-11 rounded-md flex items-center justify-center hover:bg-surface-muted text-ink" aria-expanded="false" aria-controls="mobileNav" aria-label="Open mobile navigation">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+
+    <nav id="mobileNav" class="md:hidden hidden border-t border-line bg-surface p-5 flex flex-col gap-3 font-semibold" aria-label="Mobile Navigation">
+      <a href="#home" class="py-2 text-ink">Home</a>
+      <a href="#tours" class="py-2 text-secondary">Heritage Tours</a>
+      <a href="#things-to-do" class="py-2 text-secondary">Family Activities</a>
+      <a href="#hotels" class="py-2 text-secondary">Sanctuary Stays</a>
+      <button type="button" data-open-trip class="mt-2 h-12 rounded-md bg-tertiary text-white flex items-center justify-center gap-2">
+        Build your trip (<span data-trip-count class="tnum">0</span>)
+      </button>
+    </nav>
+  </header>
+
+  <main id="home" class="max-w-container mx-auto px-4 sm:px-6 pt-10 pb-20">
+
+    <!-- ============ GUIDED 3-STEP FAMILY SEARCH CONSOLE CARD ============ -->
+    <section id="familySearch" class="bg-surface rounded-xl border border-line p-7 sm:p-10 shadow-soft" aria-labelledby="formTitle">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-line">
+        <div>
+          <span class="text-[13px] font-bold uppercase tracking-wider text-tertiary">Ortasys S4 Family Configuration</span>
+          <h1 id="formTitle" class="font-display text-[32px] sm:text-[38px] font-bold leading-tight text-ink mt-0.5">Guided Family &amp; Group Planner</h1>
+          <p class="text-[15px] text-secondary mt-1">Multi-generational travel arranged with peace of mind. Every room booked shares the same family configuration.</p>
+        </div>
+
+        <div class="inline-flex rounded-full bg-surface-muted p-1 self-start md:self-auto" role="tablist">
+          <button type="button" role="tab" data-mode="hotels" aria-selected="true" class="mode-tab h-10 px-5 rounded-full text-[14px] font-bold transition-colors bg-primary text-white">Family Stays</button>
+          <button type="button" role="tab" data-mode="activities" aria-selected="false" class="mode-tab h-10 px-5 rounded-full text-[14px] font-bold transition-colors text-secondary hover:text-ink">Guided Tours</button>
+        </div>
+      </div>
+
+      <form id="searchForm" class="mt-8" novalidate>
+        <div class="grid lg:grid-cols-3 gap-6">
+          
+          <!-- STEP 1: DESTINATION -->
+          <div class="bg-canvas rounded-lg p-5 border border-line flex flex-col justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-primary text-white text-[12px] font-bold flex items-center justify-center">1</span>
+                <span class="font-display text-[18px] font-bold text-ink">Experience &amp; Sanctuary</span>
+              </div>
+              <p class="text-[13px] text-secondary mt-1">Select your Indonesian destination or heritage area.</p>
+            </div>
+
+            <label class="flex flex-col gap-1.5">
+              <span class="text-[13px] font-semibold text-ink" data-dest-label>Destination or resort</span>
+              <input id="dest" list="destList" placeholder="Yogyakarta, Lake Toba, Jakarta, Aceh…" autocomplete="off" class="h-[50px] px-3.5 rounded-md bg-white border border-line text-[15px] focus:border-tertiary focus:outline-none">
+              <datalist id="destList"></datalist>
+            </label>
+          </div>
+
+          <!-- STEP 2: DATES (UP TO 30 NIGHTS) -->
+          <div class="bg-canvas rounded-lg p-5 border border-line flex flex-col justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-primary text-white text-[12px] font-bold flex items-center justify-center">2</span>
+                <span class="font-display text-[18px] font-bold text-ink">Travel Dates</span>
+              </div>
+              <p class="text-[13px] text-secondary mt-1">Stays from 1 up to 30 nights in a single booking.</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2.5" data-hotel-only>
+              <label class="flex flex-col gap-1">
+                <span class="text-[12px] font-semibold text-secondary">Check-in</span>
+                <input id="checkIn" type="date" aria-describedby="dateMaxHint" class="tnum h-[50px] px-2.5 rounded-md bg-white border border-line text-[13px] focus:border-tertiary focus:outline-none font-mono">
+              </label>
+              <label class="flex flex-col gap-1">
+                <span class="text-[12px] font-semibold text-secondary">Check-out</span>
+                <input id="checkOut" type="date" aria-describedby="dateMaxHint" class="tnum h-[50px] px-2.5 rounded-md bg-white border border-line text-[13px] focus:border-tertiary focus:outline-none font-mono">
+              </label>
+            </div>
+
+            <div class="hidden" data-activity-only>
+              <label class="flex flex-col gap-1">
+                <span class="text-[12px] font-semibold text-secondary">Tour Date</span>
+                <input id="actDate" type="date" class="tnum h-[50px] px-3 rounded-md bg-white border border-line text-[14px] focus:border-tertiary focus:outline-none font-mono">
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 3: FAMILY OCCUPANCY (1-9 Rooms, 1-20 Adults, 0-20 Kids) -->
+          <div class="bg-canvas rounded-lg p-5 border border-line flex flex-col justify-between gap-4">
+            <div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-6 h-6 rounded-full bg-primary text-white text-[12px] font-bold flex items-center justify-center">3</span>
+                  <span class="font-display text-[18px] font-bold text-ink">Family Group Size</span>
+                </div>
+                <span id="groupSizeBadge" class="px-2.5 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-mono text-[12px] font-bold">2 Guests</span>
+              </div>
+              <p class="text-[13px] text-secondary mt-1">All rooms accommodate identical occupancy.</p>
+            </div>
+
+            <div class="grid grid-cols-3 gap-2">
+              <div class="flex flex-col gap-1" data-hotel-only>
+                <span id="lbl-rooms" class="text-[11px] font-semibold text-secondary uppercase">Rooms</span>
+                <div class="stepper flex items-center h-[50px] rounded-md bg-white border border-line" role="group" aria-labelledby="lbl-rooms">
+                  <button type="button" class="w-8 h-full text-[18px] text-primary hover:bg-surface-muted" data-step="rooms" data-dir="-1" aria-label="Decrease rooms">−</button>
+                  <input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" aria-labelledby="lbl-rooms" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[14px] font-bold focus:outline-none">
+                  <button type="button" class="w-8 h-full text-[18px] text-primary hover:bg-surface-muted" data-step="rooms" data-dir="1" aria-label="Increase rooms">+</button>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-1">
+                <span id="lbl-adults" class="text-[11px] font-semibold text-secondary uppercase" data-adults-label>Adults/Rm</span>
+                <div class="stepper flex items-center h-[50px] rounded-md bg-white border border-line" role="group" aria-labelledby="lbl-adults">
+                  <button type="button" class="w-8 h-full text-[18px] text-primary hover:bg-surface-muted" data-step="adults" data-dir="-1" aria-label="Decrease adults">−</button>
+                  <input id="adults" type="number" min="1" max="20" value="2" inputmode="numeric" aria-labelledby="lbl-adults" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[14px] font-bold focus:outline-none">
+                  <button type="button" class="w-8 h-full text-[18px] text-primary hover:bg-surface-muted" data-step="adults" data-dir="1" aria-label="Increase adults">+</button>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-1">
+                <span id="lbl-children" class="text-[11px] font-semibold text-secondary uppercase" data-children-label>Kids/Rm</span>
+                <div class="stepper flex items-center h-[50px] rounded-md bg-white border border-line" role="group" aria-labelledby="lbl-children">
+                  <button type="button" class="w-8 h-full text-[18px] text-primary hover:bg-surface-muted" data-step="children" data-dir="-1" aria-label="Decrease children">−</button>
+                  <input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" aria-labelledby="lbl-children" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[14px] font-bold focus:outline-none">
+                  <button type="button" class="w-8 h-full text-[18px] text-primary hover:bg-surface-muted" data-step="children" data-dir="1" aria-label="Increase children">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p id="dateMaxHint" class="mt-4 text-[13px] text-secondary" data-hotel-only>
+          Family configurations supported: 1 to 9 rooms, 1 to 20 adults, and 0 to 20 children per room (equal distribution).
+        </p>
+        <div id="formErrors" class="mt-2 text-[14px] text-danger font-semibold" role="alert" aria-live="assertive"></div>
+
+        <!-- Verification & Submit Strip -->
+        <div class="mt-8 pt-6 border-t border-line flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-3 h-3 rounded-full bg-tertiary"></div>
+            <div>
+              <p class="font-display text-[18px] font-bold text-ink">Every price is checked live when you ask for it</p>
+              <p id="summary" class="font-mono text-[13px] text-secondary" aria-live="polite">Choose your dates and group size</p>
+            </div>
+          </div>
+
+          <button id="checkBtn" type="submit" class="h-[50px] px-8 rounded-md bg-tertiary hover:bg-tertiary-hover text-white text-[15px] font-bold tracking-wide transition shadow-soft flex items-center justify-center gap-2">
+            <span data-btn-label>Check Live Family Price</span>
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ============ 2-COLUMN WIDE FAMILY STAY SHOWCASE ============ -->
+    <section id="hotels" class="mt-20" aria-labelledby="staysTitle">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-line">
+        <div>
+          <span class="text-[13px] font-bold uppercase tracking-wider text-primary">Curated Sanctuaries</span>
+          <h2 id="staysTitle" class="font-display text-[32px] sm:text-[36px] font-bold text-ink">Family Suites &amp; Courtyard Residences</h2>
+          <p id="resultsNote" class="text-[15px] text-secondary mt-1">Multi-bedroom interconnecting suites and private heritage compound stays.</p>
+        </div>
+        <span class="px-3.5 py-1 rounded-full bg-surface-muted text-secondary text-[12px] font-bold self-start sm:self-auto">Illustrative Sample Data</span>
+      </div>
+
+      <div id="results" class="mt-8 grid md:grid-cols-2 gap-8"></div>
+    </section>
+
+    <!-- ============ HERITAGE TOURS & FAMILY EXPERIENCES ============ -->
+    <section id="tours" class="mt-20 pt-10 border-t border-line" aria-labelledby="toursTitle">
+      <div class="grid lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 rounded-lg overflow-hidden border border-line shadow-soft aspect-[4/5] bg-surface-muted">
+          <img src="assets/serenity_umrah_privilege/istiqlal.jpg" alt="Istiqlal Grand Mosque grand prayer hall and monumental columns, Jakarta" class="w-full h-full object-cover" loading="lazy" width="1920" height="1277">
+        </div>
+        <div class="lg:col-span-7">
+          <span class="text-[13px] font-bold uppercase tracking-wider text-tertiary">Spiritual &amp; Cultural Roots</span>
+          <h2 id="toursTitle" class="font-display text-[32px] sm:text-[36px] font-bold text-ink mt-1">Guided Heritage Journeys</h2>
+          <p class="text-[15px] text-secondary mt-2">Private air-conditioned family coaches, elderly-accessible pacing, and certified local cultural docents.</p>
+
+          <div id="tourList" class="mt-6 flex flex-col gap-4"></div>
+
+          <div id="things-to-do" class="mt-12 pt-8 border-t border-line">
+            <h3 class="font-display text-[22px] font-bold text-ink">Family Sightseeing &amp; Workshops</h3>
+            <div id="thingsList" class="mt-4 grid sm:grid-cols-2 gap-4"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WARM SANDSTONE "WHY TRAVEL WITH US" ============ -->
+    <section class="mt-20 rounded-xl bg-surface-muted border border-line p-8 sm:p-12" aria-labelledby="whyTitle">
+      <div class="text-center max-w-[640px] mx-auto">
+        <span class="text-[13px] font-bold uppercase tracking-wider text-primary">Sanctuary Hospitality</span>
+        <h2 id="whyTitle" class="font-display text-[32px] sm:text-[36px] font-bold text-ink mt-1">Why Travel with Serenity Safar</h2>
+        <p class="text-[15px] text-secondary mt-2">Designed with deep respect for family privacy, spiritual mindfulness, and elderly care.</p>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="bg-surface rounded-lg p-7 border border-line shadow-soft flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center">01</div>
+          <h3 class="font-display text-[20px] font-bold text-ink">Multi-Room Ease</h3>
+          <p class="text-[14px] text-secondary leading-relaxed">Book 1 to 9 rooms with up to 20 adults and 20 children per room in one seamless reservation, keeping large extended families together.</p>
+        </div>
+        <div class="bg-surface rounded-lg p-7 border border-line shadow-soft flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-full bg-tertiary/10 text-tertiary font-bold flex items-center justify-center">02</div>
+          <h3 class="font-display text-[20px] font-bold text-ink">Live Checked Rates</h3>
+          <p class="text-[14px] text-secondary leading-relaxed">"Every price is checked live when you ask for it". Guaranteed accurate total calculations across every night and room booked.</p>
+        </div>
+        <div class="bg-surface rounded-lg p-7 border border-line shadow-soft flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center">03</div>
+          <h3 class="font-display text-[20px] font-bold text-ink">Halal &amp; Heritage Attuned</h3>
+          <p class="text-[14px] text-secondary leading-relaxed">All recommended stays feature halal culinary options, designated quiet prayer areas, and thoughtful wheelchair accessibility.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONCIERGE ASSISTANCE CONTACT ============ -->
+    <section id="contact" class="mt-20 bg-primary text-white rounded-xl p-8 sm:p-12 shadow-float">
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5">
+          <span class="text-[12px] font-mono font-bold text-emerald-300 uppercase">Personal Family Planning</span>
+          <h2 class="font-display text-[32px] sm:text-[36px] font-bold mt-1">Speak with a Family Safar Advisor</h2>
+          <p class="text-[15px] text-white/80 mt-3 leading-relaxed">Traveling with grandparents or infants? Let our concierge team customize interconnecting suites and wheelchair-friendly coaches.</p>
+        </div>
+        <form id="contactForm" class="lg:col-span-7 bg-white/10 rounded-lg p-6 border border-white/15 grid sm:grid-cols-2 gap-4" novalidate>
+          <input required name="name" placeholder="Head of Family Name" class="h-[48px] px-3.5 rounded-md bg-white text-ink text-[14px] focus:outline-none">
+          <input required type="email" name="email" placeholder="Contact Email" class="h-[48px] px-3.5 rounded-md bg-white text-ink text-[14px] focus:outline-none">
+          <textarea required name="msg" rows="3" placeholder="Tell us your family travel dates, number of seniors/children, and preferred destinations..." class="sm:col-span-2 p-3.5 rounded-md bg-white text-ink text-[14px] focus:outline-none"></textarea>
+          <div class="sm:col-span-2 flex items-center justify-between pt-1">
+            <button class="h-[48px] px-7 rounded-md bg-tertiary hover:bg-tertiary-hover text-white text-[14px] font-bold transition">REQUEST ASSISTED PROPOSAL</button>
+            <span id="contactNote" class="text-[13px] text-emerald-200" aria-live="polite"></span>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="border-t border-line bg-surface mt-10 py-12 text-secondary text-[13px]">
+    <div class="max-w-container mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div>
+          <span class="font-display text-[24px] font-bold text-ink">Serenity Safar &amp; Family Privilege</span>
+          <p class="text-[13px] mt-0.5">White-Label Storefront on the Ortasys S4 Multi-Supplier Distribution Engine.</p>
+        </div>
+        <nav class="flex gap-6 font-medium" aria-label="Footer Navigation">
+          <a href="#hotels" class="hover:text-primary">Stays</a>
+          <a href="#tours" class="hover:text-primary">Tours</a>
+          <a href="#contact" class="hover:text-primary">Contact</a>
+        </nav>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-line grid md:grid-cols-2 gap-4 text-[12px]">
+        <p>Payments settled through <strong class="text-ink">DOKU</strong> and <strong class="text-ink">SNAP BI</strong>. Mockup rates and properties are illustrative sample data [PRD 9.2].</p>
+        <p class="md:text-right">© <span id="year"></span> Serenity Safar. All rights reserved.</p>
+      </div>
+
+      <p class="mt-4 text-[11px] leading-relaxed text-secondary/80">
+        Photography credits:
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Jakarta_-_Istiqlal_Mosque,_interior.jpg">“Istiqlal Mosque Interior”</a> by P. Hughes, <a class="underline" href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Prambanan_temple,_Central_Java,_Indonesia,_20220818_1311_9139.jpg">“Prambanan Temple”</a> by Jakub Hałun, <a class="underline" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Jogja_-_Kraton_Yogyakarta_-_Donopratono_gate_(2025)_-_img_01.jpg">“Kraton Yogyakarta”</a> by Chainwit, <a class="underline" href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:PEMANDANGAN_DANAU_TOBA_DARI_AJIBATA.jpg">“Lake Toba from Ajibata”</a> by ButetSinaga, <a class="underline" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Jam_Gadang_lengang.jpg">“Jam Gadang”</a>, <a class="underline" href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Meuseujid_Raya_Bayturrahman.JPG">“Baiturrahman Mosque”</a> by Si Gam Acèh, <a class="underline" href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>; all via Wikimedia Commons.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============ TRIP DRAWER (BUILD YOUR TRIP) ============ -->
+  <div id="tripOverlay" class="fixed inset-0 z-50 bg-ink/40 hidden" aria-hidden="true"></div>
+  <aside id="tripDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-[440px] bg-surface shadow-float translate-x-full transition-transform duration-300 flex flex-col" role="dialog" aria-modal="true" aria-labelledby="tripTitle" aria-hidden="true">
+    <div class="flex items-center justify-between px-6 h-[72px] border-b border-line bg-surface-muted">
+      <div class="flex items-center gap-2">
+        <h2 id="tripTitle" class="font-display text-[22px] font-bold text-ink">Family Safar Itinerary</h2>
+        <span class="px-2 py-0.5 rounded-full bg-primary text-white font-mono text-[11px] font-bold" data-trip-count>0</span>
+      </div>
+      <button type="button" data-close-trip class="w-10 h-10 rounded-md flex items-center justify-center hover:bg-line/60 text-secondary" aria-label="Close itinerary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <div id="tripItems" class="flex-1 overflow-y-auto p-5 flex flex-col gap-3"></div>
+
+    <div class="border-t border-line p-6 bg-surface-muted">
+      <div class="flex items-baseline justify-between font-mono">
+        <span class="text-[13px] font-bold text-secondary">Total Family Package:</span>
+        <span id="tripTotal" class="text-[20px] font-bold text-ink">Rp 0</span>
+      </div>
+      <button id="payBtn" type="button" class="mt-4 w-full h-[50px] rounded-md bg-tertiary hover:bg-tertiary-hover text-white text-[14px] font-bold disabled:opacity-40 transition shadow-soft">
+        CONTINUE TO DOKU / SNAP BI
+      </button>
+      <p id="payNote" class="mt-2 text-[12px] text-center text-secondary" aria-live="polite">Family reservations secured by Bank Indonesia SNAP rails.</p>
+    </div>
+  </aside>
+
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-primary text-white rounded-md px-6 py-3 text-[14px] shadow-float font-medium" role="status" aria-live="polite"></div>
+
+  <script>
+  (() => {
+    'use strict';
+    /* Illustrative Sample Data (PRD 9.2) */
+    const STAYS = [
+      { id: 'ss-jogja', name: 'Kraton Heritage Family Residence', area: 'Kraton Enclave · Yogyakarta', keys: 'yogyakarta jogja kraton palace culture', img: 'assets/serenity_umrah_privilege/kraton.jpg', alt: 'Kraton Yogyakarta Donopratono royal gate', stars: 5, room: 'Interconnecting Royal Courtyard Suite', meal: 'Halal breakfast buffet included', policy: 'Free cancellation until 7 days prior', nightly: 2750000 },
+      { id: 'ss-toba', name: 'Lake Toba Sanctuary Family Lodge', area: 'Ajibata, Lake Toba · North Sumatra', keys: 'toba sumatra ajibata lake view', img: 'assets/serenity_umrah_privilege/toba.jpg', alt: 'Lake Toba mountain views from Ajibata', stars: 4, room: 'Three-Bedroom Panoramic Villa', meal: 'Full breakfast included', policy: 'Free cancellation until 5 days prior', nightly: 2200000 },
+      { id: 'ss-aceh', name: 'Baiturrahman Serenity Grand Hotel', area: 'Banda Aceh · Aceh Heritage', keys: 'aceh banda baiturrahman grand mosque', img: 'assets/serenity_umrah_privilege/baiturrahman.jpg', alt: 'Grand Mosque Baiturrahman minarets and courtyard', stars: 4, room: 'Family Deluxe Quad Suite', meal: 'Halal gourmet breakfast', policy: 'Free cancellation until 3 days prior', nightly: 1550000 },
+      { id: 'ss-bukittinggi', name: 'Jam Gadang Heritage Resort', area: 'Bukittinggi · West Sumatra', keys: 'bukittinggi jam gadang padang sumatra', img: 'assets/serenity_umrah_privilege/jam-gadang.jpg', alt: 'Jam Gadang clock tower Bukittinggi', stars: 4, room: 'Minangkabau Family Cottage', meal: 'Padang culinary breakfast included', policy: 'Free cancellation until 4 days prior', nightly: 1800000 }
+    ];
+
+    const ACTIVITIES = [
+      { id: 'ss-istiqlal', kind: 'tour', name: 'Istiqlal & Jakarta Heritage Family Walk', area: 'Central Jakarta', keys: 'jakarta istiqlal mosque tour', img: 'assets/serenity_umrah_privilege/istiqlal.jpg', alt: 'Istiqlal Mosque interior massive columns', duration: '5 Hours · Private AC Van & Heritage Scholar', perPerson: 550000 },
+      { id: 'ss-prambanan', kind: 'tour', name: 'Prambanan & Royal Temples Sunset Tour', area: 'Central Java Heritage', keys: 'prambanan yogyakarta temple tour', img: 'assets/serenity_umrah_privilege/prambanan.jpg', alt: 'Prambanan stone temples reaching into blue sky', duration: '6 Hours · Wheelchair Accessible & Guide', perPerson: 750000 },
+      { id: 'ss-batik', kind: 'thing', name: 'Kraton Classical Batik Workshop', area: 'Yogyakarta', keys: 'batik kraton workshop jogja', img: 'assets/serenity_umrah_privilege/kraton.jpg', alt: 'Kraton gate', duration: '3 Hours · Textile Master & Materials', perPerson: 350000 },
+      { id: 'ss-toba-boat', kind: 'thing', name: 'Ajibata to Samosir Private Ferry', area: 'Lake Toba', keys: 'toba samosir boat private', img: 'assets/serenity_umrah_privilege/toba.jpg', alt: 'Lake Toba panoramic shoreline', duration: 'Full Day · Private Boat & Batak Guide', perPerson: 850000 }
+    ];
+
+    const LIMITS = { rooms: [1, 9], adults: [1, 20], children: [0, 20] };
+    const MAX_NIGHTS = 30;
+    const idr = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const DAY = 86400000;
+    const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    const addDays = (s, n) => iso(new Date(new Date(s + 'T00:00:00').getTime() + n * DAY));
+    const today = iso(new Date());
+
+    const state = { mode: 'hotels', priced: false, checking: false, checkedAt: null, trip: [] };
+    const el = {
+      form: $('#searchForm'), dest: $('#dest'), checkIn: $('#checkIn'), checkOut: $('#checkOut'), actDate: $('#actDate'),
+      rooms: $('#rooms'), adults: $('#adults'), children: $('#qChildren'), errors: $('#formErrors'), summary: $('#summary'),
+      badge: $('#groupSizeBadge'), btn: $('#checkBtn'), results: $('#results')
+    };
+
+    const clamp = (v, [lo, hi]) => Math.min(hi, Math.max(lo, Number.isFinite(v) ? v : lo));
+    const num = k => clamp(parseInt(el[k].value, 10), LIMITS[k]);
+    const nights = () => {
+      if (!el.checkIn.value || !el.checkOut.value) return 0;
+      return Math.round((new Date(el.checkOut.value) - new Date(el.checkIn.value)) / DAY);
+    };
+
+    function validate() {
+      const errs = [];
+      if (state.mode === 'hotels') {
+        if (!el.checkIn.value || !el.checkOut.value) errs.push('Please select check-in and check-out dates.');
+        else {
+          const n = nights();
+          if (el.checkIn.value < today) errs.push('Check-in cannot be set in the past.');
+          if (n < 1) errs.push('Check-out must be at least 1 day after check-in.');
+          if (n > MAX_NIGHTS) errs.push(`Stays can be up to ${MAX_NIGHTS} nights in a single booking.`);
+        }
+      } else {
+        if (!el.actDate.value) errs.push('Please select a date for the tour.');
+        else if (el.actDate.value < today) errs.push('Date cannot be in the past.');
+      }
+      return errs;
+    }
+
+    const roomRate = s => Math.round(s.nightly * (1 + 0.15 * Math.max(0, num('adults') - 2) + 0.08 * num('children')) / 1000) * 1000;
+    const stayTotal = s => roomRate(s) * nights() * num('rooms');
+    const actTotal = a => (a.perPerson * num('adults') + Math.round(a.perPerson * 0.5) * num('children')) * num('rooms');
+
+    function updateBadge() {
+      const r = num('rooms'), a = num('adults'), c = num('children');
+      const totalGuests = r * (a + c);
+      el.badge.textContent = `${totalGuests} Guests (${r} Rms × ${a + c})`;
+    }
+
+    function summaryText() {
+      const r = num('rooms'), a = num('adults'), c = num('children');
+      const totalGuests = r * (a + c);
+      if (state.mode === 'hotels') {
+        const n = nights();
+        if (!n || n < 1) return 'Choose dates to calculate family package';
+        return `${n} Night${n > 1 ? 's' : ''} × ${r} Room${r > 1 ? 's' : ''} (${a} Adults${c ? ` + ${c} Children` : ''} per room) = ${totalGuests} Total Family Members`;
+      }
+      return el.actDate.value ? `${el.actDate.value} · ${totalGuests} Family Members` : 'Choose date for tour calculation';
+    }
+
+    function renderMode() {
+      $$('.mode-tab').forEach(t => {
+        const on = t.dataset.mode === state.mode;
+        t.setAttribute('aria-selected', on);
+        t.className = `mode-tab h-10 px-5 rounded-full text-[14px] font-bold transition-colors ${on ? 'bg-primary text-white' : 'text-secondary hover:text-ink'}`;
+      });
+      const hotels = state.mode === 'hotels';
+      $$('[data-hotel-only]').forEach(n => n.classList.toggle('hidden', !hotels));
+      $$('[data-activity-only]').forEach(n => n.classList.toggle('hidden', hotels));
+      $('#destList').innerHTML = (hotels ? ['Yogyakarta', 'Lake Toba', 'Banda Aceh', 'Bukittinggi', ...STAYS.map(s => s.name)] : ['Istiqlal Heritage Tour', 'Prambanan Tour', 'Classical Batik Workshop', ...ACTIVITIES.map(a => a.name)])
+        .map(v => `<option value="${v}">`).join('');
+    }
+
+    function renderResults() {
+      const isHotels = state.mode === 'hotels';
+      const q = el.dest.value.trim().toLowerCase();
+      let list = (isHotels ? STAYS : ACTIVITIES).filter(it => !q || (it.name + ' ' + it.area + ' ' + it.keys).toLowerCase().includes(q));
+      if (!list.length) list = isHotels ? STAYS : ACTIVITIES;
+
+      el.results.innerHTML = list.map(it => {
+        const total = isHotels ? stayTotal(it) : actTotal(it);
+        const sub = isHotels ? `${idr.format(roomRate(it))} / room / night` : `${idr.format(it.perPerson)} / person`;
+        const priceHTML = state.checking
+          ? `<div class="h-9 w-32 bg-surface-muted animate-pulse rounded"></div>`
+          : state.priced
+            ? `<div><p class="tnum font-mono text-[22px] font-bold text-ink">${idr.format(total)}</p><p class="tnum font-mono text-[12px] text-secondary">${sub} (Combined total for ${num('rooms')} room${num('rooms') > 1 ? 's' : ''})</p></div>`
+            : `<p class="text-[14px] text-secondary italic">Check live price to calculate family total</p>`;
+
+        return `
+        <!-- 2-Column Wide Card -->
+        <article class="bg-surface rounded-xl border border-line overflow-hidden shadow-soft flex flex-col hover:-translate-y-1 transition duration-300">
+          <div class="relative aspect-[16/10] bg-surface-muted overflow-hidden">
+            <img src="${it.img}" alt="${it.alt}" loading="lazy" class="w-full h-full object-cover">
+            ${isHotels ? `<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 text-ink text-[12px] font-bold shadow-sm">${'★'.repeat(it.stars)}</span>` : ''}
+          </div>
+          <div class="p-6 flex flex-col flex-1 gap-2">
+            <span class="text-[12px] font-bold uppercase tracking-wider text-tertiary">${it.area}</span>
+            <h3 class="font-display text-[24px] font-bold text-ink leading-tight">${it.name}</h3>
+            <p class="text-[14px] text-secondary mt-1">${isHotels ? `${it.room} · ${it.meal}` : it.duration}</p>
+            <p class="text-[13px] text-primary font-medium">${it.policy || 'Halal certified on-site dining & prayer facilities'}</p>
+            <div class="mt-auto pt-4 border-t border-line flex items-end justify-between gap-4">
+              ${priceHTML}
+              <button type="button" data-select="${it.id}" class="h-11 px-6 rounded-md bg-primary hover:bg-primary-hover text-white text-[14px] font-bold transition shrink-0">
+                SELECT SUITE
+              </button>
+            </div>
+          </div>
+        </article>`;
+      }).join('');
+    }
+
+    function renderTours() {
+      const tours = ACTIVITIES.filter(a => a.kind === 'tour');
+      $('#tourList').innerHTML = tours.map(t => `
+        <div class="p-5 rounded-lg bg-surface border border-line flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-soft">
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-tertiary">${t.area}</span>
+            <h4 class="font-display text-[18px] font-bold text-ink">${t.name}</h4>
+            <p class="text-[13px] text-secondary mt-0.5">${t.duration}</p>
+          </div>
+          <div class="flex items-center gap-3 shrink-0">
+            <span class="tnum font-mono text-[14px] font-bold text-ink">${idr.format(t.perPerson)}</span>
+            <button type="button" data-plan="${t.id}" class="h-10 px-4 rounded-md border border-primary text-primary hover:bg-primary hover:text-white text-[13px] font-bold transition">Plan Tour</button>
+          </div>
+        </div>`).join('');
+
+      const things = ACTIVITIES.filter(a => a.kind === 'thing');
+      $('#thingsList').innerHTML = things.map(t => `
+        <button type="button" data-plan="${t.id}" class="text-left bg-canvas rounded-lg p-4 border border-line hover:border-tertiary transition">
+          <span class="text-[11px] font-bold text-secondary uppercase">${t.area}</span>
+          <p class="font-display font-bold text-[16px] text-ink mt-0.5">${t.name}</p>
+          <span class="text-[12px] text-secondary mt-1 block">${t.duration}</span>
+        </button>`).join('');
+    }
+
+    function syncBounds() {
+      el.checkIn.min = today; el.actDate.min = today;
+      if (el.checkIn.value) {
+        el.checkOut.min = addDays(el.checkIn.value, 1);
+        el.checkOut.max = addDays(el.checkIn.value, MAX_NIGHTS);
+      } else { el.checkOut.min = addDays(today, 1); el.checkOut.removeAttribute('max'); }
+    }
+
+    function invalidate() {
+      state.priced = false; el.errors.textContent = '';
+      updateBadge();
+      el.summary.textContent = summaryText();
+      renderResults();
+    }
+
+    $$('.mode-tab').forEach(t => t.addEventListener('click', () => { state.mode = t.dataset.mode; renderMode(); invalidate(); }));
+    $$('[data-step]').forEach(b => b.addEventListener('click', () => {
+      const k = b.dataset.step; el[k].value = clamp(num(k) + Number(b.dataset.dir), LIMITS[k]); invalidate();
+    }));
+    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('change', () => { el[k].value = num(k); invalidate(); }));
+    el.checkIn.addEventListener('change', () => {
+      syncBounds();
+      if (el.checkIn.value && (!el.checkOut.value || el.checkOut.value <= el.checkIn.value)) el.checkOut.value = addDays(el.checkIn.value, 3);
+      invalidate();
+    });
+    [el.checkOut, el.actDate].forEach(i => i.addEventListener('change', invalidate));
+    el.dest.addEventListener('input', renderResults);
+
+    el.form.addEventListener('submit', e => {
+      e.preventDefault();
+      const errs = validate();
+      el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
+      if (errs.length) return;
+
+      state.checking = true; el.btn.disabled = true;
+      el.btn.querySelector('[data-btn-label]').textContent = 'Checking Live Family Rates…';
+      renderResults();
+
+      setTimeout(() => {
+        state.checking = false; state.priced = true; state.checkedAt = new Date();
+        el.btn.disabled = false; el.btn.querySelector('[data-btn-label]').textContent = 'Check Live Family Price';
+        el.summary.textContent = `LIVE VERIFIED: ${summaryText()}`;
+        renderResults();
+        document.getElementById('hotels').scrollIntoView({ behavior: 'smooth' });
+      }, 700);
+    });
+
+    function planActivity(id) {
+      const a = ACTIVITIES.find(x => x.id === id); if (!a) return;
+      state.mode = 'activities'; renderMode();
+      el.dest.value = a.name; invalidate();
+      document.getElementById('familySearch').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => el.actDate.focus({ preventScroll: true }), 400);
+    }
+
+    document.addEventListener('click', e => {
+      const sel = e.target.closest('[data-select]'); if (sel) return selectItem(sel.dataset.select);
+      const plan = e.target.closest('[data-plan]'); if (plan) return planActivity(plan.dataset.plan);
+      const rm = e.target.closest('[data-remove]'); if (rm) { state.trip.splice(Number(rm.dataset.remove), 1); renderTrip(); }
+    });
+
+    function selectItem(id) {
+      if (!state.priced) {
+        toast('Please calculate live price for your family dates first.');
+        document.getElementById('familySearch').scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+      const isHotel = id.startsWith('ss-');
+      const it = (isHotel ? STAYS : ACTIVITIES).find(x => x.id === id);
+      const total = isHotel ? stayTotal(it) : actTotal(it);
+      state.trip.push({ name: it.name, area: it.area, detail: summaryText(), total });
+      renderTrip();
+      toast(`Added to itinerary: ${it.name}`);
+    }
+
+    function renderTrip() {
+      $$('[data-trip-count]').forEach(n => n.textContent = state.trip.length);
+      const box = $('#tripItems');
+      box.innerHTML = state.trip.length ? state.trip.map((t, i) => `
+        <div class="p-4 bg-canvas border border-line rounded-lg flex flex-col gap-2">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <p class="font-display font-bold text-[17px] text-ink">${t.name}</p>
+              <p class="text-[12px] text-secondary">${t.area}</p>
+              <p class="font-mono text-[11px] text-secondary mt-1">${t.detail}</p>
+            </div>
+            <button type="button" data-remove="${i}" class="text-[12px] font-bold text-danger hover:underline">Remove</button>
+          </div>
+          <p class="font-mono text-[15px] font-bold text-primary mt-1">${idr.format(t.total)}</p>
+        </div>`).join('')
+        : `<p class="py-12 text-center text-[14px] text-secondary">No stays or tours in your itinerary yet.<br>Check live prices and select suites to build your trip.</p>`;
+      $('#tripTotal').textContent = idr.format(state.trip.reduce((s, t) => s + t.total, 0));
+      $('#payBtn').disabled = !state.trip.length;
+    }
+
+    const drawer = $('#tripDrawer'), overlay = $('#tripOverlay');
+    function openTrip() {
+      overlay.classList.remove('hidden'); drawer.classList.remove('translate-x-full');
+      drawer.setAttribute('aria-hidden', 'false');
+    }
+    function closeTrip() {
+      overlay.classList.add('hidden'); drawer.classList.add('translate-x-full');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+    $$('[data-open-trip]').forEach(b => b.addEventListener('click', openTrip));
+    $('[data-close-trip]').addEventListener('click', closeTrip);
+    overlay.addEventListener('click', closeTrip);
+
+    $('#payBtn').addEventListener('click', () => {
+      $('#payNote').textContent = 'Connecting to DOKU / SNAP BI gateway (Demo mode)...';
+    });
+
+    let toastTimer;
+    function toast(msg) {
+      const t = $('#toast'); t.textContent = msg; t.classList.remove('hidden');
+      clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.add('hidden'), 2500);
+    }
+
+    $('#menuBtn').addEventListener('click', () => {
+      const open = $('#mobileNav').classList.toggle('hidden') === false;
+      $('#menuBtn').setAttribute('aria-expanded', open);
+    });
+
+    $('#contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      $('#contactNote').textContent = 'Proposal request received. Our family safar coordinator will contact you shortly.';
+    });
+    $('#year').textContent = new Date().getFullYear();
+
+    syncBounds(); renderMode(); invalidate(); renderTours(); renderTrip();
+  })();
+  </script>
+</body>
+</html>
+

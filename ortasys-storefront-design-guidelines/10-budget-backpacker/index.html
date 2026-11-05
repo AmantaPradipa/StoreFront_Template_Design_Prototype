@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jalan Hemat Travel · Trip Mandiri, Hostel &amp; Open Trip Hemat</title>
+  <meta name="description" content="Jalan Hemat Travel — Platform akomodasi hostel terverifikasi, pod kapsul hemat, dan open trip sharing keliling Indonesia tanpa biaya tersembunyi. Ditenagai oleh Ortasys S4.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* Ortasys Storefront Preset 10 · Budget & Backpacker (10-budget-backpacker/DESIGN.md) */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#263C5A', hover: '#192C45' },
+            secondary: '#E56B45',
+            tertiary: '#E9B94F',
+            accent: '#4F927E',
+            canvas: '#F7F7F2',
+            surface: { DEFAULT: '#FFFFFF', muted: '#ECEEE8' },
+            ink: { DEFAULT: '#252E36', muted: '#68717A' },
+            line: '#D9DED8',
+            success: '#28734E',
+            warning: '#A66B25',
+            danger: '#B54545'
+          },
+          fontFamily: {
+            display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            mono: ['ui-monospace', 'monospace']
+          },
+          borderRadius: {
+            xs: '4px',
+            sm: '8px',
+            md: '12px',
+            lg: '18px',
+            xl: '24px',
+            pill: '9999px'
+          },
+          boxShadow: {
+            soft: '0 4px 16px -2px rgba(38, 60, 90, 0.08)',
+            elevated: '0 12px 32px -4px rgba(38, 60, 90, 0.14)'
+          },
+          maxWidth: { container: '1240px' }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #F7F7F2; color: #252E36; }
+    .font-display { font-family: 'Space Grotesk', system-ui, sans-serif; }
+    .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on; }
+    .stepper input::-webkit-outer-spin-button,
+    .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .stepper input { -moz-appearance: textfield; }
+    :focus-visible { outline: 2px solid #E56B45; outline-offset: 2px; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+  </style>
+</head>
+<body class="bg-canvas text-ink antialiased">
+
+  <a href="#searchSection" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-secondary focus:text-white focus:px-4 focus:py-2 focus:rounded-xs">Skip to search</a>
+
+  <!-- Illustrative Sample Banner -->
+  <aside class="bg-primary text-tertiary px-4 py-1.5 text-xs font-semibold flex justify-between items-center border-b border-black/20 z-50">
+    <div class="max-w-container mx-auto w-full flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-secondary"></span>
+        <span class="font-display tracking-wide text-xs text-white uppercase font-bold">PRESET 10 // BUDGET &amp; BACKPACKER</span>
+        <span class="hidden sm:inline text-white/60 text-[11px]">— Illustrative Sample Data</span>
+      </div>
+      <div class="text-[11px] text-white/80 font-mono">Ditenagai Mesin B2B Ortasys S4</div>
+    </div>
+  </aside>
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-line shadow-xs">
+    <div class="max-w-container mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+      <a href="#home" class="flex items-center gap-3 shrink-0 group">
+        <div class="w-10 h-10 rounded-xs bg-primary flex items-center justify-center text-white shadow-xs transition-transform group-hover:scale-105">
+          <svg class="w-5 h-5 text-tertiary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        </div>
+        <div>
+          <span class="font-display text-2xl font-bold tracking-tight text-primary block leading-none">JALAN HEMAT</span>
+          <span class="text-[10px] font-bold text-secondary tracking-widest uppercase block mt-1">Hostels &bull; Open Trips &bull; Budget Stays</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-[13px] font-semibold text-ink" aria-label="Main Navigation">
+        <a href="#searchSection" class="hover:text-secondary transition-colors">Cari Ranjang Murah</a>
+        <a href="#catalog" class="hover:text-secondary transition-colors">Hostel &amp; Pod</a>
+        <a href="#rules" class="hover:text-secondary transition-colors">Transparansi Budget</a>
+        <a href="#faq" class="hover:text-secondary transition-colors">FAQ Backpacker</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button type="button" data-open-trip class="flex items-center gap-2 bg-surface-muted hover:bg-line text-primary px-3.5 py-2 rounded-xs text-xs font-bold transition">
+          <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+          <span class="font-display tracking-wide uppercase">Trip Bag</span>
+          <span data-trip-count class="w-5 h-5 rounded-xs bg-secondary text-white text-xs flex items-center justify-center font-bold font-mono">0</span>
+        </button>
+
+        <button id="menuBtn" type="button" class="md:hidden w-10 h-10 rounded-xs flex items-center justify-center text-ink hover:bg-surface-muted" aria-label="Buka menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobileNav" class="md:hidden hidden border-t border-line bg-surface px-4 py-4 flex flex-col gap-2 font-semibold text-[14px]">
+      <a href="#searchSection" class="py-2 text-ink hover:text-secondary">Cari Ranjang Murah</a>
+      <a href="#catalog" class="py-2 text-ink hover:text-secondary">Hostel &amp; Pod</a>
+      <a href="#rules" class="py-2 text-ink hover:text-secondary">Transparansi Budget</a>
+      <a href="#faq" class="py-2 text-ink hover:text-secondary">FAQ Backpacker</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <!-- ============ TRANSIT DEPARTURE BOARD SPLIT HERO (PRESET 10 DNA) ============ -->
+    <section class="bg-primary text-white py-10 border-b-4 border-secondary">
+      <div class="max-w-container mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <!-- Left 6-Col Punchy Backpacker Headline -->
+          <div class="lg:col-span-6 space-y-4">
+            <div class="inline-flex items-center gap-2 bg-secondary text-white px-3 py-1 rounded-xs">
+              <span class="font-mono text-xs font-bold uppercase tracking-wider">BOARDING PASS // ZERO HIDDEN FEES</span>
+            </div>
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.04] tracking-tight">
+              Keliling Indonesia Lebih Jauh, Bayar Lebih Hemat.
+            </h1>
+            <p class="text-[15px] text-canvas/90 leading-relaxed max-w-xl">
+              Pod kapsul bersih berloker 60L, bunk bed dekat stasiun, dan open trip sharing jeep. Tarif ritel jujur dicek seketika secara live.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1 font-mono text-[11px]">
+              <span class="px-2.5 py-1 bg-white/10 rounded-xs border border-white/15 text-tertiary">✓ FREE LOCKER 60L</span>
+              <span class="px-2.5 py-1 bg-white/10 rounded-xs border border-white/15 text-tertiary">✓ FREE WATER REFILL</span>
+              <span class="px-2.5 py-1 bg-white/10 rounded-xs border border-white/15 text-tertiary">✓ 24H NO CURFEW</span>
+            </div>
+          </div>
+
+          <!-- Right 6-Col Live Hostel & Open-Trip Departure Board -->
+          <div class="lg:col-span-6 bg-primary-hover border-2 border-white/20 rounded-sm p-4 sm:p-5 font-mono shadow-elevated">
+            <div class="flex items-center justify-between pb-3 border-b border-white/15 text-[11px] text-tertiary">
+              <span class="font-bold"> PAPAN TARIF RUTE HEMAT // LIVE S4</span>
+              <span class="px-2 py-0.5 bg-success text-white rounded-xs text-[10px]">● ONLINE</span>
+            </div>
+            <div class="divide-y divide-white/10 text-xs mt-2">
+              <button type="button" data-route-pick="Yogyakarta Malioboro" data-route-filter="pod" class="w-full py-2.5 flex items-center justify-between hover:bg-white/5 px-2 rounded-xs transition text-left">
+                <div>
+                  <span class="text-tertiary font-bold">[YOG-POD]</span>
+                  <span class="text-white ml-2 font-sans font-semibold">Malioboro Capsule Pod</span>
+                </div>
+                <span class="text-secondary font-bold">Rp 125.000/bed →</span>
+              </button>
+              <button type="button" data-route-pick="Sukapura Bromo" data-route-filter="transit" class="w-full py-2.5 flex items-center justify-between hover:bg-white/5 px-2 rounded-xs transition text-left">
+                <div>
+                  <span class="text-tertiary font-bold">[BRM-BNK]</span>
+                  <span class="text-white ml-2 font-sans font-semibold">Bromo Transit Bunkhouse</span>
+                </div>
+                <span class="text-secondary font-bold">Rp 115.000/bed →</span>
+              </button>
+              <button type="button" data-route-pick="Kuta Mandalika Lombok" data-route-filter="surf" class="w-full py-2.5 flex items-center justify-between hover:bg-white/5 px-2 rounded-xs transition text-left">
+                <div>
+                  <span class="text-tertiary font-bold">[LOM-SRF]</span>
+                  <span class="text-white ml-2 font-sans font-semibold">Mandalika Surf Dorm</span>
+                </div>
+                <span class="text-secondary font-bold">Rp 145.000/bed →</span>
+              </button>
+              <button type="button" data-route-pick="Samosir Danau Toba" data-route-filter="transit" class="w-full py-2.5 flex items-center justify-between hover:bg-white/5 px-2 rounded-xs transition text-left">
+                <div>
+                  <span class="text-tertiary font-bold">[TOB-HOM]</span>
+                  <span class="text-white ml-2 font-sans font-semibold">Tuk-Tuk Lakefront Twin</span>
+                </div>
+                <span class="text-secondary font-bold">Rp 165.000/rm →</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PERFORATED BOARDING-PASS / TICKET-STUB SEARCH CONSOLE (PRESET 10 DNA) ============ -->
+    <section id="searchSection" class="max-w-container mx-auto px-4 sm:px-6 pt-5 relative z-20" aria-labelledby="searchHeading">
+      <div class="bg-surface rounded-sm border-2 border-primary shadow-elevated overflow-hidden">
+        <!-- Ticket Top Bar -->
+        <div class="bg-primary text-white px-5 py-3 flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs font-bold text-tertiary uppercase">TIKET PENCARIAN // S4-BUDGET</span>
+            <span class="text-white/30">|</span>
+            <h2 id="searchHeading" class="font-display text-base font-bold uppercase tracking-wide">Cek Ranjang Hostel &amp; Slot Open Trip</h2>
+          </div>
+          <div class="inline-flex rounded-xs bg-primary-hover p-0.5 border border-white/15" role="tablist">
+            <button type="button" role="tab" data-mode="hotels" aria-selected="true" class="mode-tab h-8 px-4 rounded-xs font-display text-xs font-bold uppercase tracking-wider transition bg-secondary text-white">Hostel &amp; Pod</button>
+            <button type="button" role="tab" data-mode="activities" aria-selected="false" class="mode-tab h-8 px-4 rounded-xs font-display text-xs font-bold uppercase tracking-wider transition text-white/70 hover:text-white">Open Trip Patungan</button>
+          </div>
+        </div>
+
+        <form id="searchForm" novalidate>
+          <div class="grid grid-cols-1 lg:grid-cols-12">
+            <!-- Left 8-Col Main Ticket Body -->
+            <div class="lg:col-span-8 p-5 sm:p-6 lg:border-r-2 lg:border-dashed border-line space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-3.5">
+                <!-- Route Input -->
+                <label class="sm:col-span-6 flex flex-col gap-1">
+                  <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-primary" data-dest-label>Rute Kota / Hub Backpacker</span>
+                  <input id="dest" list="destList" placeholder="Yogyakarta, Bromo, Mandalika, Toba…" autocomplete="off" class="h-11 px-3 rounded-xs bg-canvas border-2 border-line text-[13px] font-semibold text-ink focus:border-secondary focus:bg-white focus:outline-none">
+                  <datalist id="destList"></datalist>
+                </label>
+
+                <!-- Dates -->
+                <label class="sm:col-span-3 flex flex-col gap-1">
+                  <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-primary">Check-in</span>
+                  <input id="checkIn" type="date" aria-describedby="dateRuleHint" class="tnum h-11 px-2.5 rounded-xs bg-canvas border-2 border-line text-[12px] focus:border-secondary focus:bg-white focus:outline-none font-mono">
+                </label>
+                <label class="sm:col-span-3 flex flex-col gap-1" data-hotel-only>
+                  <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-primary">Check-out</span>
+                  <input id="checkOut" type="date" aria-describedby="dateRuleHint" class="tnum h-11 px-2.5 rounded-xs bg-canvas border-2 border-line text-[12px] focus:border-secondary focus:bg-white focus:outline-none font-mono">
+                </label>
+              </div>
+
+              <!-- Bed & Backpacker Steppers -->
+              <div class="grid grid-cols-3 gap-3 pt-1">
+                <div class="flex flex-col gap-1" data-hotel-only>
+                  <span id="lbl-rooms" class="font-mono text-[10px] font-bold uppercase text-ink-muted">Ranjang/Pod (1–9)</span>
+                  <div class="stepper flex items-center h-10 rounded-xs bg-canvas border-2 border-line" role="group" aria-labelledby="lbl-rooms">
+                    <button type="button" class="w-8 h-full text-[16px] font-bold text-primary hover:bg-surface-muted" data-step="rooms" data-dir="-1" aria-label="Kurangi ranjang">−</button>
+                    <input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                    <button type="button" class="w-8 h-full text-[16px] font-bold text-primary hover:bg-surface-muted" data-step="rooms" data-dir="1" aria-label="Tambah ranjang">+</button>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <span id="lbl-adults" class="font-mono text-[10px] font-bold uppercase text-ink-muted" data-adults-label>Backpacker (1–20)</span>
+                  <div class="stepper flex items-center h-10 rounded-xs bg-canvas border-2 border-line" role="group" aria-labelledby="lbl-adults">
+                    <button type="button" class="w-8 h-full text-[16px] font-bold text-primary hover:bg-surface-muted" data-step="adults" data-dir="-1" aria-label="Kurangi traveler">−</button>
+                    <input id="adults" type="number" min="1" max="20" value="1" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                    <button type="button" class="w-8 h-full text-[16px] font-bold text-primary hover:bg-surface-muted" data-step="adults" data-dir="1" aria-label="Tambah traveler">+</button>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <span id="lbl-children" class="font-mono text-[10px] font-bold uppercase text-ink-muted" data-children-label>Teman Patungan</span>
+                  <div class="stepper flex items-center h-10 rounded-xs bg-canvas border-2 border-line" role="group" aria-labelledby="lbl-children">
+                    <button type="button" class="w-8 h-full text-[16px] font-bold text-primary hover:bg-surface-muted" data-step="children" data-dir="-1" aria-label="Kurangi patungan">−</button>
+                    <input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                    <button type="button" class="w-8 h-full text-[16px] font-bold text-primary hover:bg-surface-muted" data-step="children" data-dir="1" aria-label="Tambah patungan">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div id="formErrors" class="text-[12px] text-danger font-mono font-bold" role="alert" aria-live="assertive"></div>
+            </div>
+
+            <!-- Right 4-Col Tear-Off Ticket Stub -->
+            <div class="lg:col-span-4 p-5 sm:p-6 bg-canvas flex flex-col justify-between gap-4 border-t-2 lg:border-t-0 border-dashed border-line">
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-secondary">POTONGAN TIKET // STUB</span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-success"></span>
+                </div>
+                <p class="font-display text-sm font-bold text-primary mt-1">Every price is checked live when you ask for it</p>
+                <p id="summary" class="font-mono text-xs text-ink-muted mt-1" aria-live="polite">Pilih tanggal untuk melihat tarif hostel live</p>
+                <p id="dateRuleHint" class="text-[10px] font-mono text-ink-muted mt-1">Maks. 30 malam · Fasilitas loker setara</p>
+              </div>
+
+              <button id="checkBtn" type="submit" class="w-full h-12 rounded-xs bg-secondary hover:bg-[#d45833] text-white font-display text-xs font-bold tracking-wider uppercase transition shadow-soft flex items-center justify-center gap-2">
+                <span data-btn-label>Cek Tarif Live Hemat</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ 2-COLUMN PERFORATED TICKET CARDS (PRESET 10 DNA) ============ -->
+    <section id="catalog" class="max-w-container mx-auto px-4 sm:px-6 pt-16">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b-2 border-primary">
+        <div>
+          <span class="font-mono text-xs font-bold uppercase tracking-wider text-secondary">DAFTAR RANJANG &amp; KURSI PATUNGAN</span>
+          <h2 id="sectionHeading" class="font-display text-3xl sm:text-4xl font-bold text-primary mt-0.5">Hostel Pods &amp; Kamar Komunitas Backpacker</h2>
+        </div>
+
+        <!-- Filter Pills -->
+        <div id="filterBar" class="flex flex-wrap gap-1.5 items-center" role="group" aria-label="Filter Tipe Budget">
+          <button type="button" data-filter="all" class="filter-btn h-8 px-3.5 rounded-xs text-[11px] font-mono font-bold uppercase tracking-wider bg-primary text-white shadow-xs transition">Semua Rute</button>
+          <button type="button" data-filter="pod" class="filter-btn h-8 px-3.5 rounded-xs text-[11px] font-mono font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Kapsul &amp; Pod</button>
+          <button type="button" data-filter="surf" class="filter-btn h-8 px-3.5 rounded-xs text-[11px] font-mono font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Surf Camp Pantai</button>
+          <button type="button" data-filter="transit" class="filter-btn h-8 px-3.5 rounded-xs text-[11px] font-mono font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Transit Gunung &amp; Danau</button>
+        </div>
+      </div>
+
+      <!-- 2-Column Perforated Ticket Cards Grid -->
+      <div id="results" class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-5"></div>
+    </section>
+
+    <!-- ============ 3-COLUMN UTILITARIAN ZERO-GIMMICK SPEC STRIP (PRESET 10 DNA) ============ -->
+    <section id="rules" class="max-w-container mx-auto px-4 sm:px-6 pt-16">
+      <div class="bg-primary text-white rounded-sm border-2 border-primary-hover p-6 sm:p-8 shadow-soft">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-5 border-b border-white/15">
+          <h2 class="font-display text-2xl font-bold uppercase">Standar Anti-Gimmick Jalan Hemat</h2>
+          <span class="font-mono text-xs text-tertiary">Illustrative Sample Data</span>
+        </div>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div class="bg-white/10 p-5 rounded-xs border-l-4 border-secondary">
+            <span class="font-mono text-tertiary text-xs font-bold block">01 // HARGA BERSIH</span>
+            <h3 class="font-display text-lg font-bold mt-1">Tanpa Biaya Sprei / Admin</h3>
+            <p class="text-xs text-canvas/85 mt-1.5 leading-relaxed">Harga ritel yang tampil adalah harga final. Tidak ada biaya tambahan tersembunyi saat tiba di resepsionis hostel.</p>
+          </div>
+          <div class="bg-white/10 p-5 rounded-xs border-l-4 border-tertiary">
+            <span class="font-mono text-tertiary text-xs font-bold block">02 // LOKER 60L AMAN</span>
+            <h3 class="font-display text-lg font-bold mt-1">Muat Ransel Carrier Besar</h3>
+            <p class="text-xs text-canvas/85 mt-1.5 leading-relaxed">Setiap ranjang dilengkapi loker kunci bawah kasur ukuran 60L, lampu baca, tirai privasi, dan 2 soket charger.</p>
+          </div>
+          <div class="bg-white/10 p-5 rounded-xs border-l-4 border-accent">
+            <span class="font-mono text-tertiary text-xs font-bold block">03 // QRIS SNAP BI</span>
+            <h3 class="font-display text-lg font-bold mt-1">Bayar Patungan Instan</h3>
+            <p class="text-xs text-canvas/85 mt-1.5 leading-relaxed">Penyelesaian langsung via QRIS SNAP BI (GoPay, OVO, ShopeePay, Mobile Banking) dan DOKU Virtual Account.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ SECTION ============ -->
+    <section id="faq" class="max-w-container mx-auto px-4 sm:px-6 pt-16 pb-20">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-10">
+          <span class="text-xs font-bold uppercase tracking-wider text-secondary font-display">Tanya Jawab Backpacker</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-primary mt-1">FAQ Trip Mandiri &amp; Patungan</h2>
+        </div>
+
+        <div class="space-y-3">
+          <details class="bg-surface rounded-xs border border-line p-5">
+            <summary class="font-display text-base font-bold text-ink cursor-pointer flex justify-between items-center">
+              <span>Apakah ada jam malam (curfew) di hostel mitra?</span>
+              <span class="faq-icon text-secondary text-xl font-bold transition-transform font-mono">+</span>
+            </summary>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Seluruh hostel mitra Jalan Hemat menerapkan akses kartu/pin digital 24 jam bebas jam malam, sehingga kamu bebas pulang larut malam atau bangun dini hari untuk mengejar sunrise.</p>
+          </details>
+
+          <details class="bg-surface rounded-xs border border-line p-5">
+            <summary class="font-display text-base font-bold text-ink cursor-pointer flex justify-between items-center">
+              <span>Bagaimana mekanisme open trip sharing patungan?</span>
+              <span class="faq-icon text-secondary text-xl font-bold transition-transform font-mono">+</span>
+            </summary>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Kamu cukup bayar per pax kursi, sistem Ortasys akan menggabungkan kuota traveler lain secara otomatis hingga kuota minimal terpenuhi dengan jaminan keberangkatan pasti.</p>
+          </details>
+
+          <details class="bg-surface rounded-xs border border-line p-5">
+            <summary class="font-display text-base font-bold text-ink cursor-pointer flex justify-between items-center">
+              <span>Bolehkah menitipkan tas/carrier setelah check-out?</span>
+              <span class="faq-icon text-secondary text-xl font-bold transition-transform font-mono">+</span>
+            </summary>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Ya, seluruh hostel menyediakan fasilitas penitipan tas (luggage storage) gratis di lobby hingga waktu keberangkatan kereta malam atau penerbangan Anda.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-surface border-t border-line py-12 text-xs text-ink-muted">
+    <div class="max-w-container mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-line">
+        <div>
+          <span class="font-display text-2xl font-bold text-primary block">Jalan Hemat Travel</span>
+          <p class="text-[12px] mt-0.5">Platform Backpacker &amp; Open Trip Hemat · Ditenagai Mesin Distribusi Ortasys S4.</p>
+        </div>
+        <div class="flex gap-6 font-semibold text-ink text-[13px]">
+          <a href="#catalog" class="hover:text-secondary">Hostel Pods</a>
+          <a href="#rules" class="hover:text-secondary">Transparansi</a>
+          <a href="#faq" class="hover:text-secondary">Bantuan FAQ</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] gap-2">
+        <p>Penyelesaian terjamin melalui gateway resmi <strong class="text-ink">DOKU</strong> dan <strong class="text-ink">SNAP BI</strong>. Mockup data bersifat ilustratif [PRD 9.2].</p>
+        <p>© <span id="year"></span> Jalan Hemat Travel. Hak Cipta Dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ TRIP DRAWER / BAG ============ -->
+  <div id="tripOverlay" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden" aria-hidden="true"></div>
+  <aside id="tripDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-[420px] bg-surface shadow-elevated translate-x-full transition-transform duration-300 flex flex-col border-l border-line" role="dialog" aria-modal="true" aria-labelledby="tripTitle" aria-hidden="true">
+    <div class="bg-primary text-white px-6 h-18 flex items-center justify-between border-b border-black/20">
+      <div>
+        <h2 id="tripTitle" class="font-display text-xl font-bold uppercase">Backpacker Bag Anda</h2>
+        <p class="text-xs text-tertiary">Build Your Trip — Ranjang &amp; Open Trip</p>
+      </div>
+      <button type="button" data-close-trip class="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white" aria-label="Tutup bag">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <div id="tripItems" class="flex-1 overflow-y-auto p-5 flex flex-col gap-3"></div>
+
+    <div class="bg-canvas p-6 border-t border-line">
+      <div class="space-y-1.5 text-[12px] font-mono text-ink-muted">
+        <div class="flex justify-between">
+          <span>Subtotal Item:</span>
+          <span id="tripSubtotal" class="font-bold text-ink">Rp 0</span>
+        </div>
+        <div class="flex justify-between text-[11px]">
+          <span>Biaya Layanan &amp; Loker:</span>
+          <span class="text-success font-semibold">Gratis Termasuk (Net Final)</span>
+        </div>
+        <div class="flex items-baseline justify-between pt-2 border-t border-line/60 text-[14px]">
+          <span class="font-display text-sm font-bold text-ink uppercase">Total Pelunasan:</span>
+          <span id="tripTotal" class="text-2xl font-bold text-secondary font-mono">Rp 0</span>
+        </div>
+      </div>
+
+      <button id="payBtn" type="button" class="mt-4 w-full py-3.5 bg-secondary hover:bg-[#d45833] text-white rounded-xs text-xs font-bold tracking-wider uppercase transition shadow-soft disabled:opacity-40 font-display">
+        Lanjut ke Pembayaran Hemat (DOKU / SNAP)
+      </button>
+      <p id="payNote" class="mt-2 text-[11px] text-center text-ink-muted" aria-live="polite">Penyelesaian resmi Bank Indonesia SNAP BI &amp; DOKU.</p>
+    </div>
+  </aside>
+
+  <!-- ============ DETAIL QUICK-VIEW MODAL ============ -->
+  <div id="detailModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="bg-surface rounded-md max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[90vh]">
+      <div class="relative aspect-[16/9] bg-surface-muted shrink-0">
+        <img id="modalImg" src="" alt="" class="w-full h-full object-cover">
+        <button type="button" data-close-modal class="absolute top-3 right-3 w-8 h-8 rounded-xs bg-surface/90 flex items-center justify-center text-ink hover:bg-surface transition shadow-xs" aria-label="Tutup detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <span id="modalBadge" class="absolute bottom-3 left-3 px-2.5 py-1 rounded-xs bg-primary text-white text-[11px] font-display uppercase font-bold tracking-wider"></span>
+      </div>
+      <div class="p-6 overflow-y-auto flex-1 flex flex-col gap-3">
+        <span id="modalArea" class="text-[11px] font-bold uppercase tracking-wider text-secondary font-display"></span>
+        <h3 id="modalTitle" class="font-display text-2xl font-bold text-primary leading-tight"></h3>
+        <p id="modalDesc" class="text-[13px] text-ink-muted leading-relaxed font-normal"></p>
+        <div class="pt-3 border-t border-line">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-display mb-2">Fasilitas Backpacker Termasuk:</h4>
+          <div id="modalAmenities" class="flex flex-wrap gap-1.5 text-[12px]"></div>
+        </div>
+        <div class="pt-3 border-t border-line">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-display mb-1">Kebijakan Menginap:</h4>
+          <p id="modalPolicy" class="text-[12px] text-ink-muted"></p>
+        </div>
+      </div>
+      <div class="p-5 border-t border-line bg-canvas flex items-center justify-between gap-4 shrink-0">
+        <div>
+          <p class="text-[11px] text-ink-muted font-mono uppercase tracking-wider">Tarif Bersih Per Ranjang</p>
+          <p id="modalPrice" class="font-mono text-[20px] font-bold text-secondary"></p>
+        </div>
+        <button id="modalSelectBtn" type="button" class="h-10 px-6 rounded-xs bg-secondary hover:bg-[#d45833] text-white text-xs font-bold uppercase tracking-wider transition shadow-xs font-display">
+          Pilih Ranjang Ini
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CHECKOUT CONFIRMATION MODAL ============ -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="checkoutHeading">
+    <div class="bg-surface rounded-md max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[92vh]">
+      <div class="bg-primary text-white flex items-center justify-between px-6 py-4 border-b border-black/20">
+        <div>
+          <h3 id="checkoutHeading" class="font-display text-xl font-bold uppercase">Penyelesaian Reservasi Backpacker</h3>
+          <p class="text-xs text-tertiary">Penyelesaian Cepat DOKU &amp; SNAP BI</p>
+        </div>
+        <button type="button" data-close-checkout class="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white" aria-label="Tutup checkout">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+
+      <div id="checkoutFormContent" class="p-6 overflow-y-auto flex-1 flex flex-col gap-4">
+        <div class="p-4 rounded-xs bg-canvas border border-line text-[13px]">
+          <div class="flex justify-between font-display text-ink text-sm font-bold uppercase">
+            <span>Rincian Backpacker Bag:</span>
+            <span id="coItemCount" class="font-mono">0 Item</span>
+          </div>
+          <div id="coItemList" class="mt-2 space-y-1 text-[12px] text-ink-muted"></div>
+          <div class="mt-3 pt-2 border-t border-line/60 flex justify-between font-mono font-bold text-ink text-[14px]">
+            <span>Total Tagihan Bersih:</span>
+            <span id="coTotal" class="text-secondary font-bold text-base">Rp 0</span>
+          </div>
+        </div>
+
+        <form id="coForm" class="flex flex-col gap-3">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-display">Data Traveler / Pemesan</h4>
+          <label class="flex flex-col gap-1 text-[12px] font-medium text-ink">
+            Nama Lengkap Sesuai KTP / Paspor
+            <input id="coName" type="text" required placeholder="Contoh: Dimas Bagas" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
+          </label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="flex flex-col gap-1 text-[12px] font-medium text-ink">
+              Email Konfirmasi Voucher
+              <input id="coEmail" type="email" required placeholder="dimas@traveler.com" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
+            </label>
+            <label class="flex flex-col gap-1 text-[12px] font-medium text-ink">
+              No. WhatsApp Aktif
+              <input id="coPhone" type="tel" required placeholder="081234567890" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
+            </label>
+          </div>
+
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-display mt-2">Metode Pembayaran Cepat</h4>
+          <div class="space-y-2 text-[12px]">
+            <label class="flex items-center gap-3 p-3 rounded-xs bg-white border border-line cursor-pointer hover:border-secondary">
+              <input type="radio" name="payMethod" value="qris" checked class="accent-secondary">
+              <div class="flex-1">
+                <span class="font-display font-bold text-ink block text-sm">QRIS SNAP BI (Bebas Biaya Admin)</span>
+                <span class="text-[11px] text-ink-muted block">BCA, Mandiri, BRI, GoPay, OVO, ShopeePay, DANA</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xs bg-white border border-line cursor-pointer hover:border-secondary">
+              <input type="radio" name="payMethod" value="va" class="accent-secondary">
+              <div class="flex-1">
+                <span class="font-display font-bold text-ink block text-sm">DOKU Virtual Account Multi-Bank</span>
+                <span class="text-[11px] text-ink-muted block">BCA, Mandiri, BRI, Permata VA otomatis terverifikasi</span>
+              </div>
+            </label>
+          </div>
+
+          <button type="submit" id="coSubmitBtn" class="mt-3 w-full py-3 bg-secondary hover:bg-[#d45833] text-white rounded-xs text-xs font-bold uppercase tracking-wider transition shadow-soft flex items-center justify-center gap-2 font-display">
+            <span>Bayar &amp; Amankan Ranjang Kapsul</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Confirmation Success State -->
+      <div id="checkoutSuccessContent" class="hidden p-8 flex flex-col items-center text-center gap-4">
+        <div class="w-14 h-14 rounded-xs bg-success/15 text-success flex items-center justify-center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <div>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-success font-display">Pembayaran Sah Terkonfirmasi</span>
+          <h4 class="font-display text-2xl font-bold text-primary mt-1">Voucher Backpacker Terbit</h4>
+          <p class="text-[13px] text-ink-muted mt-1">Loker dan nomor ranjang pod Anda telah tercatat otomatis di sistem hostel mitra.</p>
+        </div>
+        <div class="w-full p-4 rounded-xs bg-canvas border border-line text-left text-[12px] space-y-1.5 font-mono">
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Ref. Booking:</span>
+            <span id="successRef" class="font-bold text-ink">HEMAT-2026-0001</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Nama Traveler:</span>
+            <span id="successGuest" class="font-bold text-ink">-</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Total Pembayaran:</span>
+            <span id="successAmount" class="font-bold text-secondary font-bold">Rp 0</span>
+          </div>
+        </div>
+        <div class="w-full flex flex-col gap-2 pt-2">
+          <button type="button" id="btnDownloadVoucher" class="w-full py-3 rounded-xs bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider transition font-display">
+            Unduh E-Voucher &amp; Peta Koordinat (PDF)
+          </button>
+          <button type="button" data-finish-checkout class="w-full py-2.5 rounded-xs bg-surface-muted hover:bg-line text-ink text-xs font-semibold uppercase tracking-wider transition font-display">
+            Kembali ke Beranda
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-primary text-white rounded-xs px-6 py-3 text-[13px] font-medium shadow-elevated" role="status" aria-live="polite"></div>
+
+  <script>
+  (() => {
+    'use strict';
+    /* Data Sampel Ilustratif Preset 10 (Jalan Hemat Travel) */
+    const BUDGET_HOSTELS = [
+      {
+        id: 'jh-yogya-pod', name: 'Malioboro Backpacker Pod & Social Dorm', area: 'Malioboro · Yogyakarta', filter: 'pod',
+        keys: 'jogja yogyakarta malioboro pod kapsul hostel dorm murah', img: '../../assets/serenity_umrah_privilege/jam-gadang.jpg', alt: 'Kapsul pod kayu rapi dan nyaman',
+        stars: 4, room: 'Single Capsule Pod (Tirai Privasi & Loker Kunci)', meal: 'Refill Kopi, Teh & Air Galon Gratis', policy: 'Bebas pembatalan hingga 24 jam sebelum check-in.',
+        desc: 'Hostel kapsul modern berjarak 3 menit jalan kaki dari Stasiun Tugu Yogyakarta. Setiap pod dilengkapi kasur ortopedik busa empuk, lampu baca fleksibel, 2 colokan listrik, dan loker kunci carrier 60L.',
+        amenities: ['Loker Kunci Ukuran Carrier 60L', 'Colokan Listrik & Lampu Baca Privat', 'Refill Kopi & Teh Gratis 24 Jam', 'Kamar Mandi Air Panas Bersih', 'WiFi Kencang Bebas Lemot', 'Bebas Jam Malam (Access Card)'],
+        nightly: 125000
+      },
+      {
+        id: 'jh-lombok-surf', name: 'Kuta Mandalika Backpacker Surf Camp', area: 'Kuta Mandalika · Lombok Selatan', filter: 'surf',
+        keys: 'lombok mandalika surf camp pantai dorm bunk bed murah', img: '../../assets/mandalika_escape/beach.jpg', alt: 'Pondok kayu dekat pantai tempat santai para surfer',
+        stars: 4, room: 'Bunk Bed in 6-Bed Mixed Dorm', meal: 'Sarapan Pisang Bakar & Kopi Lombok', policy: 'Bebas pembatalan hingga 48 jam sebelum kedatangan.',
+        desc: 'Tempat kumpul para peselancar dan petualang mandiri dari seluruh dunia. Suasana santai dengan rak papan selancar aman, kolam renang mini, dan persewaan motor trail hemat ke pantai-pantai tersembunyi.',
+        amenities: ['Rental Papan Selancar & Scooter Murah', 'Dapur Bersama Lengkap Kulkas', 'Kolam Renang Mini & Hammock', 'Dekat Pantai Kuta Mandalika', 'Informasi Spot Ombak Harian'],
+        nightly: 145000
+      },
+      {
+        id: 'jh-bromo-base', name: 'Probolinggo Bromo Transit Bunkhouse', area: 'Sukapura · Kaki Gunung Bromo', filter: 'transit',
+        keys: 'bromo sukapura probolinggo transit bunkhouse murah sharing', img: '../../assets/khatulistiwa_explorer/bromo.jpg', alt: 'Penginapan transit berlatar pegunungan sejuk Bromo',
+        stars: 4, room: 'Bunk Bed Dorm Kayu Hangat', meal: 'Teh Jahe Hangat & Sarapan Mi Rebus', policy: 'Bebas pembatalan hingga 24 jam sebelum kedatangan.',
+        desc: 'Transit hub strategis bagi backpacker yang hendak mendaki Bromo secara mandiri atau bergabung dengan rombongan Jeep sharing. Kamar hangat berinsulasi dengan selimut tebal dan pancuran air panas.',
+        amenities: ['Shower Air Panas Deras', 'Selimut Tebal Wool Gunung', 'Sharing Jeep Bromo Langsung dari Hostel', 'Penyewaan Jaket & Kupluk Hangat'],
+        nightly: 115000
+      },
+      {
+        id: 'jh-toba-homestay', name: 'Tuk-Tuk Samosir Traditional Batak Homestay', area: 'Samosir · Danau Toba', filter: 'transit',
+        keys: 'toba samosir tuktuk homestay danau batak murah', img: '../../assets/serenity_umrah_privilege/toba.jpg', alt: 'Penginapan kayu santai di tepi Danau Toba',
+        stars: 4, room: 'Budget Lakefront Twin Room', meal: 'Sarapan Roti Bakar & Kopi Toba', policy: 'Bebas pembatalan hingga 48 jam sebelum kedatangan.',
+        desc: 'Penginapan sederhana dan sangat bersih di semenanjung Tuk-Tuk Samosir. Beranda kayu langsung menghadap ketenangan perairan Danau Toba, dikelilingi taman hijau asri dan penyewaan sepeda kayuh.',
+        amenities: ['Akses Langsung Berenang di Danau', 'Sewa Sepeda & Motor Murah', 'Balkon Santai Menghadap Air', 'WiFi Gratis'],
+        nightly: 165000
+      }
+    ];
+
+    const BUDGET_TRIPS = [
+      {
+        id: 'jh-bromo-midnight', kind: 'tour', name: 'Open Trip Bromo Sunrise Sharing Jeep', area: 'TN Bromo Tengger Semeru', filter: 'transit',
+        keys: 'bromo open trip sharing jeep sunrise kawah hemat', img: '../../assets/khatulistiwa_explorer/bromo.jpg', alt: 'Pemandangan kawah Bromo dan jeep di lautan pasir',
+        duration: 'Midnight Trip (00:30 - 10:00)',
+        desc: 'Trip patungan hemat menggunakan Jeep 4x4 sharing kapasitas 6 orang. Menikmati matahari terbit Penanjakan 1, kawah aktif Bromo, Pasir Berbisik, dan Bukit Teletubbies.',
+        amenities: ['Jeep 4WD Sharing & Sopir Lokal', 'Tiket Masuk Resmi TNBTS Termasuk', 'Pemandu Rombongan Patungan'],
+        policy: 'Bebas pembatalan hingga 48 jam sebelum jadwal.',
+        perPerson: 325000
+      },
+      {
+        id: 'jh-ijen-sharing', kind: 'tour', name: 'Ekspedisi Sharing Blue Fire Kawah Ijen', area: 'Banyuwangi & Bondowoso', filter: 'transit',
+        keys: 'ijen blue fire api biru banyuwangi sharing gas masker murah', img: '../../assets/khatulistiwa_explorer/ijen.jpg', alt: 'Kobaran api biru Kawah Ijen dini hari',
+        duration: 'Midnight Hike (00:00 - 08:30)',
+        desc: 'Pendakian malam hari bersama sesama backpacker menuju dasar kaldera Kawah Ijen untuk menyaksikan fenomena kobaran api biru belerang yang langka di dunia.',
+        amenities: ['Transportasi Sharing Pulang-Pergi Banyuwangi', 'Sewa Masker Gas Respirator Standar', 'Tiket Masuk Konservasi Ijen & Guide'],
+        policy: 'Bebas pembatalan hingga 24 jam sebelum jadwal.',
+        perPerson: 275000
+      },
+      {
+        id: 'jh-gili-snorkeling', kind: 'tour', name: 'Sharing Boat Snorkeling Tiga Gili Keliling Karang', area: 'Gili Air, Meno & Trawangan', filter: 'surf',
+        keys: 'gili sharing boat snorkeling penyu patung murah', img: '../../assets/mandalika_escape/gili-boat.jpg', alt: 'Perahu sharing snorkeling di laut jernih Gili',
+        duration: '4 Jam Eksplorasi 3 Spot Penyu & Patung',
+        desc: 'Bergabung dengan perahu sharing berkapasitas 15 orang menjelajahi spot patung bawah air Gili Meno, terumbu karang penyu Gili Air, dan makan siang santai di Gili Trawangan.',
+        amenities: ['Perahu Sharing Kayu Tradisional', 'Sewa Masker & Snorkel Bersih', 'Life Jacket Keselamatan', 'Pemandu Snorkeling Lokal'],
+        policy: 'Bebas penyesuaian jadwal bila cuaca laut berangin.',
+        perPerson: 150000
+      }
+    ];
+
+    const LIMITS = { rooms: [1, 9], adults: [1, 20], children: [0, 20] };
+    const MAX_NIGHTS = 30;
+    const idr = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const DAY = 86400000;
+    const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    const addDays = (s, n) => iso(new Date(new Date(s + 'T00:00:00').getTime() + n * DAY));
+    const today = iso(new Date());
+
+    const state = { mode: 'hotels', filter: 'all', priced: false, checking: false, checkedAt: null, trip: [] };
+    const el = {
+      form: $('#searchForm'), dest: $('#dest'), checkIn: $('#checkIn'), checkOut: $('#checkOut'),
+      rooms: $('#rooms'), adults: $('#adults'), children: $('#qChildren'), errors: $('#formErrors'), summary: $('#summary'),
+      btn: $('#checkBtn'), results: $('#results')
+    };
+
+    const clamp = (v, [lo, hi]) => Math.min(hi, Math.max(lo, Number.isFinite(v) ? v : lo));
+    const num = k => clamp(parseInt(el[k].value, 10), LIMITS[k]);
+    const nights = () => {
+      if (!el.checkIn.value || !el.checkOut.value) return 0;
+      return Math.round((new Date(el.checkOut.value) - new Date(el.checkIn.value)) / DAY);
+    };
+
+    function validate() {
+      const errs = [];
+      if (!el.checkIn.value) {
+        errs.push('Silakan tentukan tanggal mulai menginap.');
+      } else if (el.checkIn.value < today) {
+        errs.push('Tanggal check-in tidak boleh sebelum hari ini.');
+      }
+
+      if (state.mode === 'hotels') {
+        if (!el.checkOut.value) errs.push('Silakan tentukan tanggal selesai menginap.');
+        else {
+          const n = nights();
+          if (n < 1) errs.push('Tanggal check-out minimal 1 malam setelah check-in.');
+          if (n > MAX_NIGHTS) errs.push(`Maksimal durasi inap adalah ${MAX_NIGHTS} malam.`);
+        }
+      }
+      return errs;
+    }
+
+    const roomRate = s => Math.round(s.nightly * (1 + 0.1 * Math.max(0, num('adults') - 2) + 0.05 * num('children')) / 1000) * 1000;
+    const stayTotal = s => roomRate(s) * Math.max(1, nights()) * num('rooms');
+    const actTotal = a => (a.perPerson * num('adults') + Math.round(a.perPerson * 0.7) * num('children')) * num('rooms');
+
+    function summaryText() {
+      const r = num('rooms'), a = num('adults');
+      if (state.mode === 'hotels') {
+        const n = nights();
+        if (!n || n < 1) return 'Pilih tanggal untuk melihat tarif hostel live';
+        return `${n} Malam × ${r} Ranjang/Pod (${a} Backpacker)`;
+      }
+      return el.checkIn.value ? `${el.checkIn.value} · ${r * a} Kursi Sharing Trip` : 'Pilih tanggal open trip';
+    }
+
+    function renderMode() {
+      $$('.mode-tab').forEach(t => {
+        const on = t.dataset.mode === state.mode;
+        t.setAttribute('aria-selected', on);
+        t.className = `mode-tab h-8 px-4 rounded-xs font-display text-xs font-bold uppercase tracking-wider transition ${on ? 'bg-secondary text-white' : 'text-white/70 hover:text-white'}`;
+      });
+      const hotels = state.mode === 'hotels';
+      $$('[data-hotel-only]').forEach(n => n.classList.toggle('hidden', !hotels));
+      
+      $('#sectionHeading').textContent = hotels ? 'Hostel Pods & Kamar Komunitas Backpacker' : 'Open Trip Sharing Patungan Hemat';
+      $('[data-dest-label]').textContent = hotels ? 'Rute Kota / Hub Backpacker' : 'Destinasi Open Trip Patungan';
+      el.dest.placeholder = hotels ? 'Yogyakarta, Bromo, Mandalika, Toba…' : 'Open Trip Bromo, Kawah Ijen, Snorkeling Gili…';
+
+      const datalistItems = hotels ? BUDGET_HOSTELS.map(s => s.name) : BUDGET_TRIPS.map(e => e.name);
+      $('#destList').innerHTML = ['Yogyakarta Malioboro', 'Kuta Mandalika Lombok', 'Sukapura Bromo', 'Samosir Danau Toba', ...datalistItems]
+        .map(v => `<option value="${v}">`).join('');
+    }
+
+    function renderResults() {
+      const isHotels = state.mode === 'hotels';
+      const q = el.dest.value.trim().toLowerCase();
+      let list = (isHotels ? BUDGET_HOSTELS : BUDGET_TRIPS).filter(it => {
+        const matchQ = !q || (it.name + ' ' + it.area + ' ' + it.keys).toLowerCase().includes(q);
+        const matchFilter = state.filter === 'all' || it.filter === state.filter;
+        return matchQ && matchFilter;
+      });
+      if (!list.length && state.filter === 'all') list = isHotels ? BUDGET_HOSTELS : BUDGET_TRIPS;
+
+      if (!list.length) {
+        el.results.innerHTML = `
+          <div class="col-span-full py-12 text-center text-ink-muted bg-surface rounded-xs border-2 border-line">
+            <p class="font-display text-xl font-bold text-primary">Tidak ada rute hostel yang cocok dengan filter "${state.filter}"</p>
+            <button type="button" data-reset-filter class="mt-3 px-4 py-2 rounded-xs bg-secondary text-white text-xs font-bold uppercase tracking-wider font-display">Reset Filter Rute</button>
+          </div>`;
+        return;
+      }
+
+      el.results.innerHTML = list.map((it, idx) => {
+        const total = isHotels ? stayTotal(it) : actTotal(it);
+        const sub = isHotels ? `${idr.format(roomRate(it))} / malam` : `${idr.format(it.perPerson)} / pax`;
+        const priceHTML = state.checking
+          ? `<div class="h-8 w-24 bg-surface-muted animate-pulse rounded-xs"></div>`
+          : state.priced
+            ? `<div><span class="text-[10px] font-mono uppercase text-success font-bold block">● TARIF LIVE</span><p class="tnum font-mono text-[20px] font-bold text-secondary">${idr.format(total)}</p><p class="tnum font-mono text-[10px] text-ink-muted">${sub}</p></div>`
+            : `<div><span class="text-[10px] font-mono uppercase text-ink-muted block">TARIF DASAR</span><p class="font-mono text-[16px] font-bold text-primary">${idr.format(isHotels ? it.nightly : it.perPerson)}</p><p class="text-[10px] text-ink-muted italic">Cek tanggal dulu</p></div>`;
+
+        return `
+        <article class="bg-surface rounded-xs border-2 border-primary/80 hover:border-secondary overflow-hidden shadow-soft grid sm:grid-cols-12 transition duration-200 group">
+          <!-- Left 4-Col Thumbnail -->
+          <div class="sm:col-span-4 relative min-h-[180px] bg-surface-muted overflow-hidden">
+            <img src="${it.img}" alt="${it.alt}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-2 left-2 bg-primary text-tertiary text-[10px] font-mono font-bold px-2 py-0.5 rounded-xs">
+              TIKET #0${idx + 1}
+            </span>
+            <span class="absolute bottom-2 left-2 bg-surface/95 text-ink text-[10px] font-mono font-bold px-2 py-0.5 rounded-xs">
+              ${isHotels ? 'POD / BUNK' : 'SHARING TRIP'}
+            </span>
+          </div>
+
+          <!-- Middle 5-Col Hostel Specs -->
+          <div class="sm:col-span-5 p-4 flex flex-col justify-between gap-2">
+            <div>
+              <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-secondary block">${it.area}</span>
+              <h3 class="font-display text-lg font-bold text-primary leading-snug cursor-pointer hover:text-secondary transition-colors mt-0.5" data-detail="${it.id}">${it.name}</h3>
+              <p class="text-[11px] font-semibold text-ink mt-1">${isHotels ? it.room : it.duration}</p>
+              <p class="text-[11px] text-success font-mono mt-0.5">✓ ${isHotels ? it.meal : 'Termasuk BBM & Tiket'}</p>
+            </div>
+
+            <div class="flex flex-wrap gap-1 pt-2 border-t border-line">
+              ${(it.amenities || []).slice(0, 2).map(a => `<span class="px-1.5 py-0.5 rounded-xs bg-canvas text-ink-muted text-[9px] font-mono">${a}</span>`).join('')}
+              <button type="button" data-detail="${it.id}" class="text-[10px] font-mono font-bold text-primary hover:text-secondary underline ml-auto">[Rincian]</button>
+            </div>
+          </div>
+
+          <!-- Right 3-Col Perforated Price Stub -->
+          <div class="sm:col-span-3 p-4 bg-canvas border-t-2 sm:border-t-0 sm:border-l-2 border-dashed border-line flex sm:flex-col items-center sm:items-end justify-between gap-2 text-right">
+            ${priceHTML}
+            <button type="button" data-select="${it.id}" class="h-9 px-3.5 rounded-xs ${state.priced ? 'bg-secondary hover:bg-[#d45833] text-white' : 'bg-primary hover:bg-primary-hover text-white'} text-[11px] font-mono font-bold uppercase tracking-wider transition w-auto sm:w-full">
+              ${state.priced ? '+ Ambil Bed' : 'Cek &amp; Ambil'}
+            </button>
+          </div>
+        </article>`;
+      }).join('');
+    }
+
+    function syncBounds() {
+      el.checkIn.min = today;
+      if (el.checkIn.value) {
+        el.checkOut.min = addDays(el.checkIn.value, 1);
+        el.checkOut.max = addDays(el.checkIn.value, MAX_NIGHTS);
+      } else {
+        el.checkOut.min = addDays(today, 1);
+        el.checkOut.removeAttribute('max');
+      }
+    }
+
+    function invalidate() {
+      state.priced = false; el.errors.textContent = '';
+      el.summary.textContent = summaryText();
+      renderResults();
+    }
+
+    $$('.mode-tab').forEach(t => t.addEventListener('click', () => { state.mode = t.dataset.mode; renderMode(); invalidate(); }));
+    $$('[data-step]').forEach(b => b.addEventListener('click', () => {
+      const k = b.dataset.step; el[k].value = clamp(num(k) + Number(b.dataset.dir), LIMITS[k]); invalidate();
+    }));
+    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('change', () => { el[k].value = num(k); invalidate(); }));
+    el.checkIn.addEventListener('change', () => {
+      syncBounds();
+      if (el.checkIn.value && (!el.checkOut.value || el.checkOut.value <= el.checkIn.value)) el.checkOut.value = addDays(el.checkIn.value, 2);
+      invalidate();
+    });
+    el.checkOut.addEventListener('change', invalidate);
+    el.dest.addEventListener('input', renderResults);
+
+    // Filter Buttons
+    $$('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        state.filter = btn.dataset.filter;
+        $$('.filter-btn').forEach(b => {
+          const active = b === btn;
+          b.className = `filter-btn h-8 px-3.5 rounded-xs text-[11px] font-mono font-bold uppercase tracking-wider transition ${active ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`;
+        });
+        renderResults();
+      });
+    });
+
+    el.form.addEventListener('submit', e => {
+      e.preventDefault();
+      const errs = validate();
+      el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
+      if (errs.length) return;
+
+      state.checking = true; el.btn.disabled = true;
+      el.btn.querySelector('[data-btn-label]').textContent = 'Memeriksa Kuota Ranjang…';
+      renderResults();
+
+      setTimeout(() => {
+        state.checking = false; state.priced = true; state.checkedAt = new Date();
+        el.btn.disabled = false; el.btn.querySelector('[data-btn-label]').textContent = 'Cek Tarif Live Hemat';
+        el.summary.textContent = `Live Terverifikasi: ${summaryText()}`;
+        renderResults();
+        document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+      }, 650);
+    });
+
+    document.addEventListener('click', e => {
+      const sel = e.target.closest('[data-select]'); if (sel) return selectItem(sel.dataset.select);
+      const det = e.target.closest('[data-detail]'); if (det) return openDetail(det.dataset.detail);
+      const rm = e.target.closest('[data-remove]'); if (rm) { state.trip.splice(Number(rm.dataset.remove), 1); renderTrip(); }
+      const rst = e.target.closest('[data-reset-filter]'); if (rst) {
+        state.filter = 'all';
+        $$('.filter-btn').forEach((b, i) => b.className = `filter-btn h-8 px-3.5 rounded-xs text-[11px] font-mono font-bold uppercase tracking-wider transition ${i === 0 ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`);
+        renderResults();
+      }
+      const rp = e.target.closest('[data-route-pick]'); if (rp) {
+        el.dest.value = rp.dataset.routePick;
+        state.filter = rp.dataset.routeFilter || 'all';
+        $$('.filter-btn').forEach(b => {
+          const active = b.dataset.filter === state.filter;
+          b.className = `filter-btn h-8 px-3.5 rounded-xs text-[11px] font-mono font-bold uppercase tracking-wider transition ${active ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`;
+        });
+        renderResults();
+        document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    function selectItem(id) {
+      if (!state.priced) {
+        toast('Memverifikasi kuota hostel live...');
+        const errs = validate();
+        if (errs.length) {
+          document.getElementById('searchSection').scrollIntoView({ behavior: 'smooth' });
+          el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
+          return;
+        }
+        state.priced = true;
+        renderResults();
+      }
+      const isHotel = id.startsWith('jh-yogya-pod') || id.startsWith('jh-lombok-surf') || id.startsWith('jh-bromo-base') || id.startsWith('jh-toba-homestay');
+      const it = (isHotels => isHotels ? BUDGET_HOSTELS : BUDGET_TRIPS)(isHotel).find(x => x.id === id);
+      const total = isHotel ? stayTotal(it) : actTotal(it);
+      state.trip.push({ id: it.id, name: it.name, area: it.area, detail: summaryText(), total });
+      renderTrip();
+      toast(`Ditambahkan ke backpacker bag: ${it.name}`);
+      closeDetail();
+    }
+
+    function renderTrip() {
+      $$('[data-trip-count]').forEach(n => n.textContent = state.trip.length);
+      const box = $('#tripItems');
+      box.innerHTML = state.trip.length ? state.trip.map((t, i) => `
+        <div class="p-3.5 rounded-xs bg-canvas border border-line flex flex-col gap-1">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <p class="font-display font-bold text-primary text-[14px] leading-snug">${t.name}</p>
+              <p class="text-[11px] text-ink-muted">${t.area} · ${t.detail}</p>
+            </div>
+            <button type="button" data-remove="${i}" class="text-[11px] font-bold text-danger hover:underline">Hapus</button>
+          </div>
+          <p class="tnum font-mono text-[14px] font-bold text-secondary mt-1">${idr.format(t.total)}</p>
+        </div>`).join('')
+        : `<p class="py-12 text-center text-[13px] text-ink-muted font-display">Backpacker bag Anda masih kosong.<br>Pilih ranjang pod kapsul atau open trip patungan.</p>`;
+      
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      $('#tripSubtotal').textContent = idr.format(totalVal);
+      $('#tripTotal').textContent = idr.format(totalVal);
+      $('#payBtn').disabled = !state.trip.length;
+    }
+
+    // Detail Quick-View Modal
+    const detailModal = $('#detailModal');
+    let currentDetailItem = null;
+    function openDetail(id) {
+      const isHotel = id.startsWith('jh-yogya-pod') || id.startsWith('jh-lombok-surf') || id.startsWith('jh-bromo-base') || id.startsWith('jh-toba-homestay');
+      const it = (isHotels => isHotels ? BUDGET_HOSTELS : BUDGET_TRIPS)(isHotel).find(x => x.id === id);
+      if (!it) return;
+      currentDetailItem = it;
+
+      $('#modalImg').src = it.img;
+      $('#modalImg').alt = it.alt;
+      $('#modalBadge').textContent = isHotel ? `Peringkat Bintang ${'★'.repeat(it.stars)}` : it.duration;
+      $('#modalArea').textContent = it.area;
+      $('#modalTitle').textContent = it.name;
+      $('#modalDesc').textContent = it.desc;
+      $('#modalAmenities').innerHTML = (it.amenities || []).map(a => `<span class="px-2.5 py-1 rounded-xs bg-surface-muted text-ink font-mono text-[11px] font-semibold">${a}</span>`).join('');
+      $('#modalPolicy').textContent = it.policy;
+
+      const total = isHotel ? stayTotal(it) : actTotal(it);
+      $('#modalPrice').textContent = state.priced ? idr.format(total) : `Mulai ${idr.format(isHotel ? it.nightly : it.perPerson)}`;
+      detailModal.classList.remove('hidden');
+    }
+    function closeDetail() {
+      detailModal.classList.add('hidden');
+      currentDetailItem = null;
+    }
+    $('[data-close-modal]').addEventListener('click', closeDetail);
+    detailModal.addEventListener('click', e => { if (e.target === detailModal) closeDetail(); });
+    $('#modalSelectBtn').addEventListener('click', () => {
+      if (currentDetailItem) selectItem(currentDetailItem.id);
+    });
+
+    // Checkout Modal
+    const checkoutModal = $('#checkoutModal');
+    function openCheckout() {
+      if (!state.trip.length) return;
+      closeTrip();
+      $('#coItemCount').textContent = `${state.trip.length} Item Hemat`;
+      $('#coItemList').innerHTML = state.trip.map(t => `<div class="flex justify-between font-display text-sm font-semibold"><span>• ${t.name}</span><span class="font-mono font-bold">${idr.format(t.total)}</span></div>`).join('');
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      $('#coTotal').textContent = idr.format(totalVal);
+      $('#checkoutFormContent').classList.remove('hidden');
+      $('#checkoutSuccessContent').classList.add('hidden');
+      checkoutModal.classList.remove('hidden');
+    }
+    function closeCheckout() {
+      checkoutModal.classList.add('hidden');
+    }
+    $('[data-close-checkout]').addEventListener('click', closeCheckout);
+    checkoutModal.addEventListener('click', e => { if (e.target === checkoutModal) closeCheckout(); });
+    $('[data-finish-checkout]').addEventListener('click', () => {
+      closeCheckout();
+      state.trip = [];
+      renderTrip();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    $('#btnDownloadVoucher').addEventListener('click', () => {
+      toast('E-Voucher & Peta Koordinat sedang diunduh (Simulasi PDF)...');
+    });
+
+    $('#coForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const guestName = $('#coName').value.trim();
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      const randomRef = 'HEMAT-2026-' + Math.floor(1000 + Math.random() * 9000);
+
+      $('#successRef').textContent = randomRef;
+      $('#successGuest').textContent = guestName;
+      $('#successAmount').textContent = idr.format(totalVal);
+
+      $('#checkoutFormContent').classList.add('hidden');
+      $('#checkoutSuccessContent').classList.remove('hidden');
+    });
+
+    // Drawer Navigation
+    const drawer = $('#tripDrawer'), overlay = $('#tripOverlay');
+    function openTrip() { overlay.classList.remove('hidden'); drawer.classList.remove('translate-x-full'); drawer.setAttribute('aria-hidden', 'false'); }
+    function closeTrip() { overlay.classList.add('hidden'); drawer.classList.add('translate-x-full'); drawer.setAttribute('aria-hidden', 'true'); }
+    $$('[data-open-trip]').forEach(b => b.addEventListener('click', openTrip));
+    $('[data-close-trip]').addEventListener('click', closeTrip);
+    overlay.addEventListener('click', closeTrip);
+
+    $('#payBtn').addEventListener('click', openCheckout);
+
+    let toastTimer;
+    function toast(msg) {
+      const t = $('#toast'); t.textContent = msg; t.classList.remove('hidden');
+      clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.add('hidden'), 2500);
+    }
+
+    $('#menuBtn').addEventListener('click', () => {
+      const open = $('#mobileNav').classList.toggle('hidden') === false;
+      $('#menuBtn').setAttribute('aria-expanded', open);
+    });
+    $('#year').textContent = new Date().getFullYear();
+
+    syncBounds(); renderMode(); invalidate(); renderTrip();
+  })();
+  </script>
+</body>
+</html>

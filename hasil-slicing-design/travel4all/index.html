@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel4All · Explore the World with Unforgettable Journeys</title>
+  <meta name="description" content="Travel4All — Modern editorial &amp; curated discovery travel platform. Discover personalized trips, tailored itineraries, and seamless multi-destination booking." />
+
+  <!-- Google Fonts: Plus Jakarta Sans, Inter & Cormorant Garamond Italic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600;1,700&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --color-brand-primary: #0284C7;
+      --color-brand-accent: #0EA5E9;
+      --color-surface-canvas: #F8FAFC;
+    }
+  </style>
+
+  <style>
+    :root {
+      color-scheme: light;
+    }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #F8FAFC;
+      color: #0F172A;
+    }
+    .font-display {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+    .font-serif-italic {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-weight: 700;
+    }
+    .tnum {
+      font-variant-numeric: tabular-nums;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  </style>
+</head>
+
+<body class="bg-[#F8FAFC] text-slate-900 antialiased selection:bg-sky-600 selection:text-white">
+
+  <!-- ========================================================================= -->
+  <!-- TOP NAVIGATION BAR (STICKY, NO BROKEN IMAGES)                             -->
+  <!-- ========================================================================= -->
+  <header class="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto h-20 px-6 sm:px-10 lg:px-16 flex items-center justify-between gap-6">
+      <!-- Left: Text-Based Brand Logo with Monogram Badge (DESIGN.md §4.1) -->
+      <a href="#hero-section" class="inline-flex items-center gap-2.5 group cursor-pointer" aria-label="Travel4All Home">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 to-sky-700 text-white font-display font-extrabold text-lg flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+          T
+        </div>
+        <div class="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 flex items-baseline">
+          <span>Travel</span><span class="font-serif-italic text-2xl sm:text-3xl text-sky-600 ml-0.5">4All</span>
+        </div>
+      </a>
+
+      <!-- Center: Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-2 lg:gap-3 text-xs sm:text-sm font-semibold text-slate-600" aria-label="Main Navigation">
+        <a href="#hero-section" class="nav-pill px-3.5 py-1.5 rounded-lg bg-sky-600 text-white font-bold transition">Home</a>
+        <a href="#experiences-section" class="nav-pill px-3.5 py-1.5 rounded-lg hover:bg-slate-100 hover:text-slate-900 transition">Destinations</a>
+        <a href="#steps-section" class="nav-pill px-3.5 py-1.5 rounded-lg hover:bg-slate-100 hover:text-slate-900 transition">Tours</a>
+        <a href="#testimonials-section" class="nav-pill px-3.5 py-1.5 rounded-lg hover:bg-slate-100 hover:text-slate-900 transition">Reviews</a>
+        <a href="#faq-section" class="nav-pill px-3.5 py-1.5 rounded-lg hover:bg-slate-100 hover:text-slate-900 transition">FAQ</a>
+        <a href="#blog-section" class="nav-pill px-3.5 py-1.5 rounded-lg hover:bg-slate-100 hover:text-slate-900 transition">Insights</a>
+      </nav>
+
+      <!-- Right: Currency Toggle & Account Actions -->
+      <div class="flex items-center gap-3">
+        <!-- Currency Switcher (IDR / USD) -->
+        <button type="button" id="currencyToggleBtn" onclick="toggleCurrency()"
+                class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs font-bold text-slate-700 transition cursor-pointer"
+                title="Switch Currency (IDR / USD)">
+          <span id="currSymbol" class="text-sky-600 font-mono">IDR</span>
+          <span class="text-slate-400">▾</span>
+        </button>
+
+        <!-- Guest State -->
+        <div id="guestAuthContainer" class="flex items-center gap-2.5">
+          <button type="button" onclick="openAuthModal('signin')"
+                  class="bg-sky-500 hover:bg-sky-600 active:scale-95 text-white font-display font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-sm transition cursor-pointer">
+            Sign In
+          </button>
+          <button type="button" onclick="openAuthModal('signin')"
+                  class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition cursor-pointer"
+                  aria-label="User Profile">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+          </button>
+        </div>
+
+        <!-- Logged-In State (Marcus Vance) -->
+        <div id="userProfileContainer" class="hidden relative">
+          <button type="button" onclick="toggleProfileMenu(event)"
+                  class="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 pl-1.5 pr-3 py-1 rounded-full border border-slate-200 text-xs font-bold text-slate-800 transition cursor-pointer">
+            <span class="w-6 h-6 rounded-full bg-sky-600 text-white flex items-center justify-center text-[10px] font-bold">MV</span>
+            <span id="loggedUserName">Marcus Vance</span>
+            <span class="text-slate-400">▾</span>
+          </button>
+          <div id="profileDropdown" class="hidden absolute right-0 mt-2 w-52 bg-white rounded-2xl shadow-2xl border border-slate-200 py-2 z-50 text-xs">
+            <div class="px-4 py-2 border-b border-slate-100">
+              <p class="font-bold text-slate-900">Marcus Vance</p>
+              <p class="text-[11px] text-slate-400">marcus@travel4all.com</p>
+            </div>
+            <a href="#experiences-section" onclick="toggleProfileMenu(event)" class="block px-4 py-2 hover:bg-slate-50 text-slate-700">My Booked Voyages (1)</a>
+            <a href="#faq-section" onclick="toggleProfileMenu(event)" class="block px-4 py-2 hover:bg-slate-50 text-slate-700">24/7 Concierge Desk</a>
+            <div class="border-t border-slate-100 my-1"></div>
+            <button type="button" onclick="signOutUser()" class="w-full text-left px-4 py-2 text-rose-600 hover:bg-rose-50 font-semibold cursor-pointer">
+              Sign Out
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button type="button" id="mobileMenuBtn" onclick="toggleMobileNav()" class="md:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobileNavDrawer" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-2 text-sm font-semibold">
+      <a href="#hero-section" onclick="toggleMobileNav()" class="block py-2 text-sky-600 font-bold">Home</a>
+      <a href="#experiences-section" onclick="toggleMobileNav()" class="block py-2 text-slate-700">Destinations</a>
+      <a href="#steps-section" onclick="toggleMobileNav()" class="block py-2 text-slate-700">Tours</a>
+      <a href="#testimonials-section" onclick="toggleMobileNav()" class="block py-2 text-slate-700">Reviews</a>
+      <a href="#faq-section" onclick="toggleMobileNav()" class="block py-2 text-slate-700">FAQ</a>
+      <a href="#blog-section" onclick="toggleMobileNav()" class="block py-2 text-slate-700">Insights</a>
+    </div>
+  </header>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 1: HERO & FLOATING HORIZONTAL SEARCH BAR (#hero-section)          -->
+  <!-- Note: No overflow-hidden on outer section so search popovers never clip!  -->
+  <!-- ========================================================================= -->
+  <section id="hero-section" class="relative w-full pb-12">
+    <!-- Hero Visual Backdrop Container -->
+    <div class="relative mx-auto max-w-[1400px] sm:px-4 lg:px-6 pt-2">
+      <div class="relative min-h-[540px] sm:min-h-[600px] sm:rounded-3xl overflow-hidden flex items-center bg-slate-900 text-white shadow-xl">
+        <!-- Airplane Wing Above Clouds Image -->
+        <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=2000&q=85"
+             onerror="this.src='../../assets/khatulistiwa_explorer/bromo.jpg'"
+             alt="Commercial airplane wing soaring above sunlit white clouds"
+             class="absolute inset-0 w-full h-full object-cover object-right scale-105 transition-transform duration-1000" />
+        <!-- Editorial Dark Left Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/60 to-slate-900/20 pointer-events-none"></div>
+
+        <!-- Hero Left Editorial Content -->
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 py-16 sm:py-24">
+          <div class="max-w-xl">
+            <!-- Eyebrow Badge -->
+            <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-6">
+              <span class="text-sky-400">✈</span>
+              <span>Curated Luxury &amp; Accessible Wanderlust</span>
+            </div>
+
+            <!-- Hybrid Italic Serif Headline (DESIGN.md §4.1) -->
+            <h1 class="font-display text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.08]">
+              Explore the <span class="font-serif-italic font-bold text-sky-300 text-5xl sm:text-7xl">World</span><br />
+              with Unforgettable<br />
+              <span class="font-serif-italic font-bold text-white text-5xl sm:text-7xl">Journeys</span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="text-white/85 text-xs sm:text-base mt-5 max-w-md leading-relaxed font-normal">
+              Discover personalized trips tailored to your desires. Explore breathtaking destinations and create memories that last forever with our bespoke travel concierge.
+            </p>
+
+            <!-- Hero CTA & Voyager Proof -->
+            <div class="mt-8 flex flex-wrap items-center gap-5">
+              <a href="#experiences-section"
+                 class="bg-sky-500 hover:bg-sky-400 active:scale-95 text-white font-display font-bold text-xs sm:text-sm px-6 py-3.5 rounded-xl shadow-lg transition flex items-center gap-2">
+                <span>View Curated Tours</span>
+                <span>↓</span>
+              </a>
+
+              <div class="flex items-center gap-3">
+                <div class="flex -space-x-2">
+                  <span class="w-8 h-8 rounded-full bg-sky-100 text-sky-800 border-2 border-slate-900 font-bold text-[10px] flex items-center justify-center">SJ</span>
+                  <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 border-2 border-slate-900 font-bold text-[10px] flex items-center justify-center">MV</span>
+                  <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 border-2 border-slate-900 font-bold text-[10px] flex items-center justify-center">ER</span>
+                </div>
+                <span class="text-xs text-white/90 font-medium">Over <strong class="text-white font-bold">14,000+</strong> happy voyagers</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================= -->
+    <!-- FLOATING HORIZONTAL SEARCH CONSOLE (CUSTOM POPOVERS, NON-CLIPPING)      -->
+    <!-- ======================================================================= -->
+    <div class="relative z-30 max-w-6xl mx-auto px-4 sm:px-8 -mt-12">
+      <div class="bg-white rounded-2xl shadow-xl shadow-slate-900/10 border border-slate-200/90 p-4 sm:p-5">
+        <form id="travelSearchForm" onsubmit="handleSearchSubmit(event)" class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+
+          <!-- Col 1: Destination Input + Custom Quick-Pick Popover -->
+          <div class="md:col-span-4 relative md:border-r border-slate-200 pr-3">
+            <div class="flex items-center gap-3 px-2 py-1 rounded-xl hover:bg-slate-50/80 transition cursor-pointer" onclick="openDestDropdown(event)">
+              <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shrink-0 border border-sky-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div class="w-full">
+                <label for="searchDestInput" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 cursor-pointer">Destination</label>
+                <div class="flex items-center justify-between">
+                  <input id="searchDestInput" type="text" placeholder="Where are you going?" autocomplete="off"
+                         onfocus="openDestDropdown(event)" oninput="filterDestList(this.value)"
+                         class="w-full text-xs sm:text-sm font-bold text-slate-900 bg-transparent focus:outline-none placeholder:text-slate-400 mt-0.5" />
+                  <button type="button" id="clearDestBtn" onclick="clearDestination(event)" class="hidden text-slate-400 hover:text-slate-700 text-xs px-1">✕</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Custom Destination Dropdown Popover -->
+            <div id="destDropdownPopover" class="hidden absolute left-0 right-0 sm:-right-12 top-full mt-3 bg-white rounded-2xl shadow-2xl border border-slate-200 p-3.5 z-50 text-xs max-h-80 overflow-y-auto">
+              <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Curated Destinations (8)</span>
+                <span class="text-[10px] font-mono text-sky-600 font-bold">Live Availability</span>
+              </div>
+              <div id="destItemsContainer" class="space-y-1">
+                <div onclick="pickDestination('Positano, Amalfi Coast, Italy')" class="dest-option p-2 hover:bg-sky-50/70 rounded-xl cursor-pointer flex items-center justify-between transition">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-7 h-7 rounded-lg bg-sky-50 text-sky-700 font-mono font-bold text-[10px] flex items-center justify-center border border-sky-200">IT</span>
+                    <div>
+                      <p class="font-bold text-slate-900">Positano Coastal Escape</p>
+                      <p class="text-[11px] text-slate-400">Amalfi Coast, Italy · 7 Days</p>
+                    </div>
+                  </div>
+                  <span class="text-[10px] font-mono font-bold text-sky-600">★ 4.9</span>
+                </div>
+
+                <div onclick="pickDestination('Grossglockner, Austria')" class="dest-option p-2 hover:bg-sky-50/70 rounded-xl cursor-pointer flex items-center justify-between transition">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 font-mono font-bold text-[10px] flex items-center justify-center border border-emerald-200">AT</span>
+                    <div>
+                      <p class="font-bold text-slate-900">Alpine Road Explorer</p>
+                      <p class="text-[11px] text-slate-400">Grossglockner, Austria · 5 Days</p>
+                    </div>
+                  </div>
+                  <span class="text-[10px] font-mono font-bold text-sky-600">★ 4.8</span>
+                </div>
+
+                <div onclick="pickDestination('Cinque Terre, Italy')" class="dest-option p-2 hover:bg-sky-50/70 rounded-xl cursor-pointer flex items-center justify-between transition">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-7 h-7 rounded-lg bg-amber-50 text-amber-700 font-mono font-bold text-[10px] flex items-center justify-center border border-amber-200">IT</span>
+                    <div>
+                      <p class="font-bold text-slate-900">Mediterranean Sunset Charm</p>
+                      <p class="text-[11px] text-slate-400">Cinque Terre, Italy · 7 Days</p>
+                    </div>
+                  </div>
+                  <span class="text-[10px] font-mono font-bold text-sky-600">★ 4.9</span>
+                </div>
+
+                <div onclick="pickDestination('Mykonos, Greece')" class="dest-option p-2 hover:bg-sky-50/70 rounded-xl cursor-pointer flex items-center justify-between transition">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-7 h-7 rounded-lg bg-blue-50 text-blue-700 font-mono font-bold text-[10px] flex items-center justify-center border border-blue-200">GR</span>
+                    <div>
+                      <p class="font-bold text-slate-900">Aegean Island Dream</p>
+                      <p class="text-[11px] text-slate-400">Mykonos, Greece · 6 Days</p>
+                    </div>
+                  </div>
+                  <span class="text-[10px] font-mono font-bold text-sky-600">★ 4.9</span>
+                </div>
+
+                <div onclick="pickDestination('Raja Ampat, Indonesia')" class="dest-option p-2 hover:bg-sky-50/70 rounded-xl cursor-pointer flex items-center justify-between transition">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-7 h-7 rounded-lg bg-teal-50 text-teal-700 font-mono font-bold text-[10px] flex items-center justify-center border border-teal-200">ID</span>
+                    <div>
+                      <p class="font-bold text-slate-900">Secret Island Sanctuary</p>
+                      <p class="text-[11px] text-slate-400">Raja Ampat, Indonesia · 4 Days</p>
+                    </div>
+                  </div>
+                  <span class="text-[10px] font-mono font-bold text-sky-600">★ 4.9</span>
+                </div>
+
+                <div onclick="pickDestination('Isle of Skye, Scotland')" class="dest-option p-2 hover:bg-sky-50/70 rounded-xl cursor-pointer flex items-center justify-between transition">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-7 h-7 rounded-lg bg-indigo-50 text-indigo-700 font-mono font-bold text-[10px] flex items-center justify-center border border-indigo-200">UK</span>
+                    <div>
+                      <p class="font-bold text-slate-900">Highland Wilderness Trek</p>
+                      <p class="text-[11px] text-slate-400">Isle of Skye, Scotland · 5 Days</p>
+                    </div>
+                  </div>
+                  <span class="text-[10px] font-mono font-bold text-sky-600">★ 4.8</span>
+                </div>
+
+                <div onclick="pickDestination('Santorini, Greece')" class="dest-option p-2 hover:bg-sky-50/70 rounded-xl cursor-pointer flex items-center justify-between transition">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-7 h-7 rounded-lg bg-sky-50 text-sky-700 font-mono font-bold text-[10px] flex items-center justify-center border border-sky-200">GR</span>
+                    <div>
+                      <p class="font-bold text-slate-900">Santorini Golden Romance</p>
+                      <p class="text-[11px] text-slate-400">Santorini, Greece · 6 Days</p>
+                    </div>
+                  </div>
+                  <span class="text-[10px] font-mono font-bold text-sky-600">★ 4.9</span>
+                </div>
+
+                <div onclick="pickDestination('South Tyrol, Italy')" class="dest-option p-2 hover:bg-sky-50/70 rounded-xl cursor-pointer flex items-center justify-between transition">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-7 h-7 rounded-lg bg-cyan-50 text-cyan-700 font-mono font-bold text-[10px] flex items-center justify-center border border-cyan-200">IT</span>
+                    <div>
+                      <p class="font-bold text-slate-900">Alpine Glacial Journey</p>
+                      <p class="text-[11px] text-slate-400">South Tyrol, Italy · 5 Days</p>
+                    </div>
+                  </div>
+                  <span class="text-[10px] font-mono font-bold text-sky-600">★ 4.8</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2: Departure Date + Custom Calendar Popover -->
+          <div class="md:col-span-3 relative md:border-r border-slate-200 pr-3">
+            <div class="flex items-center gap-3 px-2 py-1 rounded-xl hover:bg-slate-50/80 transition cursor-pointer" onclick="toggleDatePopover(event)">
+              <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shrink-0 border border-sky-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              </div>
+              <div class="w-full">
+                <div class="flex items-center justify-between">
+                  <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Departure Date</span>
+                  <span id="nightsBadge" class="text-[10px] font-mono font-bold text-sky-600 bg-sky-50 px-2 py-0.5 rounded-full">7 Nights</span>
+                </div>
+                <div class="flex items-center justify-between mt-0.5">
+                  <span id="dateSummaryLabel" class="text-xs sm:text-sm font-bold text-slate-900 truncate">24 Oct – 31 Oct 2026</span>
+                  <span class="text-slate-400 text-xs">▾</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Custom Calendar Popover -->
+            <div id="dateCalendarPopover" class="hidden absolute left-0 sm:-left-6 top-full mt-3 w-80 bg-white rounded-2xl shadow-2xl border border-slate-200 p-4 z-50 text-xs space-y-3">
+              <div class="flex items-center gap-1.5 pb-2 border-b border-slate-100">
+                <button type="button" onclick="setQuickDates(4)" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-sky-50 hover:text-sky-600 font-bold text-[10px] transition cursor-pointer">4 Nights</button>
+                <button type="button" onclick="setQuickDates(7)" class="px-2.5 py-1 rounded-lg bg-sky-50 text-sky-600 font-bold text-[10px] transition cursor-pointer">7 Nights</button>
+                <button type="button" onclick="setQuickDates(10)" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-sky-50 hover:text-sky-600 font-bold text-[10px] transition cursor-pointer">10 Nights</button>
+              </div>
+              <div class="flex items-center justify-between px-1">
+                <button type="button" onclick="shiftMonth(-1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 font-bold flex items-center justify-center cursor-pointer">‹</button>
+                <span id="calHeaderMonth" class="font-display font-bold text-sm text-slate-900">October 2026</span>
+                <button type="button" onclick="shiftMonth(1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 font-bold flex items-center justify-center cursor-pointer">›</button>
+              </div>
+              <div class="grid grid-cols-7 text-center font-bold text-[10px] text-slate-400">
+                <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+              </div>
+              <div id="calendarDaysMatrix" class="grid grid-cols-7 text-center gap-1 text-xs font-medium"></div>
+              <div class="flex items-center justify-between pt-2 border-t border-slate-100">
+                <span id="calFooterStatus" class="text-[11px] font-mono text-slate-500">7 Nights selected</span>
+                <button type="button" onclick="closeAllDropdowns()" class="bg-sky-600 hover:bg-sky-500 text-white font-bold px-4 py-1.5 rounded-lg text-xs cursor-pointer">Apply</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 3: Travelers & Rooms + Custom Stepper Popover -->
+          <div class="md:col-span-3 relative pr-2">
+            <div class="flex items-center gap-3 px-2 py-1 rounded-xl hover:bg-slate-50/80 transition cursor-pointer" onclick="toggleTravelersPopover(event)">
+              <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shrink-0 border border-sky-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              </div>
+              <div class="w-full">
+                <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Travelers</span>
+                <div class="flex items-center justify-between mt-0.5">
+                  <span id="travelersSummaryLabel" class="text-xs sm:text-sm font-bold text-slate-900 truncate">2 Adults, 1 Room</span>
+                  <span class="text-slate-400 text-xs">▾</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Custom Travelers Stepper Popover -->
+            <div id="travelersPopover" class="hidden absolute left-0 right-0 sm:w-72 top-full mt-3 bg-white rounded-2xl shadow-2xl border border-slate-200 p-4 z-50 text-xs space-y-3">
+              <div class="flex items-center justify-between pb-1 border-b border-slate-100">
+                <span class="font-bold text-slate-900">Travelers &amp; Rooms</span>
+                <span class="text-[10px] font-mono text-sky-600 font-bold">Bespoke Setup</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-bold text-slate-900">Adults</p>
+                  <p class="text-[10px] text-slate-400">Age 13+</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="adjustTravelers('adults', -1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-sky-600 hover:text-white font-bold flex items-center justify-center transition cursor-pointer">−</button>
+                  <span id="countAdults" class="font-mono font-bold w-5 text-center">2</span>
+                  <button type="button" onclick="adjustTravelers('adults', 1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-sky-600 hover:text-white font-bold flex items-center justify-center transition cursor-pointer">+</button>
+                </div>
+              </div>
+              <div class="flex items-center justify-between border-t border-slate-100 pt-2">
+                <div>
+                  <p class="font-bold text-slate-900">Children</p>
+                  <p class="text-[10px] text-slate-400">Age 0 - 12</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="adjustTravelers('children', -1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-sky-600 hover:text-white font-bold flex items-center justify-center transition cursor-pointer">−</button>
+                  <span id="countChildren" class="font-mono font-bold w-5 text-center">0</span>
+                  <button type="button" onclick="adjustTravelers('children', 1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-sky-600 hover:text-white font-bold flex items-center justify-center transition cursor-pointer">+</button>
+                </div>
+              </div>
+              <div class="flex items-center justify-between border-t border-slate-100 pt-2">
+                <div>
+                  <p class="font-bold text-slate-900">Rooms</p>
+                  <p class="text-[10px] text-slate-400">Private Suites</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="adjustTravelers('rooms', -1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-sky-600 hover:text-white font-bold flex items-center justify-center transition cursor-pointer">−</button>
+                  <span id="countRooms" class="font-mono font-bold w-5 text-center">1</span>
+                  <button type="button" onclick="adjustTravelers('rooms', 1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-sky-600 hover:text-white font-bold flex items-center justify-center transition cursor-pointer">+</button>
+                </div>
+              </div>
+              <button type="button" onclick="closeAllDropdowns()" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-2 rounded-xl text-xs transition cursor-pointer">
+                Done
+              </button>
+            </div>
+          </div>
+
+          <!-- Col 4: Action CTA Button -->
+          <div class="md:col-span-2">
+            <button id="searchSubmitBtn" type="submit"
+                    class="w-full h-12 bg-sky-500 hover:bg-sky-600 active:scale-95 text-white font-display font-bold text-xs sm:text-sm px-4 rounded-xl shadow-md transition flex items-center justify-center gap-2 cursor-pointer">
+              <span id="searchBtnLabel">Explore Destination</span>
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 2: TAILORED TRAVEL EXPERIENCES (8-CARD GRID, #experiences-section) -->
+  <!-- ========================================================================= -->
+  <section id="experiences-section" class="w-full py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+
+      <!-- Section Header (2 Flexible Columns) -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <span class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Handpicked Itineraries</span>
+          <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-none">
+            Tailored Travel <span class="font-serif-italic font-bold text-sky-700 text-4xl sm:text-6xl">Experiences</span>
+          </h2>
+        </div>
+        <div class="max-w-md md:text-right">
+          <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+            Discover our premier collection of curated voyages, designed to immerse you deeply in natural beauty, cultural richness, and effortless comfort.
+          </p>
+          <button type="button" onclick="resetDestinationFilter()" class="inline-flex items-center gap-1.5 text-sky-600 hover:text-sky-700 font-display font-bold text-xs mt-2.5 hover:underline cursor-pointer">
+            <span>Explore All 8 Curated Destinations</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Region Quick Filter Pills -->
+      <div class="flex items-center justify-between flex-wrap gap-3 mb-8">
+        <div class="flex items-center gap-2 overflow-x-auto pb-1">
+          <button type="button" onclick="filterByRegion('all', this)" class="region-pill px-4 py-1.5 rounded-full bg-sky-600 text-white text-xs font-bold transition cursor-pointer">All Voyages (8)</button>
+          <button type="button" onclick="filterByRegion('italy', this)" class="region-pill px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-sky-500 text-xs font-semibold transition cursor-pointer">Italy (3)</button>
+          <button type="button" onclick="filterByRegion('greece', this)" class="region-pill px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-sky-500 text-xs font-semibold transition cursor-pointer">Greece (2)</button>
+          <button type="button" onclick="filterByRegion('alpine', this)" class="region-pill px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-sky-500 text-xs font-semibold transition cursor-pointer">Alpine &amp; Highlands (2)</button>
+          <button type="button" onclick="filterByRegion('asia', this)" class="region-pill px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-sky-500 text-xs font-semibold transition cursor-pointer">Tropical Asia (1)</button>
+        </div>
+        <span id="liveCatalogStatus" class="text-xs font-mono text-slate-400">Every price checked live via Ortasys Engine</span>
+      </div>
+
+      <!-- 8-Card Destination Grid (2 Rows x 4 Columns on Desktop) -->
+      <div id="destinationsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Card 1: Positano Coastal Escape -->
+        <article class="tour-card bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group cursor-pointer"
+                 data-region="italy" data-title="Positano Coastal Escape Amalfi Coast Italy"
+                 onclick="openBookingModal('Positano Coastal Escape', 'Amalfi Coast, Italy', '7 Days / 6 Nights', 24500000, 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=900&q=80')">
+          <div>
+            <div class="relative aspect-[4/5] overflow-hidden bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=900&q=80"
+                   onerror="this.src='../../assets/bagus_travel/tanah-lot.jpg'"
+                   alt="Positano Coastline Italy"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute bottom-3 left-3 bg-slate-950/75 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full flex items-center gap-1.5">
+                <span class="text-sky-400">●</span> 7 Days / 6 Nights
+              </span>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center gap-1 text-xs mb-1">
+                <span class="text-amber-500">★</span>
+                <span class="font-bold text-slate-800">4.9</span>
+                <span class="text-slate-400 text-[11px]">(128 reviews)</span>
+              </div>
+              <h3 class="font-display font-bold text-base text-slate-900 group-hover:text-sky-600 transition-colors">Positano Coastal Escape</h3>
+              <p class="text-xs text-slate-400 mt-0.5">Amalfi Coast, Italy</p>
+            </div>
+          </div>
+          <div class="px-4 pb-4 pt-2 border-t border-slate-100 flex items-baseline justify-between">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Starting From</span>
+            <span class="font-display font-extrabold text-sm text-slate-900 tnum price-item" data-idr="24500000">Rp 24.500.000</span>
+          </div>
+        </article>
+
+        <!-- Card 2: Alpine Road Explorer -->
+        <article class="tour-card bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group cursor-pointer"
+                 data-region="alpine" data-title="Alpine Road Explorer Grossglockner Austria"
+                 onclick="openBookingModal('Alpine Road Explorer', 'Grossglockner, Austria', '5 Days / 4 Nights', 18200000, 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80')">
+          <div>
+            <div class="relative aspect-[4/5] overflow-hidden bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80"
+                   onerror="this.src='../../assets/khatulistiwa_explorer/rinjani-trail.jpg'"
+                   alt="Grossglockner Alpine Road Austria"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute bottom-3 left-3 bg-slate-950/75 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full flex items-center gap-1.5">
+                <span class="text-sky-400">●</span> 5 Days / 4 Nights
+              </span>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center gap-1 text-xs mb-1">
+                <span class="text-amber-500">★</span>
+                <span class="font-bold text-slate-800">4.8</span>
+                <span class="text-slate-400 text-[11px]">(94 reviews)</span>
+              </div>
+              <h3 class="font-display font-bold text-base text-slate-900 group-hover:text-sky-600 transition-colors">Alpine Road Explorer</h3>
+              <p class="text-xs text-slate-400 mt-0.5">Grossglockner, Austria</p>
+            </div>
+          </div>
+          <div class="px-4 pb-4 pt-2 border-t border-slate-100 flex items-baseline justify-between">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Starting From</span>
+            <span class="font-display font-extrabold text-sm text-slate-900 tnum price-item" data-idr="18200000">Rp 18.200.000</span>
+          </div>
+        </article>
+
+        <!-- Card 3: Mediterranean Sunset Charm -->
+        <article class="tour-card bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group cursor-pointer"
+                 data-region="italy" data-title="Mediterranean Sunset Charm Cinque Terre Italy"
+                 onclick="openBookingModal('Mediterranean Sunset Charm', 'Cinque Terre, Italy', '7 Days / 6 Nights', 26000000, 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=900&q=80')">
+          <div>
+            <div class="relative aspect-[4/5] overflow-hidden bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=900&q=80"
+                   onerror="this.src='../../assets/mandalika_escape/beach.jpg'"
+                   alt="Cinque Terre Cliffside Italy"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute bottom-3 left-3 bg-slate-950/75 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full flex items-center gap-1.5">
+                <span class="text-sky-400">●</span> 7 Days / 6 Nights
+              </span>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center gap-1 text-xs mb-1">
+                <span class="text-amber-500">★</span>
+                <span class="font-bold text-slate-800">4.9</span>
+                <span class="text-slate-400 text-[11px]">(215 reviews)</span>
+              </div>
+              <h3 class="font-display font-bold text-base text-slate-900 group-hover:text-sky-600 transition-colors">Mediterranean Sunset Charm</h3>
+              <p class="text-xs text-slate-400 mt-0.5">Cinque Terre, Italy</p>
+            </div>
+          </div>
+          <div class="px-4 pb-4 pt-2 border-t border-slate-100 flex items-baseline justify-between">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Starting From</span>
+            <span class="font-display font-extrabold text-sm text-slate-900 tnum price-item" data-idr="26000000">Rp 26.000.000</span>
+          </div>
+        </article>
+
+        <!-- Card 4: Aegean Island Dream -->
+        <article class="tour-card bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group cursor-pointer"
+                 data-region="greece" data-title="Aegean Island Dream Mykonos Greece"
+                 onclick="openBookingModal('Aegean Island Dream', 'Mykonos, Greece', '6 Days / 5 Nights', 22800000, 'https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=900&q=80')">
+          <div>
+            <div class="relative aspect-[4/5] overflow-hidden bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=900&q=80"
+                   onerror="this.src='../../assets/mandalika_escape/palm-bay.jpg'"
+                   alt="Mykonos White Alley Greece"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute bottom-3 left-3 bg-slate-950/75 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full flex items-center gap-1.5">
+                <span class="text-sky-400">●</span> 6 Days / 5 Nights
+              </span>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center gap-1 text-xs mb-1">
+                <span class="text-amber-500">★</span>
+                <span class="font-bold text-slate-800">4.9</span>
+                <span class="text-slate-400 text-[11px]">(167 reviews)</span>
+              </div>
+              <h3 class="font-display font-bold text-base text-slate-900 group-hover:text-sky-600 transition-colors">Aegean Island Dream</h3>
+              <p class="text-xs text-slate-400 mt-0.5">Mykonos, Greece</p>
+            </div>
+          </div>
+          <div class="px-4 pb-4 pt-2 border-t border-slate-100 flex items-baseline justify-between">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Starting From</span>
+            <span class="font-display font-extrabold text-sm text-slate-900 tnum price-item" data-idr="22800000">Rp 22.800.000</span>
+          </div>
+        </article>
+
+        <!-- Card 5: Secret Island Sanctuary -->
+        <article class="tour-card bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group cursor-pointer"
+                 data-region="asia" data-title="Secret Island Sanctuary Raja Ampat Indonesia"
+                 onclick="openBookingModal('Secret Island Sanctuary', 'Raja Ampat, Indonesia', '4 Days / 3 Nights', 14500000, '../../assets/khatulistiwa_explorer/raja-ampat.jpg')">
+          <div>
+            <div class="relative aspect-[4/5] overflow-hidden bg-slate-100">
+              <img src="../../assets/khatulistiwa_explorer/raja-ampat.jpg"
+                   alt="Raja Ampat Emerald Lagoon Indonesia"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute bottom-3 left-3 bg-slate-950/75 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full flex items-center gap-1.5">
+                <span class="text-sky-400">●</span> 4 Days / 3 Nights
+              </span>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center gap-1 text-xs mb-1">
+                <span class="text-amber-500">★</span>
+                <span class="font-bold text-slate-800">4.9</span>
+                <span class="text-slate-400 text-[11px]">(82 reviews)</span>
+              </div>
+              <h3 class="font-display font-bold text-base text-slate-900 group-hover:text-sky-600 transition-colors">Secret Island Sanctuary</h3>
+              <p class="text-xs text-slate-400 mt-0.5">Raja Ampat, Indonesia</p>
+            </div>
+          </div>
+          <div class="px-4 pb-4 pt-2 border-t border-slate-100 flex items-baseline justify-between">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Starting From</span>
+            <span class="font-display font-extrabold text-sm text-slate-900 tnum price-item" data-idr="14500000">Rp 14.500.000</span>
+          </div>
+        </article>
+
+        <!-- Card 6: Highland Wilderness Trek -->
+        <article class="tour-card bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group cursor-pointer"
+                 data-region="alpine" data-title="Highland Wilderness Trek Isle of Skye Scotland"
+                 onclick="openBookingModal('Highland Wilderness Trek', 'Isle of Skye, Scotland', '5 Days / 4 Nights', 16800000, 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80')">
+          <div>
+            <div class="relative aspect-[4/5] overflow-hidden bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80"
+                   onerror="this.src='../../assets/khatulistiwa_explorer/padar.jpg'"
+                   alt="Isle of Skye Highland Valley Scotland"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute bottom-3 left-3 bg-slate-950/75 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full flex items-center gap-1.5">
+                <span class="text-sky-400">●</span> 5 Days / 4 Nights
+              </span>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center gap-1 text-xs mb-1">
+                <span class="text-amber-500">★</span>
+                <span class="font-bold text-slate-800">4.8</span>
+                <span class="text-slate-400 text-[11px]">(112 reviews)</span>
+              </div>
+              <h3 class="font-display font-bold text-base text-slate-900 group-hover:text-sky-600 transition-colors">Highland Wilderness Trek</h3>
+              <p class="text-xs text-slate-400 mt-0.5">Isle of Skye, Scotland</p>
+            </div>
+          </div>
+          <div class="px-4 pb-4 pt-2 border-t border-slate-100 flex items-baseline justify-between">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Starting From</span>
+            <span class="font-display font-extrabold text-sm text-slate-900 tnum price-item" data-idr="16800000">Rp 16.800.000</span>
+          </div>
+        </article>
+
+        <!-- Card 7: Santorini Golden Romance -->
+        <article class="tour-card bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group cursor-pointer"
+                 data-region="greece" data-title="Santorini Golden Romance Greece"
+                 onclick="openBookingModal('Santorini Golden Romance', 'Santorini, Greece', '6 Days / 5 Nights', 25400000, 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=900&q=80')">
+          <div>
+            <div class="relative aspect-[4/5] overflow-hidden bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=900&q=80"
+                   onerror="this.src='../../assets/bagus_travel/nusa-penida.jpg'"
+                   alt="Santorini Caldera Sunset Greece"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute bottom-3 left-3 bg-slate-950/75 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full flex items-center gap-1.5">
+                <span class="text-sky-400">●</span> 6 Days / 5 Nights
+              </span>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center gap-1 text-xs mb-1">
+                <span class="text-amber-500">★</span>
+                <span class="font-bold text-slate-800">4.9</span>
+                <span class="text-slate-400 text-[11px]">(340 reviews)</span>
+              </div>
+              <h3 class="font-display font-bold text-base text-slate-900 group-hover:text-sky-600 transition-colors">Santorini Golden Romance</h3>
+              <p class="text-xs text-slate-400 mt-0.5">Santorini, Greece</p>
+            </div>
+          </div>
+          <div class="px-4 pb-4 pt-2 border-t border-slate-100 flex items-baseline justify-between">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Starting From</span>
+            <span class="font-display font-extrabold text-sm text-slate-900 tnum price-item" data-idr="25400000">Rp 25.400.000</span>
+          </div>
+        </article>
+
+        <!-- Card 8: Alpine Glacial Journey -->
+        <article class="tour-card bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group cursor-pointer"
+                 data-region="italy" data-title="Alpine Glacial Journey South Tyrol Italy"
+                 onclick="openBookingModal('Alpine Glacial Journey', 'South Tyrol, Italy', '5 Days / 4 Nights', 19500000, 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=900&q=80')">
+          <div>
+            <div class="relative aspect-[4/5] overflow-hidden bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=900&q=80"
+                   onerror="this.src='../../assets/serenity_umrah_privilege/toba.jpg'"
+                   alt="South Tyrol Alpine Lake Boat Italy"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute bottom-3 left-3 bg-slate-950/75 backdrop-blur-xs text-white text-[10px] font-semibold px-3 py-1 rounded-full flex items-center gap-1.5">
+                <span class="text-sky-400">●</span> 5 Days / 4 Nights
+              </span>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center gap-1 text-xs mb-1">
+                <span class="text-amber-500">★</span>
+                <span class="font-bold text-slate-800">4.8</span>
+                <span class="text-slate-400 text-[11px]">(76 reviews)</span>
+              </div>
+              <h3 class="font-display font-bold text-base text-slate-900 group-hover:text-sky-600 transition-colors">Alpine Glacial Journey</h3>
+              <p class="text-xs text-slate-400 mt-0.5">South Tyrol, Italy</p>
+            </div>
+          </div>
+          <div class="px-4 pb-4 pt-2 border-t border-slate-100 flex items-baseline justify-between">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Starting From</span>
+            <span class="font-display font-extrabold text-sm text-slate-900 tnum price-item" data-idr="19500000">Rp 19.500.000</span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Empty Search State -->
+      <div id="emptyCatalogBox" class="hidden bg-white rounded-2xl border border-slate-200 p-12 text-center my-6">
+        <p class="font-display font-bold text-lg text-slate-800">No Matching Voyages Found</p>
+        <p class="text-xs text-slate-500 mt-1">Try searching for Italy, Greece, Austria, Scotland, or Indonesia.</p>
+        <button type="button" onclick="resetDestinationFilter()" class="mt-4 bg-sky-600 text-white font-bold text-xs px-5 py-2.5 rounded-xl cursor-pointer">
+          Reset Search Filter
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 3: EASY STEPS SECURE DREAM TOUR (#steps-section)                  -->
+  <!-- ========================================================================= -->
+  <section id="steps-section" class="w-full bg-slate-100/80 border-y border-slate-200/70 py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+        <!-- Left Column: Value Pitch & Checkmarks (5 Cols) -->
+        <div class="lg:col-span-5 space-y-5">
+          <span class="block text-[10px] font-bold uppercase tracking-widest text-slate-400">Frictionless Experience</span>
+          <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+            Easy Steps Secure<br />
+            <span class="font-serif-italic font-bold text-sky-700 text-4xl sm:text-6xl">Dream Tour</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Planning an unforgettable vacation should feel as serene as the escape itself. Our three-step framework eliminates guesswork and bureaucratic friction, leaving you purely inspired.
+          </p>
+
+          <ul class="space-y-2.5 pt-2 text-xs sm:text-sm font-semibold text-slate-800">
+            <li class="flex items-center gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center text-xs font-bold">✓</span>
+              <span>100% Certified Local Expert Guides</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center text-xs font-bold">✓</span>
+              <span>Flexible Rescheduling &amp; Refund Windows</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center text-xs font-bold">✓</span>
+              <span>End-to-End Dedicated Travel Concierge</span>
+            </li>
+          </ul>
+
+          <div class="pt-2">
+            <button type="button" onclick="openSpecialistModal()" class="inline-flex items-center gap-2 text-xs font-display font-bold text-slate-900 hover:text-sky-600 border-b border-slate-400 hover:border-sky-600 pb-0.5 transition cursor-pointer">
+              <span>Learn More About Our Guarantee</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: 3 Numbered Step Cards (7 Cols) -->
+        <div class="lg:col-span-7 space-y-4">
+          <!-- Step 1 -->
+          <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/80 shadow-xs flex items-start gap-4 hover:border-sky-300 transition">
+            <div class="w-10 h-10 rounded-full bg-sky-700 text-white font-display font-bold text-sm flex items-center justify-center shrink-0 shadow-xs">
+              1
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-base text-slate-900">Select Your Desired Destination</h3>
+              <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">
+                Browse our rich selection of destinations and curated tour packages. Filter by seasonal weather, activity adventure level, or pure luxury pace to find your perfect match.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/80 shadow-xs flex items-start gap-4 hover:border-sky-300 transition">
+            <div class="w-10 h-10 rounded-full bg-sky-700 text-white font-display font-bold text-sm flex items-center justify-center shrink-0 shadow-xs">
+              2
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-base text-slate-900">Customize &amp; Schedule Details</h3>
+              <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">
+                Choose dates, accommodation style, and personalized activities. Add private helicopter transfers, winery tastings, or bespoke culinary experiences seamlessly.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/80 shadow-xs flex items-start gap-4 hover:border-sky-300 transition">
+            <div class="w-10 h-10 rounded-full bg-sky-700 text-white font-display font-bold text-sm flex items-center justify-center shrink-0 shadow-xs">
+              3
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-base text-slate-900">Complete Booking &amp; Start Packing</h3>
+              <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">
+                Secure your spot with instant confirmation and transparent payment. Receive a tailored digital travel diary, 24/7 concierge WhatsApp line, and packing list.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 4: WHAT OUR TRAVELERS SAY (#testimonials-section)                 -->
+  <!-- ========================================================================= -->
+  <section id="testimonials-section" class="w-full bg-white py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Real Stories</span>
+          <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-none">
+            What Our <span class="font-serif-italic font-bold text-sky-700 text-4xl sm:text-6xl">Travelers</span> Say
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 max-w-md leading-relaxed">
+          Thousands of explorers trust Travel4All every season. Here is how our thoughtful planning transformed their holidays into lifelong memories.
+        </p>
+      </div>
+
+      <!-- 3 Testimonial Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Review 1: Sarah Jenkins -->
+        <article class="bg-[#F8FAFC] rounded-2xl p-6 border border-slate-200/80 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="flex items-center gap-1 text-amber-500 text-sm">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 italic leading-relaxed">
+              "The Positano itinerary exceeded everything we imagined. From private boat charters to cliffside trattorias booked just for us, every recommendation was flawless. Truly effortless elegance."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-200/60">
+            <div class="w-10 h-10 rounded-full bg-sky-100 text-sky-700 font-display font-bold text-xs flex items-center justify-center shrink-0">
+              SJ
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-xs sm:text-sm text-slate-900">Sarah Jenkins</h3>
+              <p class="text-[11px] text-slate-400">London, United Kingdom</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review 2: Marcus Vance -->
+        <article class="bg-[#F8FAFC] rounded-2xl p-6 border border-slate-200/80 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="flex items-center gap-1 text-amber-500 text-sm">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 italic leading-relaxed">
+              "Traveling through the Austrian and Italian alpine passes without worrying about lodging or route permits was such a relief. The digital road book made each morning a pure thrill to explore."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-200/60">
+            <div class="w-10 h-10 rounded-full bg-sky-100 text-sky-700 font-display font-bold text-xs flex items-center justify-center shrink-0">
+              MV
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-xs sm:text-sm text-slate-900">Marcus Vance</h3>
+              <p class="text-[11px] text-slate-400">Sydney, Australia</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review 3: Elena Rostova -->
+        <article class="bg-[#F8FAFC] rounded-2xl p-6 border border-slate-200/80 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="flex items-center gap-1 text-amber-500 text-sm">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 italic leading-relaxed">
+              "Our Aegean honeymoon tour was pure magic. Travel4All arranged private access to Santorini sunset lookouts and seamless ferry transfers. Best investment we could have made for our celebration."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-200/60">
+            <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 font-display font-bold text-xs flex items-center justify-center shrink-0">
+              ER
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-xs sm:text-sm text-slate-900">Elena Rostova</h3>
+              <p class="text-[11px] text-slate-400">Berlin, Germany</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 5: FREQUENTLY ASKED QUESTIONS (#faq-section)                      -->
+  <!-- ========================================================================= -->
+  <section id="faq-section" class="w-full bg-slate-100/70 border-y border-slate-200/70 py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 sm:px-10 lg:px-16">
+
+      <!-- Centered Header -->
+      <div class="text-center mb-8">
+        <span class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Clarity &amp; Guidance</span>
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          Frequently Asked <span class="font-serif-italic font-bold text-sky-700 text-4xl sm:text-6xl">Questions</span>
+        </h2>
+      </div>
+
+      <!-- Category Pill Filter Bar (DESIGN.md §4.5) -->
+      <div class="flex items-center justify-center flex-wrap gap-2 mb-10">
+        <button type="button" onclick="filterFaqCategory('all', this)" class="faq-cat-pill px-4 py-1.5 rounded-full bg-sky-500 text-white text-xs font-bold shadow-xs transition cursor-pointer">General</button>
+        <button type="button" onclick="filterFaqCategory('destinations', this)" class="faq-cat-pill px-4 py-1.5 rounded-full bg-white text-slate-600 hover:bg-slate-200/70 text-xs font-semibold border border-slate-200/80 transition cursor-pointer">Destinations</button>
+        <button type="button" onclick="filterFaqCategory('packages', this)" class="faq-cat-pill px-4 py-1.5 rounded-full bg-white text-slate-600 hover:bg-slate-200/70 text-xs font-semibold border border-slate-200/80 transition cursor-pointer">Tour Packages</button>
+        <button type="button" onclick="filterFaqCategory('custom', this)" class="faq-cat-pill px-4 py-1.5 rounded-full bg-white text-slate-600 hover:bg-slate-200/70 text-xs font-semibold border border-slate-200/80 transition cursor-pointer">Customization</button>
+        <button type="button" onclick="filterFaqCategory('insurance', this)" class="faq-cat-pill px-4 py-1.5 rounded-full bg-white text-slate-600 hover:bg-slate-200/70 text-xs font-semibold border border-slate-200/80 transition cursor-pointer">Travel Insurance</button>
+        <button type="button" onclick="filterFaqCategory('visa', this)" class="faq-cat-pill px-4 py-1.5 rounded-full bg-white text-slate-600 hover:bg-slate-200/70 text-xs font-semibold border border-slate-200/80 transition cursor-pointer">Visa &amp; Guides</button>
+      </div>
+
+      <!-- 5-Row Accordion List -->
+      <div id="faqAccordionList" class="space-y-3">
+        <!-- FAQ 1 (Open by Default) -->
+        <div class="faq-card bg-white rounded-xl border border-slate-200/90 p-5 shadow-2xs" data-faq-cat="packages">
+          <button type="button" onclick="toggleFaqRow(this)" class="w-full flex items-center justify-between text-left font-display font-bold text-xs sm:text-sm text-slate-900 cursor-pointer">
+            <span>What is your refund policy on cancelled trips?</span>
+            <span class="faq-chevron text-slate-400 text-xs transition-transform">▲</span>
+          </button>
+          <div class="faq-body mt-3 pt-3 border-t border-slate-100 text-xs text-slate-500 leading-relaxed">
+            We provide full refunds for cancellations made up to 14 days prior to your scheduled departure date. For cancellations within 7 to 13 days, we offer a 75% refund or 100% credit towards any future tour package within 24 months. Last-minute emergency cancellations are evaluated on an individual basis alongside our travel insurance partners.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-card bg-white rounded-xl border border-slate-200/90 p-5 shadow-2xs" data-faq-cat="destinations">
+          <button type="button" onclick="toggleFaqRow(this)" class="w-full flex items-center justify-between text-left font-display font-bold text-xs sm:text-sm text-slate-900 cursor-pointer">
+            <span>How early should I book my vacation package?</span>
+            <span class="faq-chevron text-slate-400 text-xs transition-transform">▼</span>
+          </button>
+          <div class="faq-body hidden mt-3 pt-3 border-t border-slate-100 text-xs text-slate-500 leading-relaxed">
+            For peak Mediterranean summer and European Alpine seasons, we recommend reserving 6 to 10 weeks in advance to lock in boutique cliffside villas and private yacht charters. However, our real-time inventory also supports last-minute departures up to 72 hours prior.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-card bg-white rounded-xl border border-slate-200/90 p-5 shadow-2xs" data-faq-cat="custom">
+          <button type="button" onclick="toggleFaqRow(this)" class="w-full flex items-center justify-between text-left font-display font-bold text-xs sm:text-sm text-slate-900 cursor-pointer">
+            <span>Can I customize an existing itinerary?</span>
+            <span class="faq-chevron text-slate-400 text-xs transition-transform">▼</span>
+          </button>
+          <div class="faq-body hidden mt-3 pt-3 border-t border-slate-100 text-xs text-slate-500 leading-relaxed">
+            Absolutely. Every itinerary showcased on Travel4All serves as a curated foundation. You can extend nights, upgrade to private helicopter or chauffeur transfers, or add specialized culinary and photography guides.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-card bg-white rounded-xl border border-slate-200/90 p-5 shadow-2xs" data-faq-cat="insurance">
+          <button type="button" onclick="toggleFaqRow(this)" class="w-full flex items-center justify-between text-left font-display font-bold text-xs sm:text-sm text-slate-900 cursor-pointer">
+            <span>Is travel insurance included in the package?</span>
+            <span class="faq-chevron text-slate-400 text-xs transition-transform">▼</span>
+          </button>
+          <div class="faq-body hidden mt-3 pt-3 border-t border-slate-100 text-xs text-slate-500 leading-relaxed">
+            Comprehensive medical and mountain rescue protection is included in all Alpine and Highland expeditions. Full trip-cancellation and baggage coverage can be added with one click during checkout.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-card bg-white rounded-xl border border-slate-200/90 p-5 shadow-2xs" data-faq-cat="visa">
+          <button type="button" onclick="toggleFaqRow(this)" class="w-full flex items-center justify-between text-left font-display font-bold text-xs sm:text-sm text-slate-900 cursor-pointer">
+            <span>What type of accommodation can I expect?</span>
+            <span class="faq-chevron text-slate-400 text-xs transition-transform">▼</span>
+          </button>
+          <div class="faq-body hidden mt-3 pt-3 border-t border-slate-100 text-xs text-slate-500 leading-relaxed">
+            We partner exclusively with 4.5- to 5-star boutique sanctuaries, historic heritage palazzos, and eco-certified luxury lodges that reflect the authentic character of each destination.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 6: READY TO START YOUR ADVENTURE BANNER (#cta-banner-section)     -->
+  <!-- ========================================================================= -->
+  <section id="cta-banner-section" class="w-full bg-white py-14 sm:py-20">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+      <div class="relative rounded-3xl overflow-hidden min-h-[360px] sm:min-h-[420px] flex items-center justify-center text-center p-8 sm:p-14 shadow-xl bg-slate-900">
+        <!-- Wooden Boat Bow on Alpine Lake Backdrop -->
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=2000&q=85"
+             onerror="this.src='../../assets/mandalika_escape/gili-boat.jpg'"
+             alt="Wooden boat bow gliding across emerald alpine lake"
+             class="absolute inset-0 w-full h-full object-cover object-center scale-105" />
+        <div class="absolute inset-0 bg-slate-950/60 pointer-events-none"></div>
+
+        <!-- Centered Overlay Content (DESIGN.md §4.6) -->
+        <div class="relative z-10 max-w-xl mx-auto space-y-5">
+          <span class="inline-block bg-white/15 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full">
+            Start Your Chapter Today
+          </span>
+          <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Ready to Start Your<br />
+            <span class="font-serif-italic font-bold text-sky-300 text-4xl sm:text-6xl">Adventure?</span>
+          </h2>
+          <p class="text-white/85 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
+            Contact our travel experts today and let us craft your dream vacation down to the smallest detail. Tailored itineraries, zero hassle, unforgettable memories.
+          </p>
+          <div class="pt-2 flex flex-wrap items-center justify-center gap-3">
+            <a href="#experiences-section"
+               class="bg-sky-500 hover:bg-sky-400 active:scale-95 text-white font-display font-bold text-xs sm:text-sm px-6 py-3.5 rounded-xl shadow-lg transition">
+              Book Destination Now
+            </a>
+            <button type="button" onclick="openSpecialistModal()"
+                    class="bg-white/15 hover:bg-white/25 backdrop-blur-md text-white border border-white/25 font-display font-bold text-xs sm:text-sm px-6 py-3.5 rounded-xl transition cursor-pointer">
+              Talk to a Specialist
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 7: TRAVEL INSIGHTS & TIPS (#blog-section)                         -->
+  <!-- ========================================================================= -->
+  <section id="blog-section" class="w-full bg-[#F8FAFC] py-16 sm:py-24 border-t border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Editorial Dispatch</span>
+          <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-none">
+            Travel <span class="font-serif-italic font-bold text-sky-700 text-4xl sm:text-6xl">Insights</span> &amp; Tips
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 max-w-md leading-relaxed">
+          Curated field guides, culinary secrets, and packing philosophies authored by our world-roaming editorial team.
+        </p>
+      </div>
+
+      <!-- 3 Editorial Blog Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Article 1 -->
+        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                 onclick="openArticleModal(0)">
+          <div>
+            <div class="relative h-52 overflow-hidden bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80"
+                   onerror="this.src='../../assets/khatulistiwa_explorer/rinjani-trail.jpg'"
+                   alt="Secret Spots in the Alps"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-xs text-slate-900 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md">
+                Hidden Gems
+              </span>
+            </div>
+            <div class="p-5">
+              <p class="text-[11px] text-slate-400 font-medium">📅 October 12, 2026 • 6 min read</p>
+              <h3 class="font-display font-bold text-base text-slate-900 mt-1.5 group-hover:text-sky-600 transition-colors leading-snug">
+                10 Secret Spots in the Alps You Never Knew Existed
+              </h3>
+              <p class="text-xs text-slate-500 mt-2 line-clamp-2 leading-relaxed">
+                Beyond the crowded ski resorts lie pristine hidden valleys, family-owned chalet inns, and glacial trails untouched by mass tourism.
+              </p>
+            </div>
+          </div>
+          <div class="px-5 pb-5 pt-2">
+            <span class="inline-flex items-center gap-1.5 text-xs font-display font-bold text-sky-600 group-hover:translate-x-1 transition-transform">
+              <span>Read Guide</span>
+              <span>→</span>
+            </span>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                 onclick="openArticleModal(1)">
+          <div>
+            <div class="relative h-52 overflow-hidden bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1527786356703-4b100091cd2c?auto=format&fit=crop&w=900&q=80"
+                   onerror="this.src='../../assets/khatulistiwa_explorer/bromo.jpg'"
+                   alt="Road Trip Checklist for Solo Explorers"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-xs text-slate-900 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md">
+                Solo Travel
+              </span>
+            </div>
+            <div class="p-5">
+              <p class="text-[11px] text-slate-400 font-medium">📅 October 08, 2026 • 5 min read</p>
+              <h3 class="font-display font-bold text-base text-slate-900 mt-1.5 group-hover:text-sky-600 transition-colors leading-snug">
+                The Ultimate Road Trip Checklist for Solo Explorers
+              </h3>
+              <p class="text-xs text-slate-500 mt-2 line-clamp-2 leading-relaxed">
+                How to prepare navigation gear, emergency satellite supplies, and route routines for long-distance overland adventures.
+              </p>
+            </div>
+          </div>
+          <div class="px-5 pb-5 pt-2">
+            <span class="inline-flex items-center gap-1.5 text-xs font-display font-bold text-sky-600 group-hover:translate-x-1 transition-transform">
+              <span>Read Guide</span>
+              <span>→</span>
+            </span>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                 onclick="openArticleModal(2)">
+          <div>
+            <div class="relative h-52 overflow-hidden bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?auto=format&fit=crop&w=900&q=80"
+                   onerror="this.src='../../assets/bagus_travel/borobudur.jpg'"
+                   alt="Hot Air Balloon Tour Cappadocia"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-xs text-slate-900 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md">
+                Adventure
+              </span>
+            </div>
+            <div class="p-5">
+              <p class="text-[11px] text-slate-400 font-medium">📅 September 29, 2026 • 4 min read</p>
+              <h3 class="font-display font-bold text-base text-slate-900 mt-1.5 group-hover:text-sky-600 transition-colors leading-snug">
+                How to Choose the Perfect Hot Air Balloon Tour
+              </h3>
+              <p class="text-xs text-slate-500 mt-2 line-clamp-2 leading-relaxed">
+                Evaluating pilot certifications, passenger basket density, flight altitudes, and morning thermal windows before you book.
+              </p>
+            </div>
+          </div>
+          <div class="px-5 pb-5 pt-2">
+            <span class="inline-flex items-center gap-1.5 text-xs font-display font-bold text-sky-600 group-hover:translate-x-1 transition-transform">
+              <span>Read Guide</span>
+              <span>→</span>
+            </span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 8: COMPREHENSIVE FOOTER (#footer-section)                         -->
+  <!-- ========================================================================= -->
+  <footer id="footer-section" class="w-full bg-white border-t border-slate-200 pt-14 pb-10">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-100">
+
+        <!-- Col 1: Brand Profile (5 Cols) -->
+        <div class="md:col-span-5 space-y-4">
+          <a href="#hero-section" class="inline-flex items-center gap-2.5 group">
+            <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-sky-500 to-sky-700 text-white font-display font-extrabold text-base flex items-center justify-center shadow-xs">
+              T
+            </div>
+            <div class="font-display font-extrabold text-xl tracking-tight text-slate-900 flex items-baseline">
+              <span>Travel</span><span class="font-serif-italic text-2xl text-sky-600 ml-0.5">4All</span>
+            </div>
+          </a>
+          <p class="text-xs text-slate-500 max-w-sm leading-relaxed">
+            Curated discovery and administrative authority for passionate travelers. We craft accessible, life-enriching journeys across the globe with white-glove guidance.
+          </p>
+          <div class="flex items-center gap-2.5 pt-1">
+            <button type="button" onclick="showToast('Opening Travel4All Global Community')" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-sky-50 hover:text-sky-600 text-slate-600 flex items-center justify-center text-xs transition cursor-pointer" aria-label="Website">🌐</button>
+            <button type="button" onclick="showToast('Opening Travel4All Instagram')" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-sky-50 hover:text-sky-600 text-slate-600 flex items-center justify-center text-xs transition cursor-pointer" aria-label="Social">✦</button>
+            <button type="button" onclick="openSpecialistModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-sky-50 hover:text-sky-600 text-slate-600 flex items-center justify-center text-xs transition cursor-pointer" aria-label="Email">✉</button>
+          </div>
+        </div>
+
+        <!-- Col 2: Company (2 Cols) -->
+        <div class="md:col-span-2 space-y-2.5 text-xs">
+          <h3 class="font-display font-bold text-slate-900">Company</h3>
+          <ul class="space-y-2 text-slate-500">
+            <li><a href="#steps-section" class="hover:text-sky-600 transition">Our Story</a></li>
+            <li><a href="#blog-section" class="hover:text-sky-600 transition">Careers</a></li>
+            <li><a href="#blog-section" class="hover:text-sky-600 transition">Editorial Press</a></li>
+            <li><a href="#steps-section" class="hover:text-sky-600 transition">Sustainable Travel</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Destinations (2 Cols) -->
+        <div class="md:col-span-2 space-y-2.5 text-xs">
+          <h3 class="font-display font-bold text-slate-900">Destinations</h3>
+          <ul class="space-y-2 text-slate-500">
+            <li><a href="#experiences-section" onclick="filterByRegion('italy')" class="hover:text-sky-600 transition">Mediterranean</a></li>
+            <li><a href="#experiences-section" onclick="filterByRegion('alpine')" class="hover:text-sky-600 transition">Nordic &amp; Highlands</a></li>
+            <li><a href="#experiences-section" onclick="filterByRegion('alpine')" class="hover:text-sky-600 transition">Alpine Sanctuaries</a></li>
+            <li><a href="#experiences-section" onclick="filterByRegion('asia')" class="hover:text-sky-600 transition">Equatorial Atolls</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Support & Legal (3 Cols) -->
+        <div class="md:col-span-3 space-y-2.5 text-xs">
+          <h3 class="font-display font-bold text-slate-900">Support &amp; Legal</h3>
+          <ul class="space-y-2 text-slate-500">
+            <li><button type="button" onclick="openSpecialistModal()" class="hover:text-sky-600 transition cursor-pointer">Concierge Desk</button></li>
+            <li><a href="#faq-section" class="hover:text-sky-600 transition">Accessibility Standards</a></li>
+            <li><a href="#faq-section" class="hover:text-sky-600 transition">Privacy Policy</a></li>
+            <li><a href="#faq-section" class="hover:text-sky-600 transition">Terms of Service</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Baseline -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+        <p>&copy; <span id="currentYearFooter">2026</span> Travel4All Concierge Inc. All rights reserved.</p>
+        <div class="flex items-center gap-5">
+          <span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Global Concierge Network</span>
+          <span>Certified B-Corp Hospitality</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ========================================================================= -->
+  <!-- INTERACTIVE MODALS (BOOKING, ARTICLE READER, SPECIALIST, AUTH)            -->
+  <!-- ========================================================================= -->
+
+  <!-- 1. Tour Booking Modal -->
+  <div id="bookingModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs hidden flex items-center justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200 my-8">
+      <div class="relative h-48 bg-slate-900 text-white p-6 flex flex-col justify-between">
+        <img id="bookModalImg" src="" alt="" class="absolute inset-0 w-full h-full object-cover opacity-65" />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+        <div class="relative z-10 flex items-center justify-between">
+          <span id="bookModalDuration" class="bg-sky-600 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">7 Days / 6 Nights</span>
+          <button type="button" onclick="closeBookingModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center cursor-pointer">✕</button>
+        </div>
+        <div class="relative z-10">
+          <p id="bookModalLoc" class="text-xs text-sky-300 font-semibold">Amalfi Coast, Italy</p>
+          <h3 id="bookModalTitle" class="font-display font-extrabold text-xl sm:text-2xl">Positano Coastal Escape</h3>
+        </div>
+      </div>
+
+      <div id="bookModalFormView" class="p-6 space-y-4 text-xs">
+        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2.5">
+          <div class="flex justify-between">
+            <span class="text-slate-500">Package Rate per Traveler:</span>
+            <span id="bookModalRate" class="font-mono font-bold text-slate-900">Rp 24.500.000</span>
+          </div>
+          <div class="flex items-center justify-between border-t border-slate-200/70 pt-2">
+            <span class="text-slate-500">Number of Travelers:</span>
+            <div class="flex items-center gap-2">
+              <button type="button" onclick="stepModalPax(-1)" class="w-6 h-6 rounded-lg bg-white border border-slate-200 font-bold cursor-pointer">−</button>
+              <span id="bookModalPax" class="font-mono font-bold w-5 text-center">2</span>
+              <button type="button" onclick="stepModalPax(1)" class="w-6 h-6 rounded-lg bg-white border border-slate-200 font-bold cursor-pointer">+</button>
+            </div>
+          </div>
+          <div class="flex justify-between border-t border-slate-200/70 pt-2 font-mono">
+            <span class="font-bold text-slate-900">Total Live Settlement:</span>
+            <span id="bookModalTotal" class="font-extrabold text-sm text-sky-600">Rp 49.000.000</span>
+          </div>
+        </div>
+
+        <form onsubmit="submitTourBooking(event)" class="space-y-3">
+          <div class="grid grid-cols-2 gap-3">
+            <label class="block">
+              <span class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Lead Voyager</span>
+              <input id="bookLeadName" type="text" required value="Marcus Vance" class="w-full h-10 px-3 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-sky-500" />
+            </label>
+            <label class="block">
+              <span class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Email for Voucher</span>
+              <input id="bookLeadEmail" type="email" required value="marcus@travel4all.com" class="w-full h-10 px-3 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-sky-500" />
+            </label>
+          </div>
+          <label class="block">
+            <span class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Settlement Gateway</span>
+            <select class="w-full h-10 px-3 rounded-xl border border-slate-200 font-semibold bg-white focus:outline-none focus:border-sky-500">
+              <option>SNAP BI Instant QRIS / Virtual Account</option>
+              <option>DOKU Global Wallet &amp; Card</option>
+            </select>
+          </label>
+          <button type="submit" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-display font-bold py-3.5 rounded-xl shadow-md transition cursor-pointer">
+            Confirm Reservation &amp; Issue Instant Voucher
+          </button>
+        </form>
+      </div>
+
+      <div id="bookModalSuccessView" class="hidden p-6 text-center space-y-4 text-xs">
+        <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-xl font-bold">✓</div>
+        <h4 class="font-display font-extrabold text-xl text-slate-900">Voyage Confirmed!</h4>
+        <p class="text-slate-500">Your tailored itinerary and hotel allotment have been locked live.</p>
+        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 font-mono text-left space-y-1.5">
+          <div class="flex justify-between"><span class="text-slate-400">Booking Ref:</span><span id="voucherCode" class="font-bold text-slate-900">T4A-2026-9012</span></div>
+          <div class="flex justify-between"><span class="text-slate-400">Destination:</span><span id="voucherDest" class="font-bold text-slate-900">Positano Coastal Escape</span></div>
+          <div class="flex justify-between"><span class="text-slate-400">Status:</span><span class="font-bold text-emerald-600">Guaranteed via Ortasys</span></div>
+        </div>
+        <button type="button" onclick="closeBookingModal()" class="w-full bg-sky-600 text-white font-bold py-3 rounded-xl cursor-pointer">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Editorial Article Reader Modal -->
+  <div id="articleModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-3xl max-w-xl w-full overflow-hidden shadow-2xl border border-slate-200">
+      <div class="p-6 bg-slate-900 text-white flex items-center justify-between">
+        <div>
+          <span id="artModalBadge" class="text-[10px] font-mono uppercase tracking-widest text-sky-400 font-bold">EDITORIAL GUIDE</span>
+          <h3 id="artModalTitle" class="font-display font-bold text-lg sm:text-xl mt-0.5">Article Title</h3>
+        </div>
+        <button type="button" onclick="closeArticleModal()" class="w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center text-white cursor-pointer">✕</button>
+      </div>
+      <div class="p-6 space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed max-h-[70vh] overflow-y-auto">
+        <p id="artModalMeta" class="text-xs font-mono text-slate-400"></p>
+        <p id="artModalBody" class="leading-relaxed"></p>
+        <div class="p-4 bg-sky-50 rounded-2xl border border-sky-100 text-sky-900 text-xs">
+          <strong>Concierge Pro-Tip:</strong> Every route mentioned in this dispatch can be integrated into your personalized Travel4All itinerary upon request.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Specialist / Concierge Modal -->
+  <div id="specialistModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-slate-200">
+      <div class="p-6 bg-slate-900 text-white flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-sky-400 font-bold">BESPOKE DESK</span>
+          <h3 class="font-display font-bold text-lg mt-0.5">Talk to a Travel Specialist</h3>
+        </div>
+        <button type="button" onclick="closeSpecialistModal()" class="w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center text-white cursor-pointer">✕</button>
+      </div>
+      <form onsubmit="submitSpecialistForm(event)" class="p-6 space-y-3.5 text-xs">
+        <label class="block">
+          <span class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Your Name</span>
+          <input type="text" required value="Marcus Vance" class="w-full h-10 px-3 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-sky-500" />
+        </label>
+        <label class="block">
+          <span class="block text-[10px] font-bold uppercase text-slate-400 mb-1">WhatsApp / Email</span>
+          <input type="text" required value="marcus@travel4all.com" class="w-full h-10 px-3 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-sky-500" />
+        </label>
+        <label class="block">
+          <span class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Dream Voyage Notes</span>
+          <textarea rows="3" class="w-full p-3 rounded-xl border border-slate-200 font-medium focus:outline-none focus:border-sky-500">Looking to combine Positano and Santorini for a 10-day private anniversary tour in October.</textarea>
+        </label>
+        <button type="submit" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-display font-bold py-3 rounded-xl shadow-md transition cursor-pointer">
+          Request Bespoke Proposal
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. Auth Sign In Modal -->
+  <div id="authModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-slate-200">
+      <div class="p-6 pb-3 flex items-center justify-between border-b border-slate-100">
+        <h3 class="font-display font-extrabold text-lg text-slate-900">Sign In to Travel4All</h3>
+        <button type="button" onclick="closeAuthModal()" class="w-7 h-7 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center cursor-pointer">✕</button>
+      </div>
+      <form onsubmit="handleAuthSignIn(event)" class="p-6 space-y-3.5 text-xs">
+        <label class="block">
+          <span class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Email Address</span>
+          <input id="loginEmailInput" type="email" required value="marcus@travel4all.com" class="w-full h-10 px-3.5 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-sky-500" />
+        </label>
+        <label class="block">
+          <span class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Password</span>
+          <input type="password" required value="••••••••••••" class="w-full h-10 px-3.5 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-sky-500" />
+        </label>
+        <button type="submit" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-display font-bold py-3.5 rounded-xl shadow-md transition cursor-pointer">
+          Continue to Member Portal
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-slate-900 text-white px-5 py-2.5 rounded-full text-xs font-semibold shadow-2xl flex items-center gap-2 border border-slate-700">
+    <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+    <span id="toastText">Notification</span>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT ENGINE & INTERACTIVE CONTROLLERS                               -->
+  <!-- ========================================================================= -->
+  <script>
+    'use strict';
+
+    // Currency State (Default IDR per DESIGN.md §4.2)
+    let isUsdMode = false;
+    const IDR_PER_USD = 16000;
+
+    // Calendar State
+    let calYear = 2026;
+    let calMonth = 9; // October (0-indexed)
+    let startIso = '2026-10-24';
+    let endIso = '2026-10-31';
+
+    // Travelers State
+    let travelersState = { adults: 2, children: 0, rooms: 1 };
+
+    // Booking Modal State
+    let currentModalIdrRate = 24500000;
+    let currentModalPax = 2;
+    let currentModalTourName = 'Positano Coastal Escape';
+
+    // Toast Helper
+    let toastTimeout;
+    function showToast(message) {
+      const t = document.getElementById('toast');
+      document.getElementById('toastText').textContent = message;
+      t.classList.remove('hidden');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => t.classList.add('hidden'), 3200);
+    }
+
+    // Format Price
+    function formatPrice(idrAmount) {
+      if (isUsdMode) {
+        const usd = Math.round(idrAmount / IDR_PER_USD);
+        return '$' + usd.toLocaleString('en-US');
+      }
+      return 'Rp ' + idrAmount.toLocaleString('id-ID');
+    }
+
+    function toggleCurrency() {
+      isUsdMode = !isUsdMode;
+      document.getElementById('currSymbol').textContent = isUsdMode ? 'USD ($)' : 'IDR (Rp)';
+      document.querySelectorAll('.price-item').forEach(el => {
+        const idr = parseFloat(el.getAttribute('data-idr') || 0);
+        el.textContent = formatPrice(idr);
+      });
+      updateModalTotals();
+      showToast(isUsdMode ? 'Switched display currency to USD ($)' : 'Mata uang ditampilkan dalam Rupiah (IDR)');
+    }
+
+    function toggleMobileNav() {
+      document.getElementById('mobileNavDrawer').classList.toggle('hidden');
+    }
+
+    // =========================================================================
+    // SEARCH CONSOLE POPOVERS
+    // =========================================================================
+
+    function closeAllDropdowns() {
+      document.getElementById('destDropdownPopover').classList.add('hidden');
+      document.getElementById('dateCalendarPopover').classList.add('hidden');
+      document.getElementById('travelersPopover').classList.add('hidden');
+    }
+
+    function openDestDropdown(e) {
+      if (e) e.stopPropagation();
+      const p = document.getElementById('destDropdownPopover');
+      closeAllDropdowns();
+      p.classList.remove('hidden');
+    }
+
+    function pickDestination(dest) {
+      document.getElementById('searchDestInput').value = dest;
+      document.getElementById('clearDestBtn').classList.remove('hidden');
+      closeAllDropdowns();
+      showToast(`Destination selected: ${dest}`);
+    }
+
+    function clearDestination(e) {
+      if (e) e.stopPropagation();
+      const input = document.getElementById('searchDestInput');
+      input.value = '';
+      document.getElementById('clearDestBtn').classList.add('hidden');
+      resetDestinationFilter();
+    }
+
+    function filterDestList(q) {
+      const query = q.toLowerCase();
+      document.getElementById('clearDestBtn').classList.toggle('hidden', q.trim() === '');
+      document.querySelectorAll('#destItemsContainer .dest-option').forEach(item => {
+        item.style.display = item.textContent.toLowerCase().includes(query) ? 'flex' : 'none';
+      });
+    }
+
+    // Calendar Popover
+    function toggleDatePopover(e) {
+      if (e) e.stopPropagation();
+      const p = document.getElementById('dateCalendarPopover');
+      const wasHidden = p.classList.contains('hidden');
+      closeAllDropdowns();
+      if (wasHidden) {
+        p.classList.remove('hidden');
+        renderCalendar();
+      }
+    }
+
+    function shiftMonth(delta) {
+      calMonth += delta;
+      if (calMonth < 0) { calMonth = 11; calYear--; }
+      if (calMonth > 11) { calMonth = 0; calYear++; }
+      renderCalendar();
+    }
+
+    function renderCalendar() {
+      const grid = document.getElementById('calendarDaysMatrix');
+      grid.innerHTML = '';
+      const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      document.getElementById('calHeaderMonth').textContent = `${months[calMonth]} ${calYear}`;
+
+      const firstDay = new Date(calYear, calMonth, 1).getDay();
+      const totalDays = new Date(calYear, calMonth + 1, 0).getDate();
+
+      for (let i = 0; i < firstDay; i++) {
+        const empty = document.createElement('div');
+        empty.className = 'h-7';
+        grid.appendChild(empty);
+      }
+
+      for (let d = 1; d <= totalDays; d++) {
+        const iso = new Date(calYear, calMonth, d).toISOString().split('T')[0];
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = d;
+        btn.className = 'h-7 w-7 mx-auto rounded-full text-xs font-semibold flex items-center justify-center transition cursor-pointer ';
+
+        if (iso === startIso || iso === endIso) {
+          btn.className += 'bg-sky-600 text-white font-bold';
+        } else if (startIso && endIso && iso > startIso && iso < endIso) {
+          btn.className += 'bg-sky-100 text-sky-700 font-bold rounded-none';
+        } else {
+          btn.className += 'hover:bg-slate-100 text-slate-700';
+        }
+
+        btn.onclick = () => selectCalDate(iso);
+        grid.appendChild(btn);
+      }
+      updateDateSummary();
+    }
+
+    function selectCalDate(iso) {
+      if (!startIso || (startIso && endIso)) {
+        startIso = iso;
+        endIso = null;
+      } else {
+        if (iso < startIso) startIso = iso;
+        else endIso = iso;
+      }
+      renderCalendar();
+    }
+
+    function setQuickDates(nights) {
+      const d1 = new Date(2026, 9, 24);
+      const d2 = new Date(2026, 9, 24 + nights);
+      startIso = d1.toISOString().split('T')[0];
+      endIso = d2.toISOString().split('T')[0];
+      calYear = 2026;
+      calMonth = 9;
+      renderCalendar();
+    }
+
+    function updateDateSummary() {
+      const shortMonths = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      if (startIso && endIso) {
+        const d1 = new Date(startIso);
+        const d2 = new Date(endIso);
+        const nights = Math.max(1, Math.round((d2 - d1) / 86400000));
+        document.getElementById('nightsBadge').textContent = `${nights} Nights`;
+        document.getElementById('calFooterStatus').textContent = `${nights} Nights selected`;
+        document.getElementById('dateSummaryLabel').textContent = `${d1.getDate()} ${shortMonths[d1.getMonth()]} – ${d2.getDate()} ${shortMonths[d2.getMonth()]} ${d2.getFullYear()}`;
+      }
+    }
+
+    // Travelers Popover
+    function toggleTravelersPopover(e) {
+      if (e) e.stopPropagation();
+      const p = document.getElementById('travelersPopover');
+      const wasHidden = p.classList.contains('hidden');
+      closeAllDropdowns();
+      if (wasHidden) p.classList.remove('hidden');
+    }
+
+    function adjustTravelers(key, delta) {
+      if (key === 'adults') travelersState.adults = Math.max(1, Math.min(20, travelersState.adults + delta));
+      if (key === 'children') travelersState.children = Math.max(0, Math.min(10, travelersState.children + delta));
+      if (key === 'rooms') travelersState.rooms = Math.max(1, Math.min(9, travelersState.rooms + delta));
+
+      document.getElementById('countAdults').textContent = travelersState.adults;
+      document.getElementById('countChildren').textContent = travelersState.children;
+      document.getElementById('countRooms').textContent = travelersState.rooms;
+
+      const totalGuests = travelersState.adults + travelersState.children;
+      document.getElementById('travelersSummaryLabel').textContent = `${totalGuests} Guests, ${travelersState.rooms} Room${travelersState.rooms > 1 ? 's' : ''}`;
+    }
+
+    // Outside Click Handler
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('#travelSearchForm')) {
+        closeAllDropdowns();
+      }
+      if (!e.target.closest('#userProfileContainer')) {
+        const d = document.getElementById('profileDropdown');
+        if (d) d.classList.add('hidden');
+      }
+    });
+
+    // Search Form Submission
+    function handleSearchSubmit(e) {
+      e.preventDefault();
+      closeAllDropdowns();
+      const q = document.getElementById('searchDestInput').value.trim().toLowerCase();
+      const btnLabel = document.getElementById('searchBtnLabel');
+      btnLabel.textContent = 'Searching...';
+
+      setTimeout(() => {
+        btnLabel.textContent = 'Explore Destination';
+        let visible = 0;
+        document.querySelectorAll('.tour-card').forEach(card => {
+          const title = (card.getAttribute('data-title') || '').toLowerCase();
+          const match = !q || title.includes(q) || q.includes(title.split(' ')[0]);
+          card.classList.toggle('hidden', !match);
+          if (match) visible++;
+        });
+        document.getElementById('emptyCatalogBox').classList.toggle('hidden', visible > 0);
+        document.getElementById('liveCatalogStatus').textContent = q ? `Showing ${visible} verified packages for "${q}"` : 'Every price checked live via Ortasys Engine';
+        document.getElementById('experiences-section').scrollIntoView({ behavior: 'smooth' });
+        showToast(`Found ${visible} curated travel experiences.`);
+      }, 300);
+    }
+
+    function filterByRegion(region, btnEl) {
+      if (btnEl) {
+        document.querySelectorAll('.region-pill').forEach(b => {
+          b.className = 'region-pill px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-sky-500 text-xs font-semibold transition cursor-pointer';
+        });
+        btnEl.className = 'region-pill px-4 py-1.5 rounded-full bg-sky-600 text-white text-xs font-bold transition cursor-pointer';
+      }
+      let visible = 0;
+      document.querySelectorAll('.tour-card').forEach(card => {
+        const r = card.getAttribute('data-region');
+        const show = region === 'all' || r === region;
+        card.classList.toggle('hidden', !show);
+        if (show) visible++;
+      });
+      document.getElementById('emptyCatalogBox').classList.toggle('hidden', visible > 0);
+    }
+
+    function resetDestinationFilter() {
+      document.getElementById('searchDestInput').value = '';
+      document.getElementById('clearDestBtn').classList.add('hidden');
+      const firstPill = document.querySelector('.region-pill');
+      filterByRegion('all', firstPill);
+      document.getElementById('liveCatalogStatus').textContent = 'Showing all 8 curated destinations';
+      showToast('All 8 curated destinations restored.');
+    }
+
+    // =========================================================================
+    // FAQ FILTER & ACCORDION
+    // =========================================================================
+
+    function toggleFaqRow(btn) {
+      const card = btn.closest('.faq-card');
+      const body = card.querySelector('.faq-body');
+      const chev = card.querySelector('.faq-chevron');
+      const isHidden = body.classList.contains('hidden');
+
+      document.querySelectorAll('.faq-card').forEach(other => {
+        if (other !== card) {
+          other.querySelector('.faq-body').classList.add('hidden');
+          other.querySelector('.faq-chevron').textContent = '▼';
+        }
+      });
+
+      body.classList.toggle('hidden', !isHidden);
+      chev.textContent = isHidden ? '▲' : '▼';
+    }
+
+    function filterFaqCategory(cat, btn) {
+      document.querySelectorAll('.faq-cat-pill').forEach(p => {
+        p.className = 'faq-cat-pill px-4 py-1.5 rounded-full bg-white text-slate-600 hover:bg-slate-200/70 text-xs font-semibold border border-slate-200/80 transition cursor-pointer';
+      });
+      btn.className = 'faq-cat-pill px-4 py-1.5 rounded-full bg-sky-500 text-white text-xs font-bold shadow-xs transition cursor-pointer';
+
+      document.querySelectorAll('.faq-card').forEach(card => {
+        const c = card.getAttribute('data-faq-cat');
+        card.classList.toggle('hidden', cat !== 'all' && c !== cat);
+      });
+    }
+
+    // =========================================================================
+    // MODALS (BOOKING, ARTICLES, SPECIALIST, AUTH)
+    // =========================================================================
+
+    function openBookingModal(title, loc, duration, idrPrice, img) {
+      currentModalTourName = title;
+      currentModalIdrRate = idrPrice;
+      currentModalPax = travelersState.adults + travelersState.children;
+
+      document.getElementById('bookModalTitle').textContent = title;
+      document.getElementById('bookModalLoc').textContent = loc;
+      document.getElementById('bookModalDuration').textContent = duration;
+      document.getElementById('bookModalImg').src = img;
+      document.getElementById('bookModalPax').textContent = currentModalPax;
+
+      updateModalTotals();
+      document.getElementById('bookModalFormView').classList.remove('hidden');
+      document.getElementById('bookModalSuccessView').classList.add('hidden');
+      document.getElementById('bookingModal').classList.remove('hidden');
+    }
+
+    function closeBookingModal() {
+      document.getElementById('bookingModal').classList.add('hidden');
+    }
+
+    function stepModalPax(delta) {
+      currentModalPax = Math.max(1, Math.min(12, currentModalPax + delta));
+      document.getElementById('bookModalPax').textContent = currentModalPax;
+      updateModalTotals();
+    }
+
+    function updateModalTotals() {
+      document.getElementById('bookModalRate').textContent = formatPrice(currentModalIdrRate);
+      document.getElementById('bookModalTotal').textContent = formatPrice(currentModalIdrRate * currentModalPax);
+    }
+
+    function submitTourBooking(e) {
+      e.preventDefault();
+      const code = 'T4A-2026-' + Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('voucherCode').textContent = code;
+      document.getElementById('voucherDest').textContent = currentModalTourName;
+      document.getElementById('bookModalFormView').classList.add('hidden');
+      document.getElementById('bookModalSuccessView').classList.remove('hidden');
+      showToast(`Reservation ${code} confirmed!`);
+    }
+
+    const ARTICLES = [
+      {
+        badge: 'HIDDEN GEMS',
+        title: '10 Secret Spots in the Alps You Never Knew Existed',
+        meta: 'Published October 12, 2026 • By Travel4All Alpine Scouts',
+        body: 'Beyond the famous resort towns of Zermatt and Chamonix lie quiet high-altitude pastures where centuries-old wooden chalets serve artisanal mountain cheese and glacial streams run crystal clear. From Austria’s Lesachtal Valley to Italy’s Val di Funes, our scouts mapped the 10 most serene Alpine sanctuaries accessible by scenic rail and private mountain pass.'
+      },
+      {
+        badge: 'SOLO TRAVEL',
+        title: 'The Ultimate Road Trip Checklist for Solo Explorers',
+        meta: 'Published October 08, 2026 • By Marcus Vance',
+        body: 'Embarking on a solo overland journey across rugged mountain passes or coastal highways demands thoughtful preparation. Always pack offline topographic maps, a dual-frequency power bank, local vignette toll passes, and our curated digital road book with pre-vetted boutique rest stops.'
+      },
+      {
+        badge: 'ADVENTURE',
+        title: 'How to Choose the Perfect Hot Air Balloon Tour',
+        meta: 'Published September 29, 2026 • By Elena Rostova',
+        body: 'Not all balloon flights are created equal. When booking your sunrise ascent, prioritize operators with compartmentalized 12-passenger baskets rather than crowded 28-person gondolas, and book your flight for the very first morning of your stay to allow flexibility for wind conditions.'
+      }
+    ];
+
+    function openArticleModal(idx) {
+      const a = ARTICLES[idx];
+      document.getElementById('artModalBadge').textContent = a.badge;
+      document.getElementById('artModalTitle').textContent = a.title;
+      document.getElementById('artModalMeta').textContent = a.meta;
+      document.getElementById('artModalBody').textContent = a.body;
+      document.getElementById('articleModal').classList.remove('hidden');
+    }
+
+    function closeArticleModal() {
+      document.getElementById('articleModal').classList.add('hidden');
+    }
+
+    function openSpecialistModal() {
+      document.getElementById('specialistModal').classList.remove('hidden');
+    }
+
+    function closeSpecialistModal() {
+      document.getElementById('specialistModal').classList.add('hidden');
+    }
+
+    function submitSpecialistForm(e) {
+      e.preventDefault();
+      closeSpecialistModal();
+      showToast('Inquiry received! A dedicated Travel4All specialist will contact you within 1 hour.');
+    }
+
+    function openAuthModal() {
+      document.getElementById('authModal').classList.remove('hidden');
+    }
+
+    function closeAuthModal() {
+      document.getElementById('authModal').classList.add('hidden');
+    }
+
+    function handleAuthSignIn(e) {
+      e.preventDefault();
+      closeAuthModal();
+      document.getElementById('guestAuthContainer').classList.add('hidden');
+      document.getElementById('userProfileContainer').classList.remove('hidden');
+      showToast('Signed in as Marcus Vance. Welcome back!');
+    }
+
+    function toggleProfileMenu(e) {
+      if (e) e.stopPropagation();
+      document.getElementById('profileDropdown').classList.toggle('hidden');
+    }
+
+    function signOutUser() {
+      document.getElementById('profileDropdown').classList.add('hidden');
+      document.getElementById('userProfileContainer').classList.add('hidden');
+      document.getElementById('guestAuthContainer').classList.remove('hidden');
+      showToast('Signed out of Travel4All.');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCalendar();
+    });
+  </script>
+</body>
+
+</html>

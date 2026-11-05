@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlasway Travel · Contemporary Global & Multi-Destination Stays</title>
+  <meta name="description" content="Atlasway Travel — Streamlined multi-destination hotel reservations and curated regional experiences across Indonesia. Powered by Ortasys S4.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* Ortasys Storefront Preset 03 · Global & Contemporary (03-global-contemporary/DESIGN.md) */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#142C4E', hover: '#0D1F39' },
+            secondary: '#3978B9',
+            tertiary: '#A9C9E6',
+            accent: '#2C9A91',
+            canvas: '#F4F7FA',
+            surface: { DEFAULT: '#FFFFFF', muted: '#E8EEF4' },
+            ink: { DEFAULT: '#252E3A', muted: '#647386' },
+            line: '#D7E0E9',
+            success: '#237A55',
+            warning: '#A86B20',
+            danger: '#B83F4B'
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            mono: ['ui-monospace', 'monospace']
+          },
+          borderRadius: {
+            xs: '6px',
+            sm: '10px',
+            md: '14px',
+            lg: '20px',
+            xl: '28px',
+            pill: '9999px'
+          },
+          boxShadow: {
+            subtle: '0 4px 16px -2px rgba(20, 44, 78, 0.06)',
+            elevated: '0 12px 32px -4px rgba(20, 44, 78, 0.12)'
+          },
+          maxWidth: { container: '1240px' }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #F4F7FA; color: #252E3A; }
+    .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on; }
+    .stepper input::-webkit-outer-spin-button,
+    .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .stepper input { -moz-appearance: textfield; }
+    :focus-visible { outline: 2px solid #3978B9; outline-offset: 2px; }
+  </style>
+</head>
+<body class="bg-canvas text-ink antialiased">
+
+  <a href="#searchSection" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-sm">Skip to search</a>
+
+  <!-- ============ CONTEMPORARY NAVBAR ============ -->
+  <header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-line">
+    <div class="max-w-container mx-auto px-4 sm:px-6 h-[72px] flex items-center justify-between gap-4">
+      <a href="#home" class="flex items-center gap-2.5 shrink-0">
+        <span class="w-9 h-9 rounded-md bg-primary text-white flex items-center justify-center font-display font-bold text-lg">A</span>
+        <span class="font-display text-[22px] font-bold tracking-tight text-ink">Atlasway</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-1 text-[14px] font-medium" aria-label="Main Navigation">
+        <a href="#hotels" class="px-3.5 py-2 rounded-sm text-ink hover:bg-surface-muted transition-colors font-semibold">Destinations &amp; Stays</a>
+        <a href="#experiences" class="px-3.5 py-2 rounded-sm text-ink-muted hover:text-ink hover:bg-surface-muted transition-colors">Tours &amp; Passes</a>
+        <a href="#features" class="px-3.5 py-2 rounded-sm text-ink-muted hover:text-ink hover:bg-surface-muted transition-colors">Platform Engine</a>
+        <button type="button" data-open-trip class="ml-3 inline-flex items-center gap-2 h-10 px-4 rounded-md bg-primary hover:bg-primary-hover text-white text-[13px] font-semibold transition">
+          <span>Trip Builder</span>
+          <span data-trip-count class="tnum font-mono text-[11px] bg-white/25 rounded-full px-1.5 py-0.5 font-bold">0</span>
+        </button>
+      </nav>
+
+      <button type="button" id="menuBtn" class="md:hidden w-10 h-10 rounded-sm flex items-center justify-center hover:bg-surface-muted text-ink" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+
+    <nav id="mobileNav" class="md:hidden hidden border-t border-line bg-surface p-4 flex flex-col gap-2 font-medium text-[15px]">
+      <a href="#hotels" class="py-2.5 px-3 rounded-sm hover:bg-surface-muted">Destinations &amp; Stays</a>
+      <a href="#experiences" class="py-2.5 px-3 rounded-sm hover:bg-surface-muted text-ink-muted">Tours &amp; Passes</a>
+      <a href="#features" class="py-2.5 px-3 rounded-sm hover:bg-surface-muted text-ink-muted">Platform Engine</a>
+      <button type="button" data-open-trip class="mt-2 h-11 rounded-md bg-primary text-white flex items-center justify-center gap-2 font-semibold">
+        Trip Builder (<span data-trip-count class="tnum">0</span>)
+      </button>
+    </nav>
+  </header>
+
+  <main id="home">
+    <!-- ============ SPLIT COMMAND CENTER HERO + DOCKED CONSOLE (PRESET 03 DNA) ============ -->
+    <section class="bg-primary text-white border-b border-line pt-10 pb-14">
+      <div class="max-w-container mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+          <!-- Left 5-Col Digital Agency Proposition & Quick-Hub Selector -->
+          <div class="lg:col-span-5 pt-2 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-pill bg-white/10 border border-white/15 text-tertiary text-[12px] font-semibold">
+              <span class="w-2 h-2 rounded-full bg-accent"></span>
+              <span>Ortasys S4 Multi-Hub Aggregator</span>
+            </div>
+            <h1 class="font-display text-[34px] sm:text-[44px] font-extrabold leading-[1.08] tracking-tight text-white">Contemporary Multi-Destination Booking Engine.</h1>
+            <p class="text-[15px] text-white/80 leading-relaxed">Instant room &amp; tour aggregation across Indonesia’s primary business and leisure hubs. Every retail rate is verified live upon request.</p>
+
+            <!-- Quick-Hub Destination Pills -->
+            <div class="pt-2">
+              <span class="text-[11px] font-mono uppercase tracking-wider text-tertiary block mb-2.5">Quick-Select Regional Hub:</span>
+              <div class="flex flex-wrap gap-2">
+                <button type="button" data-quick-hub="Central Jakarta" data-hub-filter="jakarta" class="px-3.5 py-2 rounded-md bg-white/10 hover:bg-secondary text-white text-[12px] font-semibold border border-white/15 transition flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                  <span>Jakarta CBD</span>
+                </button>
+                <button type="button" data-quick-hub="Nusa Dua, Bali" data-hub-filter="bali" class="px-3.5 py-2 rounded-md bg-white/10 hover:bg-secondary text-white text-[12px] font-semibold border border-white/15 transition flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                  <span>Bali Nusa Dua</span>
+                </button>
+                <button type="button" data-quick-hub="Yogyakarta Cultural Zone" data-hub-filter="jogja" class="px-3.5 py-2 rounded-md bg-white/10 hover:bg-secondary text-white text-[12px] font-semibold border border-white/15 transition flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                  <span>Yogyakarta Zone</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Mini Live Hub Thumbnail Preview -->
+            <div class="rounded-md bg-white/5 border border-white/10 p-3 flex items-center gap-3.5">
+              <img src="../../assets/nusantara_executive/jakarta.jpg" alt="Jakarta and Bali Hubs" class="w-16 h-12 rounded-xs object-cover shrink-0">
+              <div class="text-[12px]">
+                <p class="font-semibold text-white">Direct Multi-Supplier Inventory</p>
+                <p class="text-white/70 text-[11px]">RateHawk/ETG · Cloudbeds · MyAllocator · SNAP BI</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 7-Col Docked Multi-Hub Search Console -->
+          <div id="searchSection" class="lg:col-span-7 bg-surface text-ink rounded-lg border border-line shadow-elevated overflow-hidden">
+            <!-- Top Docked Segmented Mode Bar -->
+            <div class="bg-canvas px-6 py-4 border-b border-line flex flex-wrap items-center justify-between gap-3">
+              <div class="inline-flex rounded-sm bg-surface-muted p-1 border border-line" role="tablist">
+                <button type="button" role="tab" data-mode="hotels" aria-selected="true" class="mode-tab h-9 px-4 rounded-xs text-[13px] font-semibold transition bg-primary text-white">Hotels &amp; Resorts</button>
+                <button type="button" role="tab" data-mode="activities" aria-selected="false" class="mode-tab h-9 px-4 rounded-xs text-[13px] font-semibold transition text-ink-muted hover:text-ink">Day Tours &amp; Passes</button>
+              </div>
+              <span class="font-mono text-[11px] font-semibold text-secondary uppercase tracking-wider">LIVE S4 CONSOLE</span>
+            </div>
+
+            <form id="searchForm" class="p-6 space-y-4" novalidate>
+              <!-- Row 1: Destination Input -->
+              <div>
+                <label class="flex flex-col gap-1.5">
+                  <span class="text-[12px] font-bold uppercase tracking-wider text-ink-muted" data-dest-label>Destination Hub or Property Name</span>
+                  <input id="dest" list="destList" placeholder="Search Jakarta, Bali Nusa Dua, Yogyakarta…" autocomplete="off" class="h-11 px-3.5 rounded-sm bg-canvas border border-line text-[14px] font-medium text-ink focus:bg-white focus:border-secondary focus:outline-none">
+                  <datalist id="destList"></datalist>
+                </label>
+              </div>
+
+              <!-- Row 2: Dates + Occupancy Grid -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="grid grid-cols-2 gap-2.5" data-hotel-only>
+                  <label class="flex flex-col gap-1">
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-ink-muted">Check-in</span>
+                    <input id="checkIn" type="date" aria-describedby="dateCapHint" class="tnum h-11 px-2.5 rounded-sm bg-canvas border border-line font-mono text-[12px] text-ink focus:bg-white focus:border-secondary focus:outline-none">
+                  </label>
+                  <label class="flex flex-col gap-1">
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-ink-muted">Check-out</span>
+                    <input id="checkOut" type="date" aria-describedby="dateCapHint" class="tnum h-11 px-2.5 rounded-sm bg-canvas border border-line font-mono text-[12px] text-ink focus:bg-white focus:border-secondary focus:outline-none">
+                  </label>
+                </div>
+
+                <label class="flex flex-col gap-1 hidden" data-activity-only>
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-ink-muted">Activity Date</span>
+                  <input id="actDate" type="date" class="tnum h-11 px-3 rounded-sm bg-canvas border border-line font-mono text-[13px] text-ink focus:bg-white focus:border-secondary focus:outline-none">
+                </label>
+
+                <!-- Stepper Matrix (1-9 Rooms, 1-20 Adults, 0-20 Kids) -->
+                <div class="grid grid-cols-3 gap-2">
+                  <div class="flex flex-col gap-1" data-hotel-only>
+                    <span id="lbl-rooms" class="text-[11px] font-bold uppercase text-ink-muted">Rooms</span>
+                    <div class="stepper flex items-center h-11 rounded-sm bg-canvas border border-line" role="group" aria-labelledby="lbl-rooms">
+                      <button type="button" class="w-7 h-full text-[15px] text-ink hover:bg-surface-muted" data-step="rooms" data-dir="-1" aria-label="Decrease rooms">−</button>
+                      <input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                      <button type="button" class="w-7 h-full text-[15px] text-ink hover:bg-surface-muted" data-step="rooms" data-dir="1" aria-label="Increase rooms">+</button>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <span id="lbl-adults" class="text-[11px] font-bold uppercase text-ink-muted" data-adults-label>Adults</span>
+                    <div class="stepper flex items-center h-11 rounded-sm bg-canvas border border-line" role="group" aria-labelledby="lbl-adults">
+                      <button type="button" class="w-7 h-full text-[15px] text-ink hover:bg-surface-muted" data-step="adults" data-dir="-1" aria-label="Decrease adults">−</button>
+                      <input id="adults" type="number" min="1" max="20" value="2" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                      <button type="button" class="w-7 h-full text-[15px] text-ink hover:bg-surface-muted" data-step="adults" data-dir="1" aria-label="Increase adults">+</button>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <span id="lbl-children" class="text-[11px] font-bold uppercase text-ink-muted" data-children-label>Children</span>
+                    <div class="stepper flex items-center h-11 rounded-sm bg-canvas border border-line" role="group" aria-labelledby="lbl-children">
+                      <button type="button" class="w-7 h-full text-[15px] text-ink hover:bg-surface-muted" data-step="children" data-dir="-1" aria-label="Decrease children">−</button>
+                      <input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
+                      <button type="button" class="w-7 h-full text-[15px] text-ink hover:bg-surface-muted" data-step="children" data-dir="1" aria-label="Increase children">+</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="formErrors" class="text-[13px] text-danger font-semibold" role="alert" aria-live="assertive"></div>
+
+              <!-- Row 3: Action + Status -->
+              <div class="pt-3 border-t border-line flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-success"></span>
+                    <p class="text-[12px] font-bold text-ink">Every price is checked live when you ask for it</p>
+                  </div>
+                  <p id="summary" class="font-mono text-[11px] text-ink-muted mt-0.5">Set travel dates to calculate instant rates</p>
+                </div>
+                <button id="checkBtn" type="submit" class="h-11 px-6 rounded-sm bg-secondary hover:bg-primary text-white text-[13px] font-semibold transition flex items-center justify-center gap-2 shrink-0">
+                  <span data-btn-label>Check Live Price</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+              <p id="dateCapHint" class="text-[11px] text-ink-muted font-mono" data-hotel-only>System Cap: Max 30 nights · Uniform room occupancy</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HORIZONTAL SPLIT-ROW INVENTORY CARDS (PRESET 03 DNA) ============ -->
+    <section id="hotels" class="max-w-container mx-auto px-4 sm:px-6 pt-14">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-line">
+        <div>
+          <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-secondary">LIVE INVENTORY STREAM</span>
+          <h2 class="font-display text-[28px] sm:text-[32px] font-bold text-ink mt-0.5">Multi-Destination Stays Comparison</h2>
+        </div>
+
+        <!-- Modern Filter Bar -->
+        <div id="filterBar" class="flex flex-wrap gap-2 items-center" role="group" aria-label="Filter Hubs">
+          <button type="button" data-filter="all" class="filter-btn h-9 px-4 rounded-md text-[13px] font-semibold bg-primary text-white shadow-xs transition">All Destinations</button>
+          <button type="button" data-filter="jakarta" class="filter-btn h-9 px-4 rounded-md text-[13px] font-semibold bg-surface border border-line text-ink-muted hover:text-ink transition">Jakarta Hub</button>
+          <button type="button" data-filter="bali" class="filter-btn h-9 px-4 rounded-md text-[13px] font-semibold bg-surface border border-line text-ink-muted hover:text-ink transition">Bali Enclave</button>
+          <button type="button" data-filter="jogja" class="filter-btn h-9 px-4 rounded-md text-[13px] font-semibold bg-surface border border-line text-ink-muted hover:text-ink transition">Yogyakarta Heritage</button>
+        </div>
+      </div>
+
+      <!-- Horizontal Comparison Rows Stack -->
+      <div id="results" class="mt-6 flex flex-col gap-4"></div>
+    </section>
+
+    <!-- ============ COMPACT 2-COLUMN HORIZONTAL TOUR TILES (PRESET 03 DNA) ============ -->
+    <section id="experiences" class="max-w-container mx-auto px-4 sm:px-6 pt-16">
+      <div class="bg-surface rounded-lg p-6 sm:p-8 border border-line shadow-subtle">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-4 border-b border-line">
+          <div>
+            <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-accent">ADD-ON MOBILITY &amp; TOURS</span>
+            <h2 class="font-display text-[24px] sm:text-[28px] font-bold text-ink">City Transfers &amp; Regional Passes</h2>
+          </div>
+          <span class="px-3 py-1 rounded-sm bg-surface-muted text-ink-muted text-[11px] font-semibold">Illustrative Sample Data</span>
+        </div>
+
+        <div id="tourList" class="mt-6 grid md:grid-cols-2 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- ============ SAAS SPEC BENTO CAPABILITIES (PRESET 03 DNA) ============ -->
+    <section id="features" class="max-w-container mx-auto px-4 sm:px-6 pt-16 pb-20">
+      <div class="grid lg:grid-cols-12 gap-5">
+        <div class="lg:col-span-6 bg-primary text-white rounded-lg p-7 flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[11px] font-bold text-tertiary uppercase tracking-wider">ARCHITECTURE // S4 WHITE-LABEL</span>
+            <h3 class="font-display text-[24px] font-bold mt-2">Real-Time Multi-Supplier Aggregation</h3>
+            <p class="text-[14px] text-white/80 mt-2 leading-relaxed">Direct API connection to global bedbanks and local channel managers ensures room inventory and retail rates are synchronized at the moment of inquiry.</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/15 flex flex-wrap gap-2 text-[11px] font-mono text-tertiary">
+            <span class="px-2.5 py-1 rounded-xs bg-white/10">RateHawk / ETG</span>
+            <span class="px-2.5 py-1 rounded-xs bg-white/10">Cloudbeds</span>
+            <span class="px-2.5 py-1 rounded-xs bg-white/10">MyAllocator</span>
+          </div>
+        </div>
+        <div class="lg:col-span-3 bg-surface rounded-lg p-6 border border-line shadow-subtle flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[11px] font-bold text-secondary uppercase">SECURITY // B2B2C</span>
+            <h3 class="font-display text-[18px] font-bold text-ink mt-2">Wholesale Rate Shield</h3>
+            <p class="text-[13px] text-ink-muted mt-2 leading-relaxed">Supplier net rates and agency margin rules remain strictly isolated inside the S2 portal; customers see clean all-in retail prices.</p>
+          </div>
+          <span class="mt-4 text-[11px] font-mono font-bold text-success uppercase">● Net-Rate Protected</span>
+        </div>
+        <div class="lg:col-span-3 bg-surface rounded-lg p-6 border border-line shadow-subtle flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[11px] font-bold text-accent uppercase">SETTLEMENT // RAILS</span>
+            <h3 class="font-display text-[18px] font-bold text-ink mt-2">DOKU &amp; SNAP BI Rails</h3>
+            <p class="text-[13px] text-ink-muted mt-2 leading-relaxed">Instant clearing via Bank Indonesia SNAP standard QRIS and multi-bank Virtual Accounts with automated e-voucher issuance.</p>
+          </div>
+          <span class="mt-4 text-[11px] font-mono font-bold text-primary uppercase">● Instant Voucher</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="border-t border-line bg-surface py-12 text-[13px] text-ink-muted">
+    <div class="max-w-container mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-line">
+        <div>
+          <span class="font-display text-[22px] font-bold text-ink">Atlasway Travel</span>
+          <p class="text-[13px] mt-0.5">Multi-Destination Digital Agency · Powered by Ortasys S4.</p>
+        </div>
+        <div class="flex gap-6 font-semibold text-ink">
+          <a href="#hotels" class="hover:text-secondary">Stays</a>
+          <a href="#experiences" class="hover:text-secondary">Tours</a>
+          <a href="#features" class="hover:text-secondary">Features</a>
+        </div>
+      </div>
+      <div class="pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-[12px]">
+        <p>Secured via <strong class="text-ink">DOKU</strong> and <strong class="text-ink">SNAP BI</strong>. Mockup property rates are Illustrative Sample Data [PRD 9.2].</p>
+        <p>© <span id="year"></span> Atlasway Travel. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ TRIP DRAWER ============ -->
+  <div id="tripOverlay" class="fixed inset-0 z-50 bg-black/40 hidden" aria-hidden="true"></div>
+  <aside id="tripDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-[420px] bg-surface shadow-elevated translate-x-full transition-transform duration-300 flex flex-col" role="dialog" aria-modal="true" aria-labelledby="tripTitle" aria-hidden="true">
+    <div class="flex items-center justify-between px-6 h-[72px] border-b border-line">
+      <h2 id="tripTitle" class="font-display text-[20px] font-bold text-ink">Trip Itinerary</h2>
+      <button type="button" data-close-trip class="w-8 h-8 flex items-center justify-center text-ink hover:text-ink-muted" aria-label="Close itinerary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <div id="tripItems" class="flex-1 overflow-y-auto p-5 flex flex-col gap-3"></div>
+
+    <div class="border-t border-line p-6 bg-canvas">
+      <div class="space-y-1.5 text-[12px] font-mono text-ink-muted">
+        <div class="flex justify-between">
+          <span>Subtotal Item:</span>
+          <span id="tripSubtotal" class="font-bold text-ink">Rp 0</span>
+        </div>
+        <div class="flex justify-between text-[11px]">
+          <span>Taxes &amp; Service Charge:</span>
+          <span class="text-success font-semibold">Included (Zero Hidden Fees)</span>
+        </div>
+        <div class="flex items-baseline justify-between pt-2 border-t border-line/60 text-[14px]">
+          <span class="font-bold text-ink">Consolidated Total:</span>
+          <span id="tripTotal" class="text-[20px] font-bold text-primary">Rp 0</span>
+        </div>
+      </div>
+      <button id="payBtn" type="button" class="mt-4 w-full h-11 rounded-md bg-primary hover:bg-primary-hover text-white text-[13px] font-semibold transition disabled:opacity-40">
+        Proceed to Settlement
+      </button>
+      <p id="payNote" class="mt-2 text-[11px] text-center text-ink-muted" aria-live="polite">Direct settlement through Bank Indonesia SNAP standard &amp; DOKU.</p>
+    </div>
+  </aside>
+
+  <!-- ============ DETAIL QUICK-VIEW MODAL ============ -->
+  <div id="detailModal" class="fixed inset-0 z-50 bg-ink/50 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="bg-surface rounded-lg max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[90vh]">
+      <div class="relative aspect-[16/9] bg-surface-muted shrink-0">
+        <img id="modalImg" src="" alt="" class="w-full h-full object-cover">
+        <button type="button" data-close-modal class="absolute top-3 right-3 w-8 h-8 rounded-md bg-surface/90 flex items-center justify-center text-ink hover:bg-surface transition" aria-label="Close detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <span id="modalBadge" class="absolute bottom-3 left-3 px-2.5 py-1 rounded-sm bg-surface/95 text-ink text-[11px] font-mono font-semibold"></span>
+      </div>
+      <div class="p-6 overflow-y-auto flex-1 flex flex-col gap-3">
+        <span id="modalArea" class="text-[11px] font-bold uppercase tracking-wider text-secondary"></span>
+        <h3 id="modalTitle" class="font-display text-[22px] font-bold text-ink leading-tight"></h3>
+        <p id="modalDesc" class="text-[13px] text-ink-muted leading-relaxed font-normal"></p>
+        <div class="pt-3 border-t border-line">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink mb-2">Amenities &amp; Inclusions:</h4>
+          <div id="modalAmenities" class="flex flex-wrap gap-1.5 text-[12px]"></div>
+        </div>
+        <div class="pt-3 border-t border-line">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink mb-1">Reservation &amp; Cancellation Policy:</h4>
+          <p id="modalPolicy" class="text-[12px] text-ink-muted"></p>
+        </div>
+      </div>
+      <div class="p-5 border-t border-line bg-canvas flex items-center justify-between gap-4 shrink-0">
+        <div>
+          <p class="text-[11px] text-ink-muted font-mono">Live Guaranteed Price</p>
+          <p id="modalPrice" class="font-mono text-[20px] font-bold text-primary"></p>
+        </div>
+        <button id="modalSelectBtn" type="button" class="h-10 px-5 rounded-md bg-primary hover:bg-primary-hover text-white text-[13px] font-semibold transition">
+          Select Item
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CHECKOUT MODAL ============ -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 bg-ink/60 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="checkoutHeading">
+    <div class="bg-surface rounded-lg max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[92vh]">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-line">
+        <div>
+          <h3 id="checkoutHeading" class="font-display text-[20px] font-bold text-ink leading-tight">Itinerary Checkout</h3>
+          <p class="text-[12px] text-ink-muted">Authorized Payment Gateway · DOKU &amp; SNAP BI</p>
+        </div>
+        <button type="button" data-close-checkout class="w-8 h-8 rounded-md flex items-center justify-center hover:bg-surface-muted text-ink" aria-label="Close checkout">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+
+      <div id="checkoutFormContent" class="p-6 overflow-y-auto flex-1 flex flex-col gap-4">
+        <div class="p-4 rounded-md bg-canvas border border-line text-[13px]">
+          <div class="flex justify-between font-bold text-ink">
+            <span>Reserved Portfolio:</span>
+            <span id="coItemCount" class="font-mono">0 Item</span>
+          </div>
+          <div id="coItemList" class="mt-2 space-y-1 text-[12px] text-ink-muted"></div>
+          <div class="mt-3 pt-2 border-t border-line/60 flex justify-between font-mono font-bold text-ink text-[14px]">
+            <span>Grand Total:</span>
+            <span id="coTotal" class="text-primary">Rp 0</span>
+          </div>
+        </div>
+
+        <form id="coForm" class="flex flex-col gap-3">
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink">Lead Traveler Details</h4>
+          <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
+            Full Name (Passport / KTP)
+            <input id="coName" type="text" required placeholder="e.g. Maya Indah S." class="h-10 px-3 rounded-sm bg-white border border-line text-[13px] focus:border-primary focus:outline-none">
+          </label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
+              Confirmation Email
+              <input id="coEmail" type="email" required placeholder="maya@traveler.com" class="h-10 px-3 rounded-sm bg-white border border-line text-[13px] focus:border-primary focus:outline-none">
+            </label>
+            <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
+              Phone / WhatsApp
+              <input id="coPhone" type="tel" required placeholder="081399887766" class="h-10 px-3 rounded-sm bg-white border border-line text-[13px] focus:border-primary focus:outline-none">
+            </label>
+          </div>
+
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink mt-2">Payment Channel</h4>
+          <div class="space-y-2 text-[12px]">
+            <label class="flex items-center gap-3 p-3 rounded-md bg-white border border-line cursor-pointer hover:border-primary">
+              <input type="radio" name="payMethod" value="qris" checked class="accent-primary">
+              <div class="flex-1">
+                <span class="font-bold text-ink block">SNAP BI QRIS (All Banks &amp; E-Wallets)</span>
+                <span class="text-[11px] text-ink-muted block">Direct real-time settlement without convenience fee</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-md bg-white border border-line cursor-pointer hover:border-primary">
+              <input type="radio" name="payMethod" value="va" class="accent-primary">
+              <div class="flex-1">
+                <span class="font-bold text-ink block">DOKU Multi-Bank Virtual Account</span>
+                <span class="text-[11px] text-ink-muted block">BCA, Mandiri, BRI, Permata Virtual Account</span>
+              </div>
+            </label>
+          </div>
+
+          <button type="submit" id="coSubmitBtn" class="mt-3 w-full h-11 rounded-md bg-primary hover:bg-primary-hover text-white text-[13px] font-bold transition flex items-center justify-center gap-2">
+            <span>Confirm &amp; Settle Booking</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Confirmation Success State -->
+      <div id="checkoutSuccessContent" class="hidden p-8 flex flex-col items-center text-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-success/15 text-success flex items-center justify-center">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <div>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-success">Confirmed via Multi-Supplier Engine</span>
+          <h4 class="font-display text-[24px] font-bold text-ink mt-1">Booking Confirmed</h4>
+          <p class="text-[13px] text-ink-muted mt-1">Official voucher generated. Direct itinerary copy sent to your email.</p>
+        </div>
+        <div class="w-full p-4 rounded-md bg-canvas border border-line text-left text-[12px] space-y-1.5 font-mono">
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Booking Reference:</span>
+            <span id="successRef" class="font-bold text-ink">ATLAS-2026-0001</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Guest Name:</span>
+            <span id="successGuest" class="font-bold text-ink">-</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-ink-muted">Total Paid:</span>
+            <span id="successAmount" class="font-bold text-primary">Rp 0</span>
+          </div>
+        </div>
+        <div class="w-full flex flex-col gap-2 pt-2">
+          <button type="button" id="btnDownloadVoucher" class="w-full h-10 rounded-md bg-primary hover:bg-primary-hover text-white text-[13px] font-bold transition">
+            Download E-Voucher (PDF)
+          </button>
+          <button type="button" data-finish-checkout class="w-full h-10 rounded-md bg-surface-muted hover:bg-line text-ink text-[13px] font-semibold transition">
+            Return to Discovery
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-primary text-white rounded-md px-5 py-2.5 text-[13px] font-semibold shadow-elevated" role="status" aria-live="polite"></div>
+
+  <script>
+  (() => {
+    'use strict';
+    /* Illustrative Sample Data Preset 03 (Atlasway) */
+    const STAYS = [
+      { 
+        id: 'aw-jakarta', name: 'Grand Thamrin City Suites', area: 'Central Jakarta · Business District', filter: 'jakarta',
+        keys: 'jakarta thamrin city suites business corporate grand', img: '../../assets/nusantara_executive/jakarta.jpg', alt: 'Jakarta modern city skyline',
+        stars: 5, room: 'Executive Deluxe King', meal: 'Executive Club Lounge & Breakfast Included', policy: 'Free cancellation until 24h prior to check-in.',
+        desc: 'Strategic corporate flagship stay in the heart of Jakarta central financial district. Seamless transit access to MRT Bundaran HI, spacious executive desk workstations, and meeting suites.',
+        amenities: ['1 Gbps High-Speed WiFi', 'Workstation & Ergonomic Chair', 'Executive Club Lounge Access', 'Direct MRT Underground Link', '24h Room Service', 'Meeting Room Credit'],
+        nightly: 2150000 
+      },
+      { 
+        id: 'aw-bali', name: 'Nusa Dua Coastal Grand Resort', area: 'Nusa Dua · Bali Enclave', filter: 'bali',
+        keys: 'bali nusa dua coastal resort beachfront luxury', img: '../../assets/nusantara_executive/nusa-dua-beach.jpg', alt: 'Nusa dua beach resort and ocean',
+        stars: 5, room: 'Oceanfront Lagoon Suite', meal: 'International Buffet Breakfast Included', policy: 'Free cancellation until 3 days prior.',
+        desc: 'World-class beachfront conference and leisure resort within the prestigious ITDC Nusa Dua security zone. Features vast lagoon swimming pools, pristine private beach, and seaside dining.',
+        amenities: ['Lagoon Swimming Pool', 'Private Beach Club Access', 'Airport VIP Limousine', 'Spa & Wellness Pavilion', 'Kids & Teen Lounge', 'Tennis & Water Sports'],
+        nightly: 3250000 
+      },
+      { 
+        id: 'aw-jogja', name: 'Prambanan Heritage Garden Hotel', area: 'Yogyakarta Cultural Zone', filter: 'jogja',
+        keys: 'jogja yogyakarta prambanan heritage garden', img: '../../assets/serenity_umrah_privilege/prambanan.jpg', alt: 'Prambanan temple towers',
+        stars: 4, room: 'Superior Heritage Twin', meal: 'Artisanal Javanese Breakfast Included', policy: 'Free cancellation until 48h prior.',
+        desc: 'Boutique heritage retreat located minutes from Prambanan Archaeological Park. Combines modern architectural comfort with traditional Javanese hospitality, lush courtyards, and craft shops.',
+        amenities: ['Temple View Terrace', 'Traditional Javanese Spa', 'Cultural Shuttle Van', 'Free High-Speed WiFi', 'Swimming Pool & Pool Bar'],
+        nightly: 1450000 
+      }
+    ];
+
+    const ACTIVITIES = [
+      { 
+        id: 'aw-mrt', kind: 'tour', name: 'Jakarta VIP City Transport & Tour', area: 'Jakarta Metropolitan', filter: 'jakarta',
+        keys: 'jakarta city transport tour vip chauffeur', img: '../../assets/nusantara_executive/mrt.jpg', alt: 'Modern city transit station',
+        duration: 'Full Day Dedicated Mobility (10 Hours)',
+        desc: 'Comprehensive VIP city mobility service featuring dedicated premium MPV, chauffeur, toll fees, and personalized metropolitan routing including Kota Tua, Monas, and Senayan.',
+        amenities: ['Premium Luxury MPV', 'Chauffeur & English Guide', 'Toll & Fuel Inclusive', 'Mineral Water & Refreshments'],
+        policy: 'Free cancellation up to 24 hours prior.',
+        perPerson: 850000 
+      },
+      { 
+        id: 'aw-jcc', kind: 'tour', name: 'Senayan & Convention VIP Shuttle', area: 'Central Jakarta MICE', filter: 'jakarta',
+        keys: 'jcc senayan convention shuttle business mice', img: '../../assets/nusantara_executive/jcc.jpg', alt: 'Jakarta Convention Center facade',
+        duration: 'Dedicated Event Day Shuttle Service',
+        desc: 'Seamless point-to-point shuttle between major business hotels and Jakarta Convention Center (JCC) / JIExpo for conference delegates and MICE delegations.',
+        amenities: ['Dedicated Event Badge Routing', 'Priority Drop-Off Access', 'Air-Conditioned VIP Coach'],
+        policy: 'Instant confirmation via Ortasys S4.',
+        perPerson: 550000 
+      }
+    ];
+
+    const LIMITS = { rooms: [1, 9], adults: [1, 20], children: [0, 20] };
+    const MAX_NIGHTS = 30;
+    const idr = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const DAY = 86400000;
+    const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    const addDays = (s, n) => iso(new Date(new Date(s + 'T00:00:00').getTime() + n * DAY));
+    const today = iso(new Date());
+
+    const state = { mode: 'hotels', filter: 'all', priced: false, checking: false, checkedAt: null, trip: [] };
+    const el = {
+      form: $('#searchForm'), dest: $('#dest'), checkIn: $('#checkIn'), checkOut: $('#checkOut'), actDate: $('#actDate'),
+      rooms: $('#rooms'), adults: $('#adults'), children: $('#qChildren'), errors: $('#formErrors'), summary: $('#summary'),
+      btn: $('#checkBtn'), results: $('#results')
+    };
+
+    const clamp = (v, [lo, hi]) => Math.min(hi, Math.max(lo, Number.isFinite(v) ? v : lo));
+    const num = k => clamp(parseInt(el[k].value, 10), LIMITS[k]);
+    const nights = () => {
+      if (!el.checkIn.value || !el.checkOut.value) return 0;
+      return Math.round((new Date(el.checkOut.value) - new Date(el.checkIn.value)) / DAY);
+    };
+
+    function validate() {
+      const errs = [];
+      if (state.mode === 'hotels') {
+        if (!el.checkIn.value || !el.checkOut.value) errs.push('Check-in and check-out dates are required.');
+        else {
+          const n = nights();
+          if (el.checkIn.value < today) errs.push('Check-in cannot be set in the past.');
+          if (n < 1) errs.push('Check-out must be at least 1 day after check-in.');
+          if (n > MAX_NIGHTS) errs.push(`Max allowable stay length is ${MAX_NIGHTS} nights.`);
+        }
+      } else {
+        if (!el.actDate.value) errs.push('Activity date is required.');
+        else if (el.actDate.value < today) errs.push('Date cannot be in the past.');
+      }
+      return errs;
+    }
+
+    const roomRate = s => Math.round(s.nightly * (1 + 0.16 * Math.max(0, num('adults') - 2) + 0.08 * num('children')) / 1000) * 1000;
+    const stayTotal = s => roomRate(s) * Math.max(1, nights()) * num('rooms');
+    const actTotal = a => a.perPerson * num('adults') * num('rooms');
+
+    function summaryText() {
+      const r = num('rooms'), a = num('adults'), c = num('children');
+      const g = `${a} Adt${c ? ` + ${c} Chd` : ''}`;
+      if (state.mode === 'hotels') {
+        const n = nights();
+        if (!n || n < 1) return 'Select dates to view instant rates';
+        return `${n} Night${n > 1 ? 's' : ''} × ${r} Room${r > 1 ? 's' : ''} (${g} / room)`;
+      }
+      return el.actDate.value ? `${el.actDate.value} · ${r * a} Guests` : 'Select date for activity';
+    }
+
+    function renderMode() {
+      $$('.mode-tab').forEach(t => {
+        const on = t.dataset.mode === state.mode;
+        t.setAttribute('aria-selected', on);
+        t.className = `mode-tab h-9 px-4 rounded-sm text-[13px] font-semibold transition ${on ? 'bg-primary text-white' : 'text-ink-muted hover:text-ink'}`;
+      });
+      const hotels = state.mode === 'hotels';
+      $$('[data-hotel-only]').forEach(n => n.classList.toggle('hidden', !hotels));
+      $$('[data-activity-only]').forEach(n => n.classList.toggle('hidden', hotels));
+      $('#destList').innerHTML = (hotels ? ['Central Jakarta', 'Nusa Dua, Bali', 'Yogyakarta Cultural Zone', ...STAYS.map(s => s.name)] : ['VIP City Transport', 'Senayan Shuttle', ...ACTIVITIES.map(a => a.name)])
+        .map(v => `<option value="${v}">`).join('');
+    }
+
+    function renderResults() {
+      const isHotels = state.mode === 'hotels';
+      const q = el.dest.value.trim().toLowerCase();
+      let list = (isHotels ? STAYS : ACTIVITIES).filter(it => {
+        const matchQ = !q || (it.name + ' ' + it.area + ' ' + it.keys).toLowerCase().includes(q);
+        const matchFilter = state.filter === 'all' || it.filter === state.filter;
+        return matchQ && matchFilter;
+      });
+      if (!list.length && state.filter === 'all') list = isHotels ? STAYS : ACTIVITIES;
+
+      if (!list.length) {
+        el.results.innerHTML = `
+          <div class="py-12 text-center text-ink-muted bg-surface rounded-lg border border-line">
+            <p class="font-display font-bold text-[18px] text-ink">No properties found matching "${state.filter}"</p>
+            <button type="button" data-reset-filter class="mt-3 px-4 py-2 rounded-md bg-primary text-white text-[12px] font-semibold">Reset Destination Filter</button>
+          </div>`;
+        return;
+      }
+
+      el.results.innerHTML = list.map(it => {
+        const total = isHotels ? stayTotal(it) : actTotal(it);
+        const sub = isHotels ? `${idr.format(roomRate(it))} / room / night` : `${idr.format(it.perPerson)} / person`;
+        const priceHTML = state.checking
+          ? `<div class="h-8 w-32 bg-surface-muted animate-pulse rounded-sm"></div>`
+          : state.priced
+            ? `<div class="text-left lg:text-right"><span class="text-[10px] font-mono font-bold uppercase text-success block">● Live Rate Confirmed</span><p class="tnum font-mono text-[22px] font-bold text-ink mt-0.5">${idr.format(total)}</p><p class="tnum font-mono text-[11px] text-ink-muted">${sub}</p></div>`
+            : `<div class="text-left lg:text-right"><span class="text-[10px] font-mono uppercase text-ink-muted block">Base Reference</span><p class="font-mono text-[17px] font-bold text-ink mt-0.5">From ${idr.format(isHotels ? it.nightly : it.perPerson)}</p><p class="text-[11px] text-ink-muted italic">Check dates for live total</p></div>`;
+
+        return `
+        <article class="bg-surface rounded-lg border border-line overflow-hidden shadow-subtle hover:border-secondary/60 transition duration-200 grid lg:grid-cols-12 group">
+          <!-- Left 4-Col Thumbnail -->
+          <div class="lg:col-span-4 relative min-h-[200px] bg-surface-muted overflow-hidden">
+            <img src="${it.img}" alt="${it.alt}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            ${isHotels ? `<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-sm bg-white/95 text-ink text-[11px] font-bold shadow-2xs">${'★'.repeat(it.stars)}</span>` : ''}
+            <span class="absolute bottom-3 left-3 px-2 py-0.5 rounded-sm bg-primary/90 text-white text-[10px] font-mono font-bold uppercase tracking-wider">Instant Confirmation</span>
+          </div>
+
+          <!-- Middle 5-Col Spec Matrix -->
+          <div class="lg:col-span-5 p-5 sm:p-6 flex flex-col justify-between gap-3">
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-secondary">${it.area}</span>
+                <button type="button" data-detail="${it.id}" class="text-[11px] font-bold text-secondary hover:underline flex items-center gap-0.5">
+                  <span>Inspect Specs</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+              </div>
+              <h3 class="font-display text-[20px] font-bold text-ink leading-snug mt-1 cursor-pointer hover:text-secondary transition-colors" data-detail="${it.id}">${it.name}</h3>
+              <p class="text-[13px] font-medium text-ink mt-1">${isHotels ? `${it.room} · ${it.meal}` : it.duration}</p>
+              <p class="text-[12px] text-ink-muted mt-1 line-clamp-2">${it.desc}</p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-1.5 pt-2">
+              ${(it.amenities || []).slice(0, 4).map(a => `<span class="px-2.5 py-0.5 rounded-sm bg-canvas border border-line text-ink-muted text-[11px] font-mono">${a}</span>`).join('')}
+            </div>
+          </div>
+
+          <!-- Right 3-Col Price & Action Dock -->
+          <div class="lg:col-span-3 p-5 sm:p-6 bg-canvas/60 border-t lg:border-t-0 lg:border-l border-line flex flex-row lg:flex-col items-center lg:items-end justify-between gap-3">
+            ${priceHTML}
+            <div class="flex flex-col w-auto lg:w-full gap-1.5">
+              <span class="hidden lg:block text-[11px] text-right text-success font-medium">${it.policy}</span>
+              <button type="button" data-select="${it.id}" class="h-10 px-5 rounded-md ${state.priced ? 'bg-primary hover:bg-primary-hover text-white' : 'bg-secondary hover:bg-primary text-white'} text-[13px] font-semibold transition w-full">
+                ${state.priced ? 'Select &amp; Add' : 'Verify &amp; Select'}
+              </button>
+            </div>
+          </div>
+        </article>`;
+      }).join('');
+    }
+
+    function renderTours() {
+      $('#tourList').innerHTML = ACTIVITIES.map(t => `
+        <div class="rounded-md bg-canvas border border-line p-4 flex items-center gap-4 hover:border-secondary transition group">
+          <div class="w-24 h-24 rounded-sm overflow-hidden bg-surface-muted shrink-0">
+            <img src="${t.img}" alt="${t.alt}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-secondary">${t.area}</span>
+              <button type="button" data-detail="${t.id}" class="text-[11px] font-bold text-secondary hover:underline">Specs</button>
+            </div>
+            <h4 class="font-display text-[16px] font-bold text-ink truncate mt-0.5 cursor-pointer hover:text-secondary" data-detail="${t.id}">${t.name}</h4>
+            <p class="text-[12px] text-ink-muted truncate">${t.duration}</p>
+            <div class="mt-2 pt-2 border-t border-line flex items-center justify-between gap-2">
+              <span class="tnum font-mono text-[13px] font-bold text-ink">${idr.format(t.perPerson)} <span class="text-[10px] font-normal text-ink-muted">/ pax</span></span>
+              <button type="button" data-select="${t.id}" class="h-8 px-3 rounded-xs bg-primary text-white hover:bg-primary-hover text-[11px] font-semibold transition">Add Pass</button>
+            </div>
+          </div>
+        </div>`).join('');
+    }
+
+    function syncBounds() {
+      el.checkIn.min = today; el.actDate.min = today;
+      if (el.checkIn.value) {
+        el.checkOut.min = addDays(el.checkIn.value, 1);
+        el.checkOut.max = addDays(el.checkIn.value, MAX_NIGHTS);
+      } else { el.checkOut.min = addDays(today, 1); el.checkOut.removeAttribute('max'); }
+    }
+
+    function invalidate() {
+      state.priced = false; el.errors.textContent = '';
+      el.summary.textContent = summaryText();
+      renderResults();
+    }
+
+    $$('.mode-tab').forEach(t => t.addEventListener('click', () => { state.mode = t.dataset.mode; renderMode(); invalidate(); }));
+    $$('[data-step]').forEach(b => b.addEventListener('click', () => {
+      const k = b.dataset.step; el[k].value = clamp(num(k) + Number(b.dataset.dir), LIMITS[k]); invalidate();
+    }));
+    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('change', () => { el[k].value = num(k); invalidate(); }));
+    el.checkIn.addEventListener('change', () => {
+      syncBounds();
+      if (el.checkIn.value && (!el.checkOut.value || el.checkOut.value <= el.checkIn.value)) el.checkOut.value = addDays(el.checkIn.value, 2);
+      invalidate();
+    });
+    [el.checkOut, el.actDate].forEach(i => i.addEventListener('change', invalidate));
+    el.dest.addEventListener('input', renderResults);
+
+    // Filter Buttons
+    $$('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        state.filter = btn.dataset.filter;
+        $$('.filter-btn').forEach(b => {
+          const active = b === btn;
+          b.className = `filter-btn h-9 px-4 rounded-md text-[13px] font-semibold transition ${active ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`;
+        });
+        renderResults();
+      });
+    });
+
+    el.form.addEventListener('submit', e => {
+      e.preventDefault();
+      const errs = validate();
+      el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
+      if (errs.length) return;
+
+      state.checking = true; el.btn.disabled = true;
+      el.btn.querySelector('[data-btn-label]').textContent = 'Fetching Live Rates…';
+      renderResults();
+
+      setTimeout(() => {
+        state.checking = false; state.priced = true; state.checkedAt = new Date();
+        el.btn.disabled = false; el.btn.querySelector('[data-btn-label]').textContent = 'Check Live Price';
+        el.summary.textContent = `Live Verified: ${summaryText()}`;
+        renderResults();
+        document.getElementById('hotels').scrollIntoView({ behavior: 'smooth' });
+      }, 650);
+    });
+
+    document.addEventListener('click', e => {
+      const sel = e.target.closest('[data-select]'); if (sel) return selectItem(sel.dataset.select);
+      const det = e.target.closest('[data-detail]'); if (det) return openDetail(det.dataset.detail);
+      const rm = e.target.closest('[data-remove]'); if (rm) { state.trip.splice(Number(rm.dataset.remove), 1); renderTrip(); }
+      const rst = e.target.closest('[data-reset-filter]'); if (rst) {
+        state.filter = 'all';
+        $$('.filter-btn').forEach((b, i) => b.className = `filter-btn h-9 px-4 rounded-md text-[13px] font-semibold transition ${i === 0 ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`);
+        renderResults();
+      }
+      const qh = e.target.closest('[data-quick-hub]'); if (qh) {
+        el.dest.value = qh.dataset.quickHub;
+        state.filter = qh.dataset.hubFilter || 'all';
+        $$('.filter-btn').forEach(b => {
+          const active = b.dataset.filter === state.filter;
+          b.className = `filter-btn h-9 px-4 rounded-md text-[13px] font-semibold transition ${active ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`;
+        });
+        renderResults();
+        document.getElementById('hotels').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    function selectItem(id) {
+      if (!state.priced) {
+        toast('Verifying live availability rates...');
+        const errs = validate();
+        if (errs.length) {
+          document.getElementById('searchSection').scrollIntoView({ behavior: 'smooth' });
+          el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
+          return;
+        }
+        state.priced = true;
+        renderResults();
+      }
+      const isHotel = id.startsWith('aw-jakarta') || id.startsWith('aw-bali') || id.startsWith('aw-jogja');
+      const it = (isHotels => isHotels ? STAYS : ACTIVITIES)(isHotel).find(x => x.id === id);
+      const total = isHotel ? stayTotal(it) : actTotal(it);
+      state.trip.push({ id: it.id, name: it.name, area: it.area, detail: summaryText(), total });
+      renderTrip();
+      toast(`Added to trip itinerary: ${it.name}`);
+      closeDetail();
+    }
+
+    function renderTrip() {
+      $$('[data-trip-count]').forEach(n => n.textContent = state.trip.length);
+      const box = $('#tripItems');
+      box.innerHTML = state.trip.length ? state.trip.map((t, i) => `
+        <div class="p-3.5 rounded-sm bg-canvas border border-line flex flex-col gap-1">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <p class="font-display font-bold text-[14px] text-ink">${t.name}</p>
+              <p class="text-[11px] text-ink-muted">${t.area} · ${t.detail}</p>
+            </div>
+            <button type="button" data-remove="${i}" class="text-[11px] font-bold text-danger hover:underline">Remove</button>
+          </div>
+          <p class="tnum font-mono text-[14px] font-bold text-primary mt-1">${idr.format(t.total)}</p>
+        </div>`).join('')
+        : `<p class="py-10 text-center text-[13px] text-ink-muted">No reservations selected.<br>Check live prices and select properties.</p>`;
+      
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      $('#tripSubtotal').textContent = idr.format(totalVal);
+      $('#tripTotal').textContent = idr.format(totalVal);
+      $('#payBtn').disabled = !state.trip.length;
+    }
+
+    // Detail Quick-View Modal
+    const detailModal = $('#detailModal');
+    let currentDetailItem = null;
+    function openDetail(id) {
+      const isHotel = id.startsWith('aw-jakarta') || id.startsWith('aw-bali') || id.startsWith('aw-jogja');
+      const it = (isHotels => isHotels ? STAYS : ACTIVITIES)(isHotel).find(x => x.id === id);
+      if (!it) return;
+      currentDetailItem = it;
+
+      $('#modalImg').src = it.img;
+      $('#modalImg').alt = it.alt;
+      $('#modalBadge').textContent = isHotel ? `Star Rating: ${'★'.repeat(it.stars)}` : it.duration;
+      $('#modalArea').textContent = it.area;
+      $('#modalTitle').textContent = it.name;
+      $('#modalDesc').textContent = it.desc;
+      $('#modalAmenities').innerHTML = (it.amenities || []).map(a => `<span class="px-2.5 py-1 rounded-sm bg-surface-muted text-ink font-semibold">${a}</span>`).join('');
+      $('#modalPolicy').textContent = it.policy;
+
+      const total = isHotel ? stayTotal(it) : actTotal(it);
+      $('#modalPrice').textContent = state.priced ? idr.format(total) : `From ${idr.format(isHotel ? it.nightly : it.perPerson)}`;
+      detailModal.classList.remove('hidden');
+    }
+    function closeDetail() {
+      detailModal.classList.add('hidden');
+      currentDetailItem = null;
+    }
+    $('[data-close-modal]').addEventListener('click', closeDetail);
+    detailModal.addEventListener('click', e => { if (e.target === detailModal) closeDetail(); });
+    $('#modalSelectBtn').addEventListener('click', () => {
+      if (currentDetailItem) selectItem(currentDetailItem.id);
+    });
+
+    // Checkout Modal
+    const checkoutModal = $('#checkoutModal');
+    function openCheckout() {
+      if (!state.trip.length) return;
+      closeTrip();
+      $('#coItemCount').textContent = `${state.trip.length} Reserved Item${state.trip.length > 1 ? 's' : ''}`;
+      $('#coItemList').innerHTML = state.trip.map(t => `<div class="flex justify-between"><span>• ${t.name}</span><span class="font-mono font-bold">${idr.format(t.total)}</span></div>`).join('');
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      $('#coTotal').textContent = idr.format(totalVal);
+      $('#checkoutFormContent').classList.remove('hidden');
+      $('#checkoutSuccessContent').classList.add('hidden');
+      checkoutModal.classList.remove('hidden');
+    }
+    function closeCheckout() {
+      checkoutModal.classList.add('hidden');
+    }
+    $('[data-close-checkout]').addEventListener('click', closeCheckout);
+    checkoutModal.addEventListener('click', e => { if (e.target === checkoutModal) closeCheckout(); });
+    $('[data-finish-checkout]').addEventListener('click', () => {
+      closeCheckout();
+      state.trip = [];
+      renderTrip();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    $('#btnDownloadVoucher').addEventListener('click', () => {
+      toast('Digital E-Voucher downloading (PDF)...');
+    });
+
+    $('#coForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const guestName = $('#coName').value.trim();
+      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
+      const randomRef = 'ATLAS-2026-' + Math.floor(1000 + Math.random() * 9000);
+
+      $('#successRef').textContent = randomRef;
+      $('#successGuest').textContent = guestName;
+      $('#successAmount').textContent = idr.format(totalVal);
+
+      $('#checkoutFormContent').classList.add('hidden');
+      $('#checkoutSuccessContent').classList.remove('hidden');
+    });
+
+    // Drawer Navigation
+    const drawer = $('#tripDrawer'), overlay = $('#tripOverlay');
+    function openTrip() { overlay.classList.remove('hidden'); drawer.classList.remove('translate-x-full'); drawer.setAttribute('aria-hidden', 'false'); }
+    function closeTrip() { overlay.classList.add('hidden'); drawer.classList.add('translate-x-full'); drawer.setAttribute('aria-hidden', 'true'); }
+    $$('[data-open-trip]').forEach(b => b.addEventListener('click', openTrip));
+    $('[data-close-trip]').addEventListener('click', closeTrip);
+    overlay.addEventListener('click', closeTrip);
+
+    $('#payBtn').addEventListener('click', openCheckout);
+
+    let toastTimer;
+    function toast(msg) {
+      const t = $('#toast'); t.textContent = msg; t.classList.remove('hidden');
+      clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.add('hidden'), 2500);
+    }
+
+    $('#year').textContent = new Date().getFullYear();
+
+    syncBounds(); renderMode(); invalidate(); renderTours(); renderTrip();
+  })();
+  </script>
+</body>
+</html>
+

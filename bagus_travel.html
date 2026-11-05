@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bagus Travel · Private journeys across Indonesia</title>
+  <meta name="description" content="Private journeys by Bagus Travel. Villas, boutique hotels and private guides across Indonesia. Every price is checked live when you ask for it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* Ortasys S4 storefront · Bagus Travel brand tokens (design/bagus_travel_design.md) */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#0F4C5C', hover: '#093540' },
+            secondary: '#475569',
+            tertiary: { DEFAULT: '#B45309', hover: '#92400E' },
+            canvas: '#FAF8F5',
+            surface: { DEFAULT: '#FFFFFF', muted: '#F3EFEA' },
+            ink: '#1C1917',
+            line: '#E7E2DA',
+            success: '#15803D',
+            warning: '#B45309',
+            danger: '#B91C1C'
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
+          },
+          borderRadius: { sm: '6px', md: '10px', lg: '16px', xl: '24px' },
+          boxShadow: {
+            card: '0 4px 20px -4px rgba(28, 25, 23, 0.06)',
+            float: '0 16px 36px -8px rgba(15, 76, 92, 0.14)'
+          },
+          maxWidth: { container: '1200px' }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on; }
+    .stepper input::-webkit-outer-spin-button,
+    .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .stepper input { -moz-appearance: textfield; }
+    :focus-visible { outline: 2px solid #B45309; outline-offset: 2px; }
+    .js .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+    .js .reveal.is-in { opacity: 1; transform: none; }
+    .hero-img { animation: drift 24s ease-in-out infinite alternate; }
+    @keyframes drift { from { transform: scale(1.04); } to { transform: scale(1.12) translateX(-1.5%); } }
+    @media (prefers-reduced-motion: reduce) {
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+      .hero-img { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-canvas text-ink antialiased">
+
+  <a href="#search" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-md">Skip to search</a>
+
+  <!-- ============ HEADER (72px) ============ -->
+  <header class="sticky top-0 z-40 bg-canvas/95 border-b border-line">
+    <div class="max-w-container mx-auto px-5 lg:px-6 h-[72px] flex items-center justify-between gap-6">
+      <a href="#home" class="flex items-center gap-3 shrink-0" aria-label="Bagus Travel, home">
+        <span class="grid place-items-center w-10 h-10 rounded-md bg-primary text-white font-display text-xl font-bold leading-none">B</span>
+        <span class="font-display text-[22px] font-semibold tracking-tight">Bagus Travel</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-1 text-[14px] font-semibold" aria-label="Main">
+        <a href="#home" class="px-3 py-2 rounded-md text-ink hover:bg-surface-muted transition-colors" aria-current="page">Home</a>
+        <a href="#tours" class="px-3 py-2 rounded-md text-secondary hover:text-ink hover:bg-surface-muted transition-colors">Tours</a>
+        <a href="#things-to-do" class="px-3 py-2 rounded-md text-secondary hover:text-ink hover:bg-surface-muted transition-colors">Things to do</a>
+        <a href="#hotels" class="px-3 py-2 rounded-md text-secondary hover:text-ink hover:bg-surface-muted transition-colors">Hotels</a>
+        <button type="button" data-open-trip class="ml-3 inline-flex items-center gap-2 h-10 px-5 rounded-full bg-tertiary text-white hover:bg-tertiary-hover active:scale-[.98] transition">
+          Build your trip
+          <span data-trip-count class="tnum font-mono text-[12px] bg-white/20 rounded-full min-w-[22px] h-[22px] grid place-items-center px-1.5">0</span>
+        </button>
+      </nav>
+
+      <button type="button" id="menuBtn" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-md hover:bg-surface-muted" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <nav id="mobileNav" class="md:hidden hidden border-t border-line bg-canvas" aria-label="Mobile">
+      <div class="px-5 py-3 flex flex-col text-[16px] font-semibold">
+        <a href="#home" class="py-3">Home</a>
+        <a href="#tours" class="py-3 text-secondary">Tours</a>
+        <a href="#things-to-do" class="py-3 text-secondary">Things to do</a>
+        <a href="#hotels" class="py-3 text-secondary">Hotels</a>
+        <button type="button" data-open-trip class="my-2 h-12 rounded-full bg-tertiary text-white">Build your trip · <span data-trip-count class="tnum">0</span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <!-- ============ HERO ============ -->
+    <section class="relative h-[520px] md:h-[560px] overflow-hidden bg-primary" aria-labelledby="heroTitle">
+      <img src="assets/bagus_travel/tanah-lot.jpg" alt="Pura Tanah Lot on its rock in the sea at golden hour, Tabanan, Bali" class="hero-img absolute inset-0 w-full h-full object-cover object-[50%_45%]" width="1920" height="1280" fetchpriority="high"
+           onerror="this.remove()">
+      <div class="absolute inset-0 bg-gradient-to-r from-[#0b1d22]/80 via-[#0b1d22]/45 to-transparent" aria-hidden="true"></div>
+      <div class="relative max-w-container mx-auto px-5 lg:px-6 h-full flex flex-col justify-center pb-16">
+        <h1 id="heroTitle" class="font-display text-white text-[40px] leading-[1.1] md:text-[56px] md:leading-[1.08] font-bold tracking-[-0.02em] max-w-[620px] reveal">Private journeys by Bagus Travel</h1>
+        <p class="mt-6 text-white/90 text-[18px] leading-[1.65] max-w-[520px] reveal">Villas, boutique hotels and private guides across Indonesia, put together by people who plan every day of the trip with you.</p>
+        <p class="mt-8 text-white/85 text-[14px] reveal">Pura Tanah Lot, Tabanan · Bali</p>
+      </div>
+    </section>
+
+    <!-- ============ S4 SEARCH CONSOLE (overlapping) ============ -->
+    <section id="search" class="relative z-10 -mt-12 px-5 lg:px-6" aria-labelledby="searchTitle">
+      <div class="max-w-container mx-auto">
+        <form id="searchForm" class="bg-surface rounded-lg shadow-float border border-line p-6" novalidate>
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <h2 id="searchTitle" class="font-display text-[24px] font-semibold tracking-[-0.01em]">Plan your stay</h2>
+            <div class="inline-flex p-1 rounded-full bg-surface-muted" role="tablist" aria-label="What are you looking for">
+              <button type="button" role="tab" data-mode="hotels" aria-selected="true" class="mode-tab h-10 px-5 rounded-full text-[14px] font-semibold transition-colors">Hotels</button>
+              <button type="button" role="tab" data-mode="activities" aria-selected="false" class="mode-tab h-10 px-5 rounded-full text-[14px] font-semibold transition-colors">Activities</button>
+            </div>
+          </div>
+
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4">
+            <label class="lg:col-span-4 flex flex-col gap-1.5">
+              <span class="text-[14px] font-semibold" data-dest-label>Destination or hotel</span>
+              <input id="dest" name="dest" list="destList" autocomplete="off" placeholder="Ubud, Tabanan, Lake Toba…" class="h-[46px] px-3 rounded-sm bg-canvas border border-line text-[14px] placeholder:text-secondary/70 focus:border-primary focus:outline-none">
+              <datalist id="destList"></datalist>
+            </label>
+            <label class="lg:col-span-2 flex flex-col gap-1.5" data-hotel-only>
+              <span class="text-[14px] font-semibold">Check-in</span>
+              <input id="checkIn" name="checkIn" type="date" aria-describedby="dateHint" class="tnum h-[46px] px-3 rounded-sm bg-canvas border border-line text-[14px] focus:border-primary focus:outline-none">
+            </label>
+            <label class="lg:col-span-2 flex flex-col gap-1.5" data-hotel-only>
+              <span class="text-[14px] font-semibold">Check-out</span>
+              <input id="checkOut" name="checkOut" type="date" aria-describedby="dateHint" class="tnum h-[46px] px-3 rounded-sm bg-canvas border border-line text-[14px] focus:border-primary focus:outline-none">
+            </label>
+            <label class="lg:col-span-4 flex flex-col gap-1.5 hidden" data-activity-only>
+              <span class="text-[14px] font-semibold">Date</span>
+              <input id="actDate" name="actDate" type="date" class="tnum h-[46px] px-3 rounded-sm bg-canvas border border-line text-[14px] focus:border-primary focus:outline-none">
+            </label>
+
+            <div class="lg:col-span-4 grid grid-cols-3 gap-3">
+              <div class="flex flex-col gap-1.5" data-hotel-only>
+                <span id="lbl-rooms" class="text-[14px] font-semibold">Rooms</span>
+                <div class="stepper flex items-center h-[46px] rounded-sm bg-canvas border border-line" role="group" aria-labelledby="lbl-rooms">
+                  <button type="button" class="w-9 h-full text-[18px] text-primary hover:bg-surface-muted rounded-l-sm" data-step="rooms" data-dir="-1" aria-label="Fewer rooms">−</button>
+                  <input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" aria-labelledby="lbl-rooms" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[14px] font-semibold focus:outline-none">
+                  <button type="button" class="w-9 h-full text-[18px] text-primary hover:bg-surface-muted rounded-r-sm" data-step="rooms" data-dir="1" aria-label="More rooms">+</button>
+                </div>
+                <span class="text-[12px] text-secondary">1–9</span>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <span id="lbl-adults" class="text-[14px] font-semibold" data-adults-label>Adults / room</span>
+                <div class="stepper flex items-center h-[46px] rounded-sm bg-canvas border border-line" role="group" aria-labelledby="lbl-adults">
+                  <button type="button" class="w-9 h-full text-[18px] text-primary hover:bg-surface-muted rounded-l-sm" data-step="adults" data-dir="-1" aria-label="Fewer adults">−</button>
+                  <input id="adults" type="number" min="1" max="20" value="2" inputmode="numeric" aria-labelledby="lbl-adults" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[14px] font-semibold focus:outline-none">
+                  <button type="button" class="w-9 h-full text-[18px] text-primary hover:bg-surface-muted rounded-r-sm" data-step="adults" data-dir="1" aria-label="More adults">+</button>
+                </div>
+                <span class="text-[12px] text-secondary">1–20</span>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <span id="lbl-children" class="text-[14px] font-semibold" data-children-label>Children / room</span>
+                <div class="stepper flex items-center h-[46px] rounded-sm bg-canvas border border-line" role="group" aria-labelledby="lbl-children">
+                  <button type="button" class="w-9 h-full text-[18px] text-primary hover:bg-surface-muted rounded-l-sm" data-step="children" data-dir="-1" aria-label="Fewer children">−</button>
+                  <input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" aria-labelledby="lbl-children" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[14px] font-semibold focus:outline-none">
+                  <button type="button" class="w-9 h-full text-[18px] text-primary hover:bg-surface-muted rounded-r-sm" data-step="children" data-dir="1" aria-label="More children">+</button>
+                </div>
+                <span class="text-[12px] text-secondary">0–20</span>
+              </div>
+            </div>
+          </div>
+
+          <p id="dateHint" class="mt-4 text-[14px] text-secondary" data-hotel-only>Stays of up to 30 nights. Every room in one booking has the same number of guests.</p>
+          <div id="formErrors" class="mt-3 text-[14px] text-danger font-semibold" role="alert" aria-live="assertive"></div>
+
+          <div class="mt-5 pt-5 border-t border-line flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-start gap-3">
+              <span class="relative mt-1.5 flex h-2.5 w-2.5" aria-hidden="true"><span class="absolute inline-flex h-full w-full rounded-full bg-success opacity-60 animate-ping motion-reduce:animate-none"></span><span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-success"></span></span>
+              <div>
+                <p class="text-[14px] font-semibold">Every price is checked live when you ask for it</p>
+                <p id="summary" class="tnum font-mono text-[13px] text-secondary mt-0.5" aria-live="polite">Choose your dates to see prices</p>
+              </div>
+            </div>
+            <button id="checkBtn" type="submit" class="h-12 px-7 rounded-md bg-tertiary text-white text-[14px] font-semibold tracking-[0.02em] hover:bg-tertiary-hover active:scale-[.98] transition disabled:opacity-70 disabled:cursor-wait inline-flex items-center justify-center gap-2">
+              <span data-btn-label>Check live price</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ CURATED STAYS / RESULTS ============ -->
+    <section id="hotels" class="max-w-container mx-auto px-5 lg:px-6 pt-24 md:pt-32" aria-labelledby="resultsTitle">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 reveal">
+        <div>
+          <h2 id="resultsTitle" class="font-display text-[32px] md:text-[36px] font-semibold leading-[1.18] tracking-[-0.015em]">Curated stays</h2>
+          <p id="resultsNote" class="mt-3 text-[16px] text-secondary max-w-[560px]">Houses and hotels we have stayed in ourselves. Prices appear once you pick dates.</p>
+        </div>
+        <span class="self-start md:self-auto inline-flex items-center gap-2 rounded-full bg-surface-muted px-3 py-1.5 text-[12px] font-semibold text-secondary">Illustrative sample data</span>
+      </div>
+      <div id="results" class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- ============ TOURS & THINGS TO DO ============ -->
+    <section id="tours" class="max-w-container mx-auto px-5 lg:px-6 pt-28 md:pt-36" aria-labelledby="toursTitle">
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-5 lg:sticky lg:top-28 reveal">
+          <figure>
+            <img src="assets/bagus_travel/borobudur.jpg" alt="Borobudur temple seen from its lawn under a blue sky, Magelang, Central Java" class="w-full aspect-[4/5] object-cover rounded-lg" loading="lazy" width="1920" height="1281">
+            <figcaption class="mt-3 text-[14px] text-secondary">Borobudur, Magelang · Central Java</figcaption>
+          </figure>
+        </div>
+        <div class="lg:col-span-7">
+          <h2 id="toursTitle" class="font-display text-[32px] md:text-[36px] font-semibold leading-[1.18] tracking-[-0.015em] reveal">Private tours, led by our own guides</h2>
+          <p class="mt-4 text-[18px] leading-[1.65] max-w-[560px] reveal">Each tour is just you and the people you travel with. Choose one and we fill in the date in the search above.</p>
+          <ul id="tourList" class="mt-10 divide-y divide-line border-y border-line"></ul>
+
+          <div id="things-to-do" class="pt-20 scroll-mt-24">
+            <h3 class="font-display text-[24px] font-semibold tracking-[-0.01em] reveal">Things to do</h3>
+            <div id="thingsList" class="mt-6 grid sm:grid-cols-2 gap-4"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY TRAVEL WITH US ============ -->
+    <section class="max-w-container mx-auto px-5 lg:px-6 pt-28 md:pt-36" aria-labelledby="whyTitle">
+      <div class="bg-surface border border-line rounded-lg shadow-card p-8 md:p-12">
+        <h2 id="whyTitle" class="font-display text-[32px] md:text-[36px] font-semibold leading-[1.18] tracking-[-0.015em] reveal">Why travel with us</h2>
+        <div class="mt-10 grid md:grid-cols-3 gap-10">
+          <div class="reveal">
+            <h3 class="font-display text-[22px] font-semibold">Local knowledge</h3>
+            <p class="mt-3 text-[16px] leading-[1.6]">We live where we send you. We know which villa keeps its pool warm, which road floods in February and which guide tells the story of the temple best.</p>
+          </div>
+          <div class="reveal">
+            <h3 class="font-display text-[22px] font-semibold">Live prices</h3>
+            <p class="mt-3 text-[16px] leading-[1.6]">Every price is checked live when you ask for it. What you see for your dates and rooms is the price you pay.</p>
+          </div>
+          <div class="reveal">
+            <h3 class="font-display text-[22px] font-semibold">Help when you need it</h3>
+            <p class="mt-3 text-[16px] leading-[1.6]">One person looks after your trip from the first question to the drive back to the airport, and answers when something changes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="max-w-container mx-auto px-5 lg:px-6 pt-28 md:pt-36" aria-labelledby="aboutTitle">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="reveal">
+          <h2 id="aboutTitle" class="font-display text-[32px] md:text-[36px] font-semibold leading-[1.18] tracking-[-0.015em]">About us</h2>
+          <p class="mt-5 text-[18px] leading-[1.65]">Bagus Travel plans private trips across Indonesia: the place you sleep, the driver who meets you, the guide who walks you through the temple and the order of the days in between.</p>
+          <p class="mt-4 text-[16px] leading-[1.6] text-secondary">We keep the list short on purpose. Every stay on this page is one we would book for our own family, and every price is fetched for your dates at the moment you ask.</p>
+        </div>
+        <figure class="reveal">
+          <img src="assets/bagus_travel/toba.jpg" alt="Lake Toba seen from the hills of Simalem, North Sumatra" class="w-full aspect-[4/3] object-cover rounded-lg" loading="lazy" width="1920" height="1440">
+          <figcaption class="mt-3 text-[14px] text-secondary">Lake Toba from Simalem · North Sumatra</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section id="faq" class="max-w-container mx-auto px-5 lg:px-6 pt-28 md:pt-36" aria-labelledby="faqTitle">
+      <div class="grid lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-4 reveal">
+          <h2 id="faqTitle" class="font-display text-[32px] md:text-[36px] font-semibold leading-[1.18] tracking-[-0.015em]">FAQ</h2>
+          <p class="mt-4 text-[16px] text-secondary">The questions travellers ask us before they book.</p>
+        </div>
+        <div class="lg:col-span-8 divide-y divide-line border-y border-line reveal">
+          <details class="group py-5">
+            <summary class="flex items-center justify-between gap-6 cursor-pointer text-[18px] font-semibold">When do I see the price?<span class="faq-icon text-tertiary text-[24px] leading-none transition-transform" aria-hidden="true">+</span></summary>
+            <p class="mt-3 text-[16px] leading-[1.6] max-w-[620px]">As soon as you choose your dates and press Check live price. Every price is checked live when you ask for it, so it reflects your dates, rooms and guests.</p>
+          </details>
+          <details class="group py-5">
+            <summary class="flex items-center justify-between gap-6 cursor-pointer text-[18px] font-semibold">How long can I stay?<span class="faq-icon text-tertiary text-[24px] leading-none transition-transform" aria-hidden="true">+</span></summary>
+            <p class="mt-3 text-[16px] leading-[1.6] max-w-[620px]">Up to 30 nights in one booking. For a longer journey, book the stays one after another in Build your trip.</p>
+          </details>
+          <details class="group py-5">
+            <summary class="flex items-center justify-between gap-6 cursor-pointer text-[18px] font-semibold">Can each room have different guests?<span class="faq-icon text-tertiary text-[24px] leading-none transition-transform" aria-hidden="true">+</span></summary>
+            <p class="mt-3 text-[16px] leading-[1.6] max-w-[620px]">In one search every room has the same guests: 1 to 9 rooms, 1 to 20 adults and 0 to 20 children per room. If your rooms differ, search them separately and add both to your trip.</p>
+          </details>
+          <details class="group py-5">
+            <summary class="flex items-center justify-between gap-6 cursor-pointer text-[18px] font-semibold">How do I pay?<span class="faq-icon text-tertiary text-[24px] leading-none transition-transform" aria-hidden="true">+</span></summary>
+            <p class="mt-3 text-[16px] leading-[1.6] max-w-[620px]">Payments are made through DOKU or SNAP BI at checkout.</p>
+          </details>
+          <details class="group py-5">
+            <summary class="flex items-center justify-between gap-6 cursor-pointer text-[18px] font-semibold">Can I combine a hotel with a tour?<span class="faq-icon text-tertiary text-[24px] leading-none transition-transform" aria-hidden="true">+</span></summary>
+            <p class="mt-3 text-[16px] leading-[1.6] max-w-[620px]">Yes. Add stays and activities to Build your trip and pay for them together.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="max-w-container mx-auto px-5 lg:px-6 pt-28 md:pt-36 pb-28" aria-labelledby="contactTitle">
+      <div class="grid lg:grid-cols-12 gap-10 bg-primary text-white rounded-lg p-8 md:p-12">
+        <div class="lg:col-span-5 reveal">
+          <h2 id="contactTitle" class="font-display text-[32px] md:text-[36px] font-semibold leading-[1.18] tracking-[-0.015em]">Contact</h2>
+          <p class="mt-4 text-[18px] leading-[1.65] text-white/90">Tell us where you would like to go and when. One of our planners will reply with a first idea for the route.</p>
+        </div>
+        <form id="contactForm" class="lg:col-span-7 grid sm:grid-cols-2 gap-4 reveal" novalidate>
+          <label class="flex flex-col gap-1.5"><span class="text-[14px] font-semibold">Your name</span><input required name="name" autocomplete="name" class="h-[46px] px-3 rounded-sm bg-white text-ink text-[14px] focus:outline-none"></label>
+          <label class="flex flex-col gap-1.5"><span class="text-[14px] font-semibold">Email</span><input required type="email" name="email" autocomplete="email" class="h-[46px] px-3 rounded-sm bg-white text-ink text-[14px] focus:outline-none"></label>
+          <label class="sm:col-span-2 flex flex-col gap-1.5"><span class="text-[14px] font-semibold">Your trip</span><textarea required name="msg" rows="4" class="px-3 py-3 rounded-sm bg-white text-ink text-[14px] focus:outline-none" placeholder="Ten days, two of us, Ubud and somewhere quiet by the sea…"></textarea></label>
+          <div class="sm:col-span-2 flex flex-wrap items-center gap-4">
+            <button class="h-12 px-7 rounded-md bg-tertiary hover:bg-tertiary-hover text-white text-[14px] font-semibold active:scale-[.98] transition">Send to a planner</button>
+            <p id="contactNote" class="text-[14px] text-white/90" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="border-t border-line bg-surface-muted">
+    <div class="max-w-container mx-auto px-5 lg:px-6 py-14">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <p class="font-display text-[44px] md:text-[64px] font-bold tracking-[-0.02em] leading-none">Bagus Travel</p>
+        <nav class="flex gap-6 text-[14px] font-semibold text-secondary" aria-label="Footer">
+          <a href="#about" class="hover:text-ink">About us</a>
+          <a href="#contact" class="hover:text-ink">Contact</a>
+          <a href="#faq" class="hover:text-ink">FAQ</a>
+        </nav>
+      </div>
+      <div class="mt-10 pt-6 border-t border-line grid md:grid-cols-2 gap-6 text-[13px] text-secondary">
+        <p>Payments are processed through <strong class="text-ink">DOKU</strong> and <strong class="text-ink">SNAP BI</strong>. Hotel names, rates and availability on this page are illustrative sample data.</p>
+        <p class="md:text-right">© <span id="year"></span> Bagus Travel</p>
+      </div>
+      <p class="mt-6 text-[12px] leading-[1.6] text-secondary">Pictures:
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Tanah-Lot_Bali_Indonesia_Pura-Tanah-Lot-01.jpg">“Tanah-Lot Bali Indonesia Pura-Tanah-Lot-01”</a> by CEphoto, Uwe Aranas, <a class="underline" href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Rice_terraces,_Ubud,_Bali.jpg">“Rice terraces, Ubud, Bali”</a> by Vyacheslav Argenberg, <a class="underline" href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Borobudur,_Java,_Indonesia,_20220817_1013_8739.jpg">“Borobudur, Java, Indonesia”</a> by Jakub Hałun, <a class="underline" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Lake_Toba_from_Simalem,_North_Sumatra.jpg">“Lake Toba from Simalem, North Sumatra”</a> by Chapsorini, <a class="underline" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>;
+        <a class="underline" href="https://commons.wikimedia.org/wiki/File:Diamond_Beach_in_Nusa_Penida,_Bali.jpg">“Diamond Beach in Nusa Penida, Bali”</a> by Stryn, <a class="underline" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; all via Wikimedia Commons.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============ TRIP DRAWER (Build your trip) ============ -->
+  <div id="tripOverlay" class="fixed inset-0 z-50 bg-ink/40 hidden" aria-hidden="true"></div>
+  <aside id="tripDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-[420px] bg-surface shadow-float translate-x-full transition-transform duration-300 flex flex-col" role="dialog" aria-modal="true" aria-labelledby="tripTitle" aria-hidden="true">
+    <div class="flex items-center justify-between px-6 h-[72px] border-b border-line">
+      <h2 id="tripTitle" class="font-display text-[24px] font-semibold">Your trip</h2>
+      <button type="button" data-close-trip class="w-11 h-11 grid place-items-center rounded-md hover:bg-surface-muted" aria-label="Close your trip">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div id="tripItems" class="flex-1 overflow-y-auto px-6 py-4"></div>
+    <div class="border-t border-line px-6 py-5">
+      <div class="flex items-baseline justify-between">
+        <span class="text-[14px] font-semibold">Total</span>
+        <span id="tripTotal" class="tnum font-mono text-[20px] font-semibold">Rp 0</span>
+      </div>
+      <button id="payBtn" type="button" class="mt-4 w-full h-12 rounded-md bg-primary hover:bg-primary-hover text-white text-[14px] font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition">Continue to payment</button>
+      <p id="payNote" class="mt-3 text-[13px] text-secondary" aria-live="polite">Pay with DOKU or SNAP BI.</p>
+    </div>
+  </aside>
+
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-ink text-white rounded-md px-5 py-3 text-[14px] shadow-float" role="status" aria-live="polite"></div>
+
+  <script>
+  (() => {
+    'use strict';
+    /* ---------- Illustrative sample data (PRD 9.2: not real rates) ---------- */
+    const STAYS = [
+      { id: 'st-ubud', name: 'Rumah Sawah Ubud', area: 'Tegallalang, Ubud · Bali', keys: 'ubud bali tegallalang gianyar', img: 'assets/bagus_travel/ubud.jpg', alt: 'Rice terraces among coconut palms near Ubud, Bali', stars: 5, room: 'Terrace pool villa', meal: 'Breakfast included', policy: 'Free cancellation until 7 days before arrival', nightly: 4200000 },
+      { id: 'st-tanahlot', name: 'Griya Tebing Tabanan', area: 'Beraban, Tabanan · Bali', keys: 'tabanan tanah lot bali beraban', img: 'assets/bagus_travel/tanah-lot.jpg', alt: 'Pura Tanah Lot on its rock in the sea, Tabanan, Bali', stars: 4, room: 'Ocean-view suite', meal: 'Breakfast included', policy: 'Free cancellation until 3 days before arrival', nightly: 2650000 },
+      { id: 'st-borobudur', name: 'Omah Candi Magelang', area: 'Borobudur, Magelang · Central Java', keys: 'magelang borobudur java jogja yogyakarta', img: 'assets/bagus_travel/borobudur.jpg', alt: 'Borobudur temple from its lawn, Central Java', stars: 4, room: 'Joglo garden room', meal: 'Breakfast and dinner', policy: 'Non-refundable', nightly: 1850000 },
+      { id: 'st-toba', name: 'Huta Danau Toba', area: 'Simalem, Karo · North Sumatra', keys: 'toba sumatra karo simalem medan lake', img: 'assets/bagus_travel/toba.jpg', alt: 'Lake Toba from the Simalem hills, North Sumatra', stars: 4, room: 'Lake-view cottage', meal: 'Breakfast included', policy: 'Free cancellation until 5 days before arrival', nightly: 1450000 },
+      { id: 'st-penida', name: 'Pondok Tebing Penida', area: 'Pejukutan, Nusa Penida · Bali', keys: 'nusa penida bali diamond beach klungkung', img: 'assets/bagus_travel/nusa-penida.jpg', alt: 'Diamond Beach below limestone cliffs, Nusa Penida, Bali', stars: 4, room: 'Cliff bungalow', meal: 'Room only', policy: 'Free cancellation until 7 days before arrival', nightly: 1950000 }
+    ];
+    const ACTIVITIES = [
+      { id: 'ac-borobudur', kind: 'tour', name: 'Borobudur at first light', area: 'Magelang · Central Java', keys: 'magelang borobudur java jogja yogyakarta', img: 'assets/bagus_travel/borobudur.jpg', alt: 'Borobudur temple, Central Java', duration: '6 hours · private guide and driver', perPerson: 1250000 },
+      { id: 'ac-ubud', kind: 'tour', name: 'Ubud rice terraces walk', area: 'Tegallalang · Bali', keys: 'ubud bali tegallalang', img: 'assets/bagus_travel/ubud.jpg', alt: 'Rice terraces near Ubud', duration: '4 hours · walking guide, lunch', perPerson: 650000 },
+      { id: 'ac-tanahlot', kind: 'tour', name: 'Tanah Lot at sunset', area: 'Tabanan · Bali', keys: 'tabanan tanah lot bali', img: 'assets/bagus_travel/tanah-lot.jpg', alt: 'Pura Tanah Lot', duration: '5 hours · driver and temple guide', perPerson: 780000 },
+      { id: 'ac-penida', kind: 'thing', name: 'Nusa Penida by fast boat', area: 'Klungkung · Bali', keys: 'nusa penida bali boat', img: 'assets/bagus_travel/nusa-penida.jpg', alt: 'Diamond Beach, Nusa Penida', duration: 'Full day · boat, driver, lunch', perPerson: 1450000 },
+      { id: 'ac-toba', kind: 'thing', name: 'Samosir island by boat', area: 'Lake Toba · North Sumatra', keys: 'toba sumatra samosir lake', img: 'assets/bagus_travel/toba.jpg', alt: 'Lake Toba', duration: '7 hours · boat and Batak village visit', perPerson: 900000 },
+      { id: 'ac-cooking', kind: 'thing', name: 'Balinese kitchen morning', area: 'Ubud · Bali', keys: 'ubud bali cooking', img: 'assets/bagus_travel/ubud.jpg', alt: 'Ubud countryside', duration: '4 hours · market and cooking class', perPerson: 550000 }
+    ];
+
+    /* ---------- Ortasys S4 rules [F] ---------- */
+    const LIMITS = { rooms: [1, 9], adults: [1, 20], children: [0, 20] };
+    const MAX_NIGHTS = 30;
+    const idr = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const DAY = 86400000;
+    const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    const addDays = (s, n) => iso(new Date(new Date(s + 'T00:00:00').getTime() + n * DAY));
+    const today = iso(new Date());
+
+    const state = { mode: 'hotels', priced: false, checking: false, checkedAt: null, trip: [] };
+    const el = {
+      form: $('#searchForm'), dest: $('#dest'), checkIn: $('#checkIn'), checkOut: $('#checkOut'), actDate: $('#actDate'),
+      rooms: $('#rooms'), adults: $('#adults'), children: $('#qChildren'), errors: $('#formErrors'), summary: $('#summary'),
+      btn: $('#checkBtn'), results: $('#results'), resultsTitle: $('#resultsTitle'), resultsNote: $('#resultsNote')
+    };
+
+    const clamp = (v, [lo, hi]) => Math.min(hi, Math.max(lo, Number.isFinite(v) ? v : lo));
+    const num = k => clamp(parseInt(el[k].value, 10), LIMITS[k]);
+    const nights = () => {
+      if (!el.checkIn.value || !el.checkOut.value) return 0;
+      return Math.round((new Date(el.checkOut.value) - new Date(el.checkIn.value)) / DAY);
+    };
+
+    function validate() {
+      const errs = [];
+      if (state.mode === 'hotels') {
+        if (!el.checkIn.value || !el.checkOut.value) errs.push('Choose a check-in and check-out date.');
+        else {
+          const n = nights();
+          if (el.checkIn.value < today) errs.push('Check-in cannot be in the past.');
+          if (n < 1) errs.push('Check-out must be after check-in.');
+          if (n > MAX_NIGHTS) errs.push(`Stays can be up to ${MAX_NIGHTS} nights. You chose ${n}.`);
+        }
+      } else if (!el.actDate.value) errs.push('Choose a date for the activity.');
+      else if (el.actDate.value < today) errs.push('The activity date cannot be in the past.');
+      ['rooms', 'adults', 'children'].forEach(k => {
+        const v = parseInt(el[k].value, 10), [lo, hi] = LIMITS[k];
+        if (!Number.isFinite(v) || v < lo || v > hi) errs.push(`${k[0].toUpperCase() + k.slice(1)} must be between ${lo} and ${hi}.`);
+      });
+      return errs;
+    }
+
+    /* ---------- pricing ---------- */
+    const roomRate = s => Math.round(s.nightly * (1 + 0.18 * Math.max(0, num('adults') - 2) + 0.08 * num('children')) / 1000) * 1000;
+    const stayTotal = s => roomRate(s) * nights() * num('rooms');
+    const actTotal = a => a.perPerson * num('adults') + Math.round(a.perPerson * 0.5) * num('children');
+
+    function guestsText() {
+      const a = num('adults'), c = num('children');
+      return `${a} adult${a > 1 ? 's' : ''}${c ? ` + ${c} child${c > 1 ? 'ren' : ''}` : ''}`;
+    }
+    function summaryText() {
+      if (state.mode === 'hotels') {
+        const n = nights(), r = num('rooms');
+        if (!n || n < 1) return 'Choose your dates to see prices';
+        return `${n} night${n > 1 ? 's' : ''} × ${r} room${r > 1 ? 's' : ''} × ${guestsText()} per room${n > MAX_NIGHTS ? ' · over 30 nights' : ''}`;
+      }
+      return el.actDate.value ? `${fmtDate(el.actDate.value)} · ${guestsText()}` : 'Choose a date to see prices';
+    }
+    const fmtDate = s => new Date(s + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+
+    function matches(item) {
+      const q = el.dest.value.trim().toLowerCase();
+      if (!q) return true;
+      return (item.name + ' ' + item.area + ' ' + item.keys).toLowerCase().includes(q);
+    }
+
+    /* ---------- render: results ---------- */
+    function priceBlock(total, sub) {
+      if (state.checking) return `<div class="h-12 w-40 rounded-sm bg-surface-muted animate-pulse motion-reduce:animate-none" aria-hidden="true"></div>`;
+      if (!state.priced) return `<p class="text-[14px] text-secondary">Price shown after you check your dates</p>`;
+      return `<p class="tnum font-mono text-[22px] font-semibold text-ink">${idr.format(total)}</p><p class="tnum font-mono text-[13px] text-secondary mt-0.5">${sub}</p>`;
+    }
+
+    function renderResults() {
+      const isHotels = state.mode === 'hotels';
+      let list = (isHotels ? STAYS : ACTIVITIES).filter(matches);
+      const q = el.dest.value.trim();
+      const none = q && list.length === 0;
+      if (none) list = isHotels ? STAYS : ACTIVITIES;
+
+      el.resultsTitle.textContent = isHotels ? (q && !none ? `Stays for “${q}”` : 'Curated stays') : (q && !none ? `Activities for “${q}”` : 'Activities and tours');
+      let note = isHotels ? 'Houses and hotels we have stayed in ourselves.' : 'Private tours and days out, with our own guides.';
+      if (none) note = `Nothing in our sample matches “${q}”, so here is everything we offer.`;
+      if (state.priced && state.checkedAt) note += ` Prices checked live at ${state.checkedAt.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}.`;
+      else note += ' Prices appear once you pick dates.';
+      el.resultsNote.textContent = note;
+
+      el.results.innerHTML = list.map((it, i) => {
+        const big = i === 0 && list.length > 2;
+        const total = isHotels ? stayTotal(it) : actTotal(it);
+        const sub = isHotels ? `${idr.format(roomRate(it))} / room / night` : `${idr.format(it.perPerson)} / adult`;
+        const meta = isHotels
+          ? `<p class="text-[14px] text-secondary">${it.room} · ${it.meal}</p><p class="text-[13px] text-secondary mt-1">${it.policy}</p>`
+          : `<p class="text-[14px] text-secondary">${it.duration}</p>`;
+        return `
+        <article class="group bg-surface border border-line rounded-lg shadow-card overflow-hidden flex flex-col ${big ? 'md:col-span-2 lg:row-span-1' : ''} transition hover:-translate-y-0.5 hover:shadow-float">
+          <div class="relative ${big ? 'aspect-[16/9]' : 'aspect-[4/3]'} overflow-hidden bg-surface-muted">
+            <img src="${it.img}" alt="${it.alt}" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]">
+            ${isHotels ? `<span class="absolute top-3 left-3 bg-surface/95 text-ink rounded-full px-3 py-1 text-[12px] font-semibold" aria-label="${it.stars} star hotel">${'★'.repeat(it.stars)}</span>` : ''}
+          </div>
+          <div class="p-6 flex flex-col gap-3 flex-1">
+            <div>
+              <p class="text-[13px] font-semibold text-tertiary">${it.area}</p>
+              <h3 class="font-display text-[22px] font-semibold leading-[1.25] mt-1">${it.name}</h3>
+            </div>
+            ${meta}
+            <div class="mt-auto pt-4 border-t border-line flex items-end justify-between gap-4">
+              <div>${priceBlock(total, sub)}</div>
+              <button type="button" data-select="${it.id}" class="shrink-0 h-11 px-5 rounded-md bg-primary hover:bg-primary-hover text-white text-[14px] font-semibold active:scale-[.98] transition">${isHotels ? 'Select stay' : 'Select'}</button>
+            </div>
+          </div>
+        </article>`;
+      }).join('');
+    }
+
+    function renderTours() {
+      const tours = ACTIVITIES.filter(a => a.kind === 'tour');
+      $('#tourList').innerHTML = tours.map(t => `
+        <li class="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 reveal">
+          <div>
+            <h3 class="font-display text-[22px] font-semibold">${t.name}</h3>
+            <p class="text-[14px] text-secondary mt-1">${t.area} · ${t.duration}</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="tnum font-mono text-[13px] text-secondary">from ${idr.format(t.perPerson)} / adult</span>
+            <button type="button" data-plan="${t.id}" class="h-11 px-5 rounded-md border border-primary text-primary hover:bg-primary hover:text-white text-[14px] font-semibold transition">Plan this tour</button>
+          </div>
+        </li>`).join('');
+      const things = ACTIVITIES.filter(a => a.kind === 'thing');
+      $('#thingsList').innerHTML = things.map(t => `
+        <button type="button" data-plan="${t.id}" class="reveal text-left bg-surface border border-line rounded-lg p-5 hover:border-primary transition">
+          <span class="block font-semibold text-[16px]">${t.name}</span>
+          <span class="block text-[14px] text-secondary mt-1">${t.area}</span>
+          <span class="block text-[13px] text-secondary mt-3">${t.duration}</span>
+        </button>`).join('');
+    }
+
+    /* ---------- render: form ---------- */
+    function syncBounds() {
+      el.checkIn.min = today; el.actDate.min = today;
+      if (el.checkIn.value) {
+        el.checkOut.min = addDays(el.checkIn.value, 1);
+        el.checkOut.max = addDays(el.checkIn.value, MAX_NIGHTS);
+      } else { el.checkOut.min = addDays(today, 1); el.checkOut.removeAttribute('max'); }
+    }
+    function renderMode() {
+      $$('.mode-tab').forEach(t => {
+        const on = t.dataset.mode === state.mode;
+        t.setAttribute('aria-selected', on);
+        t.className = `mode-tab h-10 px-5 rounded-full text-[14px] font-semibold transition-colors ${on ? 'bg-primary text-white' : 'text-secondary hover:text-ink'}`;
+      });
+      const hotels = state.mode === 'hotels';
+      $$('[data-hotel-only]').forEach(n => n.classList.toggle('hidden', !hotels));
+      $$('[data-activity-only]').forEach(n => n.classList.toggle('hidden', hotels));
+      $('[data-adults-label]').textContent = hotels ? 'Adults / room' : 'Adults';
+      $('[data-children-label]').textContent = hotels ? 'Children / room' : 'Children';
+      $('[data-dest-label]').textContent = hotels ? 'Destination or hotel' : 'Destination or activity';
+      $('#destList').innerHTML = (hotels ? ['Ubud', 'Tabanan', 'Magelang', 'Lake Toba', 'Nusa Penida', ...STAYS.map(s => s.name)] : ['Ubud', 'Tabanan', 'Magelang', 'Lake Toba', 'Nusa Penida', ...ACTIVITIES.map(a => a.name)])
+        .map(v => `<option value="${v}">`).join('');
+    }
+    function renderSummary() { el.summary.textContent = summaryText(); }
+    function invalidate() {
+      if (state.priced) { state.priced = false; state.checkedAt = null; }
+      el.errors.textContent = '';
+      renderSummary(); renderResults();
+    }
+
+    /* ---------- events ---------- */
+    $$('.mode-tab').forEach(t => t.addEventListener('click', () => { state.mode = t.dataset.mode; renderMode(); invalidate(); }));
+    $$('[data-step]').forEach(b => b.addEventListener('click', () => {
+      const k = b.dataset.step; el[k].value = clamp(num(k) + Number(b.dataset.dir), LIMITS[k]); invalidate();
+    }));
+    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('change', () => { el[k].value = num(k); invalidate(); }));
+    el.checkIn.addEventListener('change', () => {
+      syncBounds();
+      if (el.checkIn.value && (!el.checkOut.value || el.checkOut.value <= el.checkIn.value)) el.checkOut.value = addDays(el.checkIn.value, 2);
+      invalidate();
+    });
+    [el.checkOut, el.actDate].forEach(i => i.addEventListener('change', invalidate));
+    el.dest.addEventListener('input', () => { renderResults(); });
+
+    el.form.addEventListener('submit', e => {
+      e.preventDefault();
+      const errs = validate();
+      el.errors.innerHTML = errs.map(x => `<p>${x}</p>`).join('');
+      if (errs.length) { (state.mode === 'hotels' ? el.checkIn : el.actDate).focus(); return; }
+      state.checking = true; el.btn.disabled = true;
+      el.btn.querySelector('[data-btn-label]').textContent = 'Checking live prices…';
+      renderResults();
+      setTimeout(() => {
+        state.checking = false; state.priced = true; state.checkedAt = new Date();
+        el.btn.disabled = false; el.btn.querySelector('[data-btn-label]').textContent = 'Check live price';
+        renderResults();
+        document.getElementById('hotels').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      }, 900);
+    });
+
+    function planActivity(id) {
+      const a = ACTIVITIES.find(x => x.id === id); if (!a) return;
+      state.mode = 'activities'; renderMode();
+      el.dest.value = a.name; invalidate();
+      document.getElementById('search').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => el.actDate.focus({ preventScroll: true }), 500);
+    }
+    document.addEventListener('click', e => {
+      const sel = e.target.closest('[data-select]'); if (sel) return selectItem(sel.dataset.select);
+      const plan = e.target.closest('[data-plan]'); if (plan) return planActivity(plan.dataset.plan);
+      const rm = e.target.closest('[data-remove]'); if (rm) { state.trip.splice(Number(rm.dataset.remove), 1); renderTrip(); }
+    });
+
+    /* ---------- Build your trip ---------- */
+    function selectItem(id) {
+      if (!state.priced) {
+        toast('Check the live price for your dates first.');
+        document.getElementById('search').scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => (state.mode === 'hotels' ? el.checkIn : el.actDate).focus({ preventScroll: true }), 500);
+        return;
+      }
+      const isHotel = id.startsWith('st-');
+      const it = (isHotel ? STAYS : ACTIVITIES).find(x => x.id === id);
+      const detail = isHotel
+        ? `${fmtDate(el.checkIn.value)} – ${fmtDate(el.checkOut.value)} · ${summaryText()}`
+        : summaryText();
+      state.trip.push({ name: it.name, area: it.area, detail, total: isHotel ? stayTotal(it) : actTotal(it) });
+      renderTrip(); toast(`${it.name} added to your trip.`);
+    }
+    function renderTrip() {
+      $$('[data-trip-count]').forEach(n => n.textContent = state.trip.length);
+      const box = $('#tripItems');
+      box.innerHTML = state.trip.length ? state.trip.map((t, i) => `
+        <div class="py-4 border-b border-line last:border-0">
+          <div class="flex justify-between gap-4">
+            <div>
+              <p class="font-semibold text-[16px]">${t.name}</p>
+              <p class="text-[13px] text-secondary">${t.area}</p>
+              <p class="tnum font-mono text-[12px] text-secondary mt-1">${t.detail}</p>
+            </div>
+            <button type="button" data-remove="${i}" class="self-start text-[13px] font-semibold text-danger hover:underline" aria-label="Remove ${t.name}">Remove</button>
+          </div>
+          <p class="tnum font-mono text-[15px] font-semibold mt-2">${idr.format(t.total)}</p>
+        </div>`).join('')
+        : `<p class="py-6 text-[16px] text-secondary">Nothing here yet. Check a live price, then choose Select stay or Select on an activity to add it.</p>`;
+      $('#tripTotal').textContent = idr.format(state.trip.reduce((s, t) => s + t.total, 0));
+      $('#payBtn').disabled = !state.trip.length;
+      $('#payNote').textContent = 'Pay with DOKU or SNAP BI.';
+    }
+    const drawer = $('#tripDrawer'), overlay = $('#tripOverlay');
+    let lastFocus = null;
+    function openTrip() {
+      lastFocus = document.activeElement;
+      overlay.classList.remove('hidden'); drawer.classList.remove('translate-x-full');
+      drawer.setAttribute('aria-hidden', 'false'); $('[data-close-trip]').focus();
+    }
+    function closeTrip() {
+      overlay.classList.add('hidden'); drawer.classList.add('translate-x-full');
+      drawer.setAttribute('aria-hidden', 'true'); lastFocus && lastFocus.focus();
+    }
+    $$('[data-open-trip]').forEach(b => b.addEventListener('click', openTrip));
+    $('[data-close-trip]').addEventListener('click', closeTrip);
+    overlay.addEventListener('click', closeTrip);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.getAttribute('aria-hidden') === 'false') closeTrip(); });
+    $('#payBtn').addEventListener('click', () => {
+      $('#payNote').textContent = 'Checkout continues with DOKU or SNAP BI. This demo storefront stops here.';
+    });
+
+    let toastTimer;
+    function toast(msg) {
+      const t = $('#toast'); t.textContent = msg; t.classList.remove('hidden');
+      clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.add('hidden'), 2600);
+    }
+
+    /* ---------- misc ---------- */
+    const menuBtn = $('#menuBtn'), mobileNav = $('#mobileNav');
+    menuBtn.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('hidden') === false;
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+    $$('#mobileNav a').forEach(a => a.addEventListener('click', () => { mobileNav.classList.add('hidden'); menuBtn.setAttribute('aria-expanded', 'false'); }));
+
+    $('#contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const f = e.currentTarget;
+      $('#contactNote').textContent = f.checkValidity() ? 'Thank you. This demo storefront does not send messages yet.' : 'Please fill in your name, a valid email and a few words about the trip.';
+    });
+    $('#year').textContent = new Date().getFullYear();
+
+    function observeReveals() {
+      const io = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+        entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+      }, { rootMargin: '0px 0px -8% 0px' }) : null;
+      $$('.reveal:not(.is-in)').forEach((n, i) => {
+        n.style.transitionDelay = `${(i % 4) * 70}ms`;
+        io ? io.observe(n) : n.classList.add('is-in');
+      });
+    }
+
+    syncBounds(); renderMode(); renderSummary(); renderResults(); renderTours(); renderTrip(); observeReveals();
+  })();
+  </script>
+</body>
+</html>
