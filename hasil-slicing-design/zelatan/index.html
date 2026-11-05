@@ -1,0 +1,1913 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zelatan · Overseas Holiday Solutions</title>
+  <meta name="description" content="Zelatan — Premier nature luxury and overseas adventure holiday solutions. Curated safari, alpine chalets, river rafting, and seamless ticket ordering powered by Ortasys distribution engine." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --color-brand-olive: #273303;
+      --color-brand-olive-hover: #344405;
+      --color-surface-canvas: #F9FAF6;
+      --color-surface-card: #FFFFFF;
+      --color-text-obsidian: #18181B;
+      --color-text-muted: #64748B;
+    }
+  </style>
+
+  <style>
+    :root {
+      color-scheme: light;
+    }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #F9FAF6;
+      color: #18181B;
+    }
+    .font-display {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+    .tnum {
+      font-variant-numeric: tabular-nums;
+    }
+    /* Clean custom scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    html {
+      -ms-overflow-style: none;
+      scrollbar-width: thin;
+    }
+  </style>
+</head>
+
+<body class="bg-[#F9FAF6] text-zinc-900 antialiased selection:bg-[#273303] selection:text-white">
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 1: HEADER & HERO (#hero-section)                                  -->
+  <!-- ========================================================================= -->
+  <section id="hero-section" class="relative w-full min-h-[580px] sm:min-h-[640px] flex flex-col justify-between bg-zinc-950 text-white">
+    <!-- Full-Width Panoramic Alpine Conifer Forest Background Image -->
+    <div class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+      <img id="heroBgImage"
+           src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=85"
+           onerror="this.src='../../assets/khatulistiwa_explorer/rinjani-trail.jpg'"
+           alt="Misty Alpine Conifer Forest with wooden chalet nestled in green valley"
+           class="w-full h-full object-cover object-center scale-105 transition-all duration-1000 ease-out" />
+      <!-- Subtle top and bottom dark gradients for contrast -->
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-black/80 pointer-events-none"></div>
+    </div>
+
+    <!-- Header Navigation (DESIGN.md §4.1) -->
+    <header class="relative z-30 w-full pt-6 px-6 sm:px-12 lg:px-20">
+      <div class="max-w-7xl mx-auto h-20 flex items-center justify-between gap-6">
+        <!-- Left: Wordmark "ZELATAN" -->
+        <a href="#hero-section" class="font-display font-extrabold text-2xl tracking-wider text-white hover:opacity-90 transition cursor-pointer" aria-label="Zelatan Home">
+          ZELATAN
+        </a>
+
+        <!-- Center: Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-white/90" aria-label="Main Navigation">
+          <a href="#hero-section" class="hover:text-white transition-colors">Home</a>
+          <a href="#beautiful-places-section" class="hover:text-white transition-colors">Destinations</a>
+          <a href="#tailored-destinations-section" class="hover:text-white transition-colors">About</a>
+          <a href="#popular-tours-section" class="hover:text-white transition-colors">Pricing</a>
+          <a href="#ticket-process-section" class="hover:text-white transition-colors">How It Works</a>
+        </nav>
+
+        <!-- Right: Currency Switcher & User Account State -->
+        <div class="flex items-center gap-3 sm:gap-4">
+          <!-- Currency Toggle Pill ($ USD ↔ Rp IDR) -->
+          <button type="button" id="currencyToggleBtn" onclick="toggleCurrency()"
+                  class="flex items-center gap-1.5 bg-black/35 hover:bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-semibold text-white border border-white/20 transition active:scale-95 cursor-pointer"
+                  title="Toggle Currency (USD / IDR)">
+            <span id="currSymbol" class="font-mono text-emerald-300 font-bold">$ USD</span>
+            <span class="text-white/40">▾</span>
+          </button>
+
+          <!-- Guest State: Register Now Button -->
+          <div id="authGuestState" class="flex items-center gap-2.5">
+            <button type="button" onclick="openAuthModal('signin')" class="hidden sm:inline-block text-white text-xs font-semibold hover:underline cursor-pointer">
+              Sign In
+            </button>
+            <button type="button" onclick="openAuthModal('register')"
+                    class="bg-white hover:bg-slate-100 active:scale-95 text-zinc-900 px-5 py-2 rounded-full text-xs font-bold shadow-md transition cursor-pointer">
+              Register Now
+            </button>
+          </div>
+
+          <!-- Logged-in Profile State (Active after login simulation) -->
+          <div id="authUserProfile" class="hidden relative">
+            <button type="button" onclick="toggleUserDropdown(event)"
+                    class="flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-md pl-1.5 pr-3 py-1 rounded-full border border-white/30 text-xs font-bold text-white transition cursor-pointer">
+              <span class="w-6 h-6 rounded-full bg-[#273303] text-white flex items-center justify-center text-[10px] font-bold">AR</span>
+              <span id="navUserName">Alex Rivera</span>
+              <span class="text-white/60">▾</span>
+            </button>
+            <div id="userDropdownMenu" class="hidden absolute right-0 mt-2 w-52 bg-white rounded-2xl shadow-2xl border border-slate-200 text-zinc-900 py-2 z-50 text-xs">
+              <div class="px-4 py-2 border-b border-slate-100">
+                <p class="font-bold text-zinc-900">Alex Rivera</p>
+                <p class="text-[11px] text-slate-400">alex@zelatan.travel</p>
+              </div>
+              <a href="#popular-tours-section" onclick="toggleUserDropdown(event)" class="block px-4 py-2 hover:bg-slate-50 text-slate-700">My Booked Expeditions (1)</a>
+              <a href="#ticket-process-section" onclick="toggleUserDropdown(event)" class="block px-4 py-2 hover:bg-slate-50 text-slate-700">Ticket Vouchers</a>
+              <div class="border-t border-slate-100 my-1"></div>
+              <button type="button" onclick="handleLogout()" class="w-full text-left px-4 py-2 text-rose-600 hover:bg-rose-50 font-semibold cursor-pointer">
+                Sign Out
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile Hamburger Trigger -->
+          <button type="button" id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden text-white p-1 rounded-md hover:bg-white/10" aria-label="Open navigation menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div id="mobileDrawer" class="hidden md:hidden fixed inset-x-4 top-24 bg-white/95 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-slate-200 text-zinc-900 z-50 space-y-4">
+        <nav class="flex flex-col space-y-3 font-display font-bold text-sm">
+          <a href="#hero-section" onclick="toggleMobileMenu()" class="py-2 border-b border-slate-100">Home</a>
+          <a href="#beautiful-places-section" onclick="toggleMobileMenu()" class="py-2 border-b border-slate-100">Destinations</a>
+          <a href="#tailored-destinations-section" onclick="toggleMobileMenu()" class="py-2 border-b border-slate-100">About</a>
+          <a href="#popular-tours-section" onclick="toggleMobileMenu()" class="py-2 border-b border-slate-100">Pricing</a>
+          <a href="#ticket-process-section" onclick="toggleMobileMenu()" class="py-2 border-b border-slate-100">How It Works</a>
+        </nav>
+        <div class="pt-2 flex items-center justify-between">
+          <button type="button" onclick="openAuthModal('signin'); toggleMobileMenu();" class="font-bold text-xs">Sign In</button>
+          <button type="button" onclick="openAuthModal('register'); toggleMobileMenu();" class="bg-[#273303] text-white px-5 py-2 rounded-full text-xs font-bold">Register Now</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Center / Left-Aligned Copywriting (DESIGN.md §4.1) -->
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 my-auto py-10 sm:py-14">
+      <div class="max-w-2xl">
+        <h1 class="font-display text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white tracking-tight leading-[1.05]">
+          Overseas<br />
+          Holiday<br />
+          Solutions.
+        </h1>
+        <p class="text-white/85 text-sm sm:text-base mt-4 max-w-md leading-relaxed font-normal">
+          Curated eco-adventure luxury expeditions across Alpine valleys, hidden rainforest waterfalls, and untamed coastlines worldwide.
+        </p>
+
+        <div class="mt-6 flex flex-wrap items-center gap-4">
+          <a href="#beautiful-places-section"
+             class="bg-white hover:bg-slate-100 active:scale-95 text-zinc-900 font-display font-bold text-xs sm:text-sm px-7 py-3 rounded-full shadow-xl transition inline-block">
+            Explore Now
+          </a>
+          <button type="button" onclick="openCustomPlanModal()"
+                  class="bg-black/30 hover:bg-black/50 backdrop-blur-md border border-white/25 text-white font-display font-bold text-xs sm:text-sm px-6 py-3 rounded-full transition cursor-pointer">
+            Custom Trip Request
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Bottom Floating Widgets (DESIGN.md §4.1) -->
+    <div class="relative z-20 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 pb-16 sm:pb-20">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <!-- Kiri Bawah: Social Proof Pill Badge -->
+        <div class="bg-black/40 backdrop-blur-md border border-white/20 text-white text-xs px-4 py-2.5 rounded-full flex items-center gap-3 shadow-lg">
+          <div class="flex -space-x-2">
+            <span class="w-6 h-6 rounded-full bg-emerald-500 text-white text-[9px] font-bold flex items-center justify-center border border-white/40">JL</span>
+            <span class="w-6 h-6 rounded-full bg-amber-500 text-white text-[9px] font-bold flex items-center justify-center border border-white/40">MT</span>
+            <span class="w-6 h-6 rounded-full bg-sky-500 text-white text-[9px] font-bold flex items-center justify-center border border-white/40">RK</span>
+          </div>
+          <span class="font-bold text-amber-300">★ 4.9</span>
+          <span class="text-white/40">|</span>
+          <span class="text-white/90 font-medium">10k+ Travelers Satisfied</span>
+        </div>
+
+        <!-- Kanan Bawah: Kapsul Filter Kategori Wisata Alam -->
+        <div class="bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs px-4 py-2 rounded-full flex items-center gap-3 font-semibold shadow-lg overflow-x-auto">
+          <button type="button" onclick="filterCatalogByTag('Nature')" class="hero-cat-btn hover:text-emerald-300 transition cursor-pointer">🌲 Nature</button>
+          <span class="text-white/40">•</span>
+          <button type="button" onclick="filterCatalogByTag('Forest')" class="hero-cat-btn hover:text-emerald-300 transition cursor-pointer">🏔️ Forest</button>
+          <span class="text-white/40">•</span>
+          <button type="button" onclick="filterCatalogByTag('Safari')" class="hero-cat-btn hover:text-emerald-300 transition cursor-pointer">🏕️ Safari</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- FLOATING ORTASYS B2C STOREFRONT SEARCH ENGINE (BRAND COMPLIANT)           -->
+  <!-- ========================================================================= -->
+  <div class="relative z-30 max-w-6xl mx-auto px-4 sm:px-8 -mt-12 sm:-mt-16">
+    <div class="bg-white/98 backdrop-blur-xl rounded-3xl p-5 sm:p-6 shadow-2xl border border-white/60 text-zinc-900">
+      
+      <!-- Segmented Mode Header (Activities vs Chalets / Hotels per Ortasys PRD) -->
+      <div class="flex items-center justify-between pb-3.5 border-b border-slate-200/80 mb-4">
+        <div class="flex items-center gap-3 sm:gap-6 text-xs font-display font-semibold" role="tablist">
+          <button type="button" onclick="switchSearchMode('activities')" id="tabBtnActivities"
+                  class="search-mode-pill pb-2 border-b-2 border-[#273303] text-[#273303] font-bold flex items-center gap-2 cursor-pointer transition">
+            <span class="text-sm">🏕️</span>
+            <span>Activities &amp; Expeditions</span>
+          </button>
+          <button type="button" onclick="switchSearchMode('chalets')" id="tabBtnChalets"
+                  class="search-mode-pill pb-2 border-b-2 border-transparent text-slate-400 hover:text-zinc-900 flex items-center gap-2 cursor-pointer transition">
+            <span class="text-sm">🏡</span>
+            <span>Alpine Chalets &amp; Lodges</span>
+          </button>
+        </div>
+        <div class="hidden sm:flex items-center gap-1.5 text-[11px] font-mono text-[#273303] font-bold">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Multi-Supplier Live Engine (RateHawk / ETG)</span>
+        </div>
+      </div>
+
+      <!-- 4-Column High-Utility Form + Pill Action Button -->
+      <form id="ortasysSearchForm" onsubmit="handleOrtasysSearch(event)" class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 sm:gap-4 items-center">
+        
+        <!-- Col 1: Destination / Sanctuary with Custom Quick-Pick Popover -->
+        <div class="lg:col-span-3 relative px-3 py-1.5 border border-slate-200 rounded-2xl bg-slate-50/70 focus-within:bg-white focus-within:border-[#273303] transition">
+          <label for="searchDestInput" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans cursor-pointer">Destination</label>
+          <div class="flex items-center gap-2 mt-0.5">
+            <svg class="w-4 h-4 text-[#273303] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <input id="searchDestInput" type="text" placeholder="Where to explore?" autocomplete="off"
+                   onclick="openDestPopover(event)" onfocus="openDestPopover(event)" oninput="filterDestSuggestions(this.value)"
+                   class="w-full text-xs sm:text-sm font-bold text-zinc-900 bg-transparent focus:outline-none placeholder:text-slate-400" />
+            <button type="button" id="clearDestBtn" onclick="clearDestInput()" class="hidden text-slate-400 hover:text-zinc-900 text-xs p-1 cursor-pointer" title="Clear destination">✕</button>
+          </div>
+
+          <!-- Quick-Pick Dropdown Popover (Deep Olive Green accents) -->
+          <div id="destQuickPickPopover" class="hidden absolute left-0 right-0 sm:-right-24 top-full mt-2 bg-white rounded-3xl shadow-2xl border border-slate-200 p-4 z-50 text-xs max-h-80 overflow-y-auto">
+            <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Curated Eco-Sanctuaries</span>
+              <span class="text-[10px] font-mono text-[#273303] font-bold">Live Availability</span>
+            </div>
+            <div id="destSuggestionsList" class="space-y-1.5">
+              <div onclick="selectDestination('Cameron Highlands, Tea Plantation')" class="dest-item p-2.5 hover:bg-[#273303]/5 border border-transparent hover:border-[#273303]/30 rounded-2xl cursor-pointer flex items-center justify-between transition">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#273303] font-bold text-xs flex items-center justify-center shrink-0 border border-emerald-200">🌲</span>
+                  <div>
+                    <span class="font-display font-bold text-zinc-900 block text-xs">Cameron Highlands</span>
+                    <span class="text-[11px] text-slate-400">Tea Plantation Safari · 4x4 Trail</span>
+                  </div>
+                </div>
+                <span class="text-[10px] font-mono bg-emerald-50 text-[#273303] px-2 py-0.5 rounded-full font-bold">4 slots left</span>
+              </div>
+
+              <div onclick="selectDestination('Jungle Rapids, Emerald River')" class="dest-item p-2.5 hover:bg-[#273303]/5 border border-transparent hover:border-[#273303]/30 rounded-2xl cursor-pointer flex items-center justify-between transition">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-8 h-8 rounded-xl bg-sky-50 text-sky-800 font-bold text-xs flex items-center justify-center shrink-0 border border-sky-200">🌊</span>
+                  <div>
+                    <span class="font-display font-bold text-zinc-900 block text-xs">Jungle Rapids</span>
+                    <span class="text-[11px] text-slate-400">White Water River Rafting Gorge</span>
+                  </div>
+                </div>
+                <span class="text-[10px] font-mono bg-sky-50 text-sky-700 px-2 py-0.5 rounded-full font-bold">Instant Confirm</span>
+              </div>
+
+              <div onclick="selectDestination('Emerald Canyon, Secret Waterfall')" class="dest-item p-2.5 hover:bg-[#273303]/5 border border-transparent hover:border-[#273303]/30 rounded-2xl cursor-pointer flex items-center justify-between transition">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-8 h-8 rounded-xl bg-teal-50 text-teal-800 font-bold text-xs flex items-center justify-center shrink-0 border border-teal-200">🏔️</span>
+                  <div>
+                    <span class="font-display font-bold text-zinc-900 block text-xs">Emerald Canyon Waterfall</span>
+                    <span class="text-[11px] text-slate-400">Misty Rainforest Cliff Trek</span>
+                  </div>
+                </div>
+                <span class="text-[10px] font-mono bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full font-bold">Eco Trek</span>
+              </div>
+
+              <div onclick="selectDestination('French Alps, Chamonix Valley')" class="dest-item p-2.5 hover:bg-[#273303]/5 border border-transparent hover:border-[#273303]/30 rounded-2xl cursor-pointer flex items-center justify-between transition">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-8 h-8 rounded-xl bg-indigo-50 text-indigo-800 font-bold text-xs flex items-center justify-center shrink-0 border border-indigo-200">🇫🇷</span>
+                  <div>
+                    <span class="font-display font-bold text-zinc-900 block text-xs">French Alps Chamonix</span>
+                    <span class="text-[11px] text-slate-400">Alpine Conifer Chalet &amp; Glacial Trail</span>
+                  </div>
+                </div>
+                <span class="text-[10px] font-mono bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full font-bold">Exclusive</span>
+              </div>
+
+              <div onclick="selectDestination('Komodo & Flores, Karst Island')" class="dest-item p-2.5 hover:bg-[#273303]/5 border border-transparent hover:border-[#273303]/30 rounded-2xl cursor-pointer flex items-center justify-between transition">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-8 h-8 rounded-xl bg-rose-50 text-rose-800 font-bold text-xs flex items-center justify-center shrink-0 border border-rose-200">🇮🇩</span>
+                  <div>
+                    <span class="font-display font-bold text-zinc-900 block text-xs">Komodo &amp; Flores Islands</span>
+                    <span class="text-[11px] text-slate-400">Turquoise Lagoon &amp; Karst Safari</span>
+                  </div>
+                </div>
+                <span class="text-[10px] font-mono bg-rose-50 text-rose-700 px-2 py-0.5 rounded-full font-bold">Best Value</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Custom Date Range Picker (Check-in & Check-out) -->
+        <div class="lg:col-span-3 relative px-3 py-1.5 border border-slate-200 rounded-2xl bg-slate-50/70 focus-within:bg-white focus-within:border-[#273303] transition">
+          <div class="flex items-center justify-between cursor-pointer" onclick="toggleCalendarPopover(event)">
+            <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans">Dates &amp; Duration</span>
+            <span id="durationBadge" class="text-[10px] font-mono text-[#273303] font-bold bg-[#273303]/10 px-2 py-0.5 rounded-full">7 Nights</span>
+          </div>
+          <button type="button" id="datePickerBtn" onclick="toggleCalendarPopover(event)" class="w-full text-left mt-0.5 flex items-center justify-between cursor-pointer focus:outline-none">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-[#273303] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              <span id="dateRangeSummaryText" class="text-xs sm:text-sm font-bold text-zinc-900 truncate">13 Nov – 20 Nov 2026</span>
+            </div>
+            <svg id="calChevron" class="w-3.5 h-3.5 text-slate-400 shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+
+          <!-- Custom Calendar Popover (Deep Olive Green styling) -->
+          <div id="calendarPopover" class="hidden absolute left-0 sm:-left-8 top-full mt-2 w-80 bg-white rounded-3xl shadow-2xl border border-slate-200 p-4 z-50 text-xs space-y-3">
+            <div class="flex items-center gap-1.5 pb-2 border-b border-slate-100 overflow-x-auto">
+              <button type="button" onclick="applyDatePreset(3)" class="preset-btn px-2.5 py-1 rounded-full bg-slate-100 hover:bg-[#273303]/10 hover:text-[#273303] text-[10px] font-bold transition cursor-pointer">Weekend (3D2N)</button>
+              <button type="button" onclick="applyDatePreset(7)" class="preset-btn px-2.5 py-1 rounded-full bg-[#273303]/15 text-[#273303] text-[10px] font-bold transition cursor-pointer">1 Week (7N)</button>
+              <button type="button" onclick="applyDatePreset(14)" class="preset-btn px-2.5 py-1 rounded-full bg-slate-100 hover:bg-[#273303]/10 hover:text-[#273303] text-[10px] font-bold transition cursor-pointer">2 Weeks (14N)</button>
+            </div>
+
+            <div class="flex items-center justify-between px-1">
+              <button type="button" onclick="changeCalMonth(-1)" class="w-7 h-7 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold flex items-center justify-center transition cursor-pointer">‹</button>
+              <span id="calMonthTitle" class="font-display font-extrabold text-sm text-zinc-900">November 2026</span>
+              <button type="button" onclick="changeCalMonth(1)" class="w-7 h-7 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold flex items-center justify-center transition cursor-pointer">›</button>
+            </div>
+
+            <div class="grid grid-cols-7 text-center font-bold text-[10px] text-slate-400">
+              <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+            </div>
+
+            <div id="calDaysGrid" class="grid grid-cols-7 text-center gap-1 text-xs font-medium"></div>
+
+            <div class="flex items-center justify-between border-t border-slate-100 pt-2.5">
+              <span id="calSelectedInfo" class="text-[11px] font-mono text-slate-500">7 Nights selected</span>
+              <button type="button" onclick="closeCalendarPopover()" class="bg-[#273303] hover:bg-[#344405] text-white px-4 py-1.5 rounded-full font-bold text-xs shadow-sm transition cursor-pointer">
+                Apply Dates
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 3: Travelers & Rooms Setup Stepper (PRD Section 6.1) -->
+        <div class="lg:col-span-2 relative px-3 py-1.5 border border-slate-200 rounded-2xl bg-slate-50/70 focus-within:bg-white focus-within:border-[#273303] transition">
+          <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans cursor-pointer" onclick="toggleGuestPopover(event)">Travelers &amp; Rooms</span>
+          <button type="button" onclick="toggleGuestPopover(event)" class="w-full text-left mt-0.5 flex items-center justify-between cursor-pointer focus:outline-none">
+            <span id="guestSummaryText" class="text-xs sm:text-sm font-bold text-zinc-900 truncate">1 Rm · 2 Adults</span>
+            <svg id="guestChevron" class="w-3.5 h-3.5 text-slate-400 shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+
+          <!-- Stepper Popover -->
+          <div id="guestStepperPopover" class="hidden absolute left-0 sm:right-0 sm:left-auto top-full mt-2 w-72 bg-white rounded-3xl shadow-2xl border border-slate-200 p-4 z-50 text-xs space-y-3.5">
+            <div class="flex items-center justify-between pb-1 border-b border-slate-100">
+              <span class="font-bold text-zinc-900">Explorer Capacity</span>
+              <span class="text-[10px] font-mono text-[#273303] font-bold">Max 30 Guests</span>
+            </div>
+
+            <!-- Stepper 1: Rooms (1 to 9 per PRD) -->
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="font-bold text-zinc-900 text-xs">Rooms</p>
+                <p class="text-[10px] text-slate-400">1 to 9 rooms</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <button type="button" onclick="stepGuest('rooms', -1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-[#273303] hover:text-white font-bold text-xs flex items-center justify-center transition cursor-pointer">−</button>
+                <span id="valRooms" class="font-mono font-bold w-5 text-center text-zinc-900">1</span>
+                <button type="button" onclick="stepGuest('rooms', 1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-[#273303] hover:text-white font-bold text-xs flex items-center justify-center transition cursor-pointer">+</button>
+              </div>
+            </div>
+
+            <!-- Stepper 2: Adults (1 to 20 per PRD) -->
+            <div class="flex items-center justify-between border-t border-slate-100 pt-2">
+              <div>
+                <p class="font-bold text-zinc-900 text-xs">Adults</p>
+                <p class="text-[10px] text-slate-400">Age 13+</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <button type="button" onclick="stepGuest('adults', -1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-[#273303] hover:text-white font-bold text-xs flex items-center justify-center transition cursor-pointer">−</button>
+                <span id="valAdults" class="font-mono font-bold w-5 text-center text-zinc-900">2</span>
+                <button type="button" onclick="stepGuest('adults', 1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-[#273303] hover:text-white font-bold text-xs flex items-center justify-center transition cursor-pointer">+</button>
+              </div>
+            </div>
+
+            <!-- Stepper 3: Children (0 to 20 per PRD) -->
+            <div class="flex items-center justify-between border-t border-slate-100 pt-2">
+              <div>
+                <p class="font-bold text-zinc-900 text-xs">Children</p>
+                <p class="text-[10px] text-slate-400">Age 0 - 12</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <button type="button" onclick="stepGuest('children', -1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-[#273303] hover:text-white font-bold text-xs flex items-center justify-center transition cursor-pointer">−</button>
+                <span id="valChildren" class="font-mono font-bold w-5 text-center text-zinc-900">0</span>
+                <button type="button" onclick="stepGuest('children', 1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-[#273303] hover:text-white font-bold text-xs flex items-center justify-center transition cursor-pointer">+</button>
+              </div>
+            </div>
+
+            <!-- Quick Presets -->
+            <div class="flex items-center gap-1.5 pt-1">
+              <button type="button" onclick="setGuestPreset(1, 1, 0)" class="flex-1 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-[10px] font-bold text-slate-600 transition cursor-pointer">Solo</button>
+              <button type="button" onclick="setGuestPreset(1, 2, 0)" class="flex-1 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-[10px] font-bold text-slate-600 transition cursor-pointer">Couple</button>
+              <button type="button" onclick="setGuestPreset(2, 4, 1)" class="flex-1 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-[10px] font-bold text-slate-600 transition cursor-pointer">Family</button>
+            </div>
+
+            <button type="button" onclick="closeGuestPopover()" class="w-full bg-[#273303] hover:bg-[#344405] text-white py-2 rounded-full font-bold text-xs shadow-sm transition cursor-pointer">
+              Apply Selection
+            </button>
+          </div>
+        </div>
+
+        <!-- Col 4: Budget Tier Dropdown -->
+        <div class="lg:col-span-2 relative px-3 py-1.5 border border-slate-200 rounded-2xl bg-slate-50/70 focus-within:bg-white focus-within:border-[#273303] transition">
+          <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 font-sans cursor-pointer" onclick="toggleBudgetPopover(event)">Budget Tier</span>
+          <button type="button" id="budgetDropdownBtn" onclick="toggleBudgetPopover(event)" class="w-full text-left mt-0.5 flex items-center justify-between cursor-pointer focus:outline-none">
+            <span id="budgetSelectedText" class="text-xs sm:text-sm font-bold text-zinc-900 truncate">All Tiers</span>
+            <svg id="budgetChevron" class="w-3.5 h-3.5 text-slate-400 shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+
+          <!-- Budget Popover -->
+          <div id="budgetPopover" class="hidden absolute left-0 right-0 sm:-right-4 top-full mt-2 bg-white rounded-3xl shadow-2xl border border-slate-200 p-2 z-50 text-xs space-y-1">
+            <div onclick="selectBudgetOption('all', 'All Tiers')" class="budget-option-item px-3 py-2 rounded-2xl cursor-pointer flex items-center justify-between bg-[#273303]/10 text-[#273303] font-bold transition" data-val="all">
+              <div>
+                <p class="text-xs">All Price Tiers</p>
+                <p class="text-[10px] opacity-75 font-normal">Explore all curated packages</p>
+              </div>
+              <span class="budget-check text-[#273303] font-bold">✓</span>
+            </div>
+            <div onclick="selectBudgetOption('budget', '< $180 (Eco Pass)')" class="budget-option-item px-3 py-2 rounded-2xl cursor-pointer flex items-center justify-between hover:bg-slate-50 text-zinc-800 transition font-medium" data-val="budget">
+              <div>
+                <p class="font-bold text-xs">&lt; $180 (Eco Pass)</p>
+                <p class="text-[10px] text-slate-400 font-normal">Day treks &amp; waterfall excursions</p>
+              </div>
+              <span class="budget-check hidden text-[#273303] font-bold">✓</span>
+            </div>
+            <div onclick="selectBudgetOption('popular', '$180 - $220 (Popular)')" class="budget-option-item px-3 py-2 rounded-2xl cursor-pointer flex items-center justify-between hover:bg-slate-50 text-zinc-800 transition font-medium" data-val="popular">
+              <div>
+                <p class="font-bold text-xs">$180 - $220</p>
+                <p class="text-[10px] text-slate-400 font-normal">Safari &amp; rafting adventures</p>
+              </div>
+              <span class="budget-check hidden text-[#273303] font-bold">✓</span>
+            </div>
+            <div onclick="selectBudgetOption('luxury', '> $220 (Luxury Chalet)')" class="budget-option-item px-3 py-2 rounded-2xl cursor-pointer flex items-center justify-between hover:bg-slate-50 text-zinc-800 transition font-medium" data-val="luxury">
+              <div>
+                <p class="font-bold text-xs">&gt; $220 (Luxury Chalet)</p>
+                <p class="text-[10px] text-slate-400 font-normal">Alpine summits &amp; island retreats</p>
+              </div>
+              <span class="budget-check hidden text-[#273303] font-bold">✓</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 5: Search Tours Action Pill Button -->
+        <div class="lg:col-span-2">
+          <button id="heroSearchBtn" type="submit"
+                  class="w-full h-12 bg-[#273303] hover:bg-[#344405] active:scale-95 text-white font-display font-bold text-xs sm:text-sm px-5 rounded-full shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <span id="searchBtnIcon">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </span>
+            <span id="searchBtnText">Search Tours</span>
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- Ortasys System Trust & Multi-Supplier Strip (PRD §6.1 & 9.1) -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 mt-3 px-3 text-[11px] text-slate-500">
+      <div class="flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#273303]"></span>
+        <span class="font-medium text-slate-600">"Every price is checked live when you ask for it"</span>
+      </div>
+      <div class="flex items-center gap-3 font-mono text-[10px] text-slate-400 flex-wrap justify-center">
+        <span>RateHawk</span>
+        <span>•</span>
+        <span>MyAllocator</span>
+        <span>•</span>
+        <span>Cloudbeds</span>
+        <span>•</span>
+        <span class="text-[#273303] font-bold">GuestPro (Coming soon)</span>
+        <span>•</span>
+        <span>DOKU / SNAP BI</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 2: BEAUTIFUL PLACES SHOWCASE (#beautiful-places-section)          -->
+  <!-- ========================================================================= -->
+  <section id="beautiful-places-section" class="w-full bg-[#F9FAF6] pt-14 pb-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
+
+      <!-- Active Search Results Feedback Banner -->
+      <div id="searchResultsBanner" class="hidden mb-10 bg-white border border-slate-200 rounded-3xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 bg-[#273303]/10 text-[#273303] px-2.5 py-0.5 rounded-full text-xs font-bold font-mono">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#273303] animate-ping"></span>
+              Live Rate Verified
+            </span>
+            <span class="text-xs text-slate-500 font-medium">Checked live via Ortasys multi-supplier inventory</span>
+          </div>
+          <p id="searchResultsCount" class="font-display font-extrabold text-base sm:text-lg text-zinc-900 mt-1">
+            Showing all nature destinations
+          </p>
+        </div>
+        <div class="flex items-center gap-3">
+          <span id="searchActiveTag" class="bg-slate-100 border border-slate-200 px-3 py-1 rounded-full text-xs font-bold text-zinc-800">Filter Active</span>
+          <button type="button" onclick="resetAllFilters()" class="text-xs font-bold text-[#273303] hover:underline flex items-center gap-1 cursor-pointer">
+            <span>✕ Reset Filter</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Header Seksi (Dua Kolom Horisontal) -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+        <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight leading-snug max-w-md">
+          Come here and explore the<br />
+          beautiful places here.
+        </h2>
+        <a href="#popular-tours-section"
+           class="bg-[#273303] hover:bg-[#344405] text-white px-6 py-3 rounded-full font-bold text-xs flex items-center gap-2 shadow-sm transition active:scale-95 shrink-0">
+          <span>Explore more</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <!-- Trio Kartu Wisata Vertikal (1x3 Grid Kolom) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+
+        <!-- Card 1: Off-Road Safari Jeep -->
+        <article class="place-card bg-white rounded-3xl p-4 border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                 data-category="Safari" data-title="Off-Road Safari Tea Plantation Cameron Highlands" data-price="180"
+                 onclick="openTourModal('Off-Road Safari Expedition', 'Tea Plantation Highlands', 180, 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=80')">
+          <div>
+            <div class="relative aspect-[3/4] rounded-2xl overflow-hidden mb-4 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=80"
+                   onerror="this.src='../../assets/khatulistiwa_explorer/bromo.jpg'"
+                   alt="Off-Road 4x4 Safari Jeep on highland slope"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute top-3 left-3 bg-[#273303] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                Safari Highland
+              </span>
+            </div>
+            <div class="px-1">
+              <h3 class="font-display font-bold text-base sm:text-lg text-zinc-900 group-hover:text-[#273303] transition-colors">
+                Off-Road Safari
+              </h3>
+              <p class="text-xs text-slate-500 mt-0.5">Tea Plantation, Cameron Highlands</p>
+            </div>
+          </div>
+          <div class="px-1 pt-4 mt-3 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-amber-500 text-xs font-bold flex items-center gap-1">
+              ★ 4.8 <span class="text-slate-400 font-normal">(140 reviews)</span>
+            </span>
+            <span class="font-display font-extrabold text-sm text-zinc-900 live-tour-price" data-usd="180">$180 / pax</span>
+          </div>
+        </article>
+
+        <!-- Card 2: White Water Rafting -->
+        <article class="place-card bg-white rounded-3xl p-4 border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                 data-category="Nature" data-title="River Rafting Jungle Rapids Gorge" data-price="210"
+                 onclick="openTourModal('White Water River Rafting', 'Jungle Rapids Gorge', 210, 'https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=900&q=80')">
+          <div>
+            <div class="relative aspect-[3/4] rounded-2xl overflow-hidden mb-4 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=900&q=80"
+                   onerror="this.src='../../assets/mandalika_escape/gili-boat.jpg'"
+                   alt="White Water River Rafting through lush canyon"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute top-3 left-3 bg-[#273303] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                Water Adventure
+              </span>
+            </div>
+            <div class="px-1">
+              <h3 class="font-display font-bold text-base sm:text-lg text-zinc-900 group-hover:text-[#273303] transition-colors">
+                River Rafting
+              </h3>
+              <p class="text-xs text-slate-500 mt-0.5">Jungle Rapids &amp; Emerald River</p>
+            </div>
+          </div>
+          <div class="px-1 pt-4 mt-3 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-amber-500 text-xs font-bold flex items-center gap-1">
+              ★ 4.9 <span class="text-slate-400 font-normal">(210 reviews)</span>
+            </span>
+            <span class="font-display font-extrabold text-sm text-zinc-900 live-tour-price" data-usd="210">$210 / pax</span>
+          </div>
+        </article>
+
+        <!-- Card 3: Majestic Canyon Waterfall -->
+        <article class="place-card bg-white rounded-3xl p-4 border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                 data-category="Forest" data-title="Secret Waterfall Emerald Canyon Mist Trail" data-price="150"
+                 onclick="openTourModal('Secret Canyon Waterfall Trek', 'Emerald Gorge Sanctuary', 150, 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=900&q=80')">
+          <div>
+            <div class="relative aspect-[3/4] rounded-2xl overflow-hidden mb-4 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=900&q=80"
+                   onerror="this.src='../../assets/mandalika_escape/rinjani.jpg'"
+                   alt="Majestic towering waterfall with misty gorge"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute top-3 left-3 bg-[#273303] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                Eco Trek
+              </span>
+            </div>
+            <div class="px-1">
+              <h3 class="font-display font-bold text-base sm:text-lg text-zinc-900 group-hover:text-[#273303] transition-colors">
+                Secret Waterfall
+              </h3>
+              <p class="text-xs text-slate-500 mt-0.5">Emerald Canyon Mist Trail</p>
+            </div>
+          </div>
+          <div class="px-1 pt-4 mt-3 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-amber-500 text-xs font-bold flex items-center gap-1">
+              ★ 4.9 <span class="text-slate-400 font-normal">(185 reviews)</span>
+            </span>
+            <span class="font-display font-extrabold text-sm text-zinc-900 live-tour-price" data-usd="150">$150 / pax</span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Empty State UI if no search matches -->
+      <div id="noResultsBox" class="hidden text-center py-16 px-4 bg-white rounded-3xl border border-dashed border-slate-300 my-8">
+        <div class="w-16 h-16 mx-auto rounded-full bg-slate-100 flex items-center justify-center text-slate-400 mb-3">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-lg text-zinc-800">No Matching Eco-Tours Found</h3>
+        <p class="text-xs text-slate-500 max-w-sm mx-auto mt-1">We couldn't find expeditions matching your exact criteria. Try adjusting your destination or budget tier.</p>
+        <button type="button" onclick="resetAllFilters()" class="mt-4 bg-[#273303] text-white px-6 py-2 rounded-full text-xs font-bold shadow-md hover:bg-[#344405] transition cursor-pointer">
+          Reset All Filters
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 3: TAILORED DESTINATIONS BENTO GRID (#tailored-destinations-section) -->
+  <!-- ========================================================================= -->
+  <section id="tailored-destinations-section" class="w-full bg-[#F9FAF6] py-16 sm:py-24 border-t border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
+
+      <!-- Header Seksi (Dua Kolom) -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-[#273303] block mb-2">SERVICES</span>
+          <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight">
+            Our tailored destinations just for you
+          </h2>
+        </div>
+        <p class="text-slate-500 text-xs sm:text-sm max-w-sm leading-relaxed">
+          We have curated different destinations for you to explore and find unforgettable moments.
+        </p>
+      </div>
+
+      <!-- 2x2 Grid Kartu Lanskap (4 Kartu rounded-3xl dengan Overlay) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+
+        <!-- Card 1 (Top-Left): Tropical Jungle Waterfall -->
+        <div class="bento-destination relative h-64 sm:h-72 rounded-3xl overflow-hidden group shadow-md cursor-pointer"
+             data-title="Tropical Jungle Waterfall Hidden Forest Falls" data-price="160"
+             onclick="openTourModal('Tropical Jungle Waterfall', 'Hidden Forest Falls', 160, 'https://images.unsplash.com/photo-1546587348-d12660c30c50?auto=format&fit=crop&w=1000&q=80')">
+          <img src="https://images.unsplash.com/photo-1546587348-d12660c30c50?auto=format&fit=crop&w=1000&q=80"
+               onerror="this.src='../../assets/bagus_travel/ubud.jpg'"
+               alt="Tropical Jungle Waterfall"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent flex items-end justify-between p-6">
+            <div>
+              <span class="text-[10px] font-mono uppercase text-emerald-300 font-bold tracking-wider block mb-1">Canyon Oasis</span>
+              <span class="text-white font-display font-extrabold text-lg sm:text-xl">Waterfall</span>
+            </div>
+            <button type="button" class="bg-white/90 hover:bg-white text-zinc-900 font-bold text-xs px-5 py-2 rounded-full shadow-xs transition cursor-pointer">
+              Explore
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2 (Top-Right): Secret Beach Cove -->
+        <div class="bento-destination relative h-64 sm:h-72 rounded-3xl overflow-hidden group shadow-md cursor-pointer"
+             data-title="Secret Beach Cove Caves Turquoise Sea" data-price="230"
+             onclick="openTourModal('Secret Beach Cove &amp; Caves', 'Turquoise Sea Sanctuary', 230, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80')">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80"
+               onerror="this.src='../../assets/mandalika_escape/palm-bay.jpg'"
+               alt="Secret Beach Cove"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent flex items-end justify-between p-6">
+            <div>
+              <span class="text-[10px] font-mono uppercase text-emerald-300 font-bold tracking-wider block mb-1">Island Coast</span>
+              <span class="text-white font-display font-extrabold text-lg sm:text-xl">Beach</span>
+            </div>
+            <button type="button" class="bg-white/90 hover:bg-white text-zinc-900 font-bold text-xs px-5 py-2 rounded-full shadow-xs transition cursor-pointer">
+              Explore
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3 (Bottom-Left): Ancient Moss Temple -->
+        <div class="bento-destination relative h-64 sm:h-72 rounded-3xl overflow-hidden group shadow-md cursor-pointer"
+             data-title="Ancient Moss Forest Temple Canopy" data-price="175"
+             onclick="openTourModal('Ancient Moss Forest Temple', 'Sacred Canopy Sanctuary', 175, 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1000&q=80')">
+          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1000&q=80"
+               onerror="this.src='../../assets/bagus_travel/borobudur.jpg'"
+               alt="Ancient Moss Forest Temple"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent flex items-end justify-between p-6">
+            <div>
+              <span class="text-[10px] font-mono uppercase text-emerald-300 font-bold tracking-wider block mb-1">Cultural Heritage</span>
+              <span class="text-white font-display font-extrabold text-lg sm:text-xl">Temple &amp; Forest</span>
+            </div>
+            <button type="button" class="bg-white/90 hover:bg-white text-zinc-900 font-bold text-xs px-5 py-2 rounded-full shadow-xs transition cursor-pointer">
+              Explore
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4 (Bottom-Right): Misty Mountain Fjord -->
+        <div class="bento-destination relative h-64 sm:h-72 rounded-3xl overflow-hidden group shadow-md cursor-pointer"
+             data-title="Misty Alpine Mountain Fjord Highland Glacial Valley" data-price="220"
+             onclick="openTourModal('Misty Alpine Mountain Fjord', 'Highland Glacial Valley', 220, 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80')">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80"
+               onerror="this.src='../../assets/khatulistiwa_explorer/padar.jpg'"
+               alt="Misty Mountain Fjord"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent flex items-end justify-between p-6">
+            <div>
+              <span class="text-[10px] font-mono uppercase text-emerald-300 font-bold tracking-wider block mb-1">Glacial Heights</span>
+              <span class="text-white font-display font-extrabold text-lg sm:text-xl">Mountain</span>
+            </div>
+            <button type="button" class="bg-white/90 hover:bg-white text-zinc-900 font-bold text-xs px-5 py-2 rounded-full shadow-xs transition cursor-pointer">
+              Explore
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 4: POPULAR TOURS CATALOG (#popular-tours-section)                 -->
+  <!-- ========================================================================= -->
+  <section id="popular-tours-section" class="w-full bg-[#F9FAF6] py-16 sm:py-24 border-t border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
+
+      <!-- Header Terpusat (DESIGN.md §4.4) -->
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="text-xs font-bold tracking-widest text-[#273303] uppercase block mb-2">DESTINATION</span>
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-zinc-900 tracking-tight">
+          Discover our most popular tours!
+        </h2>
+        <p class="text-slate-500 text-xs sm:text-sm mt-3 leading-relaxed">
+          Recommended tours, carefully curated for an unforgettable holiday experience.
+        </p>
+      </div>
+
+      <!-- 4-Card Tour Grid (1 Baris x 4 Kolom) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Card 1: Green Earth -->
+        <article class="tour-item bg-white rounded-2xl p-3.5 border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                 data-title="Green Earth Valleys Scenic Roadways" data-price="180"
+                 onclick="openTourModal('Green Earth Highland Expedition', 'Valleys &amp; Scenic Roadways', 180, 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80')">
+          <div>
+            <div class="relative h-44 rounded-xl overflow-hidden mb-3 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"
+                   onerror="this.src='../../assets/bagus_travel/toba.jpg'"
+                   alt="Green Earth Valley"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="px-1">
+              <div class="flex justify-between items-center">
+                <h3 class="font-display font-bold text-sm text-zinc-900 group-hover:text-[#273303] transition-colors">Green Earth</h3>
+                <span class="text-amber-500 text-xs font-semibold flex items-center gap-1">★ 4.8</span>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-0.5">120 verified reviews</p>
+            </div>
+          </div>
+          <div class="px-1 mt-3 flex justify-between items-baseline pt-2.5 border-t border-slate-100">
+            <span class="text-[11px] text-slate-400">Price</span>
+            <span class="font-display font-extrabold text-sm text-zinc-900 tabular-nums live-tour-price" data-usd="180">$180 / pax</span>
+          </div>
+        </article>
+
+        <!-- Card 2: Mountain View -->
+        <article class="tour-item bg-white rounded-2xl p-3.5 border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                 data-title="Mountain View Alpine Summit Cloud Peak Passages" data-price="220"
+                 onclick="openTourModal('Mountain View Alpine Summit', 'Cloud Peak Passages', 220, 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80')">
+          <div>
+            <div class="relative h-44 rounded-xl overflow-hidden mb-3 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
+                   onerror="this.src='../../assets/khatulistiwa_explorer/rinjani-trail.jpg'"
+                   alt="Mountain View Alpine"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="px-1">
+              <div class="flex justify-between items-center">
+                <h3 class="font-display font-bold text-sm text-zinc-900 group-hover:text-[#273303] transition-colors">Mountain View</h3>
+                <span class="text-amber-500 text-xs font-semibold flex items-center gap-1">★ 4.9</span>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-0.5">240 verified reviews</p>
+            </div>
+          </div>
+          <div class="px-1 mt-3 flex justify-between items-baseline pt-2.5 border-t border-slate-100">
+            <span class="text-[11px] text-slate-400">Price</span>
+            <span class="font-display font-extrabold text-sm text-zinc-900 tabular-nums live-tour-price" data-usd="220">$220 / pax</span>
+          </div>
+        </article>
+
+        <!-- Card 3: Island Beach -->
+        <article class="tour-item bg-white rounded-2xl p-3.5 border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                 data-title="Island Beach Turquoise Archipelago Karst Lagoon" data-price="250"
+                 onclick="openTourModal('Island Beach Turquoise Archipelago', 'Karst Lagoon Retreat', 250, 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=800&q=80')">
+          <div>
+            <div class="relative h-44 rounded-xl overflow-hidden mb-3 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=800&q=80"
+                   onerror="this.src='../../assets/bagus_travel/nusa-penida.jpg'"
+                   alt="Island Beach Lagoon"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="px-1">
+              <div class="flex justify-between items-center">
+                <h3 class="font-display font-bold text-sm text-zinc-900 group-hover:text-[#273303] transition-colors">Island Beach</h3>
+                <span class="text-amber-500 text-xs font-semibold flex items-center gap-1">★ 4.9</span>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-0.5">185 verified reviews</p>
+            </div>
+          </div>
+          <div class="px-1 mt-3 flex justify-between items-baseline pt-2.5 border-t border-slate-100">
+            <span class="text-[11px] text-slate-400">Price</span>
+            <span class="font-display font-extrabold text-sm text-zinc-900 tabular-nums live-tour-price" data-usd="250">$250 / pax</span>
+          </div>
+        </article>
+
+        <!-- Card 4: Giant Waterfall -->
+        <article class="tour-item bg-white rounded-2xl p-3.5 border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                 data-title="Giant Waterfall Plunge Great Valley Waterfalls" data-price="150"
+                 onclick="openTourModal('Giant Waterfall Plunge', 'Great Valley Waterfalls', 150, 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80')">
+          <div>
+            <div class="relative h-44 rounded-xl overflow-hidden mb-3 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80"
+                   onerror="this.src='../../assets/mandalika_escape/rinjani-from-gili.jpg'"
+                   alt="Giant Waterfall"
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="px-1">
+              <div class="flex justify-between items-center">
+                <h3 class="font-display font-bold text-sm text-zinc-900 group-hover:text-[#273303] transition-colors">Giant Waterfall</h3>
+                <span class="text-amber-500 text-xs font-semibold flex items-center gap-1">★ 4.7</span>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-0.5">95 verified reviews</p>
+            </div>
+          </div>
+          <div class="px-1 mt-3 flex justify-between items-baseline pt-2.5 border-t border-slate-100">
+            <span class="text-[11px] text-slate-400">Price</span>
+            <span class="font-display font-extrabold text-sm text-zinc-900 tabular-nums live-tour-price" data-usd="150">$150 / pax</span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Bottom Action CTA Pill -->
+      <div class="text-center mt-10">
+        <button type="button" onclick="showAllToursAlert()"
+                class="bg-[#273303] hover:bg-[#344405] text-white px-8 py-3.5 rounded-full font-bold text-xs shadow-md transition active:scale-95 inline-flex items-center gap-2 cursor-pointer">
+          <span>See all tours</span>
+          <span>→</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 5: TICKET ORDERING PROCESS (#ticket-process-section)               -->
+  <!-- ========================================================================= -->
+  <section id="ticket-process-section" class="w-full bg-[#F9FAF6] py-16 sm:py-24 border-t border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+
+        <!-- Kolom Kiri (Foto Eksplorasi: Pendaki di Tepi Tebing) -->
+        <div class="lg:col-span-5 relative h-[440px] sm:h-[500px] rounded-3xl overflow-hidden shadow-lg group">
+          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1000&q=85"
+               onerror="this.src='../../assets/khatulistiwa_explorer/ijen.jpg'"
+               alt="Mountain explorer standing on dramatic cliff facing sea of clouds"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
+            <div class="text-white">
+              <span class="text-[10px] font-mono uppercase tracking-widest text-emerald-300 font-bold block">Certified Eco Guides</span>
+              <p class="font-display font-bold text-base mt-0.5">Safety &amp; Wonder in Every Step</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan (Stack 4 Langkah Pemesanan) -->
+        <div class="lg:col-span-7 space-y-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-[#273303] block mb-1">HOW IT WORKS</span>
+            <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight">
+              Ticket ordering process
+            </h2>
+          </div>
+
+          <!-- Step 1 (Active/Highlighted by default) -->
+          <div class="step-card bg-white rounded-2xl p-4 sm:p-5 border-2 border-[#273303] shadow-sm flex items-start gap-4 transition cursor-pointer" onclick="activateStep(this, 1)">
+            <div class="step-badge w-9 h-9 rounded-full bg-[#273303] text-white flex items-center justify-center shrink-0 font-bold text-xs shadow-xs">
+              1
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-sm text-zinc-900">Select your destination</h3>
+              <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                Browse our curated packages and select the destination that matches your travel dreams.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-xs flex items-start gap-4 hover:border-slate-300 transition cursor-pointer" onclick="activateStep(this, 2)">
+            <div class="step-badge w-9 h-9 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center shrink-0 font-bold text-xs shadow-xs">
+              2
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-sm text-zinc-900">Book tickets</h3>
+              <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                Choose your departure dates, number of travelers, and accommodation preferences.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-xs flex items-start gap-4 hover:border-slate-300 transition cursor-pointer" onclick="activateStep(this, 3)">
+            <div class="step-badge w-9 h-9 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center shrink-0 font-bold text-xs shadow-xs">
+              3
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-sm text-zinc-900">Make payment</h3>
+              <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                Pay safely through our integrated payment gateways with multiple currency options.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-xs flex items-start gap-4 hover:border-slate-300 transition cursor-pointer" onclick="activateStep(this, 4)">
+            <div class="step-badge w-9 h-9 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center shrink-0 font-bold text-xs shadow-xs">
+              4
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-sm text-zinc-900">Pack your bags &amp; enjoy</h3>
+              <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                Receive your electronic ticket and itinerary, and get ready for an extraordinary journey.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 6: SCENIC CTA BANNER & BOTTOM CONSOLE (#cta-banner-section)        -->
+  <!-- ========================================================================= -->
+  <section id="cta-banner-section" class="w-full bg-[#F9FAF6] py-16 sm:py-24 border-t border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 text-center">
+
+      <span class="text-xs font-bold uppercase tracking-widest text-[#273303] block mb-2">GET STARTED</span>
+      <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-zinc-900 tracking-tight max-w-2xl mx-auto leading-tight">
+        Explore your favorite places and book your tickets now
+      </h2>
+      <p class="text-slate-500 text-xs sm:text-sm mt-3 max-w-md mx-auto">
+        Start planning your ideal vacation today with exclusive perks and live multi-supplier rates.
+      </p>
+
+      <!-- Capsule Quick Search Bar connected to Ortasys Engine -->
+      <form onsubmit="handleCapsuleSearch(event)" class="max-w-md mx-auto mt-8 bg-white rounded-full p-2 pl-6 shadow-xl border border-slate-200 flex items-center justify-between">
+        <input id="capsuleSearchInput" type="text" placeholder="Search destination (e.g. Safari, Waterfall, Alps)..."
+               class="w-full text-xs font-semibold text-zinc-900 bg-transparent focus:outline-none placeholder:text-slate-400" />
+        <button type="submit" class="w-10 h-10 rounded-full bg-[#273303] hover:bg-[#344405] text-white flex items-center justify-center font-bold shrink-0 shadow-sm transition active:scale-95 cursor-pointer" aria-label="Submit Search">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
+      </form>
+
+      <!-- Scenic Mountain Horizon Image Backdrop -->
+      <div class="relative mt-12 rounded-3xl overflow-hidden h-60 sm:h-72 shadow-lg">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80"
+             onerror="this.src='../../assets/khatulistiwa_explorer/padar.jpg'"
+             alt="Scenic lush green alpine valley with distant peaks"
+             class="w-full h-full object-cover object-center" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#273303]/90 via-[#273303]/40 to-transparent flex items-center justify-center">
+          <span class="text-white font-display font-extrabold text-lg sm:text-2xl drop-shadow-md">
+            Your Next Nature Chapter Begins With Zelatan
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 7: DEEP FOREST OLIVE FOOTER (#footer-section)                     -->
+  <!-- ========================================================================= -->
+  <footer id="footer-section" class="w-full bg-[#273303] text-white pt-16 pb-10">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+
+        <!-- Kolom 1 (Brand Profile - 4 Cols) -->
+        <div class="md:col-span-4 space-y-3">
+          <a href="#hero-section" class="font-display font-extrabold text-2xl tracking-wider text-white inline-block">
+            ZELATAN
+          </a>
+          <p class="text-white/70 text-xs leading-relaxed max-w-xs">
+            Your premier destination for breathtaking overseas adventures and curated nature holidays across the globe. Powered by Ortasys Storefront Engine.
+          </p>
+          <div class="pt-2 text-xs text-white/80 space-y-1 font-mono">
+            <p><a href="mailto:hello@zelatan.travel" class="hover:text-emerald-300 transition">hello@zelatan.travel</a></p>
+            <p>+62 812 3456 7890</p>
+          </div>
+        </div>
+
+        <!-- Kolom 2 (Menu - 2 Cols) -->
+        <div class="md:col-span-2 space-y-3 text-xs">
+          <span class="font-bold text-xs uppercase tracking-wider text-white block">Menu</span>
+          <ul class="space-y-2 text-white/70">
+            <li><a href="#hero-section" class="hover:text-white transition">Home</a></li>
+            <li><a href="#beautiful-places-section" class="hover:text-white transition">Destinations</a></li>
+            <li><a href="#tailored-destinations-section" class="hover:text-white transition">About Us</a></li>
+            <li><a href="#popular-tours-section" class="hover:text-white transition">Tours</a></li>
+            <li><a href="#popular-tours-section" class="hover:text-white transition">Pricing</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom 3 (Support - 3 Cols) -->
+        <div class="md:col-span-3 space-y-3 text-xs">
+          <span class="font-bold text-xs uppercase tracking-wider text-white block">Support</span>
+          <ul class="space-y-2 text-white/70">
+            <li><button type="button" onclick="showToast('Help Center available 24/7 via WhatsApp')" class="hover:text-white transition cursor-pointer">Help Center</button></li>
+            <li><button type="button" onclick="showToast('FAQ: All bookings confirmed live via Ortasys engine')" class="hover:text-white transition cursor-pointer">FAQ</button></li>
+            <li><button type="button" onclick="showToast('Terms of Service: Standard B2C Travel Policy')" class="hover:text-white transition cursor-pointer">Terms of Service</button></li>
+            <li><button type="button" onclick="showToast('Privacy Policy: PCI-DSS compliant customer privacy')" class="hover:text-white transition cursor-pointer">Privacy Policy</button></li>
+          </ul>
+        </div>
+
+        <!-- Kolom 4 (Locations & Socials - 3 Cols) -->
+        <div class="md:col-span-3 space-y-3 text-xs">
+          <span class="font-bold text-xs uppercase tracking-wider text-white block">Locations</span>
+          <div class="space-y-2">
+            <span class="inline-flex items-center gap-1.5 bg-white/10 px-3 py-1 rounded-full text-white/90 text-[11px] font-semibold">
+              <span>🇫🇷</span> French Alps
+            </span>
+            <br />
+            <span class="inline-flex items-center gap-1.5 bg-white/10 px-3 py-1 rounded-full text-white/90 text-[11px] font-semibold">
+              <span>🇮🇩</span> Indonesia Safari
+            </span>
+          </div>
+
+          <div class="pt-3">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-white/50 block mb-2">Connect</span>
+            <div class="flex items-center gap-2">
+              <button type="button" onclick="showToast('Opening Instagram...')" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white text-white hover:text-[#273303] flex items-center justify-center transition cursor-pointer text-xs" aria-label="Instagram">IG</button>
+              <button type="button" onclick="showToast('Opening Facebook...')" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white text-white hover:text-[#273303] flex items-center justify-center transition cursor-pointer text-xs" aria-label="Facebook">FB</button>
+              <button type="button" onclick="showToast('Opening X (Twitter)...')" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white text-white hover:text-[#273303] flex items-center justify-center transition cursor-pointer text-xs" aria-label="Twitter">X</button>
+              <button type="button" onclick="showToast('Opening YouTube...')" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white text-white hover:text-[#273303] flex items-center justify-center transition cursor-pointer text-xs" aria-label="YouTube">YT</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Legal Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
+        <p>&copy; <span id="footerYear">2026</span> Zelatan. All rights reserved. Powered by Ortasys Storefront Engine.</p>
+        <div class="flex items-center gap-4">
+          <button type="button" onclick="showToast('Terms of Service applied')" class="hover:text-white/80 transition cursor-pointer">Terms &amp; Conditions</button>
+          <span>•</span>
+          <button type="button" onclick="showToast('Privacy Policy applied')" class="hover:text-white/80 transition cursor-pointer">Privacy Policy</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ========================================================================= -->
+  <!-- INTERACTIVE MODALS (TOUR BOOKING, AUTH, CUSTOM PLAN, TOAST)               -->
+  <!-- ========================================================================= -->
+
+  <!-- 1. Tour Booking & Order Process Modal -->
+  <div id="tourModal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs hidden flex items-center justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200 my-8">
+      <!-- Modal Header with Photo -->
+      <div class="relative h-48 bg-zinc-900 text-white p-6 flex flex-col justify-between overflow-hidden">
+        <img id="tourModalImg" src="" alt="Tour landscape" class="absolute inset-0 w-full h-full object-cover opacity-65" />
+        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
+        <div class="relative z-10 flex items-center justify-between">
+          <span class="bg-[#273303] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+            Eco-Adventure Luxury
+          </span>
+          <button type="button" onclick="closeTourModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition cursor-pointer" aria-label="Close modal">
+            ✕
+          </button>
+        </div>
+        <div class="relative z-10">
+          <p id="tourModalLoc" class="text-xs text-emerald-300 font-semibold">Tea Plantation Highlands</p>
+          <h3 id="tourModalTitle" class="font-display font-extrabold text-xl sm:text-2xl text-white">Off-Road Safari Expedition</h3>
+        </div>
+      </div>
+
+      <!-- Booking Form View -->
+      <div id="tourModalForm" class="p-6 space-y-4 text-xs">
+        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2.5">
+          <div class="flex items-center justify-between">
+            <span class="text-slate-500 font-medium">Rate per Explorer:</span>
+            <span id="tourModalBasePrice" class="font-mono font-bold text-zinc-900">$180 / pax</span>
+          </div>
+          <div class="flex items-center justify-between border-t border-slate-200/70 pt-2">
+            <span class="text-slate-500 font-medium">Number of Travelers:</span>
+            <div class="flex items-center gap-2">
+              <button type="button" onclick="stepTourPax(-1)" class="w-7 h-7 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 font-bold flex items-center justify-center transition cursor-pointer">−</button>
+              <span id="tourModalPax" class="font-mono font-bold w-5 text-center text-zinc-900">2</span>
+              <button type="button" onclick="stepTourPax(1)" class="w-7 h-7 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 font-bold flex items-center justify-center transition cursor-pointer">+</button>
+            </div>
+          </div>
+          <div class="flex items-center justify-between border-t border-slate-200/70 pt-2 font-mono">
+            <div>
+              <span class="font-bold text-zinc-900 block">Total Settlement:</span>
+              <span class="text-[10px] text-slate-400">Incl. 11% eco conservation &amp; gear</span>
+            </div>
+            <span id="tourModalTotalPrice" class="font-extrabold text-base text-[#273303]">$399</span>
+          </div>
+        </div>
+
+        <form onsubmit="handleTourBookingSubmit(event)" class="space-y-3">
+          <div class="grid grid-cols-2 gap-3">
+            <label class="block">
+              <span class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Lead Traveler</span>
+              <input id="tourLeadName" type="text" required value="Alex Rivera" class="w-full h-10 px-3 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-[#273303]" />
+            </label>
+            <label class="block">
+              <span class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Email for E-Ticket</span>
+              <input id="tourLeadEmail" type="email" required value="alex@zelatan.travel" class="w-full h-10 px-3 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-[#273303]" />
+            </label>
+          </div>
+
+          <label class="block">
+            <span class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Settlement Gateway</span>
+            <div class="grid grid-cols-2 gap-2">
+              <label class="border border-slate-200 rounded-xl p-2.5 text-center cursor-pointer hover:border-[#273303] flex items-center justify-center gap-2">
+                <input type="radio" name="payGateway" value="snap" checked class="accent-[#273303]" />
+                <span class="font-bold text-xs">SNAP BI QRIS</span>
+              </label>
+              <label class="border border-slate-200 rounded-xl p-2.5 text-center cursor-pointer hover:border-[#273303] flex items-center justify-center gap-2">
+                <input type="radio" name="payGateway" value="doku" class="accent-[#273303]" />
+                <span class="font-bold text-xs">DOKU Global</span>
+              </label>
+            </div>
+          </label>
+
+          <button type="submit" class="w-full bg-[#273303] hover:bg-[#344405] text-white font-display font-bold py-3.5 rounded-full shadow-md transition active:scale-95 cursor-pointer">
+            Issue Verified Ticket &amp; Itinerary
+          </button>
+        </form>
+      </div>
+
+      <!-- Confirmation Screen -->
+      <div id="tourModalSuccess" class="hidden p-6 text-center space-y-4 text-xs">
+        <div class="w-14 h-14 rounded-full bg-emerald-100 text-[#273303] flex items-center justify-center mx-auto text-xl font-bold">✓</div>
+        <div>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-emerald-700 font-bold">RESERVATION SECURED</span>
+          <h4 class="font-display font-extrabold text-xl text-zinc-900 mt-0.5">Electronic Ticket Issued!</h4>
+          <p class="text-slate-500 mt-1">Your spot is guaranteed live via the Ortasys distribution network.</p>
+        </div>
+        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 font-mono text-left space-y-1.5">
+          <div class="flex justify-between"><span class="text-slate-400">Booking Ref:</span><span id="resVoucherCode" class="font-bold text-zinc-900">ZLT-2026-7841</span></div>
+          <div class="flex justify-between"><span class="text-slate-400">Expedition:</span><span id="resTourName" class="font-bold text-zinc-900">Off-Road Safari</span></div>
+          <div class="flex justify-between"><span class="text-slate-400">Travelers:</span><span id="resPaxSummary" class="font-bold text-zinc-900">2 Travelers</span></div>
+          <div class="flex justify-between border-t border-slate-200 pt-1.5"><span class="text-slate-400">Status:</span><span class="font-bold text-emerald-700">Allotment Confirmed</span></div>
+        </div>
+        <div class="flex gap-3">
+          <button type="button" onclick="showToast('Downloading Official Zelatan PDF Voucher...')" class="w-1/2 py-2.5 rounded-full border border-slate-200 hover:bg-slate-50 font-bold transition cursor-pointer">
+            Download Ticket
+          </button>
+          <button type="button" onclick="closeTourModal()" class="w-1/2 py-2.5 rounded-full bg-[#273303] text-white font-bold transition cursor-pointer">
+            Close &amp; Continue
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Custom Trip Request Modal -->
+  <div id="customPlanModal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-slate-200">
+      <div class="p-6 bg-[#273303] text-white flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-emerald-300 font-bold">BESPOKE EXPEDITION</span>
+          <h3 class="font-display font-bold text-lg mt-0.5">Design Your Overseas Holiday</h3>
+        </div>
+        <button type="button" onclick="closeCustomPlanModal()" class="w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center text-white cursor-pointer">✕</button>
+      </div>
+      <form onsubmit="handleCustomPlanSubmit(event)" class="p-6 space-y-3.5 text-xs">
+        <label class="block">
+          <span class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Your Name</span>
+          <input type="text" required value="Alex Rivera" class="w-full h-10 px-3 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-[#273303]" />
+        </label>
+        <label class="block">
+          <span class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Contact Email / Phone</span>
+          <input type="text" required value="alex@zelatan.travel" class="w-full h-10 px-3 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-[#273303]" />
+        </label>
+        <label class="block">
+          <span class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Destinations Wishlist</span>
+          <textarea rows="3" class="w-full p-3 rounded-xl border border-slate-200 font-medium focus:outline-none focus:border-[#273303]">We want to explore a combination of Alpine Conifer Chalet and Emerald River Rafting for 7 days.</textarea>
+        </label>
+        <button type="submit" class="w-full bg-[#273303] hover:bg-[#344405] text-white font-display font-bold py-3.5 rounded-full shadow-md transition cursor-pointer">
+          Send Custom Itinerary Request
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. Auth (Sign In / Register) Modal -->
+  <div id="authModal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-slate-200">
+      <div class="p-6 pb-2 flex items-center justify-between border-b border-slate-100">
+        <div class="flex gap-4 text-sm font-display font-bold">
+          <button id="authTabSignIn" type="button" onclick="switchAuthTab('signin')" class="pb-2 border-b-2 border-[#273303] text-[#273303] cursor-pointer">Sign In</button>
+          <button id="authTabRegister" type="button" onclick="switchAuthTab('register')" class="pb-2 border-b-2 border-transparent text-slate-400 hover:text-zinc-900 cursor-pointer">Register</button>
+        </div>
+        <button type="button" onclick="closeAuthModal()" class="w-7 h-7 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center cursor-pointer">✕</button>
+      </div>
+      <form onsubmit="handleAuthSubmit(event)" class="p-6 space-y-3.5 text-xs">
+        <label class="block">
+          <span class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Email Address</span>
+          <input id="authEmailInput" type="email" required value="alex@zelatan.travel" class="w-full h-10 px-3.5 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-[#273303]" />
+        </label>
+        <label class="block">
+          <span class="block text-[10px] font-bold uppercase text-slate-400 mb-1">Password</span>
+          <input type="password" required value="••••••••••••" class="w-full h-10 px-3.5 rounded-xl border border-slate-200 font-semibold focus:outline-none focus:border-[#273303]" />
+        </label>
+        <button type="submit" id="authSubmitBtn" class="w-full bg-[#273303] hover:bg-[#344405] text-white font-display font-bold py-3.5 rounded-full shadow-md transition cursor-pointer">
+          Sign In to Zelatan
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Feedback -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-[#273303] text-white px-5 py-2.5 rounded-full text-xs font-semibold shadow-2xl flex items-center gap-2 border border-emerald-900">
+    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+    <span id="toastMsg">Notification</span>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT LOGIC & APPLICATION ENGINE                                     -->
+  <!-- ========================================================================= -->
+  <script>
+    'use strict';
+
+    // State Variables
+    let isIdrCurrency = false;
+    const USD_TO_IDR = 16000;
+
+    let activeModalUsd = 180;
+    let activeModalPax = 2;
+    let activeModalTitle = 'Off-Road Safari Expedition';
+    let activeModalLoc = 'Tea Plantation Highlands';
+
+    // Calendar state (custom date picker)
+    let calYear = 2026;
+    let calMonth = 10; // November (0-indexed)
+    let calStartDate = '2026-11-13';
+    let calEndDate = '2026-11-20';
+
+    // Guest stepper state
+    let guestCounts = { rooms: 1, adults: 2, children: 0 };
+
+    // Budget state
+    let selectedBudgetValue = 'all';
+
+    // Set Copyright Year
+    const yr = new Date().getFullYear();
+    const fYear = document.getElementById('footerYear');
+    if (fYear) fYear.textContent = yr;
+
+    // Toast Helper
+    let toastTimer;
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      t.classList.remove('hidden');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => t.classList.add('hidden'), 3500);
+    }
+
+    // Format Currency Helper
+    function formatCurrency(usdVal) {
+      if (isIdrCurrency) {
+        const idr = Math.round(usdVal * USD_TO_IDR);
+        return 'Rp ' + idr.toLocaleString('id-ID');
+      }
+      return '$' + usdVal.toLocaleString('en-US');
+    }
+
+    function updateAllPrices() {
+      document.querySelectorAll('.live-tour-price').forEach(el => {
+        const usd = parseFloat(el.getAttribute('data-usd') || 0);
+        el.textContent = formatCurrency(usd) + ' / pax';
+      });
+      recalcTourModalTotals();
+    }
+
+    function toggleCurrency() {
+      isIdrCurrency = !isIdrCurrency;
+      document.getElementById('currSymbol').textContent = isIdrCurrency ? 'Rp IDR' : '$ USD';
+      updateAllPrices();
+      showToast(isIdrCurrency ? 'Mata uang dialihkan ke Rupiah (IDR). Kurs: $1 = Rp 16.000' : 'Currency switched to US Dollar ($ USD). Live rates active.');
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileDrawer').classList.toggle('hidden');
+    }
+
+    // =========================================================================
+    // ORTASYS SYSTEM SEARCH ENGINE LOGIC
+    // =========================================================================
+
+    function switchSearchMode(mode) {
+      const btnAct = document.getElementById('tabBtnActivities');
+      const btnChalet = document.getElementById('tabBtnChalets');
+      const input = document.getElementById('searchDestInput');
+
+      if (mode === 'activities') {
+        btnAct.className = 'search-mode-pill pb-2 border-b-2 border-[#273303] text-[#273303] font-bold flex items-center gap-2 cursor-pointer transition';
+        btnChalet.className = 'search-mode-pill pb-2 border-b-2 border-transparent text-slate-400 hover:text-zinc-900 flex items-center gap-2 cursor-pointer transition';
+        input.placeholder = 'Where to explore? (e.g. Cameron, Rapids, Alps)';
+        showToast('Switched to Eco-Activities & Expeditions inventory');
+      } else {
+        btnChalet.className = 'search-mode-pill pb-2 border-b-2 border-[#273303] text-[#273303] font-bold flex items-center gap-2 cursor-pointer transition';
+        btnAct.className = 'search-mode-pill pb-2 border-b-2 border-transparent text-slate-400 hover:text-zinc-900 flex items-center gap-2 cursor-pointer transition';
+        input.placeholder = 'Search Alpine Chalet or Lodge...';
+        showToast('Switched to Alpine Chalets & Lodges allotment');
+      }
+      closeAllPopovers();
+    }
+
+    function closeAllPopovers() {
+      closeDestPopover();
+      closeCalendarPopover();
+      closeGuestPopover();
+      closeBudgetPopover();
+    }
+
+    // 1. Destination Popover
+    function openDestPopover(e) {
+      if (e) e.stopPropagation();
+      closeCalendarPopover();
+      closeGuestPopover();
+      closeBudgetPopover();
+      document.getElementById('destQuickPickPopover').classList.remove('hidden');
+    }
+
+    function closeDestPopover() {
+      const p = document.getElementById('destQuickPickPopover');
+      if (p) p.classList.add('hidden');
+    }
+
+    function selectDestination(name) {
+      const input = document.getElementById('searchDestInput');
+      input.value = name;
+      document.getElementById('clearDestBtn').classList.remove('hidden');
+      closeDestPopover();
+      showToast(`Selected destination: ${name}`);
+    }
+
+    function clearDestInput() {
+      const input = document.getElementById('searchDestInput');
+      input.value = '';
+      document.getElementById('clearDestBtn').classList.add('hidden');
+      input.focus();
+    }
+
+    function filterDestSuggestions(query) {
+      const items = document.querySelectorAll('#destSuggestionsList .dest-item');
+      const q = query.toLowerCase();
+      document.getElementById('clearDestBtn').classList.toggle('hidden', query.trim() === '');
+      items.forEach(it => {
+        const txt = it.textContent.toLowerCase();
+        it.style.display = txt.includes(q) ? 'flex' : 'none';
+      });
+    }
+
+    // 2. Custom Date Range Picker
+    function toggleCalendarPopover(e) {
+      if (e) e.stopPropagation();
+      const p = document.getElementById('calendarPopover');
+      const isHidden = p.classList.contains('hidden');
+      closeAllPopovers();
+      if (isHidden) {
+        p.classList.remove('hidden');
+        document.getElementById('calChevron').classList.add('rotate-180');
+        renderCalendarGrid();
+      }
+    }
+
+    function closeCalendarPopover() {
+      const p = document.getElementById('calendarPopover');
+      if (p) p.classList.add('hidden');
+      const c = document.getElementById('calChevron');
+      if (c) c.classList.remove('rotate-180');
+    }
+
+    function changeCalMonth(delta) {
+      calMonth += delta;
+      if (calMonth < 0) { calMonth = 11; calYear--; }
+      else if (calMonth > 11) { calMonth = 0; calYear++; }
+      renderCalendarGrid();
+    }
+
+    function renderCalendarGrid() {
+      const grid = document.getElementById('calDaysGrid');
+      grid.innerHTML = '';
+      const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      document.getElementById('calMonthTitle').textContent = `${monthNames[calMonth]} ${calYear}`;
+
+      const firstDayIndex = new Date(calYear, calMonth, 1).getDay();
+      const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+
+      for (let i = 0; i < firstDayIndex; i++) {
+        const empty = document.createElement('div');
+        empty.className = 'h-8';
+        grid.appendChild(empty);
+      }
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dObj = new Date(calYear, calMonth, day);
+        const dStr = dObj.toISOString().split('T')[0];
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = day;
+        btn.className = 'h-8 w-8 mx-auto rounded-full text-xs font-semibold flex items-center justify-center transition cursor-pointer ';
+
+        const isStart = calStartDate && dStr === calStartDate;
+        const isEnd = calEndDate && dStr === calEndDate;
+        const isInRange = calStartDate && calEndDate && dStr > calStartDate && dStr < calEndDate;
+
+        if (isStart || isEnd) {
+          btn.className += 'bg-[#273303] text-white font-bold shadow-xs scale-105';
+        } else if (isInRange) {
+          btn.className += 'bg-[#273303]/15 text-[#273303] font-bold rounded-none';
+        } else {
+          btn.className += 'hover:bg-slate-100 text-zinc-800';
+        }
+
+        btn.onclick = () => handleDateClick(dStr);
+        grid.appendChild(btn);
+      }
+      updateCalendarInfo();
+    }
+
+    function handleDateClick(dStr) {
+      if (!calStartDate || (calStartDate && calEndDate)) {
+        calStartDate = dStr;
+        calEndDate = null;
+      } else if (calStartDate && !calEndDate) {
+        if (dStr < calStartDate) calStartDate = dStr;
+        else calEndDate = dStr;
+      }
+      renderCalendarGrid();
+    }
+
+    function formatShortDate(d) {
+      const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      return `${d.getDate()} ${months[d.getMonth()]}`;
+    }
+
+    function updateCalendarInfo() {
+      if (calStartDate && calEndDate) {
+        const d1 = new Date(calStartDate);
+        const d2 = new Date(calEndDate);
+        const diff = Math.max(1, Math.round((d2 - d1) / (1000 * 60 * 60 * 24)));
+        document.getElementById('calSelectedInfo').textContent = `${diff} Nights selected`;
+        document.getElementById('durationBadge').textContent = `${diff} Nights`;
+        document.getElementById('dateRangeSummaryText').textContent = `${formatShortDate(d1)} – ${formatShortDate(d2)} ${d2.getFullYear()}`;
+      } else if (calStartDate) {
+        const d1 = new Date(calStartDate);
+        document.getElementById('calSelectedInfo').textContent = `Check-in: ${formatShortDate(d1)}`;
+      }
+    }
+
+    function applyDatePreset(days) {
+      const d1 = new Date(2026, 10, 13);
+      const d2 = new Date(2026, 10, 13 + days);
+      calStartDate = d1.toISOString().split('T')[0];
+      calEndDate = d2.toISOString().split('T')[0];
+      calYear = d1.getFullYear();
+      calMonth = d1.getMonth();
+      renderCalendarGrid();
+      showToast(`Dates set: ${days} Nights expedition pass.`);
+    }
+
+    // 3. Travelers & Rooms Setup Stepper
+    function toggleGuestPopover(e) {
+      if (e) e.stopPropagation();
+      const p = document.getElementById('guestStepperPopover');
+      const isHidden = p.classList.contains('hidden');
+      closeAllPopovers();
+      if (isHidden) {
+        p.classList.remove('hidden');
+        document.getElementById('guestChevron').classList.add('rotate-180');
+      }
+    }
+
+    function closeGuestPopover() {
+      const p = document.getElementById('guestStepperPopover');
+      if (p) p.classList.add('hidden');
+      const c = document.getElementById('guestChevron');
+      if (c) c.classList.remove('rotate-180');
+    }
+
+    function stepGuest(type, change) {
+      if (type === 'rooms') guestCounts.rooms = Math.max(1, Math.min(9, guestCounts.rooms + change));
+      if (type === 'adults') guestCounts.adults = Math.max(1, Math.min(20, guestCounts.adults + change));
+      if (type === 'children') guestCounts.children = Math.max(0, Math.min(20, guestCounts.children + change));
+      updateGuestSummary();
+    }
+
+    function setGuestPreset(r, a, c) {
+      guestCounts.rooms = r;
+      guestCounts.adults = a;
+      guestCounts.children = c;
+      updateGuestSummary();
+    }
+
+    function updateGuestSummary() {
+      document.getElementById('valRooms').textContent = guestCounts.rooms;
+      document.getElementById('valAdults').textContent = guestCounts.adults;
+      document.getElementById('valChildren').textContent = guestCounts.children;
+      const totalGuests = guestCounts.adults + guestCounts.children;
+      document.getElementById('guestSummaryText').textContent = `${guestCounts.rooms} Rm · ${totalGuests} Guests`;
+    }
+
+    // 4. Budget Tier Dropdown
+    function toggleBudgetPopover(e) {
+      if (e) e.stopPropagation();
+      const p = document.getElementById('budgetPopover');
+      const isHidden = p.classList.contains('hidden');
+      closeAllPopovers();
+      if (isHidden) {
+        p.classList.remove('hidden');
+        document.getElementById('budgetChevron').classList.add('rotate-180');
+      }
+    }
+
+    function closeBudgetPopover() {
+      const p = document.getElementById('budgetPopover');
+      if (p) p.classList.add('hidden');
+      const c = document.getElementById('budgetChevron');
+      if (c) c.classList.remove('rotate-180');
+    }
+
+    function selectBudgetOption(val, labelText) {
+      selectedBudgetValue = val;
+      document.getElementById('budgetSelectedText').textContent = labelText;
+
+      document.querySelectorAll('.budget-option-item').forEach(it => {
+        const itemVal = it.getAttribute('data-val');
+        const check = it.querySelector('.budget-check');
+        if (itemVal === val) {
+          it.className = 'budget-option-item px-3 py-2 rounded-2xl cursor-pointer flex items-center justify-between bg-[#273303]/10 text-[#273303] font-bold transition';
+          check.classList.remove('hidden');
+        } else {
+          it.className = 'budget-option-item px-3 py-2 rounded-2xl cursor-pointer flex items-center justify-between hover:bg-slate-50 text-zinc-800 transition font-medium';
+          check.classList.add('hidden');
+        }
+      });
+
+      closeBudgetPopover();
+      showToast(`Budget filter: ${labelText}`);
+    }
+
+    // Global outside click dismisser
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('#destQuickPickPopover') && !e.target.closest('#searchDestInput')) {
+        closeDestPopover();
+      }
+      if (!e.target.closest('#calendarPopover') && !e.target.closest('#datePickerBtn')) {
+        closeCalendarPopover();
+      }
+      if (!e.target.closest('#guestStepperPopover') && !e.target.closest('#guestSummaryText')) {
+        closeGuestPopover();
+      }
+      if (!e.target.closest('#budgetPopover') && !e.target.closest('#budgetDropdownBtn')) {
+        closeBudgetPopover();
+      }
+      if (!e.target.closest('#authUserProfile')) {
+        const m = document.getElementById('userDropdownMenu');
+        if (m) m.classList.add('hidden');
+      }
+    });
+
+    // Handle Ortasys Search Execution
+    function handleOrtasysSearch(e) {
+      e.preventDefault();
+      closeAllPopovers();
+      const destQuery = document.getElementById('searchDestInput').value.trim().toLowerCase();
+      const budgetFilter = selectedBudgetValue;
+
+      const btn = document.getElementById('heroSearchBtn');
+      const btnText = document.getElementById('searchBtnText');
+      const btnIcon = document.getElementById('searchBtnIcon');
+
+      // Visual Loading state
+      btnText.textContent = 'Checking rates...';
+      btnIcon.innerHTML = `<svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>`;
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btnText.textContent = 'Search Tours';
+        btnIcon.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>`;
+        btn.disabled = false;
+
+        executeFilter(destQuery, budgetFilter);
+      }, 350);
+    }
+
+    function executeFilter(destQuery, budgetFilter) {
+      let matchedCount = 0;
+
+      // Filter Section 2 cards
+      document.querySelectorAll('.place-card').forEach(card => {
+        const title = (card.getAttribute('data-title') || '').toLowerCase();
+        const cat = (card.getAttribute('data-category') || '').toLowerCase();
+        const price = parseFloat(card.getAttribute('data-price') || 0);
+
+        let matchesDest = !destQuery || title.includes(destQuery) || cat.includes(destQuery);
+        let matchesBudget = true;
+        if (budgetFilter === 'budget') matchesBudget = price < 180;
+        else if (budgetFilter === 'popular') matchesBudget = price >= 180 && price <= 220;
+        else if (budgetFilter === 'luxury') matchesBudget = price > 220;
+
+        if (matchesDest && matchesBudget) {
+          card.classList.remove('hidden');
+          matchedCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Filter Section 3 Bento cards
+      document.querySelectorAll('.bento-destination').forEach(card => {
+        const title = (card.getAttribute('data-title') || '').toLowerCase();
+        const price = parseFloat(card.getAttribute('data-price') || 0);
+
+        let matchesDest = !destQuery || title.includes(destQuery);
+        let matchesBudget = true;
+        if (budgetFilter === 'budget') matchesBudget = price < 180;
+        else if (budgetFilter === 'popular') matchesBudget = price >= 180 && price <= 220;
+        else if (budgetFilter === 'luxury') matchesBudget = price > 220;
+
+        if (matchesDest && matchesBudget) {
+          card.classList.remove('hidden');
+          matchedCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Filter Section 4 Tour items
+      document.querySelectorAll('.tour-item').forEach(card => {
+        const title = (card.getAttribute('data-title') || '').toLowerCase();
+        const price = parseFloat(card.getAttribute('data-price') || 0);
+
+        let matchesDest = !destQuery || title.includes(destQuery);
+        let matchesBudget = true;
+        if (budgetFilter === 'budget') matchesBudget = price < 180;
+        else if (budgetFilter === 'popular') matchesBudget = price >= 180 && price <= 220;
+        else if (budgetFilter === 'luxury') matchesBudget = price > 220;
+
+        if (matchesDest && matchesBudget) {
+          card.classList.remove('hidden');
+          matchedCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Update Search Results Banner
+      const banner = document.getElementById('searchResultsBanner');
+      const countLabel = document.getElementById('searchResultsCount');
+      const noResultsBox = document.getElementById('noResultsBox');
+
+      banner.classList.remove('hidden');
+      if (destQuery || budgetFilter !== 'all') {
+        countLabel.textContent = `Found ${matchedCount} verified eco-adventures matching your search`;
+        document.getElementById('searchActiveTag').textContent = destQuery ? `"${destQuery}"` : `Tier: ${budgetFilter}`;
+      } else {
+        countLabel.textContent = `Showing all ${matchedCount} curated overseas tours`;
+        document.getElementById('searchActiveTag').textContent = 'All Sanctuaries';
+      }
+
+      noResultsBox.classList.toggle('hidden', matchedCount > 0);
+      document.getElementById('beautiful-places-section').scrollIntoView({ behavior: 'smooth' });
+      showToast(`Filter applied: ${matchedCount} tours available.`);
+    }
+
+    function resetAllFilters() {
+      document.getElementById('searchDestInput').value = '';
+      selectedBudgetValue = 'all';
+      document.getElementById('budgetSelectedText').textContent = 'All Tiers';
+      selectBudgetOption('all', 'All Tiers');
+      document.getElementById('clearDestBtn').classList.add('hidden');
+      document.getElementById('searchResultsBanner').classList.add('hidden');
+      document.getElementById('noResultsBox').classList.add('hidden');
+
+      document.querySelectorAll('.place-card').forEach(c => c.classList.remove('hidden'));
+      document.querySelectorAll('.bento-destination').forEach(c => c.classList.remove('hidden'));
+      document.querySelectorAll('.tour-item').forEach(c => c.classList.remove('hidden'));
+
+      showToast('All search filters reset to default catalog view.');
+    }
+
+    function filterCatalogByTag(tag) {
+      showToast(`Filtering experiences for: ${tag}`);
+      document.querySelectorAll('.place-card').forEach(card => {
+        const c = card.getAttribute('data-category');
+        card.classList.toggle('hidden', c !== tag);
+      });
+      document.getElementById('beautiful-places-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleCapsuleSearch(e) {
+      e.preventDefault();
+      const query = document.getElementById('capsuleSearchInput').value.trim();
+      document.getElementById('searchDestInput').value = query;
+      executeFilter(query.toLowerCase(), 'all');
+    }
+
+    function showAllToursAlert() {
+      resetAllFilters();
+      showToast('All curated overseas tours and safari packages displayed.');
+    }
+
+    // Step Activator in Section 5
+    function activateStep(el, stepNum) {
+      document.querySelectorAll('.step-card').forEach(c => {
+        c.className = 'step-card bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-xs flex items-start gap-4 hover:border-slate-300 transition cursor-pointer';
+        const badge = c.querySelector('.step-badge');
+        badge.className = 'step-badge w-9 h-9 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center shrink-0 font-bold text-xs shadow-xs';
+      });
+      el.className = 'step-card bg-white rounded-2xl p-4 sm:p-5 border-2 border-[#273303] shadow-sm flex items-start gap-4 transition cursor-pointer';
+      const activeBadge = el.querySelector('.step-badge');
+      activeBadge.className = 'step-badge w-9 h-9 rounded-full bg-[#273303] text-white flex items-center justify-center shrink-0 font-bold text-xs shadow-xs';
+      showToast(`Step ${stepNum} selected: ${el.querySelector('h3').textContent}`);
+    }
+
+    // =========================================================================
+    // TOUR BOOKING MODAL
+    // =========================================================================
+
+    function openTourModal(title, loc, usdPrice, imgUrl) {
+      activeModalTitle = title;
+      activeModalLoc = loc;
+      activeModalUsd = usdPrice;
+      activeModalPax = 2;
+
+      document.getElementById('tourModalTitle').textContent = title;
+      document.getElementById('tourModalLoc').textContent = loc;
+      document.getElementById('tourModalImg').src = imgUrl;
+      document.getElementById('tourModalPax').textContent = activeModalPax;
+
+      recalcTourModalTotals();
+
+      document.getElementById('tourModalForm').classList.remove('hidden');
+      document.getElementById('tourModalSuccess').classList.add('hidden');
+      document.getElementById('tourModal').classList.remove('hidden');
+    }
+
+    function closeTourModal() {
+      document.getElementById('tourModal').classList.add('hidden');
+    }
+
+    function stepTourPax(delta) {
+      activeModalPax = Math.max(1, Math.min(10, activeModalPax + delta));
+      document.getElementById('tourModalPax').textContent = activeModalPax;
+      recalcTourModalTotals();
+    }
+
+    function recalcTourModalTotals() {
+      document.getElementById('tourModalBasePrice').textContent = formatCurrency(activeModalUsd) + ' / pax';
+      const subtotal = activeModalUsd * activeModalPax;
+      const taxAndLevy = Math.round(subtotal * 0.11);
+      const grandTotal = subtotal + taxAndLevy;
+      document.getElementById('tourModalTotalPrice').textContent = formatCurrency(grandTotal);
+    }
+
+    function handleTourBookingSubmit(e) {
+      e.preventDefault();
+      const code = 'ZLT-2026-' + Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('resVoucherCode').textContent = code;
+      document.getElementById('resTourName').textContent = activeModalTitle;
+      document.getElementById('resPaxSummary').textContent = `${activeModalPax} Explorers (${document.getElementById('tourLeadName').value})`;
+
+      document.getElementById('tourModalForm').classList.add('hidden');
+      document.getElementById('tourModalSuccess').classList.remove('hidden');
+      showToast(`Booking ${code} secured live!`);
+    }
+
+    // =========================================================================
+    // BESPOKE PLAN & AUTH MODAL
+    // =========================================================================
+
+    function openCustomPlanModal() {
+      document.getElementById('customPlanModal').classList.remove('hidden');
+    }
+
+    function closeCustomPlanModal() {
+      document.getElementById('customPlanModal').classList.add('hidden');
+    }
+
+    function handleCustomPlanSubmit(e) {
+      e.preventDefault();
+      closeCustomPlanModal();
+      showToast('Custom expedition proposal requested! Our team will reach out within 2 hours.');
+    }
+
+    function openAuthModal(tab) {
+      document.getElementById('authModal').classList.remove('hidden');
+      switchAuthTab(tab);
+    }
+
+    function closeAuthModal() {
+      document.getElementById('authModal').classList.add('hidden');
+    }
+
+    function switchAuthTab(tab) {
+      const signInBtn = document.getElementById('authTabSignIn');
+      const regBtn = document.getElementById('authTabRegister');
+      const submitBtn = document.getElementById('authSubmitBtn');
+
+      if (tab === 'signin') {
+        signInBtn.className = 'pb-2 border-b-2 border-[#273303] text-[#273303] cursor-pointer';
+        regBtn.className = 'pb-2 border-b-2 border-transparent text-slate-400 hover:text-zinc-900 cursor-pointer';
+        submitBtn.textContent = 'Sign In to Zelatan';
+      } else {
+        regBtn.className = 'pb-2 border-b-2 border-[#273303] text-[#273303] cursor-pointer';
+        signInBtn.className = 'pb-2 border-b-2 border-transparent text-slate-400 hover:text-zinc-900 cursor-pointer';
+        submitBtn.textContent = 'Create Zelatan Account';
+      }
+    }
+
+    function handleAuthSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('authEmailInput').value;
+      closeAuthModal();
+
+      document.getElementById('authGuestState').classList.add('hidden');
+      document.getElementById('authUserProfile').classList.remove('hidden');
+
+      const namePart = email.split('@')[0];
+      const displayName = namePart.charAt(0).toUpperCase() + namePart.slice(1);
+      document.getElementById('navUserName').textContent = displayName;
+
+      showToast(`Welcome back, ${displayName}! Member access active.`);
+    }
+
+    function toggleUserDropdown(e) {
+      if (e) e.stopPropagation();
+      document.getElementById('userDropdownMenu').classList.toggle('hidden');
+    }
+
+    function handleLogout() {
+      document.getElementById('userDropdownMenu').classList.add('hidden');
+      document.getElementById('authUserProfile').classList.add('hidden');
+      document.getElementById('authGuestState').classList.remove('hidden');
+      showToast('Signed out of Zelatan.');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCalendarGrid();
+      updateGuestSummary();
+    });
+  </script>
+</body>
+
+</html>

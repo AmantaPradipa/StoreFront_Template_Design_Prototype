@@ -65,15 +65,16 @@ StoreFront_Template_Design_Prototype/
 │   ├── 09-coastal-island/                 # Nusa Tide Escapes (Fraunces + Manrope)
 │   └── 10-budget-backpacker/              # Jalan Hemat Travel (Space Grotesk + Inter)
 │
-├── hasil-slicing-design/                  # 3 Prototipe Kustom Agen Perjalanan
+├── hasil-slicing-design/                  # 4 Prototipe Kustom Agen Perjalanan
 │   ├── bloosm/                            # Bloosm Travel (Desain Modern Kontemporer)
 │   ├── melali_travel/                     # Melali Bali & Beyond (Wisata Budaya & Bahari)
-│   └── travel4all/                        # Travel4All (Wisata Inklusif & Aksesibel)
+│   ├── travel4all/                        # Travel4All (Wisata Inklusif & Aksesibel)
+│   └── zelatan/                           # Zelatan (Overseas Holiday Solutions & Eco-Adventure)
 ```
 
 ---
 
-## 🎨 Katalog 18 Template & Prototipe
+## 🎨 Katalog 19 Template & Prototipe
 
 ### 1. 10 Preset Sistem (`ortasys-storefront-design-guidelines/`)
 
@@ -90,13 +91,14 @@ StoreFront_Template_Design_Prototype/
 | **09** | `09-coastal-island` | **Nusa Tide Escapes** | *Fraunces* + *Manrope* | `#176B73`, `#E29A70`, `#B9D8D3` | [Buka Demo](ortasys-storefront-design-guidelines/09-coastal-island/index.html) |
 | **10** | `10-budget-backpacker` | **Jalan Hemat Travel** | *Space Grotesk* + *Inter* | `#263C5A`, `#E56B45`, `#E9B94F` | [Buka Demo](ortasys-storefront-design-guidelines/10-budget-backpacker/index.html) |
 
-### 2. 3 Prototipe Hasil Slicing Kustom (`hasil-slicing-design/`)
+### 2. 4 Prototipe Hasil Slicing Kustom (`hasil-slicing-design/`)
 
 | Brand | Fokus & Karakteristik | File Desain & Prototipe |
 |---|---|:---:|
 | **Bloosm Travel** | Desain editorial premium kontemporer dengan tipografi ekspresif dan tata letak modular | [Lihat Prototipe](hasil-slicing-design/bloosm/index.html) &bull; [Spesifikasi](hasil-slicing-design/bloosm/DESIGN.md) |
 | **Melali Travel** | Spesialis perjalanan autentik Pulau Dewata & Nusa Tenggara dengan sentuhan budaya lokal | [Lihat Prototipe](hasil-slicing-design/melali_travel/index.html) &bull; [Spesifikasi](hasil-slicing-design/melali_travel/DESIGN.md) |
 | **Travel4All** | Perjalanan ramah keluarga, lansia, dan aksesibilitas ramah kursi roda | [Lihat Prototipe](hasil-slicing-design/travel4all/index.html) &bull; [Spesifikasi](hasil-slicing-design/travel4all/DESIGN.md) |
+| **Zelatan** | Overseas Holiday Solutions, eksplorasi petualangan alam pegunungan & kemudahan proses tiket | [Lihat Prototipe](hasil-slicing-design/zelatan/index.html) &bull; [Spesifikasi](hasil-slicing-design/zelatan/DESIGN.md) |
 
 ### 3. 5 Prototipe Pondasi Awal (`design/`)
 
