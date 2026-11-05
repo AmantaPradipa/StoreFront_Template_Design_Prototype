@@ -268,7 +268,7 @@
     <section id="tours" class="mt-20 pt-10 border-t border-line" aria-labelledby="toursTitle">
       <div class="grid lg:grid-cols-12 gap-8 items-start">
         <div class="lg:col-span-5 rounded-lg overflow-hidden border border-line shadow-soft aspect-[4/5] bg-surface-muted">
-          <img src="assets/serenity_umrah_privilege/istiqlal.jpg" alt="Istiqlal Grand Mosque grand prayer hall and monumental columns, Jakarta" class="w-full h-full object-cover" loading="lazy" width="1920" height="1277">
+          <img src="../assets/serenity_umrah_privilege/istiqlal.jpg" alt="Istiqlal Grand Mosque grand prayer hall and monumental columns, Jakarta" class="w-full h-full object-cover" loading="lazy" width="1920" height="1277">
         </div>
         <div class="lg:col-span-7">
           <span class="text-[13px] font-bold uppercase tracking-wider text-tertiary">Spiritual &amp; Cultural Roots</span>
@@ -399,17 +399,17 @@
     'use strict';
     /* Illustrative Sample Data (PRD 9.2) */
     const STAYS = [
-      { id: 'ss-jogja', name: 'Kraton Heritage Family Residence', area: 'Kraton Enclave · Yogyakarta', keys: 'yogyakarta jogja kraton palace culture', img: 'assets/serenity_umrah_privilege/kraton.jpg', alt: 'Kraton Yogyakarta Donopratono royal gate', stars: 5, room: 'Interconnecting Royal Courtyard Suite', meal: 'Halal breakfast buffet included', policy: 'Free cancellation until 7 days prior', nightly: 2750000 },
-      { id: 'ss-toba', name: 'Lake Toba Sanctuary Family Lodge', area: 'Ajibata, Lake Toba · North Sumatra', keys: 'toba sumatra ajibata lake view', img: 'assets/serenity_umrah_privilege/toba.jpg', alt: 'Lake Toba mountain views from Ajibata', stars: 4, room: 'Three-Bedroom Panoramic Villa', meal: 'Full breakfast included', policy: 'Free cancellation until 5 days prior', nightly: 2200000 },
-      { id: 'ss-aceh', name: 'Baiturrahman Serenity Grand Hotel', area: 'Banda Aceh · Aceh Heritage', keys: 'aceh banda baiturrahman grand mosque', img: 'assets/serenity_umrah_privilege/baiturrahman.jpg', alt: 'Grand Mosque Baiturrahman minarets and courtyard', stars: 4, room: 'Family Deluxe Quad Suite', meal: 'Halal gourmet breakfast', policy: 'Free cancellation until 3 days prior', nightly: 1550000 },
-      { id: 'ss-bukittinggi', name: 'Jam Gadang Heritage Resort', area: 'Bukittinggi · West Sumatra', keys: 'bukittinggi jam gadang padang sumatra', img: 'assets/serenity_umrah_privilege/jam-gadang.jpg', alt: 'Jam Gadang clock tower Bukittinggi', stars: 4, room: 'Minangkabau Family Cottage', meal: 'Padang culinary breakfast included', policy: 'Free cancellation until 4 days prior', nightly: 1800000 }
+      { id: 'ss-jogja', name: 'Kraton Heritage Family Residence', area: 'Kraton Enclave · Yogyakarta', keys: 'yogyakarta jogja kraton palace culture', img: '../assets/serenity_umrah_privilege/kraton.jpg', alt: 'Kraton Yogyakarta Donopratono royal gate', stars: 5, room: 'Interconnecting Royal Courtyard Suite', meal: 'Halal breakfast buffet included', policy: 'Free cancellation until 7 days prior', nightly: 2750000 },
+      { id: 'ss-toba', name: 'Lake Toba Sanctuary Family Lodge', area: 'Ajibata, Lake Toba · North Sumatra', keys: 'toba sumatra ajibata lake view', img: '../assets/serenity_umrah_privilege/toba.jpg', alt: 'Lake Toba mountain views from Ajibata', stars: 4, room: 'Three-Bedroom Panoramic Villa', meal: 'Full breakfast included', policy: 'Free cancellation until 5 days prior', nightly: 2200000 },
+      { id: 'ss-aceh', name: 'Baiturrahman Serenity Grand Hotel', area: 'Banda Aceh · Aceh Heritage', keys: 'aceh banda baiturrahman grand mosque', img: '../assets/serenity_umrah_privilege/baiturrahman.jpg', alt: 'Grand Mosque Baiturrahman minarets and courtyard', stars: 4, room: 'Family Deluxe Quad Suite', meal: 'Halal gourmet breakfast', policy: 'Free cancellation until 3 days prior', nightly: 1550000 },
+      { id: 'ss-bukittinggi', name: 'Jam Gadang Heritage Resort', area: 'Bukittinggi · West Sumatra', keys: 'bukittinggi jam gadang padang sumatra', img: '../assets/serenity_umrah_privilege/jam-gadang.jpg', alt: 'Jam Gadang clock tower Bukittinggi', stars: 4, room: 'Minangkabau Family Cottage', meal: 'Padang culinary breakfast included', policy: 'Free cancellation until 4 days prior', nightly: 1800000 }
     ];
 
     const ACTIVITIES = [
-      { id: 'ss-istiqlal', kind: 'tour', name: 'Istiqlal & Jakarta Heritage Family Walk', area: 'Central Jakarta', keys: 'jakarta istiqlal mosque tour', img: 'assets/serenity_umrah_privilege/istiqlal.jpg', alt: 'Istiqlal Mosque interior massive columns', duration: '5 Hours · Private AC Van & Heritage Scholar', perPerson: 550000 },
-      { id: 'ss-prambanan', kind: 'tour', name: 'Prambanan & Royal Temples Sunset Tour', area: 'Central Java Heritage', keys: 'prambanan yogyakarta temple tour', img: 'assets/serenity_umrah_privilege/prambanan.jpg', alt: 'Prambanan stone temples reaching into blue sky', duration: '6 Hours · Wheelchair Accessible & Guide', perPerson: 750000 },
-      { id: 'ss-batik', kind: 'thing', name: 'Kraton Classical Batik Workshop', area: 'Yogyakarta', keys: 'batik kraton workshop jogja', img: 'assets/serenity_umrah_privilege/kraton.jpg', alt: 'Kraton gate', duration: '3 Hours · Textile Master & Materials', perPerson: 350000 },
-      { id: 'ss-toba-boat', kind: 'thing', name: 'Ajibata to Samosir Private Ferry', area: 'Lake Toba', keys: 'toba samosir boat private', img: 'assets/serenity_umrah_privilege/toba.jpg', alt: 'Lake Toba panoramic shoreline', duration: 'Full Day · Private Boat & Batak Guide', perPerson: 850000 }
+      { id: 'ss-istiqlal', kind: 'tour', name: 'Istiqlal & Jakarta Heritage Family Walk', area: 'Central Jakarta', keys: 'jakarta istiqlal mosque tour', img: '../assets/serenity_umrah_privilege/istiqlal.jpg', alt: 'Istiqlal Mosque interior massive columns', duration: '5 Hours · Private AC Van & Heritage Scholar', perPerson: 550000 },
+      { id: 'ss-prambanan', kind: 'tour', name: 'Prambanan & Royal Temples Sunset Tour', area: 'Central Java Heritage', keys: 'prambanan yogyakarta temple tour', img: '../assets/serenity_umrah_privilege/prambanan.jpg', alt: 'Prambanan stone temples reaching into blue sky', duration: '6 Hours · Wheelchair Accessible & Guide', perPerson: 750000 },
+      { id: 'ss-batik', kind: 'thing', name: 'Kraton Classical Batik Workshop', area: 'Yogyakarta', keys: 'batik kraton workshop jogja', img: '../assets/serenity_umrah_privilege/kraton.jpg', alt: 'Kraton gate', duration: '3 Hours · Textile Master & Materials', perPerson: 350000 },
+      { id: 'ss-toba-boat', kind: 'thing', name: 'Ajibata to Samosir Private Ferry', area: 'Lake Toba', keys: 'toba samosir boat private', img: '../assets/serenity_umrah_privilege/toba.jpg', alt: 'Lake Toba panoramic shoreline', duration: 'Full Day · Private Boat & Batak Guide', perPerson: 850000 }
     ];
 
     const LIMITS = { rooms: [1, 9], adults: [1, 20], children: [0, 20] };

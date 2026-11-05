@@ -203,7 +203,7 @@
         <div class="grid sm:grid-cols-12 gap-5">
           <!-- Featured Tile 1: Mount Rinjani from Gili Meno (Large) -->
           <div class="sm:col-span-12 relative rounded-xl overflow-hidden aspect-[16/9] bg-surface-muted shadow-soft group">
-            <img src="assets/mandalika_escape/rinjani-from-gili.jpg" alt="Mount Rinjani volcano across turquoise waters from Gili Meno island, Lombok" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="eager" width="1920" height="1280">
+            <img src="../assets/mandalika_escape/rinjani-from-gili.jpg" alt="Mount Rinjani volcano across turquoise waters from Gili Meno island, Lombok" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="eager" width="1920" height="1280">
             <div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent"></div>
             <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between">
               <div>
@@ -217,7 +217,7 @@
 
           <!-- Tile 2: Palm Bay Beach (Small Left) -->
           <div class="sm:col-span-6 relative rounded-xl overflow-hidden aspect-[4/3] bg-surface-muted shadow-soft group">
-            <img src="assets/mandalika_escape/palm-bay.jpg" alt="Lombok island beach with palm trees and ocean bay" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" width="1920" height="1280">
+            <img src="../assets/mandalika_escape/palm-bay.jpg" alt="Lombok island beach with palm trees and ocean bay" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" width="1920" height="1280">
             <div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent"></div>
             <div class="absolute bottom-4 left-4 right-4 text-white">
               <span class="text-[11px] font-bold uppercase tracking-wider text-white/80">South Lombok</span>
@@ -227,7 +227,7 @@
 
           <!-- Tile 3: Traditional Sade Sasak Houses (Small Right) -->
           <div class="sm:col-span-6 relative rounded-xl overflow-hidden aspect-[4/3] bg-surface-muted shadow-soft group">
-            <img src="assets/mandalika_escape/sade-houses.jpg" alt="Traditional Sasak village houses with bamboo and thatch in Sade, Lombok" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" width="1920" height="1440">
+            <img src="../assets/mandalika_escape/sade-houses.jpg" alt="Traditional Sasak village houses with bamboo and thatch in Sade, Lombok" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" width="1920" height="1440">
             <div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent"></div>
             <div class="absolute bottom-4 left-4 right-4 text-white">
               <span class="text-[11px] font-bold uppercase tracking-wider text-white/80">Cultural Heritage</span>
@@ -322,7 +322,7 @@
           <p class="mt-3 text-[14px] leading-relaxed text-secondary">All bookings are confirmed instantly, safeguarded by Bank Indonesia standard payment channels (SNAP BI) and DOKU settlement gateways.</p>
         </div>
         <div class="lg:col-span-5 rounded-lg overflow-hidden shadow-soft aspect-[4/3]">
-          <img src="assets/mandalika_escape/sade-weaving.jpg" alt="Traditional Ikat handloom weaving in Sade Village, Lombok" class="w-full h-full object-cover" loading="lazy" width="1920" height="1440">
+          <img src="../assets/mandalika_escape/sade-weaving.jpg" alt="Traditional Ikat handloom weaving in Sade Village, Lombok" class="w-full h-full object-cover" loading="lazy" width="1920" height="1440">
         </div>
       </div>
     </section>
@@ -469,19 +469,19 @@
     'use strict';
     /* Sample Resourced Data (PRD 9.2: Illustrative sample data only) */
     const STAYS = [
-      { id: 'me-mandalika', name: 'Mandalika Sunlit Bay Resort', area: 'Kuta Mandalika · South Lombok', keys: 'mandalika kuta lombok south bay', img: 'assets/mandalika_escape/palm-bay.jpg', alt: 'Ocean bay and palm trees in South Lombok', stars: 5, room: 'Oceanfront Eco Villa', meal: 'Tropical breakfast included', policy: 'Free cancellation until 7 days prior', nightly: 3450000 },
-      { id: 'me-gili', name: 'Gili Meno Sanctuary Villas', area: 'Gili Meno · North Lombok', keys: 'gili meno island sanctuary coral', img: 'assets/mandalika_escape/rinjani-from-gili.jpg', alt: 'Rinjani views from Gili Meno island shore', stars: 5, room: 'Private Coral Pool Bungalow', meal: 'All-inclusive breakfast & transfers', policy: 'Free cancellation until 5 days prior', nightly: 4100000 },
-      { id: 'me-senggigi', name: 'Senggigi Sunset Haven', area: 'Senggigi Coast · West Lombok', keys: 'senggigi west lombok beach haven', img: 'assets/mandalika_escape/beach.jpg', alt: 'Beach coastline in Lombok', stars: 4, room: 'Deluxe Sunset Suite', meal: 'Breakfast included', policy: 'Free cancellation until 3 days prior', nightly: 1950000 },
-      { id: 'me-rinjani', name: 'Rinjani Foothill Eco Lodge', area: 'Senaru Foothills · North Lombok', keys: 'rinjani senaru mountain trekking lodge', img: 'assets/mandalika_escape/rinjani.jpg', alt: 'Gunung Rinjani mountain slopes', stars: 4, room: 'Bamboo Canopy Chalet', meal: 'Organic breakfast & trail pack', policy: 'Free cancellation until 4 days prior', nightly: 1600000 }
+      { id: 'me-mandalika', name: 'Mandalika Sunlit Bay Resort', area: 'Kuta Mandalika · South Lombok', keys: 'mandalika kuta lombok south bay', img: '../assets/mandalika_escape/palm-bay.jpg', alt: 'Ocean bay and palm trees in South Lombok', stars: 5, room: 'Oceanfront Eco Villa', meal: 'Tropical breakfast included', policy: 'Free cancellation until 7 days prior', nightly: 3450000 },
+      { id: 'me-gili', name: 'Gili Meno Sanctuary Villas', area: 'Gili Meno · North Lombok', keys: 'gili meno island sanctuary coral', img: '../assets/mandalika_escape/rinjani-from-gili.jpg', alt: 'Rinjani views from Gili Meno island shore', stars: 5, room: 'Private Coral Pool Bungalow', meal: 'All-inclusive breakfast & transfers', policy: 'Free cancellation until 5 days prior', nightly: 4100000 },
+      { id: 'me-senggigi', name: 'Senggigi Sunset Haven', area: 'Senggigi Coast · West Lombok', keys: 'senggigi west lombok beach haven', img: '../assets/mandalika_escape/beach.jpg', alt: 'Beach coastline in Lombok', stars: 4, room: 'Deluxe Sunset Suite', meal: 'Breakfast included', policy: 'Free cancellation until 3 days prior', nightly: 1950000 },
+      { id: 'me-rinjani', name: 'Rinjani Foothill Eco Lodge', area: 'Senaru Foothills · North Lombok', keys: 'rinjani senaru mountain trekking lodge', img: '../assets/mandalika_escape/rinjani.jpg', alt: 'Gunung Rinjani mountain slopes', stars: 4, room: 'Bamboo Canopy Chalet', meal: 'Organic breakfast & trail pack', policy: 'Free cancellation until 4 days prior', nightly: 1600000 }
     ];
 
     const ACTIVITIES = [
-      { id: 'me-gili-boat', kind: 'tour', name: 'Gili Islands Private Boat Charter', area: 'Gili Air, Meno & Trawangan', keys: 'gili boat charter snorkeling', img: 'assets/mandalika_escape/gili-boat.jpg', alt: 'Wooden boat sailing in the clear Bali Sea off Gili Islands', duration: 'Full day · Private captain, snorkeling gear & lunch', perPerson: 850000 },
-      { id: 'me-sade-tour', kind: 'tour', name: 'Sasak Cultural & Sade Village Trail', area: 'Central Lombok', keys: 'sade sasak village weaving culture', img: 'assets/mandalika_escape/sade-houses.jpg', alt: 'Traditional thatched roof houses in Sade village', duration: '5 hours · Local Sasak guide, handloom workshop & transport', perPerson: 550000 },
-      { id: 'me-rinjani-hike', kind: 'tour', name: 'Senaru Crater Rim Sunrise Trek', area: 'Mount Rinjani National Park', keys: 'rinjani senaru hike trek sunrise', img: 'assets/mandalika_escape/rinjani.jpg', alt: 'Panoramic views of Gunung Rinjani summit', duration: '2 Days 1 Night · Guides, porters, camping & meals', perPerson: 2200000 },
-      { id: 'me-surf', kind: 'thing', name: 'Gerupuk Bay Reef Surf Coaching', area: 'South Lombok', keys: 'surf gerupuk reef waves', img: 'assets/mandalika_escape/palm-bay.jpg', alt: 'Coastal waves and palm trees', duration: '3 hours · Boat transfer & certified surf instructor', perPerson: 450000 },
-      { id: 'me-sunset-sail', kind: 'thing', name: 'Tanjung Aan Sunset Catamaran', area: 'South Coast Lombok', keys: 'sunset sail catamaran tanjung aan', img: 'assets/mandalika_escape/beach.jpg', alt: 'Beach in Lombok at sunset', duration: '4 hours · Drinks & canapés', perPerson: 750000 },
-      { id: 'me-weaving', kind: 'thing', name: 'Tenun Ikat Traditional Weaving Class', area: 'Sade Heritage Center', keys: 'weaving tenun ikat textile workshop', img: 'assets/mandalika_escape/sade-weaving.jpg', alt: 'Sasak woman weaving traditional Tenun Ikat fabric', duration: '3 hours · Weaver master & take-home textile souvenir', perPerson: 380000 }
+      { id: 'me-gili-boat', kind: 'tour', name: 'Gili Islands Private Boat Charter', area: 'Gili Air, Meno & Trawangan', keys: 'gili boat charter snorkeling', img: '../assets/mandalika_escape/gili-boat.jpg', alt: 'Wooden boat sailing in the clear Bali Sea off Gili Islands', duration: 'Full day · Private captain, snorkeling gear & lunch', perPerson: 850000 },
+      { id: 'me-sade-tour', kind: 'tour', name: 'Sasak Cultural & Sade Village Trail', area: 'Central Lombok', keys: 'sade sasak village weaving culture', img: '../assets/mandalika_escape/sade-houses.jpg', alt: 'Traditional thatched roof houses in Sade village', duration: '5 hours · Local Sasak guide, handloom workshop & transport', perPerson: 550000 },
+      { id: 'me-rinjani-hike', kind: 'tour', name: 'Senaru Crater Rim Sunrise Trek', area: 'Mount Rinjani National Park', keys: 'rinjani senaru hike trek sunrise', img: '../assets/mandalika_escape/rinjani.jpg', alt: 'Panoramic views of Gunung Rinjani summit', duration: '2 Days 1 Night · Guides, porters, camping & meals', perPerson: 2200000 },
+      { id: 'me-surf', kind: 'thing', name: 'Gerupuk Bay Reef Surf Coaching', area: 'South Lombok', keys: 'surf gerupuk reef waves', img: '../assets/mandalika_escape/palm-bay.jpg', alt: 'Coastal waves and palm trees', duration: '3 hours · Boat transfer & certified surf instructor', perPerson: 450000 },
+      { id: 'me-sunset-sail', kind: 'thing', name: 'Tanjung Aan Sunset Catamaran', area: 'South Coast Lombok', keys: 'sunset sail catamaran tanjung aan', img: '../assets/mandalika_escape/beach.jpg', alt: 'Beach in Lombok at sunset', duration: '4 hours · Drinks & canapés', perPerson: 750000 },
+      { id: 'me-weaving', kind: 'thing', name: 'Tenun Ikat Traditional Weaving Class', area: 'Sade Heritage Center', keys: 'weaving tenun ikat textile workshop', img: '../assets/mandalika_escape/sade-weaving.jpg', alt: 'Sasak woman weaving traditional Tenun Ikat fabric', duration: '3 hours · Weaver master & take-home textile souvenir', perPerson: 380000 }
     ];
 
     /* S4 Parameters & Bounds */

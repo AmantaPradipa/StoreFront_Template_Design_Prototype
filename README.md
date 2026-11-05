@@ -40,11 +40,16 @@ StoreFront_Template_Design_Prototype/
 │   ├── nusantara_executive/               # Sudirman Jakarta, MRT, JCC Senayan, Nusa Dua
 │   └── serenity_umrah_privilege/          # Istiqlal, Prambanan, Kraton, Jam Gadang, Baiturrahman
 │
-├── design/                                # Dokumen spesifikasi desain prototipe awal
+├── design/                                # 5 Prototipe & Desain Pondasi Awal
+│   ├── bagus_travel.html
 │   ├── bagus_travel_design.md
+│   ├── khatulistiwa_explorer.html
 │   ├── khatulistiwa_explorer_design.md
+│   ├── mandalika_escape.html
 │   ├── mandalika_escape_design.md
+│   ├── nusantara_executive.html
 │   ├── nusantara_executive_design.md
+│   ├── serenity_umrah_privilege.html
 │   └── serenity_umrah_privilege_design.md
 │
 ├── ortasys-storefront-design-guidelines/  # 10 Preset Sistem Storefront Resmi
@@ -64,12 +69,6 @@ StoreFront_Template_Design_Prototype/
 │   ├── bloosm/                            # Bloosm Travel (Desain Modern Kontemporer)
 │   ├── melali_travel/                     # Melali Bali & Beyond (Wisata Budaya & Bahari)
 │   └── travel4all/                        # Travel4All (Wisata Inklusif & Aksesibel)
-│
-├── bagus_travel.html                      # Prototipe Awal: Bagus Travel (Luxury Bespoke)
-├── khatulistiwa_explorer.html             # Prototipe Awal: Khatulistiwa Explorer (Wilderness Adventure)
-├── mandalika_escape.html                  # Prototipe Awal: Mandalika Escape (Regional Lombok Hub)
-├── nusantara_executive.html               # Prototipe Awal: Nusantara Executive (Corporate & MICE)
-└── serenity_umrah_privilege.html          # Prototipe Awal: Serenity Umrah & Heritage
 ```
 
 ---
@@ -99,15 +98,15 @@ StoreFront_Template_Design_Prototype/
 | **Melali Travel** | Spesialis perjalanan autentik Pulau Dewata & Nusa Tenggara dengan sentuhan budaya lokal | [Lihat Prototipe](hasil-slicing-design/melali_travel/index.html) &bull; [Spesifikasi](hasil-slicing-design/melali_travel/DESIGN.md) |
 | **Travel4All** | Perjalanan ramah keluarga, lansia, dan aksesibilitas ramah kursi roda | [Lihat Prototipe](hasil-slicing-design/travel4all/index.html) &bull; [Spesifikasi](hasil-slicing-design/travel4all/DESIGN.md) |
 
-### 3. 5 Prototipe Pondasi Awal (Root Level)
+### 3. 5 Prototipe Pondasi Awal (`design/`)
 
-| Brand | Posisi Pasar | Tautan Prototipe |
+| Brand | Posisi Pasar | Tautan Prototipe & Desain |
 |---|---|:---:|
-| **Bagus Travel** | Private journeys, kurasi vila mewah Bali & warisan candi Jawa | [Bagus Travel Demo](bagus_travel.html) |
-| **Mandalika Escape** | Destinasi regional pantai Mandalika, bukit savana & Gili | [Mandalika Escape Demo](mandalika_escape.html) |
-| **Khatulistiwa Explorer** | Petualangan rimba liar, pendakian gunung aktif & ekspedisi laut | [Khatulistiwa Explorer Demo](khatulistiwa_explorer.html) |
-| **Nusantara Executive** | Akomodasi korporat Sudirman CBD, koridor MRT & konvensi MICE | [Nusantara Executive Demo](nusantara_executive.html) |
-| **Serenity Umrah Privilege** | Paket perjalanan spiritual umrah eksklusif & warisan Islam nusantara | [Serenity Umrah Demo](serenity_umrah_privilege.html) |
+| **Bagus Travel** | Private journeys, kurasi vila mewah Bali & warisan candi Jawa | [Bagus Travel Demo](design/bagus_travel.html) &bull; [Spesifikasi](design/bagus_travel_design.md) |
+| **Mandalika Escape** | Destinasi regional pantai Mandalika, bukit savana & Gili | [Mandalika Escape Demo](design/mandalika_escape.html) &bull; [Spesifikasi](design/mandalika_escape_design.md) |
+| **Khatulistiwa Explorer** | Petualangan rimba liar, pendakian gunung aktif & ekspedisi laut | [Khatulistiwa Explorer Demo](design/khatulistiwa_explorer.html) &bull; [Spesifikasi](design/khatulistiwa_explorer_design.md) |
+| **Nusantara Executive** | Akomodasi korporat Sudirman CBD, koridor MRT & konvensi MICE | [Nusantara Executive Demo](design/nusantara_executive.html) &bull; [Spesifikasi](design/nusantara_executive_design.md) |
+| **Serenity Umrah Privilege** | Paket perjalanan spiritual umrah eksklusif & warisan Islam nusantara | [Serenity Umrah Demo](design/serenity_umrah_privilege.html) &bull; [Spesifikasi](design/serenity_umrah_privilege_design.md) |
 
 ---
 
@@ -116,7 +115,7 @@ StoreFront_Template_Design_Prototype/
 Seluruh file prototipe bersifat **zero-dependency** dan dapat langsung dibuka di browser web modern mana pun:
 
 1. **Buka Langsung di Browser:**  
-   Buka file HTML prototipe (misal `bagus_travel.html` atau file `index.html` di dalam subfolder preset) langsung di browser (Chrome, Firefox, Edge, Safari).
+   Buka file HTML prototipe (misal `design/bagus_travel.html` atau file `index.html` di dalam subfolder preset) langsung di browser (Chrome, Firefox, Edge, Safari).
 2. **Menggunakan Live Server (VS Code):**  
    Klik kanan pada file HTML prototipe pilihan &rarr; pilih **"Open with Live Server"**.
 3. **Menggunakan CLI Lokal:**
