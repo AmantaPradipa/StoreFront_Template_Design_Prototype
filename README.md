@@ -129,14 +129,5 @@ Seluruh file prototipe bersifat **zero-dependency** dan dapat langsung dibuka di
 
 ---
 
-## 🛡️ Kebijakan `.gitignore`
-
-File [`.gitignore`](.gitignore) telah dikonfigurasi untuk memastikan hanya aset dan dokumen yang relevan yang masuk ke repositori GitHub:
-- Mengabaikan direktori skill dan konfigurasi agent AI internal (`.agents/`, `.taste-skill/`, `skills-lock.json`).
-- Mengabaikan file arsip (`*.zip`, `*.tar.gz`).
-- Mengabaikan cache sistem operasi (`Thumbs.db`, `.DS_Store`) serta folder IDE (`.vscode/`, `.idea/`).
-
----
-
 &copy; 2026 Ortasys White-Label Travel Distribution System &bull; Prototipe dan Desain Berlisensi Mitratama.
 
