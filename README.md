@@ -31,7 +31,6 @@ StoreFront_Template_Design_Prototype/
 │
 ├── .gitignore                             # Aturan ignore (zip, agent skills, OS cache)
 ├── README.md                              # Dokumentasi resmi repositori
-├── index.html                             # Portal Dashboard & Showcase Interaktif
 ├── PRD.md                                 # Product Requirements Document (PRD Ortasys)
 │
 ├── assets/                                # Aset fotografi asli beresolusi tinggi
@@ -117,9 +116,9 @@ StoreFront_Template_Design_Prototype/
 Seluruh file prototipe bersifat **zero-dependency** dan dapat langsung dibuka di browser web modern mana pun:
 
 1. **Buka Langsung di Browser:**  
-   Buka file `index.html` pada root direktori atau subfolder mana pun langsung di browser (Chrome, Firefox, Edge, Safari).
+   Buka file HTML prototipe (misal `bagus_travel.html` atau file `index.html` di dalam subfolder preset) langsung di browser (Chrome, Firefox, Edge, Safari).
 2. **Menggunakan Live Server (VS Code):**  
-   Klik kanan pada `index.html` &rarr; pilih **"Open with Live Server"**.
+   Klik kanan pada file HTML prototipe pilihan &rarr; pilih **"Open with Live Server"**.
 3. **Menggunakan CLI Lokal:**
    ```bash
    npx serve .
@@ -140,3 +139,4 @@ File [`.gitignore`](.gitignore) telah dikonfigurasi untuk memastikan hanya aset 
 ---
 
 &copy; 2026 Ortasys White-Label Travel Distribution System &bull; Prototipe dan Desain Berlisensi Mitratama.
+
