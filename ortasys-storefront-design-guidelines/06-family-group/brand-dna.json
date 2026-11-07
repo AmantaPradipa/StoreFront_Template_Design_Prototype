@@ -1,0 +1,114 @@
+{
+  "project": "Ortasys_StoreFront",
+  "template": "06-temantrip-holidays",
+  "brand": "TemanTrip Holidays",
+  "preset": "Family & Group Travel",
+  "tagline": "Liburan keluarga dan rombongan yang tertata, dari balita sampai kakek-nenek.",
+  "tokens": {
+    "primary": "#315B46",
+    "primaryHover": "#244735",
+    "secondary": "#E58A55",
+    "tertiary": "#F0C98B",
+    "accent": "#6B86A5",
+    "bg": "#FBF7EF",
+    "surface": "#FFFFFF",
+    "surfaceMuted": "#F1E9DC",
+    "text": "#29362F",
+    "muted": "#5F6963",
+    "border": "#E2D9CC",
+    "success": "#34764F",
+    "warning": "#966121",
+    "error": "#B84A43",
+    "focus": "#245F91",
+    "onPrimary": "#FFFFFF",
+    "fieldBorder": "#8F8981",
+    "onDark": "#FFFFFF",
+    "cta": "#E58A55",
+    "onCta": "#1F2A24",
+    "honey": "#F0C98B",
+    "honeySoft": "#F8E9D1",
+    "primarySoft": "#ECF0EE",
+    "blueSoft": "#E7ECF1",
+    "creamCard": "#FFFCF6",
+    "mutedRaw": "#69756D",
+    "accentText": "#5C738E",
+    "secondaryText": "#A1603C",
+    "scrapbookShadow": "#315B4614",
+    "comparisonShadow": "#315B460A"
+  },
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#69756D",
+      "to": "#5F6963",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "accentText",
+      "from": "#6B86A5",
+      "to": "#5C738E",
+      "why": "accent used as text/label ≥4.5:1"
+    },
+    {
+      "token": "secondaryText",
+      "from": "#E58A55",
+      "to": "#A1603C",
+      "why": "secondary used as text ≥4.5:1"
+    },
+    {
+      "token": "fieldBorder",
+      "from": "#E2D9CC",
+      "to": "#8F8981",
+      "why": "input outline ≥3:1 (WCAG 1.4.11)"
+    },
+    {
+      "token": "warning",
+      "from": "#A66B25",
+      "to": "#966121",
+      "why": "warning text ≥4.5:1"
+    }
+    ,
+    {
+      "token": "scrapbookShadow / comparisonShadow",
+      "from": "#315B46",
+      "to": "#315B4614 / #315B460A",
+      "why": "Primary-derived decorative alpha shadows for paper photographs and comparison inventory; never used for text."
+    }
+  ],
+  "fonts": {
+    "display": "Nunito Sans",
+    "displaySt": "ExtraBold",
+    "displayLs": "-3.5%",
+    "head": "Inter",
+    "headSt": "Bold",
+    "body": "Inter"
+  },
+  "radii": {
+    "xs": 8,
+    "sm": 12,
+    "md": 16,
+    "lg": 24,
+    "xl": 32,
+    "pill": 999
+  },
+  "searchEngine": {
+    "signature": "3-Step Guided Family Planner Wizard",
+    "modes": [
+      "Vila & Kamar Keluarga",
+      "Tur Rombongan"
+    ],
+    "limits": {
+      "rooms": "1-9",
+      "adultsPerRoom": "1-20",
+      "childrenPerRoom": "0-20",
+      "maxNights": 30
+    }
+  },
+  "programmaticTints": [
+    "#E1EAE5",
+    "#E6EBE9",
+    "#E7EFEA",
+    "#EAEFED",
+    "#EFF2F0"
+  ]
+}

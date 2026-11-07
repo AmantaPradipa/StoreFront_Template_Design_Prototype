@@ -1,932 +1,831 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aurelia Private Journeys · Bespoke Escapes & Curated Stays</title>
-  <meta name="description" content="Aurelia Private Journeys — Discreet, bespoke travel advisory. Private villas, chartered sanctuaries, and personalized itineraries across Indonesia. Built on Ortasys S4.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    /* Ortasys Storefront Preset 02 · Luxury & Bespoke (02-luxury-bespoke/DESIGN.md) */
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: { DEFAULT: '#24221F', hover: '#11100F' },
-            secondary: '#6B6257',
-            tertiary: '#B29A70',
-            accent: '#7D6B52',
-            canvas: '#F7F5F0',
-            surface: { DEFAULT: '#FFFFFF', muted: '#E8E1D5' },
-            ink: { DEFAULT: '#24221F', muted: '#756F66' },
-            line: '#D9D3C9',
-            success: '#356B50',
-            warning: '#9B6B2F',
-            danger: '#A94442'
-          },
-          fontFamily: {
-            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
-            mono: ['ui-monospace', 'monospace']
-          },
-          borderRadius: {
-            xs: '2px',
-            sm: '4px',
-            md: '8px',
-            lg: '12px',
-            xl: '18px',
-            pill: '9999px'
-          },
-          boxShadow: {
-            card: '0 4px 20px -4px rgba(36, 34, 31, 0.05)',
-            float: '0 16px 36px -8px rgba(36, 34, 31, 0.12)'
-          },
-          maxWidth: { container: '1220px' }
-        }
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aurelia Private Journeys · Hunian dan perjalanan pilihan</title>
+    <meta
+      name="description"
+      content="Hunian senyap dan perjalanan yang disusun dengan cermat. Prototipe katalog agen perjalanan."
+    />
+    <link rel="icon" href="./assets/logo-mark.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./storefront.css" />
+    <link rel="stylesheet" href="./components.css" />
+    <script src="./components.js" defer></script>
+    <style>
+      :root {
+        --bg: #f7f5f0;
+        --surface: #ffffff;
+        --surface-muted: #e8e1d5;
+        --ink: #24221f;
+        --muted: #69645c;
+        --primary: #24221f;
+        --primary-hover: #11100f;
+        --on-primary: #ffffff;
+        --accent: #7d6b52;
+        --tertiary: #b29a70;
+        --paper: #f7f5f0;
+        --hair: #d9d3c9;
+        --field-border: #908c85;
+        --focus: #315f8b;
+        --error: #a94442;
+        --body: "DM Sans", sans-serif;
+        --display: "Cormorant Garamond", serif;
+        --button-radius: 2px;
+        --panel-radius: 2px;
       }
-    };
-  </script>
-  <style>
-    :root { color-scheme: light; }
-    body { font-family: 'DM Sans', system-ui, sans-serif; background-color: #F7F5F0; color: #24221F; }
-    .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on; }
-    .stepper input::-webkit-outer-spin-button,
-    .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-    .stepper input { -moz-appearance: textfield; }
-    :focus-visible { outline: 2px solid #24221F; outline-offset: 2px; }
-    details > summary { list-style: none; }
-    details > summary::-webkit-details-marker { display: none; }
-    details[open] .faq-icon { transform: rotate(45deg); }
-  </style>
-</head>
-<body class="bg-canvas text-ink antialiased">
-
-  <a href="#searchSection" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2">Skip to reservation console</a>
-
-  <!-- ============ EDITORIAL HEADER ============ -->
-  <header class="sticky top-0 z-40 bg-canvas/95 backdrop-blur-md border-b border-line">
-    <div class="max-w-container mx-auto px-5 lg:px-8 h-[80px] flex items-center justify-between gap-6">
-      <a href="#home" class="flex items-center gap-3 shrink-0">
-        <span class="font-display text-[26px] tracking-tight font-medium text-ink">AURELIA</span>
-        <span class="text-[11px] uppercase tracking-[0.18em] text-ink-muted pl-3 border-l border-line font-medium hidden sm:inline">Private Journeys</span>
-      </a>
-
-      <nav class="hidden md:flex items-center gap-6 text-[14px] font-medium" aria-label="Main Navigation">
-        <a href="#estates" class="text-ink hover:text-ink-muted transition-colors">Sanctuary Estates</a>
-        <a href="#curations" class="text-ink-muted hover:text-ink transition-colors">Private Charters</a>
-        <a href="#atelier" class="text-ink-muted hover:text-ink transition-colors">The Advisory</a>
-        <button type="button" data-open-trip class="ml-4 h-11 px-6 rounded-sm bg-primary hover:bg-primary-hover text-white text-[13px] font-medium tracking-wider uppercase transition">
-          Private Itinerary (<span data-trip-count class="tnum font-mono">0</span>)
+    </style>
+  </head>
+  <body class="luxury">
+    <a href="#searchSection" class="skip-link">Lewati ke pencarian</a>
+    <header class="site-header">
+      <div class="wrap topbar">
+        <a class="brand" href="index.html"
+          ><img src="./assets/logo-mark.png" alt="" />
+          <div><strong>Aurelia</strong><small>Private journeys</small></div></a
+        >
+        <nav class="navlinks" aria-label="Navigasi utama">
+          <a href="#hotels">Hunian</a><a href="#experiences">Charter privat</a
+          ><a href="#story">Pendekatan kami</a><a href="#contact">Kontak</a
+          ><button type="button" class="button trip-button" data-open-trip>
+            Rencana perjalanan <span data-trip-count>0</span>
+          </button>
+        </nav>
+        <button
+          type="button"
+          id="menuBtn"
+          class="menu-button"
+          aria-label="Buka menu"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+        >
+          ☰
+        </button>
+      </div>
+      <nav
+        id="mobileNav"
+        class="wrap mobile-nav"
+        aria-label="Navigasi seluler"
+        hidden
+      >
+        <a href="#hotels">Penginapan</a><a href="#experiences">Pengalaman</a
+        ><a href="#story">Tentang kami</a><a href="#contact">Kontak</a
+        ><button type="button" class="button" data-open-trip>
+          Rencana perjalanan <span data-trip-count>0</span>
         </button>
       </nav>
-
-      <button type="button" id="menuBtn" class="md:hidden w-10 h-10 flex items-center justify-center text-ink" aria-label="Open menu">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-    </div>
-
-    <nav id="mobileNav" class="md:hidden hidden border-t border-line bg-surface p-5 flex flex-col gap-3 font-medium text-[15px]">
-      <a href="#estates" class="py-2 text-ink">Sanctuary Estates</a>
-      <a href="#curations" class="py-2 text-ink-muted">Private Charters</a>
-      <a href="#atelier" class="py-2 text-ink-muted">The Advisory</a>
-      <button type="button" data-open-trip class="mt-2 h-11 rounded-sm bg-primary text-white uppercase text-[12px] tracking-wider">
-        Private Itinerary (<span data-trip-count class="tnum">0</span>)
-      </button>
-    </nav>
-  </header>
-
-  <main id="home">
-    <!-- ============ 50/50 EDITORIAL GALLERY HERO (PRESET 02 DNA) ============ -->
-    <section class="max-w-container mx-auto px-5 lg:px-8 pt-10 pb-8">
-      <div class="grid lg:grid-cols-12 border border-line bg-surface">
-        <!-- Left 6-Col Editorial Manifesto -->
-        <div class="lg:col-span-6 p-8 sm:p-12 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-line">
-          <div class="flex items-center justify-between text-[11px] font-mono uppercase tracking-[0.2em] text-ink-muted pb-6 border-b border-line">
-            <span>FOLIO NO. II · ARCHIPELAGO</span>
-            <span>EST. PRIVATE ADVISORY</span>
-          </div>
-          <div class="py-10">
-            <span class="text-[11px] uppercase tracking-[0.22em] text-accent font-semibold block mb-4">Bespoke Travel Advisory · Indonesia</span>
-            <h1 class="font-display text-[42px] sm:text-[56px] leading-[1.02] tracking-tight text-ink font-normal">Discreet sanctuaries, planned with considered care.</h1>
-            <p class="mt-6 text-[15px] sm:text-[16px] text-ink-muted leading-[1.75] max-w-md">A curated portfolio of private clifftop residences, river sanctuaries, and bespoke wooden phinisi charters—secured directly through live Ortasys distribution.</p>
-          </div>
-          <div class="pt-6 border-t border-line flex items-center justify-between text-[12px]">
-            <span class="uppercase tracking-[0.16em] text-ink font-medium">Direct Contracted Allotment</span>
-            <a href="#estates" class="font-mono text-[11px] uppercase tracking-wider text-accent hover:underline">Examine Portfolio →</a>
-          </div>
-        </div>
-
-        <!-- Right 6-Col Tall Gallery Frame -->
-        <div class="lg:col-span-6 p-6 sm:p-10 bg-canvas flex flex-col justify-between">
-          <div class="relative aspect-[4/3] overflow-hidden border border-line bg-surface-muted p-2">
-            <img src="../../assets/bagus_travel/tanah-lot.jpg" alt="Pura Tanah Lot coastal temple at sunset in Bali" class="w-full h-full object-cover">
-          </div>
-          <div class="mt-5 flex items-end justify-between gap-4 pt-3 border-t border-line">
+    </header>
+    <main id="home">
+      <section class="wrap hero">
+        <div class="hero-luxury">
+          <div class="luxury-copy">
+            <span class="eyebrow">Hunian · perjalanan · ruang untuk jeda</span>
             <div>
-              <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-accent block">PLATE 01 · TABANAN COASTLINE</span>
-              <p class="font-display text-[22px] text-ink mt-0.5">Tanah Cliff Ocean Residence Enclave</p>
+              <h1>Hunian senyap,<br />disusun dengan cermat.</h1>
+              <p>
+                Ada perjalanan yang tidak perlu tergesa. Temukan vila di tepian
+                lembah, rumah di atas tebing, dan waktu yang terasa milik Anda.
+              </p>
             </div>
-            <span class="px-2.5 py-1 border border-line bg-surface text-[10px] font-mono uppercase tracking-wider text-ink-muted">Live Verified Tariff</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ ARCHITECTURAL LEDGER SEARCH CONSOLE (PRESET 02 DNA) ============ -->
-    <section id="searchSection" class="max-w-container mx-auto px-5 lg:px-8 pt-2 relative z-20" aria-labelledby="searchHeading">
-      <div class="bg-surface border border-primary">
-        <!-- Ledger Header Bar -->
-        <div class="px-6 py-4 bg-canvas border-b border-line flex flex-wrap items-center justify-between gap-4">
-          <div class="flex items-center gap-4">
-            <span class="font-mono text-[11px] uppercase tracking-[0.2em] text-accent">RESERVATION LEDGER</span>
-            <span class="text-line">|</span>
-            <h2 id="searchHeading" class="font-display text-[22px] font-normal text-ink">Private Portfolio Inquiry &amp; Live Tariff Verification</h2>
-          </div>
-          <div class="inline-flex border border-line bg-surface" role="tablist">
-            <button type="button" role="tab" data-mode="hotels" aria-selected="true" class="mode-tab h-9 px-5 text-[11px] font-medium tracking-[0.16em] uppercase transition bg-primary text-white">Sanctuary Estates</button>
-            <button type="button" role="tab" data-mode="activities" aria-selected="false" class="mode-tab h-9 px-5 text-[11px] font-medium tracking-[0.16em] uppercase transition text-ink-muted hover:text-ink">Private Charters</button>
-          </div>
-        </div>
-
-        <form id="searchForm" novalidate>
-          <!-- Zero-Shadow Architectural Ledger Cells -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 divide-y sm:divide-y-0 lg:divide-x divide-line">
-            <!-- Cell 1: Destination -->
-            <label class="lg:col-span-3 p-5 flex flex-col justify-between bg-surface">
-              <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-ink-muted" data-dest-label>01 / Sanctuary or Region</span>
-              <input id="dest" list="destList" placeholder="Sayan Ridge, Tabanan, Penida…" autocomplete="off" class="mt-2 h-9 border-b border-line bg-transparent text-[14px] text-ink placeholder:text-ink-muted/60 focus:border-primary focus:outline-none">
-              <datalist id="destList"></datalist>
-            </label>
-
-            <!-- Cell 2: Check-In -->
-            <label class="lg:col-span-2 p-5 flex flex-col justify-between bg-surface" data-hotel-only>
-              <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-ink-muted">02 / Arrival</span>
-              <input id="checkIn" type="date" aria-describedby="dateLimitNote" class="tnum mt-2 h-9 border-b border-line bg-transparent font-mono text-[13px] text-ink focus:border-primary focus:outline-none">
-            </label>
-
-            <!-- Cell 3: Check-Out -->
-            <label class="lg:col-span-2 p-5 flex flex-col justify-between bg-surface" data-hotel-only>
-              <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-ink-muted">03 / Departure</span>
-              <input id="checkOut" type="date" aria-describedby="dateLimitNote" class="tnum mt-2 h-9 border-b border-line bg-transparent font-mono text-[13px] text-ink focus:border-primary focus:outline-none">
-            </label>
-
-            <!-- Cell 2-3 Alternate: Charter Date -->
-            <label class="lg:col-span-4 p-5 flex flex-col justify-between bg-surface hidden" data-activity-only>
-              <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-ink-muted">02 / Charter Embarkation Date</span>
-              <input id="actDate" type="date" class="tnum mt-2 h-9 border-b border-line bg-transparent font-mono text-[13px] text-ink focus:border-primary focus:outline-none">
-            </label>
-
-            <!-- Cell 4: Party Matrix -->
-            <div class="lg:col-span-3 p-5 grid grid-cols-3 gap-3 bg-surface">
-              <div class="flex flex-col justify-between" data-hotel-only>
-                <span id="lbl-rooms" class="text-[10px] font-mono uppercase tracking-wider text-ink-muted">Suites</span>
-                <div class="stepper flex items-center h-9 border-b border-line" role="group" aria-labelledby="lbl-rooms">
-                  <button type="button" class="w-6 h-full text-[15px] text-ink hover:text-accent" data-step="rooms" data-dir="-1" aria-label="Decrease suites">−</button>
-                  <input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-semibold focus:outline-none">
-                  <button type="button" class="w-6 h-full text-[15px] text-ink hover:text-accent" data-step="rooms" data-dir="1" aria-label="Increase suites">+</button>
-                </div>
-              </div>
-              <div class="flex flex-col justify-between">
-                <span id="lbl-adults" class="text-[10px] font-mono uppercase tracking-wider text-ink-muted" data-adults-label>Adults</span>
-                <div class="stepper flex items-center h-9 border-b border-line" role="group" aria-labelledby="lbl-adults">
-                  <button type="button" class="w-6 h-full text-[15px] text-ink hover:text-accent" data-step="adults" data-dir="-1" aria-label="Decrease adults">−</button>
-                  <input id="adults" type="number" min="1" max="20" value="2" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-semibold focus:outline-none">
-                  <button type="button" class="w-6 h-full text-[15px] text-ink hover:text-accent" data-step="adults" data-dir="1" aria-label="Increase adults">+</button>
-                </div>
-              </div>
-              <div class="flex flex-col justify-between">
-                <span id="lbl-children" class="text-[10px] font-mono uppercase tracking-wider text-ink-muted" data-children-label>Child</span>
-                <div class="stepper flex items-center h-9 border-b border-line" role="group" aria-labelledby="lbl-children">
-                  <button type="button" class="w-6 h-full text-[15px] text-ink hover:text-accent" data-step="children" data-dir="-1" aria-label="Decrease children">−</button>
-                  <input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-semibold focus:outline-none">
-                  <button type="button" class="w-6 h-full text-[15px] text-ink hover:text-accent" data-step="children" data-dir="1" aria-label="Increase children">+</button>
-                </div>
-              </div>
+            <div class="folio-bottom">
+              <span>Aurelia private journeys</span
+              ><a href="#hotels">Lihat koleksi 01–03 ↗</a>
             </div>
-
-            <!-- Cell 5: Full-Height Charcoal Submit -->
-            <div class="lg:col-span-2 p-3 flex items-stretch bg-canvas">
-              <button id="checkBtn" type="submit" class="w-full min-h-[56px] bg-primary hover:bg-primary-hover text-white text-[11px] font-medium tracking-[0.18em] uppercase transition flex items-center justify-center px-4 text-center">
-                <span data-btn-label>Check Live Availability</span>
+          </div>
+          <figure class="luxury-plate">
+            <div>
+              <img
+                src="./assets/hero-portrait.webp"
+                alt="Lengkung arsitektur vila dengan pemandangan taman yang tenang"
+                fetchpriority="high"
+              />
+            </div>
+            <figcaption>
+              01 / Hunian yang memberi ruang untuk bernapas.<br />Portofolio
+              ilustratif · Indonesia
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section
+        id="searchSection"
+        class="wrap ledger-search"
+        aria-label="Cari perjalanan"
+      >
+        <div class="search-console ledger-console">
+          <div class="ledger-heading">
+            <h2>Pencarian hunian &amp; rencana perjalanan</h2>
+            <div class="mode-tabs" role="tablist" aria-label="Jenis perjalanan">
+              <button
+                type="button"
+                data-mode="hotels"
+                role="tab"
+                aria-selected="true"
+              >
+                Hunian privat</button
+              ><button
+                type="button"
+                data-mode="activities"
+                role="tab"
+                aria-selected="false"
+              >
+                Charter & pengalaman
               </button>
             </div>
           </div>
-
-          <div id="formErrors" class="px-6 py-2 text-[12px] text-danger font-mono" role="alert" aria-live="assertive"></div>
-
-          <!-- Ledger Footer Metadata Bar -->
-          <div class="px-6 py-3 bg-canvas border-t border-line flex flex-wrap items-center justify-between gap-4 text-[11px] font-mono text-ink-muted">
-            <div class="flex items-center gap-2.5">
-              <span class="w-2 h-2 bg-success"></span>
-              <span class="text-ink uppercase tracking-wider">Every price is checked live when you ask for it</span>
-              <span>—</span>
-              <span id="summary" aria-live="polite">Awaiting journey parameters</span>
-            </div>
-            <span id="dateLimitNote" data-hotel-only>MAX 30 NIGHTS · UNIFORM SUITE OCCUPANCY</span>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- ============ ALTERNATING FULL-WIDTH LOOKBOOK ROWS (PRESET 02 DNA) ============ -->
-    <section id="estates" class="max-w-container mx-auto px-5 lg:px-8 pt-24">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-primary">
-        <div>
-          <span class="text-[11px] font-mono uppercase tracking-[0.2em] text-accent">SECTION I · THE PORTFOLIO</span>
-          <h2 class="font-display text-[36px] sm:text-[44px] font-normal text-ink mt-1">Sanctuary Estates &amp; Private Residences</h2>
-        </div>
-
-        <!-- Luxury Filter Bar -->
-        <div id="filterBar" class="flex flex-wrap gap-1.5 items-center" role="group" aria-label="Filter Sanctuaries">
-          <button type="button" data-filter="all" class="filter-btn h-9 px-4 rounded-xs text-[11px] font-medium tracking-[0.15em] uppercase bg-primary text-white transition">All Sanctuaries</button>
-          <button type="button" data-filter="ubud" class="filter-btn h-9 px-4 rounded-xs text-[11px] font-medium tracking-[0.15em] uppercase bg-surface border border-line text-ink-muted hover:text-ink transition">Sayan Ridge</button>
-          <button type="button" data-filter="tanahlot" class="filter-btn h-9 px-4 rounded-xs text-[11px] font-medium tracking-[0.15em] uppercase bg-surface border border-line text-ink-muted hover:text-ink transition">Tabanan Cliff</button>
-          <button type="button" data-filter="penida" class="filter-btn h-9 px-4 rounded-xs text-[11px] font-medium tracking-[0.15em] uppercase bg-surface border border-line text-ink-muted hover:text-ink transition">Penida Headland</button>
-        </div>
-      </div>
-
-      <!-- Alternating Full-Width Editorial Stack -->
-      <div id="results" class="mt-10 flex flex-col gap-10"></div>
-    </section>
-
-    <!-- ============ 2-COLUMN EDITORIAL SPREAD CHARTERS (PRESET 02 DNA) ============ -->
-    <section id="curations" class="max-w-container mx-auto px-5 lg:px-8 pt-24">
-      <div class="border border-line bg-surface p-8 sm:p-12">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-line">
-          <div>
-            <span class="text-[11px] font-mono uppercase tracking-[0.2em] text-accent">SECTION II · EXCLUSIVE CURATIONS</span>
-            <h2 class="font-display text-[32px] sm:text-[38px] font-normal text-ink mt-1">Private Yacht Charters &amp; Archaeological Access</h2>
-          </div>
-          <span class="px-3 py-1 border border-line text-ink-muted text-[10px] font-mono uppercase tracking-widest">Illustrative Sample Data</span>
-        </div>
-
-        <div id="tourList" class="mt-8 grid md:grid-cols-2 gap-8"></div>
-      </div>
-    </section>
-
-    <!-- ============ ARCHITECTURAL LEDGER SPECIFICATION TABLE (PRESET 02 DNA) ============ -->
-    <section id="atelier" class="max-w-container mx-auto px-5 lg:px-8 pt-24 pb-24">
-      <div class="border border-primary bg-surface">
-        <div class="px-8 py-5 bg-canvas border-b border-line flex items-center justify-between">
-          <span class="text-[11px] font-mono uppercase tracking-[0.2em] text-accent">SECTION III · ATELIER PROTOCOL</span>
-          <span class="text-[11px] font-mono uppercase tracking-[0.2em] text-ink-muted">AURELIA PRIVATE ADVISORY</span>
-        </div>
-        <div class="divide-y divide-line">
-          <div class="p-8 grid md:grid-cols-12 gap-4 items-baseline">
-            <span class="md:col-span-2 font-display text-[28px] italic text-accent">I.</span>
-            <h3 class="md:col-span-4 font-display text-[26px] font-normal text-ink">Strict Principal Discretion</h3>
-            <p class="md:col-span-6 text-[14px] text-ink-muted leading-relaxed">We safeguard our travelers' privacy across every touchpoint. Private airport tarmac transfers, household butlers, and maritime crews operate under strict non-disclosure protocols.</p>
-          </div>
-          <div class="p-8 grid md:grid-cols-12 gap-4 items-baseline">
-            <span class="md:col-span-2 font-display text-[28px] italic text-accent">II.</span>
-            <h3 class="md:col-span-4 font-display text-[26px] font-normal text-ink">Uninflated Retail Settlement</h3>
-            <p class="md:col-span-6 text-[14px] text-ink-muted leading-relaxed">Contracted supplier rates are presented transparently without hidden advisory markups. All transactions clear directly via Bank Indonesia SNAP BI and DOKU private banking rails.</p>
-          </div>
-          <div class="p-8 grid md:grid-cols-12 gap-4 items-baseline">
-            <span class="md:col-span-2 font-display text-[28px] italic text-accent">III.</span>
-            <h3 class="md:col-span-4 font-display text-[26px] font-normal text-ink">Deterministic Live Allotment</h3>
-            <p class="md:col-span-6 text-[14px] text-ink-muted leading-relaxed">Every price is checked live when you ask for it. Real-time synchronization guarantees that your selected sanctuary estate is immediately locked upon authorization.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="border-t border-line bg-surface py-12 text-[13px] text-ink-muted">
-    <div class="max-w-container mx-auto px-5 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-line">
-        <div>
-          <span class="font-display text-[22px] font-medium text-ink tracking-tight block">AURELIA PRIVATE JOURNEYS</span>
-          <p class="text-[12px] mt-0.5">Bespoke Travel Advisory · Powered by Ortasys S4 White-Label Engine.</p>
-        </div>
-        <div class="flex gap-6 font-medium text-ink text-[13px]">
-          <a href="#estates" class="hover:text-accent">Estates</a>
-          <a href="#curations" class="hover:text-accent">Charters</a>
-          <a href="#atelier" class="hover:text-accent">The Advisory</a>
-        </div>
-      </div>
-      <div class="pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-[12px]">
-        <p>Secured transactions through <strong class="text-ink">DOKU</strong> and <strong class="text-ink">SNAP BI</strong>. Mockup rates and properties are Illustrative Sample Data [PRD 9.2].</p>
-        <p>© <span id="year"></span> Aurelia Private Journeys. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ============ TRIP DRAWER ============ -->
-  <div id="tripOverlay" class="fixed inset-0 z-50 bg-black/40 hidden" aria-hidden="true"></div>
-  <aside id="tripDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-[420px] bg-surface shadow-float translate-x-full transition-transform duration-300 flex flex-col" role="dialog" aria-modal="true" aria-labelledby="tripTitle" aria-hidden="true">
-    <div class="flex items-center justify-between px-6 h-[80px] border-b border-line">
-      <h2 id="tripTitle" class="font-display text-[22px] text-ink">Bespoke Itinerary</h2>
-      <button type="button" data-close-trip class="w-8 h-8 flex items-center justify-center text-ink hover:text-ink-muted" aria-label="Close itinerary">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
-    </div>
-
-    <div id="tripItems" class="flex-1 overflow-y-auto p-5 flex flex-col gap-3"></div>
-
-    <div class="border-t border-line p-6 bg-canvas">
-      <div class="space-y-1.5 text-[12px] font-mono text-ink-muted">
-        <div class="flex justify-between">
-          <span class="uppercase tracking-wider">Consolidated Retail:</span>
-          <span id="tripSubtotal" class="font-bold text-ink">Rp 0</span>
-        </div>
-        <div class="flex justify-between text-[11px]">
-          <span>Advisory, Taxes &amp; Fast-Track:</span>
-          <span class="text-success font-semibold">Complimentary Included</span>
-        </div>
-        <div class="flex items-baseline justify-between pt-2 border-t border-line/60 text-[14px]">
-          <span class="font-medium text-ink uppercase tracking-wider text-[12px]">Net Payable:</span>
-          <span id="tripTotal" class="text-[20px] font-bold text-ink">Rp 0</span>
-        </div>
-      </div>
-      <button id="payBtn" type="button" class="mt-4 w-full h-12 rounded-xs bg-primary hover:bg-primary-hover text-white text-[13px] font-medium tracking-wider uppercase transition disabled:opacity-40">
-        Proceed to Private Settlement
-      </button>
-      <p id="payNote" class="mt-2 text-[11px] text-center text-ink-muted" aria-live="polite">Bank Indonesia standard SNAP BI &amp; DOKU integration.</p>
-    </div>
-  </aside>
-
-  <!-- ============ ATELIER DOSSIER MODAL ============ -->
-  <div id="detailModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="bg-surface rounded-xs max-w-lg w-full overflow-hidden border border-line shadow-float flex flex-col max-h-[90vh]">
-      <div class="relative aspect-[16/9] bg-surface-muted shrink-0">
-        <img id="modalImg" src="" alt="" class="w-full h-full object-cover">
-        <button type="button" data-close-modal class="absolute top-3 right-3 w-8 h-8 rounded-xs bg-surface/90 flex items-center justify-center text-ink hover:bg-surface transition" aria-label="Close dossier">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
-        <span id="modalBadge" class="absolute bottom-3 left-3 px-3 py-1 rounded-xs bg-surface/95 text-ink text-[11px] font-mono uppercase tracking-wider font-semibold"></span>
-      </div>
-      <div class="p-6 overflow-y-auto flex-1 flex flex-col gap-3">
-        <span id="modalArea" class="text-[11px] uppercase tracking-[0.18em] text-accent font-semibold"></span>
-        <h3 id="modalTitle" class="font-display text-[26px] text-ink leading-tight"></h3>
-        <p id="modalDesc" class="text-[13px] text-ink-muted leading-relaxed font-normal"></p>
-        <div class="pt-3 border-t border-line">
-          <h4 class="text-[11px] uppercase tracking-wider font-semibold text-ink mb-2">Bespoke Inclusions &amp; Amenities:</h4>
-          <div id="modalAmenities" class="flex flex-wrap gap-1.5 text-[12px]"></div>
-        </div>
-        <div class="pt-3 border-t border-line">
-          <h4 class="text-[11px] uppercase tracking-wider font-semibold text-ink mb-1">Reservation Policy:</h4>
-          <p id="modalPolicy" class="text-[12px] text-ink-muted"></p>
-        </div>
-      </div>
-      <div class="p-5 border-t border-line bg-canvas flex items-center justify-between gap-4 shrink-0">
-        <div>
-          <p class="text-[11px] text-ink-muted font-mono uppercase tracking-wider">Live Verified Tariff</p>
-          <p id="modalPrice" class="font-mono text-[20px] font-bold text-ink"></p>
-        </div>
-        <button id="modalSelectBtn" type="button" class="h-11 px-6 rounded-xs bg-primary hover:bg-primary-hover text-white text-[12px] uppercase tracking-wider font-medium transition">
-          Reserve Estate
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ PRIVATE SETTLEMENT MODAL ============ -->
-  <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="checkoutHeading">
-    <div class="bg-surface rounded-xs max-w-lg w-full overflow-hidden border border-line shadow-float flex flex-col max-h-[92vh]">
-      <div class="flex items-center justify-between px-6 py-4 border-b border-line">
-        <div>
-          <h3 id="checkoutHeading" class="font-display text-[22px] text-ink leading-tight">Private Reservation Settlement</h3>
-          <p class="text-[11px] uppercase tracking-wider text-ink-muted">Aurelia Travel Advisory · Powered by Ortasys S4</p>
-        </div>
-        <button type="button" data-close-checkout class="w-8 h-8 flex items-center justify-center text-ink hover:text-ink-muted" aria-label="Close settlement">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
-      </div>
-
-      <div id="checkoutFormContent" class="p-6 overflow-y-auto flex-1 flex flex-col gap-4">
-        <div class="p-4 rounded-xs bg-canvas border border-line text-[13px]">
-          <div class="flex justify-between font-semibold text-ink uppercase tracking-wider text-[11px]">
-            <span>Bespoke Itinerary Summary:</span>
-            <span id="coItemCount" class="font-mono">0 Item</span>
-          </div>
-          <div id="coItemList" class="mt-2 space-y-1 text-[12px] text-ink-muted"></div>
-          <div class="mt-3 pt-2 border-t border-line/60 flex justify-between font-mono font-bold text-ink text-[14px]">
-            <span>Total Settlement:</span>
-            <span id="coTotal" class="text-ink">Rp 0</span>
-          </div>
-        </div>
-
-        <form id="coForm" class="flex flex-col gap-3">
-          <h4 class="text-[11px] uppercase tracking-wider font-semibold text-ink">Principal Guest Information</h4>
-          <label class="flex flex-col gap-1 text-[12px] font-medium text-ink">
-            Full Legal Name
-            <input id="coName" type="text" required placeholder="e.g. Lord Alexander Wright" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-primary focus:outline-none">
-          </label>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <label class="flex flex-col gap-1 text-[12px] font-medium text-ink">
-              Confidential Email
-              <input id="coEmail" type="email" required placeholder="principal@estate.com" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-primary focus:outline-none">
-            </label>
-            <label class="flex flex-col gap-1 text-[12px] font-medium text-ink">
-              VIP Contact / Concierge WhatsApp
-              <input id="coPhone" type="tel" required placeholder="+62 811 2345 6789" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-primary focus:outline-none">
-            </label>
-          </div>
-
-          <h4 class="text-[11px] uppercase tracking-wider font-semibold text-ink mt-2">Settlement Channel</h4>
-          <div class="space-y-2 text-[12px]">
-            <label class="flex items-center gap-3 p-3 rounded-xs bg-white border border-line cursor-pointer hover:border-primary">
-              <input type="radio" name="payMethod" value="qris" checked class="accent-primary">
-              <div class="flex-1">
-                <span class="font-semibold text-ink block">SNAP BI Priority QRIS (Instant Settlement)</span>
-                <span class="text-[11px] text-ink-muted block">Direct clearing through Bank Indonesia SNAP BI protocol</span>
+          <form id="searchForm" novalidate>
+            <div class="search-grid">
+              <div class="field-cell">
+                <label id="destinationLabel" for="dest"
+                  >01 / Kawasan atau penginapan</label
+                ><input
+                  id="dest"
+                  list="destList"
+                  placeholder="Ubud, Tabanan, Penida…"
+                  autocomplete="off"
+                  required
+                /><datalist id="destList">
+                  <option value="Semua kawasan"></option>
+                  <option value="Ubud"></option>
+                  <option value="Tabanan"></option>
+                  <option value="Penida"></option>
+                </datalist>
               </div>
-            </label>
-            <label class="flex items-center gap-3 p-3 rounded-xs bg-white border border-line cursor-pointer hover:border-primary">
-              <input type="radio" name="payMethod" value="va" class="accent-primary">
-              <div class="flex-1">
-                <span class="font-semibold text-ink block">DOKU Dedicated Priority Virtual Account</span>
-                <span class="text-[11px] text-ink-muted block">BCA Priority, Mandiri Priority Virtual Account</span>
+              <div class="field-cell" data-hotel-only>
+                <label for="checkIn">02 / Check-in</label
+                ><input id="checkIn" type="date" required />
               </div>
-            </label>
-          </div>
-
-          <button type="submit" id="coSubmitBtn" class="mt-3 w-full h-12 rounded-xs bg-primary hover:bg-primary-hover text-white text-[13px] font-medium tracking-wider uppercase transition flex items-center justify-center gap-2">
-            <span>Confirm &amp; Authorize Settlement</span>
-          </button>
-        </form>
-      </div>
-
-      <!-- Confirmation Success State -->
-      <div id="checkoutSuccessContent" class="hidden p-8 flex flex-col items-center text-center gap-4">
-        <div class="w-12 h-12 rounded-full bg-accent/20 text-accent flex items-center justify-center">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
-        <div>
-          <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">Private Reservation Confirmed</span>
-          <h4 class="font-display text-[26px] text-ink mt-1">Journey Authorized</h4>
-          <p class="text-[13px] text-ink-muted mt-1">Live supplier allotment secured. Your private advisory concierge will connect within 15 minutes.</p>
-        </div>
-        <div class="w-full p-4 rounded-xs bg-canvas border border-line text-left text-[12px] space-y-1.5 font-mono">
-          <div class="flex justify-between">
-            <span class="text-ink-muted">Dossier Reference:</span>
-            <span id="successRef" class="font-bold text-ink">AURELIA-2026-0001</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-ink-muted">Principal Traveler:</span>
-            <span id="successGuest" class="font-bold text-ink">-</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-ink-muted">Total Authorized:</span>
-            <span id="successAmount" class="font-bold text-ink">Rp 0</span>
-          </div>
-        </div>
-        <div class="w-full flex flex-col gap-2 pt-2">
-          <button type="button" id="btnDownloadVoucher" class="w-full h-11 rounded-xs bg-primary hover:bg-primary-hover text-white text-[12px] uppercase tracking-wider font-medium transition">
-            Download Official Advisory Dossier (PDF)
-          </button>
-          <button type="button" data-finish-checkout class="w-full h-10 rounded-xs bg-surface-muted hover:bg-line text-ink text-[12px] uppercase tracking-wider font-medium transition">
-            Return to Portfolio
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-primary text-white rounded-xs px-6 py-3 text-[13px] shadow-float tracking-wide" role="status" aria-live="polite"></div>
-
-  <script>
-  (() => {
-    'use strict';
-    /* Illustrative Sample Data Preset 02 (Aurelia) */
-    const STAYS = [
-      { 
-        id: 'ap-ubud', name: 'Ayung Sanctuary Pool Villa', area: 'Sayan Ridge · Ubud, Bali', filter: 'ubud',
-        keys: 'ubud sayan bali pool villa luxury sanctuary ayung', img: '../../assets/bagus_travel/ubud.jpg', alt: 'Pemandangan teras sawah dan lembah Ubud',
-        stars: 5, room: 'Private Ayung River Pool Villa', meal: 'Dedicated Butler & Artisanal Breakfast', policy: 'Complimentary cancellation up to 7 days prior to arrival.',
-        desc: 'Cantilevered over the sacred Ayung River valley on Sayan Ridge. Features private heated infinity pool, authentic teak pavilion architecture, and dedicated 24-hour private butler service.',
-        amenities: ['24-Hour Dedicated Butler', 'Private Heated Infinity Pool', 'VIP Airport Fast-Track Transfer', 'Artisanal Organic Breakfast', 'High-Speed Fiber Satellite WiFi', 'Bespoke Evening Turn-Down Ritual'],
-        nightly: 5400000 
-      },
-      { 
-        id: 'ap-tanahlot', name: 'Tanah Cliff Ocean Residence', area: 'Tabanan Coastline · Bali', filter: 'tanahlot',
-        keys: 'tabanan tanah lot cliff luxury ocean residence', img: '../../assets/bagus_travel/tanah-lot.jpg', alt: 'Ocean cliffside sunset view',
-        stars: 5, room: 'Two-Bedroom Cliff Ocean Residence', meal: 'Gourmet Breakfast & Sunset Canapés', policy: 'Complimentary cancellation up to 10 days prior to arrival.',
-        desc: 'Dramatic cliff-edge sanctuary commanding sweeping views of the Indian Ocean and historic sea temples. Seamless indoor-outdoor limestone living with private sommelier tastings.',
-        amenities: ['Panoramic Cliff Sunset View', 'Private Chef Dining Table', 'Infinity Horizon Edge Pool', 'Complimentary Luxury Chauffeur', 'Sonos Sound System', 'Private Yoga Pavilion'],
-        nightly: 6800000 
-      },
-      { 
-        id: 'ap-penida', name: 'Nusa Diamond Private Retreat', area: 'Penida Headland · Bali', filter: 'penida',
-        keys: 'nusa penida diamond beach luxury retreat clifftop', img: '../../assets/bagus_travel/nusa-penida.jpg', alt: 'Diamond Beach ocean cliffs',
-        stars: 5, room: 'Private Island Clifftop Suite', meal: 'Full Board & Private Fast Boat', policy: 'Complimentary cancellation up to 14 days prior to arrival.',
-        desc: 'Secluded clifftop estate accessible via private helicopter charter or yacht tender. Unrivaled panoramic vistas of azure waters, manta ray coves, and pristine limestone pinnacles.',
-        amenities: ['Helipad Access & Yacht Tender', 'Full Board Bespoke Dining', 'Private Ocean-Facing Jacuzzi', 'Personal Escorted Excursions', 'Dedicated Marine Concierge', 'Starlink High-Speed Connectivity'],
-        nightly: 4900000 
-      }
-    ];
-
-    const ACTIVITIES = [
-      { 
-        id: 'ap-phinisi', kind: 'tour', name: 'Private Phinisi Sunset Charter', area: 'Benoa & Nusa Islands', filter: 'penida',
-        keys: 'yacht phinisi charter sailing private luxury', img: '../../assets/mandalika_escape/gili-boat.jpg', alt: 'Sailing phinisi yacht in open waters',
-        duration: '5 Hours Exclusive Charter',
-        desc: 'Handcrafted ironwood phinisi schooner reserved exclusively for your party. Enjoy champagne sunset cruise around secluded limestone bays with Michelin-trained private chef.',
-        amenities: ['Master Captain & 6-Person Crew', 'Champagne Welcome & Canapés', 'Seabob & Snorkel Equipment', 'Gourmet 4-Course Seafood Dinner'],
-        policy: 'Flexible reschedule in the event of adverse maritime conditions.',
-        perPerson: 1850000 
-      },
-      { 
-        id: 'ap-borobudur', kind: 'tour', name: 'Private VIP Temple First Light Access', area: 'Magelang · Central Java', filter: 'ubud',
-        keys: 'borobudur private vip access temple sunrise archaeologist', img: '../../assets/bagus_travel/borobudur.jpg', alt: 'Borobudur monument at dawn',
-        duration: 'Full Day Private Expedition',
-        desc: 'Exclusive pre-opening access to the 9th-century Buddhist sanctuary before general admission gates open. Accompanied by prominent heritage archaeologist followed by royal breakfast.',
-        amenities: ['Pre-Dawn VIP Monument Gate Access', 'Historian & Archaeologist Briefing', 'Luxury Chauffeur Mercedes Transfer', 'Royal Colonial Estate Breakfast'],
-        policy: 'Complimentary cancellation up to 48 hours prior.',
-        perPerson: 2400000 
-      }
-    ];
-
-    const LIMITS = { rooms: [1, 9], adults: [1, 20], children: [0, 20] };
-    const MAX_NIGHTS = 30;
-    const idr = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
-    const $ = (s, r = document) => r.querySelector(s);
-    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-    const DAY = 86400000;
-    const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-    const addDays = (s, n) => iso(new Date(new Date(s + 'T00:00:00').getTime() + n * DAY));
-    const today = iso(new Date());
-
-    const state = { mode: 'hotels', filter: 'all', priced: false, checking: false, checkedAt: null, trip: [] };
-    const el = {
-      form: $('#searchForm'), dest: $('#dest'), checkIn: $('#checkIn'), checkOut: $('#checkOut'), actDate: $('#actDate'),
-      rooms: $('#rooms'), adults: $('#adults'), children: $('#qChildren'), errors: $('#formErrors'), summary: $('#summary'),
-      btn: $('#checkBtn'), results: $('#results')
-    };
-
-    const clamp = (v, [lo, hi]) => Math.min(hi, Math.max(lo, Number.isFinite(v) ? v : lo));
-    const num = k => clamp(parseInt(el[k].value, 10), LIMITS[k]);
-    const nights = () => {
-      if (!el.checkIn.value || !el.checkOut.value) return 0;
-      return Math.round((new Date(el.checkOut.value) - new Date(el.checkIn.value)) / DAY);
-    };
-
-    function validate() {
-      const errs = [];
-      if (state.mode === 'hotels') {
-        if (!el.checkIn.value || !el.checkOut.value) errs.push('Please select check-in and check-out dates.');
-        else {
-          const n = nights();
-          if (el.checkIn.value < today) errs.push('Check-in date cannot precede current date.');
-          if (n < 1) errs.push('Check-out must be at least 1 day after check-in.');
-          if (n > MAX_NIGHTS) errs.push(`Reservations are limited to ${MAX_NIGHTS} consecutive nights.`);
-        }
-      } else {
-        if (!el.actDate.value) errs.push('Please specify private charter departure date.');
-        else if (el.actDate.value < today) errs.push('Charter date cannot be set in the past.');
-      }
-      return errs;
-    }
-
-    const roomRate = s => Math.round(s.nightly * (1 + 0.18 * Math.max(0, num('adults') - 2) + 0.08 * num('children')) / 1000) * 1000;
-    const stayTotal = s => roomRate(s) * Math.max(1, nights()) * num('rooms');
-    const actTotal = a => a.perPerson * num('adults') * num('rooms');
-
-    function summaryText() {
-      const r = num('rooms'), a = num('adults'), c = num('children');
-      const g = `${a} Adult${a > 1 ? 's' : ''}${c ? ` + ${c} Child` : ''}`;
-      if (state.mode === 'hotels') {
-        const n = nights();
-        if (!n || n < 1) return 'Select dates for live itinerary quotation';
-        return `${n} Night${n > 1 ? 's' : ''} × ${r} Estate Suite (${g} / suite)`;
-      }
-      return el.actDate.value ? `${el.actDate.value} · ${r * a} Guests Consolidated` : 'Select charter departure date';
-    }
-
-    function renderMode() {
-      $$('.mode-tab').forEach(t => {
-        const on = t.dataset.mode === state.mode;
-        t.setAttribute('aria-selected', on);
-        t.className = `mode-tab h-9 px-5 rounded-xs text-[12px] font-medium tracking-wider uppercase transition ${on ? 'bg-primary text-white' : 'text-ink-muted hover:text-ink'}`;
-      });
-      const hotels = state.mode === 'hotels';
-      $$('[data-hotel-only]').forEach(n => n.classList.toggle('hidden', !hotels));
-      $$('[data-activity-only]').forEach(n => n.classList.toggle('hidden', hotels));
-      $('#destList').innerHTML = (hotels ? ['Sayan Ridge, Ubud', 'Tabanan Ocean Cliff', 'Penida Headland', ...STAYS.map(s => s.name)] : ['Private Phinisi Sunset Charter', 'VIP Borobudur Sunrise', ...ACTIVITIES.map(a => a.name)])
-        .map(v => `<option value="${v}">`).join('');
-    }
-
-    function renderResults() {
-      const isHotels = state.mode === 'hotels';
-      const q = el.dest.value.trim().toLowerCase();
-      let list = (isHotels ? STAYS : ACTIVITIES).filter(it => {
-        const matchQ = !q || (it.name + ' ' + it.area + ' ' + it.keys).toLowerCase().includes(q);
-        const matchFilter = state.filter === 'all' || it.filter === state.filter;
-        return matchQ && matchFilter;
-      });
-      if (!list.length && state.filter === 'all') list = isHotels ? STAYS : ACTIVITIES;
-
-      if (!list.length) {
-        el.results.innerHTML = `
-          <div class="py-12 text-center text-ink-muted bg-surface border border-line">
-            <p class="font-display text-[24px] text-ink">No sanctuaries match the current filter "${state.filter}"</p>
-            <button type="button" data-reset-filter class="mt-3 px-5 py-2 border border-primary bg-primary text-white text-[11px] uppercase tracking-[0.16em] font-medium">Reset Filter</button>
-          </div>`;
-        return;
-      }
-
-      el.results.innerHTML = list.map((it, idx) => {
-        const total = isHotels ? stayTotal(it) : actTotal(it);
-        const sub = isHotels ? `${idr.format(roomRate(it))} / night / estate` : `${idr.format(it.perPerson)} / guest`;
-        const priceHTML = state.checking
-          ? `<div class="h-8 w-32 bg-surface-muted animate-pulse"></div>`
-          : state.priced
-            ? `<div><span class="text-[10px] font-mono uppercase tracking-[0.18em] text-accent block">Consolidated Quotation</span><p class="tnum font-mono text-[24px] font-bold text-ink">${idr.format(total)}</p><p class="tnum font-mono text-[11px] text-ink-muted">${sub}</p></div>`
-            : `<div><span class="text-[10px] font-mono uppercase tracking-[0.18em] text-ink-muted block">Indicative Base Tariff</span><p class="font-mono text-[18px] font-semibold text-ink">From ${idr.format(isHotels ? it.nightly : it.perPerson)}</p><p class="text-[11px] text-ink-muted italic">Verify dates for live quote</p></div>`;
-
-        const isEven = idx % 2 === 1;
-        const folioNum = String(idx + 1).padStart(2, '0');
-
-        return `
-        <article class="bg-surface border border-line grid lg:grid-cols-12 group">
-          <!-- Image Column (Alternating Order on Desktop) -->
-          <div class="lg:col-span-7 relative min-h-[280px] sm:min-h-[380px] bg-surface-muted overflow-hidden p-3 bg-canvas ${isEven ? 'lg:order-2 lg:border-l border-line' : 'lg:border-r border-line'}">
-            <div class="relative w-full h-full overflow-hidden border border-line">
-              <img src="${it.img}" alt="${it.alt}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-              <span class="absolute top-3 left-3 px-3 py-1 bg-surface/95 text-ink text-[10px] font-mono tracking-[0.18em] font-semibold uppercase">FOLIO ${folioNum} · CONTRACTED ALLOTMENT</span>
-            </div>
-          </div>
-
-          <!-- Architectural Dossier Column -->
-          <div class="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between ${isEven ? 'lg:order-1' : ''}">
-            <div class="space-y-4">
-              <div class="flex items-center justify-between border-b border-line pb-3">
-                <span class="text-[11px] uppercase tracking-[0.2em] text-accent font-semibold">${it.area}</span>
-                <button type="button" data-detail="${it.id}" class="text-[11px] font-mono uppercase tracking-[0.16em] text-ink hover:text-accent underline">
-                  Inspect Dossier
+              <div class="field-cell" data-hotel-only>
+                <label for="checkOut">03 / Check-out</label
+                ><input id="checkOut" type="date" required />
+              </div>
+              <span id="dateSummary" hidden></span>
+              <div class="field-cell" data-activity-only hidden>
+                <label for="actDate">02 / Tanggal pengalaman</label
+                ><input id="actDate" type="date" />
+              </div>
+              <div class="field-cell party-cell">
+                <span class="field-label">04 / Tamu &amp; kamar</span
+                ><button
+                  type="button"
+                  id="guestSummary"
+                  data-panel-toggle="guests"
+                  aria-expanded="false"
+                  aria-controls="guestsPanel"
+                >
+                  1 kamar · 2 dewasa · 0 anak
+                </button>
+                <div
+                  id="guestsPanel"
+                  class="search-popover"
+                  data-panel="guests"
+                  hidden
+                >
+                  <h3>Siapa yang ikut?</h3>
+                  <p>Komposisi tamu berlaku untuk setiap kamar.</p>
+                  <div class="party-row" data-hotel-only>
+                    <label for="rooms">Kamar<small>1–9 kamar</small></label>
+                    <div class="stepper">
+                      <button
+                        type="button"
+                        data-step="rooms"
+                        data-dir="-1"
+                        aria-label="Kurangi kamar"
+                      >
+                        −</button
+                      ><input
+                        id="rooms"
+                        type="number"
+                        min="1"
+                        max="9"
+                        value="1"
+                        inputmode="numeric"
+                      /><button
+                        type="button"
+                        data-step="rooms"
+                        data-dir="1"
+                        aria-label="Tambah kamar"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <div class="party-row">
+                    <label for="adults"
+                      >Dewasa<small>Per kamar · 1–20</small></label
+                    >
+                    <div class="stepper">
+                      <button
+                        type="button"
+                        data-step="adults"
+                        data-dir="-1"
+                        aria-label="Kurangi dewasa"
+                      >
+                        −</button
+                      ><input
+                        id="adults"
+                        type="number"
+                        min="1"
+                        max="20"
+                        value="2"
+                        inputmode="numeric"
+                      /><button
+                        type="button"
+                        data-step="adults"
+                        data-dir="1"
+                        aria-label="Tambah dewasa"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <div class="party-row">
+                    <label for="qChildren"
+                      >Anak<small>Per kamar · 0–20</small></label
+                    >
+                    <div class="stepper">
+                      <button
+                        type="button"
+                        data-step="children"
+                        data-dir="-1"
+                        aria-label="Kurangi anak"
+                      >
+                        −</button
+                      ><input
+                        id="qChildren"
+                        type="number"
+                        min="0"
+                        max="20"
+                        value="0"
+                        inputmode="numeric"
+                      /><button
+                        type="button"
+                        data-step="children"
+                        data-dir="1"
+                        aria-label="Tambah anak"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <div id="childAges" class="age-grid"></div>
+                  <button
+                    type="button"
+                    class="button apply-button"
+                    data-panel-close
+                  >
+                    Terapkan tamu
+                  </button>
+                </div>
+              </div>
+              <div class="submit-cell">
+                <button id="checkBtn" class="button" type="submit">
+                  Cari ketersediaan <span aria-hidden="true">↗</span>
                 </button>
               </div>
-              <h3 class="font-display text-[30px] sm:text-[34px] text-ink leading-[1.08] font-normal cursor-pointer hover:text-accent transition-colors" data-detail="${it.id}">${it.name}</h3>
-              <p class="text-[14px] text-ink-muted leading-relaxed">${it.desc}</p>
-
-              <div class="pt-2 space-y-2 text-[12px] border-t border-line/60">
-                <div class="flex justify-between font-mono">
-                  <span class="text-ink-muted uppercase">Accommodation:</span>
-                  <span class="text-ink font-medium">${isHotels ? it.room : it.duration}</span>
-                </div>
-                ${isHotels ? `
-                <div class="flex justify-between font-mono">
-                  <span class="text-ink-muted uppercase">Hospitality:</span>
-                  <span class="text-ink font-medium">${it.meal}</span>
-                </div>` : ''}
-              </div>
-
-              <div class="flex flex-wrap gap-1.5 pt-2">
-                ${(it.amenities || []).slice(0, 3).map(a => `<span class="px-2.5 py-1 border border-line bg-canvas text-ink-muted text-[10px] font-mono uppercase tracking-wider">${a}</span>`).join('')}
-              </div>
             </div>
-
-            <div class="mt-8 pt-5 border-t border-primary flex items-end justify-between gap-4">
-              ${priceHTML}
-              <button type="button" data-select="${it.id}" class="h-11 px-6 ${state.priced ? 'bg-primary hover:bg-primary-hover text-white' : 'border border-primary text-primary hover:bg-primary hover:text-white'} text-[11px] font-medium tracking-[0.18em] uppercase transition">
-                ${state.priced ? 'Authorize Suite' : 'Verify &amp; Reserve'}
-              </button>
+            <div
+              id="formErrors"
+              class="search-errors"
+              role="alert"
+              tabindex="-1"
+            ></div>
+            <div class="search-meta">
+              <span>Setiap harga dicek langsung saat Anda mencari</span
+              ><span>1–30 malam · tamu per kamar</span>
             </div>
-          </div>
-        </article>`;
-      }).join('');
-    }
-
-    function renderTours() {
-      $('#tourList').innerHTML = ACTIVITIES.map((t, idx) => `
-        <div class="border border-line bg-canvas p-6 sm:p-8 flex flex-col justify-between gap-5 group">
+          </form>
+        </div>
+        <p
+          id="searchStatus"
+          class="sample-note"
+          role="status"
+          style="padding: 16px 4px 0"
+        >
+          Prototipe interaktif · katalog dan harga contoh
+        </p>
+      </section>
+      <section id="hotels" class="wrap section">
+        <div class="lead-row">
           <div>
-            <div class="flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.2em] text-ink-muted pb-3 border-b border-line">
-              <span>CHARTER CURATION 0${idx + 1}</span>
-              <span>${t.area}</span>
-            </div>
-            <div class="aspect-[16/9] overflow-hidden border border-line bg-surface-muted my-4 p-1.5 bg-surface">
-              <img src="${t.img}" alt="${t.alt}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-            </div>
-            <h4 class="font-display text-[26px] text-ink leading-snug cursor-pointer hover:text-accent transition-colors" data-detail="${t.id}">${t.name}</h4>
-            <p class="text-[13px] text-ink-muted mt-2 leading-relaxed">${t.desc}</p>
-            <p class="font-mono text-[11px] text-accent uppercase tracking-wider mt-3">${t.duration}</p>
+            <span class="eyebrow">PORTOFOLIO / HUNIAN PILIHAN</span>
+            <h2>Hunian pilihan,<br />satu per satu.</h2>
+            <p>
+              Tiap rumah punya suasana. Pilih yang sejalan dengan cara Anda
+              beristirahat.
+            </p>
           </div>
-          <div class="pt-4 border-t border-line flex items-center justify-between">
+          <div>
+            <p id="resultCount" class="sample-note"></p>
+            <p class="sample-note">Contoh konten agen</p>
+          </div>
+        </div>
+        <div class="filter-row" role="group" aria-label="Filter kawasan">
+          <button type="button" data-filter="all" aria-pressed="true">
+            Semua wilayah</button
+          ><button type="button" data-filter="ubud" aria-pressed="false">
+            Ubud</button
+          ><button type="button" data-filter="tanahlot" aria-pressed="false">
+            Tabanan</button
+          ><button type="button" data-filter="penida" aria-pressed="false">
+            Penida
+          </button>
+        </div>
+        <div id="results" class="results" aria-live="polite"></div>
+      </section>
+      <section id="destinations" class="wrap section">
+        <div class="lead-row">
+          <div>
+            <span class="eyebrow">TIGA WILAYAH, TIGA SUASANA</span>
+            <h2>Pilih suasana,<br />lalu temukan hunian.</h2>
+          </div>
+          <p class="sample-note">Koleksi destinasi · contoh konten agen</p>
+        </div>
+        <div class="region-grid">
+          <article class="region-card">
+            <img
+              src="./assets/dest-1.webp"
+              alt="Sayan Ridge · Ubud"
+              loading="lazy"
+            />
             <div>
-              <span class="text-[10px] font-mono uppercase tracking-wider text-ink-muted block">Private Charter Tariff</span>
-              <span class="tnum font-mono text-[16px] font-bold text-ink">${idr.format(t.perPerson)} <span class="text-[11px] font-normal text-ink-muted">/ guest</span></span>
+              <small>Lembah yang perlahan terjaga.</small>
+              <h3>Sayan Ridge · Ubud</h3>
             </div>
-            <div class="flex items-center gap-2">
-              <button type="button" data-detail="${t.id}" class="h-9 px-3.5 border border-line bg-surface text-ink text-[11px] font-mono uppercase tracking-wider hover:border-primary transition">Dossier</button>
-              <button type="button" data-select="${t.id}" class="h-9 px-4 bg-primary text-white hover:bg-primary-hover text-[11px] font-medium tracking-[0.16em] uppercase transition">Reserve</button>
-            </div>
-          </div>
-        </div>`).join('');
-    }
-
-    function syncBounds() {
-      el.checkIn.min = today; el.actDate.min = today;
-      if (el.checkIn.value) {
-        el.checkOut.min = addDays(el.checkIn.value, 1);
-        el.checkOut.max = addDays(el.checkIn.value, MAX_NIGHTS);
-      } else { el.checkOut.min = addDays(today, 1); el.checkOut.removeAttribute('max'); }
-    }
-
-    function invalidate() {
-      state.priced = false; el.errors.textContent = '';
-      el.summary.textContent = summaryText();
-      renderResults();
-    }
-
-    $$('.mode-tab').forEach(t => t.addEventListener('click', () => { state.mode = t.dataset.mode; renderMode(); invalidate(); }));
-    $$('[data-step]').forEach(b => b.addEventListener('click', () => {
-      const k = b.dataset.step; el[k].value = clamp(num(k) + Number(b.dataset.dir), LIMITS[k]); invalidate();
-    }));
-    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('change', () => { el[k].value = num(k); invalidate(); }));
-    el.checkIn.addEventListener('change', () => {
-      syncBounds();
-      if (el.checkIn.value && (!el.checkOut.value || el.checkOut.value <= el.checkIn.value)) el.checkOut.value = addDays(el.checkIn.value, 2);
-      invalidate();
-    });
-    [el.checkOut, el.actDate].forEach(i => i.addEventListener('change', invalidate));
-    el.dest.addEventListener('input', renderResults);
-
-    // Filter Buttons
-    $$('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        state.filter = btn.dataset.filter;
-        $$('.filter-btn').forEach(b => {
-          const active = b === btn;
-          b.className = `filter-btn h-9 px-4 rounded-xs text-[12px] font-medium tracking-wider uppercase transition ${active ? 'bg-primary text-white' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`;
-        });
-        renderResults();
-      });
-    });
-
-    el.form.addEventListener('submit', e => {
-      e.preventDefault();
-      const errs = validate();
-      el.errors.innerHTML = errs.map(x => `<p>— ${x}</p>`).join('');
-      if (errs.length) return;
-
-      state.checking = true; el.btn.disabled = true;
-      el.btn.querySelector('[data-btn-label]').textContent = 'Querying Multi-Supplier Live Allotment…';
-      renderResults();
-
-      setTimeout(() => {
-        state.checking = false; state.priced = true; state.checkedAt = new Date();
-        el.btn.disabled = false; el.btn.querySelector('[data-btn-label]').textContent = 'Check Live Availability';
-        el.summary.textContent = `Live Verified: ${summaryText()}`;
-        renderResults();
-        document.getElementById('estates').scrollIntoView({ behavior: 'smooth' });
-      }, 650);
-    });
-
-    document.addEventListener('click', e => {
-      const sel = e.target.closest('[data-select]'); if (sel) return selectItem(sel.dataset.select);
-      const det = e.target.closest('[data-detail]'); if (det) return openDetail(det.dataset.detail);
-      const rm = e.target.closest('[data-remove]'); if (rm) { state.trip.splice(Number(rm.dataset.remove), 1); renderTrip(); }
-      const rst = e.target.closest('[data-reset-filter]'); if (rst) {
-        state.filter = 'all';
-        $$('.filter-btn').forEach((b, i) => b.className = `filter-btn h-9 px-4 rounded-xs text-[12px] font-medium tracking-wider uppercase transition ${i === 0 ? 'bg-primary text-white' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`);
-        renderResults();
-      }
-    });
-
-    function selectItem(id) {
-      if (!state.priced) {
-        toast('Validating real-time availability with Ortasys engine...');
-        const errs = validate();
-        if (errs.length) {
-          document.getElementById('searchSection').scrollIntoView({ behavior: 'smooth' });
-          el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
-          return;
-        }
-        state.priced = true;
-        renderResults();
-      }
-      const isHotel = id.startsWith('ap-ubud') || id.startsWith('ap-tanahlot') || id.startsWith('ap-penida');
-      const it = (isHotels => isHotels ? STAYS : ACTIVITIES)(isHotel).find(x => x.id === id);
-      const total = isHotel ? stayTotal(it) : actTotal(it);
-      state.trip.push({ id: it.id, name: it.name, area: it.area, detail: summaryText(), total });
-      renderTrip();
-      toast(`Curated item added to itinerary: ${it.name}`);
-      closeDetail();
-    }
-
-    function renderTrip() {
-      $$('[data-trip-count]').forEach(n => n.textContent = state.trip.length);
-      const box = $('#tripItems');
-      box.innerHTML = state.trip.length ? state.trip.map((t, i) => `
-        <div class="p-4 rounded-xs bg-canvas border border-line flex flex-col gap-1">
-          <div class="flex items-start justify-between gap-2">
+            <a
+              href="#searchSection"
+              data-quick-region="Ubud"
+              aria-label="Cari di Sayan Ridge · Ubud"
+              >Jelajahi kawasan ↗</a
+            >
+          </article>
+          <article class="region-card">
+            <img
+              src="./assets/dest-2.webp"
+              alt="Tabanan coastline"
+              loading="lazy"
+            />
             <div>
-              <p class="font-display text-[16px] text-ink">${t.name}</p>
-              <p class="text-[12px] text-ink-muted">${t.area} · ${t.detail}</p>
+              <small>Senja di tepian samudra.</small>
+              <h3>Tabanan coastline</h3>
             </div>
-            <button type="button" data-remove="${i}" class="text-[11px] uppercase tracking-wider font-semibold text-danger hover:underline">Remove</button>
+            <a
+              href="#searchSection"
+              data-quick-region="Tabanan"
+              aria-label="Cari di Tabanan coastline"
+              >Jelajahi kawasan ↗</a
+            >
+          </article>
+          <article class="region-card">
+            <img
+              src="./assets/dest-3.webp"
+              alt="Nusa Penida headland"
+              loading="lazy"
+            />
+            <div>
+              <small>Tebing, angin, dan laut lepas.</small>
+              <h3>Nusa Penida headland</h3>
+            </div>
+            <a
+              href="#searchSection"
+              data-quick-region="Penida"
+              aria-label="Cari di Nusa Penida headland"
+              >Jelajahi kawasan ↗</a
+            >
+          </article>
+        </div>
+      </section>
+      <section id="experiences" class="tour-band section">
+        <div class="wrap">
+          <div class="lead-row">
+            <div>
+              <span class="eyebrow">PERJALANAN / DI LUAR HUNIAN</span>
+              <h2>Berlayar dan berkunjung,<br />tanpa keramaian.</h2>
+            </div>
+            <p class="sample-note">Pilihan dan tarif ilustratif</p>
           </div>
-          <p class="tnum font-mono text-[14px] font-semibold text-ink mt-1">${idr.format(t.total)}</p>
-        </div>`).join('')
-        : `<p class="py-12 text-center text-[13px] text-ink-muted">Your private itinerary is currently empty.<br>Check availability and add sanctuary estates.</p>`;
-      
-      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
-      $('#tripSubtotal').textContent = idr.format(totalVal);
-      $('#tripTotal').textContent = idr.format(totalVal);
-      $('#payBtn').disabled = !state.trip.length;
-    }
-
-    // Atelier Quick-View Detail Modal
-    const detailModal = $('#detailModal');
-    let currentDetailItem = null;
-    function openDetail(id) {
-      const isHotel = id.startsWith('ap-ubud') || id.startsWith('ap-tanahlot') || id.startsWith('ap-penida');
-      const it = (isHotels => isHotels ? STAYS : ACTIVITIES)(isHotel).find(x => x.id === id);
-      if (!it) return;
-      currentDetailItem = it;
-
-      $('#modalImg').src = it.img;
-      $('#modalImg').alt = it.alt;
-      $('#modalBadge').textContent = isHotel ? `5-Star Sanctuary Estate` : it.duration;
-      $('#modalArea').textContent = it.area;
-      $('#modalTitle').textContent = it.name;
-      $('#modalDesc').textContent = it.desc;
-      $('#modalAmenities').innerHTML = (it.amenities || []).map(a => `<span class="px-2.5 py-1 rounded-xs bg-surface-muted text-ink font-mono text-[11px]">${a}</span>`).join('');
-      $('#modalPolicy').textContent = it.policy;
-
-      const total = isHotel ? stayTotal(it) : actTotal(it);
-      $('#modalPrice').textContent = state.priced ? idr.format(total) : `From ${idr.format(isHotel ? it.nightly : it.perPerson)}`;
-      detailModal.classList.remove('hidden');
-    }
-    function closeDetail() {
-      detailModal.classList.add('hidden');
-      currentDetailItem = null;
-    }
-    $('[data-close-modal]').addEventListener('click', closeDetail);
-    detailModal.addEventListener('click', e => { if (e.target === detailModal) closeDetail(); });
-    $('#modalSelectBtn').addEventListener('click', () => {
-      if (currentDetailItem) selectItem(currentDetailItem.id);
-    });
-
-    // Checkout Modal
-    const checkoutModal = $('#checkoutModal');
-    function openCheckout() {
-      if (!state.trip.length) return;
-      closeTrip();
-      $('#coItemCount').textContent = `${state.trip.length} Selected Portfolio Entries`;
-      $('#coItemList').innerHTML = state.trip.map(t => `<div class="flex justify-between"><span>• ${t.name}</span><span class="font-mono font-bold">${idr.format(t.total)}</span></div>`).join('');
-      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
-      $('#coTotal').textContent = idr.format(totalVal);
-      $('#checkoutFormContent').classList.remove('hidden');
-      $('#checkoutSuccessContent').classList.add('hidden');
-      checkoutModal.classList.remove('hidden');
-    }
-    function closeCheckout() {
-      checkoutModal.classList.add('hidden');
-    }
-    $('[data-close-checkout]').addEventListener('click', closeCheckout);
-    checkoutModal.addEventListener('click', e => { if (e.target === checkoutModal) closeCheckout(); });
-    $('[data-finish-checkout]').addEventListener('click', () => {
-      closeCheckout();
-      state.trip = [];
-      renderTrip();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    $('#btnDownloadVoucher').addEventListener('click', () => {
-      toast('Confidential Dossier PDF generating...');
-    });
-
-    $('#coForm').addEventListener('submit', e => {
-      e.preventDefault();
-      const guestName = $('#coName').value.trim();
-      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
-      const randomRef = 'AURELIA-2026-' + Math.floor(1000 + Math.random() * 9000);
-
-      $('#successRef').textContent = randomRef;
-      $('#successGuest').textContent = guestName;
-      $('#successAmount').textContent = idr.format(totalVal);
-
-      $('#checkoutFormContent').classList.add('hidden');
-      $('#checkoutSuccessContent').classList.remove('hidden');
-    });
-
-    // Drawer Navigation
-    const drawer = $('#tripDrawer'), overlay = $('#tripOverlay');
-    function openTrip() { overlay.classList.remove('hidden'); drawer.classList.remove('translate-x-full'); drawer.setAttribute('aria-hidden', 'false'); }
-    function closeTrip() { overlay.classList.add('hidden'); drawer.classList.add('translate-x-full'); drawer.setAttribute('aria-hidden', 'true'); }
-    $$('[data-open-trip]').forEach(b => b.addEventListener('click', openTrip));
-    $('[data-close-trip]').addEventListener('click', closeTrip);
-    overlay.addEventListener('click', closeTrip);
-
-    $('#payBtn').addEventListener('click', openCheckout);
-
-    let toastTimer;
-    function toast(msg) {
-      const t = $('#toast'); t.textContent = msg; t.classList.remove('hidden');
-      clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.add('hidden'), 2500);
-    }
-
-    $('#year').textContent = new Date().getFullYear();
-
-    syncBounds(); renderMode(); invalidate(); renderTours(); renderTrip();
-  })();
-  </script>
-</body>
+          <div class="tour-list">
+            <article class="tour-strip">
+              <img
+                src="./assets/tour-1.webp"
+                alt="Sailing phinisi yacht in open waters"
+                loading="lazy"
+              />
+              <div class="tour-copy">
+                <span class="eyebrow">Benoa &amp; Nusa Islands</span>
+                <h3>Private Phinisi Sunset Charter</h3>
+                <p>5 Hours Exclusive Charter</p>
+              </div>
+              <div class="tour-price">
+                <div>
+                  <small>Contoh harga / orang</small
+                  ><strong>Rp 1.850.000</strong>
+                </div>
+                <button type="button" class="button" data-detail="ap-phinisi">
+                  Lihat rincian ↗
+                </button>
+              </div>
+            </article>
+            <article class="tour-strip">
+              <img
+                src="./assets/tour-2.webp"
+                alt="Borobudur monument at dawn"
+                loading="lazy"
+              />
+              <div class="tour-copy">
+                <span class="eyebrow">Magelang · Central Java</span>
+                <h3>Private VIP Temple First Light Access</h3>
+                <p>Full Day Private Expedition</p>
+              </div>
+              <div class="tour-price">
+                <div>
+                  <small>Contoh harga / orang</small
+                  ><strong>Rp 2.400.000</strong>
+                </div>
+                <button type="button" class="button" data-detail="ap-borobudur">
+                  Lihat rincian ↗
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="story" class="wrap section">
+        <span class="eyebrow">PENDEKATAN AURELIA</span>
+        <h2>Cara kami bekerja,<br />dalam tiga catatan.</h2>
+        <div class="commitments">
+          <article class="commitment">
+            <span>I</span>
+            <h3>Kehati-hatian dalam setiap langkah.</h3>
+            <p>
+              Perjalanan dimulai dari kebutuhan Anda: suasana, ruang, dan waktu
+              bersama. Pilihan disajikan tanpa tergesa.
+            </p>
+          </article>
+          <article class="commitment">
+            <span>II</span>
+            <h3>Harga jual yang jelas.</h3>
+            <p>
+              Lihat pilihan, rincian kamar, dan kebijakan sebelum melanjutkan.
+              Angka pada prototipe ini adalah contoh, bukan penawaran nyata.
+            </p>
+          </article>
+          <article class="commitment">
+            <span>III</span>
+            <h3>Rencana yang tetap milik Anda.</h3>
+            <p>
+              Susun pilihan di rencana perjalanan. Tinjau kembali tanggal dan
+              tamu sebelum membuat ringkasan pemesanan.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="contact" class="wrap">
+        <div class="contact-band">
+          <div>
+            <span class="eyebrow" style="color: var(--on-primary)"
+              >RENCANAKAN PERJALANAN</span
+            >
+            <h2>Butuh rencana yang<br />lebih personal?</h2>
+            <p>
+              Ceritakan suasana yang Anda cari. Mulai dari percakapan, bukan
+              daftar panjang.
+            </p>
+            <p class="sample-note">Formulir contoh · belum mengirim pesan</p>
+          </div>
+          <form id="contactForm" class="contact-form">
+            <label for="contactName"
+              >Nama<input
+                id="contactName"
+                name="name"
+                autocomplete="name"
+                required /></label
+            ><label for="contactEmail"
+              >Email<input
+                id="contactEmail"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required /></label
+            ><label for="contactMessage"
+              >Rencana Anda<textarea
+                id="contactMessage"
+                name="message"
+                required
+              ></textarea></label
+            ><button type="submit" class="button">Siapkan pesan ↗</button>
+            <div id="contactStatus" class="contact-status" role="status"></div>
+          </form>
+        </div>
+        <div class="faq">
+          <div>
+            <span class="eyebrow">SEBELUM ANDA MEMESAN</span>
+            <h2>Beberapa hal<br />yang ingin Anda tahu.</h2>
+          </div>
+          <div>
+            <details>
+              <summary>Bagaimana cara mencari penginapan?</summary>
+              <p>
+                Pilih kawasan, tanggal, jumlah kamar, serta tamu per kamar.
+                Lengkapi usia setiap anak, lalu tekan tombol pencarian.
+              </p>
+            </details>
+            <details>
+              <summary>Apakah harga dan ketersediaannya nyata?</summary>
+              <p>
+                Belum. Ini prototipe dengan katalog dan estimasi ilustratif.
+                Pengecekan nyata membutuhkan koneksi ke layanan pemesanan
+                Ortasys.
+              </p>
+            </details>
+            <details>
+              <summary>Bagaimana pembayaran dilakukan?</summary>
+              <p>
+                Implementasi produksi menggunakan penyedia pembayaran. Prototipe
+                ini hanya menyimpan ringkasan contoh dan tidak menagih atau
+                membuat reservasi.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer-row">
+          <div>
+            <a class="brand" href="index.html"
+              ><img src="./assets/logo-mark-dark.png" alt="" />
+              <div>
+                <strong>Aurelia</strong><small>Private journeys</small>
+              </div></a
+            >
+            <p>Perjalanan yang memberi ruang untuk jeda.</p>
+            <p>Identitas agen dan isi katalog merupakan contoh.</p>
+          </div>
+          <nav class="footer-links" aria-label="Navigasi footer">
+            <div>
+              <a href="#hotels">Penginapan</a
+              ><a href="#experiences">Pengalaman</a
+              ><a href="#destinations">Destinasi</a>
+            </div>
+            <div>
+              <a href="#story">Tentang kami</a
+              ><a href="#contact">Kontak &amp; FAQ</a
+              ><a href="guidelines.html">Panduan merek</a>
+            </div>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span
+            >© <span id="year"></span> Aurelia Private Journeys · Contoh konten
+            agen</span
+          ><span>Didukung sistem pemesanan Ortasys · prototipe</span>
+        </div>
+      </div>
+    </footer>
+    <dialog id="detailDialog" aria-labelledby="detailTitle">
+      <div class="dialog-head">
+        <span class="eyebrow">RINCIAN PILIHAN · CONTOH</span
+        ><button
+          type="button"
+          class="dialog-close"
+          data-close-dialog
+          aria-label="Tutup rincian"
+        >
+          ×
+        </button>
+      </div>
+      <div id="detailBody" class="dialog-body"></div>
+      <button id="addTripBtn" class="button" type="button">
+        Tambahkan ke rencana ↗
+      </button>
+    </dialog>
+    <dialog id="tripDialog" aria-labelledby="tripTitle">
+      <div class="dialog-head">
+        <h2 id="tripTitle">Rencana perjalanan</h2>
+        <button
+          type="button"
+          class="dialog-close"
+          data-close-dialog
+          aria-label="Tutup rencana"
+        >
+          ×
+        </button>
+      </div>
+      <div id="tripBody"></div>
+      <div class="trip-total">
+        <span>Estimasi contoh</span><strong id="tripTotal"></strong>
+      </div>
+      <button id="checkoutBtn" type="button" class="button">
+        Tinjau pemesanan ↗
+      </button>
+    </dialog>
+    <dialog id="checkoutDialog" aria-labelledby="checkoutTitle">
+      <div class="dialog-head">
+        <h2 id="checkoutTitle">Rincian perjalanan</h2>
+        <button
+          type="button"
+          class="dialog-close"
+          data-close-dialog
+          aria-label="Tutup pemesanan"
+        >
+          ×
+        </button>
+      </div>
+      <p class="notice">
+        Simulasi 3 langkah: data tamu → metode pembayaran → ringkasan. Tidak ada
+        pembayaran atau reservasi nyata.
+      </p>
+      <form id="checkoutForm">
+        <div id="checkoutGuest" class="guest-form">
+          <span class="eyebrow">01 / DATA TAMU</span
+          ><label for="guestName"
+            >Nama lengkap<input
+              id="guestName"
+              autocomplete="name"
+              required /></label
+          ><label for="guestEmail"
+            >Email<input
+              id="guestEmail"
+              type="email"
+              autocomplete="email"
+              required /></label
+          ><label for="guestPhone"
+            >Nomor telepon<input
+              id="guestPhone"
+              type="tel"
+              autocomplete="tel"
+              required /></label
+          ><button type="submit" class="button">
+            Lanjut ke metode pembayaran ↗
+          </button>
+        </div>
+      </form>
+      <div id="paymentStep" tabindex="-1" hidden>
+        <span class="eyebrow">02 / METODE PEMBAYARAN · CONTOH</span>
+        <h3>Pilih cara membayar.</h3>
+        <div class="payment-choice">
+          <label
+            ><input name="payment" type="radio" value="doku" checked /> Kartu ·
+            DOKU hosted checkout</label
+          ><label
+            ><input name="payment" type="radio" value="va" /> Virtual account ·
+            SNAP BI</label
+          ><label
+            ><input name="payment" type="radio" value="qris" /> QRIS</label
+          >
+        </div>
+        <p class="notice">
+          Pembayaran produksi harus diteruskan ke penyedia pembayaran. Tidak ada
+          data kartu yang dikumpulkan di sini.
+        </p>
+        <p>Total ilustratif: <strong id="checkoutTotal"></strong></p>
+        <div class="hero-actions" style="margin-top: 24px">
+          <button id="guestBack" type="button" class="button outline">
+            Kembali</button
+          ><button id="saveDraft" type="button" class="button">
+            Simpan ringkasan contoh ↗
+          </button>
+        </div>
+      </div>
+      <div id="confirmation" tabindex="-1" hidden>
+        <span class="eyebrow">03 / RINGKASAN TERSIMPAN</span>
+        <h3>Rencana Anda sudah dirangkum.</h3>
+        <p class="notice">
+          Referensi contoh <strong id="draftRef"></strong>. Ini bukan konfirmasi
+          reservasi atau bukti pembayaran.
+        </p>
+        <button id="downloadSummary" type="button" class="button">
+          Unduh ringkasan (.txt) ↗
+        </button>
+      </div>
+    </dialog>
+    <script id="catalogue" type="application/json">
+      {
+        "STAYS": [
+          {
+            "id": "ap-ubud",
+            "name": "Ayung Sanctuary Pool Villa",
+            "area": "Sayan Ridge · Ubud, Bali",
+            "filter": "ubud",
+            "keys": "ubud sayan bali pool villa luxury sanctuary ayung",
+            "img": "./assets/stay-1.webp",
+            "alt": "Pemandangan teras sawah dan lembah Ubud",
+            "stars": 5,
+            "room": "Private Ayung River Pool Villa",
+            "meal": "Dedicated Butler & Artisanal Breakfast",
+            "policy": "Complimentary cancellation up to 7 days prior to arrival.",
+            "desc": "Cantilevered over the sacred Ayung River valley on Sayan Ridge. Features private heated infinity pool, authentic teak pavilion architecture, and dedicated 24-hour private butler service.",
+            "amenities": [
+              "24-Hour Dedicated Butler",
+              "Private Heated Infinity Pool",
+              "VIP Airport Fast-Track Transfer",
+              "Artisanal Organic Breakfast",
+              "High-Speed Fiber Satellite WiFi",
+              "Bespoke Evening Turn-Down Ritual"
+            ],
+            "nightly": 5400000
+          },
+          {
+            "id": "ap-tanahlot",
+            "name": "Tanah Cliff Ocean Residence",
+            "area": "Tabanan Coastline · Bali",
+            "filter": "tanahlot",
+            "keys": "tabanan tanah lot cliff luxury ocean residence",
+            "img": "./assets/stay-2.webp",
+            "alt": "Ocean cliffside sunset view",
+            "stars": 5,
+            "room": "Two-Bedroom Cliff Ocean Residence",
+            "meal": "Gourmet Breakfast & Sunset Canapés",
+            "policy": "Complimentary cancellation up to 10 days prior to arrival.",
+            "desc": "Dramatic cliff-edge sanctuary commanding sweeping views of the Indian Ocean and historic sea temples. Seamless indoor-outdoor limestone living with private sommelier tastings.",
+            "amenities": [
+              "Panoramic Cliff Sunset View",
+              "Private Chef Dining Table",
+              "Infinity Horizon Edge Pool",
+              "Complimentary Luxury Chauffeur",
+              "Sonos Sound System",
+              "Private Yoga Pavilion"
+            ],
+            "nightly": 6800000
+          },
+          {
+            "id": "ap-penida",
+            "name": "Nusa Diamond Private Retreat",
+            "area": "Penida Headland · Bali",
+            "filter": "penida",
+            "keys": "nusa penida diamond beach luxury retreat clifftop",
+            "img": "./assets/stay-3.webp",
+            "alt": "Diamond Beach ocean cliffs",
+            "stars": 5,
+            "room": "Private Island Clifftop Suite",
+            "meal": "Full Board & Private Fast Boat",
+            "policy": "Complimentary cancellation up to 14 days prior to arrival.",
+            "desc": "Secluded clifftop estate accessible via private helicopter charter or yacht tender. Unrivaled panoramic vistas of azure waters, manta ray coves, and pristine limestone pinnacles.",
+            "amenities": [
+              "Helipad Access & Yacht Tender",
+              "Full Board Bespoke Dining",
+              "Private Ocean-Facing Jacuzzi",
+              "Personal Escorted Excursions",
+              "Dedicated Marine Concierge",
+              "Starlink High-Speed Connectivity"
+            ],
+            "nightly": 4900000
+          }
+        ],
+        "ACTIVITIES": [
+          {
+            "id": "ap-phinisi",
+            "kind": "tour",
+            "name": "Private Phinisi Sunset Charter",
+            "area": "Benoa & Nusa Islands",
+            "filter": "penida",
+            "keys": "yacht phinisi charter sailing private luxury",
+            "img": "./assets/tour-1.webp",
+            "alt": "Sailing phinisi yacht in open waters",
+            "duration": "5 Hours Exclusive Charter",
+            "desc": "Handcrafted ironwood phinisi schooner reserved exclusively for your party. Enjoy champagne sunset cruise around secluded limestone bays with Michelin-trained private chef.",
+            "amenities": [
+              "Master Captain & 6-Person Crew",
+              "Champagne Welcome & Canapés",
+              "Seabob & Snorkel Equipment",
+              "Gourmet 4-Course Seafood Dinner"
+            ],
+            "policy": "Flexible reschedule in the event of adverse maritime conditions.",
+            "perPerson": 1850000
+          },
+          {
+            "id": "ap-borobudur",
+            "kind": "tour",
+            "name": "Private VIP Temple First Light Access",
+            "area": "Magelang · Central Java",
+            "filter": "ubud",
+            "keys": "borobudur private vip access temple sunrise archaeologist",
+            "img": "./assets/tour-2.webp",
+            "alt": "Borobudur monument at dawn",
+            "duration": "Full Day Private Expedition",
+            "desc": "Exclusive pre-opening access to the 9th-century Buddhist sanctuary before general admission gates open. Accompanied by prominent heritage archaeologist followed by royal breakfast.",
+            "amenities": [
+              "Pre-Dawn VIP Monument Gate Access",
+              "Historian & Archaeologist Briefing",
+              "Luxury Chauffeur Mercedes Transfer",
+              "Royal Colonial Estate Breakfast"
+            ],
+            "policy": "Complimentary cancellation up to 48 hours prior.",
+            "perPerson": 2400000
+          }
+        ],
+        "brand": "Aurelia Private Journeys",
+        "destinationHint": "Ubud, Tabanan, Penida…"
+      }
+    </script>
+    <script src="./storefront.js" defer></script>
+  </body>
 </html>
-

@@ -1,0 +1,157 @@
+{
+  "template": "07-sela-retreats",
+  "pageId": 8,
+  "artboards": [
+    {
+      "name": "07·D01 Home",
+      "id": 1206,
+      "w": 1440,
+      "h": 7998
+    },
+    {
+      "name": "07·D02 Stays — hasil pencarian",
+      "id": 45800,
+      "w": 1440,
+      "h": 3597
+    },
+    {
+      "name": "07·D03 Stay detail",
+      "id": 51643,
+      "w": 1440,
+      "h": 3782
+    },
+    {
+      "name": "07 · Brand Guidelines",
+      "id": 72645,
+      "w": 1440,
+      "h": 8233
+    },
+    {
+      "name": "07·D04 Program & sesi hening",
+      "id": 73245,
+      "w": 1440,
+      "h": 3637
+    },
+    {
+      "name": "07·D06 Booking 1 — data tamu",
+      "id": 73537,
+      "w": 1440,
+      "h": 1174
+    },
+    {
+      "name": "07·D07 Booking 2 — pembayaran",
+      "id": 73683,
+      "w": 1440,
+      "h": 1140
+    },
+    {
+      "name": "07·D08 Booking 3 — konfirmasi",
+      "id": 73848,
+      "w": 1440,
+      "h": 1464
+    },
+    {
+      "name": "07·D10 Tentang & filosofi hening",
+      "id": 73975,
+      "w": 1440,
+      "h": 1773
+    },
+    {
+      "name": "07·D11 Kontak & FAQ",
+      "id": 74080,
+      "w": 1440,
+      "h": 1325
+    },
+    {
+      "name": "07·D12 Search engine board",
+      "id": 74198,
+      "w": 1440,
+      "h": 1855
+    },
+    {
+      "name": "07·M01 Home (mobile)",
+      "id": 74819,
+      "w": 390,
+      "h": 3080
+    },
+    {
+      "name": "07·M02 Hasil pencarian (mobile)",
+      "id": 74982,
+      "w": 390,
+      "h": 2666
+    },
+    {
+      "name": "07·M03 Detail penginapan (mobile)",
+      "id": 75113,
+      "w": 390,
+      "h": 719
+    },
+    {
+      "name": "07·M04 Sheet pencarian (mobile)",
+      "id": 75143,
+      "w": 390,
+      "h": 659
+    }
+  ],
+  "assets": [
+    "about.webp",
+    "brand-mockup.webp",
+    "deck-1.webp",
+    "dest-1.webp",
+    "dest-2.webp",
+    "dest-3.webp",
+    "garden-1.webp",
+    "hero.webp",
+    "logo-mark-dark.png",
+    "logo-mark.png",
+    "logo-source.webp",
+    "room-1.webp",
+    "stay-1.webp",
+    "stay-2.webp",
+    "stay-3.webp",
+    "stay-4.webp",
+    "tour-1.webp",
+    "tour-2.webp",
+    "tour-3.webp"
+  ],
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#737B70",
+      "to": "#636960",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "accentText",
+      "from": "#B98270",
+      "to": "#8F6456",
+      "why": "accent used as text/label ≥4.5:1"
+    },
+    {
+      "token": "secondaryText",
+      "from": "#A7A88A",
+      "to": "#6F6F5B",
+      "why": "secondary used as text ≥4.5:1"
+    },
+    {
+      "token": "fieldBorder",
+      "from": "#DADBCF",
+      "to": "#8A8B83",
+      "why": "input outline ≥3:1 (WCAG 1.4.11)"
+    },
+    {
+      "token": "warning",
+      "from": "#A7793D",
+      "to": "#8F6834",
+      "why": "warning text ≥4.5:1"
+    }
+  ],
+  "issues": [],
+  "deviations": [
+    "muted: #737B70 -> #636960",
+    "accentText: #B98270 -> #8F6456",
+    "secondaryText: #A7A88A -> #6F6F5B",
+    "fieldBorder: #DADBCF -> #8A8B83",
+    "warning: #A7793D -> #8F6834"
+  ]
+}

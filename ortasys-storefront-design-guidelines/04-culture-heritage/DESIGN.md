@@ -189,6 +189,8 @@ Use mostly restrained, squared geometry with small corner radii. Inputs and butt
 
 ## Components
 
+- **Branded calendar:** single-month Indonesian picker with 4px menu corners, the same option surfaces/type/selected colors as this preset, and a fixed-size calendar icon separate from the editable date text. Arrow keys move by day/week, Home/End by week and Page Up/Down by month; Enter selects, Escape dismisses, and min/max dates disable unavailable days. The top-layer picker flips/clamps to the viewport and preserves native date values plus input/change events. Browsers without Popover API retain native controls; this is not the D12 dual-month calendar.
+
 - **Navigation:** editorial text-led navigation with clear active state. Avoid complex mega menus unless the actual content structure requires them.
 - **Primary button:** terracotta fill, white label, 4px radius. Use clear action language.
 - **Secondary button:** transparent or warm-white surface with terracotta border/text.
@@ -199,30 +201,31 @@ Use mostly restrained, squared geometry with small corner radii. Inputs and butt
 - **Experience card:** show duration, meeting point, inclusions, or difficulty only if supplied by the product data.
 - **Quote / pull-quote:** use only real, approved customer or agency quotations with attribution and permission.
 - **Footer:** quiet, text-led, with complete contact and policy navigation.
+- **Dropdowns and autocomplete:** `.ui-select` uses Source Sans 3, 48px triggers, 4px corners and a separate 16px clay chevron with 12px spacing. Parchment top-layer menus have double clay rules, 6px inner padding and wrapping 44px options. Clay fill identifies selection, sandstone identifies hover/keyboard focus, and the locked blue focus ring remains visible. Destination suggestions and required child ages share these controls without changing native form values or validation.
+- **Opened-state geometry:** dialogs retain restrained 4px corners and double archival rules, with 24px desktop / 12px mobile viewport gutters. Their sticky parchment headers reserve a nonshrinking 44px close target and allow long titles to wrap. Content scrolls within the viewport; action rows wrap and drawer totals remain outside the scrolling trip list. Notifications stay below modal backdrops, never over a booking CTA.
+- **Registry and ledger reflow:** native date fields wrap at a 140px minimum; guest summaries reserve their own chevron space, age fields wrap, and occupancy buttons remain 44px targets. Exhibition ledgers wrap price and action independently, switching to full-width actions below 400px rather than forcing a single-line editorial column.
 
 ## Unique Architectural & Component DNA (Preset 04)
 
 To make this cultural & heritage storefront read like an authentic archival monograph or museum broadsheet rather than a generic booking template, its sections and search console use the following distinctive structures:
 
-- **Hero Architecture (Broadsheet Monograph Front-Page):** Framed by double horizontal rules (`border-y-2 border-primary`) with a centered journal masthead (*Jurnal Perjalanan Pusaka Nusantara · Edisi Warisan Hidup*) and a 3-column newspaper front-page layout (Left 3 cols: Editor's Cultural Note & Drop-Cap; Center 6 cols: Archival Framed Photography with caption plate; Right 3 cols: Curated Heritage Index).
-- **Search Engine UI (Archival Registry / Buku Tamu Console):** Styled like a heritage guest registry book on warm parchment (`#FFFAF2`) with double-line borders, numbered archival field labels (`I. Destinasi Pusaka`, `II. Tanggal Singgah`, `III. Rombongan Pejalan`), and a terracotta wax-seal-colored verification button.
-- **Inventory Section Layout (Broadsheet Columnar Exhibition):** Cards sit inside a unified newspaper-column grid divided by vertical sandstone hairlines (`lg:divide-x divide-line`), where each property is presented as an archival plate (`ARSIP 01`, `ARSIP 02`, `ARSIP 03`) with serif headlines, historical context, and live tariff ledger.
-- **Cultural Experiences Layout (2-Column Archival Story Spreads):** Side-by-side documentary spreads with museum-caption metadata and historian guide notes.
-- **Manifesto Section (Centered Pull-Quote & 3-Column Monograph):** Opens with a large serif pull-quote followed by a 3-column vertical-rule essay on cultural ethics.
+- **Hero Architecture (Broadsheet Monograph Front-Page):** A journal utility masthead and crisp double-rule navigation precede a 3:6:3 editor's note / archival photograph with italic caption / four-entry heritage index composition. There is no generic full-bleed promotional hero.
+- **Search Engine UI (Archival Registry / Buku Tamu Console):** Warm parchment with a double terracotta rule; compact top-docked modes (`Rumah Pusaka & Pesanggrahan` / `Tur Sejarah & Lokakarya`); Roman-numbered destination, date and guest columns; and a dedicated terracotta verification column. The guest summary opens an inline registry extension containing labelled occupancy steppers and required child ages.
+- **Inventory Section Layout (Broadsheet Columnar Exhibition):** One unified exhibition grid divided by sandstone hairlines, archival plate numbers, documentary images, serif titles, contextual notes and a double-rule IDR selling-price ledger. No invented star ratings or heritage certifications.
+- **Cultural Experiences Layout:** Two side-by-side documentary image/text spreads with caption metadata, example prices and detail actions.
+- **Manifesto Section:** A centred, explicitly illustrative agency statement followed by a three-column, vertical-rule essay on respectful travel. No claimed local partnerships, guaranteed availability or ceremonial access.
 
 ## Homepage Composition
 
-Recommended fixed homepage sequence:
+Implemented homepage sequence:
 
-1. Header and navigation.
-2. Editorial hero introducing the agency's cultural travel focus.
-3. Hotel / activities search panel.
-4. Curated cultural themes or destination collections.
-5. Destination stories and editorial features.
-6. Featured hotels and stays.
-7. Local experiences or tours, only when enabled.
-8. Agency philosophy and verified service differentiators.
-9. Contact CTA and footer.
+1. Journal masthead and editorial navigation.
+2. Three-column broadsheet front page and functional heritage index.
+3. Horizontal archival guest registry.
+4. Columnar exhibition of sample heritage stays.
+5. Two documentary experience spreads.
+6. Agency manifesto and three-part cultural-ethics essay.
+7. About/contact, FAQ, policy disclosure and agency footer.
 
 The first screen must balance inspiration with utility. A visitor should understand the agency's focus and be able to begin a search without navigating through multiple story sections.
 
@@ -238,13 +241,20 @@ Copy should be descriptive, respectful, and specific. Do not invent cultural exp
 
 ## Interaction & Responsive Behavior
 
-- Desktop: use editorial split layouts and a clear search panel.
-- Tablet: collapse asymmetric layouts into a balanced two-column structure.
-- Mobile: stack narrative and search content in reading order; never put essential search controls behind decorative interactions.
-- Keep body text readable and avoid long full-width paragraphs.
-- Provide keyboard access, visible focus, descriptive labels, validation, and 44px minimum touch targets.
-- Respect reduced-motion preferences; use restrained transitions.
-- Preserve the common Ortasys booking and payment flow.
+- Desktop (1101px and above): 3:6:3 editorial front page; a four-part destination/date/guest/action registry; and three exhibition columns sharing vertical rules.
+- Tablet (768–1100px): editor and photograph share two columns, the index becomes a four-entry strip, and registry fields use a two-by-two layout. The exhibition remains a compact three-column collection; documentary spreads stack their photographs above text.
+- Mobile (under 768px): editor note, archival image, index and registry follow reading order. Registry columns stack; the guest extension remains inline rather than floating off-screen. Exhibition plates become one ruled column and experience spreads become full-width. Outer gutters are 16px.
+- Inputs remain 48px, touch targets 44px, with persistent labels, visible focus, reduced-motion support, and keyboard-operable dialogs (Escape, focus trapping and return).
+- Stays require destination, 1–30 nights, 1–9 rooms, 1–20 adults and 0–20 children per room. Every child in every room must have an explicitly chosen age 0–17; there is no default age. Tours use a date and participant counts without multiplying participants by hidden rooms.
+- Local catalogue interactions provide validation, loading, true empty results, reset and a retryable failure simulation in the FAQ demo disclosure. Search and product selection preserve a trip ledger and three-step guest/payment/summary simulation.
+- Payment methods are explicitly illustrative QRIS/VA choices, not live transactions. No official reservation, payment success, email or voucher is claimed. The download is a real plain-text simulation summary.
+
+### Standalone documentation and token contract
+
+`guidelines.html`, `search-board.html`, and `figcraft.html` retain the original embedded documentation content and styling with ordinary sibling-page links. The customer landing has no hidden documentation DOM, view router, merchandise mockup or technical documentation navigation. A quiet footer link opens the guidelines.
+
+Existing `brand-dna.json` is reused, including its AA-safe `muted`, `secondaryText`, `fieldBorder`, `warning` and `focus` tokens; no new palette or logo is introduced. Implementation change: replaced the mixed-purpose page with the registry/broadsheet composition above while retaining supplied product identities, assets, sample selling prices and usable local booking interactions.
+
 
 ## Do’s and Don’ts
 

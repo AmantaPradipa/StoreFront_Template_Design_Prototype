@@ -1,0 +1,167 @@
+{
+  "project": "Ortasys_StoreFront",
+  "template": "08-metrolink-travel",
+  "brand": "MetroLink Travel",
+  "preset": "Urban & Business Travel",
+  "tagline": "Reservasi hotel, transit, dan MICE untuk perjalanan dinas. Harga dicek langsung saat Anda mencari.",
+  "tokens": {
+    "primary": "#23364D",
+    "primaryHover": "#17283B",
+    "secondary": "#376C98",
+    "tertiary": "#B7C7D5",
+    "accent": "#886034",
+    "bg": "#F3F5F7",
+    "surface": "#FFFFFF",
+    "surfaceMuted": "#E7ECF0",
+    "text": "#202B36",
+    "muted": "#606B77",
+    "border": "#D5DDE4",
+    "success": "#28734E",
+    "warning": "#966121",
+    "error": "#B54545",
+    "focus": "#1769AA",
+    "onPrimary": "#FFFFFF",
+    "fieldBorder": "#868B90",
+    "onDark": "#FFFFFF",
+    "cta": "#C28A4B",
+    "onCta": "#17283B",
+    "mutedRaw": "#65717D",
+    "accentText": "#886034",
+    "secondaryText": "#3A72A0",
+    "secondaryRaw": "#3D78A8",
+    "accentRaw": "#C28A4B",
+    "brass": "#C28A4B",
+    "brassLight": "#C8965D",
+    "onDarkMuted": "#B7C7D5",
+    "greenLight": "#3FB980",
+    "focusDark": "#4284BA",
+    "surfaceAlt": "#F4F6F8",
+    "ledgerLine": "#D5DDE4"
+  },
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#65717D",
+      "to": "#606B77",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "accentText",
+      "from": "#C28A4B",
+      "to": "#886034",
+      "why": "brass used as small text/label ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "secondaryText",
+      "from": "#3D78A8",
+      "to": "#3A72A0",
+      "why": "secondary used as text ≥4.5:1"
+    },
+    {
+      "token": "fieldBorder",
+      "from": "#D5DDE4",
+      "to": "#868B90",
+      "why": "input outline ≥3:1 (WCAG 1.4.11)"
+    },
+    {
+      "token": "warning",
+      "from": "#A66B25",
+      "to": "#966121",
+      "why": "warning text ≥4.5:1"
+    },
+    {
+      "token": "secondary",
+      "from": "#3D78A8",
+      "to": "#376C98",
+      "why": "links / selected text ≥4.5:1 on bg, surface, surface-muted (raw #3D78A8 kept as secondaryRaw for fills/graphics)"
+    },
+    {
+      "token": "accent",
+      "from": "#C28A4B",
+      "to": "#886034",
+      "why": "accent token holds the AA-safe text variant; raw brass stays as c.brass / c.cta for fills, dots and icons on navy (UI >=3:1)"
+    },
+    {
+      "token": "brassLight",
+      "from": "#C28A4B",
+      "to": "#C8965D",
+      "why": "brass as small text on navy surfaces ≥4.5:1"
+    },
+    {
+      "token": "onDarkMuted",
+      "from": "-",
+      "to": "#B7C7D5",
+      "why": "secondary text on navy: tertiary #B7C7D5 = 7.12:1 on primary"
+    },
+    {
+      "token": "greenLight",
+      "from": "#28734E",
+      "to": "#3FB980",
+      "why": "live/success dot+text on navy ≥4.5:1"
+    },
+    {
+      "token": "focusDark",
+      "from": "#1769AA",
+      "to": "#4284BA",
+      "why": "focus ring on navy ≥3:1"
+    },
+    {
+      "token": "surfaceAlt",
+      "from": "-",
+      "to": "#F4F6F8",
+      "why": "zebra/alt row tint (derived mix surface+surface-muted)"
+    },
+    {
+      "token": "ledgerLine",
+      "from": "-",
+      "to": "#D5DDE4",
+      "why": "ledger row divider (decorative, exempt from 3:1; inputs use fieldBorder)"
+    }
+  ],
+  "fonts": {
+    "display": "IBM Plex Sans",
+    "displaySt": "Bold",
+    "displayLs": "-3.5%",
+    "head": "Inter",
+    "headSt": "SemiBold",
+    "body": "Inter"
+  },
+  "radii": {
+    "xs": 4,
+    "sm": 4,
+    "md": 8,
+    "lg": 8,
+    "xl": 8,
+    "pill": 999
+  },
+  "searchEngine": {
+    "signature": "Inline Single-Row Corporate Ribbon Bar",
+    "modes": [
+      "Hotel & Akomodasi Bisnis",
+      "MICE & Transit Bandara"
+    ],
+    "limits": {
+      "rooms": "1-9",
+      "adultsPerRoom": "1-20",
+      "childrenPerRoom": "0-20",
+      "maxNights": 30
+    }
+  },
+  "programmaticTints": [
+    "#E5E7EA",
+    "#E5EEEA",
+    "#E7EDF3",
+    "#E9EBED",
+    "#EAF1ED",
+    "#EDEFF1",
+    "#EFF4F9",
+    "#F0E9E0",
+    "#F1F6FA",
+    "#F3F8FB",
+    "#F4F5F6",
+    "#F6E9E9",
+    "#F8F1E9",
+    "#F9F0F0",
+    "#FBF4F4"
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "template": "05-rimba-trek-adventures",
+  "pageId": 6,
+  "artboards": [
+    {
+      "name": "05·D01 Home",
+      "id": 863,
+      "w": 1440,
+      "h": 6789
+    },
+    {
+      "name": "05·D02 Stays — hasil pencarian",
+      "id": 12515,
+      "w": 1440,
+      "h": 2577
+    },
+    {
+      "name": "05·D04 Experiences — katalog jalur",
+      "id": 15125,
+      "w": 1440,
+      "h": 3086
+    },
+    {
+      "name": "05·D03 Stay detail — Senaru Foothill Eco Lodge",
+      "id": 25326,
+      "w": 1440,
+      "h": 4438
+    },
+    {
+      "name": "05·M01 Home (mobile)",
+      "id": 26213,
+      "w": 390,
+      "h": 10852
+    },
+    {
+      "name": "05·D06 Booking 1 — Data pendaki",
+      "id": 26298,
+      "w": 1440,
+      "h": 3067
+    },
+    {
+      "name": "05 · Brand Guidelines",
+      "id": 30005,
+      "w": 1440,
+      "h": 8563
+    },
+    {
+      "name": "05·D05 Experience detail — Rinjani Summit",
+      "id": 32322,
+      "w": 1440,
+      "h": 4671
+    },
+    {
+      "name": "05·D07 Booking 2 — Pembayaran",
+      "id": 33243,
+      "w": 1440,
+      "h": 3095
+    },
+    {
+      "name": "05·M02 Results (mobile)",
+      "id": 34099,
+      "w": 390,
+      "h": 5893
+    },
+    {
+      "name": "05·D09 Destination — TN Gunung Rinjani",
+      "id": 39129,
+      "w": 1440,
+      "h": 4601
+    },
+    {
+      "name": "05·D08 Booking 3 — Konfirmasi",
+      "id": 40378,
+      "w": 1440,
+      "h": 2981
+    },
+    {
+      "name": "05·M03 Stay detail (mobile)",
+      "id": 45391,
+      "w": 390,
+      "h": 4991
+    },
+    {
+      "name": "05·D12 Search engine board",
+      "id": 48549,
+      "w": 1440,
+      "h": 5593
+    },
+    {
+      "name": "05·D10 Tentang & pendekatan",
+      "id": 57321,
+      "w": 1440,
+      "h": 5808
+    },
+    {
+      "name": "05·M04 Search sheet (mobile)",
+      "id": 65672,
+      "w": 390,
+      "h": 2758
+    },
+    {
+      "name": "05·D11 Kontak & FAQ",
+      "id": 67624,
+      "w": 1440,
+      "h": 3511
+    }
+  ],
+  "assets": [
+    "about.webp",
+    "brand-mockup.webp",
+    "camp.webp",
+    "dest-1.webp",
+    "dest-2.webp",
+    "dest-3.webp",
+    "hero.webp",
+    "logo-mark-dark.png",
+    "logo-mark.png",
+    "logo-mark.webp",
+    "stay-1.webp",
+    "stay-2.webp",
+    "stay-3.webp",
+    "stay-4.webp",
+    "topo-dark.webp",
+    "topo-light.webp",
+    "tour-1.webp",
+    "tour-2.webp",
+    "tour-3.webp",
+    "tour-4.webp"
+  ],
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#68716A",
+      "to": "#5E6660",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "warning",
+      "from": "#B56B24",
+      "to": "#9B5C1E",
+      "why": "warning text ≥4.5:1"
+    }
+  ],
+  "issues": [],
+  "deviations": [
+    "muted: #68716A -> #5E6660",
+    "warning: #B56B24 -> #9B5C1E"
+  ]
+}

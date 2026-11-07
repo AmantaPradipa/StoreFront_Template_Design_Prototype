@@ -1,0 +1,151 @@
+{
+  "template": "02-aurelia-private-journeys",
+  "pageId": 3,
+  "artboards": [
+    {
+      "name": "02·D01 Home",
+      "id": 22380,
+      "w": 1440,
+      "h": 7280
+    },
+    {
+      "name": "02·D04 Charter & pengalaman",
+      "id": 45053,
+      "w": 1440,
+      "h": 4035
+    },
+    {
+      "name": "02·D12 Search board",
+      "id": 46588,
+      "w": 1440,
+      "h": 5734
+    },
+    {
+      "name": "02·D09 Destinasi Bali",
+      "id": 53123,
+      "w": 1440,
+      "h": 5025
+    },
+    {
+      "name": "02·D02 Stays — hasil pencarian",
+      "id": 54751,
+      "w": 1440,
+      "h": 2375
+    },
+    {
+      "name": "02·D06 Booking 1 — data tamu",
+      "id": 57905,
+      "w": 1440,
+      "h": 1937
+    },
+    {
+      "name": "02·D07 Booking 2 — pembayaran",
+      "id": 58115,
+      "w": 1440,
+      "h": 2695
+    },
+    {
+      "name": "02·D08 Booking 3 — konfirmasi",
+      "id": 62192,
+      "w": 1440,
+      "h": 1362
+    },
+    {
+      "name": "02·M05 Checkout (mobile)",
+      "id": 64643,
+      "w": 390,
+      "h": 1772
+    },
+    {
+      "name": "02 · Brand Guidelines",
+      "id": 69732,
+      "w": 1440,
+      "h": 3404
+    },
+    {
+      "name": "02·D03 Detail penginapan",
+      "id": 69940,
+      "w": 1440,
+      "h": 2066
+    },
+    {
+      "name": "02·D10 Tentang & pendekatan",
+      "id": 70168,
+      "w": 1440,
+      "h": 2133
+    },
+    {
+      "name": "02·D11 Kontak & FAQ",
+      "id": 70309,
+      "w": 1440,
+      "h": 1323
+    },
+    {
+      "name": "02·M01 Home (mobile)",
+      "id": 70429,
+      "w": 390,
+      "h": 3025
+    },
+    {
+      "name": "02·M02 Hasil pencarian (mobile)",
+      "id": 70586,
+      "w": 390,
+      "h": 2770
+    },
+    {
+      "name": "02·M03 Detail penginapan (mobile)",
+      "id": 70713,
+      "w": 390,
+      "h": 858
+    },
+    {
+      "name": "02·M04 Sheet pencarian (mobile)",
+      "id": 70754,
+      "w": 390,
+      "h": 992
+    }
+  ],
+  "assets": [
+    "about.webp",
+    "brand-mockup.webp",
+    "charter-2.webp",
+    "dest-1.webp",
+    "dest-2.webp",
+    "dest-3.webp",
+    "hero-portrait.webp",
+    "hero.webp",
+    "logo-mark-dark.png",
+    "logo-mark.png",
+    "logo-mark.webp",
+    "stay-1.webp",
+    "stay-2.webp",
+    "stay-3.webp",
+    "stay-4.webp",
+    "stay-5.webp",
+    "stay-6.webp",
+    "stay-7.webp",
+    "stay-8.webp",
+    "tour-1.webp",
+    "tour-2.webp",
+    "tour-3.webp"
+  ],
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#756F66",
+      "to": "#69645C",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "warning",
+      "from": "#9B6B2F",
+      "to": "#93662D",
+      "why": "warning text ≥4.5:1"
+    }
+  ],
+  "issues": [],
+  "deviations": [
+    "muted: #756F66 -> #69645C",
+    "warning: #9B6B2F -> #93662D"
+  ]
+}

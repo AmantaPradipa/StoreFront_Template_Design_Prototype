@@ -1,0 +1,156 @@
+{
+  "template": "06-temantrip-holidays",
+  "pageId": 7,
+  "artboards": [
+    {
+      "name": "06 · Brand Guidelines",
+      "id": 78537,
+      "w": 1440,
+      "h": 4235
+    },
+    {
+      "name": "06·D01 Home",
+      "id": 79086,
+      "w": 1440,
+      "h": 4371
+    },
+    {
+      "name": "06·D02 Stays — hasil pencarian",
+      "id": 79874,
+      "w": 1440,
+      "h": 2478
+    },
+    {
+      "name": "06·D03 Detail penginapan",
+      "id": 80348,
+      "w": 1440,
+      "h": 2433
+    },
+    {
+      "name": "06·D04 Paket & aktivitas keluarga",
+      "id": 80657,
+      "w": 1440,
+      "h": 1646
+    },
+    {
+      "name": "06·D06 Booking 1 — data tamu",
+      "id": 80858,
+      "w": 1440,
+      "h": 1291
+    },
+    {
+      "name": "06·D07 Booking 2 — pembayaran",
+      "id": 81023,
+      "w": 1440,
+      "h": 1252
+    },
+    {
+      "name": "06·D08 Booking 3 — konfirmasi",
+      "id": 81202,
+      "w": 1440,
+      "h": 1584
+    },
+    {
+      "name": "06·D10 Tentang & panduan keluarga",
+      "id": 81359,
+      "w": 1440,
+      "h": 1659
+    },
+    {
+      "name": "06·D11 Kontak & FAQ",
+      "id": 81513,
+      "w": 1440,
+      "h": 1417
+    },
+    {
+      "name": "06·D12 Search engine board",
+      "id": 81650,
+      "w": 1440,
+      "h": 2564
+    },
+    {
+      "name": "06·M01 Home (mobile)",
+      "id": 82294,
+      "w": 390,
+      "h": 1759
+    },
+    {
+      "name": "06·M02 Hasil pencarian (mobile)",
+      "id": 82414,
+      "w": 390,
+      "h": 2008
+    },
+    {
+      "name": "06·M03 Detail penginapan (mobile)",
+      "id": 82569,
+      "w": 390,
+      "h": 727
+    },
+    {
+      "name": "06·M04 Sheet pencarian (mobile)",
+      "id": 82598,
+      "w": 390,
+      "h": 512
+    }
+  ],
+  "assets": [
+    "about.webp",
+    "brand-mockup.webp",
+    "dest-1.webp",
+    "dest-2.webp",
+    "dest-3.webp",
+    "group.webp",
+    "hero.webp",
+    "logo-mark-dark.png",
+    "logo-mark.png",
+    "logo-mark.webp",
+    "stay-1.webp",
+    "stay-2.webp",
+    "stay-3.webp",
+    "stay-4.webp",
+    "tour-1.webp",
+    "tour-2.webp",
+    "tour-3.webp",
+    "van.webp"
+  ],
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#69756D",
+      "to": "#5F6963",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "accentText",
+      "from": "#6B86A5",
+      "to": "#5C738E",
+      "why": "accent used as text/label ≥4.5:1"
+    },
+    {
+      "token": "secondaryText",
+      "from": "#E58A55",
+      "to": "#A1603C",
+      "why": "secondary used as text ≥4.5:1"
+    },
+    {
+      "token": "fieldBorder",
+      "from": "#E2D9CC",
+      "to": "#8F8981",
+      "why": "input outline ≥3:1 (WCAG 1.4.11)"
+    },
+    {
+      "token": "warning",
+      "from": "#A66B25",
+      "to": "#966121",
+      "why": "warning text ≥4.5:1"
+    }
+  ],
+  "issues": [],
+  "deviations": [
+    "muted: #69756D -> #5F6963",
+    "accentText: #6B86A5 -> #5C738E",
+    "secondaryText: #E58A55 -> #A1603C",
+    "fieldBorder: #E2D9CC -> #8F8981",
+    "warning: #A66B25 -> #966121"
+  ]
+}

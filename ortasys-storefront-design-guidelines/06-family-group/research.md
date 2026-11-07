@@ -1,0 +1,19 @@
+# Riset — TemanTrip Holidays (Family & Group)
+
+Tujuan: menerjemahkan temuan riset menjadi keputusan desain konkret. Semua data pada sampel adalah *Contoh konten agen*; angka riset di bawah dikutip dari sumber publik, bukan klaim brand.
+
+| # | Temuan | Keputusan desain | Sumber |
+|---|--------|------------------|--------|
+| 1 | Keluarga punya kebutuhan tidur berbeda: sebagian satu kamar bersama anak, sebagian beberapa kamar; konfigurasi kasur & kapasitas harus akurat agar properti muncul di pencarian yang tepat. | Kartu inventaris 2 kolom memuat **Matriks Kenyamanan Keluarga** (kapasitas unit, konfigurasi kasur/pintu, fasilitas anak/lansia) — bukan sekadar daftar amenity. | [Booking.com Partners — Attract and accommodate families](https://partner.booking.com/en-us/solutions/attract-and-accommodate-families) |
+| 2 | Keluarga mencari "rumah kedua": dapur, kolam/halaman, boks bayi, dan harga anak yang transparan; kejelasan harga per kelompok umur meningkatkan kepercayaan. | Fakta kenyamanan ditampilkan sebagai ikon + teks pendek (dapur, kolam berpagar, baby crib *bila tersedia*); helper **Estimasi patungan per orang** memecah harga jual total; tanpa klaim jaminan. | Booking.com Partners (di atas) |
+| 3 | Fitur pencarian harus jadi konten utama di atas lipatan; 99% peserta uji di OTA/properti sewa langsung mencari form pencarian; kontras, ukuran besar, dan tombol CTA yang jelas membuatnya dominan. | Hero 6/6 menjaga **wizard pencarian 3 langkah** selalu terlihat tepat di bawah headline dalam kontainer krem besar bertepi kontras; tombol "Cek kamar terhubung" berwarna oranye hangat (CTA) dengan teks gelap AA. | [Baymard — Booking search as primary content](https://baymard.com/research-articles/travel-accommodations-booking-search) |
+| 4 | Wizard cocok untuk pengguna awam / proses jarang; tampilkan daftar langkah, sorot langkah aktif, beri label tombol deskriptif, dan jangan sembunyikan konteks langkah sebelumnya. | Wizard TemanTrip tampil sebagai **3 kartu bernomor sejajar** (semua langkah terlihat sekaligus), tombol "Lanjut: atur rombongan" bukan "Next", ringkasan langkah selesai tetap terlihat; ada tombol *Ubah*. | [NN/g — Wizards: Definition and Design Recommendations](https://www.nngroup.com/articles/wizards/) |
+| 5 | Pada Baymard, "Rooms & Guests" yang membutuhkan scroll atau bertumpuk membuat pengguna salah input; popover harus muat penuh. | Popover kamar & tamu dirancang ≤ 440 px tinggi, dengan stepper 44 px, batas 1–9 kamar / 1–20 dewasa / 0–20 anak dan usia anak wajib ditulis eksplisit; pill **Total anggota rombongan** menghitung langsung. | Baymard (di atas) |
+| 6 | Merek keluarga multigenerasi yang kredibel memakai tipografi bersahabat tapi tidak kekanak-kanakan; Bushbaby Travel memakai huruf kecil buatan tangan + simbol hangat untuk menjembatani keluarga muda hingga kakek-nenek. | Nunito Sans ExtraBold (bulat, ramah) + Inter untuk data; **tanpa** font tulisan tangan; logo = rumah + matahari + dua busur bicara, datar dan rapi. | [Wild Dog Design — Bushbaby Travel multi-generational brand](https://wilddogdesign.co.uk/our-work/brand/bushbaby-travel) |
+| 7 | Studi branding family-holiday (Hoburne) menekankan palet hangat dan fotografi momen nyata. | Foto hangat high-key, orang hanya dari belakang/jauh, 4 momen scrapbook (kolam vila, jalan pantai 3 generasi, interior kamar terhubung, van rombongan) — tidak ada ilustrasi kartun. | [Fable&Co — Hoburne Holidays](https://fableco.uk/project/hoburne-holidays) |
+
+## Ringkasan arah
+- **Tiga langkah, selalu terlihat**: Destinasi & tanggal → Rombongan & kamar → Cek kuota kamar terhubung.
+- **Matriks kenyamanan** pada setiap kartu inventaris; bahasa "contoh/verifikasi properti", tidak menjanjikan.
+- **Scrapbook**: kolase foto 2×2 dengan sudut 24–32 px, label tulisan netral (bukan tulisan tangan), dan aksen madu/oranye.
+- **Tone**: hangat, praktis, menenangkan; tanpa klaim sertifikasi, tanpa jumlah ulasan, tanpa "terbaik".

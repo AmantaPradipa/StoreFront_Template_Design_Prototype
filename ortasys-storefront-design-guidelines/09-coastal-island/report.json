@@ -1,0 +1,159 @@
+{
+  "template": "09-nusa-tide-escapes",
+  "pageId": 10,
+  "artboards": [
+    {
+      "name": "09 · Brand Guidelines",
+      "id": 82672,
+      "w": 1440,
+      "h": 4326
+    },
+    {
+      "name": "09·D01 Home",
+      "id": 83173,
+      "w": 1440,
+      "h": 3938
+    },
+    {
+      "name": "09·D02 Stays — hasil pencarian",
+      "id": 83779,
+      "w": 1440,
+      "h": 2135
+    },
+    {
+      "name": "09·D03 Detail penginapan",
+      "id": 84172,
+      "w": 1440,
+      "h": 1809
+    },
+    {
+      "name": "09·D04 Pelayaran & tur terumbu",
+      "id": 84388,
+      "w": 1440,
+      "h": 2428
+    },
+    {
+      "name": "09·D06 Booking 1 — data tamu",
+      "id": 84801,
+      "w": 1440,
+      "h": 1239
+    },
+    {
+      "name": "09·D07 Booking 2 — pembayaran",
+      "id": 84958,
+      "w": 1440,
+      "h": 1211
+    },
+    {
+      "name": "09·D08 Booking 3 — konfirmasi",
+      "id": 85129,
+      "w": 1440,
+      "h": 1526
+    },
+    {
+      "name": "09·D10 Tentang & konservasi laut",
+      "id": 85269,
+      "w": 1440,
+      "h": 1896
+    },
+    {
+      "name": "09·D11 Kontak & FAQ",
+      "id": 85430,
+      "w": 1440,
+      "h": 1306
+    },
+    {
+      "name": "09·D12 Search engine board",
+      "id": 85553,
+      "w": 1440,
+      "h": 1952
+    },
+    {
+      "name": "09·M01 Home (mobile)",
+      "id": 86072,
+      "w": 390,
+      "h": 1712
+    },
+    {
+      "name": "09·M02 Hasil pencarian (mobile)",
+      "id": 86216,
+      "w": 390,
+      "h": 1987
+    },
+    {
+      "name": "09·M03 Detail penginapan (mobile)",
+      "id": 86395,
+      "w": 390,
+      "h": 717
+    },
+    {
+      "name": "09·M04 Sheet pencarian (mobile)",
+      "id": 86462,
+      "w": 390,
+      "h": 624
+    }
+  ],
+  "assets": [
+    "about.webp",
+    "brand-mockup.webp",
+    "dest-1.webp",
+    "dest-2.webp",
+    "dest-3.webp",
+    "dest-4.webp",
+    "hero.webp",
+    "logo-mark-dark.png",
+    "logo-mark.png",
+    "reef.webp",
+    "safety.webp",
+    "stay-1.webp",
+    "stay-2.webp",
+    "stay-3.webp",
+    "stay-4.webp",
+    "stay-5.webp",
+    "stay-6.webp",
+    "tour-1.webp",
+    "tour-2.webp",
+    "tour-3.webp",
+    "tour-4.webp"
+  ],
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#647A79",
+      "to": "#5A6E6D",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "accentText",
+      "from": "#E8C98D",
+      "to": "#7D6C4D",
+      "why": "accent used as text/label ≥4.5:1"
+    },
+    {
+      "token": "secondaryText",
+      "from": "#E29A70",
+      "to": "#96664A",
+      "why": "secondary used as text ≥4.5:1"
+    },
+    {
+      "token": "fieldBorder",
+      "from": "#D4E3DF",
+      "to": "#858F8C",
+      "why": "input outline ≥3:1 (WCAG 1.4.11)"
+    },
+    {
+      "token": "warning",
+      "from": "#A96C2D",
+      "to": "#996229",
+      "why": "warning text ≥4.5:1"
+    }
+  ],
+  "issues": [],
+  "deviations": [
+    "muted: #647A79 -> #5A6E6D",
+    "accentText: #E8C98D -> #7D6C4D",
+    "secondaryText: #E29A70 -> #96664A",
+    "fieldBorder: #D4E3DF -> #858F8C",
+    "warning: #A96C2D -> #996229"
+  ]
+}

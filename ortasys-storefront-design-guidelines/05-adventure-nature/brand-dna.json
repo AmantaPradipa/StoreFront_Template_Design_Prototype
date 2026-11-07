@@ -1,0 +1,114 @@
+{
+  "project": "Ortasys_StoreFront",
+  "template": "05-rimba-trek-adventures",
+  "brand": "Rimba Trek Adventures",
+  "preset": "Adventure & Nature",
+  "tagline": "Operator trekking & ekspedisi alam liar Nusantara. Kuota dicek langsung, tim kecil, jalur dipandu.",
+  "tokens": {
+    "primary": "#183B32",
+    "primaryHover": "#102D26",
+    "secondary": "#A05728",
+    "tertiary": "#E6C99C",
+    "accent": "#597151",
+    "bg": "#F2F0E9",
+    "surface": "#FFFFFF",
+    "surfaceMuted": "#E5E7DE",
+    "text": "#242A27",
+    "muted": "#5E6660",
+    "border": "#848883",
+    "success": "#34734D",
+    "warning": "#9B5C1E",
+    "error": "#B64138",
+    "focus": "#246B9B",
+    "onPrimary": "#FFFFFF",
+    "fieldBorder": "#848883",
+    "onDark": "#FFFFFF",
+    "cta": "#D97736",
+    "onCta": "#0C241D",
+    "ctaHover": "#E58A4F",
+    "moss": "#6D8B63",
+    "trail": "#D97736",
+    "hairline": "#D2D8CF",
+    "pine2": "#102D26",
+    "sand": "#E6C99C",
+    "mutedRaw": "#68716A",
+    "accentText": "#597151",
+    "secondaryText": "#A05728",
+    "heroScrimStrong": "#183B32B8",
+    "heroScrimLight": "#183B321A"
+  },
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#68716A",
+      "to": "#5E6660",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "warning",
+      "from": "#B56B24",
+      "to": "#9B5C1E",
+      "why": "warning text ≥4.5:1"
+    }
+    ,
+    {
+      "token": "heroScrimStrong / heroScrimLight",
+      "from": "#183B32",
+      "to": "#183B32B8 / #183B321A",
+      "why": "Brand-primary alpha overlays on landscape photography; text remains on the opaque primary side of the hero."
+    }
+  ],
+  "fonts": {
+    "display": "Barlow Condensed",
+    "displaySt": "Bold",
+    "displayLs": "-2.5%",
+    "head": "Manrope",
+    "headSt": "Bold",
+    "body": "Manrope"
+  },
+  "radii": {
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 18,
+    "xl": 24,
+    "pill": 999
+  },
+  "searchEngine": {
+    "signature": "Vertical Field-Station Dispatch Console (4-col sticky left + 8-col right catalog)",
+    "modes": [
+      "Ekspedisi & Jalur",
+      "Basecamp & Penginapan"
+    ],
+    "limits": {
+      "rooms": "1-9",
+      "adultsPerRoom": "1-20",
+      "childrenPerRoom": "0-20",
+      "maxNights": 30
+    }
+  },
+  "programmaticTints": [
+    "#C5CECC",
+    "#CCD4D2",
+    "#D1D8D6",
+    "#DAE0DE",
+    "#DFE4E2",
+    "#E3E7E6",
+    "#E3EBE6",
+    "#E8EBEB",
+    "#EBF1ED",
+    "#EDEFEF",
+    "#EEE4D2",
+    "#EFF1F1",
+    "#F1E1C9",
+    "#F1E8E0",
+    "#F1F3F3",
+    "#F3F5F5",
+    "#F5E4E3",
+    "#F5E9D7",
+    "#F6ECDC",
+    "#F6F7F7",
+    "#F8ECEB",
+    "#F9E9DF"
+  ]
+}

@@ -193,6 +193,9 @@ Use friendly, moderately rounded geometry. Search panels and large feature cards
 
 ## Components
 
+- **Branded calendar:** single-month Indonesian picker with 16px menu corners, the same option surfaces/type/selected colors as this preset, and a fixed-size calendar icon separate from the editable date text. Arrow keys move by day/week, Home/End by week and Page Up/Down by month; Enter selects, Escape dismisses, and min/max dates disable unavailable days. The top-layer picker flips/clamps to the viewport and preserves native date values plus input/change events. Browsers without Popover API retain native controls; this is not the D12 dual-month calendar.
+- **Dropdown and dialog geometry:** ivory 16px menus and 10px fields, forest selection, 48px triggers, wrapping 44px options and a separate 16px chevron. Pill actions wrap rather than squeeze labels. Desktop date/guest panels anchor to their fields; mobile panels become internally scrolling bottom sheets with 16px gutters. Dialogs reserve a persistent 44px close target, full-width sticky header, wrapping trip totals and a four-column thumbnail strip. Child-age labels retain 8px clearance from focus outlines.
+
 - **Navigation:** calm horizontal navigation; active state uses forest green and a thin underline or filled text treatment. Mobile navigation becomes a compact menu with a clearly visible close action.
 - **Primary button:** forest-green pill with white text. Use action labels such as “Search hotels” or “Explore stays” only when that action is supported.
 - **Secondary button:** ivory fill or transparent surface with green border/text. Do not give it the same visual weight as the primary CTA.
@@ -209,10 +212,10 @@ Use friendly, moderately rounded geometry. Search panels and large feature cards
 To ensure this preset looks unmistakably like an authentic regional destination host rather than a generic OTA, its section layouts and search console use the following unique patterns:
 
 - **Hero Architecture (Bento Postcard Collage):** A 12-column asymmetric Bento hero. The left 7 columns display a tall primary postcard frame (`rounded-xl`) with warm editorial copy; the right 5 columns stack two secondary regional vignettes (Rinjani Highlands & Sade Village Craft) with live region quick-pick triggers.
-- **Search Engine UI (Warm Host Pill-Strip Bar):** Instead of a boxed form, the search engine is an elongated ivory pill-capsule (`rounded-[32px]`) divided by subtle vertical warm-stone hairlines (`divide-x`), featuring a floating pill mode toggle on its upper lip and an oversized circular/pill forest-green submit button on the right.
+- **Search Engine UI (Warm Host Pill-Strip Bar):** An ivory capsule overlaps the lower edge of the hero by 36px; its mode switch sits on the upper lip. Four segments: destination, date-range trigger, party trigger, and a forest-green pill submit. Dates and guests expand in locally anchored panels, not a permanent row of miniature steppers. The guest panel contains rooms, adults per room, children per room, and explicitly selected child ages. Desktop: 1240px outer container, 24px search inset, 40px capsule radius; mobile: stacked 44px-minimum controls, 24px capsule radius, full-width submit.
 - **Inventory Section Layout (Asymmetric Editorial Spotlight):** The first curated result renders as a 12-column horizontal "Editor's Local Spotlight" banner (7-column photo + 5-column narrative dossier), while subsequent properties render in a 2-column portrait card pair below it.
 - **Tours & Experiences Layout (Horizontal Postcard Strips):** Experiences are presented as wide horizontal ticket-postcards with left-aligned thumbnail photography, middle narrative and duration badge, and right-aligned live price action.
-- **Story / Value Section (Editorial Host Letter & Polaroid Frame):** A 2-column split featuring a signed "Catatan Tuan Rumah Lokal" (Local Host Letter) on warm sand paper alongside a 3-row vertical list of verified local commitments.
+- **Story / Value Section (Editorial Host Letter & Polaroid Frame):** A signed "Catatan Tuan Rumah Lokal" on warm sand paper with one locally anchored photographic print, paired with three unboxed numbered notes separated by hairlines. The story is illustrative brand copy, not a claim that properties or partners have been independently verified.
 
 ## Homepage Composition
 
@@ -245,6 +248,16 @@ All example brand names, destinations, descriptions, and offers in generated moc
 - Search results and booking steps must follow the shared Ortasys booking behavior. This preset changes presentation, not transaction rules.
 - All controls need keyboard access, visible focus, clear disabled/loading/error/success states, and descriptive labels.
 - Respect reduced-motion preferences. Use subtle transitions only; never make essential information depend on animation.
+
+## HTML implementation contract
+
+- Visual reference: `Ortasys_StoreFront.figcraft`, page 01, D01 and D12; retain its collage, attached capsule, destination quartet, spotlight-plus-pair inventory, horizontal experience postcards, and host letter.
+- `index.html` is the independent customer storefront. `guidelines.html`, `search-board.html`, and `figcraft.html` contain design documentation separately. No hidden documentation views, cross-template header, or hash router on the storefront.
+- `storefront.css` defines responsive geometry using the registered palette; `storefront.js` handles local search, explicit age selection, filters, detail gallery, saved itinerary, and the three-step booking demonstration.
+- Validate destination, future dates, 1–30 nights, rooms 1–9, adults per room 1–20, children per room 0–20, and every child's age 0–17. Never silently assign a default age. No-match searches stay empty instead of silently restoring all inventory.
+- Catalogue, prices, stories, and contact forms are examples. Search status must say simulation; a local timeout is not verified availability. Checkout produces a clearly labelled sample summary, not a paid reservation or official voucher. The downloadable summary is a real `.txt` file; live API/payment integration is not present.
+- Keep visible labels, keyboard focus, Escape dismissal, native modal focus containment, and reduced-motion support. Date values remain native form inputs, enhanced by the branded single-month picker described above; the D12 dual-month calendar remains a reference.
+
 
 ## Do’s and Don’ts
 

@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "project_name": "Ortasys Storefront Collection",
+    "active_scope": "ui-layout",
+    "grounding": "VizSpec 2.1.0; scoped art direction overrides the engine travel/apparel match. Neutral chassis inherits preset 02; template colors remain registered in their own DNA."
+  },
+  "design_read": "Independent travel storefront design directory for agencies and product teams; warm editorial interface gallery.",
+  "taste_dials": {
+    "profile": "high-end-visual-design",
+    "DESIGN_VARIANCE": 7,
+    "MOTION_INTENSITY": 6,
+    "VISUAL_DENSITY": 3
+  },
+  "logo_context": {
+    "has_existing_logo": true,
+    "policy": "Reuse the ten supplied template logos; retain the existing Ortasys textual identity, do not invent a new corporate mark.",
+    "logo_paths": [
+      "./01-local-destination/assets/logo-mark.png",
+      "./02-luxury-bespoke/assets/logo-mark.png",
+      "./03-global-contemporary/assets/logo-mark.png",
+      "./04-culture-heritage/assets/logo-mark.png",
+      "./05-adventure-nature/assets/logo-mark.png",
+      "./06-family-group/assets/logo-mark.png",
+      "./07-wellness-slow-living/assets/logo-mark.png",
+      "./08-urban-business/assets/logo-mark.png",
+      "./09-coastal-island/assets/logo-mark.png",
+      "./10-budget-backpacker/assets/logo-mark.png"
+    ]
+  },
+  "colors": {
+    "primary": {
+      "hex": "#24221F"
+    },
+    "secondary": {
+      "hex": "#6B6257"
+    },
+    "accent": {
+      "hex": "#7D6B52"
+    },
+    "background": {
+      "hex": "#F7F5F0"
+    },
+    "surface": {
+      "hex": "#FFFFFF"
+    },
+    "text": {
+      "hex": "#24221F"
+    },
+    "border": {
+      "hex": "#908C85"
+    }
+  },
+  "template_colors": {
+    "10": {
+      "primary": "#263C5A",
+      "accent": "#407767",
+      "background": "#F7F7F2"
+    },
+    "01": {
+      "primary": "#174C43",
+      "accent": "#92523A",
+      "background": "#F4EDE1"
+    },
+    "02": {
+      "primary": "#24221F",
+      "accent": "#7D6B52",
+      "background": "#F7F5F0"
+    },
+    "03": {
+      "primary": "#142C4E",
+      "accent": "#247D76",
+      "background": "#F4F7FA"
+    },
+    "04": {
+      "primary": "#803D32",
+      "accent": "#52634C",
+      "background": "#F5EFE5"
+    },
+    "05": {
+      "primary": "#183B32",
+      "accent": "#597151",
+      "background": "#F2F0E9"
+    },
+    "06": {
+      "primary": "#315B46",
+      "accent": "#6B86A5",
+      "background": "#FBF7EF"
+    },
+    "07": {
+      "primary": "#53665A",
+      "accent": "#B98270",
+      "background": "#F5F3EC"
+    },
+    "08": {
+      "primary": "#23364D",
+      "accent": "#886034",
+      "background": "#F3F5F7"
+    },
+    "09": {
+      "primary": "#176B73",
+      "accent": "#7D6C4D",
+      "background": "#F3F8F6"
+    }
+  },
+  "typography": {
+    "heading_font": "DM Serif Display",
+    "body_font": "Manrope",
+    "mono_font": "JetBrains Mono",
+    "heading_usage": "Manrope for the main statement with a contrasting italic DM Serif phrase; DM Serif for the closing statement."
+  },
+  "section_order": [
+    "Restrained sticky masthead",
+    "Asymmetric editorial intro with supplied FigCraft preview composition",
+    "Ten-preset interface collection with independent document links",
+    "Shared S4 contract and closing index"
+  ],
+  "motion": {
+    "intro": "Staggered opacity/translate reveal, 600–800ms",
+    "scroll": "One-time viewport reveals; no scroll hijacking",
+    "hover": "Preview pan, bezel lift and 4px arrow translation",
+    "ambient": "Gentle preview-window float only for no-preference users",
+    "accessibility": "Disable animation/transforms for prefers-reduced-motion; all content visible without JavaScript"
+  },
+  "assets": {
+    "source": "Existing template logos and D01 FigCraft exports. No replacement imagery or brand assets generated.",
+    "previews": "catalogue-assets/preview-01.webp through preview-10.webp; cropped and compressed from supplied previews/D01.png"
+  },
+  "constraints": [
+    "All 40 existing relative document links remain unchanged.",
+    "The root is an optional catalogue, never a router required by the ten storefronts.",
+    "Booking and checkout remain local simulations.",
+    "Template folders and FigCraft source remain unchanged."
+  ]
+}

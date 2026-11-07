@@ -187,37 +187,42 @@ Use friendly rounded geometry: 12px inputs, 16px cards, 24px large panels, and p
 
 ## Components
 
+- **Branded calendar:** single-month Indonesian picker with 12px menu corners, the same option surfaces/type/selected colors as this preset, and a fixed-size calendar icon separate from the editable date text. Arrow keys move by day/week, Home/End by week and Page Up/Down by month; Enter selects, Escape dismisses, and min/max dates disable unavailable days. The top-layer picker flips/clamps to the viewport and preserves native date values plus input/change events. Browsers without Popover API retain native controls; this is not the D12 dual-month calendar.
+
 - **Navigation:** simple, predictable, and readable. Use clear active states.
-- **Primary button:** garden-green pill with white text and minimum 48px height.
+- **Primary button:** warm apricot pill with the registered dark `onCta` text and minimum 48px height; garden-green pills mark secondary inventory actions and selected modes.
 - **Secondary button:** white surface with green text and border.
 - **Search panel:** white surface, 24px radius, clear grouping, persistent field labels.
-- **Occupancy selector:** clearly label rooms, adults, and children. Child-age collection must only appear if supported by the actual booking flow.
+- **Occupancy selector:** separate room, adults-per-room, and children-per-room rows; required explicit ages 0–17 for every child in every room. Never silently preselect an age.
 - **Property card:** show room facts and family-relevant amenities only when available from verified property data.
 - **Group enquiry card:** use only if the agency supports group quotation or assisted booking.
 - **Trust content:** use approved, factual service information; do not invent family guarantees or child-safety claims.
 - **FAQ accordion:** use for agency-approved policies, cancellation terms, room occupancy, and booking support.
+- **Opened controls:** `components.css` keeps destination suggestions and native-backed age selects in the family palette: white surfaces, Inter copy, 12px trigger/menu radii, 8px options, garden-green selection, registered blue focus, 48px triggers and 44px wrapping option targets. Top-layer menus scroll within runtime-calculated viewport bounds rather than being clipped by planner panels.
+- **Wizard and overlay geometry:** The three progress steps retain equal shrinkable columns; mobile step numbers sit above wrapping labels and action buttons occupy separate rows. Expanded child ages remain in their room groups; 140px occupancy steppers preserve three usable targets. Detail image, sample badge and 44px gallery thumbnails occupy separate rows, with wrapping price/actions below. Rounded 24px dialogs use 16px outer gutters (10px mobile), dynamic viewport height bounds and scrolling content; drawer/checkout headers reserve a nonshrinking 44px close control beside wrapping titles.
 
 ## Unique Architectural & Component DNA (Preset 06)
 
 To make this family & group travel preset feel like a stress-free, guided multi-generational trip planner rather than a standard booking grid, its sections and search console follow a friendly step-by-step architecture:
 
-- **Hero Architecture (Warm Family Scrapbook Split):** A soft rounded container (`rounded-3xl`) where the left 6 columns present reassuring family headlines and verified comfort badges (`Connecting Rooms`, `Stroller-Friendly`), and the right 6 columns display a 2x2 photo scrapbook collage of multi-generational moments.
-- **Search Engine UI (3-Step Guided Family Planner Wizard):** Instead of a raw form row, the search engine is divided into 3 numbered visual step-cards inside a soft cream container (`rounded-3xl`): **Langkah 1: Pilih Tujuan & Tanggal**, **Langkah 2: Atur Rombongan & Kamar (1–9 Unit)** with a live **"Total Anggota Rombongan: X Orang"** calculator pill, and **Langkah 3: Cek Kuota Kamar Terhubung**.
-- **Inventory Section Layout (2-Column Wide Family Comparison Cards):** Wide 2-column horizontal/stacked family cards (`rounded-3xl`) featuring a dedicated **Matriks Kenyamanan Keluarga** table inside each card (Kapasitas Unit, Konfigurasi Kasur/Pintu, Fasilitas Anak/Lansia) plus a **"Estimasi Patungan per Orang"** helper readout alongside the total retail price.
-- **Why Us Section (3-Step Horizontal Family Journey Timeline):** A visual step-by-step timeline (`1. Pilih Vila Terhubung` $\rightarrow$ `2. Satu Invoice Rombongan SNAP BI` $\rightarrow$ `3. Sambutan Ramah Anak & Lansia`).
+- **Hero Architecture (Warm Family Scrapbook Split):** Cream-on-cream editorial composition, benefit-led dark headline on the left, and four supplied family/property photographs on the right. White paper borders, restrained rotation, honey tape, and small captions form the scrapbook; there is no large green hero container or guaranteed-facility claim.
+- **Search Engine (Functional Three-Step Planner):** A soft white 26px-radius planner contains a persistent numbered progress rail, one active cream field panel, and a separate warm plan summary. **1: Destinasi → 2: Tanggal → 3: Rombongan & usia.** Real Next/Back controls and progress buttons preserve field/age state. Forward movement validates previous stages; only stage 3 exposes the local-search submit. Dates remain a distinct stage rather than sharing a horizontal row with all other controls.
+- **Required Search Anatomy:** Both catalogue modes retain destination, start/end dates (1–30 nights), rooms 1–9, adults per room 1–20, and children per room 0–20. Each child in each room receives an unselected required age field (0–17). The total-party readout multiplies occupancy by rooms. Validation remains visible inside the active planner; loading and genuinely empty catalogue states are explicit.
+- **Inventory (Warm Family Comparison):** Two wide image-led cards per row, with a clearly labelled “Matriks kenyamanan keluarga” definition table, sample room/duration, meal/service and child/older-relative facts. Local search reveals the group total and a warm per-person cost-sharing estimate. Prices and facilities are example agency content, never verified availability.
+- **Editorial Journey:** Three warm numbered preparation cards explain comparing rooms, discussing shared costs, and confirming needs with the agent. A pine assistance strip, family FAQ, policy disclosures and agency footer follow; duplicate generic destination/about grids and mockup merchandise are removed.
+- **Documentation Split:** `guidelines.html`, `search-board.html`, and `figcraft.html` preserve the former reference content and styling in independent pages with ordinary relative links. The landing contains no hidden documentation, router, Search Spec button, or Brand Guidelines navigation; only a quiet guidelines footer link remains.
+- **Prototype Honesty:** “Setiap harga dicek langsung saat Anda mencari” appears with a local-simulation explanation. The working search, detail, trip, and checkout flows operate locally. Checkout explicitly makes no payment or reservation and offers an actual downloadable `.txt` simulation summary, not a claimed voucher.
 
 ## Homepage Composition
 
 Recommended fixed homepage sequence:
 
-1. Header and navigation.
-2. Welcoming hero with search panel.
-3. Popular family or group destinations.
-4. Family-friendly or group-suitable stays, based on verified data.
-5. Curated holiday collections.
-6. Group travel enquiry section, if supported.
-7. Practical planning FAQ.
-8. Contact CTA and footer.
+1. Customer navigation and cream scrapbook hero.
+2. Stateful three-step family planner with persistent plan summary.
+3. Two-column family comparison inventory.
+4. Three-stage family preparation story and assistance strip.
+5. Family FAQ, terms, privacy and example contact details.
+6. Pine agency footer with a quiet guidelines link.
 
 The first viewport should reassure the trip planner and provide an immediate path to search.
 
@@ -231,12 +236,13 @@ Do not claim child-friendly certification, guaranteed connecting rooms, childcar
 
 ## Interaction & Responsive Behavior
 
-- Desktop: search may be horizontal if labels and values remain readable.
-- Tablet: allow search fields to wrap into two rows.
-- Mobile: stack fields, keep the CTA full-width, and make guest selectors easy to operate.
-- Use at least 44px touch targets and clear focus states.
-- Avoid hover-only access to important details.
-- Respect reduced-motion settings.
+- Desktop (1440px): split scrapbook hero; active planner panel occupies roughly three-fifths of the planner workspace and the summary two-fifths. Numbered steps remain visible. Inventory uses two columns.
+- Tablet (768px): compact navigation, a readable split planner workspace, and stacked inventory. All controls remain in their dedicated stage rather than wrapping into a generic search row.
+- Mobile (390px): hero and scrapbook stack, planner progress remains visible, active fields precede the summary, dates stack, and Next/Back/search controls remain discoverable. Comparison cards and preparation cards each use one column.
+- **Mobile header sizing:** A shrinkable brand/text wrapper shows the 17px wordmark and explicitly hides the uppercase descriptor. Trip/menu controls retain reserved widths. Scrapbook grid items and comfort-matrix text may shrink or wrap. Closed drawers leave layout entirely; no page-wide overflow mask is used.
+- Fields are 48px minimum, buttons 44px minimum, and focus uses the registered focus token. Retained dialogs support Escape, Tab containment and focus return.
+- Registered AA-muted/secondary text and dark apricot-button text replace low-contrast raw swatches. Decorative paper/card shadows are primary-derived tokens registered in `brand-dna.json`.
+- Reduced-motion preferences disable CSS animation and smooth scrolling. Important details never rely on hover.
 - Preserve the shared Ortasys booking, payment, and confirmation behavior.
 
 ## Do’s and Don’ts

@@ -1,0 +1,98 @@
+{
+  "project": "Ortasys_StoreFront",
+  "template": "04-akar-budaya-travel",
+  "brand": "Akar Budaya Travel",
+  "preset": "Culture & Heritage",
+  "tagline": "Jurnal perjalanan pusaka & singgah bersejarah Nusantara — kurasi rumah warisan, lokakarya kriya, dan ziarah budaya.",
+  "tokens": {
+    "primary": "#803D32",
+    "primaryHover": "#642E27",
+    "secondary": "#C77B55",
+    "tertiary": "#D6B58D",
+    "accent": "#52634C",
+    "bg": "#F5EFE5",
+    "surface": "#FFFAF2",
+    "surfaceMuted": "#E8D8BE",
+    "text": "#302822",
+    "muted": "#695E53",
+    "border": "#D8C9B6",
+    "success": "#426B4C",
+    "warning": "#92602A",
+    "error": "#A84237",
+    "focus": "#315F8B",
+    "onPrimary": "#FFFFFF",
+    "fieldBorder": "#8F8579",
+    "onDark": "#FFFFFF",
+    "cta": "#803D32",
+    "onCta": "#FFFAF2",
+    "parchment": "#FFFAF2",
+    "sandstone": "#E8D8BE",
+    "moss": "#52634C",
+    "terracotta": "#C77B55",
+    "ink": "#302822",
+    "mutedRaw": "#75685C",
+    "accentText": "#52634C",
+    "secondaryText": "#925A3F"
+  },
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#75685C",
+      "to": "#695E53",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "secondaryText",
+      "from": "#C77B55",
+      "to": "#925A3F",
+      "why": "secondary used as text ≥4.5:1"
+    },
+    {
+      "token": "fieldBorder",
+      "from": "#D8C9B6",
+      "to": "#8F8579",
+      "why": "input outline ≥3:1 (WCAG 1.4.11)"
+    },
+    {
+      "token": "warning",
+      "from": "#9A652C",
+      "to": "#92602A",
+      "why": "warning text ≥4.5:1"
+    }
+  ],
+  "fonts": {
+    "display": "Playfair Display",
+    "displaySt": "SemiBold",
+    "displayLs": "-2.5%",
+    "head": "Source Sans 3",
+    "headSt": "Bold",
+    "body": "Source Sans 3"
+  },
+  "radii": {
+    "xs": 2,
+    "sm": 4,
+    "md": 8,
+    "lg": 14,
+    "xl": 20,
+    "pill": 999
+  },
+  "searchEngine": {
+    "signature": "Archival Registry / Buku Tamu Console",
+    "modes": [
+      "Rumah Pusaka & Pesanggrahan",
+      "Tur Sejarah & Lokakarya Kriya"
+    ],
+    "limits": {
+      "rooms": "1-9",
+      "adultsPerRoom": "1-20",
+      "childrenPerRoom": "0-20",
+      "maxNights": 30
+    }
+  },
+  "programmaticTints": [
+    "#E8E9DE",
+    "#F0E3DB",
+    "#F2E7DF",
+    "#F5EBE3"
+  ]
+}

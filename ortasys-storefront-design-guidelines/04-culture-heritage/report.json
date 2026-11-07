@@ -1,0 +1,152 @@
+{
+  "template": "04-akar-budaya-travel",
+  "pageId": 5,
+  "artboards": [
+    {
+      "name": "04 · Brand Guidelines",
+      "id": 86574,
+      "w": 1440,
+      "h": 3307
+    },
+    {
+      "name": "04·D01 Home",
+      "id": 86856,
+      "w": 1440,
+      "h": 3129
+    },
+    {
+      "name": "04·D02 Stays — hasil pencarian",
+      "id": 87156,
+      "w": 1440,
+      "h": 2411
+    },
+    {
+      "name": "04·D03 Detail penginapan",
+      "id": 87502,
+      "w": 1440,
+      "h": 1939
+    },
+    {
+      "name": "04·D04 Pengalaman budaya",
+      "id": 87699,
+      "w": 1440,
+      "h": 1732
+    },
+    {
+      "name": "04·D06 Booking 1 — data tamu",
+      "id": 87870,
+      "w": 1440,
+      "h": 1264
+    },
+    {
+      "name": "04·D07 Booking 2 — pembayaran",
+      "id": 88014,
+      "w": 1440,
+      "h": 1240
+    },
+    {
+      "name": "04·D08 Booking 3 — konfirmasi",
+      "id": 88172,
+      "w": 1440,
+      "h": 1525
+    },
+    {
+      "name": "04·D10 Tentang & manifesto",
+      "id": 88294,
+      "w": 1440,
+      "h": 1419
+    },
+    {
+      "name": "04·D11 Kontak & FAQ",
+      "id": 88377,
+      "w": 1440,
+      "h": 1313
+    },
+    {
+      "name": "04·D12 Search engine board",
+      "id": 88484,
+      "w": 1440,
+      "h": 1461
+    },
+    {
+      "name": "04·M01 Home (mobile)",
+      "id": 88659,
+      "w": 390,
+      "h": 1862
+    },
+    {
+      "name": "04·M02 Hasil pencarian (mobile)",
+      "id": 88771,
+      "w": 390,
+      "h": 2392
+    },
+    {
+      "name": "04·M03 Detail penginapan (mobile)",
+      "id": 88926,
+      "w": 390,
+      "h": 673
+    },
+    {
+      "name": "04·M04 Sheet pencarian (mobile)",
+      "id": 88975,
+      "w": 390,
+      "h": 547
+    }
+  ],
+  "assets": [
+    "about.webp",
+    "brand-mockup.webp",
+    "dest-1.webp",
+    "dest-2.webp",
+    "dest-3.webp",
+    "dest-4.webp",
+    "detail-1.webp",
+    "detail-2.webp",
+    "hero.webp",
+    "logo-mark-dark.png",
+    "logo-mark.png",
+    "stay-1.webp",
+    "stay-2.webp",
+    "stay-3.webp",
+    "stay-4.webp",
+    "story-1.webp",
+    "story-2.webp",
+    "story-3.webp",
+    "tour-1.webp",
+    "tour-2.webp",
+    "tour-3.webp"
+  ],
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#75685C",
+      "to": "#695E53",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "secondaryText",
+      "from": "#C77B55",
+      "to": "#925A3F",
+      "why": "secondary used as text ≥4.5:1"
+    },
+    {
+      "token": "fieldBorder",
+      "from": "#D8C9B6",
+      "to": "#8F8579",
+      "why": "input outline ≥3:1 (WCAG 1.4.11)"
+    },
+    {
+      "token": "warning",
+      "from": "#9A652C",
+      "to": "#92602A",
+      "why": "warning text ≥4.5:1"
+    }
+  ],
+  "issues": [],
+  "deviations": [
+    "muted: #75685C -> #695E53",
+    "secondaryText: #C77B55 -> #925A3F",
+    "fieldBorder: #D8C9B6 -> #8F8579",
+    "warning: #9A652C -> #92602A"
+  ]
+}

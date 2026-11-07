@@ -1,0 +1,147 @@
+{
+  "template": "03-atlasway-travel",
+  "pageId": 4,
+  "artboards": [
+    {
+      "name": "03·D01 Home",
+      "id": 7327,
+      "w": 1440,
+      "h": 5734
+    },
+    {
+      "name": "03·D02 Stays — hasil pencarian",
+      "id": 19035,
+      "w": 1440,
+      "h": 2495
+    },
+    {
+      "name": "03·D03 Detail penginapan",
+      "id": 26127,
+      "w": 1440,
+      "h": 2925
+    },
+    {
+      "name": "03·D04 Tur & transfer",
+      "id": 30266,
+      "w": 1440,
+      "h": 1487
+    },
+    {
+      "name": "03·D06 Booking 1 — data tamu",
+      "id": 42395,
+      "w": 1440,
+      "h": 1511
+    },
+    {
+      "name": "03·D07 Booking 2 — pembayaran",
+      "id": 44501,
+      "w": 1440,
+      "h": 1515
+    },
+    {
+      "name": "03·D08 Booking 3 — konfirmasi",
+      "id": 46044,
+      "w": 1440,
+      "h": 1561
+    },
+    {
+      "name": "03·D10 Tentang & pendekatan",
+      "id": 50112,
+      "w": 1440,
+      "h": 2736
+    },
+    {
+      "name": "03·D11 Kontak & FAQ",
+      "id": 51708,
+      "w": 1440,
+      "h": 1738
+    },
+    {
+      "name": "03·D12 Search engine board",
+      "id": 67031,
+      "w": 1440,
+      "h": 3191
+    },
+    {
+      "name": "03 · Brand Guidelines",
+      "id": 71219,
+      "w": 1440,
+      "h": 3677
+    },
+    {
+      "name": "03·D09 Destinasi — Bali & Nusa Dua Hub",
+      "id": 71753,
+      "w": 1440,
+      "h": 2371
+    },
+    {
+      "name": "03·M01 Home (mobile)",
+      "id": 72219,
+      "w": 390,
+      "h": 2021
+    },
+    {
+      "name": "03·M02 Hasil pencarian (mobile)",
+      "id": 72371,
+      "w": 390,
+      "h": 1984
+    },
+    {
+      "name": "03·M03 Detail penginapan (mobile)",
+      "id": 72514,
+      "w": 390,
+      "h": 632
+    },
+    {
+      "name": "03·M04 Sheet pencarian (mobile)",
+      "id": 72562,
+      "w": 390,
+      "h": 648
+    }
+  ],
+  "assets": [
+    "about.webp",
+    "brand-mockup.webp",
+    "dest-1.webp",
+    "dest-2.webp",
+    "dest-3.webp",
+    "hero.webp",
+    "logo-mark-dark.png",
+    "logo-mark.png",
+    "stay-1.webp",
+    "stay-2.webp",
+    "stay-3.webp",
+    "stay-4.webp",
+    "stay-5.webp",
+    "tour-1.webp",
+    "tour-2.webp",
+    "tour-3.webp",
+    "tour-4.webp"
+  ],
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#647386",
+      "to": "#5F6D7F",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "fieldBorder",
+      "from": "#D7E0E9",
+      "to": "#888D92",
+      "why": "input outline ≥3:1 (WCAG 1.4.11)"
+    },
+    {
+      "token": "warning",
+      "from": "#A86B20",
+      "to": "#98611C",
+      "why": "warning text ≥4.5:1"
+    }
+  ],
+  "issues": [],
+  "deviations": [
+    "muted: #647386 -> #5F6D7F",
+    "fieldBorder: #D7E0E9 -> #888D92",
+    "warning: #A86B20 -> #98611C"
+  ]
+}

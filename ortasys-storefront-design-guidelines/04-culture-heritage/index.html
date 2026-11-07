@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Akar Budaya Travel · Perjalanan Warisan &amp; Budaya Nusantara</title>
-  <meta name="description" content="Akar Budaya Travel — Spesialis perjalanan budaya, warisan sejarah, kerajinan tradisional, dan kuliner nusantara. Didukung oleh Ortasys S4.">
+  <link rel="icon" type="image/png" href="./assets/logo-mark.png">
+  <meta name="description" content="Akar Budaya Travel — contoh katalog perjalanan agen. Prototipe pencarian, rincian penginapan, dan rencana perjalanan.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -16,15 +17,15 @@
         extend: {
           colors: {
             primary: { DEFAULT: '#803D32', hover: '#642E27' },
-            secondary: '#C77B55',
+            secondary: '#925A3F',
             tertiary: '#D6B58D',
             accent: '#52634C',
             canvas: '#F5EFE5',
             surface: { DEFAULT: '#FFFAF2', muted: '#E8D8BE' },
-            ink: { DEFAULT: '#302822', muted: '#75685C' },
+            ink: { DEFAULT: '#302822', muted: '#695E53' },
             line: '#D8C9B6',
             success: '#426B4C',
-            warning: '#9A652C',
+            warning: '#92602A',
             danger: '#A84237'
           },
           fontFamily: {
@@ -49,489 +50,25 @@
       }
     };
   </script>
-  <style>
-    :root { color-scheme: light; }
-    body { font-family: 'Source Sans 3', system-ui, sans-serif; background-color: #F5EFE5; color: #302822; }
-    .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on; }
-    .stepper input::-webkit-outer-spin-button,
-    .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-    .stepper input { -moz-appearance: textfield; }
-    :focus-visible { outline: 2px solid #803D32; outline-offset: 2px; }
-    details > summary { list-style: none; }
-    details > summary::-webkit-details-marker { display: none; }
-    details[open] .faq-icon { transform: rotate(45deg); }
-  </style>
+  <style>:root{--primary:#803D32;--primaryHover:#642E27;--secondary:#C77B55;--tertiary:#D6B58D;--accent:#52634C;--bg:#F5EFE5;--surface:#FFFAF2;--surfaceMuted:#E8D8BE;--text:#302822;--muted:#695E53;--border:#D8C9B6;--success:#426B4C;--warning:#92602A;--error:#A84237;--focus:#315F8B;--onPrimary:#FFFFFF;--fieldBorder:#8F8579;--onDark:#FFFFFF;--cta:#803D32;--onCta:#FFFAF2;--parchment:#FFFAF2;--sandstone:#E8D8BE;--moss:#52634C;--terracotta:#C77B55;--ink:#302822;--mutedRaw:#75685C;--accentText:#52634C;--secondaryText:#925A3F;--display:"Playfair Display",Georgia,serif;--body:"Source Sans 3",system-ui,sans-serif;--radius:2px;}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.55}button,input,select{font:inherit}button,a,input,select{touch-action:manipulation}button{cursor:pointer}button:disabled{cursor:wait;opacity:.6}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}h1,h2,h3,h4,p{margin:0}h1,h2,h3{font-family:var(--display);line-height:1.16}h2{font-size:clamp(28px,3vw,38px)}button,a{transition:background .18s,color .18s}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.wrap{width:min(1240px,calc(100% - 64px));margin:auto}.eyebrow{font-size:10px;letter-spacing:.16em;font-weight:700;text-transform:uppercase;color:var(--primary)}.muted{color:var(--muted)}.sample{font-size:11px;color:var(--muted)}.btn{min-height:44px;padding:10px 18px;border:1px solid var(--primary);background:var(--primary);color:var(--onPrimary);font-size:13px;font-weight:700;border-radius:var(--radius)}.btn:hover{background:var(--primaryHover)}.btn.secondary{background:var(--surface);color:var(--primary);border-color:var(--fieldBorder)}.header{background:var(--surface);border-bottom:1px solid var(--border);position:relative;z-index:30}.header-row{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:9px;font-family:var(--display);font-weight:700;font-size:22px;white-space:nowrap}.brand img{height:38px;width:38px;object-fit:contain}.nav{display:flex;align-items:center;gap:22px;font-size:13px}.nav a{min-height:44px;display:flex;align-items:center}.menu{display:none;min-width:44px;min-height:44px;border:1px solid var(--border);background:var(--surface);color:var(--primary)}.mobile-nav{display:flex;flex-direction:column;padding:16px 24px;gap:12px}.mobile-nav a{padding:10px 0}.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:10px;z-index:100;background:var(--surface);padding:12px;color:var(--primary)}.hidden,[hidden]{display:none!important}.section{padding-top:80px;padding-bottom:12px}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}.section-heading h2{margin-top:8px}.section-heading p{max-width:480px;margin-top:10px;color:var(--muted);font-size:14px}.filter-bar{display:flex;gap:7px;flex-wrap:wrap}.filter-btn,.hub-chip{background:var(--surface);border:1px solid var(--fieldBorder);color:var(--text);min-height:44px;padding:8px 13px;font-size:12px;border-radius:var(--radius)}.filter-btn[aria-pressed=true],.hub-chip[aria-pressed=true]{background:var(--primary);color:var(--onPrimary);border-color:var(--primary)}.field-label{display:block;font-size:11px;font-weight:700;margin-bottom:7px;color:var(--primary)}input:not([type=radio]):not([type=checkbox]),select{min-height:48px;border:1px solid var(--fieldBorder);border-radius:var(--radius);padding:9px 12px;background:var(--surface);color:var(--text);width:100%;min-width:0}input[type=date]{font-size:13px;font-variant-numeric:tabular-nums}fieldset{margin:0;padding:0;border:0;min-width:0}legend{padding:0}.dates{display:grid;grid-template-columns:1fr 1fr;gap:10px}.occupancy{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.stepper{display:flex;min-height:48px;border:1px solid var(--fieldBorder);border-radius:var(--radius);background:var(--surface);overflow:hidden}.stepper button{width:44px;min-width:44px;border:0;background:transparent;color:var(--primary);font-size:19px}.stepper button:hover{background:var(--surfaceMuted)}.stepper input:not([type=radio]){border:0;padding:0;text-align:center;min-height:46px;border-radius:0;-moz-appearance:textfield}.stepper input::-webkit-inner-spin-button{appearance:none}.mode-tabs{display:flex;gap:3px;flex-wrap:wrap}.mode-tab{border:0;padding:10px 14px;min-height:44px;background:transparent;font-size:12px;color:var(--muted);font-weight:700;border-radius:var(--radius)}.mode-tab[aria-selected=true]{background:var(--primary);color:var(--onPrimary)}.age-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}.age-room{margin:14px 0}.age-room legend{font-size:12px;font-weight:700;margin-bottom:8px}.age-grid label{font-size:12px}.form-errors{color:var(--error);font-size:13px}.search-meta{font-size:11px;color:var(--muted)}.search-meta p+p{margin-top:5px}#searchStatus{padding:12px 20px;background:var(--surfaceMuted);color:var(--primary);font-size:12px;border-top:1px solid var(--border)}#searchStatus[data-error=true]{color:var(--error)}.inventory{display:grid;gap:14px}.inventory article{min-width:0}.inventory-image{position:relative;overflow:hidden}.inventory-image img{width:100%;height:100%;object-fit:cover}.plate-tag{position:absolute;left:12px;bottom:12px;padding:4px 8px;background:var(--surface);color:var(--primary);font-size:10px;font-weight:700}.inventory-copy h3{font-size:22px;margin:8px 0}.inventory-copy p{font-size:13px;color:var(--muted)}.amenities{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}.amenities span{padding:4px 7px;background:var(--surfaceMuted);font-size:11px}.price{font-size:25px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2}.price-note{font-size:11px;color:var(--muted);margin:5px 0 12px}.tour-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.tour-tile{display:grid;grid-template-columns:150px 1fr;border:1px solid var(--border);background:var(--surface);overflow:hidden;border-radius:var(--radius)}.tour-tile>img{width:100%;height:100%;object-fit:cover}.tour-copy{padding:20px}.tour-copy h3{font-size:19px;margin:7px 0}.tour-copy p{font-size:13px;color:var(--muted);margin:6px 0 14px}.tour-action{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--border);padding-top:14px}.tour-action strong{font-size:15px}.empty{grid-column:1/-1;padding:40px;background:var(--surface);border:1px solid var(--border)}.empty h3{margin-bottom:10px}.empty button{margin-top:18px}.faq{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding-bottom:80px}.faq details{border-bottom:1px solid var(--border);padding:18px 0}.faq summary{cursor:pointer;font-weight:600;min-height:44px}.faq p{font-size:14px;color:var(--muted)}.contact-box{padding:30px;background:var(--surfaceMuted)}.contact-box h3{font-size:26px}.contact-box p{margin:15px 0}.footer{margin-top:64px;padding:56px 0 24px;background:var(--primary);color:var(--onPrimary)}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}.footer p{font-size:13px;max-width:340px;margin-top:18px}.footer h3{font:700 11px var(--body);letter-spacing:.1em;text-transform:uppercase;margin-bottom:15px}.footer a{display:block;font-size:13px;min-height:44px;padding-top:10px}.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:25px;margin-top:30px;border-top:1px solid currentColor;font-size:11px}.demo-note{margin-top:30px;font-size:12px}.demo-note summary{min-height:44px;cursor:pointer}.demo-note label{display:flex;gap:10px;align-items:center;min-height:44px}.loading{font-size:14px;color:var(--muted)}@media(max-width:1050px){.nav{gap:12px}.brand{font-size:19px}.wrap{width:calc(100% - 40px)}.tour-tile{grid-template-columns:110px 1fr}}@media(max-width:767px){.wrap{width:calc(100% - 32px)}.header-row{height:70px;gap:12px}.nav{display:none}.menu{display:block}.section{padding-top:52px}.section-heading{align-items:start;flex-direction:column;gap:18px}.tour-grid,.faq{grid-template-columns:1fr}.tour-tile{grid-template-columns:110px 1fr}.tour-copy{padding:16px}.tour-action{align-items:start;flex-direction:column}.occupancy{grid-template-columns:1fr}.stepper input{flex:1}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}.footer-grid>div:first-child{grid-column:1/-1}.footer-bottom{flex-direction:column}.faq{gap:24px;padding-bottom:40px}.price{font-size:23px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+:root{--radius:2px}.journal-strip{border-bottom:1px solid var(--border);font-size:9px;letter-spacing:.17em;text-transform:uppercase;padding:8px 0;color:var(--primary)}.journal-strip .wrap{display:flex;justify-content:space-between;gap:20px}.header{border-bottom:3px double var(--primary)}.brand{color:var(--primary)}.broadsheet{padding:58px 0 32px}.front-page{display:grid;grid-template-columns:3fr 6fr 3fr;gap:30px}.editor-note{border-right:1px solid var(--border);padding-right:24px}.editor-note h1{font-size:clamp(25px,2.3vw,34px);margin:18px 0}.editor-note p{font-size:14px;color:var(--muted)}.editor-note .sample{display:block;margin-top:18px}.archive-photo img{width:100%;aspect-ratio:1.55;object-fit:cover}.archive-photo figcaption{font-family:var(--display);font-style:italic;color:var(--muted);font-size:12px;border-top:1px solid var(--border);padding-top:14px;margin-top:12px}.archive-photo{margin:0}.heritage-index{border-left:1px solid var(--border);padding-left:24px}.heritage-index ul{padding:0;margin:10px 0;list-style:none}.heritage-index li{border-bottom:1px solid var(--border)}.heritage-index button{display:block;text-align:left;border:0;background:transparent;width:100%;padding:14px 0;color:var(--text);min-height:66px;font-family:var(--display);font-size:16px}.heritage-index small{display:block;font:12px var(--body);color:var(--muted);margin-top:4px}.registry{border:3px double var(--primary);background:var(--surface);margin-top:8px}.registry-top{background:var(--surfaceMuted);border-bottom:1px solid var(--primary);display:flex;justify-content:space-between;align-items:center;padding:10px 18px;gap:15px}.registry-top .eyebrow{font-size:9px}.registry-top .mode-tab{font-size:10px;padding:10px}.registry-top .mode-tab[aria-selected=true]{background:var(--surface);color:var(--primary);box-shadow:inset 0 -2px var(--primary)}.registry-fields{display:grid;grid-template-columns:3.1fr 3fr 3fr 1.8fr}.registry-field{padding:20px 18px;border-right:1px solid var(--border);min-width:0}.registry-field .field-label{font-size:9px;letter-spacing:.12em;text-transform:uppercase;min-height:24px}.registry-fields input:not([type=number]){font-family:var(--display);font-size:14px;border:0;border-bottom:1px solid var(--fieldBorder);background:transparent;border-radius:0;padding:7px 0}.registry-fields .dates{gap:12px}.registry-fields .dates label{font-size:11px;color:var(--muted)}.guest-toggle{border:0;background:transparent;min-height:48px;padding:7px 0;font-family:var(--display);font-size:16px;text-align:left;width:100%;display:flex;justify-content:space-between;gap:10px;color:var(--text)}.registry-submit{display:flex;align-items:stretch;padding:16px 0}.registry-submit .btn{width:100%;border-radius:0;font-size:11px;letter-spacing:.09em;text-transform:uppercase}.registry-submit i{display:block;font:italic 13px var(--display);text-transform:none;letter-spacing:0}.registry-bottom{display:flex;justify-content:space-between;gap:20px;padding:11px 18px;border-top:1px solid var(--border)}.registry-bottom p{font-size:10px;color:var(--muted)}.registry-bottom strong{color:var(--primary)}.registry-expansion{border-top:1px solid var(--border);padding:22px;background:var(--bg)}.registry-expansion .occupancy{max-width:700px}.registry-expansion .field-label{font-size:12px}.registry-expansion .age-room{margin-bottom:0}.registry .form-errors{padding:0 18px}.registry #searchStatus{padding:10px 18px;background:var(--surface)}.exhibition{background:var(--surface);margin-top:65px;padding:65px 0}.exhibition .section-heading{border-bottom:3px double var(--primary);padding-bottom:22px}.exhibition-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--border);border-bottom:1px solid var(--border);gap:0}.exhibit-plate{padding:22px;border-right:1px solid var(--border);background:var(--surface)}.exhibit-plate:last-child{border-right:0}.plate-heading{display:flex;justify-content:space-between;align-items:start;font-size:9px;letter-spacing:.1em;color:var(--primary);padding-bottom:18px;gap:10px}.exhibit-plate .inventory-image{height:235px}.exhibit-plate h3{font-size:25px;font-weight:500}.exhibit-plate .inventory-copy{padding:20px 0}.exhibit-plate .inventory-copy p{font-size:14px;line-height:1.65}.exhibit-plate .amenities{margin-top:16px}.exhibit-plate .amenities span{background:transparent;padding:0 8px 0 0;color:var(--accent)}.exhibit-ledger{display:flex;justify-content:space-between;align-items:end;gap:12px;border-top:3px double var(--border);padding-top:16px}.exhibit-ledger .price{font-size:22px}.exhibit-ledger .btn{font-size:11px;white-space:nowrap;padding:9px 12px}.exhibit-plate{display:flex;flex-direction:column;justify-content:space-between}.exhibit-detail{border:0;border-bottom:1px solid var(--primary);padding:8px 0;background:none;font-size:12px;color:var(--primary);min-height:44px}.tour-grid{gap:26px}.tour-tile{padding:20px;grid-template-columns:38% 1fr;gap:20px;border-radius:0}.tour-copy{padding:0}.tour-copy h3{font-size:22px;font-weight:500}.tour-tile>img{height:220px}.tour-action{flex-wrap:wrap}.manifesto{border:1px solid var(--primary);background:var(--surfaceMuted);padding:40px;margin-top:38px;text-align:center}.manifesto h2{font-size:30px;font-style:italic;max-width:850px;margin:18px auto}.manifesto p{font-size:14px;color:var(--muted)}.ethics{display:grid;grid-template-columns:repeat(3,1fr);margin-top:30px;text-align:left;gap:24px}.ethics>div+div{border-left:1px solid var(--fieldBorder);padding-left:24px}.ethics h3{font-size:18px;margin-bottom:10px}.ethics p{font-size:13px}.faq h2{font-size:30px}.faq details{border-color:var(--fieldBorder)}@media(max-width:1100px){.front-page{grid-template-columns:3fr 6fr}.heritage-index{grid-column:1/-1;border-left:0;padding-left:0}.heritage-index ul{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.registry-fields{grid-template-columns:1fr 1fr}.registry-field:nth-child(2){border-right:0}.registry-field:nth-child(3){border-top:1px solid var(--border)}.registry-submit{border-top:1px solid var(--border);padding:18px}.exhibit-plate{padding:16px}.exhibit-ledger{align-items:start;flex-direction:column}.tour-tile{grid-template-columns:1fr}.tour-tile>img{width:100%;height:190px}}@media(max-width:767px){.journal-strip{font-size:8px}.journal-strip .wrap span:last-child{display:none}.broadsheet{padding-top:30px}.front-page{grid-template-columns:1fr;gap:22px}.editor-note{border:0;padding:0}.editor-note h1{font-size:32px;max-width:370px}.editor-note p{max-width:480px}.archive-photo{grid-row:2}.heritage-index{grid-column:auto}.heritage-index ul{grid-template-columns:1fr 1fr;gap:0 20px}.heritage-index button{font-size:14px}.registry-top{flex-direction:column;align-items:start;padding:14px}.registry-top .mode-tabs{display:grid;grid-template-columns:1fr 1fr;width:100%}.registry-fields{grid-template-columns:1fr}.registry-field{border-right:0;border-bottom:1px solid var(--border);padding:16px}.registry-field:nth-child(3){border-top:0}.registry-field .field-label{min-height:0;margin-bottom:6px}.registry-submit{border:0;padding:16px}.registry-bottom{flex-direction:column;gap:6px;padding:12px 16px}.registry-expansion{padding:16px}.exhibition{margin-top:42px;padding:42px 0}.exhibition-grid{grid-template-columns:1fr}.exhibit-plate{border-right:0;border-bottom:1px solid var(--border);padding:24px 0}.exhibit-plate:last-child{border-bottom:0}.exhibit-plate .inventory-image{height:240px}.exhibit-ledger{flex-direction:row;align-items:end}.tour-tile{grid-template-columns:1fr;gap:16px;padding:16px}.tour-tile>img{height:220px}.manifesto{padding:24px}.manifesto h2{font-size:25px}.ethics{grid-template-columns:1fr;gap:20px}.ethics>div+div{border-left:0;border-top:1px solid var(--fieldBorder);padding:20px 0 0}}
+
+.overlay{position:fixed;inset:0;background:color-mix(in srgb,var(--primary) 50%,transparent);z-index:60;display:flex;align-items:center;justify-content:center;padding:20px}.dialog{width:min(600px,100%);max-height:90dvh;overflow:auto;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)}.dialog-head{padding:20px 24px;display:flex;align-items:start;justify-content:space-between;gap:20px;border-bottom:1px solid var(--border)}.dialog-head h2{font-size:25px}.dialog-head p{font-size:12px;color:var(--muted);margin-top:8px}.close-btn{width:44px;min-width:44px;height:44px;border:1px solid var(--fieldBorder);background:var(--surface);color:var(--primary);font-size:22px}.dialog-content{padding:24px}.dialog-content h3{font-size:25px;margin:12px 0}.dialog-content p{font-size:14px;color:var(--muted)}.dialog-content .btn{margin-top:16px}.detail-image{width:100%;height:250px;object-fit:cover}.detail-info{border-top:1px solid var(--border);padding-top:16px;margin-top:18px}.detail-info h4{font-size:12px;margin-bottom:10px}.dialog-actions{border-top:1px solid var(--border);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}.drawer{position:fixed;right:0;top:0;width:min(430px,100%);height:100dvh;background:var(--surface);z-index:65;display:flex;flex-direction:column;border-left:1px solid var(--border)}.drawer[aria-hidden=true]{display:none}.drawer .dialog-content{flex:1;overflow:auto}.trip-line{padding:16px 0;border-bottom:1px solid var(--border)}.trip-line h3{font:600 16px var(--body);margin:0 0 6px}.trip-line p{font-size:12px}.trip-line button{margin-top:8px;min-height:44px;border:0;background:transparent;color:var(--error);padding:0 10px}.drawer-total{padding:24px;background:var(--surfaceMuted)}.drawer-total .btn{width:100%;margin-top:16px}.drawer-total p{font-size:12px;color:var(--muted);margin-top:10px}.checkout-ledger{padding:16px;background:var(--surfaceMuted);margin-bottom:24px;font-size:13px}.checkout-ledger>div{margin:8px 0}.checkout-ledger strong{display:block;margin-top:14px;font-size:22px}#coForm{display:grid;gap:14px}#coForm label{font-size:12px;font-weight:600}#paymentPanel label{display:flex;gap:12px;align-items:center;min-height:56px;border:1px solid var(--fieldBorder);padding:14px;margin-top:12px;font-size:14px}#paymentPanel p{margin:12px 0}#checkoutSuccessContent{text-align:center;padding:32px 24px}#checkoutSuccessContent h3{font-size:29px;margin:16px 0}#checkoutSuccessContent p{font-size:14px;color:var(--muted)}#checkoutSuccessContent dl{background:var(--surfaceMuted);padding:20px;text-align:left;margin:24px 0}#checkoutSuccessContent dt{font-size:11px;color:var(--muted)}#checkoutSuccessContent dd{font-size:16px;margin:0 0 12px;overflow-wrap:anywhere}#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--primary);color:var(--onPrimary);padding:14px 20px;max-width:calc(100% - 32px);width:max-content;font-size:13px;z-index:80;border:1px solid var(--tertiary);border-radius:var(--radius)}@media(max-width:767px){.overlay{padding:12px}.dialog-content,.dialog-head{padding:20px}.dialog-actions{align-items:start;flex-direction:column}.dialog-actions .btn{width:100%}.detail-image{height:220px}}
+@media(max-width:1100px){.header .nav{display:none}.header .menu{display:block}}
+.footer .brand{color:var(--onPrimary)}
+</style>
+  <link rel="stylesheet" href="./components.css">
+  <script src="./components.js" defer></script>
 </head>
-<body class="bg-canvas text-ink antialiased">
-
-  <a href="#searchSection" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2">Lewati ke pencarian</a>
-
-  <!-- ============ EDITORIAL HERITAGE HEADER ============ -->
-  <header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-line">
-    <div class="max-w-container mx-auto px-4 sm:px-6 h-[76px] flex items-center justify-between gap-4">
-      <a href="#home" class="flex items-center gap-3 shrink-0">
-        <span class="w-10 h-10 rounded-sm bg-primary text-white flex items-center justify-center font-display text-xl font-bold">A</span>
-        <div>
-          <span class="font-display text-[22px] font-bold tracking-tight text-ink block leading-tight">Akar Budaya</span>
-          <span class="text-[11px] uppercase tracking-wider text-ink-muted font-semibold block">Wisata Warisan Nusantara</span>
-        </div>
-      </a>
-
-      <nav class="hidden md:flex items-center gap-6 text-[15px] font-semibold" aria-label="Main Navigation">
-        <a href="#hotels" class="text-ink hover:text-primary transition-colors">Pondok Warisan</a>
-        <a href="#experiences" class="text-ink-muted hover:text-ink transition-colors">Jelajah Pusaka</a>
-        <a href="#manifesto" class="text-ink-muted hover:text-ink transition-colors">Manifesto Kami</a>
-        <button type="button" data-open-trip class="ml-2 h-11 px-5 rounded-sm bg-primary hover:bg-primary-hover text-white text-[13px] font-bold tracking-wider uppercase transition">
-          Buku Perjalanan (<span data-trip-count class="tnum font-mono">0</span>)
-        </button>
-      </nav>
-
-      <button type="button" id="menuBtn" class="md:hidden w-10 h-10 flex items-center justify-center text-ink" aria-label="Buka menu">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-    </div>
-
-    <nav id="mobileNav" class="md:hidden hidden border-t border-line bg-surface p-4 flex flex-col gap-2 font-semibold text-[15px]">
-      <a href="#hotels" class="py-2.5 px-3 rounded-sm hover:bg-surface-muted">Pondok Warisan</a>
-      <a href="#experiences" class="py-2.5 px-3 rounded-sm hover:bg-surface-muted text-ink-muted">Jelajah Pusaka</a>
-      <a href="#manifesto" class="py-2.5 px-3 rounded-sm hover:bg-surface-muted text-ink-muted">Manifesto Kami</a>
-      <button type="button" data-open-trip class="mt-2 h-11 rounded-sm bg-primary text-white flex items-center justify-center gap-2">
-        Buku Perjalanan (<span data-trip-count class="tnum">0</span>)
-      </button>
-    </nav>
-  </header>
-
-  <main id="home">
-    <!-- ============ BROADSHEET MONOGRAPH FRONT-PAGE HERO (PRESET 04 DNA) ============ -->
-    <section class="max-w-container mx-auto px-4 sm:px-6 pt-8 pb-6">
-      <!-- Broadsheet Masthead Banner -->
-      <div class="border-y-2 border-primary py-2.5 px-2 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono uppercase tracking-[0.18em] text-ink-muted bg-surface/60">
-        <span>ARSIP PERJALANAN NUSANTARA · VOL. IV</span>
-        <span class="font-bold text-primary">JURNAL WARISAN &amp; PUSAKA HIDUP</span>
-        <span>JAWA · SUMATERA · LOMBOK</span>
-      </div>
-
-      <!-- 3-Column Broadsheet Front Page -->
-      <div class="mt-6 bg-surface border border-line grid lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-line shadow-card">
-        <!-- Left 3-Col Editor's Monograph Note -->
-        <div class="lg:col-span-3 p-6 flex flex-col justify-between">
-          <div>
-            <span class="text-[11px] font-bold uppercase tracking-widest text-primary block border-b border-line pb-2">Pengantar Kurator</span>
-            <h1 class="font-display text-[28px] leading-[1.12] text-ink mt-4">Merajut Cerita Leluhur Melalui Perjalanan Autentik.</h1>
-            <p class="mt-4 text-[14px] text-ink-muted leading-relaxed">
-              <span class="float-left font-display text-[42px] leading-[0.85] text-primary pr-2.5 pt-1 font-bold">M</span>enghubungkan pejalan dengan ndalem keraton bersejarah, maestro tenun tradisional, arsitektur candi kuno, dan kehangatan masyarakat adat.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-line text-[12px] font-mono text-ink-muted">
-            <p class="font-bold text-ink">Kurasi Langsung Pengampu Adat</p>
-            <p class="mt-0.5">Terverifikasi Live Ortasys S4</p>
-          </div>
-        </div>
-
-        <!-- Center 6-Col Archival Framed Plate -->
-        <div class="lg:col-span-6 p-6 bg-canvas/50 flex flex-col justify-between">
-          <div class="border border-line bg-surface p-2">
-            <div class="aspect-[16/10] overflow-hidden bg-surface-muted">
-              <img src="../../assets/serenity_umrah_privilege/kraton.jpg" alt="Pintu gerbang Donopratono Keraton Yogyakarta" class="w-full h-full object-cover">
-            </div>
-          </div>
-          <div class="mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-2 border-t border-line text-[12px]">
-            <div>
-              <span class="font-mono text-[10px] font-bold uppercase tracking-wider text-secondary">DOKUMENTASI ARSIP 01 · YOGYAKARTA</span>
-              <p class="font-display italic text-[16px] text-ink">Regol Donopratono &amp; Kompleks Kedhaton Keraton Ngayogyakarta</p>
-            </div>
-            <span class="px-2.5 py-1 bg-surface border border-line font-mono text-[10px] font-bold uppercase text-primary self-start sm:self-auto">Akses Resmi</span>
-          </div>
-        </div>
-
-        <!-- Right 3-Col Curated Heritage Index -->
-        <div class="lg:col-span-3 p-6 flex flex-col justify-between">
-          <div>
-            <span class="text-[11px] font-bold uppercase tracking-widest text-secondary block border-b border-line pb-2">Indeks Wilayah Pusaka</span>
-            <ul class="mt-4 divide-y divide-line text-[13px]">
-              <li class="py-3">
-                <span class="font-mono text-[10px] text-secondary font-bold block">BAB I · JAWA TENGAH &amp; DIY</span>
-                <p class="font-display font-bold text-ink text-[16px] mt-0.5">Ndalem Kraton &amp; Candi Borobudur</p>
-                <p class="text-[12px] text-ink-muted mt-0.5">Arsitektur Joglo &amp; relief abad ke-9</p>
-              </li>
-              <li class="py-3">
-                <span class="font-mono text-[10px] text-secondary font-bold block">BAB II · SUMATERA UTARA</span>
-                <p class="font-display font-bold text-ink text-[16px] mt-0.5">Ruma Bolon Samosir Danau Toba</p>
-                <p class="text-[12px] text-ink-muted mt-0.5">Pusaka megalitik &amp; ulos Batak</p>
-              </li>
-              <li class="py-3">
-                <span class="font-mono text-[10px] text-secondary font-bold block">BAB III · LOMBOK TENGAH</span>
-                <p class="font-display font-bold text-ink text-[16px] mt-0.5">Bale Tani &amp; Tenun Ikat Sade</p>
-                <p class="text-[12px] text-ink-muted mt-0.5">Pewarna alam akar mengkudu</p>
-              </li>
-            </ul>
-          </div>
-          <a href="#hotels" class="mt-4 w-full py-2.5 bg-surface-muted hover:bg-line text-ink text-center text-[11px] font-bold uppercase tracking-wider border border-line transition">Buka Katalog Arsip ↓</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ ARCHIVAL REGISTRY / BUKU TAMU SEARCH CONSOLE (PRESET 04 DNA) ============ -->
-    <section id="searchSection" class="max-w-container mx-auto px-4 sm:px-6 pt-4">
-      <div class="bg-surface border-2 border-primary p-1 shadow-card">
-        <div class="border border-line p-5 sm:p-7 bg-surface">
-          <!-- Registry Header -->
-          <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b-2 border-line">
-            <div class="flex items-center gap-3">
-              <span class="px-2.5 py-1 bg-primary text-white font-mono text-[10px] font-bold uppercase tracking-widest">REGISTRASI PEJALAN</span>
-              <div>
-                <h2 class="font-display text-[24px] font-normal text-ink">Buku Tamu Reservasi Pondok &amp; Tur Pusaka</h2>
-              </div>
-            </div>
-            <div class="inline-flex rounded-xs bg-canvas border border-line p-0.5" role="tablist">
-              <button type="button" role="tab" data-mode="hotels" aria-selected="true" class="mode-tab h-9 px-4 rounded-xs text-[13px] font-semibold transition bg-primary text-white">Pondok Warisan</button>
-              <button type="button" role="tab" data-mode="activities" aria-selected="false" class="mode-tab h-9 px-4 rounded-xs text-[13px] font-semibold transition text-ink-muted hover:text-ink">Tur Budaya</button>
-            </div>
-          </div>
-
-          <form id="searchForm" class="mt-5" novalidate>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 bg-canvas/70 p-4 border border-line">
-              <!-- Field I: Wilayah -->
-              <label class="lg:col-span-4 flex flex-col gap-1.5">
-                <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-primary" data-dest-label>I. Wilayah / Kawasan Pusaka</span>
-                <input id="dest" list="destList" placeholder="Yogyakarta, Magelang, Danau Toba…" autocomplete="off" class="h-11 px-3 rounded-xs bg-surface border border-line text-[14px] focus:border-primary focus:outline-none">
-                <datalist id="destList"></datalist>
-              </label>
-
-              <!-- Field II: Tanggal -->
-              <label class="lg:col-span-2 flex flex-col gap-1.5" data-hotel-only>
-                <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-primary">II. Tanggal Masuk</span>
-                <input id="checkIn" type="date" aria-describedby="dateLimitHint" class="tnum h-11 px-2.5 rounded-xs bg-surface border border-line font-mono text-[13px] focus:border-primary focus:outline-none">
-              </label>
-              <label class="lg:col-span-2 flex flex-col gap-1.5" data-hotel-only>
-                <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-primary">III. Tanggal Keluar</span>
-                <input id="checkOut" type="date" aria-describedby="dateLimitHint" class="tnum h-11 px-2.5 rounded-xs bg-surface border border-line font-mono text-[13px] focus:border-primary focus:outline-none">
-              </label>
-
-              <label class="lg:col-span-4 flex flex-col gap-1.5 hidden" data-activity-only>
-                <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-primary">II. Tanggal Jelajah Pusaka</span>
-                <input id="actDate" type="date" class="tnum h-11 px-3 rounded-xs bg-surface border border-line font-mono text-[13px] focus:border-primary focus:outline-none">
-              </label>
-
-              <!-- Field IV: Kuota Pejalan -->
-              <div class="lg:col-span-4 grid grid-cols-3 gap-2">
-                <div class="flex flex-col gap-1.5" data-hotel-only>
-                  <span id="lbl-rooms" class="font-mono text-[11px] font-bold uppercase text-ink-muted">Kamar (1–9)</span>
-                  <div class="stepper flex items-center h-11 rounded-xs bg-surface border border-line" role="group" aria-labelledby="lbl-rooms">
-                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-canvas" data-step="rooms" data-dir="-1" aria-label="Kurangi kamar">−</button>
-                    <input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
-                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-canvas" data-step="rooms" data-dir="1" aria-label="Tambah kamar">+</button>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-1.5">
-                  <span id="lbl-adults" class="font-mono text-[11px] font-bold uppercase text-ink-muted" data-adults-label>Dewasa</span>
-                  <div class="stepper flex items-center h-11 rounded-xs bg-surface border border-line" role="group" aria-labelledby="lbl-adults">
-                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-canvas" data-step="adults" data-dir="-1" aria-label="Kurangi dewasa">−</button>
-                    <input id="adults" type="number" min="1" max="20" value="2" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
-                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-canvas" data-step="adults" data-dir="1" aria-label="Tambah dewasa">+</button>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-1.5">
-                  <span id="lbl-children" class="font-mono text-[11px] font-bold uppercase text-ink-muted" data-children-label>Anak</span>
-                  <div class="stepper flex items-center h-11 rounded-xs bg-surface border border-line" role="group" aria-labelledby="lbl-children">
-                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-canvas" data-step="children" data-dir="-1" aria-label="Kurangi anak">−</button>
-                    <input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
-                    <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-canvas" data-step="children" data-dir="1" aria-label="Tambah anak">+</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div id="formErrors" class="mt-2 text-[13px] text-danger font-semibold" role="alert" aria-live="assertive"></div>
-
-            <div class="mt-4 pt-4 border-t border-line flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-[12px]">
-                <div class="flex items-center gap-2">
-                  <span class="w-2.5 h-2.5 rounded-full bg-success"></span>
-                  <span class="font-bold text-ink">Every price is checked live when you ask for it</span>
-                </div>
-                <span class="hidden sm:inline text-ink-muted">·</span>
-                <span id="summary" class="font-mono text-ink-muted">Tentukan tanggal perjalanan untuk menghitung tarif</span>
-                <span id="dateLimitHint" class="sr-only" data-hotel-only>Maksimal 30 malam</span>
-              </div>
-
-              <button id="checkBtn" type="submit" class="h-11 px-7 rounded-xs bg-primary hover:bg-primary-hover text-white text-[12px] font-bold tracking-widest uppercase transition flex items-center justify-center gap-2">
-                <span data-btn-label>Periksa Arsip &amp; Tarif Live</span>
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ BROADSHEET COLUMNAR EXHIBITION (PRESET 04 DNA) ============ -->
-    <section id="hotels" class="max-w-container mx-auto px-4 sm:px-6 pt-20">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b-2 border-primary">
-        <div>
-          <span class="font-mono text-[11px] font-bold uppercase tracking-widest text-secondary">KATALOG ARSIP PENGINAPAN</span>
-          <h2 class="font-display text-[32px] sm:text-[38px] font-normal text-ink mt-0.5">Pondok &amp; Ndalem Warisan Nusantara</h2>
-        </div>
-
-        <!-- Heritage Filter Bar -->
-        <div id="filterBar" class="flex flex-wrap gap-1.5 items-center" role="group" aria-label="Filter Wilayah Pusaka">
-          <button type="button" data-filter="all" class="filter-btn h-9 px-4 rounded-xs text-[11px] font-bold uppercase tracking-wider bg-primary text-white transition">Semua Wilayah Pusaka</button>
-          <button type="button" data-filter="jogja" class="filter-btn h-9 px-4 rounded-xs text-[11px] font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Kraton Yogyakarta</button>
-          <button type="button" data-filter="magelang" class="filter-btn h-9 px-4 rounded-xs text-[11px] font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Candi Borobudur</button>
-          <button type="button" data-filter="toba" class="filter-btn h-9 px-4 rounded-xs text-[11px] font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Danau Toba Batak</button>
-        </div>
-      </div>
-
-      <!-- Broadsheet Columnar Grid with Vertical Hairlines -->
-      <div id="results" class="mt-6 bg-surface border border-line grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-line shadow-card"></div>
-    </section>
-
-    <!-- ============ 2-COLUMN ARCHIVAL STORY SPREADS FOR TOURS (PRESET 04 DNA) ============ -->
-    <section id="experiences" class="max-w-container mx-auto px-4 sm:px-6 pt-20">
-      <div class="bg-surface border border-line p-6 sm:p-10 shadow-card">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-5 border-b-2 border-primary">
-          <div>
-            <span class="font-mono text-[11px] font-bold uppercase tracking-widest text-secondary">DOKUMENTASI LAPANGAN &amp; TUR</span>
-            <h2 class="font-display text-[28px] sm:text-[34px] font-normal text-ink mt-1">Jelajah Bersama Pengampu Budaya</h2>
-          </div>
-          <span class="px-3 py-1 bg-surface-muted text-ink-muted text-[11px] font-mono font-bold uppercase">Illustrative Sample Data</span>
-        </div>
-
-        <div id="tourList" class="mt-8 grid md:grid-cols-2 gap-8"></div>
-      </div>
-    </section>
-
-    <!-- ============ MONOGRAPH PULL-QUOTE & 3-COLUMN ESSAY (PRESET 04 DNA) ============ -->
-    <section id="manifesto" class="max-w-container mx-auto px-4 sm:px-6 pt-20 pb-20">
-      <div class="bg-surface border-y-2 border-primary p-8 sm:p-12">
-        <blockquote class="max-w-3xl mx-auto text-center pb-8 border-b border-line">
-          <span class="font-mono text-[11px] uppercase tracking-[0.2em] text-secondary block mb-3">PIAGAM ETIKA BUDAYA</span>
-          <p class="font-display italic text-[24px] sm:text-[30px] text-ink leading-snug">“Perjalanan sejati tidak menjadikan tradisi sebagai tontonan, melainkan ruang perjumpaan yang menghormati martabat penjaga warisan.”</p>
-        </blockquote>
-
-        <div class="mt-8 grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-line gap-6 md:gap-0">
-          <div class="md:pr-6 pt-4 md:pt-0">
-            <span class="text-[11px] font-mono text-primary font-bold uppercase">Bab I · Etika Adat</span>
-            <h3 class="font-display text-[21px] text-ink mt-1">Relasi Langsung Pengampu</h3>
-            <p class="text-[14px] text-ink-muted mt-2 leading-relaxed">Kami menjalin kerja sama langsung dengan abdi dalem, tetua adat, dan komunitas penenun agar manfaat ekonomi kembali ke desa pusaka.</p>
-          </div>
-          <div class="md:px-6 pt-4 md:pt-0">
-            <span class="text-[11px] font-mono text-primary font-bold uppercase">Bab II · Kejujuran Niaga</span>
-            <h3 class="font-display text-[21px] text-ink mt-1">Transparansi Ritel SNAP BI</h3>
-            <p class="text-[14px] text-ink-muted mt-2 leading-relaxed">Seluruh tarif ritel disajikan transparan tanpa biaya tersembunyi, diselesaikan melalui gerbang pembayaran resmi DOKU dan SNAP BI.</p>
-          </div>
-          <div class="md:pl-6 pt-4 md:pt-0">
-            <span class="text-[11px] font-mono text-primary font-bold uppercase">Bab III · Kepastian Kuota</span>
-            <h3 class="font-display text-[21px] text-ink mt-1">Verifikasi Seketika</h3>
-            <p class="text-[14px] text-ink-muted mt-2 leading-relaxed">Setiap harga dicek seketika (*Every price is checked live when you ask for it*), menjamin ketersediaan kamar pusaka saat Anda memesan.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="border-t border-line bg-surface py-12 text-[13px] text-ink-muted">
-    <div class="max-w-container mx-auto px-4 sm:px-6">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-line">
-        <div>
-          <span class="font-display text-[22px] text-ink font-bold block">Akar Budaya Travel</span>
-          <p class="text-[12px] mt-0.5">Spesialis Wisata Warisan &amp; Kebudayaan Nusantara · Ditenagai Ortasys S4.</p>
-        </div>
-        <div class="flex gap-6 font-semibold text-ink text-[13px]">
-          <a href="#hotels" class="hover:text-primary">Pondok</a>
-          <a href="#experiences" class="hover:text-primary">Tur</a>
-          <a href="#manifesto" class="hover:text-primary">Manifesto</a>
-        </div>
-      </div>
-      <div class="pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-[12px]">
-        <p>Transaksi terlindungi <strong class="text-ink">DOKU</strong> dan <strong class="text-ink">SNAP BI</strong>. Data properti adalah Ilustrative Sample Data [PRD 9.2].</p>
-        <p>© <span id="year"></span> Akar Budaya Travel. Hak cipta dilindungi.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ============ TRIP DRAWER ============ -->
-  <div id="tripOverlay" class="fixed inset-0 z-50 bg-black/40 hidden" aria-hidden="true"></div>
-  <aside id="tripDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-[420px] bg-surface shadow-elevated translate-x-full transition-transform duration-300 flex flex-col" role="dialog" aria-modal="true" aria-labelledby="tripTitle" aria-hidden="true">
-    <div class="flex items-center justify-between px-6 h-[76px] border-b border-line">
-      <h2 id="tripTitle" class="font-display text-[22px] text-ink font-bold">Buku Perjalanan</h2>
-      <button type="button" data-close-trip class="w-8 h-8 flex items-center justify-center text-ink hover:text-ink-muted" aria-label="Tutup buku perjalanan">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
-    </div>
-
-    <div id="tripItems" class="flex-1 overflow-y-auto p-5 flex flex-col gap-3"></div>
-
-    <div class="border-t border-line p-6 bg-canvas">
-      <div class="space-y-1.5 text-[12px] font-mono text-ink-muted">
-        <div class="flex justify-between">
-          <span>Subtotal Ritel:</span>
-          <span id="tripSubtotal" class="font-bold text-ink">Rp 0</span>
-        </div>
-        <div class="flex justify-between text-[11px]">
-          <span>Pajak &amp; Donasi Konservasi:</span>
-          <span class="text-success font-semibold">Termasuk (Net Final)</span>
-        </div>
-        <div class="flex items-baseline justify-between pt-2 border-t border-line/60 text-[14px]">
-          <span class="font-bold text-ink">Total Akhir:</span>
-          <span id="tripTotal" class="text-[20px] font-bold text-primary">Rp 0</span>
-        </div>
-      </div>
-      <button id="payBtn" type="button" class="mt-4 w-full h-12 rounded-xs bg-primary hover:bg-primary-hover text-white text-[13px] font-bold tracking-wider uppercase transition disabled:opacity-40">
-        Lanjutkan ke Pembayaran
-      </button>
-      <p id="payNote" class="mt-2 text-[11px] text-center text-ink-muted" aria-live="polite">Penyelesaian resmi Bank Indonesia SNAP &amp; DOKU.</p>
-    </div>
-  </aside>
-
-  <!-- ============ DETAIL QUICK-VIEW MODAL ============ -->
-  <div id="detailModal" class="fixed inset-0 z-50 bg-ink/50 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="bg-surface rounded-xs max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[90vh]">
-      <div class="relative aspect-[16/9] bg-surface-muted shrink-0">
-        <img id="modalImg" src="" alt="" class="w-full h-full object-cover">
-        <button type="button" data-close-modal class="absolute top-3 right-3 w-8 h-8 rounded-xs bg-surface/90 flex items-center justify-center text-ink hover:bg-surface transition" aria-label="Tutup detail">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
-        <span id="modalBadge" class="absolute bottom-3 left-3 px-2.5 py-1 rounded-xs bg-surface/95 text-ink text-[11px] font-mono font-semibold"></span>
-      </div>
-      <div class="p-6 overflow-y-auto flex-1 flex flex-col gap-3">
-        <span id="modalArea" class="text-[11px] font-bold uppercase tracking-wider text-secondary"></span>
-        <h3 id="modalTitle" class="font-display text-[24px] text-ink leading-tight"></h3>
-        <p id="modalDesc" class="text-[13px] text-ink-muted leading-relaxed font-normal"></p>
-        <div class="pt-3 border-t border-line">
-          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink mb-2">Fasilitas Tradisi &amp; Layanan Budaya:</h4>
-          <div id="modalAmenities" class="flex flex-wrap gap-1.5 text-[12px]"></div>
-        </div>
-        <div class="pt-3 border-t border-line">
-          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink mb-1">Kebijakan Etika &amp; Reservasi:</h4>
-          <p id="modalPolicy" class="text-[12px] text-ink-muted"></p>
-        </div>
-      </div>
-      <div class="p-5 border-t border-line bg-canvas flex items-center justify-between gap-4 shrink-0">
-        <div>
-          <p class="text-[11px] text-ink-muted font-mono">Tarif Ritel Sah Multi-Supplier</p>
-          <p id="modalPrice" class="font-mono text-[20px] font-bold text-primary"></p>
-        </div>
-        <button id="modalSelectBtn" type="button" class="h-11 px-6 rounded-xs bg-primary hover:bg-primary-hover text-white text-[12px] font-bold tracking-wider uppercase transition">
-          Pilih Penginapan
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ CHECKOUT MODAL ============ -->
-  <div id="checkoutModal" class="fixed inset-0 z-50 bg-ink/60 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="checkoutHeading">
-    <div class="bg-surface rounded-xs max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[92vh]">
-      <div class="flex items-center justify-between px-6 py-4 border-b border-line">
-        <div>
-          <h3 id="checkoutHeading" class="font-display text-[22px] text-ink leading-tight">Konfirmasi Pemesanan Budaya</h3>
-          <p class="text-[12px] text-ink-muted">Penyelesaian Berstandar Bank Indonesia SNAP &amp; DOKU</p>
-        </div>
-        <button type="button" data-close-checkout class="w-8 h-8 rounded-xs flex items-center justify-center hover:bg-surface-muted text-ink" aria-label="Tutup pemesanan">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
-      </div>
-
-      <div id="checkoutFormContent" class="p-6 overflow-y-auto flex-1 flex flex-col gap-4">
-        <div class="p-4 rounded-xs bg-canvas border border-line text-[13px]">
-          <div class="flex justify-between font-bold text-ink">
-            <span>Daftar Rencana Perjalanan:</span>
-            <span id="coItemCount" class="font-mono">0 Item</span>
-          </div>
-          <div id="coItemList" class="mt-2 space-y-1 text-[12px] text-ink-muted"></div>
-          <div class="mt-3 pt-2 border-t border-line/60 flex justify-between font-mono font-bold text-ink text-[14px]">
-            <span>Total Pembayaran:</span>
-            <span id="coTotal" class="text-primary">Rp 0</span>
-          </div>
-        </div>
-
-        <form id="coForm" class="flex flex-col gap-3">
-          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink">Data Diri Pemesan</h4>
-          <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
-            Nama Lengkap Sesuai KTP / Paspor
-            <input id="coName" type="text" required placeholder="Contoh: Raden Mas Danang" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-primary focus:outline-none">
-          </label>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
-              Alamat Email
-              <input id="coEmail" type="email" required placeholder="danang@pusaka.com" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-primary focus:outline-none">
-            </label>
-            <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
-              No. WhatsApp / Ponsel
-              <input id="coPhone" type="tel" required placeholder="081298765432" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-primary focus:outline-none">
-            </label>
-          </div>
-
-          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink mt-2">Kanal Pembayaran Resmi</h4>
-          <div class="space-y-2 text-[12px]">
-            <label class="flex items-center gap-3 p-3 rounded-xs bg-white border border-line cursor-pointer hover:border-primary">
-              <input type="radio" name="payMethod" value="qris" checked class="accent-primary">
-              <div class="flex-1">
-                <span class="font-bold text-ink block">QRIS SNAP BI (Penyelesaian Langsung)</span>
-                <span class="text-[11px] text-ink-muted block">BCA, Mandiri, BNI, BRI, GoPay, LinkAja</span>
-              </div>
-            </label>
-            <label class="flex items-center gap-3 p-3 rounded-xs bg-white border border-line cursor-pointer hover:border-primary">
-              <input type="radio" name="payMethod" value="va" class="accent-primary">
-              <div class="flex-1">
-                <span class="font-bold text-ink block">DOKU Virtual Account Multi-Bank</span>
-                <span class="text-[11px] text-ink-muted block">Pembayaran transfer VA instan terverifikasi</span>
-              </div>
-            </label>
-          </div>
-
-          <button type="submit" id="coSubmitBtn" class="mt-3 w-full h-12 rounded-xs bg-primary hover:bg-primary-hover text-white text-[13px] font-bold tracking-wider uppercase transition flex items-center justify-center gap-2">
-            <span>Konfirmasi &amp; Bayar Reservasi</span>
-          </button>
-        </form>
-      </div>
-
-      <!-- Confirmation Success State -->
-      <div id="checkoutSuccessContent" class="hidden p-8 flex flex-col items-center text-center gap-4">
-        <div class="w-12 h-12 rounded-full bg-success/15 text-success flex items-center justify-center">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
-        <div>
-          <span class="text-[11px] font-bold uppercase tracking-wider text-success">Pemesanan Terverifikasi Live</span>
-          <h4 class="font-display text-[26px] text-ink mt-1">Reservasi Pusaka Berhasil</h4>
-          <p class="text-[13px] text-ink-muted mt-1">Voucher resmi terhubung langsung dengan sistem pengelola penginapan &amp; tetua pemandu.</p>
-        </div>
-        <div class="w-full p-4 rounded-xs bg-canvas border border-line text-left text-[12px] space-y-1.5 font-mono">
-          <div class="flex justify-between">
-            <span class="text-ink-muted">Kode Reservasi:</span>
-            <span id="successRef" class="font-bold text-ink">AKAR-2026-0001</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-ink-muted">Nama Pemesan:</span>
-            <span id="successGuest" class="font-bold text-ink">-</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-ink-muted">Jumlah Pelunasan:</span>
-            <span id="successAmount" class="font-bold text-primary">Rp 0</span>
-          </div>
-        </div>
-        <div class="w-full flex flex-col gap-2 pt-2">
-          <button type="button" id="btnDownloadVoucher" class="w-full h-11 rounded-xs bg-primary hover:bg-primary-hover text-white text-[12px] font-bold uppercase tracking-wider transition">
-            Unduh E-Voucher Resmi (PDF)
-          </button>
-          <button type="button" data-finish-checkout class="w-full h-10 rounded-xs bg-surface-muted hover:bg-line text-ink text-[12px] font-semibold transition">
-            Kembali ke Beranda
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-primary text-white rounded-xs px-6 py-3 text-[13px] font-bold shadow-elevated" role="status" aria-live="polite"></div>
-
-  <script>
-  (() => {
-    'use strict';
-    /* Sample Data Preset 04 (Akar Budaya) */
+<body><a class="skip" href="#searchSection">Lewati ke pencarian</a><div class="journal-strip"><div class="wrap"><span>Jurnal Perjalanan Pusaka Nusantara · Edisi Warisan Hidup</span><span>Volume IV · Yogyakarta · Jawa · Nusantara</span></div></div><header class="header"><div class="wrap header-row"><a class="brand" href="#home"><img src="./assets/logo-mark.png" alt="">Akar Budaya</a><nav class="nav" aria-label="Navigasi utama"><a href="#home">Edisi utama</a><a href="#hotels">Arsip penginapan</a><a href="#experiences">Ekspedisi budaya</a><a href="#manifesto">Manifesto</a><button class="btn" type="button" data-open-trip>Buku perjalanan <span data-trip-count>0</span></button></nav><button class="menu" type="button" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileNav">☰</button></div><nav id="mobileNav" class="mobile-nav hidden" aria-label="Navigasi seluler"><a href="#home">Edisi utama</a><a href="#hotels">Arsip penginapan</a><a href="#experiences">Ekspedisi budaya</a><a href="#manifesto">Manifesto</a><button type="button" class="btn" data-open-trip>Buku perjalanan (<span data-trip-count>0</span>)</button></nav></header><main id="home"><section class="wrap broadsheet"><div class="front-page"><div class="editor-note"><span class="eyebrow">Catatan redaksi</span><h1>Merawat Ingatan Lewat Perjalanan yang Menghormati Tempat</h1><p>Setiap rumah warisan dan lokakarya kriya dalam katalog ini mengajak pejalan membaca tempat dari cerita, ruang, dan kesehariannya.</p><span class="sample">Contoh konten agen</span></div><figure class="archive-photo"><img src="./assets/hero.webp" alt="Pendopo dan halaman rumah warisan Jawa"><figcaption>Gambar I — Ruang singgah dan arsitektur pusaka Nusantara · ilustrasi koleksi agen</figcaption></figure><aside class="heritage-index"><span class="eyebrow">Indeks wilayah pusaka</span><ul><li><button type="button" data-archive-dest="Yogyakarta">I · Yogyakarta & Kotagede<small>Pendopo, lorong kota, dan kriya.</small></button></li><li><button type="button" data-archive-dest="Borobudur">II · Borobudur & Magelang<small>Siluet candi dan ruang hening.</small></button></li><li><button type="button" data-archive-dest="Toba">III · Danau Toba & Samosir<small>Rumah panggung di tepian danau.</small></button></li><li><button type="button" data-archive-dest="tenun" data-archive-mode="activities">IV · Catatan kriya Nusantara<small>Mengenal bahan dan proses tenun.</small></button></li></ul></aside></div></section><section id="searchSection" class="wrap"><div class="registry"><div class="registry-top"><span class="eyebrow">▣ Registrasi buku tamu & pemeriksaan arsip</span><div class="mode-tabs" role="tablist" aria-label="Jenis perjalanan"><button type="button" class="mode-tab" role="tab" aria-selected="true" data-mode="hotels">I · Rumah Pusaka & Pesanggrahan</button><button type="button" class="mode-tab" role="tab" aria-selected="false" data-mode="activities">II · Tur Sejarah & Lokakarya</button></div></div><form id="searchForm" novalidate><div class="registry-fields"><label class="registry-field"><span class="field-label" data-dest-label>I. Destinasi pusaka</span><input id="dest" list="destList" placeholder="Kawasan atau nama rumah pusaka" autocomplete="off" required><datalist id="destList"></datalist></label><div class="registry-field"><span class="field-label">II. Tanggal singgah</span><div class="dates" data-hotel-only><label><span class="field-label">Check-in</span><input id="checkIn" type="date" required></label><label><span class="field-label">Check-out</span><input id="checkOut" type="date" required></label></div><label class="hidden" data-activity-only><span class="field-label">Tanggal tur</span><input id="actDate" type="date"></label></div><div class="registry-field"><span class="field-label">III. Rombongan pejalan</span><button type="button" id="guestToggle" class="guest-toggle" aria-expanded="false" aria-controls="guestPanel"><span id="guestSummary">1 kamar · 2 dewasa · 0 anak</span><span>⌄</span></button></div><div class="registry-submit"><button id="checkBtn" type="submit" class="btn"><span><span data-btn-label>Periksa arsip</span><i>Tarif jual langsung →</i></span></button></div></div><div id="guestPanel" class="registry-expansion hidden"><div class="occupancy"><div data-hotel-only><label class="field-label" for="rooms" >Kamar</label><div class="stepper"><button type="button" data-step="rooms" data-dir="-1" aria-label="Kurangi Kamar">−</button><input id="rooms" type="number" inputmode="numeric" min="1" max="9" value="1" aria-label="Kamar"><button type="button" data-step="rooms" data-dir="1" aria-label="Tambah Kamar">+</button></div></div><div ><label class="field-label" for="adults" data-adults-label>Dewasa / kamar</label><div class="stepper"><button type="button" data-step="adults" data-dir="-1" aria-label="Kurangi Dewasa / kamar">−</button><input id="adults" type="number" inputmode="numeric" min="1" max="20" value="2" aria-label="Dewasa / kamar"><button type="button" data-step="adults" data-dir="1" aria-label="Tambah Dewasa / kamar">+</button></div></div><div ><label class="field-label" for="qChildren" data-children-label>Anak / kamar</label><div class="stepper"><button type="button" data-step="children" data-dir="-1" aria-label="Kurangi Anak / kamar">−</button><input id="qChildren" type="number" inputmode="numeric" min="0" max="20" value="0" aria-label="Anak / kamar"><button type="button" data-step="children" data-dir="1" aria-label="Tambah Anak / kamar">+</button></div></div></div><div id="childAgeBox" class="hidden"></div></div><div id="formErrors" class="form-errors" role="alert" aria-live="assertive"></div><div class="registry-bottom"><p><strong>Setiap harga dicek langsung saat Anda mencari</strong></p><p id="summary"></p><p>1–30 malam · 1–9 kamar · 1–20 dewasa & 0–20 anak/kamar</p></div></form><div id="searchStatus" role="status" aria-live="polite">Contoh konten agen · simulasi arsip lokal, bukan ketersediaan terverifikasi.</div></div></section><section id="hotels" class="exhibition"><div class="wrap"><div class="section-heading"><div><span class="eyebrow">I / Koleksi pesanggrahan & rumah warisan</span><h2>Menginap di Dalam Sejarah yang Hidup</h2><p>Setiap arsip memuat konteks rumah, ruang singgah, dan harga jual per malam.</p></div><span class="sample">Contoh konten agen</span></div><div id="filterBar" class="filter-bar" role="group" aria-label="Filter wilayah" style="margin-bottom:24px"><button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Semua arsip</button><button class="filter-btn" type="button" data-filter="jogja" aria-pressed="false">Yogyakarta</button><button class="filter-btn" type="button" data-filter="magelang" aria-pressed="false">Magelang</button><button class="filter-btn" type="button" data-filter="toba" aria-pressed="false">Toba</button></div><div id="results" class="exhibition-grid" aria-live="polite"></div></div></section><section id="experiences" class="wrap section"><div class="section-heading"><div><span class="eyebrow">II / Ekspedisi budaya & lokakarya kriya</span><h2>Belajar Membaca Tempat, Bukan Sekadar Melintas</h2><p>Catatan lapangan dan pengalaman dalam contoh katalog agen.</p></div></div><div id="tourList" class="tour-grid"></div><section id="manifesto" class="manifesto"><span class="eyebrow">Manifesto etika perjalanan budaya · contoh naskah agen</span><h2>Kami hadir sebagai tamu yang mendengarkan, bukan penonton yang menuntut pertunjukan.</h2><p>Perjalanan yang baik memberi ruang untuk memahami tempat dan menghormati kehidupan di dalamnya.</p><div class="ethics"><div><h3>I · Sebelum berkunjung</h3><p>Pelajari kebiasaan setempat dan tanyakan aturan memasuki ruang pribadi atau sakral.</p></div><div><h3>II · Saat berjumpa</h3><p>Minta izin sebelum memotret. Dengarkan penjelasan pengampu tempat tanpa menganggap budaya sebagai tontonan.</p></div><div><h3>III · Sebelum memesan</h3><p>Baca rincian perjalanan, harga jual dan kebijakan. Katalog pada halaman ini adalah simulasi, bukan jaminan ketersediaan.</p></div></div></section></section><section id="contactFaqSection" class="wrap section faq"><div><div class="eyebrow">Informasi perjalanan</div><h2 style="margin:10px 0 15px">Sebelum mulai memesan</h2><details><summary>Apakah harga dan kamar sudah tersedia?</summary><p>Ini prototipe dengan contoh konten agen. Hasil dan harga dihitung dari katalog lokal, bukan pemeriksaan ketersediaan nyata. Konfirmasi penginapan hanya dapat diberikan setelah sistem produksi terhubung.</p></details><details><summary>Bagaimana mengisi rombongan keluarga?</summary><p>Isi jumlah kamar, dewasa dan anak per kamar. Usia setiap anak di setiap kamar wajib dipilih sendiri, 0–17 tahun. Lama menginap antara 1 dan 30 malam.</p></details><details id="policies"><summary>Kebijakan pemesanan & privasi</summary><p>Kebijakan pembatalan pada produk adalah contoh, bukan kontrak pemesanan. Data yang diisi hanya ada selama sesi halaman; tidak dikirim ke agen. Jangan masukkan data sensitif. Prototipe ini tidak memproses pembayaran atau menerbitkan voucher resmi.</p></details></div><div class="contact-box"><span class="eyebrow">Meja bantuan · contoh kontak agen</span><h3 style="margin-top:14px">Cerita perjalanan Anda dimulai dari sini.</h3><p>Periksa rencana, tanggal, dan kebutuhan rombongan sebelum melanjutkan simulasi pemesanan.</p><a class="btn" style="display:inline-flex;align-items:center" href="mailto:halo@agen-contoh.id">Hubungi agen contoh ↗</a><details class="demo-note"><summary>Tentang demonstrasi ini</summary><p>Katalog, harga, kontak, dan pembayaran adalah simulasi lokal.</p><label><input id="simulateFailure" type="checkbox">Simulasikan gangguan pencarian berikutnya</label></details></div></section></main><footer class="footer"><div class="wrap"><div class="footer-grid"><div><div class="brand"><img src="./assets/logo-mark.png" alt="">Akar Budaya</div><p>Jurnal perjalanan pusaka & singgah bersejarah Nusantara.</p><p>Contoh konten agen<br>halo@agen-contoh.id<br>Identitas dan kontak demonstrasi.</p></div><div><h3>Jelajahi</h3><a href="#hotels">Penginapan</a><a href="#experiences">Pengalaman</a><a href="#contactFaqSection">Tentang & kontak</a></div><div><h3>Informasi</h3><a href="#contactFaqSection">FAQ</a><a href="#policies">Syarat, privasi & pembatalan</a><a href="guidelines.html">Pedoman merek</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> Akar Budaya · Contoh konten agen</span><span>Didukung sistem pemesanan Ortasys · prototipe lokal</span></div></div></footer><div id="tripOverlay" class="overlay hidden" aria-hidden="true"></div><aside id="tripDrawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="tripTitle" aria-hidden="true"><div class="dialog-head"><h2 id="tripTitle">Buku perjalanan</h2><button type="button" class="close-btn" data-close-trip aria-label="Tutup rencana">×</button></div><div id="tripItems" class="dialog-content"></div><div class="drawer-total"><span class="sample">Total contoh harga jual</span><div id="tripTotal" class="price">Rp 0</div><span id="tripSubtotal" class="hidden"></span><button type="button" id="payBtn" class="btn">Lanjut ke simulasi pemesanan</button><p id="payNote">Tidak ada reservasi nyata atau pembayaran yang diproses.</p></div></aside><div id="detailModal" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="dialog"><div class="dialog-head"><span id="modalBadge" class="sample">Contoh konten agen</span><button type="button" class="close-btn" data-close-modal aria-label="Tutup rincian">×</button></div><img id="modalImg" class="detail-image" alt=""><div class="dialog-content"><span id="modalArea" class="eyebrow"></span><h2 id="modalTitle"></h2><p id="modalDesc"></p><div class="detail-info"><h4>Fasilitas & rincian contoh</h4><div id="modalAmenities" class="amenities"></div></div><div class="detail-info"><h4>Kebijakan contoh</h4><p id="modalPolicy"></p></div></div><div class="dialog-actions"><div><span class="sample">Harga contoh · bukan tarif terkonfirmasi</span><p id="modalPrice" class="price"></p></div><button type="button" id="modalSelectBtn" class="btn">Tambahkan ke rencana</button></div></div></div><div id="checkoutModal" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutHeading"><div class="dialog"><div class="dialog-head"><div><h2 id="checkoutHeading">Simulasi pemesanan</h2><p id="checkoutStep">1 · Data tamu — gunakan data contoh</p></div><button class="close-btn" type="button" data-close-checkout aria-label="Tutup pemesanan">×</button></div><div id="checkoutFormContent" class="dialog-content"><div class="checkout-ledger"><span id="coItemCount"></span><div id="coItemList"></div><span>Total contoh harga jual</span><strong id="coTotal"></strong></div><form id="coForm"><label>Nama lengkap<input id="coName" type="text" autocomplete="name" required></label><label>Email<input id="coEmail" type="email" autocomplete="email" required></label><label>Nomor WhatsApp<input id="coPhone" type="tel" autocomplete="tel" required></label><p class="sample">Data hanya dipakai pada sesi ini dan tidak dikirim ke agen.</p><button id="coSubmitBtn" type="submit" class="btn">Lanjut ke pilihan pembayaran</button></form><div id="paymentPanel" class="hidden"><h3>2 · Pilihan pembayaran contoh</h3><p>Di layanan produksi, pembayaran diproses aman lewat DOKU atau penyedia pembayaran. Di sini tidak ada koneksi pembayaran.</p><label><input type="radio" name="payMethod" value="qris" checked>QRIS · simulasi</label><label><input type="radio" name="payMethod" value="va">Virtual account · simulasi</label><button type="button" id="simulatePay" class="btn">Selesaikan simulasi tanpa pembayaran</button><button type="button" id="backToGuest" class="btn secondary">Kembali ke data tamu</button></div></div><div id="checkoutSuccessContent" class="hidden"><span class="eyebrow">3 · Ringkasan demonstrasi</span><h3>Simulasi selesai.</h3><p>Bukan bukti pemesanan atau pembayaran. Tidak ada kamar dipesan, dana ditagih, email dikirim, maupun voucher resmi diterbitkan.</p><dl><dt>Kode simulasi</dt><dd id="successRef"></dd><dt>Nama contoh</dt><dd id="successGuest"></dd><dt>Total contoh harga jual</dt><dd id="successAmount"></dd></dl><button type="button" id="btnDownloadVoucher" class="btn">Unduh ringkasan simulasi (.txt)</button><button type="button" data-finish-checkout class="btn secondary">Kembali menjelajah</button></div></div></div><div id="toast" class="hidden" role="status" aria-live="polite"></div><script>
+(() => {
+'use strict';
     const STAYS = [
       { 
         id: 'ab-kraton', name: 'Ndalem Keraton Joglo Residence', area: 'Kraton · Yogyakarta', filter: 'jogja',
-        keys: 'yogyakarta kraton joglo jawa warisan ndalem keraton', img: '../../assets/serenity_umrah_privilege/kraton.jpg', alt: 'Pintu gerbang Keraton Yogyakarta',
+        keys: 'yogyakarta kraton joglo jawa warisan ndalem keraton', img: './assets/stay-1.webp', alt: 'Pintu gerbang Keraton Yogyakarta',
         stars: 5, room: 'Kamar Pusaka Joglo Kayu Jati', meal: 'Termasuk Sarapan Tradisional Gudeg Manggar', policy: 'Bebas pembatalan hingga H-5 tanpa denda.',
         desc: 'Kediaman ningrat otentik abad ke-19 berjarak jalan kaki dari Alun-Alun Kidul. Dikelilingi pendopo kayu jati ukir Jepara kuno, alunan gamelan lembut di senja hari, dan layanan jamu tradisional.',
         amenities: ['Pendopo Kayu Jati Kuno', 'Sarapan Gudeg Manggar', 'Kelas Membatik Privat', 'Pemandu Abdi Dalem', 'Air Panas & Teh Rempah', 'WiFi Cepat Fiber'],
@@ -539,7 +76,7 @@
       },
       { 
         id: 'ab-borobudur', name: 'Omah Candi Medang Kamulan', area: 'Borobudur · Magelang', filter: 'magelang',
-        keys: 'magelang borobudur candi jawa omah medang kamulan', img: '../../assets/bagus_travel/borobudur.jpg', alt: 'Candi Borobudur dari kejauhan',
+        keys: 'magelang borobudur candi jawa omah medang kamulan', img: './assets/stay-2.webp', alt: 'Candi Borobudur dari kejauhan',
         stars: 4, room: 'Paviliun Taman Beranda Candi', meal: 'Sarapan dan teh sore tradisional serabi', policy: 'Bebas pembatalan hingga H-3 kedatangan.',
         desc: 'Paviliun pedesaan tenang dengan pemandangan siluet stupa Borobudur dan Perbukitan Menoreh. Dibangun dengan bata ekspos dan batu andesit lokal dengan suasana meditasi yang damai.',
         amenities: ['Pemandangan Siluet Candi', 'Sepeda Onthel Gratis', 'Teh Sore Serabi Kocor', 'Teras Meditasi Asri', 'Antar Jemput Candi'],
@@ -547,7 +84,7 @@
       },
       { 
         id: 'ab-toba', name: 'Pondok Batak Ajibata Samosir', area: 'Danau Toba · Sumatera Utara', filter: 'toba',
-        keys: 'toba batak samosir ajibata sumatera pondok danau', img: '../../assets/serenity_umrah_privilege/toba.jpg', alt: 'Danau Toba dan perbukitan',
+        keys: 'toba batak samosir ajibata sumatera pondok danau', img: './assets/stay-3.webp', alt: 'Danau Toba dan perbukitan',
         stars: 4, room: 'Cottage Kayu Danau Tradisional', meal: 'Sarapan kopi lintong & ombus-ombus', policy: 'Bebas pembatalan hingga H-4 kedatangan.',
         desc: 'Rumah panggung berarsitektur ruma bolon khas Batak Toba tepat di tepian danau vulkanik terbesar di dunia. Saksikan keindahan perbukitan hijau dan pertunjukan tari tor-tor tradisional.',
         amenities: ['Akses Dermaga Perahu Privat', 'Arsitektur Ruma Bolon', 'Kopi Arabika Lintong Fresh', 'Tur Budaya Makam Raja Sidabutar', 'Balkon Menghadap Danau'],
@@ -558,7 +95,7 @@
     const ACTIVITIES = [
       { 
         id: 'ab-prambanan', kind: 'tour', name: 'Jelajah Candi Prambanan & Ratu Boko', area: 'Prambanan · Jawa Tengah', filter: 'jogja',
-        keys: 'prambanan boko candi sejarah tur pandu', img: '../../assets/serenity_umrah_privilege/prambanan.jpg', alt: 'Candi Prambanan',
+        keys: 'prambanan boko candi sejarah tur pandu', img: './assets/tour-1.webp', alt: 'Candi Prambanan',
         duration: '5 Jam · Pandu Ahli Sejarah & Tiket Masuk VIP',
         desc: 'Menelusuri kisah epik Ramayana yang terpahat pada relief Candi Siwa, Brahma, dan Wisnu, dilanjutkan menikmati matahari terbenam magis di gerbang Candi Ratu Boko.',
         amenities: ['Tiket Masuk Terusan VIP', 'Pemandu Ahli Arkeologi', 'Transportasi AC Nyaman', 'Air Kelapa & Camilan Tradisional'],
@@ -567,7 +104,7 @@
       },
       { 
         id: 'ab-weaving', kind: 'tour', name: 'Kelas Tenun Ikat Pusaka Tradisional', area: 'Lombok Tengah', filter: 'magelang',
-        keys: 'tenun ikat kain sasak kelas pengrajin', img: '../../assets/mandalika_escape/sade-weaving.jpg', alt: 'Perajin tenun ikat',
+        keys: 'tenun ikat kain sasak kelas pengrajin', img: './assets/tour-2.webp', alt: 'Perajin tenun ikat',
         duration: '3 Jam · Maestro Tenun & Souvenir Kain',
         desc: 'Pelajari filosofi motif sakral dan proses pembuatan kain tenun dengan pewarna alami akar mengkudu dan daun tarum dipandu ibu perajin generasi ketiga.',
         amenities: ['Alat & Benang Pewarna Alami', 'Kain Hasil Tenun Menjadi Hak Milik', 'Dokumentasi Foto'],
@@ -576,381 +113,129 @@
       }
     ];
 
-    const LIMITS = { rooms: [1, 9], adults: [1, 20], children: [0, 20] };
-    const MAX_NIGHTS = 30;
-    const idr = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
-    const $ = (s, r = document) => r.querySelector(s);
-    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-    const DAY = 86400000;
-    const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-    const addDays = (s, n) => iso(new Date(new Date(s + 'T00:00:00').getTime() + n * DAY));
-    const today = iso(new Date());
 
-    const state = { mode: 'hotels', filter: 'all', priced: false, checking: false, checkedAt: null, trip: [] };
-    const el = {
-      form: $('#searchForm'), dest: $('#dest'), checkIn: $('#checkIn'), checkOut: $('#checkOut'), actDate: $('#actDate'),
-      rooms: $('#rooms'), adults: $('#adults'), children: $('#qChildren'), errors: $('#formErrors'), summary: $('#summary'),
-      btn: $('#checkBtn'), results: $('#results')
-    };
-
-    const clamp = (v, [lo, hi]) => Math.min(hi, Math.max(lo, Number.isFinite(v) ? v : lo));
-    const num = k => clamp(parseInt(el[k].value, 10), LIMITS[k]);
-    const nights = () => {
-      if (!el.checkIn.value || !el.checkOut.value) return 0;
-      return Math.round((new Date(el.checkOut.value) - new Date(el.checkIn.value)) / DAY);
-    };
-
-    function validate() {
-      const errs = [];
-      if (state.mode === 'hotels') {
-        if (!el.checkIn.value || !el.checkOut.value) errs.push('Silakan lengkapi tanggal check-in dan check-out.');
-        else {
-          const n = nights();
-          if (el.checkIn.value < today) errs.push('Tanggal check-in tidak boleh sebelum hari ini.');
-          if (n < 1) errs.push('Check-out minimal 1 hari setelah check-in.');
-          if (n > MAX_NIGHTS) errs.push(`Batas inap maksimal adalah ${MAX_NIGHTS} malam.`);
-        }
-      } else {
-        if (!el.actDate.value) errs.push('Silakan tentukan tanggal jelajah pusaka.');
-        else if (el.actDate.value < today) errs.push('Tanggal jelajah tidak boleh di masa lampau.');
-      }
-      return errs;
-    }
-
-    const roomRate = s => Math.round(s.nightly * (1 + 0.15 * Math.max(0, num('adults') - 2) + 0.08 * num('children')) / 1000) * 1000;
-    const stayTotal = s => roomRate(s) * Math.max(1, nights()) * num('rooms');
-    const actTotal = a => (a.perPerson * num('adults') + Math.round(a.perPerson * 0.5) * num('children')) * num('rooms');
-
-    function summaryText() {
-      const r = num('rooms'), a = num('adults'), c = num('children');
-      const g = `${a} Dewasa${c ? ` + ${c} Anak` : ''}`;
-      if (state.mode === 'hotels') {
-        const n = nights();
-        if (!n || n < 1) return 'Pilih tanggal untuk melihat harga live';
-        return `${n} Malam · ${r} Kamar (${g} / kamar)`;
-      }
-      return el.actDate.value ? `${el.actDate.value} · ${r * a} Pejalan` : 'Tentukan tanggal jelajah';
-    }
-
-    function renderMode() {
-      $$('.mode-tab').forEach(t => {
-        const on = t.dataset.mode === state.mode;
-        t.setAttribute('aria-selected', on);
-        t.className = `mode-tab h-9 px-4 rounded-xs text-[13px] font-semibold transition ${on ? 'bg-primary text-white' : 'text-ink-muted hover:text-ink'}`;
-      });
-      const hotels = state.mode === 'hotels';
-      $$('[data-hotel-only]').forEach(n => n.classList.toggle('hidden', !hotels));
-      $$('[data-activity-only]').forEach(n => n.classList.toggle('hidden', hotels));
-      $('#destList').innerHTML = (hotels ? ['Yogyakarta Kraton', 'Borobudur Magelang', 'Danau Toba', ...STAYS.map(s => s.name)] : ['Jelajah Prambanan', 'Tenun Tradisional', ...ACTIVITIES.map(a => a.name)])
-        .map(v => `<option value="${v}">`).join('');
-    }
-
-    function renderResults() {
-      const isHotels = state.mode === 'hotels';
-      const q = el.dest.value.trim().toLowerCase();
-      let list = (isHotels ? STAYS : ACTIVITIES).filter(it => {
-        const matchQ = !q || (it.name + ' ' + it.area + ' ' + it.keys).toLowerCase().includes(q);
-        const matchFilter = state.filter === 'all' || it.filter === state.filter;
-        return matchQ && matchFilter;
-      });
-      if (!list.length && state.filter === 'all') list = isHotels ? STAYS : ACTIVITIES;
-
-      if (!list.length) {
-        el.results.innerHTML = `
-          <div class="col-span-full py-12 text-center text-ink-muted bg-surface">
-            <p class="font-display text-[20px] text-ink">Tidak ada arsip penginapan yang cocok dengan filter "${state.filter}"</p>
-            <button type="button" data-reset-filter class="mt-3 px-4 py-2 rounded-xs bg-primary text-white text-[12px] font-bold">Reset Filter Wilayah</button>
-          </div>`;
-        return;
-      }
-
-      el.results.innerHTML = list.map((it, idx) => {
-        const total = isHotels ? stayTotal(it) : actTotal(it);
-        const sub = isHotels ? `${idr.format(roomRate(it))} / malam` : `${idr.format(it.perPerson)} / orang`;
-        const priceHTML = state.checking
-          ? `<div class="h-8 w-28 bg-surface-muted animate-pulse rounded-xs"></div>`
-          : state.priced
-            ? `<div><p class="tnum font-mono text-[20px] font-bold text-primary">${idr.format(total)}</p><p class="tnum font-mono text-[11px] text-ink-muted">${sub}</p></div>`
-            : `<div><p class="text-[12px] text-ink-muted italic">Cek buku tamu live</p><p class="text-[11px] text-ink-muted font-mono">Mulai ${idr.format(isHotels ? it.nightly : it.perPerson)}</p></div>`;
-
-        return `
-        <article class="p-6 sm:p-7 flex flex-col justify-between bg-surface hover:bg-canvas/40 transition duration-200 group">
-          <div>
-            <!-- Archival Column Header -->
-            <div class="flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.18em] text-ink-muted pb-2.5 border-b border-line">
-              <span class="font-bold text-primary">ARSIP 0${idx + 1}</span>
-              <span>${it.area}</span>
-            </div>
-
-            <!-- Framed Museum Plate Image -->
-            <div class="mt-4 p-1.5 border border-line bg-canvas">
-              <div class="relative aspect-[16/10] bg-surface-muted overflow-hidden">
-                <img src="${it.img}" alt="${it.alt}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                ${isHotels ? `<span class="absolute bottom-2 left-2 px-2 py-0.5 bg-surface/95 text-ink text-[10px] font-mono font-bold">${'★'.repeat(it.stars)} PUSAKA</span>` : ''}
-              </div>
-            </div>
-
-            <div class="mt-4">
-              <h3 class="font-display text-[23px] text-ink leading-snug cursor-pointer hover:text-primary transition-colors" data-detail="${it.id}">${it.name}</h3>
-              <p class="text-[12px] font-semibold text-secondary mt-1">${isHotels ? `${it.room} · ${it.meal}` : it.duration}</p>
-              <p class="text-[13px] text-ink-muted mt-2 leading-relaxed line-clamp-3">${it.desc}</p>
-
-              <!-- Archival Footnotes -->
-              <div class="mt-3 pt-2.5 border-t border-dashed border-line flex flex-wrap gap-1.5">
-                ${(it.amenities || []).slice(0, 2).map(a => `<span class="text-[11px] font-mono text-ink-muted">• ${a}</span>`).join('')}
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-6 pt-4 border-t-2 border-line flex items-end justify-between gap-3">
-            ${priceHTML}
-            <div class="flex items-center gap-1.5">
-              <button type="button" data-detail="${it.id}" class="h-10 px-3 rounded-xs border border-line bg-canvas text-ink text-[11px] font-mono uppercase font-bold hover:border-primary transition">Arsip</button>
-              <button type="button" data-select="${it.id}" class="h-10 px-4 rounded-xs ${state.priced ? 'bg-primary hover:bg-primary-hover text-white' : 'bg-surface-muted hover:bg-line text-ink font-semibold'} text-[11px] font-bold uppercase tracking-wider transition">
-                ${state.priced ? 'Catat' : 'Cek &amp; Catat'}
-              </button>
-            </div>
-          </div>
-        </article>`;
-      }).join('');
-    }
-
-    function renderTours() {
-      $('#tourList').innerHTML = ACTIVITIES.map((t, idx) => `
-        <div class="border border-line bg-canvas p-6 flex flex-col justify-between gap-4 group">
-          <div>
-            <div class="flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-secondary pb-2 border-b border-line">
-              <span>DOKUMEN LAPANGAN 0${idx + 1}</span>
-              <span>${t.area}</span>
-            </div>
-            <div class="mt-4 grid sm:grid-cols-12 gap-4 items-center">
-              <div class="sm:col-span-5 aspect-[4/3] overflow-hidden border border-line bg-surface p-1">
-                <img src="${t.img}" alt="${t.alt}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-              </div>
-              <div class="sm:col-span-7">
-                <h4 class="font-display text-[21px] text-ink leading-snug cursor-pointer hover:text-primary transition-colors" data-detail="${t.id}">${t.name}</h4>
-                <p class="text-[12px] font-semibold text-primary mt-1">${t.duration}</p>
-                <p class="text-[13px] text-ink-muted mt-2 leading-relaxed line-clamp-2">${t.desc}</p>
-              </div>
-            </div>
-          </div>
-          <div class="pt-3 border-t border-line flex items-center justify-between">
-            <span class="tnum font-mono text-[14px] font-bold text-ink">${idr.format(t.perPerson)} <span class="text-[11px] font-normal text-ink-muted">/ pejalan</span></span>
-            <div class="flex items-center gap-2">
-              <button type="button" data-detail="${t.id}" class="h-9 px-3 rounded-xs border border-line bg-surface text-ink text-[11px] font-mono uppercase font-bold">Buka Arsip</button>
-              <button type="button" data-select="${t.id}" class="h-9 px-4 rounded-xs bg-primary text-white hover:bg-primary-hover text-[11px] font-bold uppercase tracking-wider transition">Pilih Tur</button>
-            </div>
-          </div>
-        </div>`).join('');
-    }
-
-    function syncBounds() {
-      el.checkIn.min = today; el.actDate.min = today;
-      if (el.checkIn.value) {
-        el.checkOut.min = addDays(el.checkIn.value, 1);
-        el.checkOut.max = addDays(el.checkIn.value, MAX_NIGHTS);
-      } else { el.checkOut.min = addDays(today, 1); el.checkOut.removeAttribute('max'); }
-    }
-
-    function invalidate() {
-      state.priced = false; el.errors.textContent = '';
-      el.summary.textContent = summaryText();
-      renderResults();
-    }
-
-    $$('.mode-tab').forEach(t => t.addEventListener('click', () => { state.mode = t.dataset.mode; renderMode(); invalidate(); }));
-    $$('[data-step]').forEach(b => b.addEventListener('click', () => {
-      const k = b.dataset.step; el[k].value = clamp(num(k) + Number(b.dataset.dir), LIMITS[k]); invalidate();
-    }));
-    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('change', () => { el[k].value = num(k); invalidate(); }));
-    el.checkIn.addEventListener('change', () => {
-      syncBounds();
-      if (el.checkIn.value && (!el.checkOut.value || el.checkOut.value <= el.checkIn.value)) el.checkOut.value = addDays(el.checkIn.value, 2);
-      invalidate();
-    });
-    [el.checkOut, el.actDate].forEach(i => i.addEventListener('change', invalidate));
-    el.dest.addEventListener('input', renderResults);
-
-    // Filter Buttons
-    $$('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        state.filter = btn.dataset.filter;
-        $$('.filter-btn').forEach(b => {
-          const active = b === btn;
-          b.className = `filter-btn h-9 px-4 rounded-xs text-[12px] font-bold uppercase tracking-wider transition ${active ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`;
-        });
-        renderResults();
-      });
-    });
-
-    el.form.addEventListener('submit', e => {
-      e.preventDefault();
-      const errs = validate();
-      el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
-      if (errs.length) return;
-
-      state.checking = true; el.btn.disabled = true;
-      el.btn.querySelector('[data-btn-label]').textContent = 'Memverifikasi Kuota…';
-      renderResults();
-
-      setTimeout(() => {
-        state.checking = false; state.priced = true; state.checkedAt = new Date();
-        el.btn.disabled = false; el.btn.querySelector('[data-btn-label]').textContent = 'Cek Ketersediaan Live';
-        el.summary.textContent = `Live Terverifikasi: ${summaryText()}`;
-        renderResults();
-        document.getElementById('hotels').scrollIntoView({ behavior: 'smooth' });
-      }, 650);
-    });
-
-    document.addEventListener('click', e => {
-      const sel = e.target.closest('[data-select]'); if (sel) return selectItem(sel.dataset.select);
-      const det = e.target.closest('[data-detail]'); if (det) return openDetail(det.dataset.detail);
-      const rm = e.target.closest('[data-remove]'); if (rm) { state.trip.splice(Number(rm.dataset.remove), 1); renderTrip(); }
-      const rst = e.target.closest('[data-reset-filter]'); if (rst) {
-        state.filter = 'all';
-        $$('.filter-btn').forEach((b, i) => b.className = `filter-btn h-9 px-4 rounded-xs text-[12px] font-bold uppercase tracking-wider transition ${i === 0 ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`);
-        renderResults();
-      }
-    });
-
-    function selectItem(id) {
-      if (!state.priced) {
-        toast('Memverifikasi tarif ketersediaan multi-supplier...');
-        const errs = validate();
-        if (errs.length) {
-          document.getElementById('searchSection').scrollIntoView({ behavior: 'smooth' });
-          el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
-          return;
-        }
-        state.priced = true;
-        renderResults();
-      }
-      const isHotel = id.startsWith('ab-kraton') || id.startsWith('ab-borobudur') || id.startsWith('ab-toba');
-      const it = (isHotels => isHotels ? STAYS : ACTIVITIES)(isHotel).find(x => x.id === id);
-      const total = isHotel ? stayTotal(it) : actTotal(it);
-      state.trip.push({ id: it.id, name: it.name, area: it.area, detail: summaryText(), total });
-      renderTrip();
-      toast(`Ditambahkan ke buku perjalanan: ${it.name}`);
-      closeDetail();
-    }
-
-    function renderTrip() {
-      $$('[data-trip-count]').forEach(n => n.textContent = state.trip.length);
-      const box = $('#tripItems');
-      box.innerHTML = state.trip.length ? state.trip.map((t, i) => `
-        <div class="p-3.5 rounded-xs bg-canvas border border-line flex flex-col gap-1">
-          <div class="flex items-start justify-between gap-2">
-            <div>
-              <p class="font-display text-[15px] font-bold text-ink">${t.name}</p>
-              <p class="text-[11px] text-ink-muted">${t.area} · ${t.detail}</p>
-            </div>
-            <button type="button" data-remove="${i}" class="text-[11px] font-bold text-danger hover:underline">Hapus</button>
-          </div>
-          <p class="tnum font-mono text-[14px] font-bold text-primary mt-1">${idr.format(t.total)}</p>
-        </div>`).join('')
-        : `<p class="py-10 text-center text-[13px] text-ink-muted">Buku perjalanan Anda masih kosong.<br>Cek ketersediaan dan pilih pondok atau tur.</p>`;
-      
-      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
-      $('#tripSubtotal').textContent = idr.format(totalVal);
-      $('#tripTotal').textContent = idr.format(totalVal);
-      $('#payBtn').disabled = !state.trip.length;
-    }
-
-    // Detail Quick-View Modal
-    const detailModal = $('#detailModal');
-    let currentDetailItem = null;
-    function openDetail(id) {
-      const isHotel = id.startsWith('ab-kraton') || id.startsWith('ab-borobudur') || id.startsWith('ab-toba');
-      const it = (isHotels => isHotels ? STAYS : ACTIVITIES)(isHotel).find(x => x.id === id);
-      if (!it) return;
-      currentDetailItem = it;
-
-      $('#modalImg').src = it.img;
-      $('#modalImg').alt = it.alt;
-      $('#modalBadge').textContent = isHotel ? `Peringkat Warisan: ${'★'.repeat(it.stars)}` : it.duration;
-      $('#modalArea').textContent = it.area;
-      $('#modalTitle').textContent = it.name;
-      $('#modalDesc').textContent = it.desc;
-      $('#modalAmenities').innerHTML = (it.amenities || []).map(a => `<span class="px-2.5 py-1 rounded-xs bg-surface-muted text-ink font-semibold">${a}</span>`).join('');
-      $('#modalPolicy').textContent = it.policy;
-
-      const total = isHotel ? stayTotal(it) : actTotal(it);
-      $('#modalPrice').textContent = state.priced ? idr.format(total) : `Mulai ${idr.format(isHotel ? it.nightly : it.perPerson)}`;
-      detailModal.classList.remove('hidden');
-    }
-    function closeDetail() {
-      detailModal.classList.add('hidden');
-      currentDetailItem = null;
-    }
-    $('[data-close-modal]').addEventListener('click', closeDetail);
-    detailModal.addEventListener('click', e => { if (e.target === detailModal) closeDetail(); });
-    $('#modalSelectBtn').addEventListener('click', () => {
-      if (currentDetailItem) selectItem(currentDetailItem.id);
-    });
-
-    // Checkout Modal
-    const checkoutModal = $('#checkoutModal');
-    function openCheckout() {
-      if (!state.trip.length) return;
-      closeTrip();
-      $('#coItemCount').textContent = `${state.trip.length} Item Terpilih`;
-      $('#coItemList').innerHTML = state.trip.map(t => `<div class="flex justify-between"><span>• ${t.name}</span><span class="font-mono font-bold">${idr.format(t.total)}</span></div>`).join('');
-      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
-      $('#coTotal').textContent = idr.format(totalVal);
-      $('#checkoutFormContent').classList.remove('hidden');
-      $('#checkoutSuccessContent').classList.add('hidden');
-      checkoutModal.classList.remove('hidden');
-    }
-    function closeCheckout() {
-      checkoutModal.classList.add('hidden');
-    }
-    $('[data-close-checkout]').addEventListener('click', closeCheckout);
-    checkoutModal.addEventListener('click', e => { if (e.target === checkoutModal) closeCheckout(); });
-    $('[data-finish-checkout]').addEventListener('click', () => {
-      closeCheckout();
-      state.trip = [];
-      renderTrip();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    $('#btnDownloadVoucher').addEventListener('click', () => {
-      toast('E-Voucher resmi pusaka sedang diunduh (Simulasi PDF)...');
-    });
-
-    $('#coForm').addEventListener('submit', e => {
-      e.preventDefault();
-      const guestName = $('#coName').value.trim();
-      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
-      const randomRef = 'AKAR-2026-' + Math.floor(1000 + Math.random() * 9000);
-
-      $('#successRef').textContent = randomRef;
-      $('#successGuest').textContent = guestName;
-      $('#successAmount').textContent = idr.format(totalVal);
-
-      $('#checkoutFormContent').classList.add('hidden');
-      $('#checkoutSuccessContent').classList.remove('hidden');
-    });
-
-    // Drawer Navigation
-    const drawer = $('#tripDrawer'), overlay = $('#tripOverlay');
-    function openTrip() { overlay.classList.remove('hidden'); drawer.classList.remove('translate-x-full'); drawer.setAttribute('aria-hidden', 'false'); }
-    function closeTrip() { overlay.classList.add('hidden'); drawer.classList.add('translate-x-full'); drawer.setAttribute('aria-hidden', 'true'); }
-    $$('[data-open-trip]').forEach(b => b.addEventListener('click', openTrip));
-    $('[data-close-trip]').addEventListener('click', closeTrip);
-    overlay.addEventListener('click', closeTrip);
-
-    $('#payBtn').addEventListener('click', openCheckout);
-
-    let toastTimer;
-    function toast(msg) {
-      const t = $('#toast'); t.textContent = msg; t.classList.remove('hidden');
-      clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.add('hidden'), 2500);
-    }
-
-    $('#year').textContent = new Date().getFullYear();
-
-    syncBounds(); renderMode(); invalidate(); renderTours(); renderTrip();
-  })();
-  </script>
-</body>
-</html>
-
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const limits={rooms:[1,9],adults:[1,20],children:[0,20]};
+const inputs={rooms:$('#rooms'),adults:$('#adults'),children:$('#qChildren')};
+const state={mode:'hotels',filter:'all',priced:false,checking:false,trip:[],request:0};
+const format=new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0});
+const money=n=>format.format(n), esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const scroll=id=>$(id).scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});
+const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const addDays=(s,n)=>{const d=new Date(s+'T12:00:00');d.setDate(d.getDate()+n);return iso(d)};
+const today=iso(new Date());
+const count=k=>{const n=Number(inputs[k].value);return Number.isInteger(n)?Math.min(limits[k][1],Math.max(limits[k][0],n)):limits[k][0]};
+const roomCount=()=>state.mode==='hotels'?count('rooms'):1;
+const nights=()=>Math.round((Date.parse($('#checkOut').value+'T00:00:00Z')-Date.parse($('#checkIn').value+'T00:00:00Z'))/86400000);
+let ageValues=new Map(), detailItem=null, toastTimer, lastFocus=null;
+function summary(){const guests=`${count('adults')} dewasa · ${count('children')} anak${state.mode==='hotels'?' / kamar':''}`;return state.mode==='hotels'?`${Number.isFinite(nights())&&nights()>0?nights():'—'} malam · ${count('rooms')} kamar · ${guests}`:`${$('#actDate').value||'Pilih tanggal tur'} · ${guests}`}
+function ages(){
+ $$('[data-child-age]').forEach(s=>ageValues.set(s.dataset.childAge,s.value));
+ const n=count('children'), rooms=roomCount(), box=$('#childAgeBox');
+ box.classList.toggle('hidden',n===0);
+ if(!n){box.innerHTML='';ageValues.clear();return}
+ box.innerHTML=Array.from({length:rooms},(_,r)=>`<fieldset class="age-room"><legend>${state.mode==='hotels'?`Kamar ${r+1} · `:''}Usia anak saat perjalanan (wajib)</legend><div class="age-grid">${Array.from({length:n},(_,c)=>{const key=`${r}-${c}`,v=ageValues.get(key)||'';return `<label for="age-${key}">Anak ${c+1} · 0–17 tahun<select id="age-${key}" data-child-age="${key}" required><option value="" ${v===''?'selected':''}>Pilih usia</option>${Array.from({length:18},(_,a)=>`<option value="${a}" ${String(a)===v?'selected':''}>${a} tahun</option>`).join('')}</select></label>`}).join('')}</div></fieldset>`).join('');
+ const validKeys=new Set($$('[data-child-age]').map(s=>s.dataset.childAge));ageValues=new Map([...ageValues].filter(([key])=>validKeys.has(key)));
+}
+function syncBounds(){const start=$('#checkIn').value;$('#checkIn').min=today;$('#actDate').min=today;$('#checkOut').min=start?addDays(start,1):addDays(today,1);if(start)$('#checkOut').max=addDays(start,30);else $('#checkOut').removeAttribute('max')}
+function validation(){
+ const errors=[];
+ if(!$('#dest').value.trim())errors.push('Pilih destinasi atau nama penginapan/tur terlebih dahulu.');
+ if(state.mode==='hotels'){
+  if(!$('#checkIn').value||!$('#checkOut').value)errors.push('Lengkapi tanggal check-in dan check-out.');
+  else{if($('#checkIn').value<today)errors.push('Check-in tidak boleh sebelum hari ini.');if(!Number.isFinite(nights())||nights()<1||nights()>30)errors.push('Lama menginap harus 1–30 malam.');}
+ }else if(!$('#actDate').value||$('#actDate').value<today)errors.push('Pilih tanggal tur hari ini atau setelahnya.');
+ for(const [k,[lo,hi]]of Object.entries(limits)){
+  if(k==='rooms'&&state.mode!=='hotels')continue;
+  const n=Number(inputs[k].value);if(inputs[k].value===''||!Number.isInteger(n)||n<lo||n>hi)errors.push(`${{rooms:'Kamar',adults:'Dewasa',children:'Anak'}[k]} harus bilangan bulat ${lo}–${hi}${k==='rooms'?'':' per '+(state.mode==='hotels'?'kamar':'rombongan')}.`);
+ }
+ const ageSelects=$$('[data-child-age]');
+ if(ageSelects.length!==count('children')*roomCount()||ageSelects.some(s=>s.value===''||!Number.isInteger(Number(s.value))||Number(s.value)<0||Number(s.value)>17))errors.push('Pilih usia setiap anak (0–17 tahun), untuk setiap kamar yang dipesan.');
+ return errors;
+}
+function showErrors(errors){$('#formErrors').innerHTML=errors.map(e=>`<p>• ${esc(e)}</p>`).join('');if(errors.length){const invalid=$$('[data-child-age]').find(s=>s.value==='');if(invalid&&$('#guestPanel')){$('#guestPanel').classList.remove('hidden');$('#guestToggle').setAttribute('aria-expanded','true')}scroll('#searchSection');(invalid||$('#dest')).focus({preventScroll:true})}}
+function setStatus(text,error=false){$('#searchStatus').textContent=text;$('#searchStatus').dataset.error=String(error)}
+function invalidate(){state.request++;state.priced=false;state.checking=false;$('#checkBtn').disabled=false;$('#checkBtn').querySelector('[data-btn-label]').textContent='Periksa arsip';$('#formErrors').textContent='';$('#summary').textContent=summary();if($('#guestSummary'))$('#guestSummary').textContent=state.mode==='hotels'?`${count('rooms')} kamar · ${count('adults')} dewasa · ${count('children')} anak`:`${count('adults')} dewasa · ${count('children')} anak`;setStatus('Contoh konten agen · simulasi katalog lokal, bukan ketersediaan langsung.');renderResults()}
+function renderMode(){
+ const stay=state.mode==='hotels';
+ $$('.mode-tab').forEach(t=>t.setAttribute('aria-selected',String(t.dataset.mode===state.mode)));
+ $$('[data-hotel-only]').forEach(e=>e.classList.toggle('hidden',!stay));$$('[data-activity-only]').forEach(e=>e.classList.toggle('hidden',stay));
+ $('[data-adults-label]').textContent=stay?'Dewasa / kamar':'Dewasa';$('[data-children-label]').textContent=stay?'Anak / kamar':'Anak';
+ $('#destList').innerHTML=(stay?STAYS:ACTIVITIES).map(x=>`<option value="${esc(x.name)}"></option>`).join('');
+ ages();
+}
+function rate(it){return Math.round(it.nightly*(1+.15*Math.max(0,count('adults')-2)+.08*count('children'))/1000)*1000}
+function total(it){return it.nightly?rate(it)*Math.max(1,Number.isFinite(nights())?nights():1)*count('rooms'):it.perPerson*(count('adults')+.5*count('children'))}
+function resultList(){
+ const q=$('#dest').value.trim().toLocaleLowerCase('id');
+ return(state.mode==='hotels'?STAYS:ACTIVITIES).filter(x=>(state.filter==='all'||x.filter===state.filter)&&(!q||`${x.name} ${x.area} ${x.keys}`.toLocaleLowerCase('id').includes(q)));
+}
+function priceHTML(it){if(state.checking)return '<p class="loading">Menghitung contoh harga…</p>';return `<div><span class="sample">${state.priced?'Total simulasi':'Harga contoh mulai'}</span><p class="price">${money(state.priced?total(it):(it.nightly||it.perPerson))}</p><p class="price-note">${state.priced?(it.nightly?`${nights()} malam · ${count('rooms')} kamar`:summary()):(it.nightly?'per kamar per malam':'per orang')}<br>Contoh konten agen · harga jual</p></div>`}
+function renderResults(){
+ const list=resultList();
+ if(!list.length){$('#results').innerHTML='<div class="empty"><h3>Tidak ada hasil yang sesuai.</h3><p>Coba nama kawasan lain atau hapus filter. Katalog demonstrasi ini terbatas.</p><button type="button" class="btn" data-reset-filter>Reset pencarian</button></div>';return}
+ $('#results').innerHTML=list.map((it,i)=>`<article class="exhibit-plate"><div><div class="plate-heading"><span>ARSIP 0${i+1} · ${it.nightly?'RUMAH WARISAN':'CATATAN LAPANGAN'}</span><span>Contoh konten agen</span></div><div class="inventory-image"><img src="${it.img}" alt="${esc(it.alt)}" loading="lazy"></div><div class="inventory-copy"><h3>${esc(it.name)}</h3><p><strong>${esc(it.area)}</strong></p><p style="margin-top:12px">${esc(it.desc)}</p><div class="amenities">${it.amenities.slice(0,3).map(a=>`<span>• ${esc(a)}</span>`).join('')}</div><button class="exhibit-detail" type="button" data-detail="${it.id}">Baca arsip & kebijakan →</button></div></div><div class="exhibit-ledger">${priceHTML(it)}<button type="button" class="btn" data-select="${it.id}">Catat pilihan →</button></div></article>`).join('');
+}
+function renderTours(){$('#tourList').innerHTML=ACTIVITIES.map(t=>`<article class="tour-tile"><img src="${t.img}" alt="${esc(t.alt)}" loading="lazy"><div class="tour-copy"><span class="eyebrow">${esc(t.area)}</span><h3>${esc(t.name)}</h3><p>${esc(t.duration)}</p><div class="tour-action"><div><strong>${money(t.perPerson)}</strong><span class="sample" style="display:block">/ orang · contoh harga jual</span></div><button type="button" class="btn" data-detail="${t.id}">Lihat tur →</button></div></div></article>`).join('')}
+function updateFilters(){$$('.filter-btn').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===state.filter)));$$('[data-quick-hub]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.hubFilter===state.filter)))}
+async function search(event){
+ event.preventDefault();if(state.checking)return;ages();const errors=validation();showErrors(errors);if(errors.length)return;
+ state.checking=true;state.priced=false;const request=++state.request;$('#checkBtn').disabled=true;$('#checkBtn').querySelector('[data-btn-label]').textContent='Memeriksa…';setStatus('Memeriksa contoh katalog dan menghitung harga jual simulasi…');renderResults();
+ try{await new Promise(resolve=>setTimeout(resolve,650));if(request!==state.request)return;
+  if($('#simulateFailure').checked){$('#simulateFailure').checked=false;throw new Error('Simulasi gangguan pencarian. Tidak ada biaya atau reservasi yang dibuat. Coba lagi.');}
+  state.priced=true;state.checking=false;renderResults();setStatus(`${resultList().length} hasil contoh · harga simulasi, tidak terhubung ke pemasok.`);scroll('#hotels');
+ }catch(error){state.priced=false;state.checking=false;renderResults();setStatus(error.message,true);$('#formErrors').textContent=error.message;
+ }finally{if(request===state.request){$('#checkBtn').disabled=false;$('#checkBtn').querySelector('[data-btn-label]').textContent='Periksa arsip'}}
+}
+$('#searchForm').addEventListener('submit',search);
+$$('.mode-tab').forEach(b=>b.addEventListener('click',()=>{state.mode=b.dataset.mode;state.filter='all';$('#dest').value='';renderMode();updateFilters();invalidate()}));
+$$('[data-step]').forEach(b=>b.addEventListener('click',()=>{const key=b.dataset.step;inputs[key].value=Math.max(limits[key][0],Math.min(limits[key][1],count(key)+Number(b.dataset.dir)));ages();invalidate()}));
+Object.entries(inputs).forEach(([key,e])=>e.addEventListener('input',()=>{if(key!=='adults')ages();invalidate()}));
+$('#childAgeBox').addEventListener('change',()=>{invalidate()});
+$('#checkIn').addEventListener('change',()=>{syncBounds();invalidate()});[$('#checkOut'),$('#actDate')].forEach(e=>e.addEventListener('change',invalidate));
+$('#dest').addEventListener('input',()=>{state.filter='all';updateFilters();invalidate()});
+$$('.filter-btn').forEach(b=>b.addEventListener('click',()=>{state.filter=b.dataset.filter;$('#dest').value='';updateFilters();invalidate()}));
+if($('#guestToggle'))$('#guestToggle').addEventListener('click',()=>{const open=$('#guestToggle').getAttribute('aria-expanded')!=='true';$('#guestToggle').setAttribute('aria-expanded',String(open));$('#guestPanel').classList.toggle('hidden',!open)});
+$('#menuBtn').addEventListener('click',()=>{const open=$('#menuBtn').getAttribute('aria-expanded')!=='true';$('#mobileNav').classList.toggle('hidden',!open);$('#menuBtn').setAttribute('aria-expanded',String(open))});
+$$('#mobileNav a').forEach(a=>a.addEventListener('click',()=>{$('#mobileNav').classList.add('hidden');$('#menuBtn').setAttribute('aria-expanded','false')}));
+function toast(text){$('#toast').textContent=text;$('#toast').classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.add('hidden'),3000)}
+function showDialog(el){lastFocus=document.activeElement;el.classList.remove('hidden');el.querySelector('button,input')?.focus();document.body.style.overflow='hidden'}
+function hideDialog(el){el.classList.add('hidden');document.body.style.overflow='';lastFocus?.focus()}
+function openDetail(id){const it=[...STAYS,...ACTIVITIES].find(x=>x.id===id);if(!it)return;detailItem=it;$('#modalImg').src=it.img;$('#modalImg').alt=it.alt;$('#modalArea').textContent=it.area;$('#modalTitle').textContent=it.name;$('#modalDesc').textContent=it.desc;$('#modalPolicy').textContent=it.policy;$('#modalAmenities').innerHTML=it.amenities.map(a=>`<span>${esc(a)}</span>`).join('');$('#modalPrice').textContent=money(it.nightly||it.perPerson);showDialog($('#detailModal'))}
+function selectItem(id){
+ const it=[...STAYS,...ACTIVITIES].find(x=>x.id===id);if(!it||state.checking)return;
+ const mode=it.nightly?'hotels':'activities';if(state.mode!==mode){state.mode=mode;state.filter='all';$('#dest').value=it.name;renderMode();updateFilters();invalidate()}
+ const errors=validation();if(errors.length){hideDialog($('#detailModal'));showErrors(errors);return}
+ const chosenAges=$$('[data-child-age]').map(s=>({child:s.dataset.childAge,age:Number(s.value)}));
+ state.trip.push({id:it.id,name:it.name,area:it.area,detail:summary(),total:total(it),ages:chosenAges});renderTrip();hideDialog($('#detailModal'));toast('Ditambahkan ke rencana simulasi: '+it.name)
+}
+function renderTrip(){$$('[data-trip-count]').forEach(e=>e.textContent=state.trip.length);$('#tripItems').innerHTML=state.trip.length?state.trip.map((t,i)=>`<article class="trip-line"><h3>${esc(t.name)}</h3><p>${esc(t.area)} · ${esc(t.detail)}</p>${t.ages.length?`<p>Usia anak: ${t.ages.map(a=>`${a.age} tahun`).join(', ')}</p>`:''}<strong>${money(t.total)}</strong><br><button type="button" data-remove="${i}">Hapus</button></article>`).join(''):'<p>Rencana masih kosong. Cari penginapan atau buka rincian tur untuk mulai memilih.</p>';$('#tripTotal').textContent=money(state.trip.reduce((sum,t)=>sum+t.total,0));$('#payBtn').disabled=!state.trip.length}
+function openTrip(){lastFocus=document.activeElement;$('#tripOverlay').classList.remove('hidden');$('#tripDrawer').setAttribute('aria-hidden','false');document.body.style.overflow='hidden';$('[data-close-trip]').focus()}
+function closeTrip(){$('#tripOverlay').classList.add('hidden');$('#tripDrawer').setAttribute('aria-hidden','true');document.body.style.overflow='';lastFocus?.focus()}
+function openCheckout(){if(!state.trip.length)return;closeTrip();$('#coItemCount').textContent=`${state.trip.length} item contoh`;
+ $('#coItemList').innerHTML=state.trip.map(t=>`<div>${esc(t.name)} · ${money(t.total)}</div>`).join('');$('#coTotal').textContent=money(state.trip.reduce((s,t)=>s+t.total,0));$('#checkoutFormContent').classList.remove('hidden');$('#checkoutSuccessContent').classList.add('hidden');$('#paymentPanel').classList.add('hidden');$('#coForm').classList.remove('hidden');$('#checkoutStep').textContent='1 · Data tamu — gunakan data contoh';showDialog($('#checkoutModal'))}
+$('#coForm').addEventListener('submit',e=>{e.preventDefault();if(!$('#coForm').reportValidity())return;$('#coForm').classList.add('hidden');$('#paymentPanel').classList.remove('hidden');$('#checkoutStep').textContent='2 · Pembayaran simulasi — tanpa transaksi';$('#simulatePay').focus()});
+$('#backToGuest').addEventListener('click',()=>{$('#coForm').classList.remove('hidden');$('#paymentPanel').classList.add('hidden');$('#checkoutStep').textContent='1 · Data tamu — gunakan data contoh';$('#coName').focus()});
+$('#simulatePay').addEventListener('click',()=>{$('#successRef').textContent='DEMO-AKAR-'+Date.now().toString().slice(-6);$('#successGuest').textContent=$('#coName').value.trim();$('#successAmount').textContent=money(state.trip.reduce((s,t)=>s+t.total,0));$('#checkoutFormContent').classList.add('hidden');$('#checkoutSuccessContent').classList.remove('hidden');$('#checkoutStep').textContent='3 · Ringkasan simulasi — bukan konfirmasi reservasi';$('#btnDownloadVoucher').focus()});
+$('#btnDownloadVoucher').addEventListener('click',()=>{const text=['RINGKASAN SIMULASI — BUKAN BUKTI PEMESANAN', $('#successRef').textContent,...state.trip.map(t=>`${t.name}\n${t.detail}\n${money(t.total)}`),'Total contoh: '+$('#successAmount').textContent,'Tidak ada pembayaran atau reservasi nyata.'].join('\n\n');const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='ringkasan-simulasi.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});
+$('[data-finish-checkout]').addEventListener('click',()=>{hideDialog($('#checkoutModal'));state.trip=[];renderTrip();$('#coForm').reset()});
+$('#payBtn').addEventListener('click',openCheckout);$$('[data-open-trip]').forEach(b=>b.addEventListener('click',openTrip));$('[data-close-trip]').addEventListener('click',closeTrip);$('#tripOverlay').addEventListener('click',closeTrip);
+$('[data-close-modal]').addEventListener('click',()=>hideDialog($('#detailModal')));$('[data-close-checkout]').addEventListener('click',()=>hideDialog($('#checkoutModal')));$('#modalSelectBtn').addEventListener('click',()=>{if(detailItem)selectItem(detailItem.id)});
+[$('#detailModal'),$('#checkoutModal')].forEach(el=>el.addEventListener('click',e=>{if(e.target===el)hideDialog(el)}));
+document.addEventListener('click',e=>{
+ const detail=e.target.closest('[data-detail]');if(detail)return openDetail(detail.dataset.detail);
+ const select=e.target.closest('[data-select]');if(select)return selectItem(select.dataset.select);
+ const remove=e.target.closest('[data-remove]');if(remove){state.trip.splice(Number(remove.dataset.remove),1);return renderTrip()}
+ if(e.target.closest('[data-reset-filter]')){state.filter='all';$('#dest').value='';updateFilters();return invalidate()}
+ const hub=e.target.closest('[data-quick-hub]');if(hub){state.mode=hub.dataset.hubMode||state.mode;state.filter=hub.dataset.hubFilter;$('#dest').value=hub.dataset.quickHub;renderMode();updateFilters();invalidate();scroll('#searchSection');return}
+ const archive=e.target.closest('[data-archive-dest]');if(archive){state.mode=archive.dataset.archiveMode||'hotels';state.filter='all';$('#dest').value=archive.dataset.archiveDest;renderMode();updateFilters();invalidate();scroll('#searchSection')}
+});
+document.addEventListener('keydown',e=>{
+ const modal=[$('#checkoutModal'),$('#detailModal')].find(el=>!el.classList.contains('hidden'))||($('#tripDrawer').getAttribute('aria-hidden')==='false'?$('#tripDrawer'):null);if(!modal)return;
+ if(e.key==='Escape'){if(modal.id==='tripDrawer')closeTrip();else hideDialog(modal);return}
+ if(e.key==='Tab'){const focusable=[...modal.querySelectorAll('button,input,select,a[href],[tabindex="0"]')].filter(el=>!el.disabled&&el.getClientRects().length);const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}
+});
+$('#year').textContent=new Date().getFullYear();syncBounds();renderMode();invalidate();renderTours();renderTrip();
+})();
+</script></body></html>

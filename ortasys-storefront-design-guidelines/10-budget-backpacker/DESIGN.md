@@ -189,8 +189,10 @@ Use sturdy, moderately rounded geometry: 8px inputs, 12px cards, 18px panels, an
 
 ## Components
 
+- **Branded calendar:** single-month Indonesian picker with 8px menu corners, the same option surfaces/type/selected colors as this preset, and a fixed-size calendar icon separate from the editable date text. Arrow keys move by day/week, Home/End by week and Page Up/Down by month; Enter selects, Escape dismisses, and min/max dates disable unavailable days. The top-layer picker flips/clamps to the viewport and preserves native date values plus input/change events. Browsers without Popover API retain native controls; this is not the D12 dual-month calendar.
+
 - **Navigation:** compact and direct, with a clear active state.
-- **Primary button:** coral fill with white text, 8px radius, minimum 48px height. Validate text contrast.
+- **Primary button:** coral fill with dark `onCta` text, minimum 48px height; retain the ticket implementation's sturdy button corners.
 - **Secondary button:** deep-blue fill or white outlined treatment.
 - **Search panel:** white surface, clear persistent labels, and one dominant CTA.
 - **Hotel card:** image, property name, location, room details, verified inclusions, customer-facing price, and booking action.
@@ -198,15 +200,28 @@ Use sturdy, moderately rounded geometry: 8px inputs, 12px cards, 18px panels, an
 - **Value label:** use only for a factual attribute or a real promotion. Avoid unsupported “cheapest” and “best deal” claims.
 - **Destination card:** consistent crop and readable destination name.
 - **FAQ:** explain booking conditions and included services in plain language.
+- **Dropdown interaction geometry:** `components.css` retains Inter and compact 4px control corners; menus use an 8px border radius, 2px primary frame, 4px offset hair-token shadow and dashed option separators. Triggers are 48px, wrapping options at least 44px, chevrons fixed at 16px; the selected option uses primary/onPrimary. Destination suggestions, filters, sorting, dynamic ages and payment use the local `components.js` without replacing native form values or booking events.
+- **Opened ticket panels:** detail, Trip Bag and checkout retain the ticket identity with dashed header/trip dividers. Dialogs stay 12px inside the viewport, with nonshrinking 44px close controls, wrapping headings and an independently scrolling body. Header/body padding is 22/24px desktop and 18px mobile. Detail price/action rows wrap and do not inherit inventory ticket cutouts or grid placement.
+- **Narrow forms:** dates and child-age controls stack at ≤360px; totals and action rows wrap, payment controls remain full width, and mobile navigation is height-bounded and scrollable. Toasts use compact, noninteractive ticket geometry instead of obscuring a large portion of the search CTA.
 
 ## Unique Architectural & Component DNA (Preset 10)
 
 To make this budget & backpacker preset feel like an honest, high-utility hostel & open-trip transit board rather than a luxury hotel site, its sections and search engine use a perforated ticket-stub and departure-board architecture:
 
-- **Hero Architecture (Transit Departure Board Split):** A bold night-indigo banner (`#263C5A`) split into a left punchy value headline (`Space Grotesk`) and a right **Live Open-Trip & Hostel Bed Ticker Board** showing real-time base rates (`YOGYA POD · Rp 125.000`, `BROMO BUNK · Rp 115.000`, `MANDALIKA SURF · Rp 145.000`) with instant click-to-select route triggers.
-- **Search Engine UI (Perforated Boarding-Pass / Ticket-Stub Console):** A crisp, thick-bordered (`border-2 border-primary`) rectangular ticket console split by a vertical dashed perforation line (`lg:border-r-2 lg:border-dashed border-line`): the left 8 columns house the route, dates, and bed/pax counters, while the right 4 columns form the **Tear-Off Ticket Stub** with a live **"Estimasi Patungan per Orang"** calculator and coral (`#E56B45`) action trigger.
-- **Inventory Section Layout (2-Column Perforated Hostel & Open-Trip Ticket Cards):** Horizontal ticket-shaped cards featuring a left photo + bed-type badge (`CAPSULE POD` / `BUNK DORM` / `SHARING JEEP`), a middle spec list with free-inclusion badges (`FREE LOCKER 60L`, `FREE REFILL WATER`, `NO CURFEW`), and a right perforated price stub separated by a dashed border (`border-l-2 border-dashed`).
-- **Rules Section (3-Column Utilitarian Zero-Gimmick Spec Strip):** Bold numbered specification blocks (`01 // HARGA BERSIH`, `02 // LOKER 60L AMAN`, `03 // QRIS SNAP BI BEBAS ADMIN`).
+- **Hero Architecture (Transit Departure Board Split):** Foto perjalanan berlapis indigo dengan judul Space Grotesk di kiri dan departure board di kanan. Baris YOG / BRM / LOM / TOB menampilkan harga contoh dan mengisi rute pencarian saat dipilih; papan ditandai katalog lokal, bukan ticker live.
+- **Search Engine UI (Perforated Boarding-Pass / Ticket-Stub Console):** Tiket berbingkai primary 2px dengan grid 2:1, body putih dan stub surface-muted, garis perforasi vertikal serta lubang potong di kedua ujung. Mode, rute, tanggal dan counter berada pada body. Stub menampilkan **Estimasi patungan per orang**, pembagi dewasa + anak, total contoh, konteks simulasi, dan tombol coral dengan teks gelap `onCta`; tidak ada top bar biru generik.
+- **Inventory Section Layout (Perforated Hostel & Open-Trip Tickets):** Tiket horizontal foto / spesifikasi / price stub dalam dua kolom desktop, dengan label kategori serta fasilitas contoh. Setelah pencarian, komposisi D02 menjadi sidebar 230px dan daftar tiket satu kolom. Price stub tetap terpisah oleh perforasi; pada seluler foto berada di kiri dan rincian + harga di kanan.
+- **Rules Section (3-Column Utilitarian Spec Strip):** Tiga panel putih dengan divider putus-putus menjelaskan harga contoh, pemeriksaan fasilitas dan checkout simulasi. Tidak ada klaim fasilitas atau biaya admin universal.
+
+### Implementasi pencarian & halaman pendukung
+
+- Tiket desktop memiliki body 2/3 dan stub 1/3; pada ≤900px stub menjadi bagian sobekan horizontal dengan lubang di kiri/kanan. Pada ≤600px rute membentang penuh, tanggal dua kolom, counter berlabel bertumpuk dan stub selebar tiket.
+- Header memakai nama pendek Jalan Hemat, identitas sekunder ringkas, tombol Trip Bag dan menu 44px; navigasi desktop disembunyikan pada ≤900px agar merek tidak meluap pada 390px maupun 768px.
+- Rute wajib; menginap 1–30 malam; kamar/unit 1–9; dewasa per kamar 1–20; anak per kamar 0–20. Mode open trip memakai tanggal berangkat dan unit rombongan. Setiap anak di setiap kamar/rombongan membutuhkan usia eksplisit 0–17 tahun, tanpa usia default.
+- Patungan membagi total contoh dengan seluruh dewasa + anak di semua unit, dan tidak mengklaim tarif per orang resmi. Menginap: tarif per unit × malam × unit. Open trip: tarif per orang × peserta. Inklusi dan kebijakan diberi konteks Contoh konten agen.
+- Validasi, loading perhitungan lokal, hasil kosong tanpa penggantian diam-diam, filter kategori/anggaran, urutan harga, detail, Trip Bag dan checkout tetap bekerja mandiri. Checkout tidak menagih atau memesan; unduhan berupa ringkasan JSON berlabel simulasi, bukan voucher atau bukti bayar.
+- `index.html` hanya etalase pelanggan. Isi dokumentasi asli dipisahkan ke `guidelines.html`, `search-board.html`, dan `figcraft.html`; semuanya memakai tautan relatif biasa tanpa root router. Tidak ada dokumentasi tersembunyi atau tombol teknis pada header/hero.
+- Warna UI memakai token AA terdaftar di `brand-dna.json`: `muted`, `secondaryText`, `fieldBorder`, `cta`/`onCta`, `mutedOnDark`, dan `focus`; palet fondasi tetap. Dials: variance 6, motion 2, density 7. Focus keyboard terlihat, dialog native menjaga fokus, serta reduced-motion menghapus animasi.
 
 ## Homepage Composition
 

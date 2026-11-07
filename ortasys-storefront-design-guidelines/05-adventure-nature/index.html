@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rimba Trek Adventures · Ekspedisi &amp; Petualangan Alam Bebas</title>
-  <meta name="description" content="Rimba Trek Adventures — Operator ekspedisi alam liar, pendakian gunung APGI, dan eco-lodge terverifikasi multi-supplier. Ditenagai oleh Ortasys S4.">
+  <link rel="icon" type="image/png" href="./assets/logo-mark.png">
+  <meta name="description" content="Rimba Trek Adventures — Operator ekspedisi alam liar, jalur pegunungan dan basecamp Nusantara. Katalog contoh untuk merencanakan perjalanan.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,10 +22,10 @@
             accent: '#6D8B63',
             canvas: '#F2F0E9',
             surface: { DEFAULT: '#FFFFFF', muted: '#E5E7DE' },
-            ink: { DEFAULT: '#242A27', muted: '#68716A' },
+            ink: { DEFAULT: '#242A27', muted: '#5E6660' },
             line: '#D2D8CF',
             success: '#34734D',
-            warning: '#B56B24',
+            warning: '#9B5C1E',
             danger: '#B64138'
           },
           fontFamily: {
@@ -61,46 +62,131 @@
     details > summary { list-style: none; }
     details > summary::-webkit-details-marker { display: none; }
     details[open] .faq-icon { transform: rotate(45deg); }
+
+    :root { --field-border: #848883; --muted-aa: #5E6660; --focus: #246B9B; --cta: #D97736; --on-cta: #0C241D; }
+    html { scroll-padding-top: 100px; }
+    * { box-sizing: border-box; }
+    .min-w-0, main, section, form, article { min-width: 0; }
+    input:not([type=radio]):not([type=checkbox]), select { min-height: 48px; max-width: 100%; border-color: var(--field-border); }
+    input[type=date] { min-width: 0; width: 100%; }
+    button, summary, header a { min-height: 44px; }
+    button:disabled { cursor: wait; opacity: .65; }
+    :focus-visible { outline: 3px solid var(--focus) !important; outline-offset: 3px; }
+    .text-ink-muted { color: var(--muted-aa); }
+    .bg-secondary { background-color: var(--cta); color: var(--on-cta) !important; }
+    .stepper { height: 48px; }
+    .stepper button { flex: 0 0 44px; width: 44px; }
+    .stepper input { padding: 0; border: 0; }
+    #childAgeBox { display: grid; gap: 10px; margin-top: 16px; }
+    #childAgeBox[hidden] { display: none; }
+    #childAgeBox label { display: grid; gap: 5px; font-size: 12px; font-weight: 700; }
+    #childAgeBox select { width: 100%; background: white; border: 1px solid var(--field-border); border-radius: 8px; padding: 0 12px; }
+    #toast { max-width: calc(100% - 32px); width: max-content; }
+    #tripDrawer[aria-hidden=true] { display: none; }
+    #detailModal img, #results img { display: block; }
+    #results [data-detail] { text-align: left; }
+    .site-footer { background: #183B32; color: white; padding: 64px 0 28px; margin-top: 80px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+    .site-footer a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; }
+    .site-footer p { line-height: 1.8; }
+    .footer-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; border-top: 1px solid; margin-top: 40px; padding-top: 24px; font-size: 11px; }
+    .sample-note { display: inline-block; background: #E6C99C; color: #242A27; padding: 4px 9px; border-radius: 5px; font-size: 11px; font-weight: 700; }
+    .site-brand { flex: 0 1 auto; min-width: 0; }
+    .site-brand > div { min-width: 0; }
+    .site-brand img { flex: 0 0 40px; }
+    .header-actions { flex: 0 0 auto; min-width: 0; }
+    #menuBtn { flex: 0 0 44px; width: 44px; height: 44px; }
+    #results article > div, .footer-grid > div { min-width: 0; }
+    @media(max-width: 767px) {
+      .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+      header .header-inner { gap: 12px; }
+      header nav { display: none!important; }
+      #mobileNav:not(.hidden) { display: flex!important; }
+      header .site-brand { flex: 1 1 0; gap: 9px; }
+      header .site-brand img { width: 32px; height: 32px; flex-basis: 32px; }
+      header .site-brand .brand-name { font-size: 17px; line-height: 1.15; overflow-wrap: anywhere; }
+      header .site-brand .brand-subline { display: none!important; }
+      header .header-actions { gap: 8px; }
+      header [data-open-trip] { padding: 8px; }
+      header [data-open-trip] span:not([data-trip-count]) { font-size: 12px; }
+      #results article > div:last-child { flex-wrap: wrap; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto!important; } *, *::before, *::after { animation: none!important; transition: none!important; } }
+
+    .rimba-hero { min-height: 450px; }
+    .rimba-hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 48%; }
+    .rimba-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #183B32 0%, #183B32B8 48%, #183B321A 100%); }
+    .rimba-hero-content { display: flex; justify-content: space-between; gap: 80px; align-items: flex-start; padding: 72px 0 64px; }
+    .rimba-hero h1 { font-size: clamp(48px, 5.7vw, 80px); line-height: .96; max-width: 700px; }
+    .elevation-note { background: #183B32; border-top: 3px solid #D97736; padding: 20px; width: 230px; margin-top: 8px; }
+    .rimba-action { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 10px 20px; background: #D97736; color: #0C241D; border-radius: 4px; font-size: 12px; font-weight: 800; }
+    .rimba-action.secondary { background: #183B32; border: 1px solid #E6C99C; color: white; }
+    .rimba-telemetry { position: relative; z-index: 2; background: #183B32; border-top: 1px solid #6D8B63; }
+    .rimba-telemetry span { display: block; font-family: monospace; font-size: 10px; color: #E6C99C; margin-bottom: 5px; }
+    .rimba-telemetry strong { font-size: 12px; }
+    #catalogHeading { font-size: clamp(28px, 2.8vw, 42px); }
+    #catalog > div > div:last-child > div:first-child { background: transparent; border: 0; padding: 0; }
+    #searchSection { border: 1px solid #D2D8CF; border-top: 4px solid #D97736; }
+    #searchSection > div:first-child { background: #183B32 url('./assets/topo-dark.webp') center/cover; }
+    .occupancy-rows { display: grid; gap: 12px; }
+    .occupancy-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .occupancy-row .stepper { flex: 0 0 130px; width: 130px; }
+    #results { gap: 20px; }
+    #results article { border-width: 1px; border-radius: 4px; box-shadow: none; }
+    #results article > div:first-child { font-size: 9px; padding: 8px 12px; }
+    #results article .p-5 { padding: 16px; }
+    #results article h3 { font-size: 25px; }
+    .terrain-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 20px; }
+    .terrain-tile { position: relative; text-align: left; overflow: hidden; min-height: 280px; border: 5px solid white; border-radius: 5px; background: #183B32; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .terrain-tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .65; }
+    .terrain-tile span, .terrain-tile strong { position: relative; z-index: 1; text-shadow: 0 2px 6px #102D26; }
+    .terrain-tile span { font-size: 11px; }
+    .terrain-tile strong { font-size: 30px; line-height: 1.1; margin-top: 10px; }
+    .conservation-story { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .conservation-story > img { width: 100%; height: 380px; object-fit: cover; border-radius: 4px; }
+    .rimba-field { background: url('./assets/topo-light.webp') center/cover; }
+    .rimba-protocol { background: #183B32 url('./assets/topo-dark.webp') center/cover; color: white; }
+    .protocol-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 32px; }
+    .protocol-grid article { border-top: 1px solid #6D8B63; padding-top: 20px; }
+    .text-secondary:not(.bg-secondary) { color: #A05728; }
+    .bg-primary .text-secondary, #searchSection > div:first-child .text-secondary { color: #E6C99C; }
+    @media(min-width:1024px) { #catalog > div { grid-template-columns: 340px minmax(0,1fr); gap: 32px; } #catalog > div > div { grid-column: auto; } #searchSection { top: 104px; max-height: calc(100dvh - 120px); overflow-y: auto; } #results.lodge-results { grid-template-columns: 1fr; } #results.lodge-results article { display: grid; grid-template-columns: 34% 1fr; } #results.lodge-results article > div:first-child { grid-column: 1/-1; } #results.lodge-results article > div:nth-child(2) { height: 100%; aspect-ratio: auto; } }
+    @media(max-width:1023px) { .rimba-hero-content { gap: 24px; } #searchSection { max-width: 100%; } #searchForm { max-width: none; } .protocol-grid { grid-template-columns: 1fr 1fr; } .terrain-grid { grid-template-columns: 1fr 1fr; } .conservation-story { gap: 28px; } }
+    @media(max-width:600px) { .rimba-hero-content { display: block; padding: 48px 0 36px; } .elevation-note { display: none; } .rimba-hero h1 { font-size: 52px; } .terrain-tile { min-height: 220px; padding: 12px; } .terrain-tile strong { font-size: 25px; } .conservation-story { grid-template-columns: 1fr; } .conservation-story > img { height: 270px; } .protocol-grid { grid-template-columns: 1fr; } }
+
+    @media(max-width:1100px) { header nav:not(#mobileNav) { display:none!important; } #menuBtn { display:flex!important; } #mobileNav:not(.hidden) { display:flex!important; } }
+    @media(max-width:480px) { header [data-open-trip] span:not([data-trip-count]) { display:none!important; } header [data-open-trip] { min-width:52px; justify-content:center; } }
   </style>
+  <link rel="stylesheet" href="./components.css">
+  <script src="./components.js" defer></script>
 </head>
 <body class="bg-canvas text-ink antialiased">
 
-  <a href="#searchSection" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-secondary focus:text-white focus:px-4 focus:py-2 focus:rounded-xs">Skip to search</a>
 
-  <!-- Illustrative Sample Banner -->
-  <aside class="bg-primary-hover text-tertiary px-4 py-1.5 text-xs font-semibold tracking-wider flex justify-between items-center border-b border-black/20 z-50">
-    <div class="max-w-container mx-auto w-full flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-        <span class="inline-block w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-        <span class="font-condensed tracking-wider text-sm">PROTOTYPE STOREFRONT PRESET 05 // ADVENTURE &amp; NATURE</span>
-        <span class="hidden sm:inline text-white/50 text-[11px]">— Illustrative Sample Data</span>
-      </div>
-      <div class="text-[11px] text-white/70 font-mono">Ditenagai Ortasys S4 B2B Engine</div>
-    </div>
-  </aside>
+  <a href="#searchSection" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-secondary focus:text-white focus:px-4 focus:py-2 focus:rounded-xs">Langsung ke pencarian</a>
+
+  <aside class="bg-primary text-white text-center text-[11px] py-2 px-4">Contoh konten agen · Katalog dan harga simulasi, bukan ketersediaan langsung</aside>
 
   <!-- ============ HEADER ============ -->
   <header class="sticky top-0 z-40 bg-primary text-white border-b border-black/20 shadow-md">
-    <div class="max-w-container mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
-      <a href="#home" class="flex items-center gap-3 shrink-0 group">
-        <div class="w-10 h-10 rounded-xs bg-secondary flex items-center justify-center text-white shadow-sm transition-transform group-hover:scale-105">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-        </div>
+    <div class="header-inner max-w-container mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+      <a href="#home" class="site-brand flex items-center gap-3 group">
+        <img src="./assets/logo-mark-dark.png" alt="Rimba Trek Adventures logo" class="w-10 h-10 object-contain transition-transform group-hover:scale-105">
         <div>
-          <span class="font-condensed text-2xl md:text-3xl font-bold tracking-tight text-white block leading-none">RIMBA TREK</span>
-          <span class="text-[10px] font-bold text-tertiary tracking-[0.2em] uppercase block">ADVENTURES &bull; EXPEDITIONS</span>
+          <span class="brand-name font-display text-[22px] font-bold tracking-tight block leading-tight text-white">Rimba Trek Adventures</span>
+          <span class="brand-subline text-[10px] uppercase tracking-[0.14em] text-tertiary font-bold block mt-0.5">Wilderness &amp; Mountain Expeditions</span>
         </div>
       </a>
 
       <nav class="hidden md:flex items-center gap-7 text-[14px] font-semibold tracking-wide" aria-label="Main Navigation">
         <a href="#searchSection" class="text-white hover:text-secondary transition-colors">Cari Ekspedisi</a>
         <a href="#catalog" class="text-white/80 hover:text-secondary transition-colors">Katalog Jalur</a>
-        <a href="#whyUs" class="text-white/80 hover:text-secondary transition-colors">Standar APGI</a>
+        <a href="#whyUs" class="text-white/80 hover:text-secondary transition-colors">Catatan lapangan</a>
         <a href="#faq" class="text-white/80 hover:text-secondary transition-colors">FAQ Izin &amp; Simaksi</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <button type="button" data-open-trip class="relative flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-xs text-sm font-semibold transition border border-white/15">
+      <div class="header-actions flex items-center gap-3">
+        <button type="button" data-open-trip aria-label="Buka rencana perjalanan" class="relative flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-xs text-sm font-semibold transition border border-white/15">
           <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
           <span class="font-condensed text-base tracking-wider uppercase">Trip Bag</span>
           <span data-trip-count class="w-5 h-5 rounded-full bg-secondary text-white text-xs flex items-center justify-center font-bold">0</span>
@@ -116,54 +202,22 @@
     <nav id="mobileNav" class="md:hidden hidden border-t border-white/10 bg-primary px-4 py-4 flex flex-col gap-2 font-semibold text-[15px]">
       <a href="#searchSection" class="py-2 text-white hover:text-secondary">Cari Ekspedisi</a>
       <a href="#catalog" class="py-2 text-white/80 hover:text-secondary">Katalog Jalur</a>
-      <a href="#whyUs" class="py-2 text-white/80 hover:text-secondary">Standar APGI</a>
+      <a href="#whyUs" class="py-2 text-white/80 hover:text-secondary">Catatan lapangan</a>
       <a href="#faq" class="py-2 text-white/80 hover:text-secondary">FAQ Izin &amp; Simaksi</a>
     </nav>
   </header>
 
   <main id="home">
-    <!-- ============ TACTICAL EXPEDITION TELEMETRY BANNER (PRESET 05 DNA) ============ -->
-    <section class="relative bg-primary text-white pt-10 pb-8 overflow-hidden border-b-4 border-secondary">
-      <div class="absolute inset-0 z-0 opacity-25 mix-blend-overlay pointer-events-none">
-        <img src="../../assets/khatulistiwa_explorer/rinjani-trail.jpg" alt="Rimba Nature Background" class="w-full h-full object-cover">
-      </div>
-      
-      <div class="max-w-container mx-auto px-4 sm:px-6 relative z-10">
-        <div class="grid lg:grid-cols-12 gap-6 items-end pb-8 border-b border-white/15">
-          <div class="lg:col-span-8">
-            <div class="inline-flex items-center gap-2 px-3 py-1 bg-black/30 border border-secondary/50 rounded-xs mb-3">
-              <span class="w-2 h-2 rounded-full bg-secondary"></span>
-              <span class="font-mono text-[11px] font-bold uppercase tracking-widest text-tertiary">FIELD DISPATCH // NUSANTARA WILDERNESS</span>
-            </div>
-            <h1 class="font-condensed text-5xl sm:text-7xl font-extrabold uppercase leading-[0.94] tracking-tight">
-              Jelajahi Jalur Liar Nusantara Dengan Keamanan Penuh.
-            </h1>
-          </div>
-          <div class="lg:col-span-4 text-canvas/85 text-[14px] leading-relaxed border-l-2 border-secondary pl-4">
-            Operasi pendakian gunung aktif, ekspedisi karst kepulauan, dan basecamp eco-lodge. Kuota simaksi dan izin masuk taman nasional dicek langsung secara live.
-          </div>
-        </div>
-
-        <!-- Telemetry Readout Bar -->
-        <div class="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-[11px]">
-          <div class="bg-black/25 p-3 rounded-xs border border-white/10">
-            <span class="text-white/60 block">ELEVATION PEAK REF</span>
-            <span class="text-tertiary font-bold text-[14px]">3.726 MDPL · RINJANI</span>
-          </div>
-          <div class="bg-black/25 p-3 rounded-xs border border-white/10">
-            <span class="text-white/60 block">RANGER CERTIFICATION</span>
-            <span class="text-tertiary font-bold text-[14px]">APGI VERIFIED CREW</span>
-          </div>
-          <div class="bg-black/25 p-3 rounded-xs border border-white/10">
-            <span class="text-white/60 block">PERMIT &amp; SIMAKSI</span>
-            <span class="text-success font-bold text-[14px]">● LIVE API SYNC</span>
-          </div>
-          <div class="bg-black/25 p-3 rounded-xs border border-white/10">
-            <span class="text-white/60 block">SETTLEMENT GATEWAY</span>
-            <span class="text-tertiary font-bold text-[14px]">DOKU &amp; SNAP BI</span>
-          </div>
-        </div>
-      </div>
+    <section class="rimba-hero relative bg-primary text-white overflow-hidden">
+      <img src="./assets/hero.webp" alt="Punggungan dan danau kawah Gunung Rinjani" class="rimba-hero-photo">
+      <div class="max-w-container mx-auto px-4 sm:px-6 relative z-10"><div class="rimba-hero-content">
+        <div><p class="font-mono text-[11px] tracking-widest text-tertiary mb-5">FIELD DISPATCH / NUSANTARA WILDERNESS</p>
+        <h1 class="font-condensed">Jelajahi jalur<br>liar Nusantara.</h1>
+        <p class="max-w-md text-sm leading-relaxed mt-5">Dari punggungan Rinjani hingga karst kepulauan. Susun perjalanan dengan jalur, waktu, dan kebutuhan tim yang jelas.</p>
+        <div class="flex flex-wrap gap-3 mt-7"><a href="#searchSection" class="rimba-action">Rencanakan jalur →</a><a href="#fieldNotes" class="rimba-action secondary">Lihat catatan lapangan ↗</a></div></div>
+        <div class="elevation-note"><span class="font-mono text-[10px] tracking-widest">CATATAN ELEVASI / RINJANI</span><strong class="font-condensed block text-5xl my-2">3.726 <small class="text-lg">MDPL</small></strong><span class="text-xs">Ketinggian puncak · bukan informasi kondisi jalur</span></div>
+      </div></div>
+      <div class="rimba-telemetry"><div class="max-w-container mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 gap-5 py-5"><div><span>SEKTOR</span><strong>Pegunungan & kepulauan</strong></div><div><span>JENDELA PERJALANAN</span><strong>1–30 malam</strong></div><div><span>KEBUTUHAN TIM</span><strong>Dicatat per kamar / unit</strong></div><div><span>STATUS KATALOG</span><strong>Contoh konten agen</strong></div></div></div>
     </section>
 
     <!-- ============ 2-COLUMN STICKY FIELD-STATION WORKSPACE (PRESET 05 DNA) ============ -->
@@ -174,10 +228,10 @@
         <div id="searchSection" class="lg:col-span-4 lg:sticky lg:top-24 bg-surface rounded-sm border-2 border-primary shadow-elevated overflow-hidden" aria-labelledby="searchHeading">
           <div class="bg-primary text-white p-4 border-b border-black/20 flex items-center justify-between">
             <div>
-              <span class="font-mono text-[10px] text-secondary font-bold uppercase tracking-widest block">CONSOLE // S4-TREK</span>
+              <span class="font-mono text-[10px] text-secondary font-bold uppercase tracking-widest block">CONSOLE / TRIP DISPATCH</span>
               <h2 id="searchHeading" class="font-condensed text-2xl font-bold uppercase tracking-wide">Field-Station Dispatch</h2>
             </div>
-            <span class="px-2 py-0.5 bg-secondary text-white font-mono text-[10px] font-bold rounded-xs">LIVE</span>
+            <span class="px-2 py-0.5 bg-secondary text-white font-mono text-[10px] font-bold rounded-xs">DEMO</span>
           </div>
 
           <div class="p-5">
@@ -207,51 +261,22 @@
                 </label>
               </div>
 
-              <!-- Squad & Tent Matrix -->
-              <div class="pt-1">
-                <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-ink block mb-2">03. Matriks Tim &amp; Tenda</span>
-                <div class="grid grid-cols-3 gap-2">
-                  <div class="flex flex-col gap-1" data-hotel-only>
-                    <span id="lbl-rooms" class="text-[10px] font-bold uppercase text-ink-muted font-condensed">Tenda (1–9)</span>
-                    <div class="stepper flex items-center h-10 rounded-xs bg-canvas border border-line" role="group" aria-labelledby="lbl-rooms">
-                      <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="rooms" data-dir="-1" aria-label="Kurangi unit">−</button>
-                      <input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
-                      <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="rooms" data-dir="1" aria-label="Tambah unit">+</button>
-                    </div>
-                  </div>
-                  <div class="flex flex-col gap-1">
-                    <span id="lbl-adults" class="text-[10px] font-bold uppercase text-ink-muted font-condensed" data-adults-label>Peserta</span>
-                    <div class="stepper flex items-center h-10 rounded-xs bg-canvas border border-line" role="group" aria-labelledby="lbl-adults">
-                      <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="adults" data-dir="-1" aria-label="Kurangi peserta">−</button>
-                      <input id="adults" type="number" min="1" max="20" value="2" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
-                      <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="adults" data-dir="1" aria-label="Tambah peserta">+</button>
-                    </div>
-                  </div>
-                  <div class="flex flex-col gap-1">
-                    <span id="lbl-children" class="text-[10px] font-bold uppercase text-ink-muted font-condensed" data-children-label>Remaja</span>
-                    <div class="stepper flex items-center h-10 rounded-xs bg-canvas border border-line" role="group" aria-labelledby="lbl-children">
-                      <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="children" data-dir="-1" aria-label="Kurangi anak">−</button>
-                      <input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
-                      <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="children" data-dir="1" aria-label="Tambah anak">+</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+              <p class="font-mono text-[11px] font-bold uppercase">04 / Tim & kamar</p>
+<div class="occupancy-rows"><div class="occupancy-row"><div><label for="rooms" class="font-bold text-sm">Kamar / unit</label><p class="text-[11px] text-ink-muted">1–9 kamar</p></div><div class="stepper flex items-center border rounded-sm bg-surface" role="group" aria-label="Kamar / unit"><button type="button" data-step="rooms" data-dir="-1" aria-label="Kurangi kamar / unit">−</button><input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" aria-label="Kamar / unit" class="w-10 text-center bg-transparent font-bold"><button type="button" data-step="rooms" data-dir="1" aria-label="Tambah kamar / unit">+</button></div></div><div class="occupancy-row"><div><label for="adults" class="font-bold text-sm">Dewasa per kamar</label><p class="text-[11px] text-ink-muted">1–20 dewasa</p></div><div class="stepper flex items-center border rounded-sm bg-surface" role="group" aria-label="Dewasa per kamar"><button type="button" data-step="adults" data-dir="-1" aria-label="Kurangi dewasa per kamar">−</button><input id="adults" type="number" min="1" max="20" value="2" inputmode="numeric" aria-label="Dewasa per kamar" class="w-10 text-center bg-transparent font-bold"><button type="button" data-step="adults" data-dir="1" aria-label="Tambah dewasa per kamar">+</button></div></div><div class="occupancy-row"><div><label for="qChildren" class="font-bold text-sm">Anak per kamar</label><p class="text-[11px] text-ink-muted">0–20 anak</p></div><div class="stepper flex items-center border rounded-sm bg-surface" role="group" aria-label="Anak per kamar"><button type="button" data-step="children" data-dir="-1" aria-label="Kurangi anak per kamar">−</button><input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" aria-label="Anak per kamar" class="w-10 text-center bg-transparent font-bold"><button type="button" data-step="children" data-dir="1" aria-label="Tambah anak per kamar">+</button></div></div></div><div id="childAgeBox" hidden></div>
               <div id="formErrors" class="text-[12px] text-danger font-semibold" role="alert" aria-live="assertive"></div>
 
-              <button id="checkBtn" type="submit" class="w-full h-12 rounded-xs bg-secondary hover:bg-[#b85e25] text-white font-condensed text-base uppercase tracking-wider font-bold transition shadow-soft flex items-center justify-center gap-2">
-                <span data-btn-label>Periksa Kuota Simaksi Live</span>
+              <button id="checkBtn" type="submit" class="w-full h-12 rounded-xs bg-secondary hover:bg-[#102D26] text-white font-condensed text-base uppercase tracking-wider font-bold transition shadow-soft flex items-center justify-center gap-2">
+                <span data-btn-label>Cari contoh ekspedisi</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
 
               <div class="p-3 rounded-xs bg-canvas border border-line space-y-1">
                 <div class="flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-success"></span>
-                  <p class="text-[11px] font-bold text-ink">Every price is checked live when you ask for it</p>
+                  <p class="text-[11px] font-bold text-ink">Setiap harga dicek langsung saat Anda mencari</p>
                 </div>
-                <p id="summary" class="font-mono text-[11px] text-ink-muted" aria-live="polite">Atur tanggal untuk kalkulasi kuota</p>
-                <p id="dateRuleHint" class="text-[10px] text-ink-muted font-mono">Maks. 30 malam · Kapasitas tenda merata</p>
+                <p id="summary" class="font-mono text-[11px] text-ink-muted" aria-live="polite">Atur tanggal untuk menghitung contoh perjalanan</p>
+                <p id="dateRuleHint" class="text-[10px] text-ink-muted font-mono">1–30 malam · Dewasa & anak dihitung per kamar / unit</p>
               </div>
             </form>
           </div>
@@ -263,9 +288,9 @@
             <div>
               <span class="font-mono text-[11px] font-bold uppercase tracking-widest text-secondary">DIREKTORI OPERASI LAPANGAN</span>
               <h2 id="catalogHeading" class="font-condensed text-3xl sm:text-4xl font-extrabold uppercase text-primary mt-0.5">Ekspedisi Jalur Pegunungan &amp; Alam Liar</h2>
-              <p id="resultsNote" class="text-[12px] text-ink-muted mt-0.5">Dipandu ranger bersertifikat APGI dengan peralatan standar ekspedisi.</p>
+              <p id="resultsNote" class="text-[12px] text-ink-muted mt-0.5">Pilih jalur, baca dossier, lalu susun rencana tim. Seluruh inventori dan harga di bawah adalah contoh konten agen.</p>
             </div>
-            <span class="px-2.5 py-1 rounded-xs bg-surface-muted text-ink-muted text-[10px] font-mono uppercase font-bold self-start sm:self-auto">Illustrative Sample Data</span>
+            <span class="px-2.5 py-1 rounded-xs bg-surface-muted text-ink-muted text-[10px] font-mono uppercase font-bold self-start sm:self-auto">Contoh konten agen</span>
           </div>
 
           <!-- Sector Filter Bar -->
@@ -284,56 +309,11 @@
       </div>
     </section>
 
+    <section id="fieldNotes" class="rimba-field max-w-container mx-auto px-4 sm:px-6 pt-20">
+      <p class="font-mono text-xs text-secondary font-bold">JURNAL / PILIH MEDAN PERJALANAN</p><h2 class="font-condensed text-4xl text-primary mt-2">Empat jenis lapangan,<br>satu konsol pencarian.</h2>
+      <div class="terrain-grid mt-7"><button type="button" class="terrain-tile" data-pick-dest="Rinjani"><img loading="lazy" src="./assets/dest-1.webp" alt=""><span class="font-mono">01 / SEKTOR</span><strong class="font-condensed">Trekking gunung</strong></button><button type="button" class="terrain-tile" data-pick-dest="Bromo"><img loading="lazy" src="./assets/dest-2.webp" alt=""><span class="font-mono">02 / SEKTOR</span><strong class="font-condensed">Kaldera & kawah</strong></button><button type="button" class="terrain-tile" data-pick-dest="Komodo"><img loading="lazy" src="./assets/dest-3.webp" alt=""><span class="font-mono">03 / SEKTOR</span><strong class="font-condensed">Pulau & laut</strong></button><button type="button" class="terrain-tile" data-pick-dest="Raja Ampat"><img loading="lazy" src="./assets/tour-4.webp" alt=""><span class="font-mono">04 / SEKTOR</span><strong class="font-condensed">Karst kepulauan</strong></button></div><div class="conservation-story mt-16"><img loading="lazy" src="./assets/camp.webp" alt="Perkemahan di tengah lanskap pegunungan"><div><p class="font-mono text-xs text-secondary font-bold">CATATAN SEBELUM BERANGKAT</p><h2 class="font-condensed text-4xl text-primary mt-3">Jalur dipilih dengan tenang.<br>Persiapan dibuat terperinci.</h2><p class="text-sm text-ink-muted leading-relaxed mt-5">Dossier membantu membandingkan durasi, perlengkapan, dan rencana bermalam. Kondisi jalur, izin kawasan, dan kebutuhan pendamping harus diperiksa bersama agen sebelum perjalanan nyata.</p><button type="button" data-basecamp class="rimba-action mt-6">Cari tempat bermalam →</button></div></div></section>
     <!-- ============ 4-COLUMN EXPEDITION GEAR & SAFETY MATRIX (PRESET 05 DNA) ============ -->
-    <section id="whyUs" class="max-w-container mx-auto px-4 sm:px-6 pt-20">
-      <div class="bg-primary text-white rounded-sm p-6 sm:p-10 border-2 border-primary-hover shadow-soft">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-white/15">
-          <div>
-            <span class="font-mono text-xs font-bold uppercase tracking-widest text-secondary">PROTOKOL KESELAMATAN LAPANGAN</span>
-            <h2 class="font-condensed text-3xl sm:text-4xl font-extrabold uppercase mt-1">Matriks Standar Operasional Rimba Trek</h2>
-          </div>
-          <span class="font-mono text-[11px] text-tertiary uppercase">MANDATORY EXPEDITION CHECKLIST</span>
-        </div>
-
-        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div class="bg-black/25 border border-white/15 p-5 rounded-xs flex flex-col justify-between">
-            <div>
-              <span class="font-mono text-[11px] text-secondary font-bold">[CHK-01] CREW</span>
-              <h3 class="font-condensed text-xl font-bold uppercase text-white mt-1">Sertifikasi Resmi APGI</h3>
-              <p class="text-xs text-canvas/75 mt-2 leading-relaxed">Seluruh pemimpin ekspedisi wajib memegang lisensi aktif Asosiasi Pemandu Gunung Indonesia dan pelatihan P3K gunung.</p>
-            </div>
-            <span class="mt-4 font-mono text-[10px] text-tertiary uppercase">● Verified Guide Roster</span>
-          </div>
-
-          <div class="bg-black/25 border border-white/15 p-5 rounded-xs flex flex-col justify-between">
-            <div>
-              <span class="font-mono text-[11px] text-secondary font-bold">[CHK-02] PERMIT</span>
-              <h3 class="font-condensed text-xl font-bold uppercase text-white mt-1">Sinkronisasi Simaksi</h3>
-              <p class="text-xs text-canvas/75 mt-2 leading-relaxed">Kuota pendakian dan tiket konservasi taman nasional terhubung langsung lewat Ortasys S4 ke otoritas balai terkait.</p>
-            </div>
-            <span class="mt-4 font-mono text-[10px] text-tertiary uppercase">● Real-Time Quota Lock</span>
-          </div>
-
-          <div class="bg-black/25 border border-white/15 p-5 rounded-xs flex flex-col justify-between">
-            <div>
-              <span class="font-mono text-[11px] text-secondary font-bold">[CHK-03] SHELTER</span>
-              <h3 class="font-condensed text-xl font-bold uppercase text-white mt-1">Tenda Badai Double-Layer</h3>
-              <p class="text-xs text-canvas/75 mt-2 leading-relaxed">Menggunakan tenda ekspedisi berangka aluminium tahan angin kencang, sleeping bag suhu ekstrem, dan logistik segar.</p>
-            </div>
-            <span class="mt-4 font-mono text-[10px] text-tertiary uppercase">● Storm-Grade Gear</span>
-          </div>
-
-          <div class="bg-black/25 border border-white/15 p-5 rounded-xs flex flex-col justify-between">
-            <div>
-              <span class="font-mono text-[11px] text-secondary font-bold">[CHK-04] SETTLEMENT</span>
-              <h3 class="font-condensed text-xl font-bold uppercase text-white mt-1">Gerbang DOKU &amp; SNAP BI</h3>
-              <p class="text-xs text-canvas/75 mt-2 leading-relaxed">Pembayaran ritel transparan tanpa biaya tersembunyi melalui QRIS SNAP BI dan Virtual Account resmi perbankan.</p>
-            </div>
-            <span class="mt-4 font-mono text-[10px] text-tertiary uppercase">● Regulated Settlement</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section id="whyUs" class="rimba-protocol mt-20 py-16"><div class="max-w-container mx-auto px-4 sm:px-6"><p class="font-mono text-xs text-tertiary">FIELD NOTES / PERSIAPAN PERJALANAN</p><h2 class="font-condensed text-4xl mt-3">Matriks persiapan & catatan ekspedisi</h2><div class="protocol-grid mt-8"><article><span class="font-mono text-xs text-tertiary">/ 01</span><h3 class="font-condensed text-2xl mt-4">Kru & perlengkapan</h3><p class="text-xs leading-relaxed mt-3">Tanyakan kebutuhan pendamping, daftar bawaan, dan perlengkapan yang termasuk pada rencana pilihan.</p></article><article><span class="font-mono text-xs text-tertiary">/ 02</span><h3 class="font-condensed text-2xl mt-4">Izin & kondisi jalur</h3><p class="text-xs leading-relaxed mt-3">Periksa aturan otoritas kawasan, jendela keberangkatan, dan kondisi terkini bersama agen.</p></article><article><span class="font-mono text-xs text-tertiary">/ 03</span><h3 class="font-condensed text-2xl mt-4">Jejak yang ringan</h3><p class="text-xs leading-relaxed mt-3">Bawa kembali sampah, ikuti jalur yang ditetapkan, dan hormati ruang hidup masyarakat setempat.</p></article><article><span class="font-mono text-xs text-tertiary">/ 04</span><h3 class="font-condensed text-2xl mt-4">Harga & pemesanan</h3><p class="text-xs leading-relaxed mt-3">Harga di prototipe ini adalah contoh. Tidak ada kuota yang dikunci atau transaksi yang diproses.</p></article></div></div></section>
 
     <!-- ============ FAQ SECTION ============ -->
     <section id="faq" class="max-w-container mx-auto px-4 sm:px-6 pt-16 pb-20">
@@ -349,7 +329,7 @@
               <span>Bagaimana mekanisme pengurusan Simaksi TN Rinjani?</span>
               <span class="faq-icon text-secondary text-xl transition-transform font-mono">+</span>
             </summary>
-            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Simaksi resmi diproses otomatis secara live melalui integrasi sistem Ortasys dengan sistem e-Rinjani. Kuota yang tampil adalah kuota riil pada tanggal pendakian yang dipilih.</p>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Prototipe ini tidak terhubung ke sistem perizinan. Agen perlu memeriksa persyaratan dan kuota langsung ke otoritas kawasan sebelum memastikan keberangkatan.</p>
           </details>
 
           <details class="bg-surface rounded-xs border border-line p-5">
@@ -357,7 +337,7 @@
               <span>Apakah perlengkapan kemah dan logistik sudah termasuk?</span>
               <span class="faq-icon text-secondary text-xl transition-transform font-mono">+</span>
             </summary>
-            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Ya, setiap paket ekspedisi mencakup tenda dome double-layer tahan badai, matras angin, sleeping bag, makanan bernutrisi tinggi yang dimasak porter, serta peralatan makan.</p>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Baca daftar inklusi pada dossier contoh. Minta rincian perlengkapan, konsumsi, dan kebutuhan khusus kepada agen sebelum memesan.</p>
           </details>
 
           <details class="bg-surface rounded-xs border border-line p-5">
@@ -365,63 +345,32 @@
               <span>Bagaimana kebijakan pembatalan karena faktor cuaca ekstrem?</span>
               <span class="faq-icon text-secondary text-xl transition-transform font-mono">+</span>
             </summary>
-            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Apabila jalur ditutup resmi oleh Balai Taman Nasional akibat cuaca ekstrem atau aktivitas vulkanik, reservasi dapat dijadwalkan ulang secara fleksibel tanpa potongan penalti.</p>
+            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Kebijakan mengikuti rincian tertulis pada paket yang dikonfirmasi agen. Penutupan jalur dan perubahan cuaca harus dibahas sebelum menyetujui rencana perjalanan.</p>
           </details>
         </div>
+<div class="mt-10 space-y-3"><details id="policyTerms" class="bg-surface border border-line rounded-lg p-5"><summary class="font-bold cursor-pointer">Syarat & kebijakan pembatalan</summary><p class="text-sm text-ink-muted mt-3 leading-relaxed">Semua produk, fasilitas, dan harga pada halaman ini adalah contoh konten agen. Prototipe tidak mengunci kamar, kuota, maupun izin. Untuk pemesanan nyata, minta rincian inklusi, biaya, dan batas pembatalan tertulis dari agen sebelum menyetujui transaksi.</p></details><details id="policyPrivacy" class="bg-surface border border-line rounded-lg p-5"><summary class="font-bold cursor-pointer">Privasi & data prototipe</summary><p class="text-sm text-ink-muted mt-3 leading-relaxed">Formulir demo diproses di halaman ini saja dan tidak dikirim ke server. Gunakan data contoh, bukan data pribadi atau kartu pembayaran. Rencana tidak disimpan setelah halaman dimuat ulang.</p></details><p class="text-sm text-ink-muted pt-4">Butuh bantuan? halo@rimbatrek-contoh.id · +62 21 5000 1234 (contoh kontak agen).</p></div>
       </div>
     </section>
+  
   </main>
 
+  <!-- ============ VIEW 2: SEARCH ENGINE SPEC BOARD (D12) ============ -->
+
+
+  <!-- ============ VIEW 3: COMPLETE 10-SECTION BRAND GUIDELINES (00–10) ============ -->
+
+
+  <!-- ============ VIEW 4: FIGCRAFT ARTBOARD PREVIEWS (15+ SCREENS) ============ -->
+
+  
+
   <!-- ============ FOOTER ============ -->
-  <footer class="bg-primary-hover text-white/70 text-xs py-12 border-t border-black/30">
-    <div class="max-w-container mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 pb-8 border-b border-white/10">
-        <div>
-          <div class="flex items-center space-x-2 text-white font-condensed text-2xl font-bold uppercase mb-2">
-            <span class="w-6 h-6 rounded-xs bg-secondary flex items-center justify-center text-xs text-white">R</span>
-            <span>RIMBA TREK</span>
-          </div>
-          <p class="text-[11px] text-white/60 leading-relaxed">
-            Storefront Ekspedisi Resmi berbasis Ortasys Travel Distribution System. Menghubungkan petualang dengan operator alam bebas berlisensi APGI.
-          </p>
-        </div>
-
-        <div>
-          <h4 class="font-condensed text-sm font-bold uppercase text-white tracking-wider mb-2">Destinasi Ekspedisi</h4>
-          <ul class="space-y-1 text-white/60 text-[11px]">
-            <li>TN Gunung Rinjani &amp; Danau Segara Anak</li>
-            <li>TN Bromo Tengger Semeru &amp; Ijen</li>
-            <li>TN Komodo &amp; Pulau Padar</li>
-            <li>Kepulauan Karst Raja Ampat</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-condensed text-sm font-bold uppercase text-white tracking-wider mb-2">Standar &amp; Regulasi</h4>
-          <ul class="space-y-1 text-white/60 text-[11px]">
-            <li>Pemandu Bersertifikat APGI</li>
-            <li>Simaksi &amp; Kuota Konservasi Sah</li>
-            <li>Zero Waste Eco Policy</li>
-            <li>Asuransi Kecelakaan Petualangan</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-condensed text-sm font-bold uppercase text-white tracking-wider mb-2">Settlement Terverifikasi</h4>
-          <p class="text-[11px] text-white/60 mb-2">Diproses melalui gerbang pembayaran resmi:</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="px-2 py-0.5 bg-white/10 rounded-xs text-[10px] font-mono font-bold text-white border border-white/15">DOKU Gateway</span>
-            <span class="px-2 py-0.5 bg-white/10 rounded-xs text-[10px] font-mono font-bold text-white border border-white/15">SNAP BI QRIS</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex flex-col sm:flex-row items-center justify-between text-[11px] text-white/40 gap-2">
-        <p>&copy; <span id="year"></span> Rimba Trek Adventures. Hak Cipta Dilindungi.</p>
-        <p>Illustrative Prototype Preset 05 · Ortasys S4 White-Label Platform.</p>
-      </div>
-    </div>
-  </footer>
+  <footer class="site-footer"><div class="max-w-container mx-auto px-4 sm:px-6">
+      <div class="footer-grid"><div><img src="./assets/logo-mark.png" alt="" width="40" height="40"><h2 class="font-display text-2xl font-bold mt-3">Rimba Trek</h2><p class="text-sm mt-3">Catatan perjalanan dari pegunungan sampai pesisir Nusantara.</p><p class="text-xs mt-3">halo@rimbatrek-contoh.id<br>+62 21 5000 1234 · Contoh kontak agen</p></div>
+      <div><h3 class="font-bold mb-3">Rencanakan perjalanan</h3><a href="#searchSection">Cari jalur & basecamp</a><br><a href="#whyUs">Tentang pendekatan kami</a><br><a href="#faq">Kontak & pertanyaan</a></div>
+      <div><h3 class="font-bold mb-3">Sebelum memesan</h3><a href="#policyTerms">Syarat & pembatalan</a><br><a href="#policyPrivacy">Privasi</a><p class="text-xs mt-3">Prototipe lokal. Tidak menerima pembayaran atau menerbitkan pemesanan nyata.</p></div></div>
+      <div class="footer-base"><span>© <span id="year"></span> Rimba Trek · Contoh konten agen</span><a href="guidelines.html">Panduan merek</a><span>Didukung sistem pemesanan Ortasys</span></div>
+    </div></footer>
 
   <!-- ============ TRIP DRAWER / BAG ============ -->
   <div id="tripOverlay" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden" aria-hidden="true"></div>
@@ -454,7 +403,7 @@
         </div>
       </div>
 
-      <button id="payBtn" type="button" class="mt-4 w-full py-3.5 bg-secondary hover:bg-[#b85e25] text-white rounded-xs font-condensed text-lg uppercase tracking-wider font-bold transition shadow-soft disabled:opacity-40">
+      <button id="payBtn" type="button" class="mt-4 w-full py-3.5 bg-secondary hover:bg-[#102D26] text-white rounded-xs font-condensed text-lg uppercase tracking-wider font-bold transition shadow-soft disabled:opacity-40">
         Konfirmasi Pesanan (DOKU / SNAP)
       </button>
       <p id="payNote" class="mt-2 text-[11px] text-center text-ink-muted" aria-live="polite">Penyelesaian resmi Bank Indonesia SNAP &amp; DOKU.</p>
@@ -466,6 +415,24 @@
     <div class="bg-surface rounded-md max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[90vh]">
       <div class="relative aspect-[16/9] bg-surface-muted shrink-0">
         <img id="modalImg" src="" alt="" class="w-full h-full object-cover">
+        <div id="modalGalleryStrip" class="absolute bottom-3 right-3 z-10 flex items-center gap-1.5 bg-black/55 backdrop-blur-xs p-1.5 rounded-lg">
+          
+            <button type="button" onclick="document.getElementById('modalImg').src='./assets/stay-1.webp'" class="w-10 h-7 rounded overflow-hidden border border-white/60 hover:border-white transition">
+              <img src="./assets/stay-1.webp" alt="Galeri 1" class="w-full h-full object-cover">
+            </button>
+            <button type="button" onclick="document.getElementById('modalImg').src='./assets/stay-2.webp'" class="w-10 h-7 rounded overflow-hidden border border-white/60 hover:border-white transition">
+              <img src="./assets/stay-2.webp" alt="Galeri 2" class="w-full h-full object-cover">
+            </button>
+            <button type="button" onclick="document.getElementById('modalImg').src='./assets/stay-3.webp'" class="w-10 h-7 rounded overflow-hidden border border-white/60 hover:border-white transition">
+              <img src="./assets/stay-3.webp" alt="Galeri 3" class="w-full h-full object-cover">
+            </button>
+            <button type="button" onclick="document.getElementById('modalImg').src='./assets/stay-4.webp'" class="w-10 h-7 rounded overflow-hidden border border-white/60 hover:border-white transition">
+              <img src="./assets/stay-4.webp" alt="Galeri 4" class="w-full h-full object-cover">
+            </button>
+            <button type="button" onclick="document.getElementById('modalImg').src='./assets/dest-1.webp'" class="w-10 h-7 rounded overflow-hidden border border-white/60 hover:border-white transition">
+              <img src="./assets/dest-1.webp" alt="Galeri 5" class="w-full h-full object-cover">
+            </button>
+        </div>
         <button type="button" data-close-modal class="absolute top-3 right-3 w-8 h-8 rounded-xs bg-surface/90 flex items-center justify-center text-ink hover:bg-surface transition shadow-xs" aria-label="Tutup detail">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
         </button>
@@ -489,7 +456,7 @@
           <p class="text-[11px] text-ink-muted font-mono uppercase tracking-wider">Tarif Kuota Live Sah</p>
           <p id="modalPrice" class="font-mono text-[20px] font-extrabold text-primary"></p>
         </div>
-        <button id="modalSelectBtn" type="button" class="h-11 px-6 rounded-xs bg-secondary hover:bg-[#b85e25] text-white font-condensed text-base uppercase font-bold tracking-wider transition shadow-xs">
+        <button id="modalSelectBtn" type="button" class="h-11 px-6 rounded-xs bg-secondary hover:bg-[#102D26] text-white font-condensed text-base uppercase font-bold tracking-wider transition shadow-xs">
           Pilih Ekspedisi
         </button>
       </div>
@@ -501,14 +468,22 @@
     <div class="bg-surface rounded-md max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[92vh]">
       <div class="bg-primary text-white flex items-center justify-between px-6 py-4 border-b border-black/20">
         <div>
-          <h3 id="checkoutHeading" class="font-condensed text-2xl font-bold uppercase tracking-tight">Penyelesaian Reservasi Ekspedisi</h3>
-          <p class="text-xs text-tertiary">Proses Settlement DOKU &amp; SNAP BI</p>
+          <h3 id="checkoutHeading" class="font-condensed text-2xl font-bold uppercase tracking-tight">Simulasi pemesanan ekspedisi</h3>
+          <p class="text-xs text-tertiary">Simulasi lokal · Tidak terhubung ke penyedia pembayaran</p>
         </div>
         <button type="button" data-close-checkout class="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white" aria-label="Tutup penyelesaian">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
         </button>
       </div>
 
+      
+      <div class="px-6 py-3 bg-surface-muted/60 border-b border-line flex items-center justify-between text-[11px] font-bold">
+        <span class="inline-flex items-center gap-1.5 text-primary"><span class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-[10px]">1</span> Data Tamu</span>
+        <span class="text-ink-muted">→</span>
+        <span class="inline-flex items-center gap-1.5 text-primary"><span class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-[10px]">2</span> Simulasi pembayaran</span>
+        <span class="text-ink-muted">→</span>
+        <span class="inline-flex items-center gap-1.5 text-ink-muted"><span class="w-5 h-5 rounded-full border border-line flex items-center justify-center text-[10px]">3</span> Ringkasan contoh</span>
+      </div>
       <div id="checkoutFormContent" class="p-6 overflow-y-auto flex-1 flex flex-col gap-4">
         <div class="p-4 rounded-xs bg-canvas border border-line text-[13px]">
           <div class="flex justify-between font-bold text-ink uppercase tracking-wider font-condensed text-sm">
@@ -517,7 +492,7 @@
           </div>
           <div id="coItemList" class="mt-2 space-y-1 text-[12px] text-ink-muted"></div>
           <div class="mt-3 pt-2 border-t border-line/60 flex justify-between font-mono font-bold text-ink text-[14px]">
-            <span>Total Pelunasan:</span>
+            <span>Total contoh:</span>
             <span id="coTotal" class="text-primary font-extrabold text-base">Rp 0</span>
           </div>
         </div>
@@ -525,12 +500,12 @@
         <form id="coForm" class="flex flex-col gap-3">
           <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-condensed">Data Ketua Tim / Pendaki Utama</h4>
           <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
-            Nama Lengkap Sesuai KTP / Paspor
+            Nama pemesan (gunakan data contoh)
             <input id="coName" type="text" required placeholder="Contoh: Arya Yudhistira" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
           </label>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
-              Email Konfirmasi &amp; Tiket
+              Email contoh
               <input id="coEmail" type="email" required placeholder="arya@expedition.com" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
             </label>
             <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
@@ -539,12 +514,12 @@
             </label>
           </div>
 
-          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-condensed mt-2">Kanal Pembayaran Terverifikasi</h4>
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-condensed mt-2">Simulasi metode pembayaran</h4>
           <div class="space-y-2 text-[12px]">
             <label class="flex items-center gap-3 p-3 rounded-xs bg-white border border-line cursor-pointer hover:border-secondary">
               <input type="radio" name="payMethod" value="qris" checked class="accent-secondary">
               <div class="flex-1">
-                <span class="font-bold text-ink block font-condensed text-sm uppercase">SNAP BI QRIS (Konfirmasi Instan)</span>
+                <span class="font-bold text-ink block font-condensed text-sm uppercase">Contoh alur QRIS</span>
                 <span class="text-[11px] text-ink-muted block">BCA, Mandiri, BRI, GoPay, OVO, ShopeePay</span>
               </div>
             </label>
@@ -552,13 +527,13 @@
               <input type="radio" name="payMethod" value="va" class="accent-secondary">
               <div class="flex-1">
                 <span class="font-bold text-ink block font-condensed text-sm uppercase">DOKU Virtual Account Multi-Bank</span>
-                <span class="text-[11px] text-ink-muted block">Virtual account otomatis terverifikasi tanpa upload bukti</span>
+                <span class="text-[11px] text-ink-muted block">Contoh alur, bukan nomor pembayaran aktif</span>
               </div>
             </label>
           </div>
 
-          <button type="submit" id="coSubmitBtn" class="mt-3 w-full py-3.5 bg-secondary hover:bg-[#b85e25] text-white rounded-xs font-condensed text-base uppercase tracking-wider font-bold transition shadow-soft flex items-center justify-center gap-2">
-            <span>Konfirmasi &amp; Terbitkan Izin Jalur</span>
+          <button type="submit" id="coSubmitBtn" class="mt-3 w-full py-3.5 bg-secondary hover:bg-[#102D26] text-white rounded-xs font-condensed text-base uppercase tracking-wider font-bold transition shadow-soft flex items-center justify-center gap-2">
+            <span>Selesaikan simulasi · tanpa pembayaran</span>
           </button>
         </form>
       </div>
@@ -569,13 +544,13 @@
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
         </div>
         <div>
-          <span class="text-[11px] font-bold uppercase tracking-widest text-success font-condensed">Pemesanan Terverifikasi Live API</span>
-          <h4 class="font-condensed text-3xl font-extrabold uppercase text-primary mt-1">Simaksi &amp; Kuota Resmi Terbit</h4>
-          <p class="text-[13px] text-ink-muted mt-1">Kuota pendakian Anda telah terkunci di server pengelola dan ranger APGI telah diberitahukan.</p>
+          <span class="text-[11px] font-bold uppercase tracking-widest text-success font-condensed">Simulasi selesai · tanpa pembayaran</span>
+          <h4 class="font-condensed text-3xl font-extrabold uppercase text-primary mt-1">Ringkasan simulasi siap</h4>
+          <p class="text-[13px] text-ink-muted mt-1">Tidak ada kuota atau izin yang diterbitkan. Periksa rencana dan persyaratan bersama agen.</p>
         </div>
         <div class="w-full p-4 rounded-xs bg-canvas border border-line text-left text-[12px] space-y-1.5 font-mono">
           <div class="flex justify-between">
-            <span class="text-ink-muted">Kode Simaksi:</span>
+            <span class="text-ink-muted">Referensi simulasi:</span>
             <span id="successRef" class="font-bold text-ink">RMB-2026-0001</span>
           </div>
           <div class="flex justify-between">
@@ -583,13 +558,13 @@
             <span id="successGuest" class="font-bold text-ink">-</span>
           </div>
           <div class="flex justify-between">
-            <span class="text-ink-muted">Total Pembayaran:</span>
+            <span class="text-ink-muted">Total contoh:</span>
             <span id="successAmount" class="font-bold text-primary">Rp 0</span>
           </div>
         </div>
         <div class="w-full flex flex-col gap-2 pt-2">
           <button type="button" id="btnDownloadVoucher" class="w-full py-3 rounded-xs bg-primary hover:bg-primary-hover text-white font-condensed text-sm uppercase tracking-wider font-bold transition">
-            Unduh E-Simaksi &amp; Dokumen Keselamatan (PDF)
+            Unduh ringkasan simulasi (.txt)
           </button>
           <button type="button" data-finish-checkout class="w-full py-2.5 rounded-xs bg-surface-muted hover:bg-line text-ink font-condensed text-sm uppercase tracking-wider font-bold transition">
             Kembali ke Katalog Ekspedisi
@@ -608,34 +583,34 @@
     const EXPEDITIONS = [
       {
         id: 'rt-rinjani', kind: 'tour', name: 'Rinjani Summit & Crater Rim 3D2N Expedition', area: 'TN Gunung Rinjani · Sembalun', filter: 'rinjani',
-        keys: 'rinjani sembalun gunung kawah segara anak trekking pendakian', img: '../../assets/khatulistiwa_explorer/rinjani-trail.jpg', alt: 'Jalur pendakian punggungan Gunung Rinjani',
+        keys: 'rinjani sembalun gunung kawah segara anak trekking pendakian', img: './assets/hero.webp', alt: 'Jalur pendakian punggungan Gunung Rinjani',
         duration: '3 Hari 2 Malam (Puncak 3.726 MDPL)', level: 'Tingkat Menengah',
         desc: 'Pendakian jalur Sembalun menuju puncak tertinggi Lombok, bermalam di Plawangan Sembalun, eksplorasi Danau Segara Anak, dan turun melalui Senaru bersama porter profesional.',
-        amenities: ['Pemandu Bersertifikat APGI', 'Tenda Dome Double-Layer Tahan Badai', 'Matras & Sleeping Bag Nyaman', 'Makan 3x Sehari Masakan Segar Porter', 'Simaksi Resmi TNGR & Asuransi'],
+        amenities: ['Pendamping jalur (contoh)', 'Tenda dome double-layer (contoh)', 'Matras & Sleeping Bag Nyaman', 'Makan 3x Sehari Masakan Segar Porter', 'Rencana pengurusan izin (contoh)'],
         policy: 'Dapat dijadwalkan ulang bila otoritas TNGR menutup jalur akibat cuaca.',
         perPerson: 2450000
       },
       {
         id: 'rt-komodo', kind: 'tour', name: 'Komodo Dragon & Padar Island Wilderness Cruise', area: 'Taman Nasional Komodo · Labuan Bajo', filter: 'komodo',
-        keys: 'komodo padar ntt nusa tenggara timur pulau trekking ranger', img: '../../assets/khatulistiwa_explorer/padar.jpg', alt: 'Pemandangan puncak bukit Pulau Padar',
+        keys: 'komodo padar ntt nusa tenggara timur pulau trekking ranger', img: './assets/tour-2.webp', alt: 'Pemandangan puncak bukit Pulau Padar',
         duration: '3 Hari 2 Malam Liveaboard', level: 'Tingkat Ringan - Menengah',
         desc: 'Pelayaran perahu ekspedisi menuju habitat asli satwa purba komodo di Pulau Rinca, trekking matahari terbit di puncak tri-teluk Pulau Padar, dan snorkeling pari manta Manta Point.',
-        amenities: ['Kabin Ber-AC di Kapal Semi-Phinisi', 'Ranger Resmi Balai TN Komodo', 'Peralatan Snorkeling Lengkap', 'Makan Lengkap Chef Kapal', 'Tiket Retribusi Konservasi'],
+        amenities: ['Kabin Ber-AC di Kapal Semi-Phinisi', 'Pendamping kawasan (contoh)', 'Peralatan Snorkeling Lengkap', 'Makan Lengkap Chef Kapal', 'Tiket Retribusi Konservasi'],
         policy: 'Bebas penyesuaian jadwal hingga 7 hari sebelum keberangkatan.',
         perPerson: 2950000
       },
       {
         id: 'rt-bromo', kind: 'tour', name: 'Bromo Sunrise Caldera & Ijen Blue Fire 3D2N', area: 'TN Bromo Tengger & Kawah Ijen', filter: 'bromo',
-        keys: 'bromo ijen blue fire api biru kawah kawah kawah jawa timur', img: '../../assets/khatulistiwa_explorer/bromo.jpg', alt: 'Kaldera Gunung Bromo dan Batok saat fajar',
+        keys: 'bromo ijen blue fire api biru kawah kawah kawah jawa timur', img: './assets/tour-3.webp', alt: 'Kaldera Gunung Bromo dan Batok saat fajar',
         duration: '3 Hari 2 Malam Ekspedisi Kaldera', level: 'Tingkat Menengah',
         desc: 'Petualangan melintasi lautan pasir Bromo dengan Jeep 4WD 4x4, menaiki bibir kawah aktif, dilanjutkan pendakian dini hari di Kawah Ijen untuk menyaksikan fenomena kobaran api biru langka.',
-        amenities: ['Jeep 4x4 Khusus Kaldera', 'Masker Gas Respirator Kawah Ijen', 'Guide Lokal Berpengalaman', 'Penginapan Transit Basecamp Bromo', 'Tiket Masuk Resmi TNBTS'],
+        amenities: ['Jeep 4x4 Khusus Kaldera', 'Masker Gas Respirator Kawah Ijen', 'Guide Lokal Berpengalaman', 'Penginapan Transit Basecamp Bromo', 'Rencana tiket kawasan (contoh)'],
         policy: 'Bebas pembatalan hingga H-3 tanpa biaya penalti.',
         perPerson: 1850000
       },
       {
         id: 'rt-rajaampat', kind: 'tour', name: 'Raja Ampat Misool Marine & Karst Expedition', area: 'Kepulauan Misool · Raja Ampat', filter: 'rajaampat',
-        keys: 'raja ampat misool papua karst laut diving coral ekspedisi', img: '../../assets/khatulistiwa_explorer/raja-ampat.jpg', alt: 'Gugusan pulau karang karst hijau di Raja Ampat',
+        keys: 'raja ampat misool papua karst laut diving coral ekspedisi', img: './assets/tour-4.webp', alt: 'Gugusan pulau karang karst hijau di Raja Ampat',
         duration: '4 Hari 3 Malam Ekspedisi Karst', level: 'Tingkat Menengah',
         desc: 'Menembus labirin tebing karst purba Misool, gua tengkorak keramat, danau ubur-ubur tanpa sengat, serta keanekaragaman terumbu karang terkaya di bumi (Jantung Segitiga Karang Dunia).',
         amenities: ['Speedboat Ekspedisi Mesin Ganda', 'Pemandu Laut Lokal Papua', 'Akomodasi Eco Homestay Terapung', 'Makan Segar Ikan Laut Lokal', 'Biaya PIN Konservasi Raja Ampat'],
@@ -647,7 +622,7 @@
     const LODGES = [
       {
         id: 'rt-senaru-lodge', name: 'Senaru Foothill Rainforest Eco Lodge', area: 'Senaru · Kaki Gunung Rinjani', filter: 'rinjani',
-        keys: 'senaru rinjani eco lodge kaki gunung basecamp alam', img: '../../assets/mandalika_escape/rinjani.jpg', alt: 'Pemandangan alam perbukitan Senaru Rinjani',
+        keys: 'senaru rinjani eco lodge kaki gunung basecamp alam', img: './assets/stay-1.webp', alt: 'Pemandangan alam perbukitan Senaru Rinjani',
         stars: 4, room: 'Chalet Bambu Pemandangan Hutan Tropis', meal: 'Termasuk Sarapan Sehat Pendaki & Kopi Robusta', policy: 'Bebas pembatalan hingga H-5 kedatangan.',
         desc: 'Eco-lodge ramah lingkungan di ketinggian 600 MDPL. Terletak strategis di dekat gerbang pendakian Senaru dan air terjun Sendang Gile, ideal untuk proses aklimatisasi sebelum mendaki.',
         amenities: ['Air Hangat Tenaga Surya', 'Peralatan Dry Bag & Peta Topografi', 'Restoran Organik Kebun Sendiri', 'Area Api Unggun Malam', 'WiFi Satelit Kuat'],
@@ -655,7 +630,7 @@
       },
       {
         id: 'rt-komodo-lodge', name: 'Komodo Secluded Coastal Eco Camp', area: 'Pantai Waecicu · Labuan Bajo', filter: 'komodo',
-        keys: 'komodo waecicu eco camp pantai tenda safari glamping', img: '../../assets/mandalika_escape/beach.jpg', alt: 'Tenda safari tepi pantai tenang',
+        keys: 'komodo waecicu eco camp pantai tenda safari glamping', img: './assets/stay-2.webp', alt: 'Tenda safari tepi pantai tenang',
         stars: 4, room: 'Tenda Safari Glamping Tepi Laut', meal: 'Sarapan dan Makan Malam Tradisional', policy: 'Bebas pembatalan hingga H-7 kedatangan.',
         desc: 'Basecamp tepi pantai eksklusif dengan tenda safari kanvas berkualitas tinggi. Menghadap langsung ke perairan tenang Taman Nasional Komodo dengan akses perahu langsung ke pulau-pulau liar.',
         amenities: ['Private Beach & Dermaga Kayu', 'Kayak Laut Gratis', 'Kamar Mandi Semi-Terbuka Bambu', 'Layanan Shuttle Dermaga Bajo', 'Listrik Tenaga Surya 24 Jam'],
@@ -663,7 +638,7 @@
       },
       {
         id: 'rt-mandalika-base', name: 'Mandalika Coastal Surfer Eco Villa', area: 'Kuta Mandalika · Lombok Selatan', filter: 'rinjani',
-        keys: 'mandalika lombok surfer pantai eco villa basecamp', img: '../../assets/mandalika_escape/palm-bay.jpg', alt: 'Teluk pantai pasir putih Mandalika',
+        keys: 'mandalika lombok surfer pantai eco villa basecamp', img: './assets/stay-3.webp', alt: 'Teluk pantai pasir putih Mandalika',
         stars: 4, room: 'Eco Villa Lumbung Tradisional', meal: 'Sarapan Sehat & Kelapa Segar', policy: 'Bebas pembatalan hingga H-3 kedatangan.',
         desc: 'Vila kayu beratap alang-alang alami di dekat spot selancar ombak pantai selatan Lombok. Tempat beristirahat dan memulihkan energi setelah perjalanan gunung yang menantang.',
         amenities: ['Kolam Renang Batu Alami', 'Rak Papan Selancar Aman', 'Dapur Bersama Lengkap', 'Sewa Motor Trail / Scooter', 'WiFi Fiber'],
@@ -697,13 +672,19 @@
 
     function validate() {
       const errs = [];
+      if (!el.dest.value.trim()) errs.push('Pilih atau tulis destinasi terlebih dahulu.');
+      for (const [key, [min, max]] of Object.entries(LIMITS)) {
+        const value = Number(el[key].value);
+        if (!el[key].value || !Number.isInteger(value) || value < min || value > max) errs.push(`${key === 'rooms' ? 'Kamar' : key === 'adults' ? 'Dewasa per kamar' : 'Anak per kamar'} harus ${min}–${max}.`);
+      }
+      if ([...document.querySelectorAll('[data-child-age]')].some(input => input.value === '')) errs.push('Isi usia setiap anak (0–17 tahun) untuk setiap kamar.');
       if (!el.checkIn.value) {
         errs.push('Silakan tentukan tanggal mulai perjalanan / ekspedisi.');
       } else if (el.checkIn.value < today) {
         errs.push('Tanggal mulai tidak boleh di masa lampau.');
       }
 
-      if (state.mode === 'hotels') {
+      {
         if (!el.checkOut.value) errs.push('Silakan tentukan tanggal selesai (check-out).');
         else {
           const n = nights();
@@ -720,13 +701,13 @@
 
     function summaryText() {
       const r = num('rooms'), a = num('adults'), c = num('children');
-      const g = `${a} Peserta${c ? ` + ${c} Remaja` : ''}`;
+      const g = `${a} dewasa${c ? ` + ${c} anak` : ''}`;
       if (state.mode === 'hotels') {
         const n = nights();
-        if (!n || n < 1) return 'Pilih tanggal untuk kalkulasi kuota live';
+        if (!n || n < 1) return 'Pilih tanggal untuk harga contoh';
         return `${n} Malam × ${r} Unit (${g} / unit)`;
       }
-      return el.checkIn.value ? `${el.checkIn.value} · ${r * a} Peserta Ekspedisi` : 'Pilih tanggal mulai ekspedisi';
+      return el.checkIn.value ? `${el.checkIn.value} · ${r * (a + c)} peserta · ${r} unit` : 'Pilih tanggal mulai ekspedisi';
     }
 
     function renderMode() {
@@ -736,31 +717,32 @@
         t.className = `mode-tab h-9 rounded-xs font-condensed text-sm font-bold uppercase tracking-wider transition ${on ? 'bg-primary text-white' : 'text-ink-muted hover:text-ink'}`;
       });
       const hotels = state.mode === 'hotels';
-      $$('[data-hotel-only]').forEach(n => n.classList.toggle('hidden', !hotels));
+      $$('[data-hotel-only]').forEach(n => n.classList.remove('hidden'));
       
       $('#catalogHeading').textContent = hotels ? 'Basecamp & Eco Lodge Terkurasi' : 'Ekspedisi Jalur Pegunungan & Alam Liar';
-      $('[data-dest-label]').textContent = hotels ? 'Basecamp / Eco Lodge / Kawasan' : 'Tujuan / Kawasan Konservasi';
+      $('[data-dest-label]').textContent = hotels ? '01 / Basecamp & kawasan' : '01 / Sektor & kawasan';
       el.dest.placeholder = hotels ? 'Senaru Lodge, Waecicu Camp, Mandalika…' : 'Gunung Rinjani, Komodo, Bromo, Ijen…';
 
       const datalistItems = hotels ? LODGES.map(s => s.name) : EXPEDITIONS.map(e => e.name);
-      $('#destList').innerHTML = ['Gunung Rinjani', 'Kawah Ijen', 'Bromo Tengger', 'Taman Nasional Komodo', 'Raja Ampat', ...datalistItems]
+      const destinations = hotels ? ['Senaru', 'Waecicu', 'Mandalika'] : ['Rinjani', 'Ijen', 'Bromo', 'Komodo', 'Raja Ampat'];
+      $('#destList').innerHTML = [...destinations, ...datalistItems]
         .map(v => `<option value="${v}">`).join('');
     }
 
     function renderResults() {
       const isHotels = state.mode === 'hotels';
+      el.results.classList.toggle('lodge-results', isHotels);
       const q = el.dest.value.trim().toLowerCase();
       let list = (isHotels ? LODGES : EXPEDITIONS).filter(it => {
         const matchQ = !q || (it.name + ' ' + it.area + ' ' + it.keys).toLowerCase().includes(q);
         const matchFilter = state.filter === 'all' || it.filter === state.filter;
         return matchQ && matchFilter;
       });
-      if (!list.length && state.filter === 'all') list = isHotels ? LODGES : EXPEDITIONS;
 
       if (!list.length) {
         el.results.innerHTML = `
           <div class="col-span-full py-12 text-center text-ink-muted bg-surface rounded-xs border border-line">
-            <p class="font-condensed text-2xl font-bold uppercase text-primary">Tidak ada paket ekspedisi yang cocok dengan filter "${state.filter}"</p>
+            <p class="font-condensed text-2xl font-bold uppercase text-primary">Tidak ada contoh perjalanan yang cocok. Ubah tujuan atau reset filter.</p>
             <button type="button" data-reset-filter class="mt-3 px-4 py-2 rounded-xs bg-secondary text-white font-condensed text-sm uppercase font-bold tracking-wider">Reset Filter Wilayah</button>
           </div>`;
         return;
@@ -773,20 +755,20 @@
           ? `<div class="h-8 w-28 bg-surface-muted animate-pulse rounded-xs"></div>`
           : state.priced
             ? `<div><p class="tnum font-mono text-[20px] font-extrabold text-primary">${idr.format(total)}</p><p class="tnum font-mono text-[11px] text-ink-muted">${sub}</p></div>`
-            : `<div><p class="text-[12px] text-ink-muted italic font-medium">Cek kuota live</p><p class="text-[11px] text-ink-muted font-mono">Mulai ${idr.format(isHotels ? it.nightly : it.perPerson)}</p></div>`;
+            : `<div><p class="text-[10px] text-ink-muted font-mono">HARGA CONTOH / MULAI</p><p class="text-xl font-bold text-primary">${idr.format(isHotels ? it.nightly : it.perPerson)}</p><p class="text-[10px] text-ink-muted">${isHotels ? 'per kamar / malam' : 'per orang'}</p></div>`;
 
         return `
         <article class="bg-surface rounded-xs border-2 border-line hover:border-primary overflow-hidden shadow-soft flex flex-col transition duration-200 group">
           <!-- Top Technical Telemetry Bar -->
           <div class="bg-primary text-white px-3.5 py-2 flex items-center justify-between font-mono text-[10px] uppercase tracking-wider">
             <span>SEC-0${idx + 1} // ${isHotels ? 'BASECAMP LODGE' : it.level}</span>
-            <span class="text-tertiary font-bold">● LIVE ALLOTMENT</span>
+            <span class="text-tertiary font-bold">● CONTOH KATALOG</span>
           </div>
 
           <div class="relative aspect-[16/10] bg-surface-muted overflow-hidden border-b border-line">
-            <img src="${it.img}" alt="${it.alt}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <img src="${it.img}" alt="${it.alt}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
             <span class="absolute bottom-2.5 left-2.5 bg-black/80 text-tertiary text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-xs">
-              ${isHotels ? `${'★'.repeat(it.stars)} Basecamp` : it.duration}
+              ${isHotels ? 'Contoh basecamp' : it.duration}
             </span>
           </div>
 
@@ -797,7 +779,7 @@
                 [Buka Dossier]
               </button>
             </div>
-            <h3 class="font-condensed text-2xl font-bold uppercase text-primary leading-tight cursor-pointer hover:text-secondary transition-colors" data-detail="${it.id}">${it.name}</h3>
+            <h3 class="font-condensed text-2xl font-bold uppercase text-primary leading-tight">${it.name}</h3>
             <p class="text-[12px] text-ink-muted line-clamp-2">${it.desc}</p>
             
             <!-- Tactical Gear Tags -->
@@ -807,8 +789,8 @@
 
             <div class="mt-auto pt-4 border-t border-line flex items-end justify-between gap-3">
               ${priceHTML}
-              <button type="button" data-select="${it.id}" class="h-10 px-4 rounded-xs ${state.priced ? 'bg-secondary hover:bg-[#b85e25] text-white' : 'bg-primary hover:bg-primary-hover text-white'} font-condensed text-sm uppercase tracking-wider font-bold transition shadow-xs">
-                ${state.priced ? '+ Masuk Tim' : 'Cek &amp; Masuk'}
+              <button type="button" data-select="${it.id}" class="h-10 px-4 rounded-xs ${state.priced ? 'bg-secondary hover:bg-[#102D26] text-white' : 'bg-primary hover:bg-primary-hover text-white'} font-condensed text-sm uppercase tracking-wider font-bold transition shadow-xs">
+                ${state.priced ? '+ Masuk Tim' : 'Pilih perjalanan'}
               </button>
             </div>
           </div>
@@ -827,7 +809,10 @@
       }
     }
 
+    let searchVersion = 0;
     function invalidate() {
+      searchVersion++;
+      syncChildAges();
       state.priced = false; el.errors.textContent = '';
       el.summary.textContent = summaryText();
       renderResults();
@@ -837,14 +822,14 @@
     $$('[data-step]').forEach(b => b.addEventListener('click', () => {
       const k = b.dataset.step; el[k].value = clamp(num(k) + Number(b.dataset.dir), LIMITS[k]); invalidate();
     }));
-    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('change', () => { el[k].value = num(k); invalidate(); }));
+    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('change', () => { invalidate(); }));
     el.checkIn.addEventListener('change', () => {
       syncBounds();
       if (el.checkIn.value && (!el.checkOut.value || el.checkOut.value <= el.checkIn.value)) el.checkOut.value = addDays(el.checkIn.value, 2);
       invalidate();
     });
     el.checkOut.addEventListener('change', invalidate);
-    el.dest.addEventListener('input', renderResults);
+    el.dest.addEventListener('input', invalidate);
 
     // Filter Buttons
     $$('.filter-btn').forEach(btn => {
@@ -860,20 +845,24 @@
 
     el.form.addEventListener('submit', e => {
       e.preventDefault();
+      syncChildAges();
       const errs = validate();
       el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
       if (errs.length) return;
 
-      state.checking = true; el.btn.disabled = true;
-      el.btn.querySelector('[data-btn-label]').textContent = 'Menghubungi Server Kuota APGI…';
+      const version = ++searchVersion;
+      state.checking = true; el.btn.disabled = true; el.form.setAttribute('aria-busy', 'true');
+      el.btn.querySelector('[data-btn-label]').textContent = 'Mencari dalam katalog contoh…';
       renderResults();
 
       setTimeout(() => {
-        state.checking = false; state.priced = true; state.checkedAt = new Date();
-        el.btn.disabled = false; el.btn.querySelector('[data-btn-label]').textContent = 'Cek Kuota Live';
-        el.summary.textContent = `Live Terverifikasi: ${summaryText()}`;
+        state.checking = false; el.btn.disabled = false; el.form.removeAttribute('aria-busy');
+        if (version !== searchVersion) { el.btn.querySelector('[data-btn-label]').textContent = 'Cari katalog contoh'; renderResults(); return; }
+        state.priced = true; state.checkedAt = new Date();
+        el.btn.disabled = false; el.btn.querySelector('[data-btn-label]').textContent = 'Cari katalog contoh';
+        el.summary.textContent = `Simulasi lokal: ${summaryText()}`;
         renderResults();
-        document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('catalog').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
       }, 650);
     });
 
@@ -882,18 +871,26 @@
       const det = e.target.closest('[data-detail]'); if (det) return openDetail(det.dataset.detail);
       const rm = e.target.closest('[data-remove]'); if (rm) { state.trip.splice(Number(rm.dataset.remove), 1); renderTrip(); }
       const rst = e.target.closest('[data-reset-filter]'); if (rst) {
-        state.filter = 'all';
+        state.filter = 'all'; el.dest.value = '';
         $$('.filter-btn').forEach((b, i) => b.className = `filter-btn h-9 px-4 rounded-xs font-condensed text-sm font-bold uppercase tracking-wider transition ${i === 0 ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`);
         renderResults();
       }
     });
 
     function selectItem(id) {
+      syncChildAges();
+      const validationErrors = validate();
+      if (validationErrors.length) {
+        el.errors.textContent = validationErrors.join(' ');
+        document.getElementById('searchSection').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+        if (typeof showPlannerStep === 'function') showPlannerStep(!el.dest.value.trim() ? 1 : (!el.checkIn.value || !el.checkOut.value || nights() < 1 || nights() > 30) ? 2 : 3);
+        return;
+      }
       if (!state.priced) {
-        toast('Memverifikasi kuota ketersediaan multi-supplier...');
+        toast('Menghitung harga contoh perjalanan…');
         const errs = validate();
         if (errs.length) {
-          document.getElementById('searchSection').scrollIntoView({ behavior: 'smooth' });
+          document.getElementById('searchSection').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
           el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
           return;
         }
@@ -923,13 +920,44 @@
           </div>
           <p class="tnum font-mono text-[14px] font-bold text-primary mt-1">${idr.format(t.total)}</p>
         </div>`).join('')
-        : `<p class="py-12 text-center text-[13px] text-ink-muted font-medium">Trip Bag Anda masih kosong.<br>Cek kuota live dan pilih ekspedisi atau basecamp.</p>`;
+        : `<p class="py-12 text-center text-[13px] text-ink-muted font-medium">Trip Bag Anda masih kosong.<br>Lihat harga contoh dan pilih ekspedisi atau basecamp.</p>`;
       
       const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
       $('#tripSubtotal').textContent = idr.format(totalVal);
       $('#tripTotal').textContent = idr.format(totalVal);
       $('#payBtn').disabled = !state.trip.length;
     }
+
+
+    let returnFocus = null;
+    let activeDialog = null;
+    function activateDialog(node) {
+      returnFocus = document.activeElement;
+      activeDialog = node;
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(() => node.querySelector('button, input, select, a[href]')?.focus());
+    }
+    function deactivateDialog(node) {
+      if (activeDialog !== node) return;
+      activeDialog = null;
+      document.body.style.overflow = '';
+      returnFocus?.focus();
+    }
+    document.addEventListener('keydown', event => {
+      if (!activeDialog) return;
+      if (event.key === 'Escape') {
+        if (activeDialog.id === 'tripDrawer') closeTrip();
+        else if (activeDialog.id === 'detailModal') closeDetail();
+        else closeCheckout();
+        return;
+      }
+      if (event.key !== 'Tab') return;
+      const nodes = [...activeDialog.querySelectorAll('button:not([disabled]), input:not([disabled]), select:not([disabled]), a[href]')].filter(node => node.getClientRects().length);
+      if (!nodes.length) return;
+      const first = nodes[0], last = nodes[nodes.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    });
 
     // Detail Quick-View Modal
     const detailModal = $('#detailModal');
@@ -942,7 +970,7 @@
 
       $('#modalImg').src = it.img;
       $('#modalImg').alt = it.alt;
-      $('#modalBadge').textContent = isHotel ? `Peringkat Bintang ${'★'.repeat(it.stars)}` : it.level;
+      $('#modalBadge').textContent = isHotel ? 'Contoh penginapan' : it.level;
       $('#modalArea').textContent = it.area;
       $('#modalTitle').textContent = it.name;
       $('#modalDesc').textContent = it.desc;
@@ -951,10 +979,10 @@
 
       const total = isHotel ? stayTotal(it) : actTotal(it);
       $('#modalPrice').textContent = state.priced ? idr.format(total) : `Mulai ${idr.format(isHotel ? it.nightly : it.perPerson)}`;
-      detailModal.classList.remove('hidden');
+      detailModal.classList.remove('hidden'); activateDialog(detailModal);
     }
     function closeDetail() {
-      detailModal.classList.add('hidden');
+      detailModal.classList.add('hidden'); deactivateDialog(detailModal);
       currentDetailItem = null;
     }
     $('[data-close-modal]').addEventListener('click', closeDetail);
@@ -974,10 +1002,10 @@
       $('#coTotal').textContent = idr.format(totalVal);
       $('#checkoutFormContent').classList.remove('hidden');
       $('#checkoutSuccessContent').classList.add('hidden');
-      checkoutModal.classList.remove('hidden');
+      checkoutModal.classList.remove('hidden'); activateDialog(checkoutModal);
     }
     function closeCheckout() {
-      checkoutModal.classList.add('hidden');
+      checkoutModal.classList.add('hidden'); deactivateDialog(checkoutModal);
     }
     $('[data-close-checkout]').addEventListener('click', closeCheckout);
     checkoutModal.addEventListener('click', e => { if (e.target === checkoutModal) closeCheckout(); });
@@ -985,17 +1013,20 @@
       closeCheckout();
       state.trip = [];
       renderTrip();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     });
     $('#btnDownloadVoucher').addEventListener('click', () => {
-      toast('E-Simaksi & Dokumen Keselamatan sedang diunduh (Simulasi PDF)...');
+      const text = 'SIMULASI — bukan bukti pemesanan atau pembayaran\n' + state.trip.map(item => item.name + '\n' + item.detail + '\n' + idr.format(item.total)).join('\n\n');
+      const url = URL.createObjectURL(new Blob([text], {type: 'text/plain;charset=utf-8'}));
+      const link = document.createElement('a'); link.href = url; link.download = 'ringkasan-simulasi.txt'; link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
     });
 
     $('#coForm').addEventListener('submit', e => {
       e.preventDefault();
       const guestName = $('#coName').value.trim();
       const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
-      const randomRef = 'RMB-2026-' + Math.floor(1000 + Math.random() * 9000);
+      const randomRef = 'DEMO-RMB-2026-' + Math.floor(1000 + Math.random() * 9000);
 
       $('#successRef').textContent = randomRef;
       $('#successGuest').textContent = guestName;
@@ -1003,12 +1034,17 @@
 
       $('#checkoutFormContent').classList.add('hidden');
       $('#checkoutSuccessContent').classList.remove('hidden');
+      $('#btnDownloadVoucher').focus();
     });
+
+
+    $$('[data-pick-dest]').forEach(button => button.addEventListener('click', () => { state.mode = 'activities'; state.filter = 'all'; el.dest.value = button.dataset.pickDest; renderMode(); invalidate(); $('#searchSection').scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}); el.dest.focus({preventScroll:true}); }));
+    $$('[data-basecamp]').forEach(button => button.addEventListener('click', () => { state.mode = 'hotels'; state.filter = 'all'; el.dest.value = ''; renderMode(); invalidate(); $('#searchSection').scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}); el.dest.focus({preventScroll:true}); }));
 
     // Drawer Navigation
     const drawer = $('#tripDrawer'), overlay = $('#tripOverlay');
-    function openTrip() { overlay.classList.remove('hidden'); drawer.classList.remove('translate-x-full'); drawer.setAttribute('aria-hidden', 'false'); }
-    function closeTrip() { overlay.classList.add('hidden'); drawer.classList.add('translate-x-full'); drawer.setAttribute('aria-hidden', 'true'); }
+    function openTrip() { overlay.classList.remove('hidden'); drawer.classList.remove('translate-x-full'); drawer.setAttribute('aria-hidden', 'false'); activateDialog(drawer); }
+    function closeTrip() { overlay.classList.add('hidden'); drawer.classList.add('translate-x-full'); drawer.setAttribute('aria-hidden', 'true'); deactivateDialog(drawer); }
     $$('[data-open-trip]').forEach(b => b.addEventListener('click', openTrip));
     $('[data-close-trip]').addEventListener('click', closeTrip);
     overlay.addEventListener('click', closeTrip);
@@ -1027,8 +1063,29 @@
     });
     $('#year').textContent = new Date().getFullYear();
 
+
+    const ageValues = new Map();
+    function syncChildAges() {
+      const box = $('#childAgeBox');
+      if (!box) return;
+      $$('[data-child-age]', box).forEach(input => ageValues.set(input.dataset.childAge, input.value));
+      const count = num('children'), roomCount = num('rooms');
+      box.hidden = count === 0;
+      const signature = `${roomCount}:${count}`;
+      if (box.dataset.signature === signature) return;
+      box.dataset.signature = signature;
+      box.innerHTML = count ? '<p class="font-bold text-xs">Usia saat check-in · wajib untuk setiap anak, 0–17 tahun</p>' + Array.from({length: roomCount}, (_, room) => `<div class="space-y-2"><p class="text-xs font-bold">Kamar / unit ${room + 1}</p>${Array.from({length: count}, (_, child) => {
+        const key = `${room}-${child}`;
+        return `<label>Usia anak ${child + 1}<select data-child-age="${key}" required aria-label="Usia anak ${child + 1}, kamar ${room + 1}"><option value="">Pilih usia</option>${Array.from({length:18}, (_, age) => `<option value="${age}" ${ageValues.get(key) === String(age) ? 'selected' : ''}>${age} tahun</option>`).join('')}</select></label>`;
+      }).join('')}</div>`).join('') : '';
+    }
+    el.form.addEventListener('input', event => { if (event.target.matches('[data-child-age], #rooms, #adults, #qChildren')) invalidate(); });
+    el.form.addEventListener('change', event => { if (event.target.matches('[data-child-age]')) invalidate(); });
+
     syncBounds(); renderMode(); invalidate(); renderTrip();
   })();
   </script>
+
+
 </body>
 </html>

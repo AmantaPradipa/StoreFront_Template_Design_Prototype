@@ -1,0 +1,330 @@
+/* Akar Budaya: parchment surfaces, clay ink and archival double rules. */
+.ui-select {
+  display: block;
+  position: relative;
+  min-width: 0;
+  width: 100%;
+}
+.ui-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid var(--fieldBorder);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+}
+.ui-select-value {
+  flex: 1;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.ui-select-chevron {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  color: var(--primary);
+  transition: transform 0.18s;
+}
+.ui-select-trigger[aria-expanded="true"] {
+  border-color: var(--primary);
+  background: var(--bg);
+}
+.ui-select-trigger[aria-expanded="true"] .ui-select-chevron {
+  transform: rotate(180deg);
+}
+.ui-select-menu {
+  box-sizing: border-box;
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  padding: 6px;
+  max-width: calc(100vw - 24px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--fieldBorder);
+  border-top: 3px double var(--primary);
+  border-bottom: 3px double var(--primary);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--text);
+  font: 400 15px/1.5 var(--body);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--ink) 12%, transparent);
+}
+.ui-select-option {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.ui-select-option:hover,
+.ui-select-option[data-active="true"] {
+  background: var(--surfaceMuted);
+  color: var(--primary);
+}
+.ui-select-option:is([aria-selected="true"], [aria-pressed="true"]) {
+  background: var(--primary);
+  color: var(--onPrimary);
+  font-weight: 700;
+}
+.ui-select-trigger:focus-visible,
+.ui-select-option:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: -3px;
+}
+.ui-select-trigger:disabled,
+.ui-select-option:disabled,
+.ui-select-option[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.ui-select-empty {
+  padding: 12px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.btn {
+  min-height: 48px;
+  border-radius: 4px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.45;
+}
+.btn.secondary:hover {
+  background: var(--surfaceMuted);
+  color: var(--primary);
+}
+.btn:disabled {
+  cursor: not-allowed;
+}
+.menu,
+.close-btn {
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.close-btn {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  line-height: 1;
+}
+.close-btn:hover,
+.menu:hover {
+  background: var(--surfaceMuted);
+}
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+.stepper {
+  border-radius: 4px;
+}
+.registry-fields input:not([type="number"]) {
+  border-radius: 0;
+}
+.guest-toggle {
+  align-items: center;
+  gap: 12px;
+  line-height: 1.45;
+}
+.guest-toggle #guestSummary {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.guest-toggle > span:last-child {
+  flex-shrink: 0;
+}
+.registry-top,
+.registry-bottom,
+.exhibit-ledger,
+.plate-heading,
+.tour-action,
+.dialog-actions {
+  flex-wrap: wrap;
+}
+.registry-top > *,
+.registry-bottom > *,
+.exhibit-ledger > *,
+.tour-copy,
+.occupancy > *,
+.dialog-head > div,
+.dialog-head > h2 {
+  min-width: 0;
+}
+.exhibit-ledger .btn {
+  white-space: normal;
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+.exhibit-ledger .price {
+  overflow-wrap: anywhere;
+}
+.dates {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr));
+}
+.stepper input:not([type="radio"]) {
+  flex: 1;
+  min-width: 0;
+}
+.stepper button {
+  flex-shrink: 0;
+  min-height: 44px;
+}
+.age-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr));
+}
+.age-grid label,
+.age-room legend {
+  overflow-wrap: anywhere;
+}
+.overlay {
+  padding: 24px;
+}
+.dialog {
+  max-height: calc(100dvh - 48px);
+  max-width: 100%;
+  border: 1px solid var(--fieldBorder);
+  border-top: 3px double var(--primary);
+  border-bottom: 3px double var(--primary);
+  border-radius: 4px;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+.dialog-head {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--surface);
+  border-bottom: 3px double var(--border);
+  padding: 20px 24px;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.dialog-head h2 {
+  overflow-wrap: anywhere;
+  line-height: 1.2;
+}
+.dialog-head > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.dialog-content,
+.dialog-actions,
+.drawer-total,
+.checkout-ledger,
+.trip-line {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.dialog-actions {
+  border-top: 3px double var(--border);
+}
+.dialog-actions > * {
+  min-width: 0;
+}
+.dialog-actions .btn {
+  flex-shrink: 0;
+  max-width: 100%;
+}
+.drawer {
+  max-width: 100vw;
+  max-height: 100dvh;
+  border-left: 3px double var(--primary);
+}
+.drawer .dialog-content {
+  min-height: 0;
+  overscroll-behavior: contain;
+}
+.drawer-total {
+  flex-shrink: 0;
+  border-top: 3px double var(--primary);
+}
+#paymentPanel label {
+  border-radius: 4px;
+}
+#modalTitle {
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.2;
+  margin: 8px 0 12px;
+  overflow-wrap: anywhere;
+}
+#paymentPanel input[type="radio"] {
+  flex-shrink: 0;
+}
+#paymentPanel > div {
+  flex-wrap: wrap;
+}
+#toast {
+  z-index: 55;
+  pointer-events: none;
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+.mobile-nav {
+  max-height: calc(100dvh - 76px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  border-bottom: 3px double var(--primary);
+}
+@media (max-width: 767px) {
+  .overlay {
+    padding: 12px;
+  }
+  .dialog {
+    max-height: calc(100dvh - 24px);
+  }
+  .dialog-head,
+  .dialog-content,
+  .dialog-actions,
+  .drawer-total {
+    padding: 20px;
+  }
+  .dialog-head h2 {
+    font-size: 24px;
+  }
+  .dialog-actions .btn {
+    width: 100%;
+  }
+  .exhibit-ledger {
+    align-items: start;
+  }
+  .mobile-nav {
+    max-height: calc(100dvh - 70px);
+  }
+}
+@media (max-width: 399px) {
+  .drawer-total {
+    padding: 16px;
+  }
+  .exhibit-ledger {
+    flex-direction: column;
+  }
+  .exhibit-ledger .btn {
+    width: 100%;
+  }
+  .registry-expansion {
+    padding: 14px;
+  }
+  .manifesto {
+    padding: 20px;
+  }
+}

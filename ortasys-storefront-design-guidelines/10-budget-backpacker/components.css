@@ -1,0 +1,338 @@
+/* Branded controls retain the native form elements and booking events. */
+body .ui-select {
+  display: block;
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+}
+body .ui-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 11px 12px;
+  border: 1px solid var(--fieldBorder);
+  border-radius: var(--fieldRadius);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+  cursor: pointer;
+}
+body .ui-select-value {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+body .ui-select-chevron {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  color: var(--primary);
+}
+body .ui-select-trigger[aria-expanded="true"] {
+  border-color: var(--primary);
+  background: var(--surfaceMuted);
+}
+body .ui-select-menu {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 6px;
+  border: 1px solid var(--fieldBorder);
+  border-radius: var(--cardRadius);
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 14px;
+  line-height: 1.5;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scroll-padding: 6px;
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--text) 18%, transparent);
+  max-width: calc(100vw - 16px);
+}
+body .ui-select-option {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  margin: 0;
+  padding: 11px 12px;
+  border: 0;
+  border-radius: var(--fieldRadius);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+body .ui-select-option:hover,
+body .ui-select-option[data-active="true"] {
+  background: var(--surfaceMuted);
+  color: var(--primary);
+}
+body .ui-select-option:is([aria-selected="true"], [aria-pressed="true"]) {
+  background: var(--primary);
+  color: var(--onPrimary);
+  font-weight: 700;
+}
+body .ui-select-empty {
+  padding: 12px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+body :is(button, a, input, select, textarea):focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+body .ui-select-option:focus-visible {
+  outline-offset: -3px;
+}
+body .ui-select-trigger:disabled,
+body .ui-select-option:disabled,
+body .ui-select-option[aria-disabled="true"] {
+  color: var(--muted);
+  background: var(--surfaceMuted);
+  cursor: not-allowed;
+}
+body :is(.btn, .mode-tab, .filter-btn, .close-btn, .bag-btn, .menu-btn) {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.45;
+}
+body .btn {
+  gap: 8px;
+  min-height: 48px;
+  text-align: center;
+  max-width: 100%;
+}
+body .btn:disabled {
+  cursor: not-allowed;
+  background: var(--surfaceMuted);
+  color: var(--muted);
+  border-color: var(--fieldBorder);
+  opacity: 1;
+}
+body .dialog {
+  box-sizing: border-box;
+  width: min(700px, calc(100vw - 24px));
+  max-width: calc(100vw - 24px);
+  max-height: calc(100dvh - 24px);
+  padding: 0;
+  overflow: hidden;
+}
+body .dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+body .dialog-head {
+  flex: 0 0 auto;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px;
+  background: var(--surface);
+}
+body .dialog-head > :not(.close-btn) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+body .dialog-head h2 {
+  line-height: 1.2;
+}
+body .close-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  min-height: 44px;
+  padding: 0;
+  font-size: 22px;
+  line-height: 1;
+}
+body .dialog-body {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 24px;
+  scroll-padding-block: 16px;
+  overflow-wrap: anywhere;
+}
+body .dialog-body > img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: clamp(160px, 28vh, 260px);
+  object-fit: cover;
+}
+body .dialog-body .price-stub {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 18px;
+  border: 1px solid var(--border);
+}
+body .dialog-body .price-stub:before,
+body .dialog-body .price-stub:after {
+  display: none;
+}
+body .dialog-body .price-stub > div {
+  min-width: 0;
+  flex: 1 1 180px;
+}
+body .dialog-body .price-stub .btn {
+  width: auto;
+  flex: 1 1 180px;
+}
+body .trip-item {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+body .trip-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+body .trip-total strong {
+  overflow-wrap: anywhere;
+}
+body .checkout-form {
+  min-width: 0;
+}
+body .checkout-form .field {
+  min-width: 0;
+}
+body .dialog-body > .btn,
+body #payBtn {
+  width: 100%;
+}
+body .tags {
+  gap: 6px;
+  flex-wrap: wrap;
+}
+body .tags span {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+body .age-grid .field {
+  min-width: 0;
+}
+body .result-meta {
+  gap: 12px;
+  flex-wrap: wrap;
+}
+body .result-meta .ui-select {
+  max-width: 100%;
+  flex: 0 1 240px;
+}
+body .result-tools > * {
+  min-width: 0;
+}
+body .header-actions {
+  flex-shrink: 0;
+}
+body .brand,
+body .brand > span {
+  min-width: 0;
+}
+body #mobileNav {
+  max-height: calc(100dvh - 88px);
+  overflow: auto;
+}
+body #mobileNav a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+body #toast {
+  max-width: calc(100vw - 32px);
+  width: max-content;
+  pointer-events: none;
+  bottom: 16px;
+  border-radius: var(--fieldRadius);
+  padding: 10px 16px;
+  line-height: 1.5;
+}
+@media (max-width: 600px) {
+  body .dialog-head {
+    padding: 18px;
+    gap: 12px;
+  }
+  body .dialog-head h2 {
+    font-size: 23px;
+  }
+  body .dialog-body {
+    padding: 18px;
+  }
+  body .age-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body .result-meta .ui-select {
+    flex: 1 1 180px;
+  }
+  body .dialog-body .price-stub {
+    padding: 14px;
+  }
+  body .dialog-body .price-stub .btn {
+    width: 100%;
+  }
+  body #toast {
+    left: 16px;
+    right: 16px;
+    transform: none;
+    bottom: 12px;
+  }
+}
+@media (max-width: 360px) {
+  body .dates,
+  body .ticket-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  body .ticket-fields > .field:first-child {
+    grid-column: auto;
+  }
+  body .age-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  body .brand strong {
+    font-size: 15px;
+  }
+  body .bag-btn {
+    padding-inline: 8px;
+  }
+}
+/* Jalan Hemat: utility ticket, sturdy corners, perforated separators. */
+body.jalan .ui-select-menu {
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 var(--hair);
+}
+body.jalan .ui-select-option {
+  border-radius: 4px;
+  border-bottom: 1px dashed var(--hair);
+}
+body.jalan .dialog-head {
+  border-bottom: 2px dashed var(--border);
+  background: var(--surfaceMuted);
+}
+body.jalan .dialog-body .price-stub {
+  border: 1px dashed var(--primary);
+  background: var(--surfaceMuted);
+}
+body.jalan .trip-item {
+  border-bottom-style: dashed;
+}

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akar Budaya Travel · Perjalanan Warisan &amp; Budaya Nusantara</title>
+  <link rel="icon" type="image/png" href="./assets/logo-mark.png">
+  <meta name="description" content="Akar Budaya Travel — Spesialis perjalanan budaya, warisan sejarah, kerajinan tradisional, dan kuliner nusantara. Didukung oleh Ortasys S4.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* Ortasys Storefront Preset 04 · Culture & Heritage (04-culture-heritage/DESIGN.md) */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#803D32', hover: '#642E27' },
+            secondary: '#C77B55',
+            tertiary: '#D6B58D',
+            accent: '#52634C',
+            canvas: '#F5EFE5',
+            surface: { DEFAULT: '#FFFAF2', muted: '#E8D8BE' },
+            ink: { DEFAULT: '#302822', muted: '#695E53' },
+            line: '#D8C9B6',
+            success: '#426B4C',
+            warning: '#92602A',
+            danger: '#A84237'
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+            mono: ['ui-monospace', 'monospace']
+          },
+          borderRadius: {
+            xs: '2px',
+            sm: '4px',
+            md: '8px',
+            lg: '14px',
+            xl: '20px',
+            pill: '9999px'
+          },
+          boxShadow: {
+            card: '0 4px 18px -4px rgba(48, 40, 34, 0.08)',
+            elevated: '0 14px 32px -6px rgba(128, 61, 50, 0.12)'
+          },
+          maxWidth: { container: '1220px' }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: 'Source Sans 3', system-ui, sans-serif; background-color: #F5EFE5; color: #302822; }
+    .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on; }
+    .stepper input::-webkit-outer-spin-button,
+    .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .stepper input { -moz-appearance: textfield; }
+    :focus-visible { outline: 2px solid #803D32; outline-offset: 2px; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+  </style>
+</head><body><nav class="max-w-container mx-auto px-6 py-5 flex flex-wrap gap-5 border-b border-line text-primary font-bold" aria-label="Dokumentasi"><a href="index.html">← Etalase</a><a href="guidelines.html">Pedoman merek</a><a href="search-board.html">Papan pencarian</a><a href="figcraft.html">Referensi FigCraft</a></nav><main id="viewGuidelines" class="max-w-container mx-auto px-4 sm:px-6 py-12 space-y-12"><!-- 00 COVER -->
+<div class="rounded-xl bg-primary text-white p-8 sm:p-12 shadow-elevated grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+  <div class="lg:col-span-7 space-y-4">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/15 text-white text-[11px] font-bold uppercase tracking-widest">
+      <span>04 · BRAND GUIDELINES &amp; DESIGN SYSTEM</span>
+    </div>
+    <h1 class="font-display text-[38px] sm:text-[52px] leading-[1.06]">Akar Budaya Travel</h1>
+    <p class="text-[16px] text-white/85 leading-relaxed max-w-2xl">Jurnal perjalanan pusaka &amp; singgah bersejarah Nusantara — kurasi rumah warisan, lokakarya kriya, dan ziarah budaya. — Panduan lengkap identitas merek, sistem logo, palet warna WCAG 2.1 AA, tipografi Playfair Display + Source Sans 3, anatomi mesin pencari, dan komponen etalase Ortasys S4.</p>
+    <div class="flex flex-wrap items-center gap-4 pt-2">
+      <div class="flex items-center gap-3 bg-white/10 px-4 py-2.5 rounded-lg border border-white/20">
+        <img src="./assets/logo-mark-dark.png" alt="LogoDark" class="w-9 h-9 object-contain">
+        <div>
+          <span class="font-display text-[18px] block leading-none">Akar Budaya Travel</span>
+          <span class="text-[10px] uppercase tracking-widest text-white/75">Culture &amp; Heritage</span>
+        </div>
+      </div>
+      <span class="px-3 py-1.5 rounded-full bg-amber-100 text-amber-900 text-[11px] font-bold">Contoh Konten Agen · Ortasys S4</span>
+    </div>
+  </div>
+  <div class="lg:col-span-5">
+    <img src="./assets/brand-mockup.webp" alt="Brand Mockup Akar Budaya Travel" class="w-full h-72 sm:h-80 object-cover rounded-xl border-2 border-white/20 shadow-lg">
+  </div>
+</div>
+
+<!-- 01 STRATEGI & RISET -->
+<div class="rounded-xl bg-surface border border-line p-6 sm:p-10 shadow-soft space-y-6">
+  <div class="border-b border-line pb-4">
+    <span class="text-[11px] font-bold uppercase tracking-widest text-accent">Bagian 01 · Strategi &amp; Riset Segmen</span>
+    <h2 class="font-display text-[28px] sm:text-[34px] text-ink mt-1">Posisi Merek &amp; Temuan Riset Desain (Culture &amp; Heritage)</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    
+    <div class="p-5 rounded-lg bg-canvas border border-line flex items-start gap-3.5">
+      <span class="w-7 h-7 rounded-full bg-primary text-white text-[12px] font-bold flex items-center justify-center shrink-0">01</span>
+      <p class="text-[13.5px] text-ink leading-relaxed">Palet: oxblood #803D32 sebagai tinta aksi (≤10%), parchment #FFFAF2 sebagai kertas, sandstone/clay hanya dekorasi non-teks, moss #52634C untuk status positif/label alam.</p>
+    </div>
+    <div class="p-5 rounded-lg bg-canvas border border-line flex items-start gap-3.5">
+      <span class="w-7 h-7 rounded-full bg-primary text-white text-[12px] font-bold flex items-center justify-center shrink-0">02</span>
+      <p class="text-[13.5px] text-ink leading-relaxed">Bentuk: radius 2–4px (tombol/field 4), kartu 8px, bingkai foto 2px dengan double rule; tanpa bayangan kecuali popover.</p>
+    </div>
+    <div class="p-5 rounded-lg bg-canvas border border-line flex items-start gap-3.5">
+      <span class="w-7 h-7 rounded-full bg-primary text-white text-[12px] font-bold flex items-center justify-center shrink-0">03</span>
+      <p class="text-[13.5px] text-ink leading-relaxed">Imagery: dokumenter hangat, manusia hanya dari belakang/kecil/tangan; tidak ada upacara sakral sebagai tontonan.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 02 SISTEM LOGO -->
+<div class="rounded-xl bg-surface border border-line p-6 sm:p-10 shadow-soft space-y-6">
+  <div class="border-b border-line pb-4">
+    <span class="text-[11px] font-bold uppercase tracking-widest text-accent">Bagian 02 · Sistem Logo &amp; Lockup</span>
+    <h2 class="font-display text-[28px] sm:text-[34px] text-ink mt-1">Master Mark, Varian Latar, Clear Space &amp; Aplikasi Merek</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="p-8 rounded-xl bg-canvas border border-line flex flex-col items-center justify-center gap-4 text-center">
+      <span class="text-[10px] font-bold uppercase tracking-widest text-ink-muted">Lockup Latar Terang (logo-mark.png)</span>
+      <div class="flex items-center gap-3.5 py-4">
+        <img src="./assets/logo-mark.png" alt="Logo Terang" class="w-14 h-14 object-contain">
+        <div class="text-left">
+          <span class="font-display text-[26px] font-bold text-ink block leading-none">Akar Budaya Travel</span>
+          <span class="text-[10px] uppercase tracking-widest text-ink-muted font-bold block mt-1">Wisata Warisan &amp; Kajian Nusantara</span>
+        </div>
+      </div>
+      <p class="text-[12px] text-ink-muted">Digunakan pada permukaan terang (#F5EFE5, #FFFAF2) dengan ruang bebas minimal 0,25× tinggi simbol.</p>
+    </div>
+
+    <div class="p-8 rounded-xl bg-primary text-white flex flex-col items-center justify-center gap-4 text-center">
+      <span class="text-[10px] font-bold uppercase tracking-widest text-white/75">Lockup Latar Gelap (logo-mark-dark.png)</span>
+      <div class="flex items-center gap-3.5 py-4">
+        <img src="./assets/logo-mark-dark.png" alt="Logo Gelap" class="w-14 h-14 object-contain">
+        <div class="text-left">
+          <span class="font-display text-[26px] font-bold text-white block leading-none">Akar Budaya Travel</span>
+          <span class="text-[10px] uppercase tracking-widest text-white/80 font-bold block mt-1">Wisata Warisan &amp; Kajian Nusantara</span>
+        </div>
+      </div>
+      <p class="text-[12px] text-white/80">Digunakan pada permukaan gelap (#803D32, #642E27) dan bagian footer malam.</p>
+    </div>
+
+    <div class="rounded-xl overflow-hidden border border-line bg-canvas flex flex-col">
+      <img src="./assets/brand-mockup.webp" alt="Brand Application" class="w-full h-44 object-cover">
+      <div class="p-4">
+        <span class="text-[10px] font-bold uppercase tracking-widest text-accent">Aplikasi Identitas Merek</span>
+        <p class="text-[12.5px] text-ink mt-1">Penerapan konsisten pada papan nama, kartu tamu, dan perlengkapan perjalanan.</p>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 text-[12.5px]">
+    <div class="p-4 rounded-lg bg-red-50 border border-red-200 text-red-900"><strong>✕ Jangan</strong> mengubah proporsi, memiringkan, atau menambahkan efek drop-shadow neon pada simbol logo.</div>
+    <div class="p-4 rounded-lg bg-red-50 border border-red-200 text-red-900"><strong>✕ Jangan</strong> menempatkan logo di atas area foto ramai tanpa lapisan scrim/kontras yang memadai.</div>
+    <div class="p-4 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-900"><strong>✓ Ukuran Minimum:</strong> tinggi simbol minimal 24px untuk ikon saja dan 32px untuk lockup penuh.</div>
+  </div>
+</div>
+
+<!-- 03 WARNA & KONTRAS WCAG 2.1 AA -->
+<div class="rounded-xl bg-surface border border-line p-6 sm:p-10 shadow-soft space-y-6">
+  <div class="border-b border-line pb-4">
+    <span class="text-[11px] font-bold uppercase tracking-widest text-accent">Bagian 03 · Sistem Warna &amp; Matriks Kontras WCAG 2.1 AA</span>
+    <h2 class="font-display text-[28px] sm:text-[34px] text-ink mt-1">Token Warna Inti &amp; Derivasi Aksesibilitas</h2>
+  </div>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
+    
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas flex flex-col">
+      <div class="h-20 p-3 flex items-end justify-between" style="background:#803D32;color:#FFFFFF">
+        <span class="font-mono text-[11px] font-bold">#803D32</span>
+      </div>
+      <div class="p-3 flex-1">
+        <p class="text-[12px] font-bold text-ink">Primary</p>
+        <p class="text-[11px] text-ink-muted mt-0.5 leading-snug">Primary action, active navigation, key brand anchor</p>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas flex flex-col">
+      <div class="h-20 p-3 flex items-end justify-between" style="background:#642E27;color:#FFFFFF">
+        <span class="font-mono text-[11px] font-bold">#642E27</span>
+      </div>
+      <div class="p-3 flex-1">
+        <p class="text-[12px] font-bold text-ink">Primary Hover</p>
+        <p class="text-[11px] text-ink-muted mt-0.5 leading-snug">Hover &amp; pressed state for primary controls</p>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas flex flex-col">
+      <div class="h-20 p-3 flex items-end justify-between" style="background:#C77B55;color:#302822">
+        <span class="font-mono text-[11px] font-bold">#C77B55</span>
+      </div>
+      <div class="p-3 flex-1">
+        <p class="text-[12px] font-bold text-ink">Secondary</p>
+        <p class="text-[11px] text-ink-muted mt-0.5 leading-snug">Secondary highlights, badges &amp; supporting accents</p>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas flex flex-col">
+      <div class="h-20 p-3 flex items-end justify-between" style="background:#D6B58D;color:#302822">
+        <span class="font-mono text-[11px] font-bold">#D6B58D</span>
+      </div>
+      <div class="p-3 flex-1">
+        <p class="text-[12px] font-bold text-ink">Tertiary</p>
+        <p class="text-[11px] text-ink-muted mt-0.5 leading-snug">Warm supporting surfaces &amp; editorial dividers</p>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas flex flex-col">
+      <div class="h-20 p-3 flex items-end justify-between" style="background:#52634C;color:#FFFFFF">
+        <span class="font-mono text-[11px] font-bold">#52634C</span>
+      </div>
+      <div class="p-3 flex-1">
+        <p class="text-[12px] font-bold text-ink">Accent</p>
+        <p class="text-[11px] text-ink-muted mt-0.5 leading-snug">Focused emphasis markers &amp; category tags</p>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas flex flex-col">
+      <div class="h-20 p-3 flex items-end justify-between" style="background:#F5EFE5;color:#302822">
+        <span class="font-mono text-[11px] font-bold">#F5EFE5</span>
+      </div>
+      <div class="p-3 flex-1">
+        <p class="text-[12px] font-bold text-ink">Background Canvas</p>
+        <p class="text-[11px] text-ink-muted mt-0.5 leading-snug">Main page canvas &amp; broad section background</p>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas flex flex-col">
+      <div class="h-20 p-3 flex items-end justify-between" style="background:#FFFAF2;color:#302822">
+        <span class="font-mono text-[11px] font-bold">#FFFAF2</span>
+      </div>
+      <div class="p-3 flex-1">
+        <p class="text-[12px] font-bold text-ink">Surface</p>
+        <p class="text-[11px] text-ink-muted mt-0.5 leading-snug">Cards, search console, popovers &amp; modals</p>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas flex flex-col">
+      <div class="h-20 p-3 flex items-end justify-between" style="background:#E8D8BE;color:#302822">
+        <span class="font-mono text-[11px] font-bold">#E8D8BE</span>
+      </div>
+      <div class="p-3 flex-1">
+        <p class="text-[12px] font-bold text-ink">Surface Muted</p>
+        <p class="text-[11px] text-ink-muted mt-0.5 leading-snug">Secondary container contrast &amp; table headers</p>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas flex flex-col">
+      <div class="h-20 p-3 flex items-end justify-between" style="background:#302822;color:#FFFAF2">
+        <span class="font-mono text-[11px] font-bold">#302822</span>
+      </div>
+      <div class="p-3 flex-1">
+        <p class="text-[12px] font-bold text-ink">Text Primary</p>
+        <p class="text-[11px] text-ink-muted mt-0.5 leading-snug">Headings, body copy &amp; primary data values</p>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas flex flex-col">
+      <div class="h-20 p-3 flex items-end justify-between" style="background:#75685C;color:#FFFAF2">
+        <span class="font-mono text-[11px] font-bold">#75685C</span>
+      </div>
+      <div class="p-3 flex-1">
+        <p class="text-[12px] font-bold text-ink">Text Muted (Raw)</p>
+        <p class="text-[11px] text-ink-muted mt-0.5 leading-snug">Metadata, captions &amp; helper descriptions</p>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas flex flex-col">
+      <div class="h-20 p-3 flex items-end justify-between" style="background:#D8C9B6;color:#302822">
+        <span class="font-mono text-[11px] font-bold">#D8C9B6</span>
+      </div>
+      <div class="p-3 flex-1">
+        <p class="text-[12px] font-bold text-ink">Border</p>
+        <p class="text-[11px] text-ink-muted mt-0.5 leading-snug">Hairline card dividers &amp; structural rules</p>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas flex flex-col">
+      <div class="h-20 p-3 flex items-end justify-between" style="background:#426B4C;color:#FFFFFF">
+        <span class="font-mono text-[11px] font-bold">#426B4C</span>
+      </div>
+      <div class="p-3 flex-1">
+        <p class="text-[12px] font-bold text-ink">Success</p>
+        <p class="text-[11px] text-ink-muted mt-0.5 leading-snug">Live price assurance &amp; verified confirmation</p>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas flex flex-col">
+      <div class="h-20 p-3 flex items-end justify-between" style="background:#9A652C;color:#FFFFFF">
+        <span class="font-mono text-[11px] font-bold">#9A652C</span>
+      </div>
+      <div class="p-3 flex-1">
+        <p class="text-[12px] font-bold text-ink">Warning</p>
+        <p class="text-[11px] text-ink-muted mt-0.5 leading-snug">Quota notices &amp; seasonal advisories</p>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas flex flex-col">
+      <div class="h-20 p-3 flex items-end justify-between" style="background:#A84237;color:#FFFFFF">
+        <span class="font-mono text-[11px] font-bold">#A84237</span>
+      </div>
+      <div class="p-3 flex-1">
+        <p class="text-[12px] font-bold text-ink">Error</p>
+        <p class="text-[11px] text-ink-muted mt-0.5 leading-snug">Validation alerts &amp; destructive actions</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contrast Matrix -->
+  <div class="pt-4">
+    <h3 class="font-display text-[20px] text-ink mb-3">Matriks Verifikasi Kontras WCAG 2.1 AA</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+      
+      <div class="p-4 rounded-lg border border-line bg-canvas flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-md border border-line flex items-center justify-center font-display font-bold text-base shrink-0" style="background:#F5EFE5;color:#302822">Aa</span>
+          <div>
+            <p class="text-[12.5px] font-bold text-ink">Text Primary on Canvas</p>
+            <p class="font-mono text-[11px] text-ink-muted">#302822 on #F5EFE5</p>
+          </div>
+        </div>
+        <span class="px-2.5 py-1 rounded-full text-[11px] font-mono font-bold bg-emerald-100 text-emerald-900">12.64:1 AAA</span>
+      </div>
+      <div class="p-4 rounded-lg border border-line bg-canvas flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-md border border-line flex items-center justify-center font-display font-bold text-base shrink-0" style="background:#FFFAF2;color:#302822">Aa</span>
+          <div>
+            <p class="text-[12.5px] font-bold text-ink">Text Primary on Surface</p>
+            <p class="font-mono text-[11px] text-ink-muted">#302822 on #FFFAF2</p>
+          </div>
+        </div>
+        <span class="px-2.5 py-1 rounded-full text-[11px] font-mono font-bold bg-emerald-100 text-emerald-900">13.91:1 AAA</span>
+      </div>
+      <div class="p-4 rounded-lg border border-line bg-canvas flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-md border border-line flex items-center justify-center font-display font-bold text-base shrink-0" style="background:#803D32;color:#FFFFFF">Aa</span>
+          <div>
+            <p class="text-[12.5px] font-bold text-ink">White on Primary CTA</p>
+            <p class="font-mono text-[11px] text-ink-muted">#FFFFFF on #803D32</p>
+          </div>
+        </div>
+        <span class="px-2.5 py-1 rounded-full text-[11px] font-mono font-bold bg-emerald-100 text-emerald-900">7.98:1 AAA</span>
+      </div>
+      <div class="p-4 rounded-lg border border-line bg-canvas flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-md border border-line flex items-center justify-center font-display font-bold text-base shrink-0" style="background:#FFFAF2;color:#803D32">Aa</span>
+          <div>
+            <p class="text-[12.5px] font-bold text-ink">Primary on Surface</p>
+            <p class="font-mono text-[11px] text-ink-muted">#803D32 on #FFFAF2</p>
+          </div>
+        </div>
+        <span class="px-2.5 py-1 rounded-full text-[11px] font-mono font-bold bg-emerald-100 text-emerald-900">7.68:1 AAA</span>
+      </div>
+      <div class="p-4 rounded-lg border border-line bg-canvas flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-md border border-line flex items-center justify-center font-display font-bold text-base shrink-0" style="background:#F5EFE5;color:#695E53">Aa</span>
+          <div>
+            <p class="text-[12.5px] font-bold text-ink">Derived AA Muted on Canvas</p>
+            <p class="font-mono text-[11px] text-ink-muted">#695E53 on #F5EFE5</p>
+          </div>
+        </div>
+        <span class="px-2.5 py-1 rounded-full text-[11px] font-mono font-bold bg-green-100 text-green-900">5.52:1 AA</span>
+      </div>
+      <div class="p-4 rounded-lg border border-line bg-canvas flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-md border border-line flex items-center justify-center font-display font-bold text-base shrink-0" style="background:#FFFAF2;color:#8F8579">Aa</span>
+          <div>
+            <p class="text-[12.5px] font-bold text-ink">Derived Field Border on Surface</p>
+            <p class="font-mono text-[11px] text-ink-muted">#8F8579 on #FFFAF2</p>
+          </div>
+        </div>
+        <span class="px-2.5 py-1 rounded-full text-[11px] font-mono font-bold bg-amber-100 text-amber-900">3.48:1 AA UI</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 04 TIPOGRAFI & 05 BENTUK/RADIUS -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+  <div class="lg:col-span-7 rounded-xl bg-surface border border-line p-6 sm:p-8 shadow-soft space-y-4">
+    <span class="text-[11px] font-bold uppercase tracking-widest text-accent">Bagian 04 · Sistem Tipografi</span>
+    <h2 class="font-display text-[26px] sm:text-[30px] text-ink">Playfair Display + Source Sans 3</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+      <div class="p-5 rounded-lg bg-canvas border border-line">
+        <span class="text-[10px] font-bold uppercase tracking-widest text-primary">Display &amp; Tajuk Editorial</span>
+        <p class="font-display text-[36px] text-ink leading-none mt-2">Aa Bb Cc</p>
+        <p class="font-display text-[18px] text-ink mt-2">Playfair Display</p>
+        <p class="text-[12px] text-ink-muted mt-1">Digunakan untuk judul hero, tajuk seksi, dan nama properti utama.</p>
+      </div>
+      <div class="p-5 rounded-lg bg-canvas border border-line">
+        <span class="text-[10px] font-bold uppercase tracking-widest text-primary">UI, Form &amp; Data Tabular</span>
+        <p class="font-sans font-bold text-[36px] text-ink leading-none mt-2">Aa 0123</p>
+        <p class="font-sans font-bold text-[18px] text-ink mt-2">Source Sans 3</p>
+        <p class="text-[12px] text-ink-muted mt-1 tnum">Rp 2.450.000 · 9–12 Nov 2026 · 2 Dewasa (Tabular Numerals aktif).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lg:col-span-5 rounded-xl bg-surface border border-line p-6 sm:p-8 shadow-soft space-y-4">
+    <span class="text-[11px] font-bold uppercase tracking-widest text-accent">Bagian 05 · Geometri &amp; Sudut (Radius)</span>
+    <h2 class="font-display text-[26px] sm:text-[30px] text-ink">Skala Sudut &amp; Kontainer</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+      
+      <div class="p-4 bg-canvas border-2 border-primary/40 flex flex-col justify-between h-24" style="border-radius:2px">
+        <span class="text-[11px] font-bold uppercase text-primary">xs</span>
+        <span class="font-mono text-[13px] font-bold text-ink">2px</span>
+      </div>
+      <div class="p-4 bg-canvas border-2 border-primary/40 flex flex-col justify-between h-24" style="border-radius:4px">
+        <span class="text-[11px] font-bold uppercase text-primary">sm</span>
+        <span class="font-mono text-[13px] font-bold text-ink">4px</span>
+      </div>
+      <div class="p-4 bg-canvas border-2 border-primary/40 flex flex-col justify-between h-24" style="border-radius:8px">
+        <span class="text-[11px] font-bold uppercase text-primary">md</span>
+        <span class="font-mono text-[13px] font-bold text-ink">8px</span>
+      </div>
+      <div class="p-4 bg-canvas border-2 border-primary/40 flex flex-col justify-between h-24" style="border-radius:14px">
+        <span class="text-[11px] font-bold uppercase text-primary">lg</span>
+        <span class="font-mono text-[13px] font-bold text-ink">14px</span>
+      </div>
+      <div class="p-4 bg-canvas border-2 border-primary/40 flex flex-col justify-between h-24" style="border-radius:20px">
+        <span class="text-[11px] font-bold uppercase text-primary">xl</span>
+        <span class="font-mono text-[13px] font-bold text-ink">20px</span>
+      </div>
+      <div class="p-4 bg-canvas border-2 border-primary/40 flex flex-col justify-between h-24" style="border-radius:9999px">
+        <span class="text-[11px] font-bold uppercase text-primary">pill</span>
+        <span class="font-mono text-[13px] font-bold text-ink">9999px</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 06 & 07 ARSITEKTUR UNIK & KOMPONEN SIGNATURE -->
+<div class="rounded-xl bg-surface border border-line p-6 sm:p-10 shadow-soft space-y-6">
+  <div class="border-b border-line pb-4">
+    <span class="text-[11px] font-bold uppercase tracking-widest text-accent">Bagian 06 &amp; 07 · Unique Architectural &amp; Component DNA</span>
+    <h2 class="font-display text-[28px] sm:text-[34px] text-ink mt-1">Pola Tata Letak &amp; Komponen Khas Preset 04</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    
+    <div class="p-5 rounded-lg bg-canvas border border-line">
+      <h3 class="font-display text-[19px] text-primary">Hero Architecture (Broadsheet Monograph Front-Page):</h3>
+      <p class="text-[13.5px] text-ink-muted mt-1.5 leading-relaxed">Framed by double horizontal rules (`border-y-2 border-primary`) with a centered journal masthead (*Jurnal Perjalanan Pusaka Nusantara · Edisi Warisan Hidup*) and a 3-column newspaper front-page layout (Left 3 cols: Editor's Cultural Note &amp; Drop-Cap; Center 6 cols: Archival Framed Photography with caption plate; Right 3 cols: Curated Heritage Index).</p>
+    </div>
+    <div class="p-5 rounded-lg bg-canvas border border-line">
+      <h3 class="font-display text-[19px] text-primary">Search Engine UI (Archival Registry / Buku Tamu Console):</h3>
+      <p class="text-[13.5px] text-ink-muted mt-1.5 leading-relaxed">Styled like a heritage guest registry book on warm parchment (`#FFFAF2`) with double-line borders, numbered archival field labels (`I. Destinasi Pusaka`, `II. Tanggal Singgah`, `III. Rombongan Pejalan`), and a terracotta wax-seal-colored verification button.</p>
+    </div>
+    <div class="p-5 rounded-lg bg-canvas border border-line">
+      <h3 class="font-display text-[19px] text-primary">Inventory Section Layout (Broadsheet Columnar Exhibition):</h3>
+      <p class="text-[13.5px] text-ink-muted mt-1.5 leading-relaxed">Cards sit inside a unified newspaper-column grid divided by vertical sandstone hairlines (`lg:divide-x divide-line`), where each property is presented as an archival plate (`ARSIP 01`, `ARSIP 02`, `ARSIP 03`) with serif headlines, historical context, and live tariff ledger.</p>
+    </div>
+    <div class="p-5 rounded-lg bg-canvas border border-line">
+      <h3 class="font-display text-[19px] text-primary">Cultural Experiences Layout (2-Column Archival Story Spreads):</h3>
+      <p class="text-[13.5px] text-ink-muted mt-1.5 leading-relaxed">Side-by-side documentary spreads with museum-caption metadata and historian guide notes.</p>
+    </div>
+    <div class="p-5 rounded-lg bg-canvas border border-line">
+      <h3 class="font-display text-[19px] text-primary">Manifesto Section (Centered Pull-Quote &amp; 3-Column Monograph):</h3>
+      <p class="text-[13.5px] text-ink-muted mt-1.5 leading-relaxed">Opens with a large serif pull-quote followed by a 3-column vertical-rule essay on cultural ethics.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 08 GALERI ASET VISUAL TERKURASI -->
+<div class="rounded-xl bg-surface border border-line p-6 sm:p-10 shadow-soft space-y-6">
+  <div class="border-b border-line pb-4">
+    <span class="text-[11px] font-bold uppercase tracking-widest text-accent">Bagian 08 · Direction &amp; Provenance Fotografi</span>
+    <h2 class="font-display text-[28px] sm:text-[34px] text-ink mt-1">Aset Visual Khusus Akar Budaya Travel (./assets/*.webp)</h2>
+  </div>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+    
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas">
+      <img src="./assets/hero.webp" alt="hero" class="w-full h-36 object-cover">
+      <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+        <span>assets/hero.webp</span>
+        <span class="font-bold text-primary">WebP</span>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas">
+      <img src="./assets/dest-1.webp" alt="dest-1" class="w-full h-36 object-cover">
+      <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+        <span>assets/dest-1.webp</span>
+        <span class="font-bold text-primary">WebP</span>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas">
+      <img src="./assets/dest-2.webp" alt="dest-2" class="w-full h-36 object-cover">
+      <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+        <span>assets/dest-2.webp</span>
+        <span class="font-bold text-primary">WebP</span>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas">
+      <img src="./assets/dest-3.webp" alt="dest-3" class="w-full h-36 object-cover">
+      <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+        <span>assets/dest-3.webp</span>
+        <span class="font-bold text-primary">WebP</span>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas">
+      <img src="./assets/stay-1.webp" alt="stay-1" class="w-full h-36 object-cover">
+      <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+        <span>assets/stay-1.webp</span>
+        <span class="font-bold text-primary">WebP</span>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas">
+      <img src="./assets/stay-2.webp" alt="stay-2" class="w-full h-36 object-cover">
+      <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+        <span>assets/stay-2.webp</span>
+        <span class="font-bold text-primary">WebP</span>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas">
+      <img src="./assets/stay-3.webp" alt="stay-3" class="w-full h-36 object-cover">
+      <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+        <span>assets/stay-3.webp</span>
+        <span class="font-bold text-primary">WebP</span>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas">
+      <img src="./assets/stay-4.webp" alt="stay-4" class="w-full h-36 object-cover">
+      <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+        <span>assets/stay-4.webp</span>
+        <span class="font-bold text-primary">WebP</span>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas">
+      <img src="./assets/tour-1.webp" alt="tour-1" class="w-full h-36 object-cover">
+      <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+        <span>assets/tour-1.webp</span>
+        <span class="font-bold text-primary">WebP</span>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas">
+      <img src="./assets/tour-2.webp" alt="tour-2" class="w-full h-36 object-cover">
+      <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+        <span>assets/tour-2.webp</span>
+        <span class="font-bold text-primary">WebP</span>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas">
+      <img src="./assets/tour-3.webp" alt="tour-3" class="w-full h-36 object-cover">
+      <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+        <span>assets/tour-3.webp</span>
+        <span class="font-bold text-primary">WebP</span>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden border border-line bg-canvas">
+      <img src="./assets/about.webp" alt="about" class="w-full h-36 object-cover">
+      <div class="px-3 py-2 flex items-center justify-between text-[11px] font-mono text-ink-muted">
+        <span>assets/about.webp</span>
+        <span class="font-bold text-primary">WebP</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 09 & 10 DO'S AND DON'TS + ORTASYS INVARIANTS -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="rounded-xl bg-emerald-950 text-emerald-50 p-6 sm:p-8 space-y-3">
+    <span class="text-[11px] font-bold uppercase tracking-widest text-emerald-300">Bagian 09 · Praktik Wajib (Do’s)</span>
+    <h3 class="font-display text-[24px] text-white">Pedoman Implementasi Positif</h3>
+    <ul class="space-y-2 text-[13.5px] text-emerald-100/90 leading-relaxed">
+      <li>✓ Do use storytelling to explain place, context, and experience.</li><li>✓ Do prioritize authentic, respectful, agency-approved photography.</li><li>✓ Do balance editorial content with a visible booking path.</li><li>✓ Do distinguish verified product details from editorial descriptions.</li>
+    </ul>
+  </div>
+  <div class="rounded-xl bg-rose-950 text-rose-50 p-6 sm:p-8 space-y-3">
+    <span class="text-[11px] font-bold uppercase tracking-widest text-rose-300">Bagian 10 · Larangan (Don’ts &amp; Invariants)</span>
+    <h3 class="font-display text-[24px] text-white">Batasan Kontrak Produk Ortasys S4</h3>
+    <ul class="space-y-2 text-[13.5px] text-rose-100/90 leading-relaxed">
+      <li>✕ Don't use cultural patterns as generic decoration.</li><li>✕ Don't exoticize local people or communities.</li><li>✕ Don't imply community benefit, sustainability, local ownership, or special access without evidence.</li><li>✕ Don't let serif typography compromise form readability.</li><li>✕ Don't expose supplier net rates, agent margins, or internal B2B information.</li>
+    </ul>
+  </div>
+</div></main></body></html>

@@ -88,24 +88,24 @@ components:
   button-primary:
     backgroundColor: "{colors.primary}"
     textColor: "#FFFFFF"
-    rounded: "{rounded.sm}"
+    rounded: "{rounded.xs}"
     padding: "15px 28px"
     height: 50px
   button-secondary:
     backgroundColor: "transparent"
     textColor: "{colors.primary}"
-    rounded: "{rounded.sm}"
+    rounded: "{rounded.xs}"
     padding: "15px 28px"
     height: 50px
   search-panel:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.text}"
-    rounded: "{rounded.md}"
+    rounded: "{rounded.xs}"
     padding: 28px
   property-card:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.text}"
-    rounded: "{rounded.md}"
+    rounded: "{rounded.xs}"
   input:
     backgroundColor: "#FFFFFF"
     textColor: "{colors.text}"
@@ -185,9 +185,12 @@ Prefer flat surfaces, thin borders, and natural image contrast. Shadows should b
 
 ## Shapes
 
-Use precise, restrained geometry. Buttons are subtly squared with 4px radii; inputs are nearly square; cards use 8px radii. Large image masks may use slightly larger corners, but avoid pill-shaped controls throughout the interface. The shape language should feel tailored and architectural.
+Use the locked architectural 2px corners for buttons, inputs, property frames and floating panels. Image masks may use larger corners, but avoid pill-shaped controls. The geometry stays tailored and consistent with the FigCraft ledger and brand-dna.json radiusUsage.
 
 ## Components
+
+- **Branded calendar:** single-month Indonesian picker with 2px menu corners, the same option surfaces/type/selected colors as this preset, and a fixed-size calendar icon separate from the editable date text. Arrow keys move by day/week, Home/End by week and Page Up/Down by month; Enter selects, Escape dismisses, and min/max dates disable unavailable days. The top-layer picker flips/clamps to the viewport and preserves native date values plus input/change events. Browsers without Popover API retain native controls; this is not the D12 dual-month calendar.
+- **Dropdown and dialog geometry:** charcoal/white controls and popovers retain the 2px architectural ledger corners, DM Sans functional type, 48px triggers, 44px options and separate chevrons. Guest panels become bounded bottom sheets on mobile. Dialog headers reserve a persistent 44px close target; long action labels, trip totals and payment rows wrap without collisions.
 
 - **Navigation:** understated, text-led, with a subtle active indicator. Keep menu density low.
 - **Primary button:** charcoal fill, white label, compact rectangular silhouette. Use one dominant action per section.
@@ -205,10 +208,10 @@ Use precise, restrained geometry. Buttons are subtly squared with 4px radii; inp
 To distinguish this luxury advisory preset from standard multi-card travel sites, its layout and search components follow a strict private-atelier architectural system:
 
 - **Hero Architecture (50/50 Editorial Gallery Split):** A museum-like split hero where the left 6 columns display unhurried serif typography (`Cormorant Garamond`), edition metadata, and advisory manifesto on warm alabaster canvas (`#F7F5F0`), while the right 6 columns frame a tall architectural sanctuary portrait with an inset brass border.
-- **Search Engine UI (Architectural Ledger Console):** A zero-shadow, flat-bordered rectangular ledger (`rounded-xs`) divided into crisp hairline cells (`border-line`) with bottom-underlined inputs, uppercase tracked labels (`tracking-[0.18em]`), and a flush full-height charcoal authorization button.
+- **Search Engine UI (Architectural Ledger Console):** A zero-shadow rectangular reservation ledger (2px corners), distinct from a capsule or wizard. A caption and two quiet rectangular mode tabs sit above five ruled cells: destination, check-in, check-out, guest-summary trigger, and a flush full-height charcoal submit. Guest counts and child ages expand in a 2px-corner panel anchored to the guest cell. Charter mode replaces both stay dates with one departure field. Inputs retain persistent uppercase labels and underlines. Tablet wraps into two columns; mobile keeps the date pair together, with destination, party, and submit each spanning the width.
 - **Inventory Section Layout (Alternating Full-Width Lookbook Rows):** Replaces the 3-column card grid with full-width alternating editorial rows (Row 1: Image Left / Dossier Right; Row 2: Dossier Left / Image Right; Row 3: Image Left / Dossier Right), giving every sanctuary estate gallery-level breathing room.
 - **Private Charters Layout (2-Column Editorial Spread):** Wide dual-column bespoke spreads with fine hairline frames and tabular tariff sheets.
-- **Advisory Section (Architectural Ledger Table):** A 3-row horizontal specification table with Roman numerals (`I`, `II`, `III`) detailing discretion, transparent retail settlement, and deterministic availability.
+- **Advisory Section (Architectural Ledger Table):** Three unboxed rows with Roman numerals (`I`, `II`, `III`), an editorial heading column, and a restrained explanation column. Describe the approach, transparent example pricing, and itinerary review without invented partner access or guaranteed availability.
 
 ## Homepage Composition
 
@@ -230,7 +233,7 @@ The first viewport should establish premium positioning while making the booking
 
 Use high-resolution, art-directed photography: private villas, thoughtful interiors, distinctive architecture, quiet coastlines, fine hospitality details, and authentic destination atmosphere. Favor natural light, balanced composition, and restrained color grading. Avoid over-saturated resort imagery, fake luxury cues, generic gold textures, and staged champagne imagery.
 
-Hero imagery should be wide (16:9 or wider crop); property cards should use consistent 4:3 or 3:2 crops. Provide a graceful neutral fallback. Ensure image cropping preserves the property's defining feature across desktop and mobile.
+Use a tall 450×500px framed architectural portrait in the desktop hero, matching FigCraft D01, rather than forcing this slot into a landscape crop. Property lookbook rows use generous landscape photography; the three destination images form a quieter equal-width editorial strip. On mobile, retain the portrait focal subject and stack lookbook images before their dossiers.
 
 Copy should be concise, specific, and calm. Avoid unverified words such as “exclusive access,” “VIP treatment,” “best rates,” or “24/7 concierge” unless the agency confirms the service. Sample copy must be treated as editable placeholder content, not factual Ortasys claims.
 
@@ -242,6 +245,16 @@ Copy should be concise, specific, and calm. Avoid unverified words such as “ex
 - Use subtle transitions only. Respect reduced-motion preferences.
 - Keyboard focus must be clearly visible even within the restrained palette.
 - Booking, payment, confirmation, and pricing behavior must remain identical to the shared Ortasys storefront contract.
+
+## HTML implementation contract
+
+- Visual reference: `Ortasys_StoreFront.figcraft`, page 02, D01 and D12. Preserve the quiet split hero, architectural portrait frame, ledger search, alternating full-width lookbook rows, three destination plates, dual charter spread, and Roman-numbered advisory rows.
+- `index.html` is a standalone customer storefront. Design references live in sibling `guidelines.html`, `search-board.html`, and `figcraft.html`; no prominent documentation buttons, hidden documentation DOM, root routing, or brand mockups in the landing.
+- `storefront.css` owns token-based responsive geometry; `storefront.js` owns search, guest panels, itinerary snapshots, details, and the explicit three-step checkout demonstration. Interface copy is Indonesian; proper brand and property names are preserved.
+- Booking input contract: destination, dates 1–30 nights, rooms 1–9, adults per room 1–20, children per room 0–20, and ages 0–17 explicitly selected for every child. Unknown searches produce an empty state, not unrelated replacement inventory.
+- All rates and properties are labelled examples. Do not represent a local timer as a live tariff check, or a sample checkout summary as a confirmed reservation. The demonstration collects guest details and a provider preference, never card numbers, then offers a real `.txt` sample summary download. Live booking/payment services are not connected.
+- Maintain 44px touch targets, visible focus, native accessible dialogs, Escape dismissal, and reduced-motion support. Native date values are enhanced with the branded single-month picker described above; the D12 dual-month calendar remains a design reference.
+
 
 ## Do’s and Don’ts
 

@@ -1,0 +1,111 @@
+{
+  "project": "Ortasys_StoreFront",
+  "template": "03-atlasway-travel",
+  "brand": "Atlasway Travel",
+  "preset": "Global & Contemporary",
+  "tagline": "Satu konsol untuk menjelajah Jakarta, Bali, dan Yogyakarta. Setiap harga dicek langsung saat Anda mencari.",
+  "tokens": {
+    "primary": "#142C4E",
+    "primaryHover": "#0D1F39",
+    "secondary": "#3672B0",
+    "tertiary": "#A9C9E6",
+    "accent": "#247D76",
+    "bg": "#F4F7FA",
+    "surface": "#FFFFFF",
+    "surfaceMuted": "#E8EEF4",
+    "text": "#252E3A",
+    "muted": "#5F6D7F",
+    "border": "#D7E0E9",
+    "success": "#237A55",
+    "warning": "#98611C",
+    "error": "#B83F4B",
+    "focus": "#1769AA",
+    "onPrimary": "#FFFFFF",
+    "fieldBorder": "#888D92",
+    "onDark": "#FFFFFF",
+    "accentDeco": "#2C9A91",
+    "secondaryDeco": "#3978B9",
+    "cta": "#3978B9",
+    "onCta": "#FFFFFF",
+    "mutedRaw": "#647386",
+    "accentText": "#247D76",
+    "secondaryText": "#3672B0",
+    "tealOnDark": "#41A49C"
+  },
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#647386",
+      "to": "#5F6D7F",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "fieldBorder",
+      "from": "#D7E0E9",
+      "to": "#888D92",
+      "why": "input outline ≥3:1 (WCAG 1.4.11)"
+    },
+    {
+      "token": "warning",
+      "from": "#A86B20",
+      "to": "#98611C",
+      "why": "warning text ≥4.5:1"
+    }
+  ],
+  "fonts": {
+    "display": "Plus Jakarta Sans",
+    "displaySt": "Bold",
+    "displayLs": "-4.5%",
+    "head": "Plus Jakarta Sans",
+    "headSt": "Bold",
+    "body": "Inter"
+  },
+  "radii": {
+    "xs": 6,
+    "sm": 10,
+    "md": 14,
+    "lg": 20,
+    "xl": 28,
+    "pill": 999
+  },
+  "searchEngine": {
+    "signature": "Docked Multi-Hub Command Console",
+    "modes": [
+      "Stays Inventory",
+      "City & Island Tours"
+    ],
+    "limits": {
+      "rooms": "1-9",
+      "adultsPerRoom": "1-20",
+      "childrenPerRoom": "0-20",
+      "maxNights": 30
+    }
+  },
+  "programmaticTints": [
+    "#0A1528",
+    "#14285A",
+    "#B9CEE3",
+    "#C3D5E7",
+    "#C4D6EA",
+    "#D6C0A4",
+    "#D9EDEB",
+    "#DCEAE9",
+    "#E0ECE7",
+    "#E0EDEC",
+    "#E1F1F0",
+    "#E3E6EA",
+    "#E3EBF4",
+    "#E3ECF5",
+    "#E3EDF5",
+    "#E5EFEB",
+    "#E8EAED",
+    "#E9F2EE",
+    "#EBF1F7",
+    "#ECEEF1",
+    "#EFF4F9",
+    "#F3ECE4",
+    "#F6E8E9",
+    "#F7F2ED",
+    "#F8FAFC"
+  ]
+}

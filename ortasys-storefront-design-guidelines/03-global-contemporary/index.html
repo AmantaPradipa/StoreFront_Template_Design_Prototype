@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atlasway Travel · Contemporary Global & Multi-Destination Stays</title>
-  <meta name="description" content="Atlasway Travel — Streamlined multi-destination hotel reservations and curated regional experiences across Indonesia. Powered by Ortasys S4.">
+  <link rel="icon" type="image/png" href="./assets/logo-mark.png">
+  <meta name="description" content="Atlasway Travel — contoh katalog perjalanan agen. Prototipe pencarian, rincian penginapan, dan rencana perjalanan.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
@@ -16,15 +17,15 @@
         extend: {
           colors: {
             primary: { DEFAULT: '#142C4E', hover: '#0D1F39' },
-            secondary: '#3978B9',
+            secondary: '#3672B0',
             tertiary: '#A9C9E6',
             accent: '#2C9A91',
             canvas: '#F4F7FA',
             surface: { DEFAULT: '#FFFFFF', muted: '#E8EEF4' },
-            ink: { DEFAULT: '#252E3A', muted: '#647386' },
+            ink: { DEFAULT: '#252E3A', muted: '#5F6D7F' },
             line: '#D7E0E9',
             success: '#237A55',
-            warning: '#A86B20',
+            warning: '#98611C',
             danger: '#B83F4B'
           },
           fontFamily: {
@@ -49,480 +50,43 @@
       }
     };
   </script>
-  <style>
-    :root { color-scheme: light; }
-    body { font-family: 'Inter', system-ui, sans-serif; background-color: #F4F7FA; color: #252E3A; }
-    .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on; }
-    .stepper input::-webkit-outer-spin-button,
-    .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-    .stepper input { -moz-appearance: textfield; }
-    :focus-visible { outline: 2px solid #3978B9; outline-offset: 2px; }
-  </style>
+  <style>:root{--primary:#142C4E;--primaryHover:#0D1F39;--secondary:#3672B0;--tertiary:#A9C9E6;--accent:#247D76;--bg:#F4F7FA;--surface:#FFFFFF;--surfaceMuted:#E8EEF4;--text:#252E3A;--muted:#5F6D7F;--border:#D7E0E9;--success:#237A55;--warning:#98611C;--error:#B83F4B;--focus:#1769AA;--onPrimary:#FFFFFF;--fieldBorder:#888D92;--onDark:#FFFFFF;--accentDeco:#2C9A91;--secondaryDeco:#3978B9;--cta:#3978B9;--onCta:#FFFFFF;--mutedRaw:#647386;--accentText:#247D76;--secondaryText:#3672B0;--tealOnDark:#41A49C;--display:"Plus Jakarta Sans",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif;--radius:9px;}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.55}button,input,select{font:inherit}button,a,input,select{touch-action:manipulation}button{cursor:pointer}button:disabled{cursor:wait;opacity:.6}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}h1,h2,h3,h4,p{margin:0}h1,h2,h3{font-family:var(--display);line-height:1.16}h2{font-size:clamp(28px,3vw,38px)}button,a{transition:background .18s,color .18s}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.wrap{width:min(1240px,calc(100% - 64px));margin:auto}.eyebrow{font-size:10px;letter-spacing:.16em;font-weight:700;text-transform:uppercase;color:var(--primary)}.muted{color:var(--muted)}.sample{font-size:11px;color:var(--muted)}.btn{min-height:44px;padding:10px 18px;border:1px solid var(--primary);background:var(--primary);color:var(--onPrimary);font-size:13px;font-weight:700;border-radius:var(--radius)}.btn:hover{background:var(--primaryHover)}.btn.secondary{background:var(--surface);color:var(--primary);border-color:var(--fieldBorder)}.header{background:var(--surface);border-bottom:1px solid var(--border);position:relative;z-index:30}.header-row{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:9px;font-family:var(--display);font-weight:700;font-size:22px;white-space:nowrap}.brand img{height:38px;width:38px;object-fit:contain}.nav{display:flex;align-items:center;gap:22px;font-size:13px}.nav a{min-height:44px;display:flex;align-items:center}.menu{display:none;min-width:44px;min-height:44px;border:1px solid var(--border);background:var(--surface);color:var(--primary)}.mobile-nav{display:flex;flex-direction:column;padding:16px 24px;gap:12px}.mobile-nav a{padding:10px 0}.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:10px;z-index:100;background:var(--surface);padding:12px;color:var(--primary)}.hidden,[hidden]{display:none!important}.section{padding-top:80px;padding-bottom:12px}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}.section-heading h2{margin-top:8px}.section-heading p{max-width:480px;margin-top:10px;color:var(--muted);font-size:14px}.filter-bar{display:flex;gap:7px;flex-wrap:wrap}.filter-btn,.hub-chip{background:var(--surface);border:1px solid var(--fieldBorder);color:var(--text);min-height:44px;padding:8px 13px;font-size:12px;border-radius:var(--radius)}.filter-btn[aria-pressed=true],.hub-chip[aria-pressed=true]{background:var(--primary);color:var(--onPrimary);border-color:var(--primary)}.field-label{display:block;font-size:11px;font-weight:700;margin-bottom:7px;color:var(--primary)}input:not([type=radio]):not([type=checkbox]),select{min-height:48px;border:1px solid var(--fieldBorder);border-radius:var(--radius);padding:9px 12px;background:var(--surface);color:var(--text);width:100%;min-width:0}input[type=date]{font-size:13px;font-variant-numeric:tabular-nums}fieldset{margin:0;padding:0;border:0;min-width:0}legend{padding:0}.dates{display:grid;grid-template-columns:1fr 1fr;gap:10px}.occupancy{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.stepper{display:flex;min-height:48px;border:1px solid var(--fieldBorder);border-radius:var(--radius);background:var(--surface);overflow:hidden}.stepper button{width:44px;min-width:44px;border:0;background:transparent;color:var(--primary);font-size:19px}.stepper button:hover{background:var(--surfaceMuted)}.stepper input:not([type=radio]){border:0;padding:0;text-align:center;min-height:46px;border-radius:0;-moz-appearance:textfield}.stepper input::-webkit-inner-spin-button{appearance:none}.mode-tabs{display:flex;gap:3px;flex-wrap:wrap}.mode-tab{border:0;padding:10px 14px;min-height:44px;background:transparent;font-size:12px;color:var(--muted);font-weight:700;border-radius:var(--radius)}.mode-tab[aria-selected=true]{background:var(--primary);color:var(--onPrimary)}.age-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}.age-room{margin:14px 0}.age-room legend{font-size:12px;font-weight:700;margin-bottom:8px}.age-grid label{font-size:12px}.form-errors{color:var(--error);font-size:13px}.search-meta{font-size:11px;color:var(--muted)}.search-meta p+p{margin-top:5px}#searchStatus{padding:12px 20px;background:var(--surfaceMuted);color:var(--primary);font-size:12px;border-top:1px solid var(--border)}#searchStatus[data-error=true]{color:var(--error)}.inventory{display:grid;gap:14px}.inventory article{min-width:0}.inventory-image{position:relative;overflow:hidden}.inventory-image img{width:100%;height:100%;object-fit:cover}.plate-tag{position:absolute;left:12px;bottom:12px;padding:4px 8px;background:var(--surface);color:var(--primary);font-size:10px;font-weight:700}.inventory-copy h3{font-size:22px;margin:8px 0}.inventory-copy p{font-size:13px;color:var(--muted)}.amenities{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}.amenities span{padding:4px 7px;background:var(--surfaceMuted);font-size:11px}.price{font-size:25px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2}.price-note{font-size:11px;color:var(--muted);margin:5px 0 12px}.tour-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.tour-tile{display:grid;grid-template-columns:150px 1fr;border:1px solid var(--border);background:var(--surface);overflow:hidden;border-radius:var(--radius)}.tour-tile>img{width:100%;height:100%;object-fit:cover}.tour-copy{padding:20px}.tour-copy h3{font-size:19px;margin:7px 0}.tour-copy p{font-size:13px;color:var(--muted);margin:6px 0 14px}.tour-action{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--border);padding-top:14px}.tour-action strong{font-size:15px}.empty{grid-column:1/-1;padding:40px;background:var(--surface);border:1px solid var(--border)}.empty h3{margin-bottom:10px}.empty button{margin-top:18px}.faq{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding-bottom:80px}.faq details{border-bottom:1px solid var(--border);padding:18px 0}.faq summary{cursor:pointer;font-weight:600;min-height:44px}.faq p{font-size:14px;color:var(--muted)}.contact-box{padding:30px;background:var(--surfaceMuted)}.contact-box h3{font-size:26px}.contact-box p{margin:15px 0}.footer{margin-top:64px;padding:56px 0 24px;background:var(--primary);color:var(--onPrimary)}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}.footer p{font-size:13px;max-width:340px;margin-top:18px}.footer h3{font:700 11px var(--body);letter-spacing:.1em;text-transform:uppercase;margin-bottom:15px}.footer a{display:block;font-size:13px;min-height:44px;padding-top:10px}.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:25px;margin-top:30px;border-top:1px solid currentColor;font-size:11px}.demo-note{margin-top:30px;font-size:12px}.demo-note summary{min-height:44px;cursor:pointer}.demo-note label{display:flex;gap:10px;align-items:center;min-height:44px}.loading{font-size:14px;color:var(--muted)}@media(max-width:1050px){.nav{gap:12px}.brand{font-size:19px}.wrap{width:calc(100% - 40px)}.tour-tile{grid-template-columns:110px 1fr}}@media(max-width:767px){.wrap{width:calc(100% - 32px)}.header-row{height:70px;gap:12px}.nav{display:none}.menu{display:block}.section{padding-top:52px}.section-heading{align-items:start;flex-direction:column;gap:18px}.tour-grid,.faq{grid-template-columns:1fr}.tour-tile{grid-template-columns:110px 1fr}.tour-copy{padding:16px}.tour-action{align-items:start;flex-direction:column}.occupancy{grid-template-columns:1fr}.stepper input{flex:1}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}.footer-grid>div:first-child{grid-column:1/-1}.footer-bottom{flex-direction:column}.faq{gap:24px;padding-bottom:40px}.price{font-size:23px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+.command-deck{background:var(--primary);color:var(--onPrimary);position:relative;isolation:isolate;padding:52px 0 58px}.command-deck:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,var(--primary) 2%,transparent),url('./assets/hero.webp') center/cover;opacity:.24}.deck-grid{display:grid;grid-template-columns:5fr 7fr;gap:62px;align-items:center}.deck-copy h1{font-size:clamp(34px,3.5vw,49px);letter-spacing:-.045em;max-width:440px;margin:20px 0}.deck-copy p{font-size:15px;max-width:390px}.deck-copy .eyebrow{color:var(--tertiary)}.deck-copy .hub-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.deck-copy .hub-chip{background:transparent;border-color:var(--tertiary);color:var(--onPrimary)}.deck-copy .hub-chip[aria-pressed=true]{background:var(--surface);color:var(--primary)}.deck-note{margin-top:22px;border-top:1px solid var(--tertiary);padding-top:16px;font-size:12px;max-width:380px}.command-console{background:var(--surface);color:var(--text);border-radius:18px;overflow:hidden;border:1px solid var(--border)}.console-top{padding:12px 20px;background:var(--bg);display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid var(--border)}.console-top .eyebrow{font-size:9px;letter-spacing:.08em}.command-form{padding:24px}.destination-hubs{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.destination-hubs button{font-size:10px;padding:5px 10px;min-height:44px}.console-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:20px}.console-action{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-top:20px;padding-top:18px;border-top:1px solid var(--border)}.console-action .btn{background:var(--secondary);border-color:var(--secondary);min-width:170px}.console-action .search-meta{max-width:230px}.hubs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.hub-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden}.hub-card img{width:100%;height:200px;object-fit:cover}.hub-card>div{padding:20px}.hub-card h3{font-size:21px;margin:5px 0}.hub-card p{font-size:13px;color:var(--muted);margin:8px 0 16px}.hub-actions{display:flex;gap:8px}.hub-actions button{padding:8px 14px}.inventory-section{background:var(--surfaceMuted);margin-top:72px;padding:56px 0}.inventory-row{display:grid;grid-template-columns:31% 43% 26%;border:1px solid var(--border);border-radius:13px;overflow:hidden;background:var(--surface)}.inventory-row .inventory-image{min-height:245px}.inventory-copy{padding:24px}.inventory-copy .eyebrow{color:var(--secondary)}.inventory-ledger{display:flex;flex-direction:column;justify-content:space-between;padding:24px;border-left:1px solid var(--border);background:var(--bg)}.inventory-ledger .btn{width:100%;margin-top:8px}.plans{display:grid;grid-template-columns:1fr 1fr;gap:24px}.plan-image{position:relative;min-height:320px;border-radius:15px;overflow:hidden}.plan-image img{width:100%;height:100%;object-fit:cover}.plan-caption{position:absolute;inset:auto 0 0;padding:24px;background:var(--primary);color:var(--onPrimary)}.plan-caption h3{font-size:24px}.plan-list{display:grid;gap:12px}.plan-list button{background:var(--surface);border:1px solid var(--border);border-radius:12px;display:grid;grid-template-columns:42px 1fr 20px;align-items:center;text-align:left;padding:20px;gap:10px;min-height:88px}.plan-list span{font-size:24px;color:var(--secondary)}.plan-list strong{font-size:14px}.plan-list small{display:block;font-size:12px;color:var(--muted);margin-top:4px}@media(min-width:1200px){.console-grid{grid-template-columns:1fr 1fr}.command-console .occupancy{grid-template-columns:1fr 1fr 1fr;gap:6px}.command-console .stepper{flex-wrap:wrap;justify-content:space-between}.command-console .stepper input:not([type=radio]){width:100%;order:-1;min-height:30px}.command-console .stepper button{min-width:30px;width:calc(50% - 1px);height:44px}.command-console .field-label{font-size:10px}.command-form{padding:22px}.console-top{padding:12px}.console-top .mode-tab{padding:10px;font-size:11px}}@media(max-width:1050px){.deck-grid{gap:28px;grid-template-columns:4fr 6fr}.inventory-row{grid-template-columns:30% 43% 27%}.inventory-copy,.inventory-ledger{padding:18px}.hubs{gap:16px}}@media(max-width:767px){.command-deck{padding:30px 0}.deck-grid{grid-template-columns:1fr;gap:30px}.deck-copy h1{max-width:350px}.deck-note{display:none}.console-top{flex-direction:column;align-items:start}.command-form{padding:20px}.console-action{align-items:stretch;flex-direction:column}.console-action .search-meta{max-width:none}.hubs{grid-template-columns:1fr}.hub-card{display:grid;grid-template-columns:110px 1fr}.hub-card img{height:100%}.hub-card>div{padding:16px}.inventory-section{margin-top:48px;padding:36px 0}.inventory-row{grid-template-columns:1fr}.inventory-row .inventory-image{height:220px;min-height:0}.inventory-ledger{border-left:0;border-top:1px solid var(--border)}.plans{grid-template-columns:1fr}.plan-image{min-height:300px}}
+
+.overlay{position:fixed;inset:0;background:color-mix(in srgb,var(--primary) 50%,transparent);z-index:60;display:flex;align-items:center;justify-content:center;padding:20px}.dialog{width:min(600px,100%);max-height:90dvh;overflow:auto;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)}.dialog-head{padding:20px 24px;display:flex;align-items:start;justify-content:space-between;gap:20px;border-bottom:1px solid var(--border)}.dialog-head h2{font-size:25px}.dialog-head p{font-size:12px;color:var(--muted);margin-top:8px}.close-btn{width:44px;min-width:44px;height:44px;border:1px solid var(--fieldBorder);background:var(--surface);color:var(--primary);font-size:22px}.dialog-content{padding:24px}.dialog-content h3{font-size:25px;margin:12px 0}.dialog-content p{font-size:14px;color:var(--muted)}.dialog-content .btn{margin-top:16px}.detail-image{width:100%;height:250px;object-fit:cover}.detail-info{border-top:1px solid var(--border);padding-top:16px;margin-top:18px}.detail-info h4{font-size:12px;margin-bottom:10px}.dialog-actions{border-top:1px solid var(--border);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}.drawer{position:fixed;right:0;top:0;width:min(430px,100%);height:100dvh;background:var(--surface);z-index:65;display:flex;flex-direction:column;border-left:1px solid var(--border)}.drawer[aria-hidden=true]{display:none}.drawer .dialog-content{flex:1;overflow:auto}.trip-line{padding:16px 0;border-bottom:1px solid var(--border)}.trip-line h3{font:600 16px var(--body);margin:0 0 6px}.trip-line p{font-size:12px}.trip-line button{margin-top:8px;min-height:44px;border:0;background:transparent;color:var(--error);padding:0 10px}.drawer-total{padding:24px;background:var(--surfaceMuted)}.drawer-total .btn{width:100%;margin-top:16px}.drawer-total p{font-size:12px;color:var(--muted);margin-top:10px}.checkout-ledger{padding:16px;background:var(--surfaceMuted);margin-bottom:24px;font-size:13px}.checkout-ledger>div{margin:8px 0}.checkout-ledger strong{display:block;margin-top:14px;font-size:22px}#coForm{display:grid;gap:14px}#coForm label{font-size:12px;font-weight:600}#paymentPanel label{display:flex;gap:12px;align-items:center;min-height:56px;border:1px solid var(--fieldBorder);padding:14px;margin-top:12px;font-size:14px}#paymentPanel p{margin:12px 0}#checkoutSuccessContent{text-align:center;padding:32px 24px}#checkoutSuccessContent h3{font-size:29px;margin:16px 0}#checkoutSuccessContent p{font-size:14px;color:var(--muted)}#checkoutSuccessContent dl{background:var(--surfaceMuted);padding:20px;text-align:left;margin:24px 0}#checkoutSuccessContent dt{font-size:11px;color:var(--muted)}#checkoutSuccessContent dd{font-size:16px;margin:0 0 12px;overflow-wrap:anywhere}#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--primary);color:var(--onPrimary);padding:14px 20px;max-width:calc(100% - 32px);width:max-content;font-size:13px;z-index:80;border:1px solid var(--tertiary);border-radius:var(--radius)}@media(max-width:767px){.overlay{padding:12px}.dialog-content,.dialog-head{padding:20px}.dialog-actions{align-items:start;flex-direction:column}.dialog-actions .btn{width:100%}.detail-image{height:220px}}
+@media(max-width:1050px){.header .nav{display:none}.header .menu{display:block}}
+</style>
+  <link rel="stylesheet" href="./components.css">
+  <script src="./components.js" defer></script>
 </head>
-<body class="bg-canvas text-ink antialiased">
-
-  <a href="#searchSection" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-sm">Skip to search</a>
-
-  <!-- ============ CONTEMPORARY NAVBAR ============ -->
-  <header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-line">
-    <div class="max-w-container mx-auto px-4 sm:px-6 h-[72px] flex items-center justify-between gap-4">
-      <a href="#home" class="flex items-center gap-2.5 shrink-0">
-        <span class="w-9 h-9 rounded-md bg-primary text-white flex items-center justify-center font-display font-bold text-lg">A</span>
-        <span class="font-display text-[22px] font-bold tracking-tight text-ink">Atlasway</span>
-      </a>
-
-      <nav class="hidden md:flex items-center gap-1 text-[14px] font-medium" aria-label="Main Navigation">
-        <a href="#hotels" class="px-3.5 py-2 rounded-sm text-ink hover:bg-surface-muted transition-colors font-semibold">Destinations &amp; Stays</a>
-        <a href="#experiences" class="px-3.5 py-2 rounded-sm text-ink-muted hover:text-ink hover:bg-surface-muted transition-colors">Tours &amp; Passes</a>
-        <a href="#features" class="px-3.5 py-2 rounded-sm text-ink-muted hover:text-ink hover:bg-surface-muted transition-colors">Platform Engine</a>
-        <button type="button" data-open-trip class="ml-3 inline-flex items-center gap-2 h-10 px-4 rounded-md bg-primary hover:bg-primary-hover text-white text-[13px] font-semibold transition">
-          <span>Trip Builder</span>
-          <span data-trip-count class="tnum font-mono text-[11px] bg-white/25 rounded-full px-1.5 py-0.5 font-bold">0</span>
-        </button>
-      </nav>
-
-      <button type="button" id="menuBtn" class="md:hidden w-10 h-10 rounded-sm flex items-center justify-center hover:bg-surface-muted text-ink" aria-label="Open menu">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-    </div>
-
-    <nav id="mobileNav" class="md:hidden hidden border-t border-line bg-surface p-4 flex flex-col gap-2 font-medium text-[15px]">
-      <a href="#hotels" class="py-2.5 px-3 rounded-sm hover:bg-surface-muted">Destinations &amp; Stays</a>
-      <a href="#experiences" class="py-2.5 px-3 rounded-sm hover:bg-surface-muted text-ink-muted">Tours &amp; Passes</a>
-      <a href="#features" class="py-2.5 px-3 rounded-sm hover:bg-surface-muted text-ink-muted">Platform Engine</a>
-      <button type="button" data-open-trip class="mt-2 h-11 rounded-md bg-primary text-white flex items-center justify-center gap-2 font-semibold">
-        Trip Builder (<span data-trip-count class="tnum">0</span>)
-      </button>
-    </nav>
-  </header>
-
-  <main id="home">
-    <!-- ============ SPLIT COMMAND CENTER HERO + DOCKED CONSOLE (PRESET 03 DNA) ============ -->
-    <section class="bg-primary text-white border-b border-line pt-10 pb-14">
-      <div class="max-w-container mx-auto px-4 sm:px-6">
-        <div class="grid lg:grid-cols-12 gap-8 items-start">
-          <!-- Left 5-Col Digital Agency Proposition & Quick-Hub Selector -->
-          <div class="lg:col-span-5 pt-2 space-y-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-pill bg-white/10 border border-white/15 text-tertiary text-[12px] font-semibold">
-              <span class="w-2 h-2 rounded-full bg-accent"></span>
-              <span>Ortasys S4 Multi-Hub Aggregator</span>
-            </div>
-            <h1 class="font-display text-[34px] sm:text-[44px] font-extrabold leading-[1.08] tracking-tight text-white">Contemporary Multi-Destination Booking Engine.</h1>
-            <p class="text-[15px] text-white/80 leading-relaxed">Instant room &amp; tour aggregation across Indonesia’s primary business and leisure hubs. Every retail rate is verified live upon request.</p>
-
-            <!-- Quick-Hub Destination Pills -->
-            <div class="pt-2">
-              <span class="text-[11px] font-mono uppercase tracking-wider text-tertiary block mb-2.5">Quick-Select Regional Hub:</span>
-              <div class="flex flex-wrap gap-2">
-                <button type="button" data-quick-hub="Central Jakarta" data-hub-filter="jakarta" class="px-3.5 py-2 rounded-md bg-white/10 hover:bg-secondary text-white text-[12px] font-semibold border border-white/15 transition flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                  <span>Jakarta CBD</span>
-                </button>
-                <button type="button" data-quick-hub="Nusa Dua, Bali" data-hub-filter="bali" class="px-3.5 py-2 rounded-md bg-white/10 hover:bg-secondary text-white text-[12px] font-semibold border border-white/15 transition flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                  <span>Bali Nusa Dua</span>
-                </button>
-                <button type="button" data-quick-hub="Yogyakarta Cultural Zone" data-hub-filter="jogja" class="px-3.5 py-2 rounded-md bg-white/10 hover:bg-secondary text-white text-[12px] font-semibold border border-white/15 transition flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                  <span>Yogyakarta Zone</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- Mini Live Hub Thumbnail Preview -->
-            <div class="rounded-md bg-white/5 border border-white/10 p-3 flex items-center gap-3.5">
-              <img src="../../assets/nusantara_executive/jakarta.jpg" alt="Jakarta and Bali Hubs" class="w-16 h-12 rounded-xs object-cover shrink-0">
-              <div class="text-[12px]">
-                <p class="font-semibold text-white">Direct Multi-Supplier Inventory</p>
-                <p class="text-white/70 text-[11px]">RateHawk/ETG · Cloudbeds · MyAllocator · SNAP BI</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right 7-Col Docked Multi-Hub Search Console -->
-          <div id="searchSection" class="lg:col-span-7 bg-surface text-ink rounded-lg border border-line shadow-elevated overflow-hidden">
-            <!-- Top Docked Segmented Mode Bar -->
-            <div class="bg-canvas px-6 py-4 border-b border-line flex flex-wrap items-center justify-between gap-3">
-              <div class="inline-flex rounded-sm bg-surface-muted p-1 border border-line" role="tablist">
-                <button type="button" role="tab" data-mode="hotels" aria-selected="true" class="mode-tab h-9 px-4 rounded-xs text-[13px] font-semibold transition bg-primary text-white">Hotels &amp; Resorts</button>
-                <button type="button" role="tab" data-mode="activities" aria-selected="false" class="mode-tab h-9 px-4 rounded-xs text-[13px] font-semibold transition text-ink-muted hover:text-ink">Day Tours &amp; Passes</button>
-              </div>
-              <span class="font-mono text-[11px] font-semibold text-secondary uppercase tracking-wider">LIVE S4 CONSOLE</span>
-            </div>
-
-            <form id="searchForm" class="p-6 space-y-4" novalidate>
-              <!-- Row 1: Destination Input -->
-              <div>
-                <label class="flex flex-col gap-1.5">
-                  <span class="text-[12px] font-bold uppercase tracking-wider text-ink-muted" data-dest-label>Destination Hub or Property Name</span>
-                  <input id="dest" list="destList" placeholder="Search Jakarta, Bali Nusa Dua, Yogyakarta…" autocomplete="off" class="h-11 px-3.5 rounded-sm bg-canvas border border-line text-[14px] font-medium text-ink focus:bg-white focus:border-secondary focus:outline-none">
-                  <datalist id="destList"></datalist>
-                </label>
-              </div>
-
-              <!-- Row 2: Dates + Occupancy Grid -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="grid grid-cols-2 gap-2.5" data-hotel-only>
-                  <label class="flex flex-col gap-1">
-                    <span class="text-[11px] font-bold uppercase tracking-wider text-ink-muted">Check-in</span>
-                    <input id="checkIn" type="date" aria-describedby="dateCapHint" class="tnum h-11 px-2.5 rounded-sm bg-canvas border border-line font-mono text-[12px] text-ink focus:bg-white focus:border-secondary focus:outline-none">
-                  </label>
-                  <label class="flex flex-col gap-1">
-                    <span class="text-[11px] font-bold uppercase tracking-wider text-ink-muted">Check-out</span>
-                    <input id="checkOut" type="date" aria-describedby="dateCapHint" class="tnum h-11 px-2.5 rounded-sm bg-canvas border border-line font-mono text-[12px] text-ink focus:bg-white focus:border-secondary focus:outline-none">
-                  </label>
-                </div>
-
-                <label class="flex flex-col gap-1 hidden" data-activity-only>
-                  <span class="text-[11px] font-bold uppercase tracking-wider text-ink-muted">Activity Date</span>
-                  <input id="actDate" type="date" class="tnum h-11 px-3 rounded-sm bg-canvas border border-line font-mono text-[13px] text-ink focus:bg-white focus:border-secondary focus:outline-none">
-                </label>
-
-                <!-- Stepper Matrix (1-9 Rooms, 1-20 Adults, 0-20 Kids) -->
-                <div class="grid grid-cols-3 gap-2">
-                  <div class="flex flex-col gap-1" data-hotel-only>
-                    <span id="lbl-rooms" class="text-[11px] font-bold uppercase text-ink-muted">Rooms</span>
-                    <div class="stepper flex items-center h-11 rounded-sm bg-canvas border border-line" role="group" aria-labelledby="lbl-rooms">
-                      <button type="button" class="w-7 h-full text-[15px] text-ink hover:bg-surface-muted" data-step="rooms" data-dir="-1" aria-label="Decrease rooms">−</button>
-                      <input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
-                      <button type="button" class="w-7 h-full text-[15px] text-ink hover:bg-surface-muted" data-step="rooms" data-dir="1" aria-label="Increase rooms">+</button>
-                    </div>
-                  </div>
-                  <div class="flex flex-col gap-1">
-                    <span id="lbl-adults" class="text-[11px] font-bold uppercase text-ink-muted" data-adults-label>Adults</span>
-                    <div class="stepper flex items-center h-11 rounded-sm bg-canvas border border-line" role="group" aria-labelledby="lbl-adults">
-                      <button type="button" class="w-7 h-full text-[15px] text-ink hover:bg-surface-muted" data-step="adults" data-dir="-1" aria-label="Decrease adults">−</button>
-                      <input id="adults" type="number" min="1" max="20" value="2" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
-                      <button type="button" class="w-7 h-full text-[15px] text-ink hover:bg-surface-muted" data-step="adults" data-dir="1" aria-label="Increase adults">+</button>
-                    </div>
-                  </div>
-                  <div class="flex flex-col gap-1">
-                    <span id="lbl-children" class="text-[11px] font-bold uppercase text-ink-muted" data-children-label>Children</span>
-                    <div class="stepper flex items-center h-11 rounded-sm bg-canvas border border-line" role="group" aria-labelledby="lbl-children">
-                      <button type="button" class="w-7 h-full text-[15px] text-ink hover:bg-surface-muted" data-step="children" data-dir="-1" aria-label="Decrease children">−</button>
-                      <input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
-                      <button type="button" class="w-7 h-full text-[15px] text-ink hover:bg-surface-muted" data-step="children" data-dir="1" aria-label="Increase children">+</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div id="formErrors" class="text-[13px] text-danger font-semibold" role="alert" aria-live="assertive"></div>
-
-              <!-- Row 3: Action + Status -->
-              <div class="pt-3 border-t border-line flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <div>
-                  <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-success"></span>
-                    <p class="text-[12px] font-bold text-ink">Every price is checked live when you ask for it</p>
-                  </div>
-                  <p id="summary" class="font-mono text-[11px] text-ink-muted mt-0.5">Set travel dates to calculate instant rates</p>
-                </div>
-                <button id="checkBtn" type="submit" class="h-11 px-6 rounded-sm bg-secondary hover:bg-primary text-white text-[13px] font-semibold transition flex items-center justify-center gap-2 shrink-0">
-                  <span data-btn-label>Check Live Price</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </button>
-              </div>
-              <p id="dateCapHint" class="text-[11px] text-ink-muted font-mono" data-hotel-only>System Cap: Max 30 nights · Uniform room occupancy</p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ HORIZONTAL SPLIT-ROW INVENTORY CARDS (PRESET 03 DNA) ============ -->
-    <section id="hotels" class="max-w-container mx-auto px-4 sm:px-6 pt-14">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-line">
-        <div>
-          <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-secondary">LIVE INVENTORY STREAM</span>
-          <h2 class="font-display text-[28px] sm:text-[32px] font-bold text-ink mt-0.5">Multi-Destination Stays Comparison</h2>
-        </div>
-
-        <!-- Modern Filter Bar -->
-        <div id="filterBar" class="flex flex-wrap gap-2 items-center" role="group" aria-label="Filter Hubs">
-          <button type="button" data-filter="all" class="filter-btn h-9 px-4 rounded-md text-[13px] font-semibold bg-primary text-white shadow-xs transition">All Destinations</button>
-          <button type="button" data-filter="jakarta" class="filter-btn h-9 px-4 rounded-md text-[13px] font-semibold bg-surface border border-line text-ink-muted hover:text-ink transition">Jakarta Hub</button>
-          <button type="button" data-filter="bali" class="filter-btn h-9 px-4 rounded-md text-[13px] font-semibold bg-surface border border-line text-ink-muted hover:text-ink transition">Bali Enclave</button>
-          <button type="button" data-filter="jogja" class="filter-btn h-9 px-4 rounded-md text-[13px] font-semibold bg-surface border border-line text-ink-muted hover:text-ink transition">Yogyakarta Heritage</button>
-        </div>
-      </div>
-
-      <!-- Horizontal Comparison Rows Stack -->
-      <div id="results" class="mt-6 flex flex-col gap-4"></div>
-    </section>
-
-    <!-- ============ COMPACT 2-COLUMN HORIZONTAL TOUR TILES (PRESET 03 DNA) ============ -->
-    <section id="experiences" class="max-w-container mx-auto px-4 sm:px-6 pt-16">
-      <div class="bg-surface rounded-lg p-6 sm:p-8 border border-line shadow-subtle">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-4 border-b border-line">
-          <div>
-            <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-accent">ADD-ON MOBILITY &amp; TOURS</span>
-            <h2 class="font-display text-[24px] sm:text-[28px] font-bold text-ink">City Transfers &amp; Regional Passes</h2>
-          </div>
-          <span class="px-3 py-1 rounded-sm bg-surface-muted text-ink-muted text-[11px] font-semibold">Illustrative Sample Data</span>
-        </div>
-
-        <div id="tourList" class="mt-6 grid md:grid-cols-2 gap-4"></div>
-      </div>
-    </section>
-
-    <!-- ============ SAAS SPEC BENTO CAPABILITIES (PRESET 03 DNA) ============ -->
-    <section id="features" class="max-w-container mx-auto px-4 sm:px-6 pt-16 pb-20">
-      <div class="grid lg:grid-cols-12 gap-5">
-        <div class="lg:col-span-6 bg-primary text-white rounded-lg p-7 flex flex-col justify-between">
-          <div>
-            <span class="font-mono text-[11px] font-bold text-tertiary uppercase tracking-wider">ARCHITECTURE // S4 WHITE-LABEL</span>
-            <h3 class="font-display text-[24px] font-bold mt-2">Real-Time Multi-Supplier Aggregation</h3>
-            <p class="text-[14px] text-white/80 mt-2 leading-relaxed">Direct API connection to global bedbanks and local channel managers ensures room inventory and retail rates are synchronized at the moment of inquiry.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-white/15 flex flex-wrap gap-2 text-[11px] font-mono text-tertiary">
-            <span class="px-2.5 py-1 rounded-xs bg-white/10">RateHawk / ETG</span>
-            <span class="px-2.5 py-1 rounded-xs bg-white/10">Cloudbeds</span>
-            <span class="px-2.5 py-1 rounded-xs bg-white/10">MyAllocator</span>
-          </div>
-        </div>
-        <div class="lg:col-span-3 bg-surface rounded-lg p-6 border border-line shadow-subtle flex flex-col justify-between">
-          <div>
-            <span class="font-mono text-[11px] font-bold text-secondary uppercase">SECURITY // B2B2C</span>
-            <h3 class="font-display text-[18px] font-bold text-ink mt-2">Wholesale Rate Shield</h3>
-            <p class="text-[13px] text-ink-muted mt-2 leading-relaxed">Supplier net rates and agency margin rules remain strictly isolated inside the S2 portal; customers see clean all-in retail prices.</p>
-          </div>
-          <span class="mt-4 text-[11px] font-mono font-bold text-success uppercase">● Net-Rate Protected</span>
-        </div>
-        <div class="lg:col-span-3 bg-surface rounded-lg p-6 border border-line shadow-subtle flex flex-col justify-between">
-          <div>
-            <span class="font-mono text-[11px] font-bold text-accent uppercase">SETTLEMENT // RAILS</span>
-            <h3 class="font-display text-[18px] font-bold text-ink mt-2">DOKU &amp; SNAP BI Rails</h3>
-            <p class="text-[13px] text-ink-muted mt-2 leading-relaxed">Instant clearing via Bank Indonesia SNAP standard QRIS and multi-bank Virtual Accounts with automated e-voucher issuance.</p>
-          </div>
-          <span class="mt-4 text-[11px] font-mono font-bold text-primary uppercase">● Instant Voucher</span>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="border-t border-line bg-surface py-12 text-[13px] text-ink-muted">
-    <div class="max-w-container mx-auto px-4 sm:px-6">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-line">
-        <div>
-          <span class="font-display text-[22px] font-bold text-ink">Atlasway Travel</span>
-          <p class="text-[13px] mt-0.5">Multi-Destination Digital Agency · Powered by Ortasys S4.</p>
-        </div>
-        <div class="flex gap-6 font-semibold text-ink">
-          <a href="#hotels" class="hover:text-secondary">Stays</a>
-          <a href="#experiences" class="hover:text-secondary">Tours</a>
-          <a href="#features" class="hover:text-secondary">Features</a>
-        </div>
-      </div>
-      <div class="pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-[12px]">
-        <p>Secured via <strong class="text-ink">DOKU</strong> and <strong class="text-ink">SNAP BI</strong>. Mockup property rates are Illustrative Sample Data [PRD 9.2].</p>
-        <p>© <span id="year"></span> Atlasway Travel. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ============ TRIP DRAWER ============ -->
-  <div id="tripOverlay" class="fixed inset-0 z-50 bg-black/40 hidden" aria-hidden="true"></div>
-  <aside id="tripDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-[420px] bg-surface shadow-elevated translate-x-full transition-transform duration-300 flex flex-col" role="dialog" aria-modal="true" aria-labelledby="tripTitle" aria-hidden="true">
-    <div class="flex items-center justify-between px-6 h-[72px] border-b border-line">
-      <h2 id="tripTitle" class="font-display text-[20px] font-bold text-ink">Trip Itinerary</h2>
-      <button type="button" data-close-trip class="w-8 h-8 flex items-center justify-center text-ink hover:text-ink-muted" aria-label="Close itinerary">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
-    </div>
-
-    <div id="tripItems" class="flex-1 overflow-y-auto p-5 flex flex-col gap-3"></div>
-
-    <div class="border-t border-line p-6 bg-canvas">
-      <div class="space-y-1.5 text-[12px] font-mono text-ink-muted">
-        <div class="flex justify-between">
-          <span>Subtotal Item:</span>
-          <span id="tripSubtotal" class="font-bold text-ink">Rp 0</span>
-        </div>
-        <div class="flex justify-between text-[11px]">
-          <span>Taxes &amp; Service Charge:</span>
-          <span class="text-success font-semibold">Included (Zero Hidden Fees)</span>
-        </div>
-        <div class="flex items-baseline justify-between pt-2 border-t border-line/60 text-[14px]">
-          <span class="font-bold text-ink">Consolidated Total:</span>
-          <span id="tripTotal" class="text-[20px] font-bold text-primary">Rp 0</span>
-        </div>
-      </div>
-      <button id="payBtn" type="button" class="mt-4 w-full h-11 rounded-md bg-primary hover:bg-primary-hover text-white text-[13px] font-semibold transition disabled:opacity-40">
-        Proceed to Settlement
-      </button>
-      <p id="payNote" class="mt-2 text-[11px] text-center text-ink-muted" aria-live="polite">Direct settlement through Bank Indonesia SNAP standard &amp; DOKU.</p>
-    </div>
-  </aside>
-
-  <!-- ============ DETAIL QUICK-VIEW MODAL ============ -->
-  <div id="detailModal" class="fixed inset-0 z-50 bg-ink/50 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="bg-surface rounded-lg max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[90vh]">
-      <div class="relative aspect-[16/9] bg-surface-muted shrink-0">
-        <img id="modalImg" src="" alt="" class="w-full h-full object-cover">
-        <button type="button" data-close-modal class="absolute top-3 right-3 w-8 h-8 rounded-md bg-surface/90 flex items-center justify-center text-ink hover:bg-surface transition" aria-label="Close detail">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
-        <span id="modalBadge" class="absolute bottom-3 left-3 px-2.5 py-1 rounded-sm bg-surface/95 text-ink text-[11px] font-mono font-semibold"></span>
-      </div>
-      <div class="p-6 overflow-y-auto flex-1 flex flex-col gap-3">
-        <span id="modalArea" class="text-[11px] font-bold uppercase tracking-wider text-secondary"></span>
-        <h3 id="modalTitle" class="font-display text-[22px] font-bold text-ink leading-tight"></h3>
-        <p id="modalDesc" class="text-[13px] text-ink-muted leading-relaxed font-normal"></p>
-        <div class="pt-3 border-t border-line">
-          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink mb-2">Amenities &amp; Inclusions:</h4>
-          <div id="modalAmenities" class="flex flex-wrap gap-1.5 text-[12px]"></div>
-        </div>
-        <div class="pt-3 border-t border-line">
-          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink mb-1">Reservation &amp; Cancellation Policy:</h4>
-          <p id="modalPolicy" class="text-[12px] text-ink-muted"></p>
-        </div>
-      </div>
-      <div class="p-5 border-t border-line bg-canvas flex items-center justify-between gap-4 shrink-0">
-        <div>
-          <p class="text-[11px] text-ink-muted font-mono">Live Guaranteed Price</p>
-          <p id="modalPrice" class="font-mono text-[20px] font-bold text-primary"></p>
-        </div>
-        <button id="modalSelectBtn" type="button" class="h-10 px-5 rounded-md bg-primary hover:bg-primary-hover text-white text-[13px] font-semibold transition">
-          Select Item
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ CHECKOUT MODAL ============ -->
-  <div id="checkoutModal" class="fixed inset-0 z-50 bg-ink/60 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="checkoutHeading">
-    <div class="bg-surface rounded-lg max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[92vh]">
-      <div class="flex items-center justify-between px-6 py-4 border-b border-line">
-        <div>
-          <h3 id="checkoutHeading" class="font-display text-[20px] font-bold text-ink leading-tight">Itinerary Checkout</h3>
-          <p class="text-[12px] text-ink-muted">Authorized Payment Gateway · DOKU &amp; SNAP BI</p>
-        </div>
-        <button type="button" data-close-checkout class="w-8 h-8 rounded-md flex items-center justify-center hover:bg-surface-muted text-ink" aria-label="Close checkout">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
-      </div>
-
-      <div id="checkoutFormContent" class="p-6 overflow-y-auto flex-1 flex flex-col gap-4">
-        <div class="p-4 rounded-md bg-canvas border border-line text-[13px]">
-          <div class="flex justify-between font-bold text-ink">
-            <span>Reserved Portfolio:</span>
-            <span id="coItemCount" class="font-mono">0 Item</span>
-          </div>
-          <div id="coItemList" class="mt-2 space-y-1 text-[12px] text-ink-muted"></div>
-          <div class="mt-3 pt-2 border-t border-line/60 flex justify-between font-mono font-bold text-ink text-[14px]">
-            <span>Grand Total:</span>
-            <span id="coTotal" class="text-primary">Rp 0</span>
-          </div>
-        </div>
-
-        <form id="coForm" class="flex flex-col gap-3">
-          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink">Lead Traveler Details</h4>
-          <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
-            Full Name (Passport / KTP)
-            <input id="coName" type="text" required placeholder="e.g. Maya Indah S." class="h-10 px-3 rounded-sm bg-white border border-line text-[13px] focus:border-primary focus:outline-none">
-          </label>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
-              Confirmation Email
-              <input id="coEmail" type="email" required placeholder="maya@traveler.com" class="h-10 px-3 rounded-sm bg-white border border-line text-[13px] focus:border-primary focus:outline-none">
-            </label>
-            <label class="flex flex-col gap-1 text-[12px] font-semibold text-ink">
-              Phone / WhatsApp
-              <input id="coPhone" type="tel" required placeholder="081399887766" class="h-10 px-3 rounded-sm bg-white border border-line text-[13px] focus:border-primary focus:outline-none">
-            </label>
-          </div>
-
-          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink mt-2">Payment Channel</h4>
-          <div class="space-y-2 text-[12px]">
-            <label class="flex items-center gap-3 p-3 rounded-md bg-white border border-line cursor-pointer hover:border-primary">
-              <input type="radio" name="payMethod" value="qris" checked class="accent-primary">
-              <div class="flex-1">
-                <span class="font-bold text-ink block">SNAP BI QRIS (All Banks &amp; E-Wallets)</span>
-                <span class="text-[11px] text-ink-muted block">Direct real-time settlement without convenience fee</span>
-              </div>
-            </label>
-            <label class="flex items-center gap-3 p-3 rounded-md bg-white border border-line cursor-pointer hover:border-primary">
-              <input type="radio" name="payMethod" value="va" class="accent-primary">
-              <div class="flex-1">
-                <span class="font-bold text-ink block">DOKU Multi-Bank Virtual Account</span>
-                <span class="text-[11px] text-ink-muted block">BCA, Mandiri, BRI, Permata Virtual Account</span>
-              </div>
-            </label>
-          </div>
-
-          <button type="submit" id="coSubmitBtn" class="mt-3 w-full h-11 rounded-md bg-primary hover:bg-primary-hover text-white text-[13px] font-bold transition flex items-center justify-center gap-2">
-            <span>Confirm &amp; Settle Booking</span>
-          </button>
-        </form>
-      </div>
-
-      <!-- Confirmation Success State -->
-      <div id="checkoutSuccessContent" class="hidden p-8 flex flex-col items-center text-center gap-4">
-        <div class="w-12 h-12 rounded-full bg-success/15 text-success flex items-center justify-center">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
-        <div>
-          <span class="text-[11px] font-bold uppercase tracking-wider text-success">Confirmed via Multi-Supplier Engine</span>
-          <h4 class="font-display text-[24px] font-bold text-ink mt-1">Booking Confirmed</h4>
-          <p class="text-[13px] text-ink-muted mt-1">Official voucher generated. Direct itinerary copy sent to your email.</p>
-        </div>
-        <div class="w-full p-4 rounded-md bg-canvas border border-line text-left text-[12px] space-y-1.5 font-mono">
-          <div class="flex justify-between">
-            <span class="text-ink-muted">Booking Reference:</span>
-            <span id="successRef" class="font-bold text-ink">ATLAS-2026-0001</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-ink-muted">Guest Name:</span>
-            <span id="successGuest" class="font-bold text-ink">-</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-ink-muted">Total Paid:</span>
-            <span id="successAmount" class="font-bold text-primary">Rp 0</span>
-          </div>
-        </div>
-        <div class="w-full flex flex-col gap-2 pt-2">
-          <button type="button" id="btnDownloadVoucher" class="w-full h-10 rounded-md bg-primary hover:bg-primary-hover text-white text-[13px] font-bold transition">
-            Download E-Voucher (PDF)
-          </button>
-          <button type="button" data-finish-checkout class="w-full h-10 rounded-md bg-surface-muted hover:bg-line text-ink text-[13px] font-semibold transition">
-            Return to Discovery
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-primary text-white rounded-md px-5 py-2.5 text-[13px] font-semibold shadow-elevated" role="status" aria-live="polite"></div>
-
-  <script>
-  (() => {
-    'use strict';
-    /* Illustrative Sample Data Preset 03 (Atlasway) */
+<body><a class="skip" href="#searchSection">Lewati ke pencarian</a><header class="header"><div class="wrap header-row"><a class="brand" href="#home"><img src="./assets/logo-mark.png" alt="">Atlasway</a><nav class="nav" aria-label="Navigasi utama"><a href="#home">Beranda</a><a href="#hotels">Penginapan</a><a href="#experiences">Tur & transfer</a><a href="#plans">Rencana</a><button class="btn" type="button" data-open-trip>Rencana perjalanan <span data-trip-count>0</span></button></nav><button class="menu" type="button" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileNav">☰</button></div><nav id="mobileNav" class="mobile-nav hidden" aria-label="Navigasi seluler"><a href="#home">Beranda</a><a href="#hotels">Penginapan</a><a href="#experiences">Tur & transfer</a><a href="#plans">Rencana</a><button type="button" class="btn" data-open-trip>Rencana perjalanan (<span data-trip-count>0</span>)</button></nav></header><main id="home"><section class="command-deck"><div class="wrap deck-grid"><div class="deck-copy"><span class="eyebrow">Platform perjalanan multi-hub</span><h1>Pesan penginapan dan tur di tiga hub dari satu konsol.</h1><p>Bandingkan penginapan dan tur di Jakarta, Bali, dan Yogyakarta secara berdampingan. Siapkan perjalanan berikutnya dari sini.</p><div class="hub-chips"><button type="button" class="hub-chip" data-quick-hub="Jakarta" data-hub-filter="jakarta" aria-pressed="false">Jakarta CBD</button><button type="button" class="hub-chip" data-quick-hub="Nusa Dua" data-hub-filter="bali" aria-pressed="false">Bali Nusa Dua</button><button type="button" class="hub-chip" data-quick-hub="Yogyakarta" data-hub-filter="jogja" aria-pressed="false">Yogyakarta Zone</button></div><div class="deck-note">Satu rencana untuk perjalanan kota, jeda di pantai, dan penjelajahan budaya.<br><span class="sample" style="color:var(--tertiary)">Contoh konten agen · prototipe katalog lokal</span></div></div><div id="searchSection" class="command-console"><div class="console-top"><div class="mode-tabs" role="tablist" aria-label="Jenis perjalanan"><button type="button" class="mode-tab" role="tab" aria-selected="true" data-mode="hotels">▣ Penginapan · Stays</button><button type="button" class="mode-tab" role="tab" aria-selected="false" data-mode="activities">◈ Tur Kota & Pulau</button></div><span class="eyebrow">Konsol pencarian</span></div><form id="searchForm" class="command-form" novalidate><label><span class="field-label" data-dest-label>01 · Hub atau nama penginapan</span><input id="dest" list="destList" placeholder="Pilih hub atau ketik nama" autocomplete="off" required><datalist id="destList"></datalist></label><div class="destination-hubs"><button type="button" class="hub-chip" data-quick-hub="Jakarta" data-hub-filter="jakarta" aria-pressed="false">Jakarta CBD</button><button type="button" class="hub-chip" data-quick-hub="Nusa Dua" data-hub-filter="bali" aria-pressed="false">Bali Nusa Dua</button><button type="button" class="hub-chip" data-quick-hub="Yogyakarta" data-hub-filter="jogja" aria-pressed="false">Yogyakarta Zone</button></div><div class="console-grid"><fieldset><legend class="field-label">02 · Tanggal perjalanan</legend><div class="dates" data-hotel-only><label><span class="field-label">Check-in</span><input id="checkIn" type="date" required></label><label><span class="field-label">Check-out</span><input id="checkOut" type="date" required></label></div><label class="hidden" data-activity-only><span class="field-label">Tanggal tur</span><input id="actDate" type="date"></label></fieldset><fieldset><legend class="field-label">03 · Tamu & kamar</legend><div class="occupancy"><div data-hotel-only><label class="field-label" for="rooms" >Kamar</label><div class="stepper"><button type="button" data-step="rooms" data-dir="-1" aria-label="Kurangi Kamar">−</button><input id="rooms" type="number" inputmode="numeric" min="1" max="9" value="1" aria-label="Kamar"><button type="button" data-step="rooms" data-dir="1" aria-label="Tambah Kamar">+</button></div></div><div ><label class="field-label" for="adults" data-adults-label>Dewasa / kamar</label><div class="stepper"><button type="button" data-step="adults" data-dir="-1" aria-label="Kurangi Dewasa / kamar">−</button><input id="adults" type="number" inputmode="numeric" min="1" max="20" value="2" aria-label="Dewasa / kamar"><button type="button" data-step="adults" data-dir="1" aria-label="Tambah Dewasa / kamar">+</button></div></div><div ><label class="field-label" for="qChildren" data-children-label>Anak / kamar</label><div class="stepper"><button type="button" data-step="children" data-dir="-1" aria-label="Kurangi Anak / kamar">−</button><input id="qChildren" type="number" inputmode="numeric" min="0" max="20" value="0" aria-label="Anak / kamar"><button type="button" data-step="children" data-dir="1" aria-label="Tambah Anak / kamar">+</button></div></div></div></fieldset></div><div id="childAgeBox" class="hidden"></div><div id="formErrors" class="form-errors" role="alert" aria-live="assertive"></div><div class="console-action"><div class="search-meta"><strong>Setiap harga dicek langsung saat Anda mencari</strong><p id="summary"></p></div><button id="checkBtn" class="btn" type="submit"><span data-btn-label>Cek harga langsung</span> →</button></div><p class="search-meta" style="margin-top:14px">Simulasi katalog lokal · 1–30 malam · 1–9 kamar · 1–20 dewasa dan 0–20 anak per kamar.</p></form><div id="searchStatus" role="status" aria-live="polite">Mode demonstrasi · belum terhubung ke inventori langsung.</div></div></div></section><section class="wrap section" id="destinations"><div class="section-heading"><div><span class="eyebrow">Pilih titik berangkat</span><h2>Tiga hub, satu cara memesan</h2><p>Pilih kawasan untuk menemukan penginapan dan tur di sekitarnya.</p></div><span class="sample">Contoh konten agen</span></div><div class="hubs"><article class="hub-card"><img src="./assets/dest-1.webp" alt="Kawasan Jakarta CBD" loading="lazy"><div><span class="eyebrow">Hub 01</span><h3>Jakarta CBD</h3><p>Bisnis, kota, dan perjalanan singkat.</p><div class="hub-actions"><button class="btn" type="button" data-quick-hub="Jakarta" data-hub-filter="jakarta" data-hub-mode="hotels">Penginapan</button><button class="btn secondary" type="button" data-quick-hub="Jakarta" data-hub-filter="jakarta" data-hub-mode="activities">Tur →</button></div></div></article><article class="hub-card"><img src="./assets/dest-2.webp" alt="Kawasan Bali Nusa Dua" loading="lazy"><div><span class="eyebrow">Hub 02</span><h3>Bali Nusa Dua</h3><p>Pantai dan waktu jeda di Bali.</p><div class="hub-actions"><button class="btn" type="button" data-quick-hub="Nusa Dua" data-hub-filter="bali" data-hub-mode="hotels">Penginapan</button><button class="btn secondary" type="button" data-quick-hub="Nusa Dua" data-hub-filter="bali" data-hub-mode="activities">Tur →</button></div></div></article><article class="hub-card"><img src="./assets/dest-3.webp" alt="Kawasan Yogyakarta Zone" loading="lazy"><div><span class="eyebrow">Hub 03</span><h3>Yogyakarta Zone</h3><p>Ruang singgah dan penjelajahan budaya.</p><div class="hub-actions"><button class="btn" type="button" data-quick-hub="Yogyakarta" data-hub-filter="jogja" data-hub-mode="hotels">Penginapan</button><button class="btn secondary" type="button" data-quick-hub="Yogyakarta" data-hub-filter="jogja" data-hub-mode="activities">Tur →</button></div></div></article></div></section><section id="hotels" class="inventory-section"><div class="wrap"><div class="section-heading"><div><span class="eyebrow">Inventori lintas hub</span><h2>Bandingkan penginapan antar hub</h2><p>Harga jual dalam IDR. Hasil berikut menggunakan contoh katalog agen.</p></div><div id="filterBar" class="filter-bar" role="group" aria-label="Filter hub"><button type="button" class="filter-btn" data-filter="all" aria-pressed="true">Semua hub</button><button type="button" class="filter-btn" data-filter="jakarta" aria-pressed="false">Jakarta</button><button type="button" class="filter-btn" data-filter="bali" aria-pressed="false">Bali</button><button type="button" class="filter-btn" data-filter="jogja" aria-pressed="false">Yogyakarta</button></div></div><div id="results" class="inventory" aria-live="polite"></div></div></section><section id="experiences" class="wrap section"><div class="section-heading"><div><span class="eyebrow">Tur & mobilitas</span><h2>Transfer kota dan pass regional</h2><p>Tambahkan pengalaman kota ke rencana Anda.</p></div><span class="sample">Contoh konten agen</span></div><div id="tourList" class="tour-grid"></div></section><section id="plans" class="wrap section"><div class="section-heading"><div><span class="eyebrow">Inspirasi lintas hub</span><h2>Rencana perjalanan siap dirangkai</h2><p>Pilih hub dan atur sendiri tanggal perjalanan Anda.</p></div></div><div class="plans"><div class="plan-image"><img src="./assets/dest-3.webp" alt="Lanskap dan candi di Yogyakarta" loading="lazy"><div class="plan-caption"><span class="eyebrow" style="color:var(--tertiary)">Catatan perjalanan</span><h3>Jeda kota, ruang untuk menjelajah.</h3></div></div><div class="plan-list"><button type="button" data-quick-hub="Jakarta" data-hub-filter="jakarta"><span>01</span><strong>Jakarta CBD<small>Bisnis, kota, dan perjalanan singkat.</small></strong><b>↗</b></button><button type="button" data-quick-hub="Nusa Dua" data-hub-filter="bali"><span>02</span><strong>Bali Nusa Dua<small>Pantai dan waktu jeda di Bali.</small></strong><b>↗</b></button><button type="button" data-quick-hub="Yogyakarta" data-hub-filter="jogja"><span>03</span><strong>Yogyakarta Zone<small>Ruang singgah dan penjelajahan budaya.</small></strong><b>↗</b></button></div></div></section><section id="contactFaqSection" class="wrap section faq"><div><div class="eyebrow">Informasi perjalanan</div><h2 style="margin:10px 0 15px">Sebelum mulai memesan</h2><details><summary>Apakah harga dan kamar sudah tersedia?</summary><p>Ini prototipe dengan contoh konten agen. Hasil dan harga dihitung dari katalog lokal, bukan pemeriksaan ketersediaan nyata. Konfirmasi penginapan hanya dapat diberikan setelah sistem produksi terhubung.</p></details><details><summary>Bagaimana mengisi rombongan keluarga?</summary><p>Isi jumlah kamar, dewasa dan anak per kamar. Usia setiap anak di setiap kamar wajib dipilih sendiri, 0–17 tahun. Lama menginap antara 1 dan 30 malam.</p></details><details id="policies"><summary>Kebijakan pemesanan & privasi</summary><p>Kebijakan pembatalan pada produk adalah contoh, bukan kontrak pemesanan. Data yang diisi hanya ada selama sesi halaman; tidak dikirim ke agen. Jangan masukkan data sensitif. Prototipe ini tidak memproses pembayaran atau menerbitkan voucher resmi.</p></details></div><div class="contact-box"><span class="eyebrow">Meja bantuan · contoh kontak agen</span><h3 style="margin-top:14px">Cerita perjalanan Anda dimulai dari sini.</h3><p>Periksa rencana, tanggal, dan kebutuhan rombongan sebelum melanjutkan simulasi pemesanan.</p><a class="btn" style="display:inline-flex;align-items:center" href="mailto:halo@agen-contoh.id">Hubungi agen contoh ↗</a><details class="demo-note"><summary>Tentang demonstrasi ini</summary><p>Katalog, harga, kontak, dan pembayaran adalah simulasi lokal.</p><label><input id="simulateFailure" type="checkbox">Simulasikan gangguan pencarian berikutnya</label></details></div></section></main><footer class="footer"><div class="wrap"><div class="footer-grid"><div><div class="brand"><img src="./assets/logo-mark.png" alt="">Atlasway</div><p>Satu konsol untuk menjelajah Jakarta, Bali, dan Yogyakarta.</p><p>Contoh konten agen<br>halo@agen-contoh.id<br>Identitas dan kontak demonstrasi.</p></div><div><h3>Jelajahi</h3><a href="#hotels">Penginapan</a><a href="#experiences">Pengalaman</a><a href="#contactFaqSection">Tentang & kontak</a></div><div><h3>Informasi</h3><a href="#contactFaqSection">FAQ</a><a href="#policies">Syarat, privasi & pembatalan</a><a href="guidelines.html">Pedoman merek</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> Atlasway · Contoh konten agen</span><span>Didukung sistem pemesanan Ortasys · prototipe lokal</span></div></div></footer><div id="tripOverlay" class="overlay hidden" aria-hidden="true"></div><aside id="tripDrawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="tripTitle" aria-hidden="true"><div class="dialog-head"><h2 id="tripTitle">Rencana perjalanan</h2><button type="button" class="close-btn" data-close-trip aria-label="Tutup rencana">×</button></div><div id="tripItems" class="dialog-content"></div><div class="drawer-total"><span class="sample">Total contoh harga jual</span><div id="tripTotal" class="price">Rp 0</div><span id="tripSubtotal" class="hidden"></span><button type="button" id="payBtn" class="btn">Lanjut ke simulasi pemesanan</button><p id="payNote">Tidak ada reservasi nyata atau pembayaran yang diproses.</p></div></aside><div id="detailModal" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="dialog"><div class="dialog-head"><span id="modalBadge" class="sample">Contoh konten agen</span><button type="button" class="close-btn" data-close-modal aria-label="Tutup rincian">×</button></div><img id="modalImg" class="detail-image" alt=""><div class="dialog-content"><span id="modalArea" class="eyebrow"></span><h2 id="modalTitle"></h2><p id="modalDesc"></p><div class="detail-info"><h4>Fasilitas & rincian contoh</h4><div id="modalAmenities" class="amenities"></div></div><div class="detail-info"><h4>Kebijakan contoh</h4><p id="modalPolicy"></p></div></div><div class="dialog-actions"><div><span class="sample">Harga contoh · bukan tarif terkonfirmasi</span><p id="modalPrice" class="price"></p></div><button type="button" id="modalSelectBtn" class="btn">Tambahkan ke rencana</button></div></div></div><div id="checkoutModal" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutHeading"><div class="dialog"><div class="dialog-head"><div><h2 id="checkoutHeading">Simulasi pemesanan</h2><p id="checkoutStep">1 · Data tamu — gunakan data contoh</p></div><button class="close-btn" type="button" data-close-checkout aria-label="Tutup pemesanan">×</button></div><div id="checkoutFormContent" class="dialog-content"><div class="checkout-ledger"><span id="coItemCount"></span><div id="coItemList"></div><span>Total contoh harga jual</span><strong id="coTotal"></strong></div><form id="coForm"><label>Nama lengkap<input id="coName" type="text" autocomplete="name" required></label><label>Email<input id="coEmail" type="email" autocomplete="email" required></label><label>Nomor WhatsApp<input id="coPhone" type="tel" autocomplete="tel" required></label><p class="sample">Data hanya dipakai pada sesi ini dan tidak dikirim ke agen.</p><button id="coSubmitBtn" type="submit" class="btn">Lanjut ke pilihan pembayaran</button></form><div id="paymentPanel" class="hidden"><h3>2 · Pilihan pembayaran contoh</h3><p>Di layanan produksi, pembayaran diproses aman lewat DOKU atau penyedia pembayaran. Di sini tidak ada koneksi pembayaran.</p><label><input type="radio" name="payMethod" value="qris" checked>QRIS · simulasi</label><label><input type="radio" name="payMethod" value="va">Virtual account · simulasi</label><button type="button" id="simulatePay" class="btn">Selesaikan simulasi tanpa pembayaran</button><button type="button" id="backToGuest" class="btn secondary">Kembali ke data tamu</button></div></div><div id="checkoutSuccessContent" class="hidden"><span class="eyebrow">3 · Ringkasan demonstrasi</span><h3>Simulasi selesai.</h3><p>Bukan bukti pemesanan atau pembayaran. Tidak ada kamar dipesan, dana ditagih, email dikirim, maupun voucher resmi diterbitkan.</p><dl><dt>Kode simulasi</dt><dd id="successRef"></dd><dt>Nama contoh</dt><dd id="successGuest"></dd><dt>Total contoh harga jual</dt><dd id="successAmount"></dd></dl><button type="button" id="btnDownloadVoucher" class="btn">Unduh ringkasan simulasi (.txt)</button><button type="button" data-finish-checkout class="btn secondary">Kembali menjelajah</button></div></div></div><div id="toast" class="hidden" role="status" aria-live="polite"></div><script>
+(() => {
+'use strict';
     const STAYS = [
       { 
-        id: 'aw-jakarta', name: 'Grand Thamrin City Suites', area: 'Central Jakarta · Business District', filter: 'jakarta',
-        keys: 'jakarta thamrin city suites business corporate grand', img: '../../assets/nusantara_executive/jakarta.jpg', alt: 'Jakarta modern city skyline',
-        stars: 5, room: 'Executive Deluxe King', meal: 'Executive Club Lounge & Breakfast Included', policy: 'Free cancellation until 24h prior to check-in.',
-        desc: 'Strategic corporate flagship stay in the heart of Jakarta central financial district. Seamless transit access to MRT Bundaran HI, spacious executive desk workstations, and meeting suites.',
-        amenities: ['1 Gbps High-Speed WiFi', 'Workstation & Ergonomic Chair', 'Executive Club Lounge Access', 'Direct MRT Underground Link', '24h Room Service', 'Meeting Room Credit'],
+        id: 'aw-jakarta', name: 'Grand Thamrin City Suites', area: 'Jakarta Pusat · Distrik bisnis', filter: 'jakarta',
+        keys: 'jakarta thamrin city suites business corporate grand', img: './assets/stay-1.webp', alt: 'Jakarta modern city skyline',
+        stars: 5, room: 'Executive Deluxe King', meal: 'Sarapan & akses lounge', policy: 'Contoh kebijakan: pembatalan hingga 24 jam sebelum check-in.',
+        desc: 'Contoh penginapan kota untuk perjalanan kerja di kawasan Thamrin, dengan ruang kerja dan akses transportasi perkotaan.',
+        amenities: ['WiFi', 'Meja kerja', 'Akses lounge', 'Akses MRT', 'Layanan kamar', 'Ruang pertemuan'],
         nightly: 2150000 
       },
       { 
-        id: 'aw-bali', name: 'Nusa Dua Coastal Grand Resort', area: 'Nusa Dua · Bali Enclave', filter: 'bali',
-        keys: 'bali nusa dua coastal resort beachfront luxury', img: '../../assets/nusantara_executive/nusa-dua-beach.jpg', alt: 'Nusa dua beach resort and ocean',
-        stars: 5, room: 'Oceanfront Lagoon Suite', meal: 'International Buffet Breakfast Included', policy: 'Free cancellation until 3 days prior.',
-        desc: 'World-class beachfront conference and leisure resort within the prestigious ITDC Nusa Dua security zone. Features vast lagoon swimming pools, pristine private beach, and seaside dining.',
-        amenities: ['Lagoon Swimming Pool', 'Private Beach Club Access', 'Airport VIP Limousine', 'Spa & Wellness Pavilion', 'Kids & Teen Lounge', 'Tennis & Water Sports'],
+        id: 'aw-bali', name: 'Nusa Dua Coastal Grand Resort', area: 'Nusa Dua · Bali', filter: 'bali',
+        keys: 'bali nusa dua coastal resort beachfront luxury', img: './assets/stay-2.webp', alt: 'Nusa dua beach resort and ocean',
+        stars: 5, room: 'Oceanfront Lagoon Suite', meal: 'Sarapan prasmanan', policy: 'Contoh kebijakan: pembatalan hingga 3 hari sebelumnya.',
+        desc: 'Contoh resor di Nusa Dua untuk jeda pantai, pertemuan, dan perjalanan keluarga. Rincian fasilitas perlu dikonfirmasi saat pemesanan nyata.',
+        amenities: ['Kolam laguna', 'Akses area pantai', 'Transfer bandara', 'Spa', 'Ruang keluarga', 'Aktivitas olahraga'],
         nightly: 3250000 
       },
       { 
-        id: 'aw-jogja', name: 'Prambanan Heritage Garden Hotel', area: 'Yogyakarta Cultural Zone', filter: 'jogja',
-        keys: 'jogja yogyakarta prambanan heritage garden', img: '../../assets/serenity_umrah_privilege/prambanan.jpg', alt: 'Prambanan temple towers',
-        stars: 4, room: 'Superior Heritage Twin', meal: 'Artisanal Javanese Breakfast Included', policy: 'Free cancellation until 48h prior.',
-        desc: 'Boutique heritage retreat located minutes from Prambanan Archaeological Park. Combines modern architectural comfort with traditional Javanese hospitality, lush courtyards, and craft shops.',
-        amenities: ['Temple View Terrace', 'Traditional Javanese Spa', 'Cultural Shuttle Van', 'Free High-Speed WiFi', 'Swimming Pool & Pool Bar'],
+        id: 'aw-jogja', name: 'Prambanan Heritage Garden Hotel', area: 'Yogyakarta · Zona budaya', filter: 'jogja',
+        keys: 'jogja yogyakarta prambanan heritage garden', img: './assets/stay-3.webp', alt: 'Prambanan temple towers',
+        stars: 4, room: 'Superior Heritage Twin', meal: 'Sarapan Jawa', policy: 'Contoh kebijakan: pembatalan hingga 48 jam sebelumnya.',
+        desc: 'Contoh rumah singgah di kawasan budaya Yogyakarta dengan taman dan ruang santai untuk perjalanan yang lebih pelan.',
+        amenities: ['Teras taman', 'Spa tradisional', 'Shuttle kawasan', 'WiFi', 'Kolam renang'],
         nightly: 1450000 
       }
     ];
@@ -530,402 +94,147 @@
     const ACTIVITIES = [
       { 
         id: 'aw-mrt', kind: 'tour', name: 'Jakarta VIP City Transport & Tour', area: 'Jakarta Metropolitan', filter: 'jakarta',
-        keys: 'jakarta city transport tour vip chauffeur', img: '../../assets/nusantara_executive/mrt.jpg', alt: 'Modern city transit station',
-        duration: 'Full Day Dedicated Mobility (10 Hours)',
-        desc: 'Comprehensive VIP city mobility service featuring dedicated premium MPV, chauffeur, toll fees, and personalized metropolitan routing including Kota Tua, Monas, and Senayan.',
-        amenities: ['Premium Luxury MPV', 'Chauffeur & English Guide', 'Toll & Fuel Inclusive', 'Mineral Water & Refreshments'],
-        policy: 'Free cancellation up to 24 hours prior.',
+        keys: 'jakarta city transport tour vip chauffeur', img: './assets/tour-1.webp', alt: 'Modern city transit station',
+        duration: '10 jam · mobilitas kota',
+        desc: 'Contoh perjalanan kota dengan kendaraan dan pengemudi. Susun rute Jakarta sesuai jadwal kunjungan Anda.',
+        amenities: ['Kendaraan MPV', 'Pengemudi', 'Tol & bahan bakar contoh', 'Air minum'],
+        policy: 'Contoh kebijakan: pembatalan hingga 24 jam sebelumnya.',
         perPerson: 850000 
       },
       { 
-        id: 'aw-jcc', kind: 'tour', name: 'Senayan & Convention VIP Shuttle', area: 'Central Jakarta MICE', filter: 'jakarta',
-        keys: 'jcc senayan convention shuttle business mice', img: '../../assets/nusantara_executive/jcc.jpg', alt: 'Jakarta Convention Center facade',
-        duration: 'Dedicated Event Day Shuttle Service',
-        desc: 'Seamless point-to-point shuttle between major business hotels and Jakarta Convention Center (JCC) / JIExpo for conference delegates and MICE delegations.',
-        amenities: ['Dedicated Event Badge Routing', 'Priority Drop-Off Access', 'Air-Conditioned VIP Coach'],
-        policy: 'Instant confirmation via Ortasys S4.',
+        id: 'aw-jcc', kind: 'tour', name: 'Senayan & Convention VIP Shuttle', area: 'Senayan · Jakarta', filter: 'jakarta',
+        keys: 'jcc senayan convention shuttle business mice', img: './assets/tour-2.webp', alt: 'Jakarta Convention Center facade',
+        duration: 'Transfer acara · sesuai rute contoh',
+        desc: 'Contoh layanan transfer kawasan Senayan untuk perjalanan acara dan pertemuan. Jadwal serta titik temu mengikuti pesanan.',
+        amenities: ['Rute acara', 'Titik antar', 'Kendaraan ber-AC'],
+        policy: 'Contoh kebijakan: konfirmasi mengikuti ketentuan pengelola.',
         perPerson: 550000 
       }
     ];
 
-    const LIMITS = { rooms: [1, 9], adults: [1, 20], children: [0, 20] };
-    const MAX_NIGHTS = 30;
-    const idr = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
-    const $ = (s, r = document) => r.querySelector(s);
-    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-    const DAY = 86400000;
-    const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-    const addDays = (s, n) => iso(new Date(new Date(s + 'T00:00:00').getTime() + n * DAY));
-    const today = iso(new Date());
 
-    const state = { mode: 'hotels', filter: 'all', priced: false, checking: false, checkedAt: null, trip: [] };
-    const el = {
-      form: $('#searchForm'), dest: $('#dest'), checkIn: $('#checkIn'), checkOut: $('#checkOut'), actDate: $('#actDate'),
-      rooms: $('#rooms'), adults: $('#adults'), children: $('#qChildren'), errors: $('#formErrors'), summary: $('#summary'),
-      btn: $('#checkBtn'), results: $('#results')
-    };
-
-    const clamp = (v, [lo, hi]) => Math.min(hi, Math.max(lo, Number.isFinite(v) ? v : lo));
-    const num = k => clamp(parseInt(el[k].value, 10), LIMITS[k]);
-    const nights = () => {
-      if (!el.checkIn.value || !el.checkOut.value) return 0;
-      return Math.round((new Date(el.checkOut.value) - new Date(el.checkIn.value)) / DAY);
-    };
-
-    function validate() {
-      const errs = [];
-      if (state.mode === 'hotels') {
-        if (!el.checkIn.value || !el.checkOut.value) errs.push('Check-in and check-out dates are required.');
-        else {
-          const n = nights();
-          if (el.checkIn.value < today) errs.push('Check-in cannot be set in the past.');
-          if (n < 1) errs.push('Check-out must be at least 1 day after check-in.');
-          if (n > MAX_NIGHTS) errs.push(`Max allowable stay length is ${MAX_NIGHTS} nights.`);
-        }
-      } else {
-        if (!el.actDate.value) errs.push('Activity date is required.');
-        else if (el.actDate.value < today) errs.push('Date cannot be in the past.');
-      }
-      return errs;
-    }
-
-    const roomRate = s => Math.round(s.nightly * (1 + 0.16 * Math.max(0, num('adults') - 2) + 0.08 * num('children')) / 1000) * 1000;
-    const stayTotal = s => roomRate(s) * Math.max(1, nights()) * num('rooms');
-    const actTotal = a => a.perPerson * num('adults') * num('rooms');
-
-    function summaryText() {
-      const r = num('rooms'), a = num('adults'), c = num('children');
-      const g = `${a} Adt${c ? ` + ${c} Chd` : ''}`;
-      if (state.mode === 'hotels') {
-        const n = nights();
-        if (!n || n < 1) return 'Select dates to view instant rates';
-        return `${n} Night${n > 1 ? 's' : ''} × ${r} Room${r > 1 ? 's' : ''} (${g} / room)`;
-      }
-      return el.actDate.value ? `${el.actDate.value} · ${r * a} Guests` : 'Select date for activity';
-    }
-
-    function renderMode() {
-      $$('.mode-tab').forEach(t => {
-        const on = t.dataset.mode === state.mode;
-        t.setAttribute('aria-selected', on);
-        t.className = `mode-tab h-9 px-4 rounded-sm text-[13px] font-semibold transition ${on ? 'bg-primary text-white' : 'text-ink-muted hover:text-ink'}`;
-      });
-      const hotels = state.mode === 'hotels';
-      $$('[data-hotel-only]').forEach(n => n.classList.toggle('hidden', !hotels));
-      $$('[data-activity-only]').forEach(n => n.classList.toggle('hidden', hotels));
-      $('#destList').innerHTML = (hotels ? ['Central Jakarta', 'Nusa Dua, Bali', 'Yogyakarta Cultural Zone', ...STAYS.map(s => s.name)] : ['VIP City Transport', 'Senayan Shuttle', ...ACTIVITIES.map(a => a.name)])
-        .map(v => `<option value="${v}">`).join('');
-    }
-
-    function renderResults() {
-      const isHotels = state.mode === 'hotels';
-      const q = el.dest.value.trim().toLowerCase();
-      let list = (isHotels ? STAYS : ACTIVITIES).filter(it => {
-        const matchQ = !q || (it.name + ' ' + it.area + ' ' + it.keys).toLowerCase().includes(q);
-        const matchFilter = state.filter === 'all' || it.filter === state.filter;
-        return matchQ && matchFilter;
-      });
-      if (!list.length && state.filter === 'all') list = isHotels ? STAYS : ACTIVITIES;
-
-      if (!list.length) {
-        el.results.innerHTML = `
-          <div class="py-12 text-center text-ink-muted bg-surface rounded-lg border border-line">
-            <p class="font-display font-bold text-[18px] text-ink">No properties found matching "${state.filter}"</p>
-            <button type="button" data-reset-filter class="mt-3 px-4 py-2 rounded-md bg-primary text-white text-[12px] font-semibold">Reset Destination Filter</button>
-          </div>`;
-        return;
-      }
-
-      el.results.innerHTML = list.map(it => {
-        const total = isHotels ? stayTotal(it) : actTotal(it);
-        const sub = isHotels ? `${idr.format(roomRate(it))} / room / night` : `${idr.format(it.perPerson)} / person`;
-        const priceHTML = state.checking
-          ? `<div class="h-8 w-32 bg-surface-muted animate-pulse rounded-sm"></div>`
-          : state.priced
-            ? `<div class="text-left lg:text-right"><span class="text-[10px] font-mono font-bold uppercase text-success block">● Live Rate Confirmed</span><p class="tnum font-mono text-[22px] font-bold text-ink mt-0.5">${idr.format(total)}</p><p class="tnum font-mono text-[11px] text-ink-muted">${sub}</p></div>`
-            : `<div class="text-left lg:text-right"><span class="text-[10px] font-mono uppercase text-ink-muted block">Base Reference</span><p class="font-mono text-[17px] font-bold text-ink mt-0.5">From ${idr.format(isHotels ? it.nightly : it.perPerson)}</p><p class="text-[11px] text-ink-muted italic">Check dates for live total</p></div>`;
-
-        return `
-        <article class="bg-surface rounded-lg border border-line overflow-hidden shadow-subtle hover:border-secondary/60 transition duration-200 grid lg:grid-cols-12 group">
-          <!-- Left 4-Col Thumbnail -->
-          <div class="lg:col-span-4 relative min-h-[200px] bg-surface-muted overflow-hidden">
-            <img src="${it.img}" alt="${it.alt}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            ${isHotels ? `<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-sm bg-white/95 text-ink text-[11px] font-bold shadow-2xs">${'★'.repeat(it.stars)}</span>` : ''}
-            <span class="absolute bottom-3 left-3 px-2 py-0.5 rounded-sm bg-primary/90 text-white text-[10px] font-mono font-bold uppercase tracking-wider">Instant Confirmation</span>
-          </div>
-
-          <!-- Middle 5-Col Spec Matrix -->
-          <div class="lg:col-span-5 p-5 sm:p-6 flex flex-col justify-between gap-3">
-            <div>
-              <div class="flex items-center justify-between gap-2">
-                <span class="text-[11px] font-bold uppercase tracking-wider text-secondary">${it.area}</span>
-                <button type="button" data-detail="${it.id}" class="text-[11px] font-bold text-secondary hover:underline flex items-center gap-0.5">
-                  <span>Inspect Specs</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
-              </div>
-              <h3 class="font-display text-[20px] font-bold text-ink leading-snug mt-1 cursor-pointer hover:text-secondary transition-colors" data-detail="${it.id}">${it.name}</h3>
-              <p class="text-[13px] font-medium text-ink mt-1">${isHotels ? `${it.room} · ${it.meal}` : it.duration}</p>
-              <p class="text-[12px] text-ink-muted mt-1 line-clamp-2">${it.desc}</p>
-            </div>
-
-            <div class="flex flex-wrap items-center gap-1.5 pt-2">
-              ${(it.amenities || []).slice(0, 4).map(a => `<span class="px-2.5 py-0.5 rounded-sm bg-canvas border border-line text-ink-muted text-[11px] font-mono">${a}</span>`).join('')}
-            </div>
-          </div>
-
-          <!-- Right 3-Col Price & Action Dock -->
-          <div class="lg:col-span-3 p-5 sm:p-6 bg-canvas/60 border-t lg:border-t-0 lg:border-l border-line flex flex-row lg:flex-col items-center lg:items-end justify-between gap-3">
-            ${priceHTML}
-            <div class="flex flex-col w-auto lg:w-full gap-1.5">
-              <span class="hidden lg:block text-[11px] text-right text-success font-medium">${it.policy}</span>
-              <button type="button" data-select="${it.id}" class="h-10 px-5 rounded-md ${state.priced ? 'bg-primary hover:bg-primary-hover text-white' : 'bg-secondary hover:bg-primary text-white'} text-[13px] font-semibold transition w-full">
-                ${state.priced ? 'Select &amp; Add' : 'Verify &amp; Select'}
-              </button>
-            </div>
-          </div>
-        </article>`;
-      }).join('');
-    }
-
-    function renderTours() {
-      $('#tourList').innerHTML = ACTIVITIES.map(t => `
-        <div class="rounded-md bg-canvas border border-line p-4 flex items-center gap-4 hover:border-secondary transition group">
-          <div class="w-24 h-24 rounded-sm overflow-hidden bg-surface-muted shrink-0">
-            <img src="${t.img}" alt="${t.alt}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          </div>
-          <div class="flex-1 min-w-0">
-            <div class="flex items-center justify-between">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-secondary">${t.area}</span>
-              <button type="button" data-detail="${t.id}" class="text-[11px] font-bold text-secondary hover:underline">Specs</button>
-            </div>
-            <h4 class="font-display text-[16px] font-bold text-ink truncate mt-0.5 cursor-pointer hover:text-secondary" data-detail="${t.id}">${t.name}</h4>
-            <p class="text-[12px] text-ink-muted truncate">${t.duration}</p>
-            <div class="mt-2 pt-2 border-t border-line flex items-center justify-between gap-2">
-              <span class="tnum font-mono text-[13px] font-bold text-ink">${idr.format(t.perPerson)} <span class="text-[10px] font-normal text-ink-muted">/ pax</span></span>
-              <button type="button" data-select="${t.id}" class="h-8 px-3 rounded-xs bg-primary text-white hover:bg-primary-hover text-[11px] font-semibold transition">Add Pass</button>
-            </div>
-          </div>
-        </div>`).join('');
-    }
-
-    function syncBounds() {
-      el.checkIn.min = today; el.actDate.min = today;
-      if (el.checkIn.value) {
-        el.checkOut.min = addDays(el.checkIn.value, 1);
-        el.checkOut.max = addDays(el.checkIn.value, MAX_NIGHTS);
-      } else { el.checkOut.min = addDays(today, 1); el.checkOut.removeAttribute('max'); }
-    }
-
-    function invalidate() {
-      state.priced = false; el.errors.textContent = '';
-      el.summary.textContent = summaryText();
-      renderResults();
-    }
-
-    $$('.mode-tab').forEach(t => t.addEventListener('click', () => { state.mode = t.dataset.mode; renderMode(); invalidate(); }));
-    $$('[data-step]').forEach(b => b.addEventListener('click', () => {
-      const k = b.dataset.step; el[k].value = clamp(num(k) + Number(b.dataset.dir), LIMITS[k]); invalidate();
-    }));
-    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('change', () => { el[k].value = num(k); invalidate(); }));
-    el.checkIn.addEventListener('change', () => {
-      syncBounds();
-      if (el.checkIn.value && (!el.checkOut.value || el.checkOut.value <= el.checkIn.value)) el.checkOut.value = addDays(el.checkIn.value, 2);
-      invalidate();
-    });
-    [el.checkOut, el.actDate].forEach(i => i.addEventListener('change', invalidate));
-    el.dest.addEventListener('input', renderResults);
-
-    // Filter Buttons
-    $$('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        state.filter = btn.dataset.filter;
-        $$('.filter-btn').forEach(b => {
-          const active = b === btn;
-          b.className = `filter-btn h-9 px-4 rounded-md text-[13px] font-semibold transition ${active ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`;
-        });
-        renderResults();
-      });
-    });
-
-    el.form.addEventListener('submit', e => {
-      e.preventDefault();
-      const errs = validate();
-      el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
-      if (errs.length) return;
-
-      state.checking = true; el.btn.disabled = true;
-      el.btn.querySelector('[data-btn-label]').textContent = 'Fetching Live Rates…';
-      renderResults();
-
-      setTimeout(() => {
-        state.checking = false; state.priced = true; state.checkedAt = new Date();
-        el.btn.disabled = false; el.btn.querySelector('[data-btn-label]').textContent = 'Check Live Price';
-        el.summary.textContent = `Live Verified: ${summaryText()}`;
-        renderResults();
-        document.getElementById('hotels').scrollIntoView({ behavior: 'smooth' });
-      }, 650);
-    });
-
-    document.addEventListener('click', e => {
-      const sel = e.target.closest('[data-select]'); if (sel) return selectItem(sel.dataset.select);
-      const det = e.target.closest('[data-detail]'); if (det) return openDetail(det.dataset.detail);
-      const rm = e.target.closest('[data-remove]'); if (rm) { state.trip.splice(Number(rm.dataset.remove), 1); renderTrip(); }
-      const rst = e.target.closest('[data-reset-filter]'); if (rst) {
-        state.filter = 'all';
-        $$('.filter-btn').forEach((b, i) => b.className = `filter-btn h-9 px-4 rounded-md text-[13px] font-semibold transition ${i === 0 ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`);
-        renderResults();
-      }
-      const qh = e.target.closest('[data-quick-hub]'); if (qh) {
-        el.dest.value = qh.dataset.quickHub;
-        state.filter = qh.dataset.hubFilter || 'all';
-        $$('.filter-btn').forEach(b => {
-          const active = b.dataset.filter === state.filter;
-          b.className = `filter-btn h-9 px-4 rounded-md text-[13px] font-semibold transition ${active ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`;
-        });
-        renderResults();
-        document.getElementById('hotels').scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-
-    function selectItem(id) {
-      if (!state.priced) {
-        toast('Verifying live availability rates...');
-        const errs = validate();
-        if (errs.length) {
-          document.getElementById('searchSection').scrollIntoView({ behavior: 'smooth' });
-          el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
-          return;
-        }
-        state.priced = true;
-        renderResults();
-      }
-      const isHotel = id.startsWith('aw-jakarta') || id.startsWith('aw-bali') || id.startsWith('aw-jogja');
-      const it = (isHotels => isHotels ? STAYS : ACTIVITIES)(isHotel).find(x => x.id === id);
-      const total = isHotel ? stayTotal(it) : actTotal(it);
-      state.trip.push({ id: it.id, name: it.name, area: it.area, detail: summaryText(), total });
-      renderTrip();
-      toast(`Added to trip itinerary: ${it.name}`);
-      closeDetail();
-    }
-
-    function renderTrip() {
-      $$('[data-trip-count]').forEach(n => n.textContent = state.trip.length);
-      const box = $('#tripItems');
-      box.innerHTML = state.trip.length ? state.trip.map((t, i) => `
-        <div class="p-3.5 rounded-sm bg-canvas border border-line flex flex-col gap-1">
-          <div class="flex items-start justify-between gap-2">
-            <div>
-              <p class="font-display font-bold text-[14px] text-ink">${t.name}</p>
-              <p class="text-[11px] text-ink-muted">${t.area} · ${t.detail}</p>
-            </div>
-            <button type="button" data-remove="${i}" class="text-[11px] font-bold text-danger hover:underline">Remove</button>
-          </div>
-          <p class="tnum font-mono text-[14px] font-bold text-primary mt-1">${idr.format(t.total)}</p>
-        </div>`).join('')
-        : `<p class="py-10 text-center text-[13px] text-ink-muted">No reservations selected.<br>Check live prices and select properties.</p>`;
-      
-      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
-      $('#tripSubtotal').textContent = idr.format(totalVal);
-      $('#tripTotal').textContent = idr.format(totalVal);
-      $('#payBtn').disabled = !state.trip.length;
-    }
-
-    // Detail Quick-View Modal
-    const detailModal = $('#detailModal');
-    let currentDetailItem = null;
-    function openDetail(id) {
-      const isHotel = id.startsWith('aw-jakarta') || id.startsWith('aw-bali') || id.startsWith('aw-jogja');
-      const it = (isHotels => isHotels ? STAYS : ACTIVITIES)(isHotel).find(x => x.id === id);
-      if (!it) return;
-      currentDetailItem = it;
-
-      $('#modalImg').src = it.img;
-      $('#modalImg').alt = it.alt;
-      $('#modalBadge').textContent = isHotel ? `Star Rating: ${'★'.repeat(it.stars)}` : it.duration;
-      $('#modalArea').textContent = it.area;
-      $('#modalTitle').textContent = it.name;
-      $('#modalDesc').textContent = it.desc;
-      $('#modalAmenities').innerHTML = (it.amenities || []).map(a => `<span class="px-2.5 py-1 rounded-sm bg-surface-muted text-ink font-semibold">${a}</span>`).join('');
-      $('#modalPolicy').textContent = it.policy;
-
-      const total = isHotel ? stayTotal(it) : actTotal(it);
-      $('#modalPrice').textContent = state.priced ? idr.format(total) : `From ${idr.format(isHotel ? it.nightly : it.perPerson)}`;
-      detailModal.classList.remove('hidden');
-    }
-    function closeDetail() {
-      detailModal.classList.add('hidden');
-      currentDetailItem = null;
-    }
-    $('[data-close-modal]').addEventListener('click', closeDetail);
-    detailModal.addEventListener('click', e => { if (e.target === detailModal) closeDetail(); });
-    $('#modalSelectBtn').addEventListener('click', () => {
-      if (currentDetailItem) selectItem(currentDetailItem.id);
-    });
-
-    // Checkout Modal
-    const checkoutModal = $('#checkoutModal');
-    function openCheckout() {
-      if (!state.trip.length) return;
-      closeTrip();
-      $('#coItemCount').textContent = `${state.trip.length} Reserved Item${state.trip.length > 1 ? 's' : ''}`;
-      $('#coItemList').innerHTML = state.trip.map(t => `<div class="flex justify-between"><span>• ${t.name}</span><span class="font-mono font-bold">${idr.format(t.total)}</span></div>`).join('');
-      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
-      $('#coTotal').textContent = idr.format(totalVal);
-      $('#checkoutFormContent').classList.remove('hidden');
-      $('#checkoutSuccessContent').classList.add('hidden');
-      checkoutModal.classList.remove('hidden');
-    }
-    function closeCheckout() {
-      checkoutModal.classList.add('hidden');
-    }
-    $('[data-close-checkout]').addEventListener('click', closeCheckout);
-    checkoutModal.addEventListener('click', e => { if (e.target === checkoutModal) closeCheckout(); });
-    $('[data-finish-checkout]').addEventListener('click', () => {
-      closeCheckout();
-      state.trip = [];
-      renderTrip();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    $('#btnDownloadVoucher').addEventListener('click', () => {
-      toast('Digital E-Voucher downloading (PDF)...');
-    });
-
-    $('#coForm').addEventListener('submit', e => {
-      e.preventDefault();
-      const guestName = $('#coName').value.trim();
-      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
-      const randomRef = 'ATLAS-2026-' + Math.floor(1000 + Math.random() * 9000);
-
-      $('#successRef').textContent = randomRef;
-      $('#successGuest').textContent = guestName;
-      $('#successAmount').textContent = idr.format(totalVal);
-
-      $('#checkoutFormContent').classList.add('hidden');
-      $('#checkoutSuccessContent').classList.remove('hidden');
-    });
-
-    // Drawer Navigation
-    const drawer = $('#tripDrawer'), overlay = $('#tripOverlay');
-    function openTrip() { overlay.classList.remove('hidden'); drawer.classList.remove('translate-x-full'); drawer.setAttribute('aria-hidden', 'false'); }
-    function closeTrip() { overlay.classList.add('hidden'); drawer.classList.add('translate-x-full'); drawer.setAttribute('aria-hidden', 'true'); }
-    $$('[data-open-trip]').forEach(b => b.addEventListener('click', openTrip));
-    $('[data-close-trip]').addEventListener('click', closeTrip);
-    overlay.addEventListener('click', closeTrip);
-
-    $('#payBtn').addEventListener('click', openCheckout);
-
-    let toastTimer;
-    function toast(msg) {
-      const t = $('#toast'); t.textContent = msg; t.classList.remove('hidden');
-      clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.add('hidden'), 2500);
-    }
-
-    $('#year').textContent = new Date().getFullYear();
-
-    syncBounds(); renderMode(); invalidate(); renderTours(); renderTrip();
-  })();
-  </script>
-</body>
-</html>
-
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const limits={rooms:[1,9],adults:[1,20],children:[0,20]};
+const inputs={rooms:$('#rooms'),adults:$('#adults'),children:$('#qChildren')};
+const state={mode:'hotels',filter:'all',priced:false,checking:false,trip:[],request:0};
+const format=new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0});
+const money=n=>format.format(n), esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const scroll=id=>$(id).scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});
+const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const addDays=(s,n)=>{const d=new Date(s+'T12:00:00');d.setDate(d.getDate()+n);return iso(d)};
+const today=iso(new Date());
+const count=k=>{const n=Number(inputs[k].value);return Number.isInteger(n)?Math.min(limits[k][1],Math.max(limits[k][0],n)):limits[k][0]};
+const roomCount=()=>state.mode==='hotels'?count('rooms'):1;
+const nights=()=>Math.round((Date.parse($('#checkOut').value+'T00:00:00Z')-Date.parse($('#checkIn').value+'T00:00:00Z'))/86400000);
+let ageValues=new Map(), detailItem=null, toastTimer, lastFocus=null;
+function summary(){const guests=`${count('adults')} dewasa · ${count('children')} anak${state.mode==='hotels'?' / kamar':''}`;return state.mode==='hotels'?`${Number.isFinite(nights())&&nights()>0?nights():'—'} malam · ${count('rooms')} kamar · ${guests}`:`${$('#actDate').value||'Pilih tanggal tur'} · ${guests}`}
+function ages(){
+ $$('[data-child-age]').forEach(s=>ageValues.set(s.dataset.childAge,s.value));
+ const n=count('children'), rooms=roomCount(), box=$('#childAgeBox');
+ box.classList.toggle('hidden',n===0);
+ if(!n){box.innerHTML='';ageValues.clear();return}
+ box.innerHTML=Array.from({length:rooms},(_,r)=>`<fieldset class="age-room"><legend>${state.mode==='hotels'?`Kamar ${r+1} · `:''}Usia anak saat perjalanan (wajib)</legend><div class="age-grid">${Array.from({length:n},(_,c)=>{const key=`${r}-${c}`,v=ageValues.get(key)||'';return `<label for="age-${key}">Anak ${c+1} · 0–17 tahun<select id="age-${key}" data-child-age="${key}" required><option value="" ${v===''?'selected':''}>Pilih usia</option>${Array.from({length:18},(_,a)=>`<option value="${a}" ${String(a)===v?'selected':''}>${a} tahun</option>`).join('')}</select></label>`}).join('')}</div></fieldset>`).join('');
+ const validKeys=new Set($$('[data-child-age]').map(s=>s.dataset.childAge));ageValues=new Map([...ageValues].filter(([key])=>validKeys.has(key)));
+}
+function syncBounds(){const start=$('#checkIn').value;$('#checkIn').min=today;$('#actDate').min=today;$('#checkOut').min=start?addDays(start,1):addDays(today,1);if(start)$('#checkOut').max=addDays(start,30);else $('#checkOut').removeAttribute('max')}
+function validation(){
+ const errors=[];
+ if(!$('#dest').value.trim())errors.push('Pilih destinasi atau nama penginapan/tur terlebih dahulu.');
+ if(state.mode==='hotels'){
+  if(!$('#checkIn').value||!$('#checkOut').value)errors.push('Lengkapi tanggal check-in dan check-out.');
+  else{if($('#checkIn').value<today)errors.push('Check-in tidak boleh sebelum hari ini.');if(!Number.isFinite(nights())||nights()<1||nights()>30)errors.push('Lama menginap harus 1–30 malam.');}
+ }else if(!$('#actDate').value||$('#actDate').value<today)errors.push('Pilih tanggal tur hari ini atau setelahnya.');
+ for(const [k,[lo,hi]]of Object.entries(limits)){
+  if(k==='rooms'&&state.mode!=='hotels')continue;
+  const n=Number(inputs[k].value);if(inputs[k].value===''||!Number.isInteger(n)||n<lo||n>hi)errors.push(`${{rooms:'Kamar',adults:'Dewasa',children:'Anak'}[k]} harus bilangan bulat ${lo}–${hi}${k==='rooms'?'':' per '+(state.mode==='hotels'?'kamar':'rombongan')}.`);
+ }
+ const ageSelects=$$('[data-child-age]');
+ if(ageSelects.length!==count('children')*roomCount()||ageSelects.some(s=>s.value===''||!Number.isInteger(Number(s.value))||Number(s.value)<0||Number(s.value)>17))errors.push('Pilih usia setiap anak (0–17 tahun), untuk setiap kamar yang dipesan.');
+ return errors;
+}
+function showErrors(errors){$('#formErrors').innerHTML=errors.map(e=>`<p>• ${esc(e)}</p>`).join('');if(errors.length){const invalid=$$('[data-child-age]').find(s=>s.value==='');if(invalid&&$('#guestPanel')){$('#guestPanel').classList.remove('hidden');$('#guestToggle').setAttribute('aria-expanded','true')}scroll('#searchSection');(invalid||$('#dest')).focus({preventScroll:true})}}
+function setStatus(text,error=false){$('#searchStatus').textContent=text;$('#searchStatus').dataset.error=String(error)}
+function invalidate(){state.request++;state.priced=false;state.checking=false;$('#checkBtn').disabled=false;$('#checkBtn').querySelector('[data-btn-label]').textContent='Cek harga langsung';$('#formErrors').textContent='';$('#summary').textContent=summary();if($('#guestSummary'))$('#guestSummary').textContent=state.mode==='hotels'?`${count('rooms')} kamar · ${count('adults')} dewasa · ${count('children')} anak`:`${count('adults')} dewasa · ${count('children')} anak`;setStatus('Contoh konten agen · simulasi katalog lokal, bukan ketersediaan langsung.');renderResults()}
+function renderMode(){
+ const stay=state.mode==='hotels';
+ $$('.mode-tab').forEach(t=>t.setAttribute('aria-selected',String(t.dataset.mode===state.mode)));
+ $$('[data-hotel-only]').forEach(e=>e.classList.toggle('hidden',!stay));$$('[data-activity-only]').forEach(e=>e.classList.toggle('hidden',stay));
+ $('[data-adults-label]').textContent=stay?'Dewasa / kamar':'Dewasa';$('[data-children-label]').textContent=stay?'Anak / kamar':'Anak';
+ $('#destList').innerHTML=(stay?STAYS:ACTIVITIES).map(x=>`<option value="${esc(x.name)}"></option>`).join('');
+ ages();
+}
+function rate(it){return Math.round(it.nightly*(1+.16*Math.max(0,count('adults')-2)+.08*count('children'))/1000)*1000}
+function total(it){return it.nightly?rate(it)*Math.max(1,Number.isFinite(nights())?nights():1)*count('rooms'):it.perPerson*(count('adults')+.5*count('children'))}
+function resultList(){
+ const q=$('#dest').value.trim().toLocaleLowerCase('id');
+ return(state.mode==='hotels'?STAYS:ACTIVITIES).filter(x=>(state.filter==='all'||x.filter===state.filter)&&(!q||`${x.name} ${x.area} ${x.keys}`.toLocaleLowerCase('id').includes(q)));
+}
+function priceHTML(it){if(state.checking)return '<p class="loading">Menghitung contoh harga…</p>';return `<div><span class="sample">${state.priced?'Total simulasi':'Harga contoh mulai'}</span><p class="price">${money(state.priced?total(it):(it.nightly||it.perPerson))}</p><p class="price-note">${state.priced?(it.nightly?`${nights()} malam · ${count('rooms')} kamar`:summary()):(it.nightly?'per kamar per malam':'per orang')}<br>Contoh konten agen · harga jual</p></div>`}
+function renderResults(){
+ const list=resultList();
+ if(!list.length){$('#results').innerHTML='<div class="empty"><h3>Tidak ada hasil yang sesuai.</h3><p>Coba nama kawasan lain atau hapus filter. Katalog demonstrasi ini terbatas.</p><button type="button" class="btn" data-reset-filter>Reset pencarian</button></div>';return}
+ $('#results').innerHTML=list.map((it,i)=>`<article class="inventory-row"><div class="inventory-image"><img src="${it.img}" alt="${esc(it.alt)}" loading="lazy"><span class="plate-tag">${esc(it.area)}</span></div><div class="inventory-copy"><span class="eyebrow">${esc(it.area)}</span><h3>${esc(it.name)}</h3><p>${esc(it.nightly?`${it.room} · ${it.meal}`:it.duration)}</p><div class="amenities">${it.amenities.slice(0,4).map(a=>`<span>${esc(a)}</span>`).join('')}</div><button type="button" class="exhibit-detail" style="min-height:44px;border:0;background:transparent;color:var(--secondary);padding:8px 0;font-size:12px" data-detail="${it.id}">Lihat rincian penginapan →</button></div><div class="inventory-ledger">${priceHTML(it)}<div><button type="button" class="btn" data-select="${it.id}">Pilih & tambahkan ＋</button><button type="button" class="btn secondary" data-detail="${it.id}">Bandingkan rincian</button></div></div></article>`).join('');
+}
+function renderTours(){$('#tourList').innerHTML=ACTIVITIES.map(t=>`<article class="tour-tile"><img src="${t.img}" alt="${esc(t.alt)}" loading="lazy"><div class="tour-copy"><span class="eyebrow">${esc(t.area)}</span><h3>${esc(t.name)}</h3><p>${esc(t.duration)}</p><div class="tour-action"><div><strong>${money(t.perPerson)}</strong><span class="sample" style="display:block">/ orang · contoh harga jual</span></div><button type="button" class="btn" data-detail="${t.id}">Lihat tur →</button></div></div></article>`).join('')}
+function updateFilters(){$$('.filter-btn').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===state.filter)));$$('[data-quick-hub]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.hubFilter===state.filter)))}
+async function search(event){
+ event.preventDefault();if(state.checking)return;ages();const errors=validation();showErrors(errors);if(errors.length)return;
+ state.checking=true;state.priced=false;const request=++state.request;$('#checkBtn').disabled=true;$('#checkBtn').querySelector('[data-btn-label]').textContent='Memeriksa…';setStatus('Memeriksa contoh katalog dan menghitung harga jual simulasi…');renderResults();
+ try{await new Promise(resolve=>setTimeout(resolve,650));if(request!==state.request)return;
+  if($('#simulateFailure').checked){$('#simulateFailure').checked=false;throw new Error('Simulasi gangguan pencarian. Tidak ada biaya atau reservasi yang dibuat. Coba lagi.');}
+  state.priced=true;state.checking=false;renderResults();setStatus(`${resultList().length} hasil contoh · harga simulasi, tidak terhubung ke pemasok.`);scroll('#hotels');
+ }catch(error){state.priced=false;state.checking=false;renderResults();setStatus(error.message,true);$('#formErrors').textContent=error.message;
+ }finally{if(request===state.request){$('#checkBtn').disabled=false;$('#checkBtn').querySelector('[data-btn-label]').textContent='Cek harga langsung'}}
+}
+$('#searchForm').addEventListener('submit',search);
+$$('.mode-tab').forEach(b=>b.addEventListener('click',()=>{state.mode=b.dataset.mode;state.filter='all';$('#dest').value='';renderMode();updateFilters();invalidate()}));
+$$('[data-step]').forEach(b=>b.addEventListener('click',()=>{const key=b.dataset.step;inputs[key].value=Math.max(limits[key][0],Math.min(limits[key][1],count(key)+Number(b.dataset.dir)));ages();invalidate()}));
+Object.entries(inputs).forEach(([key,e])=>e.addEventListener('input',()=>{if(key!=='adults')ages();invalidate()}));
+$('#childAgeBox').addEventListener('change',()=>{invalidate()});
+$('#checkIn').addEventListener('change',()=>{syncBounds();invalidate()});[$('#checkOut'),$('#actDate')].forEach(e=>e.addEventListener('change',invalidate));
+$('#dest').addEventListener('input',()=>{state.filter='all';updateFilters();invalidate()});
+$$('.filter-btn').forEach(b=>b.addEventListener('click',()=>{state.filter=b.dataset.filter;$('#dest').value='';updateFilters();invalidate()}));
+if($('#guestToggle'))$('#guestToggle').addEventListener('click',()=>{const open=$('#guestToggle').getAttribute('aria-expanded')!=='true';$('#guestToggle').setAttribute('aria-expanded',String(open));$('#guestPanel').classList.toggle('hidden',!open)});
+$('#menuBtn').addEventListener('click',()=>{const open=$('#menuBtn').getAttribute('aria-expanded')!=='true';$('#mobileNav').classList.toggle('hidden',!open);$('#menuBtn').setAttribute('aria-expanded',String(open))});
+$$('#mobileNav a').forEach(a=>a.addEventListener('click',()=>{$('#mobileNav').classList.add('hidden');$('#menuBtn').setAttribute('aria-expanded','false')}));
+function toast(text){$('#toast').textContent=text;$('#toast').classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.add('hidden'),3000)}
+function showDialog(el){lastFocus=document.activeElement;el.classList.remove('hidden');el.querySelector('button,input')?.focus();document.body.style.overflow='hidden'}
+function hideDialog(el){el.classList.add('hidden');document.body.style.overflow='';lastFocus?.focus()}
+function openDetail(id){const it=[...STAYS,...ACTIVITIES].find(x=>x.id===id);if(!it)return;detailItem=it;$('#modalImg').src=it.img;$('#modalImg').alt=it.alt;$('#modalArea').textContent=it.area;$('#modalTitle').textContent=it.name;$('#modalDesc').textContent=it.desc;$('#modalPolicy').textContent=it.policy;$('#modalAmenities').innerHTML=it.amenities.map(a=>`<span>${esc(a)}</span>`).join('');$('#modalPrice').textContent=money(it.nightly||it.perPerson);showDialog($('#detailModal'))}
+function selectItem(id){
+ const it=[...STAYS,...ACTIVITIES].find(x=>x.id===id);if(!it||state.checking)return;
+ const mode=it.nightly?'hotels':'activities';if(state.mode!==mode){state.mode=mode;state.filter='all';$('#dest').value=it.name;renderMode();updateFilters();invalidate()}
+ const errors=validation();if(errors.length){hideDialog($('#detailModal'));showErrors(errors);return}
+ const chosenAges=$$('[data-child-age]').map(s=>({child:s.dataset.childAge,age:Number(s.value)}));
+ state.trip.push({id:it.id,name:it.name,area:it.area,detail:summary(),total:total(it),ages:chosenAges});renderTrip();hideDialog($('#detailModal'));toast('Ditambahkan ke rencana simulasi: '+it.name)
+}
+function renderTrip(){$$('[data-trip-count]').forEach(e=>e.textContent=state.trip.length);$('#tripItems').innerHTML=state.trip.length?state.trip.map((t,i)=>`<article class="trip-line"><h3>${esc(t.name)}</h3><p>${esc(t.area)} · ${esc(t.detail)}</p>${t.ages.length?`<p>Usia anak: ${t.ages.map(a=>`${a.age} tahun`).join(', ')}</p>`:''}<strong>${money(t.total)}</strong><br><button type="button" data-remove="${i}">Hapus</button></article>`).join(''):'<p>Rencana masih kosong. Cari penginapan atau buka rincian tur untuk mulai memilih.</p>';$('#tripTotal').textContent=money(state.trip.reduce((sum,t)=>sum+t.total,0));$('#payBtn').disabled=!state.trip.length}
+function openTrip(){lastFocus=document.activeElement;$('#tripOverlay').classList.remove('hidden');$('#tripDrawer').setAttribute('aria-hidden','false');document.body.style.overflow='hidden';$('[data-close-trip]').focus()}
+function closeTrip(){$('#tripOverlay').classList.add('hidden');$('#tripDrawer').setAttribute('aria-hidden','true');document.body.style.overflow='';lastFocus?.focus()}
+function openCheckout(){if(!state.trip.length)return;closeTrip();$('#coItemCount').textContent=`${state.trip.length} item contoh`;
+ $('#coItemList').innerHTML=state.trip.map(t=>`<div>${esc(t.name)} · ${money(t.total)}</div>`).join('');$('#coTotal').textContent=money(state.trip.reduce((s,t)=>s+t.total,0));$('#checkoutFormContent').classList.remove('hidden');$('#checkoutSuccessContent').classList.add('hidden');$('#paymentPanel').classList.add('hidden');$('#coForm').classList.remove('hidden');$('#checkoutStep').textContent='1 · Data tamu — gunakan data contoh';showDialog($('#checkoutModal'))}
+$('#coForm').addEventListener('submit',e=>{e.preventDefault();if(!$('#coForm').reportValidity())return;$('#coForm').classList.add('hidden');$('#paymentPanel').classList.remove('hidden');$('#checkoutStep').textContent='2 · Pembayaran simulasi — tanpa transaksi';$('#simulatePay').focus()});
+$('#backToGuest').addEventListener('click',()=>{$('#coForm').classList.remove('hidden');$('#paymentPanel').classList.add('hidden');$('#checkoutStep').textContent='1 · Data tamu — gunakan data contoh';$('#coName').focus()});
+$('#simulatePay').addEventListener('click',()=>{$('#successRef').textContent='DEMO-ATLAS-'+Date.now().toString().slice(-6);$('#successGuest').textContent=$('#coName').value.trim();$('#successAmount').textContent=money(state.trip.reduce((s,t)=>s+t.total,0));$('#checkoutFormContent').classList.add('hidden');$('#checkoutSuccessContent').classList.remove('hidden');$('#checkoutStep').textContent='3 · Ringkasan simulasi — bukan konfirmasi reservasi';$('#btnDownloadVoucher').focus()});
+$('#btnDownloadVoucher').addEventListener('click',()=>{const text=['RINGKASAN SIMULASI — BUKAN BUKTI PEMESANAN', $('#successRef').textContent,...state.trip.map(t=>`${t.name}\n${t.detail}\n${money(t.total)}`),'Total contoh: '+$('#successAmount').textContent,'Tidak ada pembayaran atau reservasi nyata.'].join('\n\n');const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='ringkasan-simulasi.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});
+$('[data-finish-checkout]').addEventListener('click',()=>{hideDialog($('#checkoutModal'));state.trip=[];renderTrip();$('#coForm').reset()});
+$('#payBtn').addEventListener('click',openCheckout);$$('[data-open-trip]').forEach(b=>b.addEventListener('click',openTrip));$('[data-close-trip]').addEventListener('click',closeTrip);$('#tripOverlay').addEventListener('click',closeTrip);
+$('[data-close-modal]').addEventListener('click',()=>hideDialog($('#detailModal')));$('[data-close-checkout]').addEventListener('click',()=>hideDialog($('#checkoutModal')));$('#modalSelectBtn').addEventListener('click',()=>{if(detailItem)selectItem(detailItem.id)});
+[$('#detailModal'),$('#checkoutModal')].forEach(el=>el.addEventListener('click',e=>{if(e.target===el)hideDialog(el)}));
+document.addEventListener('click',e=>{
+ const detail=e.target.closest('[data-detail]');if(detail)return openDetail(detail.dataset.detail);
+ const select=e.target.closest('[data-select]');if(select)return selectItem(select.dataset.select);
+ const remove=e.target.closest('[data-remove]');if(remove){state.trip.splice(Number(remove.dataset.remove),1);return renderTrip()}
+ if(e.target.closest('[data-reset-filter]')){state.filter='all';$('#dest').value='';updateFilters();return invalidate()}
+ const hub=e.target.closest('[data-quick-hub]');if(hub){state.mode=hub.dataset.hubMode||state.mode;state.filter=hub.dataset.hubFilter;$('#dest').value=hub.dataset.quickHub;renderMode();updateFilters();invalidate();scroll('#searchSection');return}
+ const archive=e.target.closest('[data-archive-dest]');if(archive){state.mode=archive.dataset.archiveMode||'hotels';state.filter='all';$('#dest').value=archive.dataset.archiveDest;renderMode();updateFilters();invalidate();scroll('#searchSection')}
+});
+document.addEventListener('keydown',e=>{
+ const modal=[$('#checkoutModal'),$('#detailModal')].find(el=>!el.classList.contains('hidden'))||($('#tripDrawer').getAttribute('aria-hidden')==='false'?$('#tripDrawer'):null);if(!modal)return;
+ if(e.key==='Escape'){if(modal.id==='tripDrawer')closeTrip();else hideDialog(modal);return}
+ if(e.key==='Tab'){const focusable=[...modal.querySelectorAll('button,input,select,a[href],[tabindex="0"]')].filter(el=>!el.disabled&&el.getClientRects().length);const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}
+});
+$('#year').textContent=new Date().getFullYear();syncBounds();renderMode();invalidate();renderTours();renderTrip();
+})();
+</script></body></html>

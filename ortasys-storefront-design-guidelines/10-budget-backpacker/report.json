@@ -1,0 +1,215 @@
+{
+  "template": "10-jalan-hemat-travel",
+  "pageId": 11,
+  "artboards": [
+    {
+      "name": "10·D01 Home",
+      "id": 51371,
+      "w": 1440,
+      "h": 4777
+    },
+    {
+      "name": "10 · Brand Guidelines",
+      "id": 75419,
+      "w": 1440,
+      "h": 3365
+    },
+    {
+      "name": "10·D02 Stays — hasil pencarian",
+      "id": 75770,
+      "w": 1440,
+      "h": 2094
+    },
+    {
+      "name": "10·D03 Detail penginapan",
+      "id": 76164,
+      "w": 1440,
+      "h": 2054
+    },
+    {
+      "name": "10·D04 Open-trip & aktivitas hemat",
+      "id": 76439,
+      "w": 1440,
+      "h": 2043
+    },
+    {
+      "name": "10·D06 Booking 1 — data tamu",
+      "id": 76743,
+      "w": 1440,
+      "h": 1259
+    },
+    {
+      "name": "10·D07 Booking 2 — pembayaran",
+      "id": 76909,
+      "w": 1440,
+      "h": 1220
+    },
+    {
+      "name": "10·D08 Booking 3 — konfirmasi",
+      "id": 77089,
+      "w": 1440,
+      "h": 1431
+    },
+    {
+      "name": "10·D10 Tentang & aturan transparan",
+      "id": 77235,
+      "w": 1440,
+      "h": 1590
+    },
+    {
+      "name": "10·D11 Kontak & FAQ",
+      "id": 77347,
+      "w": 1440,
+      "h": 1395
+    },
+    {
+      "name": "10·D12 Search engine board",
+      "id": 77478,
+      "w": 1440,
+      "h": 2246
+    },
+    {
+      "name": "10·M01 Home (mobile)",
+      "id": 78134,
+      "w": 390,
+      "h": 2023
+    },
+    {
+      "name": "10·M02 Hasil pencarian (mobile)",
+      "id": 78278,
+      "w": 390,
+      "h": 2011
+    },
+    {
+      "name": "10·M03 Detail penginapan (mobile)",
+      "id": 78424,
+      "w": 390,
+      "h": 649
+    },
+    {
+      "name": "10·M04 Sheet pencarian (mobile)",
+      "id": 78461,
+      "w": 390,
+      "h": 542
+    }
+  ],
+  "assets": [
+    "about.webp",
+    "brand-mockup.webp",
+    "dest-1.webp",
+    "dest-2.webp",
+    "dest-3.webp",
+    "detail-lockers.webp",
+    "hero.webp",
+    "logo-mark-dark.png",
+    "logo-mark-source.webp",
+    "logo-mark.png",
+    "market-food.webp",
+    "stay-1.webp",
+    "stay-2.webp",
+    "stay-3.webp",
+    "stay-4.webp",
+    "stay-5.webp",
+    "stay-toba.webp",
+    "street-kuta.webp",
+    "tour-1.webp",
+    "tour-2.webp",
+    "tour-3.webp"
+  ],
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#68717A",
+      "to": "#636B74",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "accentText",
+      "from": "#4F927E",
+      "to": "#407767",
+      "why": "accent used as text/label ≥4.5:1"
+    },
+    {
+      "token": "secondaryText",
+      "from": "#E56B45",
+      "to": "#B25336",
+      "why": "secondary used as text ≥4.5:1"
+    },
+    {
+      "token": "fieldBorder",
+      "from": "#D9DED8",
+      "to": "#898C88",
+      "why": "input outline ≥3:1 (WCAG 1.4.11)"
+    },
+    {
+      "token": "warning",
+      "from": "#A66B25",
+      "to": "#966121",
+      "why": "warning text ≥4.5:1"
+    },
+    {
+      "token": "onCta",
+      "from": "#FFFFFF",
+      "to": "#121B29",
+      "why": "white on coral #E56B45 = 3.22:1 (fails). Deep ink on coral = 5.37:1"
+    },
+    {
+      "token": "ink",
+      "from": null,
+      "to": "#121B29",
+      "why": "deep indigo-black for text on coral/mustard fills and 2px ticket outlines"
+    },
+    {
+      "token": "secondary",
+      "from": "#E56B45",
+      "to": "#B25336",
+      "why": "coral as TEXT on light = 3:1 → coral-text #B25336. Original coral kept as cta fill"
+    },
+    {
+      "token": "accent",
+      "from": "#4F927E",
+      "to": "#407767",
+      "why": "teal-green as TEXT on light fails (3.40:1) → #407767; original kept as accentFill for status dots/fills"
+    },
+    {
+      "token": "border",
+      "from": "#D9DED8",
+      "to": "#84909E",
+      "why": "UI outline ≥3:1 (WCAG 1.4.11); original #D9DED8 kept as 'hair' for decorative dividers"
+    },
+    {
+      "token": "tealOnDark",
+      "from": "#4F927E",
+      "to": "#7EAEA0",
+      "why": "teal text on indigo board ≥4.5:1"
+    },
+    {
+      "token": "coralOnDark",
+      "from": "#E56B45",
+      "to": "#EA8C6F",
+      "why": "coral text on indigo board ≥4.5:1"
+    },
+    {
+      "token": "mutedOnDark",
+      "from": null,
+      "to": "#C3CBD6",
+      "why": "secondary text on indigo ≥4.5:1 (6.84:1)"
+    }
+  ],
+  "issues": [],
+  "deviations": [
+    "muted: #68717A -> #636B74",
+    "accentText: #4F927E -> #407767",
+    "secondaryText: #E56B45 -> #B25336",
+    "fieldBorder: #D9DED8 -> #898C88",
+    "warning: #A66B25 -> #966121",
+    "onCta: #FFFFFF -> #121B29",
+    "ink: null -> #121B29",
+    "secondary: #E56B45 -> #B25336",
+    "accent: #4F927E -> #407767",
+    "border: #D9DED8 -> #84909E",
+    "tealOnDark: #4F927E -> #7EAEA0",
+    "coralOnDark: #E56B45 -> #EA8C6F",
+    "mutedOnDark: null -> #C3CBD6"
+  ]
+}

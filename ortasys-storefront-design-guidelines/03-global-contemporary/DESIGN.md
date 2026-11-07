@@ -193,6 +193,8 @@ Use a modern, moderately rounded shape language. Inputs use 10px radii, cards 14
 
 ## Components
 
+- **Branded calendar:** single-month Indonesian picker with 14px menu corners, the same option surfaces/type/selected colors as this preset, and a fixed-size calendar icon separate from the editable date text. Arrow keys move by day/week, Home/End by week and Page Up/Down by month; Enter selects, Escape dismisses, and min/max dates disable unavailable days. The top-layer picker flips/clamps to the viewport and preserves native date values plus input/change events. Browsers without Popover API retain native controls; this is not the D12 dual-month calendar.
+
 - **Navigation:** compact and predictable. Active item uses navy text and a subtle underline or background.
 - **Primary button:** navy fill, white label, 48px minimum height, 14px radius. Labels should describe the action.
 - **Secondary button:** white surface, navy text, thin border. Use for lower-priority actions.
@@ -204,30 +206,32 @@ Use a modern, moderately rounded shape language. Inputs use 10px radii, cards 14
 - **Language/currency selector:** render only if the storefront supports the selected options and correct localization/price conversion.
 - **Trust/value block:** use simple icons and concise verified claims.
 - **Footer:** organized into readable link groups; avoid hiding policy links.
+- **Dropdowns and autocomplete:** shared `.ui-select` controls use Inter, 48px triggers, 10px field corners and a separate 16px chevron with a 12px text gap. Top-layer menus use 14px corners, 6px padding and wrapping 44px option targets; navy marks selection, cool gray marks hover/keyboard focus, and the blue focus outline remains visible. Destination suggestions use the same menu as dynamically generated child-age selectors; native selects retain their values and validation.
+- **Opened-state geometry:** dialogs use 20px corners, 24px desktop / 12px mobile viewport gutters, a sticky paper-white header and a nonshrinking 44px close control. Content scrolls inside the viewport; titles and action rows wrap independently. The trip drawer keeps its total/action outside the scrolling item list. Notifications sit below modal backdrops so they cannot cover booking actions.
+- **Narrow controls:** date fields reflow at a 150px minimum rather than clipping native date segments; occupancy buttons retain 44px targets, child-age fields wrap, and sub-400px hub/tour tiles stack to prevent text and button collisions.
 
 ## Unique Architectural & Component DNA (Preset 03)
 
 To make this digital agency preset feel like a modern multi-destination SaaS command center rather than a traditional brochure site, its components and layouts follow a distinct modular system:
 
-- **Hero Architecture (Search-First Split Command Center):** A navy-anchored upper command deck where the left 5 columns present the value proposition and Quick-Hub Destination Pills (`Jakarta CBD`, `Bali Nusa Dua`, `Yogyakarta Zone`), and the right 7 columns house an elevated 3-step Vertical/Grid Command Console (`rounded-lg`).
-- **Search Engine UI (Docked Multi-Hub Command Console):** Features top-mounted segmented mode tabs (`Stays Inventory` / `City & Island Tours`), quick-select hub chips that auto-fill the destination input, boxed modular input cells (`rounded-sm`), and a full-width real-time API status bar.
-- **Inventory Section Layout (Horizontal Split-Row Inventory Cards):** Replaces vertical 3-column cards with full-width horizontal comparison rows (`lg:grid-cols-12`): left 4-column thumbnail with star/tier badge, middle 5-column specification matrix with amenity chips and cancellation policy, and right 3-column dedicated price & instant selection panel.
-- **Tours & Mobility Layout (Compact 2-Column Horizontal Tiles):** Side-by-side compact horizontal tiles with square thumbnails and instant add-to-itinerary actions.
-- **Platform Capabilities (SaaS Spec Bento Grid):** A 12-column technical bento layout highlighting real-time multi-supplier aggregation, wholesale rate shielding, and SNAP BI / DOKU compliance.
+- **Hero Architecture (Search-First Split Command Center):** Navy command deck with a supplied photographic background, 5:7 proposition/console split, and `Jakarta CBD`, `Bali Nusa Dua`, `Yogyakarta Zone` quick-hub controls. The console is the primary action, not a floating generic horizontal search bar.
+- **Search Engine UI (Docked Multi-Hub Command Console):** Docked `Penginapan · Stays` / `Tur Kota & Pulau` tabs; numbered destination, dates, and occupancy groups; destination hub shortcuts inside the console; boxed modular fields; separate action dock and full-width, explicitly simulated catalogue status. Desktop guest steppers use stacked values with 44px decrease/increase controls.
+- **Inventory Section Layout (Horizontal Comparison Rows):** Full-width 31% image / 43% specifications / 26% price-and-action rows, with dedicated detail and selection controls. No invented star ratings or confirmation badges. Prices are customer-facing IDR examples.
+- **Tours & Mobility Layout:** Two-column horizontal image/text tiles opening product details before selection.
+- **Editorial Journey Layout:** Three hub discovery panels followed by comparison inventory, compact mobility tiles, and a landscape/numbered-itinerary split. Consumer FAQ and contact replace merchant integration, supplier, margin, and compliance marketing.
 
 ## Homepage Composition
 
-Recommended fixed homepage sequence:
+Implemented homepage sequence:
 
-1. Header with supported utility controls.
-2. Search-first hero with concise agency proposition.
-3. Destination discovery grid.
-4. Popular or featured hotels.
-5. Activities / tours, only if enabled.
-6. Curated travel collections or editorial inspiration.
-7. Agency trust and service information.
-8. Contact CTA.
-9. Footer with policies and supported locale controls.
+1. Compact agency navigation and trip drawer.
+2. Navy search-first split command deck.
+3. Three destination hubs with independent Stays/Tours shortcuts.
+4. Horizontal comparison inventory on a muted section canvas.
+5. Compact regional mobility tiles.
+6. Landscape and numbered journey suggestions.
+7. About/contact, FAQ and policy disclosure.
+8. Agency footer with a quiet brand-guideline link.
 
 The search function must be discoverable immediately. Do not force users to scroll through marketing content before they can search.
 
@@ -241,13 +245,20 @@ Do not invent country coverage, destination counts, hotel counts, partner counts
 
 ## Interaction & Responsive Behavior
 
-- Desktop: search panel may be horizontal, with enough width for field labels and values.
-- Tablet: use a two-row search panel and a two-column card grid.
-- Mobile: single-column search, horizontally scrollable destination collections only where appropriate, and full-width primary CTA.
-- Keep currency and date formatting locale-aware only where actual localization is implemented.
-- Ensure touch targets are at least 44px, with visible keyboard focus and clear validation.
-- Respect reduced motion and avoid animation that delays search or booking.
-- Keep booking flow behavior consistent with the shared Ortasys storefront engine.
+- Desktop: a 5:7 split command deck; the console uses numbered destination, dates and occupancy groups. At 1200px and above, dates and guests share a two-column console row.
+- Tablet (768–1199px): the deck remains split, but console date and occupancy groups stack. Horizontal inventory retains its image/specification/price ownership.
+- Mobile (under 768px): proposition precedes the complete console, fields and steppers stack, primary search spans the panel, hub discovery becomes image/text strips, and comparison rows become image/specification/price stacks. Outer gutters are 16px with no carousel-dependent booking controls.
+- Persistent labels, 48px fields, 44px buttons, visible focus and reduced-motion scrolling apply throughout. Detail, trip and checkout overlays support Escape, keyboard trapping and focus return.
+- Required input: destination, 1–30 nights for stays (or tour date), 1–9 rooms, 1–20 adults and 0–20 children per room. Every child in every room requires an explicit 0–17 age selection; no age is preselected.
+- The local catalogue has validation, loading, empty, reset and retryable error states. The FAQ demo disclosure includes an opt-in search-failure simulation. Searches invalidate stale calculations when inputs change.
+- Search, detail, trip and three-step checkout remain local simulations. QRIS/VA are labelled examples; no funds, availability confirmation, email or official voucher is claimed. The downloadable file is a real plain-text simulation summary.
+ 
+### Standalone documentation and token contract
+
+`guidelines.html`, `search-board.html`, and `figcraft.html` preserve the former embedded documentation content and styling, with ordinary sibling-page links. `index.html` contains no documentation views or view router. Existing `brand-dna.json` is reused, including AA-safe `muted`, `secondaryText`, `fieldBorder`, `warning` and `focus`; decorative palette foundations remain unchanged.
+
+Implementation change: replaced the mixed documentation/customer page with the command-center storefront above, retaining the existing product identities, image assets, sample selling prices and local booking interactions.
+
 
 ## Do’s and Don’ts
 

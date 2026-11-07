@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jalan Hemat Travel · Trip Mandiri, Hostel &amp; Open Trip Hemat</title>
-  <meta name="description" content="Jalan Hemat Travel — Platform akomodasi hostel terverifikasi, pod kapsul hemat, dan open trip sharing keliling Indonesia tanpa biaya tersembunyi. Ditenagai oleh Ortasys S4.">
+  <link rel="icon" type="image/png" href="./assets/logo-mark.png">
+  <meta name="description" content="Jalan Hemat Travel — hostel, pod, dan perjalanan patungan. Katalog contoh agen, pencarian lokal dan simulasi pemesanan.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./components.css">
+  <script src="./components.js" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     /* Ortasys Storefront Preset 10 · Budget & Backpacker (10-budget-backpacker/DESIGN.md) */
@@ -21,10 +24,10 @@
             accent: '#4F927E',
             canvas: '#F7F7F2',
             surface: { DEFAULT: '#FFFFFF', muted: '#ECEEE8' },
-            ink: { DEFAULT: '#252E36', muted: '#68717A' },
+            ink: { DEFAULT: '#252E36', muted: '#636B74' },
             line: '#D9DED8',
             success: '#28734E',
-            warning: '#A66B25',
+            warning: '#966121',
             danger: '#B54545'
           },
           fontFamily: {
@@ -49,562 +52,58 @@
       }
     };
   </script>
-  <style>
-    :root { color-scheme: light; }
-    body { font-family: 'Inter', system-ui, sans-serif; background-color: #F7F7F2; color: #252E36; }
-    .font-display { font-family: 'Space Grotesk', system-ui, sans-serif; }
-    .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on; }
-    .stepper input::-webkit-outer-spin-button,
-    .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-    .stepper input { -moz-appearance: textfield; }
-    :focus-visible { outline: 2px solid #E56B45; outline-offset: 2px; }
-    details > summary { list-style: none; }
-    details > summary::-webkit-details-marker { display: none; }
-    details[open] .faq-icon { transform: rotate(45deg); }
-  </style>
-</head>
-<body class="bg-canvas text-ink antialiased">
+  
+<style>:root{--primary:#263C5A;--primaryHover:#192C45;--secondary:#B25336;--tertiary:#E9B94F;--accent:#407767;--bg:#F7F7F2;--surface:#FFFFFF;--surfaceMuted:#ECEEE8;--text:#252E36;--muted:#636B74;--border:#84909E;--success:#28734E;--warning:#966121;--error:#B54545;--focus:#1769AA;--onPrimary:#FFFFFF;--fieldBorder:#84909E;--onDark:#FFFFFF;--mutedRaw:#68717A;--accentText:#407767;--secondaryText:#B25336;--cta:#E56B45;--onCta:#121B29;--ctaHover:#EE8260;--ctaPressed:#D95A33;--ink:#121B29;--coral:#E56B45;--accentFill:#4F927E;--hair:#D9DED8;--board:#192C45;--mustard:#E9B94F;--tealOnDark:#7EAEA0;--coralOnDark:#EA8C6F;--mutedOnDark:#C3CBD6;}
 
-  <a href="#searchSection" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-secondary focus:text-white focus:px-4 focus:py-2 focus:rounded-xs">Skip to search</a>
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:96px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.6}button,input,select,textarea{font:inherit;color:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{cursor:pointer}button:disabled{cursor:wait;opacity:.65}a{color:inherit;text-decoration:none}a:hover{text-decoration:underline}img{display:block;width:100%;object-fit:cover}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--display);line-height:1.12}h1{font-size:clamp(36px,4.1vw,60px);letter-spacing:-.045em}h2{font-size:clamp(29px,3vw,40px);letter-spacing:-.025em}h3{font-size:23px}small,.small{font-size:12px}.muted{color:var(--muted)}.eyebrow{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--secondaryText)}.wrap{width:min(1200px,calc(100% - 64px));margin-inline:auto}.section{padding-block:80px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}.section-head h2{max-width:660px;margin-top:10px}.section-head p{max-width:560px;margin-top:14px;color:var(--muted)}.sample{display:inline-block;font-size:10px;letter-spacing:.03em;padding:3px 8px;background:var(--surfaceMuted);color:var(--text);border-radius:4px}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:48px;padding:10px 22px;border:1px solid var(--primary);border-radius:var(--buttonRadius);background:var(--primary);color:var(--onPrimary);font-weight:700;font-size:13px;line-height:1.4;text-align:center}.btn:hover{text-decoration:none;background:var(--primaryHover)}.btn.coral{background:var(--cta);color:var(--onCta);border-color:var(--cta)}.btn.coral:hover{background:var(--ctaHover)}.btn.ghost{background:var(--surface);color:var(--primary);border-color:var(--fieldBorder)}.text-link{display:inline-flex;align-items:center;min-height:44px;font-weight:700;font-size:13px;text-decoration:underline}.site-header{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:30}.header-row{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:10px;min-width:0}.brand:hover{text-decoration:none}.brand img{width:44px;height:44px;object-fit:contain;flex:none}.brand strong{display:block;font-family:var(--display);font-size:22px;line-height:1.05}.brand small{font-size:9px;letter-spacing:.16em;display:block;margin-top:5px;color:var(--muted)}.desktop-nav{display:flex;align-items:center;gap:26px;font-size:12px;font-weight:600}.desktop-nav a{min-height:44px;display:flex;align-items:center}.header-actions{display:flex;gap:8px;flex:none}.bag-btn,.menu-btn{min-height:44px;border:1px solid var(--fieldBorder);background:var(--surface);border-radius:var(--buttonRadius);padding:8px 13px;font-size:12px;font-weight:700}.bag-btn span{display:inline-grid;place-items:center;min-width:20px;height:20px;margin-left:6px;background:var(--cta);color:var(--onCta);border-radius:var(--buttonRadius)}.menu-btn{display:none}.mobile-nav{padding:12px 20px;border-top:1px solid var(--border)}.mobile-nav a{display:block;min-height:44px;padding:10px}.skip{position:fixed;left:16px;top:-100px;z-index:100;background:var(--surface);padding:12px}.skip:focus{top:12px}:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.hero-copy p{font-size:16px;color:var(--muted);max-width:540px;margin-top:20px}.hero-copy h1{margin-top:18px}.hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:24px}.mode-tabs{display:flex;gap:8px;flex-wrap:wrap}.mode-tab{min-height:46px;flex:1;padding:10px 13px;border:1px solid var(--fieldBorder);border-radius:var(--buttonRadius);background:var(--surface);color:var(--text);font-size:12px;font-weight:700;line-height:1.3}.mode-tab[aria-selected=true]{background:var(--primary);color:var(--onPrimary);border-color:var(--primary)}label.field{display:flex;flex-direction:column;gap:7px;min-width:0}.field>span,.counter-label{display:block;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}.field input,.field select,.field textarea{width:100%;min-width:0;min-height:48px;border:1px solid var(--fieldBorder);border-radius:var(--fieldRadius);padding:10px 12px;background:var(--surface)}input[type=date]{font-size:13px;font-variant-numeric:tabular-nums}.dates{display:grid;grid-template-columns:1fr 1fr;gap:12px}.party{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}.stepper{display:flex;align-items:center;min-height:48px;border:1px solid var(--fieldBorder);border-radius:var(--fieldRadius);background:var(--surface);margin-top:7px;overflow:hidden}.stepper button{width:44px;min-width:44px;min-height:46px;border:0;background:var(--surfaceMuted);font-size:20px;color:var(--primary)}.stepper input{width:100%;min-width:0;border:0;background:transparent;text-align:center;font-weight:700;appearance:textfield;-moz-appearance:textfield}.stepper input::-webkit-inner-spin-button{appearance:none}.form-hint{font-size:11px;color:var(--muted);margin-top:10px}.age-box{margin-top:18px;padding-top:16px;border-top:1px solid var(--border)}.age-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}.error{font-size:13px;color:var(--error);font-weight:600;margin-top:12px}.status{font-size:12px;margin-top:12px;color:var(--primary);min-height:20px}.promise{font-size:10px;color:var(--muted)}.promise strong{display:block;color:var(--text);font-weight:600}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}.filter-btn{min-height:44px;padding:9px 16px;background:var(--surface);border:1px solid var(--fieldBorder);border-radius:var(--buttonRadius);font-size:12px;font-weight:600}.filter-btn[aria-pressed=true]{background:var(--primary);color:var(--onPrimary);border-color:var(--primary)}.results-shell{display:grid;grid-template-columns:1fr;gap:24px}.result-tools{display:none;align-self:start;background:var(--surface);padding:20px;border:1px solid var(--border);border-radius:var(--cardRadius)}.result-tools h3{font-size:18px;margin-bottom:18px}.result-tools label+label{margin-top:20px}.result-meta{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-bottom:20px;font-size:12px}.result-meta select{min-height:44px;border:1px solid var(--fieldBorder);background:var(--surface);border-radius:var(--fieldRadius);padding:8px}.results{display:grid;gap:24px}.inventory-card{min-width:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--cardRadius);overflow:hidden}.card-photo{position:relative;overflow:hidden}.card-photo img{height:100%;object-fit:cover;transition:transform .3s}.inventory-card:hover .card-photo img{transform:scale(1.025)}.photo-tag{position:absolute;top:12px;left:12px;max-width:calc(100% - 24px);font-size:10px;line-height:1.4;background:var(--surface);color:var(--text);padding:5px 9px;border-radius:var(--buttonRadius)}.card-copy{padding:22px}.card-copy .eyebrow{font-size:9px}.card-copy h3{margin-top:8px}.card-copy p{font-size:12px;color:var(--muted);margin-top:10px}.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}.tags span{padding:3px 7px;background:var(--surfaceMuted);font-size:10px;color:var(--text);border-radius:3px}.price-stub{padding:18px 22px;background:var(--surfaceMuted);display:flex;align-items:center;justify-content:space-between;gap:16px}.price{font-size:23px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--text);line-height:1.15}.price-stub small{font-size:10px;color:var(--muted);display:block;margin-block:4px}.price-stub .btn{padding-inline:17px;min-height:44px}.empty{grid-column:1/-1;padding:44px 24px;border:1px solid var(--border);background:var(--surface);text-align:center;border-radius:var(--cardRadius)}.empty h3{margin-bottom:12px}.tour-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.tour-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--cardRadius);overflow:hidden}.tour-card img{aspect-ratio:1.45}.tour-card>div{padding:22px}.tour-card h3{font-size:22px}.tour-card p{font-size:12px;color:var(--muted);margin-top:12px}.tour-card .btn{margin-top:20px}.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.story-panel{border-radius:var(--panelRadius);overflow:hidden;background:var(--primaryHover);color:var(--onPrimary)}.story-panel img{height:240px}.story-panel>div{padding:32px}.story-panel p{font-size:13px;margin-top:16px;color:var(--onDeepMuted,var(--onPrimary))}.story-panel.light{background:var(--surfaceMuted);color:var(--text)}.story-panel.light p{color:var(--muted)}.faq-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px}details{border-bottom:1px solid var(--border);padding:17px 0}summary{cursor:pointer;min-height:44px;font-weight:600;display:flex;align-items:center;justify-content:space-between;gap:20px;list-style:none}summary:after{content:'+'}details[open] summary:after{content:'−'}summary::-webkit-details-marker{display:none}details p{font-size:13px;color:var(--muted);padding:12px 0}.contact-form{display:grid;gap:16px;margin-top:24px}.footer{background:var(--primaryHover);color:var(--onPrimary);padding:60px 0 24px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}.footer .brand strong,.footer .brand small{color:var(--onPrimary)}.footer p{font-size:12px;max-width:360px;margin-top:18px}.footer a{min-height:44px;display:inline-flex;align-items:center;font-size:12px}.footer-links{display:flex;flex-direction:column}.footer-bottom{border-top:1px solid var(--onDeepLine,var(--border));margin-top:36px;padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;font-size:10px}.footer-bottom a{font-size:10px}.dialog{background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:var(--panelRadius);width:min(700px,calc(100% - 28px));padding:0;max-height:90dvh;overflow:auto}.dialog::backdrop{background:color-mix(in srgb,var(--text) 65%,transparent)}.dialog-head{display:flex;align-items:start;justify-content:space-between;gap:20px;padding:22px;border-bottom:1px solid var(--border)}.dialog-head h2{font-size:26px}.close-btn{min-width:44px;min-height:44px;border:1px solid var(--fieldBorder);background:var(--surface);border-radius:var(--buttonRadius)}.dialog-body{padding:24px}.dialog-body>img{height:260px;border-radius:var(--cardRadius);margin-bottom:22px}.dialog-body>p{margin-block:15px;color:var(--muted);font-size:13px}.dialog-body .price-stub{margin-top:22px;border-radius:var(--cardRadius)}.trip-item{border-bottom:1px solid var(--border);padding:18px 0}.trip-item h3{font-size:19px}.trip-item p{font-size:12px;color:var(--muted);margin-top:8px}.trip-total{display:flex;justify-content:space-between;margin-block:24px;font-weight:700}.checkout-form{display:grid;gap:16px}.notice{background:var(--surfaceMuted);padding:16px;font-size:12px;border-radius:var(--fieldRadius)}#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);max-width:calc(100% - 32px);padding:14px 22px;border-radius:var(--buttonRadius);background:var(--primary);color:var(--onPrimary);z-index:100;font-size:13px}[hidden]{display:none!important}.searched .results-shell{grid-template-columns:230px minmax(0,1fr)}.searched .result-tools{display:block}.searched .results{grid-template-columns:1fr}.searched .inventory-card{display:grid;grid-template-columns:30% minmax(0,1fr) 190px}.searched .card-photo{min-height:230px}.searched .card-copy{padding:22px}.searched .price-stub{flex-direction:column;align-items:start;justify-content:center;padding:22px}.searched .price-stub .btn{width:100%;margin-top:12px}.searched .card-copy p{display:none}
+@media(max-width:1100px){.desktop-nav{gap:14px}.brand strong{font-size:20px}.searched .inventory-card{grid-template-columns:32% minmax(0,1fr)}.searched .price-stub{grid-column:2;flex-direction:row;align-items:center;padding-top:0}.searched .card-photo{grid-row:1/3}.searched .price-stub .btn{width:auto}.searched .results-shell{grid-template-columns:190px minmax(0,1fr)}}
+@media(max-width:900px){.desktop-nav{display:none}.menu-btn{display:block}.wrap{width:calc(100% - 40px)}.section{padding-block:56px}.section-head{align-items:start}.searched .results-shell{grid-template-columns:1fr}.result-tools{display:grid!important;grid-template-columns:1fr 1fr;gap:16px}.result-tools h3{grid-column:1/-1;margin:0}.result-tools label+label{margin-top:0}.tour-grid{gap:16px}.tour-card>div{padding:18px}.party{gap:10px}.age-grid{grid-template-columns:1fr 1fr}.faq-layout{gap:32px}.card-copy{padding:20px}.footer-grid{grid-template-columns:2fr 1fr 1fr}}
+@media(max-width:600px){html{scroll-padding-top:85px}.wrap{width:calc(100% - 32px)}.header-row{min-height:72px;gap:8px}.brand{gap:6px;flex:1}.brand img{width:34px;height:38px}.brand strong{font-size:17px}.brand small{font-size:7px;letter-spacing:.08em}.bag-btn{padding:8px;font-size:10px}.bag-btn span{margin-left:3px}.menu-btn{width:44px;padding:8px}.header-actions{gap:5px}.section{padding-block:44px}.hero-copy p{font-size:14px}.section-head{display:block}.section-head>.sample{margin-top:16px}.dates{gap:10px}.party{grid-template-columns:1fr}.stepper{margin-top:0;flex:1;min-width:0}.counter{display:flex;align-items:center;gap:12px}.counter-label{width:42%;flex:none}.stepper input{min-height:46px}.age-grid{grid-template-columns:1fr 1fr}.section-head p{font-size:13px}.result-meta{align-items:start}.result-meta select{max-width:150px;font-size:11px}.results{gap:22px}.tour-grid,.story-grid,.faq-layout{grid-template-columns:1fr}.tour-card{display:grid;grid-template-columns:36% 1fr}.tour-card img{height:100%;aspect-ratio:auto}.tour-card h3{font-size:19px}.tour-card>div{padding:18px}.tour-card .btn{width:100%;padding:10px}.story-panel img{height:210px}.story-panel>div{padding:26px}.footer-grid{grid-template-columns:1fr 1fr;gap:28px}.footer-grid>div:first-child{grid-column:1/-1}.footer{padding-top:40px}.footer-bottom{display:block}.footer-bottom>*{margin-top:10px}.searched .inventory-card{grid-template-columns:1fr}.searched .card-photo{grid-row:auto;min-height:0;height:220px}.searched .price-stub{grid-column:auto;padding:18px 20px}.searched .card-copy{padding:20px}.searched .card-copy p{display:block}.result-tools{grid-template-columns:1fr 1fr}.price{font-size:21px}.dialog-body{padding:20px}.dialog-body>img{height:210px}.dialog-head h2{font-size:23px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 
-  <!-- Illustrative Sample Banner -->
-  <aside class="bg-primary text-tertiary px-4 py-1.5 text-xs font-semibold flex justify-between items-center border-b border-black/20 z-50">
-    <div class="max-w-container mx-auto w-full flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-        <span class="inline-block w-2.5 h-2.5 rounded-full bg-secondary"></span>
-        <span class="font-display tracking-wide text-xs text-white uppercase font-bold">PRESET 10 // BUDGET &amp; BACKPACKER</span>
-        <span class="hidden sm:inline text-white/60 text-[11px]">— Illustrative Sample Data</span>
-      </div>
-      <div class="text-[11px] text-white/80 font-mono">Ditenagai Mesin B2B Ortasys S4</div>
-    </div>
-  </aside>
-
-  <!-- ============ HEADER ============ -->
-  <header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-line shadow-xs">
-    <div class="max-w-container mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
-      <a href="#home" class="flex items-center gap-3 shrink-0 group">
-        <div class="w-10 h-10 rounded-xs bg-primary flex items-center justify-center text-white shadow-xs transition-transform group-hover:scale-105">
-          <svg class="w-5 h-5 text-tertiary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-        </div>
-        <div>
-          <span class="font-display text-2xl font-bold tracking-tight text-primary block leading-none">JALAN HEMAT</span>
-          <span class="text-[10px] font-bold text-secondary tracking-widest uppercase block mt-1">Hostels &bull; Open Trips &bull; Budget Stays</span>
-        </div>
-      </a>
-
-      <nav class="hidden md:flex items-center gap-7 text-[13px] font-semibold text-ink" aria-label="Main Navigation">
-        <a href="#searchSection" class="hover:text-secondary transition-colors">Cari Ranjang Murah</a>
-        <a href="#catalog" class="hover:text-secondary transition-colors">Hostel &amp; Pod</a>
-        <a href="#rules" class="hover:text-secondary transition-colors">Transparansi Budget</a>
-        <a href="#faq" class="hover:text-secondary transition-colors">FAQ Backpacker</a>
-      </nav>
-
-      <div class="flex items-center gap-3">
-        <button type="button" data-open-trip class="flex items-center gap-2 bg-surface-muted hover:bg-line text-primary px-3.5 py-2 rounded-xs text-xs font-bold transition">
-          <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-          <span class="font-display tracking-wide uppercase">Trip Bag</span>
-          <span data-trip-count class="w-5 h-5 rounded-xs bg-secondary text-white text-xs flex items-center justify-center font-bold font-mono">0</span>
-        </button>
-
-        <button id="menuBtn" type="button" class="md:hidden w-10 h-10 rounded-xs flex items-center justify-center text-ink hover:bg-surface-muted" aria-label="Buka menu" aria-expanded="false">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Navigation -->
-    <nav id="mobileNav" class="md:hidden hidden border-t border-line bg-surface px-4 py-4 flex flex-col gap-2 font-semibold text-[14px]">
-      <a href="#searchSection" class="py-2 text-ink hover:text-secondary">Cari Ranjang Murah</a>
-      <a href="#catalog" class="py-2 text-ink hover:text-secondary">Hostel &amp; Pod</a>
-      <a href="#rules" class="py-2 text-ink hover:text-secondary">Transparansi Budget</a>
-      <a href="#faq" class="py-2 text-ink hover:text-secondary">FAQ Backpacker</a>
-    </nav>
-  </header>
-
-  <main id="home">
-    <!-- ============ TRANSIT DEPARTURE BOARD SPLIT HERO (PRESET 10 DNA) ============ -->
-    <section class="bg-primary text-white py-10 border-b-4 border-secondary">
-      <div class="max-w-container mx-auto px-4 sm:px-6">
-        <div class="grid lg:grid-cols-12 gap-8 items-center">
-          <!-- Left 6-Col Punchy Backpacker Headline -->
-          <div class="lg:col-span-6 space-y-4">
-            <div class="inline-flex items-center gap-2 bg-secondary text-white px-3 py-1 rounded-xs">
-              <span class="font-mono text-xs font-bold uppercase tracking-wider">BOARDING PASS // ZERO HIDDEN FEES</span>
-            </div>
-            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.04] tracking-tight">
-              Keliling Indonesia Lebih Jauh, Bayar Lebih Hemat.
-            </h1>
-            <p class="text-[15px] text-canvas/90 leading-relaxed max-w-xl">
-              Pod kapsul bersih berloker 60L, bunk bed dekat stasiun, dan open trip sharing jeep. Tarif ritel jujur dicek seketika secara live.
-            </p>
-            <div class="flex flex-wrap gap-2 pt-1 font-mono text-[11px]">
-              <span class="px-2.5 py-1 bg-white/10 rounded-xs border border-white/15 text-tertiary">✓ FREE LOCKER 60L</span>
-              <span class="px-2.5 py-1 bg-white/10 rounded-xs border border-white/15 text-tertiary">✓ FREE WATER REFILL</span>
-              <span class="px-2.5 py-1 bg-white/10 rounded-xs border border-white/15 text-tertiary">✓ 24H NO CURFEW</span>
-            </div>
-          </div>
-
-          <!-- Right 6-Col Live Hostel & Open-Trip Departure Board -->
-          <div class="lg:col-span-6 bg-primary-hover border-2 border-white/20 rounded-sm p-4 sm:p-5 font-mono shadow-elevated">
-            <div class="flex items-center justify-between pb-3 border-b border-white/15 text-[11px] text-tertiary">
-              <span class="font-bold"> PAPAN TARIF RUTE HEMAT // LIVE S4</span>
-              <span class="px-2 py-0.5 bg-success text-white rounded-xs text-[10px]">● ONLINE</span>
-            </div>
-            <div class="divide-y divide-white/10 text-xs mt-2">
-              <button type="button" data-route-pick="Yogyakarta Malioboro" data-route-filter="pod" class="w-full py-2.5 flex items-center justify-between hover:bg-white/5 px-2 rounded-xs transition text-left">
-                <div>
-                  <span class="text-tertiary font-bold">[YOG-POD]</span>
-                  <span class="text-white ml-2 font-sans font-semibold">Malioboro Capsule Pod</span>
-                </div>
-                <span class="text-secondary font-bold">Rp 125.000/bed →</span>
-              </button>
-              <button type="button" data-route-pick="Sukapura Bromo" data-route-filter="transit" class="w-full py-2.5 flex items-center justify-between hover:bg-white/5 px-2 rounded-xs transition text-left">
-                <div>
-                  <span class="text-tertiary font-bold">[BRM-BNK]</span>
-                  <span class="text-white ml-2 font-sans font-semibold">Bromo Transit Bunkhouse</span>
-                </div>
-                <span class="text-secondary font-bold">Rp 115.000/bed →</span>
-              </button>
-              <button type="button" data-route-pick="Kuta Mandalika Lombok" data-route-filter="surf" class="w-full py-2.5 flex items-center justify-between hover:bg-white/5 px-2 rounded-xs transition text-left">
-                <div>
-                  <span class="text-tertiary font-bold">[LOM-SRF]</span>
-                  <span class="text-white ml-2 font-sans font-semibold">Mandalika Surf Dorm</span>
-                </div>
-                <span class="text-secondary font-bold">Rp 145.000/bed →</span>
-              </button>
-              <button type="button" data-route-pick="Samosir Danau Toba" data-route-filter="transit" class="w-full py-2.5 flex items-center justify-between hover:bg-white/5 px-2 rounded-xs transition text-left">
-                <div>
-                  <span class="text-tertiary font-bold">[TOB-HOM]</span>
-                  <span class="text-white ml-2 font-sans font-semibold">Tuk-Tuk Lakefront Twin</span>
-                </div>
-                <span class="text-secondary font-bold">Rp 165.000/rm →</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ PERFORATED BOARDING-PASS / TICKET-STUB SEARCH CONSOLE (PRESET 10 DNA) ============ -->
-    <section id="searchSection" class="max-w-container mx-auto px-4 sm:px-6 pt-5 relative z-20" aria-labelledby="searchHeading">
-      <div class="bg-surface rounded-sm border-2 border-primary shadow-elevated overflow-hidden">
-        <!-- Ticket Top Bar -->
-        <div class="bg-primary text-white px-5 py-3 flex flex-wrap items-center justify-between gap-3">
-          <div class="flex items-center gap-3">
-            <span class="font-mono text-xs font-bold text-tertiary uppercase">TIKET PENCARIAN // S4-BUDGET</span>
-            <span class="text-white/30">|</span>
-            <h2 id="searchHeading" class="font-display text-base font-bold uppercase tracking-wide">Cek Ranjang Hostel &amp; Slot Open Trip</h2>
-          </div>
-          <div class="inline-flex rounded-xs bg-primary-hover p-0.5 border border-white/15" role="tablist">
-            <button type="button" role="tab" data-mode="hotels" aria-selected="true" class="mode-tab h-8 px-4 rounded-xs font-display text-xs font-bold uppercase tracking-wider transition bg-secondary text-white">Hostel &amp; Pod</button>
-            <button type="button" role="tab" data-mode="activities" aria-selected="false" class="mode-tab h-8 px-4 rounded-xs font-display text-xs font-bold uppercase tracking-wider transition text-white/70 hover:text-white">Open Trip Patungan</button>
-          </div>
-        </div>
-
-        <form id="searchForm" novalidate>
-          <div class="grid grid-cols-1 lg:grid-cols-12">
-            <!-- Left 8-Col Main Ticket Body -->
-            <div class="lg:col-span-8 p-5 sm:p-6 lg:border-r-2 lg:border-dashed border-line space-y-4">
-              <div class="grid grid-cols-1 sm:grid-cols-12 gap-3.5">
-                <!-- Route Input -->
-                <label class="sm:col-span-6 flex flex-col gap-1">
-                  <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-primary" data-dest-label>Rute Kota / Hub Backpacker</span>
-                  <input id="dest" list="destList" placeholder="Yogyakarta, Bromo, Mandalika, Toba…" autocomplete="off" class="h-11 px-3 rounded-xs bg-canvas border-2 border-line text-[13px] font-semibold text-ink focus:border-secondary focus:bg-white focus:outline-none">
-                  <datalist id="destList"></datalist>
-                </label>
-
-                <!-- Dates -->
-                <label class="sm:col-span-3 flex flex-col gap-1">
-                  <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-primary">Check-in</span>
-                  <input id="checkIn" type="date" aria-describedby="dateRuleHint" class="tnum h-11 px-2.5 rounded-xs bg-canvas border-2 border-line text-[12px] focus:border-secondary focus:bg-white focus:outline-none font-mono">
-                </label>
-                <label class="sm:col-span-3 flex flex-col gap-1" data-hotel-only>
-                  <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-primary">Check-out</span>
-                  <input id="checkOut" type="date" aria-describedby="dateRuleHint" class="tnum h-11 px-2.5 rounded-xs bg-canvas border-2 border-line text-[12px] focus:border-secondary focus:bg-white focus:outline-none font-mono">
-                </label>
-              </div>
-
-              <!-- Bed & Backpacker Steppers -->
-              <div class="grid grid-cols-3 gap-3 pt-1">
-                <div class="flex flex-col gap-1" data-hotel-only>
-                  <span id="lbl-rooms" class="font-mono text-[10px] font-bold uppercase text-ink-muted">Ranjang/Pod (1–9)</span>
-                  <div class="stepper flex items-center h-10 rounded-xs bg-canvas border-2 border-line" role="group" aria-labelledby="lbl-rooms">
-                    <button type="button" class="w-8 h-full text-[16px] font-bold text-primary hover:bg-surface-muted" data-step="rooms" data-dir="-1" aria-label="Kurangi ranjang">−</button>
-                    <input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
-                    <button type="button" class="w-8 h-full text-[16px] font-bold text-primary hover:bg-surface-muted" data-step="rooms" data-dir="1" aria-label="Tambah ranjang">+</button>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-1">
-                  <span id="lbl-adults" class="font-mono text-[10px] font-bold uppercase text-ink-muted" data-adults-label>Backpacker (1–20)</span>
-                  <div class="stepper flex items-center h-10 rounded-xs bg-canvas border-2 border-line" role="group" aria-labelledby="lbl-adults">
-                    <button type="button" class="w-8 h-full text-[16px] font-bold text-primary hover:bg-surface-muted" data-step="adults" data-dir="-1" aria-label="Kurangi traveler">−</button>
-                    <input id="adults" type="number" min="1" max="20" value="1" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
-                    <button type="button" class="w-8 h-full text-[16px] font-bold text-primary hover:bg-surface-muted" data-step="adults" data-dir="1" aria-label="Tambah traveler">+</button>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-1">
-                  <span id="lbl-children" class="font-mono text-[10px] font-bold uppercase text-ink-muted" data-children-label>Teman Patungan</span>
-                  <div class="stepper flex items-center h-10 rounded-xs bg-canvas border-2 border-line" role="group" aria-labelledby="lbl-children">
-                    <button type="button" class="w-8 h-full text-[16px] font-bold text-primary hover:bg-surface-muted" data-step="children" data-dir="-1" aria-label="Kurangi patungan">−</button>
-                    <input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
-                    <button type="button" class="w-8 h-full text-[16px] font-bold text-primary hover:bg-surface-muted" data-step="children" data-dir="1" aria-label="Tambah patungan">+</button>
-                  </div>
-                </div>
-              </div>
-
-              <div id="formErrors" class="text-[12px] text-danger font-mono font-bold" role="alert" aria-live="assertive"></div>
-            </div>
-
-            <!-- Right 4-Col Tear-Off Ticket Stub -->
-            <div class="lg:col-span-4 p-5 sm:p-6 bg-canvas flex flex-col justify-between gap-4 border-t-2 lg:border-t-0 border-dashed border-line">
-              <div>
-                <div class="flex items-center justify-between">
-                  <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-secondary">POTONGAN TIKET // STUB</span>
-                  <span class="w-2.5 h-2.5 rounded-full bg-success"></span>
-                </div>
-                <p class="font-display text-sm font-bold text-primary mt-1">Every price is checked live when you ask for it</p>
-                <p id="summary" class="font-mono text-xs text-ink-muted mt-1" aria-live="polite">Pilih tanggal untuk melihat tarif hostel live</p>
-                <p id="dateRuleHint" class="text-[10px] font-mono text-ink-muted mt-1">Maks. 30 malam · Fasilitas loker setara</p>
-              </div>
-
-              <button id="checkBtn" type="submit" class="w-full h-12 rounded-xs bg-secondary hover:bg-[#d45833] text-white font-display text-xs font-bold tracking-wider uppercase transition shadow-soft flex items-center justify-center gap-2">
-                <span data-btn-label>Cek Tarif Live Hemat</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- ============ 2-COLUMN PERFORATED TICKET CARDS (PRESET 10 DNA) ============ -->
-    <section id="catalog" class="max-w-container mx-auto px-4 sm:px-6 pt-16">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b-2 border-primary">
-        <div>
-          <span class="font-mono text-xs font-bold uppercase tracking-wider text-secondary">DAFTAR RANJANG &amp; KURSI PATUNGAN</span>
-          <h2 id="sectionHeading" class="font-display text-3xl sm:text-4xl font-bold text-primary mt-0.5">Hostel Pods &amp; Kamar Komunitas Backpacker</h2>
-        </div>
-
-        <!-- Filter Pills -->
-        <div id="filterBar" class="flex flex-wrap gap-1.5 items-center" role="group" aria-label="Filter Tipe Budget">
-          <button type="button" data-filter="all" class="filter-btn h-8 px-3.5 rounded-xs text-[11px] font-mono font-bold uppercase tracking-wider bg-primary text-white shadow-xs transition">Semua Rute</button>
-          <button type="button" data-filter="pod" class="filter-btn h-8 px-3.5 rounded-xs text-[11px] font-mono font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Kapsul &amp; Pod</button>
-          <button type="button" data-filter="surf" class="filter-btn h-8 px-3.5 rounded-xs text-[11px] font-mono font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Surf Camp Pantai</button>
-          <button type="button" data-filter="transit" class="filter-btn h-8 px-3.5 rounded-xs text-[11px] font-mono font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Transit Gunung &amp; Danau</button>
-        </div>
-      </div>
-
-      <!-- 2-Column Perforated Ticket Cards Grid -->
-      <div id="results" class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-5"></div>
-    </section>
-
-    <!-- ============ 3-COLUMN UTILITARIAN ZERO-GIMMICK SPEC STRIP (PRESET 10 DNA) ============ -->
-    <section id="rules" class="max-w-container mx-auto px-4 sm:px-6 pt-16">
-      <div class="bg-primary text-white rounded-sm border-2 border-primary-hover p-6 sm:p-8 shadow-soft">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-5 border-b border-white/15">
-          <h2 class="font-display text-2xl font-bold uppercase">Standar Anti-Gimmick Jalan Hemat</h2>
-          <span class="font-mono text-xs text-tertiary">Illustrative Sample Data</span>
-        </div>
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div class="bg-white/10 p-5 rounded-xs border-l-4 border-secondary">
-            <span class="font-mono text-tertiary text-xs font-bold block">01 // HARGA BERSIH</span>
-            <h3 class="font-display text-lg font-bold mt-1">Tanpa Biaya Sprei / Admin</h3>
-            <p class="text-xs text-canvas/85 mt-1.5 leading-relaxed">Harga ritel yang tampil adalah harga final. Tidak ada biaya tambahan tersembunyi saat tiba di resepsionis hostel.</p>
-          </div>
-          <div class="bg-white/10 p-5 rounded-xs border-l-4 border-tertiary">
-            <span class="font-mono text-tertiary text-xs font-bold block">02 // LOKER 60L AMAN</span>
-            <h3 class="font-display text-lg font-bold mt-1">Muat Ransel Carrier Besar</h3>
-            <p class="text-xs text-canvas/85 mt-1.5 leading-relaxed">Setiap ranjang dilengkapi loker kunci bawah kasur ukuran 60L, lampu baca, tirai privasi, dan 2 soket charger.</p>
-          </div>
-          <div class="bg-white/10 p-5 rounded-xs border-l-4 border-accent">
-            <span class="font-mono text-tertiary text-xs font-bold block">03 // QRIS SNAP BI</span>
-            <h3 class="font-display text-lg font-bold mt-1">Bayar Patungan Instan</h3>
-            <p class="text-xs text-canvas/85 mt-1.5 leading-relaxed">Penyelesaian langsung via QRIS SNAP BI (GoPay, OVO, ShopeePay, Mobile Banking) dan DOKU Virtual Account.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ FAQ SECTION ============ -->
-    <section id="faq" class="max-w-container mx-auto px-4 sm:px-6 pt-16 pb-20">
-      <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-10">
-          <span class="text-xs font-bold uppercase tracking-wider text-secondary font-display">Tanya Jawab Backpacker</span>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold text-primary mt-1">FAQ Trip Mandiri &amp; Patungan</h2>
-        </div>
-
-        <div class="space-y-3">
-          <details class="bg-surface rounded-xs border border-line p-5">
-            <summary class="font-display text-base font-bold text-ink cursor-pointer flex justify-between items-center">
-              <span>Apakah ada jam malam (curfew) di hostel mitra?</span>
-              <span class="faq-icon text-secondary text-xl font-bold transition-transform font-mono">+</span>
-            </summary>
-            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Seluruh hostel mitra Jalan Hemat menerapkan akses kartu/pin digital 24 jam bebas jam malam, sehingga kamu bebas pulang larut malam atau bangun dini hari untuk mengejar sunrise.</p>
-          </details>
-
-          <details class="bg-surface rounded-xs border border-line p-5">
-            <summary class="font-display text-base font-bold text-ink cursor-pointer flex justify-between items-center">
-              <span>Bagaimana mekanisme open trip sharing patungan?</span>
-              <span class="faq-icon text-secondary text-xl font-bold transition-transform font-mono">+</span>
-            </summary>
-            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Kamu cukup bayar per pax kursi, sistem Ortasys akan menggabungkan kuota traveler lain secara otomatis hingga kuota minimal terpenuhi dengan jaminan keberangkatan pasti.</p>
-          </details>
-
-          <details class="bg-surface rounded-xs border border-line p-5">
-            <summary class="font-display text-base font-bold text-ink cursor-pointer flex justify-between items-center">
-              <span>Bolehkah menitipkan tas/carrier setelah check-out?</span>
-              <span class="faq-icon text-secondary text-xl font-bold transition-transform font-mono">+</span>
-            </summary>
-            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Ya, seluruh hostel menyediakan fasilitas penitipan tas (luggage storage) gratis di lobby hingga waktu keberangkatan kereta malam atau penerbangan Anda.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="bg-surface border-t border-line py-12 text-xs text-ink-muted">
-    <div class="max-w-container mx-auto px-4 sm:px-6">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-line">
-        <div>
-          <span class="font-display text-2xl font-bold text-primary block">Jalan Hemat Travel</span>
-          <p class="text-[12px] mt-0.5">Platform Backpacker &amp; Open Trip Hemat · Ditenagai Mesin Distribusi Ortasys S4.</p>
-        </div>
-        <div class="flex gap-6 font-semibold text-ink text-[13px]">
-          <a href="#catalog" class="hover:text-secondary">Hostel Pods</a>
-          <a href="#rules" class="hover:text-secondary">Transparansi</a>
-          <a href="#faq" class="hover:text-secondary">Bantuan FAQ</a>
-        </div>
-      </div>
-
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] gap-2">
-        <p>Penyelesaian terjamin melalui gateway resmi <strong class="text-ink">DOKU</strong> dan <strong class="text-ink">SNAP BI</strong>. Mockup data bersifat ilustratif [PRD 9.2].</p>
-        <p>© <span id="year"></span> Jalan Hemat Travel. Hak Cipta Dilindungi.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ============ TRIP DRAWER / BAG ============ -->
-  <div id="tripOverlay" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden" aria-hidden="true"></div>
-  <aside id="tripDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-[420px] bg-surface shadow-elevated translate-x-full transition-transform duration-300 flex flex-col border-l border-line" role="dialog" aria-modal="true" aria-labelledby="tripTitle" aria-hidden="true">
-    <div class="bg-primary text-white px-6 h-18 flex items-center justify-between border-b border-black/20">
-      <div>
-        <h2 id="tripTitle" class="font-display text-xl font-bold uppercase">Backpacker Bag Anda</h2>
-        <p class="text-xs text-tertiary">Build Your Trip — Ranjang &amp; Open Trip</p>
-      </div>
-      <button type="button" data-close-trip class="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white" aria-label="Tutup bag">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
-    </div>
-
-    <div id="tripItems" class="flex-1 overflow-y-auto p-5 flex flex-col gap-3"></div>
-
-    <div class="bg-canvas p-6 border-t border-line">
-      <div class="space-y-1.5 text-[12px] font-mono text-ink-muted">
-        <div class="flex justify-between">
-          <span>Subtotal Item:</span>
-          <span id="tripSubtotal" class="font-bold text-ink">Rp 0</span>
-        </div>
-        <div class="flex justify-between text-[11px]">
-          <span>Biaya Layanan &amp; Loker:</span>
-          <span class="text-success font-semibold">Gratis Termasuk (Net Final)</span>
-        </div>
-        <div class="flex items-baseline justify-between pt-2 border-t border-line/60 text-[14px]">
-          <span class="font-display text-sm font-bold text-ink uppercase">Total Pelunasan:</span>
-          <span id="tripTotal" class="text-2xl font-bold text-secondary font-mono">Rp 0</span>
-        </div>
-      </div>
-
-      <button id="payBtn" type="button" class="mt-4 w-full py-3.5 bg-secondary hover:bg-[#d45833] text-white rounded-xs text-xs font-bold tracking-wider uppercase transition shadow-soft disabled:opacity-40 font-display">
-        Lanjut ke Pembayaran Hemat (DOKU / SNAP)
-      </button>
-      <p id="payNote" class="mt-2 text-[11px] text-center text-ink-muted" aria-live="polite">Penyelesaian resmi Bank Indonesia SNAP BI &amp; DOKU.</p>
-    </div>
-  </aside>
-
-  <!-- ============ DETAIL QUICK-VIEW MODAL ============ -->
-  <div id="detailModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="bg-surface rounded-md max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[90vh]">
-      <div class="relative aspect-[16/9] bg-surface-muted shrink-0">
-        <img id="modalImg" src="" alt="" class="w-full h-full object-cover">
-        <button type="button" data-close-modal class="absolute top-3 right-3 w-8 h-8 rounded-xs bg-surface/90 flex items-center justify-center text-ink hover:bg-surface transition shadow-xs" aria-label="Tutup detail">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
-        <span id="modalBadge" class="absolute bottom-3 left-3 px-2.5 py-1 rounded-xs bg-primary text-white text-[11px] font-display uppercase font-bold tracking-wider"></span>
-      </div>
-      <div class="p-6 overflow-y-auto flex-1 flex flex-col gap-3">
-        <span id="modalArea" class="text-[11px] font-bold uppercase tracking-wider text-secondary font-display"></span>
-        <h3 id="modalTitle" class="font-display text-2xl font-bold text-primary leading-tight"></h3>
-        <p id="modalDesc" class="text-[13px] text-ink-muted leading-relaxed font-normal"></p>
-        <div class="pt-3 border-t border-line">
-          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-display mb-2">Fasilitas Backpacker Termasuk:</h4>
-          <div id="modalAmenities" class="flex flex-wrap gap-1.5 text-[12px]"></div>
-        </div>
-        <div class="pt-3 border-t border-line">
-          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-display mb-1">Kebijakan Menginap:</h4>
-          <p id="modalPolicy" class="text-[12px] text-ink-muted"></p>
-        </div>
-      </div>
-      <div class="p-5 border-t border-line bg-canvas flex items-center justify-between gap-4 shrink-0">
-        <div>
-          <p class="text-[11px] text-ink-muted font-mono uppercase tracking-wider">Tarif Bersih Per Ranjang</p>
-          <p id="modalPrice" class="font-mono text-[20px] font-bold text-secondary"></p>
-        </div>
-        <button id="modalSelectBtn" type="button" class="h-10 px-6 rounded-xs bg-secondary hover:bg-[#d45833] text-white text-xs font-bold uppercase tracking-wider transition shadow-xs font-display">
-          Pilih Ranjang Ini
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ CHECKOUT CONFIRMATION MODAL ============ -->
-  <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="checkoutHeading">
-    <div class="bg-surface rounded-md max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[92vh]">
-      <div class="bg-primary text-white flex items-center justify-between px-6 py-4 border-b border-black/20">
-        <div>
-          <h3 id="checkoutHeading" class="font-display text-xl font-bold uppercase">Penyelesaian Reservasi Backpacker</h3>
-          <p class="text-xs text-tertiary">Penyelesaian Cepat DOKU &amp; SNAP BI</p>
-        </div>
-        <button type="button" data-close-checkout class="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white" aria-label="Tutup checkout">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
-      </div>
-
-      <div id="checkoutFormContent" class="p-6 overflow-y-auto flex-1 flex flex-col gap-4">
-        <div class="p-4 rounded-xs bg-canvas border border-line text-[13px]">
-          <div class="flex justify-between font-display text-ink text-sm font-bold uppercase">
-            <span>Rincian Backpacker Bag:</span>
-            <span id="coItemCount" class="font-mono">0 Item</span>
-          </div>
-          <div id="coItemList" class="mt-2 space-y-1 text-[12px] text-ink-muted"></div>
-          <div class="mt-3 pt-2 border-t border-line/60 flex justify-between font-mono font-bold text-ink text-[14px]">
-            <span>Total Tagihan Bersih:</span>
-            <span id="coTotal" class="text-secondary font-bold text-base">Rp 0</span>
-          </div>
-        </div>
-
-        <form id="coForm" class="flex flex-col gap-3">
-          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-display">Data Traveler / Pemesan</h4>
-          <label class="flex flex-col gap-1 text-[12px] font-medium text-ink">
-            Nama Lengkap Sesuai KTP / Paspor
-            <input id="coName" type="text" required placeholder="Contoh: Dimas Bagas" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
-          </label>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <label class="flex flex-col gap-1 text-[12px] font-medium text-ink">
-              Email Konfirmasi Voucher
-              <input id="coEmail" type="email" required placeholder="dimas@traveler.com" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
-            </label>
-            <label class="flex flex-col gap-1 text-[12px] font-medium text-ink">
-              No. WhatsApp Aktif
-              <input id="coPhone" type="tel" required placeholder="081234567890" class="h-10 px-3 rounded-xs bg-white border border-line text-[13px] focus:border-secondary focus:outline-none">
-            </label>
-          </div>
-
-          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-display mt-2">Metode Pembayaran Cepat</h4>
-          <div class="space-y-2 text-[12px]">
-            <label class="flex items-center gap-3 p-3 rounded-xs bg-white border border-line cursor-pointer hover:border-secondary">
-              <input type="radio" name="payMethod" value="qris" checked class="accent-secondary">
-              <div class="flex-1">
-                <span class="font-display font-bold text-ink block text-sm">QRIS SNAP BI (Bebas Biaya Admin)</span>
-                <span class="text-[11px] text-ink-muted block">BCA, Mandiri, BRI, GoPay, OVO, ShopeePay, DANA</span>
-              </div>
-            </label>
-            <label class="flex items-center gap-3 p-3 rounded-xs bg-white border border-line cursor-pointer hover:border-secondary">
-              <input type="radio" name="payMethod" value="va" class="accent-secondary">
-              <div class="flex-1">
-                <span class="font-display font-bold text-ink block text-sm">DOKU Virtual Account Multi-Bank</span>
-                <span class="text-[11px] text-ink-muted block">BCA, Mandiri, BRI, Permata VA otomatis terverifikasi</span>
-              </div>
-            </label>
-          </div>
-
-          <button type="submit" id="coSubmitBtn" class="mt-3 w-full py-3 bg-secondary hover:bg-[#d45833] text-white rounded-xs text-xs font-bold uppercase tracking-wider transition shadow-soft flex items-center justify-center gap-2 font-display">
-            <span>Bayar &amp; Amankan Ranjang Kapsul</span>
-          </button>
-        </form>
-      </div>
-
-      <!-- Confirmation Success State -->
-      <div id="checkoutSuccessContent" class="hidden p-8 flex flex-col items-center text-center gap-4">
-        <div class="w-14 h-14 rounded-xs bg-success/15 text-success flex items-center justify-center">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
-        <div>
-          <span class="text-[11px] font-bold uppercase tracking-wider text-success font-display">Pembayaran Sah Terkonfirmasi</span>
-          <h4 class="font-display text-2xl font-bold text-primary mt-1">Voucher Backpacker Terbit</h4>
-          <p class="text-[13px] text-ink-muted mt-1">Loker dan nomor ranjang pod Anda telah tercatat otomatis di sistem hostel mitra.</p>
-        </div>
-        <div class="w-full p-4 rounded-xs bg-canvas border border-line text-left text-[12px] space-y-1.5 font-mono">
-          <div class="flex justify-between">
-            <span class="text-ink-muted">Ref. Booking:</span>
-            <span id="successRef" class="font-bold text-ink">HEMAT-2026-0001</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-ink-muted">Nama Traveler:</span>
-            <span id="successGuest" class="font-bold text-ink">-</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-ink-muted">Total Pembayaran:</span>
-            <span id="successAmount" class="font-bold text-secondary font-bold">Rp 0</span>
-          </div>
-        </div>
-        <div class="w-full flex flex-col gap-2 pt-2">
-          <button type="button" id="btnDownloadVoucher" class="w-full py-3 rounded-xs bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider transition font-display">
-            Unduh E-Voucher &amp; Peta Koordinat (PDF)
-          </button>
-          <button type="button" data-finish-checkout class="w-full py-2.5 rounded-xs bg-surface-muted hover:bg-line text-ink text-xs font-semibold uppercase tracking-wider transition font-display">
-            Kembali ke Beranda
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-primary text-white rounded-xs px-6 py-3 text-[13px] font-medium shadow-elevated" role="status" aria-live="polite"></div>
-
-  <script>
-  (() => {
-    'use strict';
-    /* Data Sampel Ilustratif Preset 10 (Jalan Hemat Travel) */
-    const BUDGET_HOSTELS = [
+:root{--body:'Inter',sans-serif;--display:'Space Grotesk',sans-serif;--buttonRadius:5px;--fieldRadius:4px;--cardRadius:8px;--panelRadius:10px}.jalan-hero{background:linear-gradient(90deg,color-mix(in srgb,var(--primaryHover) 94%,transparent),color-mix(in srgb,var(--primary) 65%,transparent)),url('./assets/hero.webp') center 55%/cover;color:var(--onPrimary);padding:64px 0 104px}.jalan-hero-grid{display:grid;grid-template-columns:1fr .87fr;gap:80px;align-items:center}.jalan-hero .hero-copy p{color:var(--mutedOnDark)}.jalan-hero .eyebrow{color:var(--mustard)}.jalan-hero .hero-copy h1{font-size:clamp(37px,4vw,58px)}.departure-board{background:var(--board);border:1px solid var(--border);border-radius:6px;padding:22px;box-shadow:10px 10px 0 color-mix(in srgb,var(--ink) 30%,transparent);font-size:12px}.board-head{font-size:10px;font-weight:700;color:var(--mustard);display:flex;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid var(--border)}.departure-board button{display:grid;grid-template-columns:52px 1fr auto;width:100%;gap:14px;align-items:center;min-height:55px;padding:10px 0;background:none;border:0;border-bottom:1px solid color-mix(in srgb,var(--border) 35%,transparent);color:var(--onPrimary);text-align:left;font-size:11px}.departure-board button:hover{background:var(--primary)}.route-code{background:var(--mustard);color:var(--ink);font-size:10px;padding:4px 6px;font-weight:700;text-align:center}.board-price{color:var(--mustard);font-variant-numeric:tabular-nums;white-space:nowrap}.departure-board>p{font-size:10px;color:var(--mutedOnDark);margin-top:14px}.ticket-wrap{margin-top:-55px;position:relative;z-index:2}.search-ticket{background:var(--surface);border:2px solid var(--primary);border-radius:8px;display:grid;grid-template-columns:2fr 1fr;box-shadow:0 12px 20px color-mix(in srgb,var(--primary) 14%,transparent);overflow:hidden}.ticket-body{padding:25px}.ticket-top{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:24px}.ticket-top h2{font-size:9px;letter-spacing:.06em;color:var(--secondaryText);font-family:var(--body);text-align:right}.ticket-top .mode-tabs{flex:none}.ticket-top .mode-tab{border-radius:3px;flex:none;min-height:44px;font-size:11px}.ticket-fields{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:12px}.ticket-stub{background:var(--surfaceMuted);border-left:2px dashed var(--border);padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:22px;position:relative}.ticket-stub:before,.ticket-stub:after{content:'';position:absolute;left:-9px;width:16px;height:16px;border-radius:50%;background:var(--primary);top:-9px}.ticket-stub:after{top:auto;bottom:-9px}.ticket-stub .eyebrow{font-size:9px}.stub-label{font-size:12px;margin-top:8px;font-weight:600}.stub-total{font-family:var(--display);font-size:34px;line-height:1.2;font-weight:700;letter-spacing:-.04em;margin-top:8px}.ticket-stub .small{font-size:10px;color:var(--muted);margin-top:8px}.ticket-stub .btn{width:100%;border:1px solid var(--primary)}.ticket-stub .promise{margin-top:12px;font-size:9px}.route-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.route-tile{border:1px solid var(--primary);border-radius:6px;overflow:hidden;text-align:left;padding:0;background:var(--surface)}.route-tile img{height:200px}.route-tile>span{display:flex;justify-content:space-between;padding:18px;align-items:center}.route-tile strong{font-family:var(--display);font-size:22px}.route-tile small{display:block;color:var(--muted);font-size:11px;font-family:var(--body);font-weight:400}.route-tile b{display:grid;place-items:center;min-width:44px;min-height:44px;border:1px solid var(--primary);border-radius:4px;background:var(--cta);color:var(--onCta)}.jalan .results{grid-template-columns:1fr 1fr;gap:24px}.jalan .inventory-card{display:grid;grid-template-columns:30% minmax(0,1fr) 31%;border:1px solid var(--primary)}.jalan .card-photo{min-height:275px}.jalan .card-copy{padding:17px}.jalan .card-copy h3{font-size:18px}.jalan .card-copy .eyebrow{font-size:8px}.jalan .card-copy p{font-size:11px}.jalan .tags{gap:5px}.jalan .tags span{font-size:8px;background:var(--mustard);color:var(--ink)}.jalan .price-stub{border-left:1px dashed var(--primary);padding:15px;display:flex;flex-direction:column;align-items:start;justify-content:space-between;position:relative;background:var(--surfaceMuted)}.jalan .price-stub:before,.jalan .price-stub:after{content:'';width:12px;height:12px;border-radius:50%;background:var(--bg);border:1px solid var(--primary);position:absolute;left:-7px;top:-7px}.jalan .price-stub:after{top:auto;bottom:-7px}.jalan .price{font-size:20px}.jalan .price-stub .btn{width:100%;font-size:10px;padding:10px 8px;border:1px solid var(--primary)}.jalan.searched .results{grid-template-columns:1fr}.jalan.searched .inventory-card{grid-template-columns:25% minmax(0,1fr) 24%}.jalan.searched .card-copy{padding:24px}.jalan.searched .card-copy h3{font-size:22px}.jalan.searched .card-photo{min-height:230px}.jalan.searched .price-stub{padding:24px;grid-column:auto}.jalan .tour-card{border-color:var(--primary)}.jalan .tour-card>div{border-top:1px dashed var(--primary)}.rules-strip{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--primary);border-radius:8px;background:var(--surface)}.rules-strip>div{padding:28px}.rules-strip>div+div{border-left:1px dashed var(--primary)}.rules-strip h3{font-size:22px;margin-top:12px}.rules-strip p{font-size:12px;color:var(--muted);margin-top:12px}.jalan .footer{border-top:2px dashed var(--mustard)}
+@media(max-width:1100px){.jalan-hero-grid{gap:40px}.ticket-body{padding:22px}.ticket-stub{padding:22px}.ticket-fields{grid-template-columns:1.3fr 1fr 1fr}.ticket-top{flex-wrap:wrap;margin-bottom:20px}.jalan .inventory-card{grid-template-columns:36% 1fr}.jalan .card-photo{grid-row:1/3;min-height:290px}.jalan .price-stub{grid-column:2;flex-direction:row;align-items:center;border-top:1px dashed var(--primary);border-left:0}.jalan .price-stub .btn{width:auto}.jalan .price-stub:before,.jalan .price-stub:after{display:none}.jalan.searched .inventory-card{grid-template-columns:28% 1fr 25%}.jalan.searched .card-photo{grid-row:auto}.jalan.searched .price-stub{border-top:0;border-left:1px dashed var(--primary);flex-direction:column;align-items:start}.ticket-fields .field>span{font-size:9px}}
+@media(max-width:900px){.jalan-hero{padding:44px 0 86px}.jalan-hero-grid{grid-template-columns:1fr 1fr;gap:28px}.departure-board{padding:16px}.departure-board button{grid-template-columns:42px 1fr;gap:8px}.board-price{grid-column:2;font-size:10px}.search-ticket{grid-template-columns:1fr}.ticket-stub{border-left:0;border-top:2px dashed var(--border);display:grid;grid-template-columns:1fr 1fr;gap:24px}.ticket-stub:before,.ticket-stub:after{top:-9px;left:-9px}.ticket-stub:after{left:auto;right:-9px;bottom:auto}.ticket-fields{grid-template-columns:1.5fr 1fr 1fr}.stub-total{font-size:30px}.route-grid{gap:16px}.route-tile img{height:170px}.route-tile>span{padding:14px}.route-tile strong{font-size:20px}.route-tile b{min-width:36px}.jalan.searched .inventory-card{grid-template-columns:27% 1fr 26%}.jalan.searched .card-copy{padding:20px}.jalan.searched .card-copy h3{font-size:20px}.jalan.searched .price-stub{padding:18px}.rules-strip>div{padding:22px}}
+@media(max-width:600px){.jalan-hero{padding-top:30px}.jalan-hero-grid{grid-template-columns:1fr;gap:28px}.departure-board button{grid-template-columns:45px 1fr auto;gap:9px}.board-price{grid-column:auto;font-size:10px}.departure-board{box-shadow:5px 5px 0 color-mix(in srgb,var(--ink) 30%,transparent)}.ticket-wrap{margin-top:-42px}.ticket-body{padding:22px 18px}.ticket-top{gap:12px}.ticket-top .mode-tabs{width:100%;gap:6px}.ticket-top .mode-tab{flex:1;padding-inline:8px;font-size:10px}.ticket-top h2{display:none}.ticket-fields{grid-template-columns:1fr 1fr}.ticket-fields>.field:first-child{grid-column:1/-1}.ticket-stub{display:block;padding:24px 20px}.ticket-stub>div+div{margin-top:22px}.stub-total{font-size:34px}.route-grid{grid-template-columns:1fr}.route-tile{display:grid;grid-template-columns:39% 1fr}.route-tile img{height:140px}.route-tile>span{gap:10px}.route-tile strong{font-size:22px}.route-tile b{min-width:44px}.jalan .results{grid-template-columns:1fr}.jalan .card-copy h3{font-size:19px}.jalan .card-photo{min-height:265px}.jalan .price-stub .btn{font-size:11px}.jalan.searched .inventory-card{grid-template-columns:32% 1fr}.jalan.searched .card-photo{grid-row:1/3;min-height:270px;height:100%}.jalan.searched .price-stub{grid-column:2;flex-direction:row;align-items:center;border-left:0;border-top:1px dashed var(--primary);padding:15px}.jalan.searched .card-copy{padding:17px}.jalan.searched .card-copy h3{font-size:18px}.jalan.searched .card-copy p{display:none}.jalan.searched .price-stub .btn{width:auto;font-size:10px;padding:10px}.jalan.searched .price{font-size:19px}.rules-strip{grid-template-columns:1fr}.rules-strip>div+div{border-left:0;border-top:1px dashed var(--primary)}.jalan .tour-card{display:block}.jalan .tour-card img{height:220px;width:100%}.jalan .tour-card>div{padding:22px}.jalan .tour-card h3{font-size:23px}}
+.ticket-stub .eyebrow{color:var(--text);font-size:12px}
+</style></head><body class="jalan"><a class="skip" href="#searchSection">Langsung ke pencarian</a><header class="site-header"><div class="wrap header-row"><a class="brand" href="./index.html"><img src="./assets/logo-mark.png" alt=""><span><strong>Jalan Hemat</strong><small>TRAVEL · HOSTEL · OPEN TRIP</small></span></a><nav class="desktop-nav" aria-label="Navigasi utama"><a href="#searchSection">Cari ranjang</a><a href="#catalog">Hostel & pod</a><a href="#tours">Open trip</a><a href="#rules">Transparansi</a><a href="#faq">FAQ</a></nav><div class="header-actions"><button type="button" class="bag-btn" data-open-trip aria-label="Buka tas perjalanan">Trip Bag <span data-trip-count>0</span></button><button type="button" class="menu-btn" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileNav">☰</button></div></div><nav id="mobileNav" class="mobile-nav" aria-label="Navigasi seluler" hidden><a href="#searchSection">Cari ranjang</a><a href="#catalog">Hostel & pod</a><a href="#tours">Open trip</a><a href="#rules">Transparansi</a><a href="#faq">FAQ</a></nav></header><main id="home"><section class="jalan-hero"><div class="wrap jalan-hero-grid"><div class="hero-copy"><span class="eyebrow">Siapkan ransel · jalan dengan ritme sendiri</span><h1>Keliling Indonesia lebih jauh, bayar lebih hemat.</h1><p>Pod kapsul, bunk bed dekat jalur perjalanan, dan open trip sharing jeep. Pilih tempat singgah, hitung anggaran, lalu lanjutkan cerita.</p><div class="hero-actions"><a class="btn coral" href="#searchSection">Cari ranjang →</a><a class="btn ghost" href="#tours">Lihat open trip</a></div></div><div class="departure-board"><div class="board-head"><span>↗ PAPAN TARIF RUTE HEMAT</span><span>KATALOG LOKAL</span></div><button type="button" data-route-pick="Yogyakarta"><span class="route-code">YOG</span><span>Malioboro Capsule Pod</span><span class="board-price">Rp 125.000 →</span></button><button type="button" data-route-pick="Bromo"><span class="route-code">BRM</span><span>Bromo Transit Bunkhouse</span><span class="board-price">Rp 115.000 →</span></button><button type="button" data-route-pick="Mandalika"><span class="route-code">LOM</span><span>Mandalika Surf Dorm</span><span class="board-price">Rp 145.000 →</span></button><button type="button" data-route-pick="Toba"><span class="route-code">TOB</span><span>Tuk-Tuk Lakefront Twin</span><span class="board-price">Rp 165.000 →</span></button><p>Contoh konten agen · Harga per unit / malam, bukan ketersediaan langsung.</p></div></div></section><section id="searchSection" class="wrap ticket-wrap" aria-labelledby="searchHeading"><form id="searchForm" class="search-ticket" novalidate><div class="ticket-body"><div class="ticket-top"><div class="mode-tabs" role="tablist" aria-label="Jenis perjalanan"><button class="mode-tab" type="button" role="tab" aria-selected="true" data-mode="hotels">Hostel &amp; pod</button><button class="mode-tab" type="button" role="tab" aria-selected="false" data-mode="activities">Open trip patungan</button></div><h2 id="searchHeading">▥ Tiket pencarian</h2></div><div class="ticket-fields"><label class="field"><span data-dest-label>Rute kota / hub backpacker</span><input id="dest" name="destination" list="destList" placeholder="Yogyakarta, Bromo, Mandalika…" autocomplete="off" required aria-describedby="formErrors"><datalist id="destList"></datalist></label><label class="field"><span id="arrivalLabel">Tiba (check-in)</span><input id="checkIn" name="checkIn" type="date" required aria-describedby="dateRuleHint formErrors"></label><label class="field" data-hotel-only><span>Pulang (check-out)</span><input id="checkOut" name="checkOut" type="date" required aria-describedby="dateRuleHint formErrors"></label></div><div class="party"><div class="counter"><label class="counter-label" for="rooms">Kamar / unit (1–9)</label><div class="stepper"><button type="button" data-step="rooms" data-dir="-1" aria-label="Kurangi kamar / unit (1–9)">−</button><input id="rooms" name="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" required><button type="button" data-step="rooms" data-dir="1" aria-label="Tambah kamar / unit (1–9)">+</button></div></div><div class="counter"><label class="counter-label" for="adults">Dewasa / kamar (1–20)</label><div class="stepper"><button type="button" data-step="adults" data-dir="-1" aria-label="Kurangi dewasa / kamar (1–20)">−</button><input id="adults" name="adults" type="number" min="1" max="20" value="2" inputmode="numeric" required><button type="button" data-step="adults" data-dir="1" aria-label="Tambah dewasa / kamar (1–20)">+</button></div></div><div class="counter"><label class="counter-label" for="qChildren">Anak / kamar (0–20)</label><div class="stepper"><button type="button" data-step="children" data-dir="-1" aria-label="Kurangi anak / kamar (0–20)">−</button><input id="qChildren" name="children" type="number" min="0" max="20" value="0" inputmode="numeric" required><button type="button" data-step="children" data-dir="1" aria-label="Tambah anak / kamar (0–20)">+</button></div></div></div><p class="form-hint" id="dateRuleHint">1–30 malam · Dewasa &amp; anak dihitung per kamar. Mode tur: unit = rombongan.</p><div id="childAgeBox" class="age-box" hidden></div><div id="formErrors" class="error" role="alert"></div><p id="summary" class="small muted" aria-live="polite"></p><p class="status" id="searchStatus" role="status"></p></div><aside class="ticket-stub"><div><span class="eyebrow">Potongan tiket // stub</span><p class="stub-label">Estimasi patungan per orang</p><p id="stubTotal" class="stub-total">—</p><p id="stubBreakdown" class="small">Pilih tanggal &amp; rute untuk menghitung.</p><span class="sample">Contoh konten agen</span></div><div><button class="btn coral" type="submit" id="checkBtn"><span data-btn-label>Cek tarif hemat</span> ↗</button><p class="promise"><strong>Setiap harga dicek langsung saat Anda mencari</strong>Simulasi katalog lokal; bukan tarif atau ketersediaan nyata.</p></div></aside></form></section><section class="section wrap"><div class="section-head"><div><span class="eyebrow">01 / Rute populer</span><h2>Tiga hub backpacker, satu papan rute.</h2><p>Dari gang Malioboro ke pagi di Bromo, lalu singgah di pesisir selatan Lombok.</p></div><span class="sample">Contoh konten agen</span></div><div class="route-grid"><button class="route-tile" type="button" data-route-pick="Yogyakarta"><img src="./assets/dest-1.webp" alt="Yogyakarta"><span><strong>Yogyakarta<small>Malioboro, stasiun, dan pod kota</small></strong><b aria-hidden="true">→</b></span></button><button class="route-tile" type="button" data-route-pick="Bromo"><img src="./assets/dest-2.webp" alt="Bromo"><span><strong>Bromo<small>Singgah sebelum berburu pagi</small></strong><b aria-hidden="true">→</b></span></button><button class="route-tile" type="button" data-route-pick="Mandalika"><img src="./assets/dest-3.webp" alt="Mandalika"><span><strong>Mandalika<small>Surf camp dan pantai selatan</small></strong><b aria-hidden="true">→</b></span></button></div></section><section id="catalog" class="section wrap"><div class="section-head"><div><span class="eyebrow">02 / Daftar ranjang & kamar</span><h2 id="sectionHeading">Hostel pod dan kamar komunitas backpacker.</h2><p id="resultsNote">Setiap tiket menampilkan jenis unit, contoh fasilitas, dan harga jual yang mudah dibandingkan.</p></div><span class="sample">Contoh konten agen</span></div><div id="filterBar" class="filters" aria-label="Filter koleksi"><button type="button" class="filter-btn" data-filter="all" aria-pressed="true">Semua rute</button><button type="button" class="filter-btn" data-filter="pod" aria-pressed="false">Kapsul & pod</button><button type="button" class="filter-btn" data-filter="surf" aria-pressed="false">Surf camp</button><button type="button" class="filter-btn" data-filter="transit" aria-pressed="false">Gunung & danau</button></div><div class="results-shell"><aside class="result-tools"><h3>Persempit pilihan</h3><label class="field"><span>Anggaran per unit / malam</span><select id="budgetFilter"><option value="0">Semua harga contoh</option value="130000">Hingga Rp 130.000</option><option value="150000">Hingga Rp 150.000</option></select></label><label class="field"><span>Jenis koleksi</span><select id="categoryFilter"><option value="all">Semua rute</option><option value="pod">Kapsul & pod</option><option value="surf">Surf camp</option><option value="transit">Gunung & danau</option></select></label><button class="text-link" type="button" data-reset-filter>Reset pencarian</button></aside><div><div class="result-meta"><span id="resultCount" role="status"></span><label>Urutkan <select id="sortResults" aria-label="Urutkan hasil"><option value="default">Pilihan katalog</option><option value="asc">Harga terendah</option><option value="desc">Harga tertinggi</option></select></label></div><div id="results" class="results" aria-live="polite"></div></div></div></section><section id="tours" class="section "><div class="wrap"><div class="section-head"><div><span class="eyebrow">03 / Open trip & sharing jeep</span><h2>Pilih perjalanan, bukan seluruh ongkos kendaraan.</h2><p>Jelajahi contoh perjalanan Bromo, Ijen, dan Tiga Gili bersama rombongan.</p></div><span class="sample">Contoh konten agen</span></div><div id="tourPreview" class="tour-grid"></div></div></section><section class="section wrap" id="rules"><div class="rules-strip"><div><span class="eyebrow">01 // Harga terbaca</span><h3>Harga di papan = awal menghitung.</h3><p>Harga contoh per unit dan total perjalanan dipisahkan. Patungan membagi total dengan seluruh dewasa dan anak dalam rencana Anda, bukan tarif individual resmi.</p></div><div><span class="eyebrow">02 // Periksa fasilitas</span><h3>Loker, sarapan, dan tipe unit.</h3><p>Bandingkan contoh fasilitas pada tiket. Periksa kembali kapasitas, aturan anak, dan fasilitas dengan agen; detail katalog ini belum diverifikasi.</p></div><div><span class="eyebrow">03 // Tanpa transaksi nyata</span><h3>Rencanakan dulu, bayar nanti.</h3><p>Checkout di sini hanya simulasi. Tidak ada dana ditagih, reservasi dikirim, atau pembayaran yang dinyatakan berhasil.</p></div></div></section><section id="faq" class="section wrap"><div class="faq-layout"><div><span class="eyebrow">Pertanyaan sebelum berangkat</span><h2 style="margin-top:12px">Rencana ringan, informasi terang.</h2><details><summary>Apakah harga dan tempatnya sudah tersedia?</summary><p>Belum. Ini katalog lokal bertanda Contoh konten agen. Tombol pencarian menghitung harga ilustratif, bukan menghubungi operator atau memastikan ketersediaan.</p></details><details><summary>Bagaimana memasukkan tamu anak?</summary><p>Isi jumlah dewasa dan anak per kamar, lalu pilih usia setiap anak (0–17 tahun) di setiap kamar. Tidak ada usia yang dipilihkan otomatis.</p></details><details><summary>Apakah saya bisa membayar di sini?</summary><p>Tidak. Checkout hanya latihan alur pemesanan; tidak menagih uang dan tidak menerbitkan konfirmasi reservasi. Pada layanan nyata, pembayaran harus lewat penyedia resmi setelah harga dan ketersediaan dikonfirmasi.</p></details><details id="policies"><summary>Kebijakan privasi &amp; pembatalan</summary><p>Data formulir hanya dipakai di halaman ini dan tidak dikirim ke server. Ketentuan pembatalan pada detail adalah contoh, bukan kontrak reservasi. Muat ulang halaman untuk menghapus tas dan isian sesi ini.</p></details></div><div id="contact"><span class="eyebrow">Hubungi meja perjalanan</span><h2 style="margin-top:12px">Ceritakan rute Anda.</h2><p class="small muted" style="margin-top:16px">Formulir contoh; pesan tidak dikirim. Jangan masukkan informasi sensitif.</p><form id="agencyContactForm" class="contact-form"><label class="field"><span>Nama</span><input name="name" required autocomplete="name"></label><label class="field"><span>Email</span><input name="email" type="email" required autocomplete="email"></label><label class="field"><span>Rencana perjalanan</span><textarea name="message" rows="3" required></textarea></label><button type="submit" class="btn">Pratinjau pesan →</button><p id="contactStatus" class="small" role="status"></p></form></div></div></section></main><footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="./index.html"><img src="./assets/logo-mark.png" alt=""><span><strong>Jalan Hemat</strong><small>TRAVEL · HOSTEL · OPEN TRIP</small></span></a><p>Trip mandiri, hostel, pod, dan open trip. Siapkan ransel dan susun perjalanan Anda.</p><p>Contoh konten agen · Identitas &amp; kontak ilustratif.<br>halo@jalanhemat-contoh.id</p></div><div class="footer-links"><span class="eyebrow" style="color:var(--onPrimary)">Jelajahi</span><a href="#searchSection">Cari perjalanan</a><a href="#rules">Tentang pendekatan kami</a><a href="#tours">Open trip</a></div><div class="footer-links"><span class="eyebrow" style="color:var(--onPrimary)">Bantuan</span><a href="#faq">FAQ pemesanan</a><a href="#contact">Hubungi kami</a><a href="#policies">Privasi &amp; pembatalan</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> Jalan Hemat Travel</span><span>Didukung sistem pemesanan Ortasys · Prototipe lokal</span><a href="./guidelines.html">Panduan merek</a></div></div></footer><dialog id="detailModal" class="dialog" aria-labelledby="modalTitle"><div class="dialog-head"><div><span class="sample">Contoh konten agen</span><h2 id="modalTitle" style="margin-top:10px"></h2></div><button type="button" class="close-btn" data-close="detailModal" aria-label="Tutup detail">×</button></div><div id="detailBody" class="dialog-body"></div></dialog><dialog id="tripDrawer" class="dialog" aria-labelledby="tripTitle"><div class="dialog-head"><div><span class="eyebrow">Rencana perjalanan</span><h2 id="tripTitle">Trip Bag Anda</h2></div><button type="button" class="close-btn" data-close="tripDrawer" aria-label="Tutup tas perjalanan">×</button></div><div class="dialog-body"><p class="notice">Contoh konten agen · Pilihan di tas belum dipesan. Harga adalah simulasi lokal.</p><div id="tripItems"></div><div class="trip-total"><span>Total contoh</span><strong id="tripTotal"></strong></div><button type="button" id="payBtn" class="btn coral">Lanjut simulasi checkout →</button></div></dialog><dialog id="checkoutModal" class="dialog" aria-labelledby="checkoutHeading"><div class="dialog-head"><h2 id="checkoutHeading">Simulasi pemesanan</h2><button type="button" class="close-btn" data-close="checkoutModal" aria-label="Tutup checkout">×</button></div><div class="dialog-body" id="checkoutFormContent"><p class="notice">Tidak ada reservasi atau pembayaran nyata. Data tidak dikirim ke agen. Jangan gunakan detail pribadi asli.</p><div id="coItemList"></div><div class="trip-total"><span>Total ilustratif</span><strong id="coTotal"></strong></div><form id="coForm" class="checkout-form"><label class="field"><span>Nama tamu (contoh)</span><input id="coName" required autocomplete="off"></label><label class="field"><span>Email (contoh)</span><input id="coEmail" type="email" required autocomplete="off"></label><label class="field"><span>Metode pembayaran simulasi</span><select id="coPayment"><option>QRIS — simulasi</option><option>Virtual account — simulasi</option><option>DOKU hosted — simulasi</option></select></label><p class="small muted">Tidak ada nomor kartu, PIN, atau CVV yang diminta. Pada layanan nyata, pemrosesan pembayaran dilakukan di penyedia resmi.</p><button type="submit" class="btn coral">Selesaikan simulasi, tanpa membayar</button></form></div><div id="checkoutSuccessContent" class="dialog-body" hidden><span class="sample">SIMULASI · BUKAN BUKTI RESERVASI</span><h3 style="margin-top:20px">Rencana contoh telah dirangkum.</h3><p id="successSummary"></p><p>Tidak ada dana ditagih, kursi ditahan, atau voucher diterbitkan. Layanan nyata membutuhkan konfirmasi server dan penyedia pembayaran.</p><div class="hero-actions"><button type="button" id="btnDownloadVoucher" class="btn">Unduh ringkasan simulasi</button><button type="button" class="btn ghost" data-close="checkoutModal">Kembali menjelajah</button></div></div></dialog><div id="toast" role="status" hidden></div><script>const NUSA=false;const DESTINATIONS=["Yogyakarta", "Bromo", "Mandalika", "Toba"];const STAYS = [
       {
         id: 'jh-yogya-pod', name: 'Malioboro Backpacker Pod & Social Dorm', area: 'Malioboro · Yogyakarta', filter: 'pod',
-        keys: 'jogja yogyakarta malioboro pod kapsul hostel dorm murah', img: '../../assets/serenity_umrah_privilege/jam-gadang.jpg', alt: 'Kapsul pod kayu rapi dan nyaman',
-        stars: 4, room: 'Single Capsule Pod (Tirai Privasi & Loker Kunci)', meal: 'Refill Kopi, Teh & Air Galon Gratis', policy: 'Bebas pembatalan hingga 24 jam sebelum check-in.',
+        keys: 'jogja yogyakarta malioboro pod kapsul hostel dorm murah', img: './assets/stay-1.webp', alt: 'Kapsul pod kayu rapi dan nyaman',
+        room: 'Single Capsule Pod (Tirai Privasi & Loker Kunci)', meal: 'Refill Kopi, Teh & Air Galon Gratis', policy: 'Bebas pembatalan hingga 24 jam sebelum check-in.',
         desc: 'Hostel kapsul modern berjarak 3 menit jalan kaki dari Stasiun Tugu Yogyakarta. Setiap pod dilengkapi kasur ortopedik busa empuk, lampu baca fleksibel, 2 colokan listrik, dan loker kunci carrier 60L.',
         amenities: ['Loker Kunci Ukuran Carrier 60L', 'Colokan Listrik & Lampu Baca Privat', 'Refill Kopi & Teh Gratis 24 Jam', 'Kamar Mandi Air Panas Bersih', 'WiFi Kencang Bebas Lemot', 'Bebas Jam Malam (Access Card)'],
         nightly: 125000
       },
       {
         id: 'jh-lombok-surf', name: 'Kuta Mandalika Backpacker Surf Camp', area: 'Kuta Mandalika · Lombok Selatan', filter: 'surf',
-        keys: 'lombok mandalika surf camp pantai dorm bunk bed murah', img: '../../assets/mandalika_escape/beach.jpg', alt: 'Pondok kayu dekat pantai tempat santai para surfer',
-        stars: 4, room: 'Bunk Bed in 6-Bed Mixed Dorm', meal: 'Sarapan Pisang Bakar & Kopi Lombok', policy: 'Bebas pembatalan hingga 48 jam sebelum kedatangan.',
+        keys: 'lombok mandalika surf camp pantai dorm bunk bed murah', img: './assets/stay-2.webp', alt: 'Pondok kayu dekat pantai tempat santai para surfer',
+        room: 'Bunk Bed in 6-Bed Mixed Dorm', meal: 'Sarapan Pisang Bakar & Kopi Lombok', policy: 'Bebas pembatalan hingga 48 jam sebelum kedatangan.',
         desc: 'Tempat kumpul para peselancar dan petualang mandiri dari seluruh dunia. Suasana santai dengan rak papan selancar aman, kolam renang mini, dan persewaan motor trail hemat ke pantai-pantai tersembunyi.',
         amenities: ['Rental Papan Selancar & Scooter Murah', 'Dapur Bersama Lengkap Kulkas', 'Kolam Renang Mini & Hammock', 'Dekat Pantai Kuta Mandalika', 'Informasi Spot Ombak Harian'],
         nightly: 145000
       },
       {
         id: 'jh-bromo-base', name: 'Probolinggo Bromo Transit Bunkhouse', area: 'Sukapura · Kaki Gunung Bromo', filter: 'transit',
-        keys: 'bromo sukapura probolinggo transit bunkhouse murah sharing', img: '../../assets/khatulistiwa_explorer/bromo.jpg', alt: 'Penginapan transit berlatar pegunungan sejuk Bromo',
-        stars: 4, room: 'Bunk Bed Dorm Kayu Hangat', meal: 'Teh Jahe Hangat & Sarapan Mi Rebus', policy: 'Bebas pembatalan hingga 24 jam sebelum kedatangan.',
+        keys: 'bromo sukapura probolinggo transit bunkhouse murah sharing', img: './assets/stay-3.webp', alt: 'Penginapan transit berlatar pegunungan sejuk Bromo',
+        room: 'Bunk Bed Dorm Kayu Hangat', meal: 'Teh Jahe Hangat & Sarapan Mi Rebus', policy: 'Bebas pembatalan hingga 24 jam sebelum kedatangan.',
         desc: 'Transit hub strategis bagi backpacker yang hendak mendaki Bromo secara mandiri atau bergabung dengan rombongan Jeep sharing. Kamar hangat berinsulasi dengan selimut tebal dan pancuran air panas.',
         amenities: ['Shower Air Panas Deras', 'Selimut Tebal Wool Gunung', 'Sharing Jeep Bromo Langsung dari Hostel', 'Penyewaan Jaket & Kupluk Hangat'],
         nightly: 115000
       },
       {
         id: 'jh-toba-homestay', name: 'Tuk-Tuk Samosir Traditional Batak Homestay', area: 'Samosir · Danau Toba', filter: 'transit',
-        keys: 'toba samosir tuktuk homestay danau batak murah', img: '../../assets/serenity_umrah_privilege/toba.jpg', alt: 'Penginapan kayu santai di tepi Danau Toba',
-        stars: 4, room: 'Budget Lakefront Twin Room', meal: 'Sarapan Roti Bakar & Kopi Toba', policy: 'Bebas pembatalan hingga 48 jam sebelum kedatangan.',
+        keys: 'toba samosir tuktuk homestay danau batak murah', img: './assets/stay-4.webp', alt: 'Penginapan kayu santai di tepi Danau Toba',
+        room: 'Budget Lakefront Twin Room', meal: 'Sarapan Roti Bakar & Kopi Toba', policy: 'Bebas pembatalan hingga 48 jam sebelum kedatangan.',
         desc: 'Penginapan sederhana dan sangat bersih di semenanjung Tuk-Tuk Samosir. Beranda kayu langsung menghadap ketenangan perairan Danau Toba, dikelilingi taman hijau asri dan penyewaan sepeda kayuh.',
         amenities: ['Akses Langsung Berenang di Danau', 'Sewa Sepeda & Motor Murah', 'Balkon Santai Menghadap Air', 'WiFi Gratis'],
         nightly: 165000
       }
     ];
-
-    const BUDGET_TRIPS = [
+const TRIPS = [
       {
         id: 'jh-bromo-midnight', kind: 'tour', name: 'Open Trip Bromo Sunrise Sharing Jeep', area: 'TN Bromo Tengger Semeru', filter: 'transit',
-        keys: 'bromo open trip sharing jeep sunrise kawah hemat', img: '../../assets/khatulistiwa_explorer/bromo.jpg', alt: 'Pemandangan kawah Bromo dan jeep di lautan pasir',
+        keys: 'bromo open trip sharing jeep sunrise kawah hemat', img: './assets/tour-1.webp', alt: 'Pemandangan kawah Bromo dan jeep di lautan pasir',
         duration: 'Midnight Trip (00:30 - 10:00)',
         desc: 'Trip patungan hemat menggunakan Jeep 4x4 sharing kapasitas 6 orang. Menikmati matahari terbit Penanjakan 1, kawah aktif Bromo, Pasir Berbisik, dan Bukit Teletubbies.',
         amenities: ['Jeep 4WD Sharing & Sopir Lokal', 'Tiket Masuk Resmi TNBTS Termasuk', 'Pemandu Rombongan Patungan'],
@@ -613,7 +112,7 @@
       },
       {
         id: 'jh-ijen-sharing', kind: 'tour', name: 'Ekspedisi Sharing Blue Fire Kawah Ijen', area: 'Banyuwangi & Bondowoso', filter: 'transit',
-        keys: 'ijen blue fire api biru banyuwangi sharing gas masker murah', img: '../../assets/khatulistiwa_explorer/ijen.jpg', alt: 'Kobaran api biru Kawah Ijen dini hari',
+        keys: 'ijen blue fire api biru banyuwangi sharing gas masker murah', img: './assets/tour-2.webp', alt: 'Kobaran api biru Kawah Ijen dini hari',
         duration: 'Midnight Hike (00:00 - 08:30)',
         desc: 'Pendakian malam hari bersama sesama backpacker menuju dasar kaldera Kawah Ijen untuk menyaksikan fenomena kobaran api biru belerang yang langka di dunia.',
         amenities: ['Transportasi Sharing Pulang-Pergi Banyuwangi', 'Sewa Masker Gas Respirator Standar', 'Tiket Masuk Konservasi Ijen & Guide'],
@@ -622,7 +121,7 @@
       },
       {
         id: 'jh-gili-snorkeling', kind: 'tour', name: 'Sharing Boat Snorkeling Tiga Gili Keliling Karang', area: 'Gili Air, Meno & Trawangan', filter: 'surf',
-        keys: 'gili sharing boat snorkeling penyu patung murah', img: '../../assets/mandalika_escape/gili-boat.jpg', alt: 'Perahu sharing snorkeling di laut jernih Gili',
+        keys: 'gili sharing boat snorkeling penyu patung murah', img: './assets/tour-3.webp', alt: 'Perahu sharing snorkeling di laut jernih Gili',
         duration: '4 Jam Eksplorasi 3 Spot Penyu & Patung',
         desc: 'Bergabung dengan perahu sharing berkapasitas 15 orang menjelajahi spot patung bawah air Gili Meno, terumbu karang penyu Gili Air, dan makan siang santai di Gili Trawangan.',
         amenities: ['Perahu Sharing Kayu Tradisional', 'Sewa Masker & Snorkel Bersih', 'Life Jacket Keselamatan', 'Pemandu Snorkeling Lokal'],
@@ -630,372 +129,154 @@
         perPerson: 150000
       }
     ];
-
-    const LIMITS = { rooms: [1, 9], adults: [1, 20], children: [0, 20] };
-    const MAX_NIGHTS = 30;
-    const idr = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
-    const $ = (s, r = document) => r.querySelector(s);
-    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-    const DAY = 86400000;
-    const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-    const addDays = (s, n) => iso(new Date(new Date(s + 'T00:00:00').getTime() + n * DAY));
-    const today = iso(new Date());
-
-    const state = { mode: 'hotels', filter: 'all', priced: false, checking: false, checkedAt: null, trip: [] };
-    const el = {
-      form: $('#searchForm'), dest: $('#dest'), checkIn: $('#checkIn'), checkOut: $('#checkOut'),
-      rooms: $('#rooms'), adults: $('#adults'), children: $('#qChildren'), errors: $('#formErrors'), summary: $('#summary'),
-      btn: $('#checkBtn'), results: $('#results')
-    };
-
-    const clamp = (v, [lo, hi]) => Math.min(hi, Math.max(lo, Number.isFinite(v) ? v : lo));
-    const num = k => clamp(parseInt(el[k].value, 10), LIMITS[k]);
-    const nights = () => {
-      if (!el.checkIn.value || !el.checkOut.value) return 0;
-      return Math.round((new Date(el.checkOut.value) - new Date(el.checkIn.value)) / DAY);
-    };
-
-    function validate() {
-      const errs = [];
-      if (!el.checkIn.value) {
-        errs.push('Silakan tentukan tanggal mulai menginap.');
-      } else if (el.checkIn.value < today) {
-        errs.push('Tanggal check-in tidak boleh sebelum hari ini.');
-      }
-
-      if (state.mode === 'hotels') {
-        if (!el.checkOut.value) errs.push('Silakan tentukan tanggal selesai menginap.');
-        else {
-          const n = nights();
-          if (n < 1) errs.push('Tanggal check-out minimal 1 malam setelah check-in.');
-          if (n > MAX_NIGHTS) errs.push(`Maksimal durasi inap adalah ${MAX_NIGHTS} malam.`);
-        }
-      }
-      return errs;
-    }
-
-    const roomRate = s => Math.round(s.nightly * (1 + 0.1 * Math.max(0, num('adults') - 2) + 0.05 * num('children')) / 1000) * 1000;
-    const stayTotal = s => roomRate(s) * Math.max(1, nights()) * num('rooms');
-    const actTotal = a => (a.perPerson * num('adults') + Math.round(a.perPerson * 0.7) * num('children')) * num('rooms');
-
-    function summaryText() {
-      const r = num('rooms'), a = num('adults');
-      if (state.mode === 'hotels') {
-        const n = nights();
-        if (!n || n < 1) return 'Pilih tanggal untuk melihat tarif hostel live';
-        return `${n} Malam × ${r} Ranjang/Pod (${a} Backpacker)`;
-      }
-      return el.checkIn.value ? `${el.checkIn.value} · ${r * a} Kursi Sharing Trip` : 'Pilih tanggal open trip';
-    }
-
-    function renderMode() {
-      $$('.mode-tab').forEach(t => {
-        const on = t.dataset.mode === state.mode;
-        t.setAttribute('aria-selected', on);
-        t.className = `mode-tab h-8 px-4 rounded-xs font-display text-xs font-bold uppercase tracking-wider transition ${on ? 'bg-secondary text-white' : 'text-white/70 hover:text-white'}`;
-      });
-      const hotels = state.mode === 'hotels';
-      $$('[data-hotel-only]').forEach(n => n.classList.toggle('hidden', !hotels));
-      
-      $('#sectionHeading').textContent = hotels ? 'Hostel Pods & Kamar Komunitas Backpacker' : 'Open Trip Sharing Patungan Hemat';
-      $('[data-dest-label]').textContent = hotels ? 'Rute Kota / Hub Backpacker' : 'Destinasi Open Trip Patungan';
-      el.dest.placeholder = hotels ? 'Yogyakarta, Bromo, Mandalika, Toba…' : 'Open Trip Bromo, Kawah Ijen, Snorkeling Gili…';
-
-      const datalistItems = hotels ? BUDGET_HOSTELS.map(s => s.name) : BUDGET_TRIPS.map(e => e.name);
-      $('#destList').innerHTML = ['Yogyakarta Malioboro', 'Kuta Mandalika Lombok', 'Sukapura Bromo', 'Samosir Danau Toba', ...datalistItems]
-        .map(v => `<option value="${v}">`).join('');
-    }
-
-    function renderResults() {
-      const isHotels = state.mode === 'hotels';
-      const q = el.dest.value.trim().toLowerCase();
-      let list = (isHotels ? BUDGET_HOSTELS : BUDGET_TRIPS).filter(it => {
-        const matchQ = !q || (it.name + ' ' + it.area + ' ' + it.keys).toLowerCase().includes(q);
-        const matchFilter = state.filter === 'all' || it.filter === state.filter;
-        return matchQ && matchFilter;
-      });
-      if (!list.length && state.filter === 'all') list = isHotels ? BUDGET_HOSTELS : BUDGET_TRIPS;
-
-      if (!list.length) {
-        el.results.innerHTML = `
-          <div class="col-span-full py-12 text-center text-ink-muted bg-surface rounded-xs border-2 border-line">
-            <p class="font-display text-xl font-bold text-primary">Tidak ada rute hostel yang cocok dengan filter "${state.filter}"</p>
-            <button type="button" data-reset-filter class="mt-3 px-4 py-2 rounded-xs bg-secondary text-white text-xs font-bold uppercase tracking-wider font-display">Reset Filter Rute</button>
-          </div>`;
-        return;
-      }
-
-      el.results.innerHTML = list.map((it, idx) => {
-        const total = isHotels ? stayTotal(it) : actTotal(it);
-        const sub = isHotels ? `${idr.format(roomRate(it))} / malam` : `${idr.format(it.perPerson)} / pax`;
-        const priceHTML = state.checking
-          ? `<div class="h-8 w-24 bg-surface-muted animate-pulse rounded-xs"></div>`
-          : state.priced
-            ? `<div><span class="text-[10px] font-mono uppercase text-success font-bold block">● TARIF LIVE</span><p class="tnum font-mono text-[20px] font-bold text-secondary">${idr.format(total)}</p><p class="tnum font-mono text-[10px] text-ink-muted">${sub}</p></div>`
-            : `<div><span class="text-[10px] font-mono uppercase text-ink-muted block">TARIF DASAR</span><p class="font-mono text-[16px] font-bold text-primary">${idr.format(isHotels ? it.nightly : it.perPerson)}</p><p class="text-[10px] text-ink-muted italic">Cek tanggal dulu</p></div>`;
-
-        return `
-        <article class="bg-surface rounded-xs border-2 border-primary/80 hover:border-secondary overflow-hidden shadow-soft grid sm:grid-cols-12 transition duration-200 group">
-          <!-- Left 4-Col Thumbnail -->
-          <div class="sm:col-span-4 relative min-h-[180px] bg-surface-muted overflow-hidden">
-            <img src="${it.img}" alt="${it.alt}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <span class="absolute top-2 left-2 bg-primary text-tertiary text-[10px] font-mono font-bold px-2 py-0.5 rounded-xs">
-              TIKET #0${idx + 1}
-            </span>
-            <span class="absolute bottom-2 left-2 bg-surface/95 text-ink text-[10px] font-mono font-bold px-2 py-0.5 rounded-xs">
-              ${isHotels ? 'POD / BUNK' : 'SHARING TRIP'}
-            </span>
-          </div>
-
-          <!-- Middle 5-Col Hostel Specs -->
-          <div class="sm:col-span-5 p-4 flex flex-col justify-between gap-2">
-            <div>
-              <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-secondary block">${it.area}</span>
-              <h3 class="font-display text-lg font-bold text-primary leading-snug cursor-pointer hover:text-secondary transition-colors mt-0.5" data-detail="${it.id}">${it.name}</h3>
-              <p class="text-[11px] font-semibold text-ink mt-1">${isHotels ? it.room : it.duration}</p>
-              <p class="text-[11px] text-success font-mono mt-0.5">✓ ${isHotels ? it.meal : 'Termasuk BBM & Tiket'}</p>
-            </div>
-
-            <div class="flex flex-wrap gap-1 pt-2 border-t border-line">
-              ${(it.amenities || []).slice(0, 2).map(a => `<span class="px-1.5 py-0.5 rounded-xs bg-canvas text-ink-muted text-[9px] font-mono">${a}</span>`).join('')}
-              <button type="button" data-detail="${it.id}" class="text-[10px] font-mono font-bold text-primary hover:text-secondary underline ml-auto">[Rincian]</button>
-            </div>
-          </div>
-
-          <!-- Right 3-Col Perforated Price Stub -->
-          <div class="sm:col-span-3 p-4 bg-canvas border-t-2 sm:border-t-0 sm:border-l-2 border-dashed border-line flex sm:flex-col items-center sm:items-end justify-between gap-2 text-right">
-            ${priceHTML}
-            <button type="button" data-select="${it.id}" class="h-9 px-3.5 rounded-xs ${state.priced ? 'bg-secondary hover:bg-[#d45833] text-white' : 'bg-primary hover:bg-primary-hover text-white'} text-[11px] font-mono font-bold uppercase tracking-wider transition w-auto sm:w-full">
-              ${state.priced ? '+ Ambil Bed' : 'Cek &amp; Ambil'}
-            </button>
-          </div>
-        </article>`;
-      }).join('');
-    }
-
-    function syncBounds() {
-      el.checkIn.min = today;
-      if (el.checkIn.value) {
-        el.checkOut.min = addDays(el.checkIn.value, 1);
-        el.checkOut.max = addDays(el.checkIn.value, MAX_NIGHTS);
-      } else {
-        el.checkOut.min = addDays(today, 1);
-        el.checkOut.removeAttribute('max');
-      }
-    }
-
-    function invalidate() {
-      state.priced = false; el.errors.textContent = '';
-      el.summary.textContent = summaryText();
-      renderResults();
-    }
-
-    $$('.mode-tab').forEach(t => t.addEventListener('click', () => { state.mode = t.dataset.mode; renderMode(); invalidate(); }));
-    $$('[data-step]').forEach(b => b.addEventListener('click', () => {
-      const k = b.dataset.step; el[k].value = clamp(num(k) + Number(b.dataset.dir), LIMITS[k]); invalidate();
-    }));
-    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('change', () => { el[k].value = num(k); invalidate(); }));
-    el.checkIn.addEventListener('change', () => {
-      syncBounds();
-      if (el.checkIn.value && (!el.checkOut.value || el.checkOut.value <= el.checkIn.value)) el.checkOut.value = addDays(el.checkIn.value, 2);
-      invalidate();
-    });
-    el.checkOut.addEventListener('change', invalidate);
-    el.dest.addEventListener('input', renderResults);
-
-    // Filter Buttons
-    $$('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        state.filter = btn.dataset.filter;
-        $$('.filter-btn').forEach(b => {
-          const active = b === btn;
-          b.className = `filter-btn h-8 px-3.5 rounded-xs text-[11px] font-mono font-bold uppercase tracking-wider transition ${active ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`;
-        });
-        renderResults();
-      });
-    });
-
-    el.form.addEventListener('submit', e => {
-      e.preventDefault();
-      const errs = validate();
-      el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
-      if (errs.length) return;
-
-      state.checking = true; el.btn.disabled = true;
-      el.btn.querySelector('[data-btn-label]').textContent = 'Memeriksa Kuota Ranjang…';
-      renderResults();
-
-      setTimeout(() => {
-        state.checking = false; state.priced = true; state.checkedAt = new Date();
-        el.btn.disabled = false; el.btn.querySelector('[data-btn-label]').textContent = 'Cek Tarif Live Hemat';
-        el.summary.textContent = `Live Terverifikasi: ${summaryText()}`;
-        renderResults();
-        document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
-      }, 650);
-    });
-
-    document.addEventListener('click', e => {
-      const sel = e.target.closest('[data-select]'); if (sel) return selectItem(sel.dataset.select);
-      const det = e.target.closest('[data-detail]'); if (det) return openDetail(det.dataset.detail);
-      const rm = e.target.closest('[data-remove]'); if (rm) { state.trip.splice(Number(rm.dataset.remove), 1); renderTrip(); }
-      const rst = e.target.closest('[data-reset-filter]'); if (rst) {
-        state.filter = 'all';
-        $$('.filter-btn').forEach((b, i) => b.className = `filter-btn h-8 px-3.5 rounded-xs text-[11px] font-mono font-bold uppercase tracking-wider transition ${i === 0 ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`);
-        renderResults();
-      }
-      const rp = e.target.closest('[data-route-pick]'); if (rp) {
-        el.dest.value = rp.dataset.routePick;
-        state.filter = rp.dataset.routeFilter || 'all';
-        $$('.filter-btn').forEach(b => {
-          const active = b.dataset.filter === state.filter;
-          b.className = `filter-btn h-8 px-3.5 rounded-xs text-[11px] font-mono font-bold uppercase tracking-wider transition ${active ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`;
-        });
-        renderResults();
-        document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-
-    function selectItem(id) {
-      if (!state.priced) {
-        toast('Memverifikasi kuota hostel live...');
-        const errs = validate();
-        if (errs.length) {
-          document.getElementById('searchSection').scrollIntoView({ behavior: 'smooth' });
-          el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
-          return;
-        }
-        state.priced = true;
-        renderResults();
-      }
-      const isHotel = id.startsWith('jh-yogya-pod') || id.startsWith('jh-lombok-surf') || id.startsWith('jh-bromo-base') || id.startsWith('jh-toba-homestay');
-      const it = (isHotels => isHotels ? BUDGET_HOSTELS : BUDGET_TRIPS)(isHotel).find(x => x.id === id);
-      const total = isHotel ? stayTotal(it) : actTotal(it);
-      state.trip.push({ id: it.id, name: it.name, area: it.area, detail: summaryText(), total });
-      renderTrip();
-      toast(`Ditambahkan ke backpacker bag: ${it.name}`);
-      closeDetail();
-    }
-
-    function renderTrip() {
-      $$('[data-trip-count]').forEach(n => n.textContent = state.trip.length);
-      const box = $('#tripItems');
-      box.innerHTML = state.trip.length ? state.trip.map((t, i) => `
-        <div class="p-3.5 rounded-xs bg-canvas border border-line flex flex-col gap-1">
-          <div class="flex items-start justify-between gap-2">
-            <div>
-              <p class="font-display font-bold text-primary text-[14px] leading-snug">${t.name}</p>
-              <p class="text-[11px] text-ink-muted">${t.area} · ${t.detail}</p>
-            </div>
-            <button type="button" data-remove="${i}" class="text-[11px] font-bold text-danger hover:underline">Hapus</button>
-          </div>
-          <p class="tnum font-mono text-[14px] font-bold text-secondary mt-1">${idr.format(t.total)}</p>
-        </div>`).join('')
-        : `<p class="py-12 text-center text-[13px] text-ink-muted font-display">Backpacker bag Anda masih kosong.<br>Pilih ranjang pod kapsul atau open trip patungan.</p>`;
-      
-      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
-      $('#tripSubtotal').textContent = idr.format(totalVal);
-      $('#tripTotal').textContent = idr.format(totalVal);
-      $('#payBtn').disabled = !state.trip.length;
-    }
-
-    // Detail Quick-View Modal
-    const detailModal = $('#detailModal');
-    let currentDetailItem = null;
-    function openDetail(id) {
-      const isHotel = id.startsWith('jh-yogya-pod') || id.startsWith('jh-lombok-surf') || id.startsWith('jh-bromo-base') || id.startsWith('jh-toba-homestay');
-      const it = (isHotels => isHotels ? BUDGET_HOSTELS : BUDGET_TRIPS)(isHotel).find(x => x.id === id);
-      if (!it) return;
-      currentDetailItem = it;
-
-      $('#modalImg').src = it.img;
-      $('#modalImg').alt = it.alt;
-      $('#modalBadge').textContent = isHotel ? `Peringkat Bintang ${'★'.repeat(it.stars)}` : it.duration;
-      $('#modalArea').textContent = it.area;
-      $('#modalTitle').textContent = it.name;
-      $('#modalDesc').textContent = it.desc;
-      $('#modalAmenities').innerHTML = (it.amenities || []).map(a => `<span class="px-2.5 py-1 rounded-xs bg-surface-muted text-ink font-mono text-[11px] font-semibold">${a}</span>`).join('');
-      $('#modalPolicy').textContent = it.policy;
-
-      const total = isHotel ? stayTotal(it) : actTotal(it);
-      $('#modalPrice').textContent = state.priced ? idr.format(total) : `Mulai ${idr.format(isHotel ? it.nightly : it.perPerson)}`;
-      detailModal.classList.remove('hidden');
-    }
-    function closeDetail() {
-      detailModal.classList.add('hidden');
-      currentDetailItem = null;
-    }
-    $('[data-close-modal]').addEventListener('click', closeDetail);
-    detailModal.addEventListener('click', e => { if (e.target === detailModal) closeDetail(); });
-    $('#modalSelectBtn').addEventListener('click', () => {
-      if (currentDetailItem) selectItem(currentDetailItem.id);
-    });
-
-    // Checkout Modal
-    const checkoutModal = $('#checkoutModal');
-    function openCheckout() {
-      if (!state.trip.length) return;
-      closeTrip();
-      $('#coItemCount').textContent = `${state.trip.length} Item Hemat`;
-      $('#coItemList').innerHTML = state.trip.map(t => `<div class="flex justify-between font-display text-sm font-semibold"><span>• ${t.name}</span><span class="font-mono font-bold">${idr.format(t.total)}</span></div>`).join('');
-      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
-      $('#coTotal').textContent = idr.format(totalVal);
-      $('#checkoutFormContent').classList.remove('hidden');
-      $('#checkoutSuccessContent').classList.add('hidden');
-      checkoutModal.classList.remove('hidden');
-    }
-    function closeCheckout() {
-      checkoutModal.classList.add('hidden');
-    }
-    $('[data-close-checkout]').addEventListener('click', closeCheckout);
-    checkoutModal.addEventListener('click', e => { if (e.target === checkoutModal) closeCheckout(); });
-    $('[data-finish-checkout]').addEventListener('click', () => {
-      closeCheckout();
-      state.trip = [];
-      renderTrip();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    $('#btnDownloadVoucher').addEventListener('click', () => {
-      toast('E-Voucher & Peta Koordinat sedang diunduh (Simulasi PDF)...');
-    });
-
-    $('#coForm').addEventListener('submit', e => {
-      e.preventDefault();
-      const guestName = $('#coName').value.trim();
-      const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
-      const randomRef = 'HEMAT-2026-' + Math.floor(1000 + Math.random() * 9000);
-
-      $('#successRef').textContent = randomRef;
-      $('#successGuest').textContent = guestName;
-      $('#successAmount').textContent = idr.format(totalVal);
-
-      $('#checkoutFormContent').classList.add('hidden');
-      $('#checkoutSuccessContent').classList.remove('hidden');
-    });
-
-    // Drawer Navigation
-    const drawer = $('#tripDrawer'), overlay = $('#tripOverlay');
-    function openTrip() { overlay.classList.remove('hidden'); drawer.classList.remove('translate-x-full'); drawer.setAttribute('aria-hidden', 'false'); }
-    function closeTrip() { overlay.classList.add('hidden'); drawer.classList.add('translate-x-full'); drawer.setAttribute('aria-hidden', 'true'); }
-    $$('[data-open-trip]').forEach(b => b.addEventListener('click', openTrip));
-    $('[data-close-trip]').addEventListener('click', closeTrip);
-    overlay.addEventListener('click', closeTrip);
-
-    $('#payBtn').addEventListener('click', openCheckout);
-
-    let toastTimer;
-    function toast(msg) {
-      const t = $('#toast'); t.textContent = msg; t.classList.remove('hidden');
-      clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.add('hidden'), 2500);
-    }
-
-    $('#menuBtn').addEventListener('click', () => {
-      const open = $('#mobileNav').classList.toggle('hidden') === false;
-      $('#menuBtn').setAttribute('aria-expanded', open);
-    });
-    $('#year').textContent = new Date().getFullYear();
-
-    syncBounds(); renderMode(); invalidate(); renderTrip();
-  })();
-  </script>
-</body>
-</html>
+(() => {
+'use strict';
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const idr = n => new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(n);
+const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const iso = d => new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10);
+const addDays = (s,n) => { const d=new Date(s+'T12:00:00');d.setDate(d.getDate()+n);return iso(d); };
+const today=iso(new Date()), limits={rooms:[1,9],adults:[1,20],children:[0,20]};
+const fields={rooms:$('#rooms'),adults:$('#adults'),children:$('#qChildren')};
+const state={mode:'hotels',filter:'all',searched:false,checking:false,version:0,trip:[]};
+let toastTimer;
+const num=k=>Number(fields[k].value);
+const nights=()=>Math.round((Date.parse($('#checkOut').value)-Date.parse($('#checkIn').value))/86400000);
+const items=()=>state.mode==='hotels'?STAYS:TRIPS;
+const rate=it=>it.nightly||it.perPerson;
+const total=it=>it.nightly?it.nightly*Math.max(1,nights())*num('rooms'):it.perPerson*(num('adults')+num('children'))*num('rooms');
+const partyText=()=>`${num('rooms')} ${state.mode==='hotels'?'kamar/unit':'rombongan'} · ${num('adults')} dewasa + ${num('children')} anak per ${state.mode==='hotels'?'kamar':'rombongan'}`;
+const scrollTo=id=>$(id).scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
+function toast(text){$('#toast').textContent=text;$('#toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').hidden=true,3500);}
+function syncBounds(){ $('#checkIn').min=today;$('#checkOut').min=addDays($('#checkIn').value||today,1);$('#checkOut').max=addDays($('#checkIn').value||today,30); }
+function syncAges(){
+ const old=Object.fromEntries($$('#childAgeBox select').map(s=>[s.id,s.value]));
+ const count=num('children'), rooms=num('rooms'), box=$('#childAgeBox');
+ box.hidden=!count;
+ if(!count){box.innerHTML='';return;}
+ let html='<p class="small"><strong>Usia setiap anak saat tiba · wajib 0–17 tahun</strong></p><div class="age-grid">';
+ for(let r=1;r<=rooms;r++)for(let c=1;c<=count;c++){
+ const id=`age-${r}-${c}`;
+ html+=`<label class="field"><span>${state.mode==='hotels'?'Kamar':'Rombongan'} ${r} · Anak ${c}</span><select id="${id}" data-child-age required aria-label="Usia anak ${c} ${state.mode==='hotels'?'kamar':'rombongan'} ${r}"><option value="">Pilih usia</option>${Array.from({length:18},(_,a)=>`<option value="${a}" ${String(a)===old[id]?'selected':''}>${a} tahun</option>`).join('')}</select></label>`;
+ }box.innerHTML=html+'</div>';
+}
+function validate(){
+ const errors=[];$$('[aria-invalid=true]').forEach(e=>e.removeAttribute('aria-invalid'));
+ function fail(field,text){field.setAttribute('aria-invalid','true');errors.push(text);}
+ if(!$('#dest').value.trim())fail($('#dest'),'Pilih atau ketik pulau / rute tujuan terlebih dahulu.');
+ if(!$('#checkIn').value||$('#checkIn').value<today)fail($('#checkIn'),'Tanggal tiba wajib diisi dan tidak boleh sebelum hari ini.');
+ if(state.mode==='hotels'&&(!$('#checkOut').value||!Number.isFinite(nights())||nights()<1||nights()>30))fail($('#checkOut'),'Pilih tanggal pulang 1–30 malam setelah tanggal tiba.');
+ Object.entries(limits).forEach(([k,[lo,hi]])=>{if(fields[k].value===''||!Number.isInteger(num(k))||num(k)<lo||num(k)>hi)fail(fields[k],`${k==='rooms'?'Kamar/unit':k==='adults'?'Dewasa per kamar':'Anak per kamar'} harus ${lo}–${hi}.`);});
+ $$('[data-child-age]').forEach(s=>{if(s.value===''||Number(s.value)<0||Number(s.value)>17)fail(s,`${s.getAttribute('aria-label')} wajib dipilih (0–17 tahun).`);});
+ $('#formErrors').innerHTML=errors.map(e=>'<p>'+esc(e)+'</p>').join('');
+ return !errors.length;
+}
+function updateHarbor(){
+ if(!NUSA)return;
+ const q=$('#dest').value.toLowerCase();
+ const notes=q.includes('penida')?['Nusa Penida ↔ Sanur','Contoh akses fast boat; konfirmasi dermaga, waktu tempuh, dan cuaca dengan operator.']:q.includes('gili')?['Gili Meno ↔ Bangsal','Contoh akses perahu lokal; jadwal dan titik turun perlu dikonfirmasi.']:q.includes('mandalika')?['Kuta Mandalika · Lombok selatan','Contoh akses darat menuju pantai; pilihan ini tidak mengasumsikan tiket kapal.']:q.includes('nusa dua')?['Nusa Dua · Pesisir Bali','Contoh akses darat menuju laguna; bukan keberangkatan dari dermaga Sanur.']:['Pilih pesisir untuk melihat contoh akses.','Informasi rute & pasang-surut ilustratif, bukan data pelayaran langsung.'];
+ $('#harborInfo').textContent=notes[0];$('#tideInfo').textContent=notes[1]+' Tidak ada data pasang-surut langsung.';
+ $$('.island-pick').forEach(b=>b.setAttribute('aria-pressed',String(q.includes(b.dataset.islandPick.toLowerCase()))));
+}
+function summary(){
+ const n=nights();$('#summary').textContent=(state.mode==='hotels'&&n>0?`${n} malam · `:$('#checkIn').value+' · ')+partyText();
+ if(!NUSA){
+ const match=matching(false)[0];const valid=match&&Number.isFinite(total(match))&&num('adults')>0&&num('rooms')>0&&(state.mode==='activities'||n>0&&n<=30);
+ $('#stubTotal').textContent=valid?idr(Math.round(total(match)/((num('adults')+num('children'))*num('rooms')))):'—';
+ $('#stubBreakdown').textContent=valid?`${idr(total(match))} total contoh ÷ ${(num('adults')+num('children'))*num('rooms')} orang (dewasa + anak). ${state.mode==='hotels'?n+' malam · ':''}Bukan tarif individu resmi.`:'Pilih rute, tanggal, dan jumlah tamu yang valid.';
+ }
+ updateHarbor();
+}
+function matching(applyFilters=true){
+ const q=$('#dest').value.trim().toLocaleLowerCase('id-ID').replace(/[·,–/]/g,' '), tokens=q.split(/\s+/).filter(Boolean);
+ const max=Number($('#budgetFilter').value);
+ let list=items().filter(it=>{
+ const text=(it.name+' '+it.area+' '+it.keys).toLocaleLowerCase('id-ID');
+ return tokens.every(t=>text.includes(t))&&(!applyFilters||((state.filter==='all'||state.filter===it.filter)&&(!max||rate(it)<=max)));
+ });
+ if(applyFilters&&$('#sortResults').value!=='default')list.sort((a,b)=>($('#sortResults').value==='asc'?1:-1)*(rate(a)-rate(b)));
+ return list;
+}
+function renderResults(){
+ const list=matching();$('#resultCount').textContent=`${list.length} pilihan dalam katalog contoh${state.checking?' · menghitung…':''}`;
+ $('#results').setAttribute('aria-busy',String(state.checking));
+ if(!list.length){$('#results').innerHTML='<div class="empty"><h3>Belum ada pilihan yang cocok.</h3><p class="small muted">Coba tujuan lain atau perluas filter. Kami tidak mengganti pencarian Anda dengan hasil yang tidak relevan.</p><button type="button" class="btn ghost" style="margin-top:20px" data-reset-filter>Reset pencarian</button></div>';return;}
+ $('#results').innerHTML=list.map(it=>{
+ const isStay=!!it.nightly;
+ const tag=NUSA?(it.filter==='gili'?'Pesisir karang':it.filter==='penida'?'Tebing & dermaga':it.filter==='nusadua'?'Paviliun laguna':'Teluk pasir putih'):(isStay?(it.filter==='pod'?'CAPSULE POD':it.filter==='surf'?'SURF DORM':'TRANSIT STAY'):'SHARING TRIP');
+ return `<article class="inventory-card"><div class="card-photo"><img src="${it.img}" alt="${esc(it.alt)}" loading="lazy"><span class="photo-tag">${tag} · contoh</span></div><div class="card-copy"><span class="eyebrow">${esc(it.area)}</span><h3><button type="button" data-detail="${it.id}" style="font:inherit;text-align:left;border:0;background:none;padding:0;min-height:44px">${esc(it.name)}</button></h3><p>${esc(it.room||it.duration)}</p><div class="tags">${it.amenities.slice(0,2).map(a=>'<span>'+esc(a)+'</span>').join('')}</div><button type="button" class="text-link" data-detail="${it.id}">Lihat detail →</button></div><div class="price-stub"><div><small>${state.searched?'Total contoh':'Mulai · harga contoh'}</small><p class="price">${state.checking?'Menghitung…':idr(state.searched?total(it):rate(it))}</p><small>${state.searched?(isStay?nights()+' malam × '+num('rooms')+' unit':(num('adults')+num('children'))*num('rooms')+' peserta'):isStay?'per unit / malam':'per orang'}</small></div><button type="button" class="btn ${NUSA?'':'coral'}" data-select="${it.id}" ${state.checking?'disabled':''}>${NUSA?'Pilih pesisir':'Pilih tiket'} ↗</button></div></article>`;
+ }).join('');
+}
+function renderTours(){
+ $('#tourPreview').innerHTML=TRIPS.map(it=>`<article class="tour-card"><img src="${it.img}" alt="${esc(it.alt)}" loading="lazy"><div><span class="eyebrow">${esc(it.area)}</span><h3 style="margin-top:10px">${esc(it.name)}</h3><p>${esc(it.duration)}</p><p>Harga contoh <strong>${idr(it.perPerson)}</strong> / orang</p><button type="button" class="btn ${NUSA?'':'coral'}" data-tour="${it.id}">Lihat perjalanan →</button></div></article>`).join('');
+}
+function invalidate(){
+ state.version++;state.checking=false;state.searched=false;document.body.classList.remove('searched');
+ $('#checkBtn').disabled=false;$('[data-btn-label]').textContent=NUSA?'Cari pesisir':'Cek tarif hemat';$('#formErrors').textContent='';$('#searchStatus').textContent='';summary();renderResults();
+}
+function setMode(mode){
+ state.mode=mode;state.filter='all';$('#categoryFilter').value='all';
+ $$('.mode-tab').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.mode===mode)));
+ $$('[data-hotel-only]').forEach(el=>el.hidden=mode!=='hotels');$('#checkOut').required=mode==='hotels';
+ $('#arrivalLabel').textContent=mode==='hotels'?'Tiba (check-in)':'Tanggal berangkat';
+ $('#sectionHeading').textContent=mode==='hotels'?(NUSA?'Menginap di Tepi Tebing, Karang & Teluk Pasir Putih':'Hostel pod dan kamar komunitas backpacker.'):(NUSA?'Pelayaran & Petualangan Laut':'Papan keberangkatan open trip patungan.');
+ $('#destList').innerHTML=(mode==='hotels'?DESTINATIONS:TRIPS.map(i=>i.name)).map(t=>'<option value="'+esc(t)+'"></option>').join('');
+ syncAges();syncFilterButtons();invalidate();
+}
+function syncFilterButtons(){ $$('.filter-btn').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===state.filter))); }
+function chooseDestination(value){$('#dest').value=value;state.filter='all';$('#categoryFilter').value='all';syncFilterButtons();invalidate();scrollTo('#searchSection');}
+function renderTrip(){
+ $$('[data-trip-count]').forEach(el=>el.textContent=state.trip.length);
+ $('#tripItems').innerHTML=state.trip.length?state.trip.map((t,i)=>`<article class="trip-item"><h3>${esc(t.name)}</h3><p>${esc(t.description)}</p><p>${esc(t.ages.length?'Usia anak: '+t.ages.join(', ')+' tahun':'Tanpa tamu anak')}</p><p><strong>${idr(t.total)}</strong></p><button type="button" class="text-link" data-remove="${i}">Hapus pilihan</button></article>`).join(''):'<p class="small muted" style="padding:28px 0">Tas masih kosong. Pilih penginapan atau perjalanan dari katalog.</p>';
+ $('#tripTotal').textContent=idr(state.trip.reduce((s,t)=>s+t.total,0));$('#payBtn').disabled=!state.trip.length;
+}
+function openDetail(id){
+ const it=[...STAYS,...TRIPS].find(i=>i.id===id);if(!it)return;
+ $('#modalTitle').textContent=it.name;
+ $('#detailBody').innerHTML=`<img src="${it.img}" alt="${esc(it.alt)}"><span class="eyebrow">${esc(it.area)}</span><p>${esc(it.desc)}</p><p><strong>${esc(it.room||it.duration)}</strong></p><div class="tags">${it.amenities.map(a=>'<span>'+esc(a)+'</span>').join('')}</div><p><strong>Ketentuan contoh:</strong> ${esc(it.policy)}</p><p class="notice">Contoh konten agen. Fasilitas, akses, kebijakan, dan harga belum diverifikasi. Tidak ada ketersediaan nyata pada halaman ini.</p><div class="price-stub"><div><small>Harga contoh ${it.nightly?'per unit / malam':'per orang'}</small><p class="price">${idr(rate(it))}</p></div><button type="button" class="btn coral" data-select="${it.id}">Pilih rencana →</button></div>`;
+ $('#detailModal').showModal();
+}
+function selectItem(id){
+ const it=[...STAYS,...TRIPS].find(i=>i.id===id);if(!it)return;
+ const desired=it.nightly?'hotels':'activities';
+ if(state.mode!==desired){setMode(desired);$('#dest').value=it.nightly?it.area.split(' · ')[0]:it.name;summary();renderResults();}
+ if(!validate()){$('#detailModal').close();scrollTo('#searchSection');$('[aria-invalid=true]')?.focus();return;}
+ const ages=$$('[data-child-age]').map(s=>Number(s.value));
+ state.trip.push({id:it.id,name:it.name,description:`${$('#checkIn').value}${it.nightly?' – '+$('#checkOut').value+' · '+nights()+' malam':''} · ${partyText()}`,total:total(it),ages,payment:'simulasi, belum dibayar'});
+ renderTrip();$('#detailModal').close();toast('Pilihan ditambahkan ke tas contoh. Belum ada reservasi.');
+}
+$('#searchForm').addEventListener('submit',e=>{
+ e.preventDefault();if(!validate()){$('[aria-invalid=true]')?.focus();return;}
+ state.checking=true;const version=++state.version;$('#checkBtn').disabled=true;$('[data-btn-label]').textContent='Menghitung katalog…';$('#searchStatus').textContent='Menghitung harga contoh dari katalog lokal…';renderResults();
+ setTimeout(()=>{if(version!==state.version)return;try{state.checking=false;state.searched=true;document.body.classList.add('searched');$('#checkBtn').disabled=false;$('[data-btn-label]').textContent=NUSA?'Cari lagi':'Cek tarif lagi';summary();renderResults();$('#searchStatus').textContent='Perhitungan contoh selesai. Harga dan ketersediaan tidak dikonfirmasi ke operator.';scrollTo(NUSA?'#escapes':'#catalog');}catch(error){state.checking=false;$('#checkBtn').disabled=false;$('#searchStatus').textContent='Katalog tidak dapat dihitung. Periksa isian lalu coba lagi.';}},450);
+});
+$$('.mode-tab').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
+$$('[data-step]').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.step,[lo,hi]=limits[k];fields[k].value=Math.max(lo,Math.min(hi,(Number.isFinite(num(k))?num(k):lo)+Number(b.dataset.dir)));syncAges();invalidate();}));
+Object.values(fields).forEach(f=>f.addEventListener('input',()=>{if(Object.entries(fields).some(([k,el])=>el===f&&(k==='rooms'||k==='children'))&&Object.entries(limits).every(([k,[lo,hi]])=>Number.isInteger(num(k))&&num(k)>=lo&&num(k)<=hi))syncAges();invalidate();}));
+$('#childAgeBox').addEventListener('change',invalidate);
+$('#checkIn').addEventListener('change',()=>{syncBounds();invalidate();});$('#checkOut').addEventListener('change',invalidate);$('#dest').addEventListener('input',invalidate);
+$$('.filter-btn').forEach(b=>b.addEventListener('click',()=>{state.filter=b.dataset.filter;$('#categoryFilter').value=state.filter;syncFilterButtons();renderResults();}));
+$('#categoryFilter').addEventListener('change',()=>{state.filter=$('#categoryFilter').value;syncFilterButtons();renderResults();});$('#budgetFilter').addEventListener('change',renderResults);$('#sortResults').addEventListener('change',renderResults);
+document.addEventListener('click',e=>{
+ const close=e.target.closest('[data-close]');if(close)$('#'+close.dataset.close).close();
+ const detail=e.target.closest('[data-detail]');if(detail)openDetail(detail.dataset.detail);
+ const tour=e.target.closest('[data-tour]');if(tour)openDetail(tour.dataset.tour);
+ const sel=e.target.closest('[data-select]');if(sel)selectItem(sel.dataset.select);
+ const rm=e.target.closest('[data-remove]');if(rm){state.trip.splice(Number(rm.dataset.remove),1);renderTrip();}
+ const pick=e.target.closest('[data-island-pick],[data-route-pick]');if(pick){setMode('hotels');chooseDestination(pick.dataset.islandPick||pick.dataset.routePick);}
+ if(e.target.closest('[data-reset-filter]')){$('#dest').value='';state.filter='all';$('#categoryFilter').value='all';$('#budgetFilter').value='0';syncFilterButtons();invalidate();}
+});
+$$('[data-open-trip]').forEach(b=>b.addEventListener('click',()=>$('#tripDrawer').showModal()));
+$$('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();}}));
+$('#payBtn').addEventListener('click',()=>{
+ if(!state.trip.length)return;$('#tripDrawer').close();$('#checkoutFormContent').hidden=false;$('#checkoutSuccessContent').hidden=true;
+ $('#coItemList').innerHTML=state.trip.map(t=>`<article class="trip-item"><h3>${esc(t.name)}</h3><p>${esc(t.description)}</p><p>${idr(t.total)}</p></article>`).join('');$('#coTotal').textContent=idr(state.trip.reduce((s,t)=>s+t.total,0));$('#checkoutModal').showModal();
+});
+$('#coForm').addEventListener('submit',e=>{e.preventDefault();$('#checkoutFormContent').hidden=true;$('#checkoutSuccessContent').hidden=false;$('#successSummary').textContent=`Untuk ${$('#coName').value.trim()}: ${state.trip.length} pilihan dengan total contoh ${idr(state.trip.reduce((s,t)=>s+t.total,0))}. Metode: ${$('#coPayment').value}.`;});
+$('#btnDownloadVoucher').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({status:'SIMULASI — BUKAN RESERVASI / BUKTI PEMBAYARAN',brand:NUSA?'Nusa Tide Escapes':'Jalan Hemat Travel',items:state.trip},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='ringkasan-simulasi.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+$('#menuBtn').addEventListener('click',()=>{$('#mobileNav').hidden=!$('#mobileNav').hidden;$('#menuBtn').setAttribute('aria-expanded',String(!$('#mobileNav').hidden));});
+$$('#mobileNav a').forEach(a=>a.addEventListener('click',()=>{$('#mobileNav').hidden=true;$('#menuBtn').setAttribute('aria-expanded','false');}));
+$('#agencyContactForm').addEventListener('submit',e=>{e.preventDefault();$('#contactStatus').textContent='Pratinjau pesan siap. Ini simulasi; pesan tidak dikirim dan data tidak disimpan.';});
+$('#checkIn').value=addDays(today,2);$('#checkOut').value=addDays(today,5);$('#year').textContent=new Date().getFullYear();syncBounds();setMode('hotels');renderTours();renderTrip();
+})();
+</script></body></html>

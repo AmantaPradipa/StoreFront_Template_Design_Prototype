@@ -188,6 +188,8 @@ Use relaxed rounded geometry: 10px inputs, 16px cards, 24px panels, and pill but
 
 ## Components
 
+- **Branded calendar:** single-month Indonesian picker with 20px menu corners, the same option surfaces/type/selected colors as this preset, and a fixed-size calendar icon separate from the editable date text. Arrow keys move by day/week, Home/End by week and Page Up/Down by month; Enter selects, Escape dismisses, and min/max dates disable unavailable days. The top-layer picker flips/clamps to the viewport and preserves native date values plus input/change events. Browsers without Popover API retain native controls; this is not the D12 dual-month calendar.
+
 - **Navigation:** light, clear, and minimal.
 - **Primary button:** ocean-teal pill with white label, minimum 48px height.
 - **Secondary button:** white surface with teal text and border.
@@ -197,15 +199,27 @@ Use relaxed rounded geometry: 10px inputs, 16px cards, 24px panels, and pill but
 - **Activity card:** duration, location, and inclusions only when supplied.
 - **Weather content:** do not add live weather modules unless a real data source and product behavior exist.
 - **Trust content:** use approved agency claims only.
+- **Dropdown interaction geometry:** `components.css` keeps Manrope, 10px control corners and 48px triggers; the sea-glass menu has relaxed 20px corners, 6px padding, wrapping 44px options, ocean-teal selection, and a nonshrinking 16px chevron. Destination suggestions, sorting, filters, child ages and payment share this treatment through the local `components.js`; native values and booking events remain authoritative. Keyboard focus uses the locked focus token.
+- **Opened panels:** detail, Island Bag and checkout are flex-column dialogs inset 12px from the viewport, with a fixed header, 44px close control and independently scrolling body. Header titles shrink/wrap instead of displacing the close control. Padding reduces from 22/24px to 18px on mobile; gallery height scales from 160–260px. Price/action rows and totals wrap, and modal price bars never inherit catalogue layout or cutout decoration.
+- **Narrow controls:** at ≤360px dates and child-age fields stack; navigation scrolls within the available height. Toasts use a compact, noninteractive field-radius surface rather than an oversized pill over the search action.
 
 ## Unique Architectural & Component DNA (Preset 09)
 
 To make this coastal & island escape preset feel like an airy archipelago travel magazine and island-hopping charter guide rather than a standard city hotel list, its sections and search console use an archipelago-specific architecture:
 
-- **Hero Architecture (Archipelago Magazine Split + Interactive Island Hopping Strip):** A breezy coastal hero featuring an interactive **4-Island Visual Hopping Strip** (`Nusa Penida Cliff`, `Gili Meno Coral`, `Kuta Mandalika Bay`, `Nusa Dua Lagoon`) where clicking any island thumbnail immediately filters the stays and populates the search harbor.
-- **Search Engine UI (Split-Deck Harbor & Beachfront Console):** A 2-zone coastal console (`rounded-3xl`): the left deck houses visual mode pills (`Beachfront Stays` vs `Catamaran & Reef Tours`) and island harbor selector, while the right deck houses the tide-date pickers, bungalow steppers, and a warm coral (`#E29A70`) pill trigger.
-- **Inventory Section Layout (Staggered Coastal Lookbook Cards):** Cards alternate vertical offset on desktop (`lg:mt-8` on alternating columns) with tall `aspect-[4/3]` ocean photography, a floating **Shoreline & Boat Access Tag** (*Fast Boat Return Included*, *Direct Coral Reef*, *White Sand Cove*), and a seafoam-tinted price bar.
-- **Manifesto Section (2-Column Maritime & Reef Stewardship Split):** A split coastal panel pairing marine safety & syahbandar boat compliance on the left with coral reef conservation and SNAP BI / DOKU settlement on the right.
+- **Hero Architecture (Archipelago Magazine Split + Interactive Island Hopping Strip):** Hero editorial berlatar mist, judul Fraunces di kiri dan foto teluk setinggi 385px di kanan, bukan banner teal penuh. Empat pilihan pulau (`Nusa Penida`, `Gili Meno`, `Kuta Mandalika`, `Nusa Dua`) berada di bawahnya. Pilihan mengisi tujuan, menandai pulau aktif, memperbarui contoh akses darat/perahu, dan memfilter katalog lokal.
+- **Search Engine UI (Split-Deck Harbor & Beachfront Console):** Panel putih radius 28px dengan pembagian 35%/65%. Dek kiri seafoam memuat mode Beachfront Stays / Katamaran & reef tours, tujuan, dan keterangan akses ilustratif. Dek kanan memuat tanggal, tiga counter, usia anak, ringkasan dan tombol coral dengan teks gelap `onCta`. Tidak ada data pasang-surut atau transportasi live.
+- **Inventory Section Layout (Staggered Coastal Lookbook):** Sebelum pencarian, tiga kolom dengan kartu tengah turun 30px, foto pantai 255px, label atribut contoh, dan price bar seafoam; kartu keempat membentang dua kolom. Setelah pencarian, komposisi D02 menjadi sidebar filter 230px dan baris foto / informasi / harga. Tablet memakai dua kolom; seluler satu kolom tanpa stagger.
+- **Manifesto Section (Maritime & Reef Editorial Split):** Dua panel foto keselamatan dan terumbu, diikuti arahan untuk mengonfirmasi operator, cuaca, fasilitas dan biaya. Tidak menyatakan kapal terverifikasi, kontribusi konservasi, atau transaksi nyata.
+
+### Implementasi pencarian & halaman pendukung
+
+- Isian minimal 48px; tombol counter dan navigasi minimal 44px. Tujuan wajib; menginap 1–30 malam; bungalow/unit 1–9; dewasa per kamar 1–20; anak per kamar 0–20. Setiap anak di setiap kamar mempunyai pemilih usia wajib 0–17 tahun dengan pilihan awal kosong dan nilai yang dipertahankan saat jumlah berubah.
+- Mode tur menggunakan satu tanggal berangkat dan unit rombongan; jumlah dewasa/anak serta usia tetap eksplisit. Harga contoh tur mengalikan tarif per orang dengan seluruh peserta; contoh menginap memakai tarif per unit × malam × unit. Tidak ada penambahan biaya tersembunyi.
+- Validasi, perhitungan loading lokal, hasil kosong tanpa fallback tidak relevan, filter kategori/anggaran, dan urutan harga tersedia. Detail, Island Bag, checkout, dan unduhan ringkasan JSON adalah simulasi tanpa API, reservasi atau pembayaran.
+- Pada lebar ≤900px dua dek bertumpuk; pada ≤600px counter berubah menjadi baris berlabel, strip pulau tetap dua kolom, hero dan cerita menjadi satu kolom. Header memakai nama pendek Nusa Tide dan menu seluler; tidak ada navigasi teknis.
+- `index.html` hanya etalase pelanggan. Isi dokumentasi asli dipindah ke sibling `guidelines.html`, `search-board.html`, dan `figcraft.html`, dengan tautan relatif biasa; tidak ada hidden documentation DOM atau view router. Footer etalase hanya menautkan panduan merek secara tenang.
+- Implementasi memakai token aksesibel terdaftar dalam `brand-dna.json`: `muted`, `secondaryText`, `fieldBorder`, `cta`/`onCta`, `focus` serta permukaan seafoam; tidak mengganti fondasi merek. Dials: variance 7, motion 2, density 4. Focus keyboard terlihat, dialog native menjaga fokus, dan reduced-motion menonaktifkan animasi.
 
 ## Homepage Composition
 

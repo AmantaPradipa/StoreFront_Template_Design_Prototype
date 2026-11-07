@@ -1,0 +1,134 @@
+{
+  "project": "Ortasys_StoreFront",
+  "template": "01-jelajah-lombok",
+  "brand": "Jelajah Lombok",
+  "preset": "Local & Destination",
+  "tagline": "Menjelajahi Lombok dari mata warga lokal — penginapan dan pengalaman terkurasi.",
+  "tokens": {
+    "primary": "#174C43",
+    "primaryHover": "#103B34",
+    "secondary": "#50706A",
+    "tertiary": "#D8B98C",
+    "accent": "#92523A",
+    "bg": "#F4EDE1",
+    "surface": "#FFFCF6",
+    "surfaceMuted": "#EAE2D5",
+    "text": "#263B35",
+    "muted": "#59655F",
+    "border": "#D9D2C6",
+    "success": "#287A58",
+    "warning": "#995B20",
+    "error": "#B8473D",
+    "focus": "#236E9B",
+    "onPrimary": "#FFFFFF",
+    "fieldBorder": "#89847D",
+    "onDark": "#FFFFFF",
+    "mutedRaw": "#68766F",
+    "accentText": "#92523A",
+    "secondaryText": "#50706A",
+    "accentDeco": "#C66F4E",
+    "secondaryDeco": "#78A9A1",
+    "borderDeco": "#D9D2C6",
+    "paper": "#F0E3CE",
+    "clayOnDark": "#E8A98C",
+    "sand": "#D8B98C"
+  },
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#68766F",
+      "to": "#59655F",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "accentText",
+      "from": "#C66F4E",
+      "to": "#9A563D",
+      "why": "accent used as text/label ≥4.5:1"
+    },
+    {
+      "token": "secondaryText",
+      "from": "#78A9A1",
+      "to": "#50706A",
+      "why": "secondary used as text ≥4.5:1"
+    },
+    {
+      "token": "fieldBorder",
+      "from": "#D9D2C6",
+      "to": "#89847D",
+      "why": "input outline ≥3:1 (WCAG 1.4.11)"
+    },
+    {
+      "token": "warning",
+      "from": "#A96524",
+      "to": "#995B20",
+      "why": "warning text ≥4.5:1"
+    }
+  ],
+  "fonts": {
+    "display": "DM Serif Display",
+    "displaySt": "Regular",
+    "displayLs": "-3.5%",
+    "head": "Manrope",
+    "headSt": "Bold",
+    "body": "Manrope"
+  },
+  "radii": {
+    "xs": 6,
+    "sm": 10,
+    "md": 16,
+    "lg": 24,
+    "xl": 32,
+    "pill": 999
+  },
+  "logo": {
+    "mark": "assets/logo-mark.png",
+    "markDark": "assets/logo-mark-dark.png",
+    "concept": "Gunung Rinjani peak + warm rising sun arc in forest green #174C43 and clay #C66F4E"
+  },
+  "searchEngine": {
+    "signature": "Warm Host Pill-Strip Bar (rounded-32px ivory capsule with floating mode toggle & forest-green pill trigger)",
+    "modes": [
+      "Penginapan",
+      "Pengalaman & Tur Desa"
+    ],
+    "limits": {
+      "rooms": "1-9",
+      "adultsPerRoom": "1-20",
+      "childrenPerRoom": "0-20",
+      "maxNights": 30
+    }
+  },
+  "ortasysInvariants": {
+    "livePrice": "Setiap harga dicek langsung saat Anda mencari",
+    "priceVisibility": "Customer-facing selling price in IDR only",
+    "sampleTag": "Contoh konten agen"
+  },
+  "programmaticTints": [
+    "#0F2A25",
+    "#1A2622",
+    "#26352F",
+    "#B4B8B2",
+    "#CDC6BB",
+    "#D2CBBF",
+    "#DFE3DD",
+    "#E1E5DF",
+    "#E1EAE0",
+    "#E2EAEA",
+    "#E3CEAE",
+    "#E3E7E1",
+    "#E5EBEB",
+    "#E5ECE3",
+    "#E7D6BB",
+    "#E8EAE4",
+    "#E9EEED",
+    "#ECEEE8",
+    "#EDE0CC",
+    "#EEE1D8",
+    "#F1E5D8",
+    "#F1F1EB",
+    "#F3F3ED",
+    "#F6E4DE",
+    "#F6E6E0"
+  ]
+}

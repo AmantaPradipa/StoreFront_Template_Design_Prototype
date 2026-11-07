@@ -1,0 +1,382 @@
+{
+  "template": "07",
+  "slug": "07-sela-retreats",
+  "brand": "Sela Retreats",
+  "preset": "Wellness & Slow Living",
+  "tagline": "Rehat yang tidak terburu-buru: suaka tenang, ritme harian lembut, harga jual yang jelas.",
+  "personality": [
+    "tenang",
+    "restoratif",
+    "bijaksana",
+    "alami",
+    "seimbang"
+  ],
+  "figcraft": {
+    "document": 3,
+    "pageId": 8
+  },
+  "tokens": {
+    "primary": "#53665A",
+    "primaryHover": "#3D5045",
+    "secondary": "#A7A88A",
+    "tertiary": "#D9C8AE",
+    "accent": "#B98270",
+    "bg": "#F5F3EC",
+    "surface": "#FFFEFA",
+    "surfaceMuted": "#EAE9DF",
+    "text": "#303B34",
+    "muted": "#636960",
+    "border": "#DADBCF",
+    "success": "#4F765B",
+    "warning": "#8F6834",
+    "error": "#A94F49",
+    "focus": "#315F8B",
+    "onPrimary": "#FFFFFF",
+    "fieldBorder": "#8A8B83",
+    "onDark": "#FFFFFF",
+    "cta": "#53665A",
+    "onCta": "#FFFEFA",
+    "terracotta": "#8C5A4B",
+    "sageSoft": "#E4E8E1",
+    "sandSoft": "#EFECE2",
+    "mutedRaw": "#737B70",
+    "accentText": "#8F6456",
+    "secondaryText": "#6F6F5B"
+  },
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#737B70",
+      "to": "#636960",
+      "why": "teks sekunder >=4.5:1 pada bg (5.08), surface (5.59), surface-muted (4.63)"
+    },
+    {
+      "token": "accentText",
+      "from": "#B98270",
+      "to": "#8F6456",
+      "why": "aksen clay dipakai sebagai teks/eyebrow; 4.59:1 pada bg, 5.04:1 pada surface. Hex asli #B98270 hanya untuk dekorasi (dot, logo, pita)"
+    },
+    {
+      "token": "secondaryText",
+      "from": "#A7A88A",
+      "to": "#6F6F5B",
+      "why": "secondary sebagai teks/label kecil; 4.61:1 pada bg. Hex asli hanya dekorasi"
+    },
+    {
+      "token": "fieldBorder",
+      "from": "#DADBCF",
+      "to": "#8A8B83",
+      "why": "outline input >=3:1 (WCAG 1.4.11): 3.41:1 pada surface. border #DADBCF hanya untuk pemisah kartu dekoratif"
+    },
+    {
+      "token": "warning",
+      "from": "#A7793D",
+      "to": "#8F6834",
+      "why": "teks peringatan >=4.5:1 pada surface (4.96)"
+    },
+    {
+      "token": "eyebrowOnPrimary",
+      "from": "#D9C8AE (tertiary)",
+      "to": "#F5F3EC (bg)",
+      "why": "tertiary pada sage hanya 3.75:1; oat memberi 5.54:1 untuk label kecil di pita sage"
+    },
+    {
+      "token": "markDark.stone",
+      "from": "#53665A",
+      "to": "#F5F3EC",
+      "why": "versi logo untuk permukaan gelap (#303B34): batu bawah/tengah dan lingkaran oat"
+    },
+    {
+      "token": "markDark.cap",
+      "from": "#B98270",
+      "to": "#D2AEA2",
+      "why": "batu puncak clay dicerahkan 35% ke putih agar terbaca pada permukaan gelap (derived mix, bukan hex baru)"
+    }
+  ],
+  "contrast": {
+    "text/bg": 10.5,
+    "text/surface": 11.56,
+    "muted/bg": 5.08,
+    "muted/surface": 5.59,
+    "muted/surfaceMuted": 4.63,
+    "onPrimary/primary": 6.15,
+    "onPrimary/primaryHover": 8.64,
+    "primary/bg": 5.54,
+    "accentText/bg": 4.59,
+    "accentText/surface": 5.04,
+    "secondaryText/bg": 4.61,
+    "fieldBorder/surface": 3.41,
+    "focus/surface": 6.63,
+    "error/surface": 5.33,
+    "success/surface": 5.11,
+    "warning/surface": 4.96,
+    "oat/primary": 5.54,
+    "note": "K.audit() flags only raw accent/secondary/border pairs; those tokens are decorative-only and never used for text or input outlines (derived tokens above are)."
+  },
+  "fonts": {
+    "display": {
+      "family": "Lora",
+      "weight": 500,
+      "size": 62,
+      "lineHeight": 1.04,
+      "letterSpacing": "-2.5%"
+    },
+    "heading": {
+      "family": "DM Sans",
+      "weight": 600
+    },
+    "body": {
+      "family": "DM Sans",
+      "weight": 400,
+      "size": 16,
+      "lineHeight": 1.65
+    },
+    "serifLabels": "Lora 13 Medium untuk label konsol pencarian (Pilih Lokasi Hening, Mulai Rehat, Selesai Rehat, Kapasitas Suaka) dan pill inklusi",
+    "label": {
+      "family": "DM Sans",
+      "weight": 600,
+      "size": 11,
+      "letterSpacing": "0.1em",
+      "case": "upper"
+    },
+    "numerals": "DM Sans tabular untuk harga dan tanggal"
+  },
+  "radii": {
+    "xs": 6,
+    "sm": 10,
+    "md": 16,
+    "lg": 24,
+    "xl": 32,
+    "pill": 9999,
+    "console": 28,
+    "arch": "radius atas = setengah lebar kartu (hanya koleksi)"
+  },
+  "spacing": [
+    4,
+    8,
+    12,
+    16,
+    20,
+    24,
+    32,
+    40,
+    48,
+    64,
+    80,
+    96
+  ],
+  "layout": {
+    "desktopWidth": 1440,
+    "contentWidth": 1200,
+    "singleColumnShowcase": 896,
+    "sectionPadding": "96-104",
+    "mobileWidth": 390
+  },
+  "elevation": "hampir datar; kartu SHADOW(8,28,#303B340F); konsol pencarian SHADOW(18,48,#303B3426); tanpa glassmorphism/glow",
+  "logo": {
+    "concept": "Cairn tiga batu sungai bertumpuk dalam lingkaran tipis. Batu puncak clay (#B98270), dua batu bawah dan lingkaran sage (#53665A). Datar, dua warna, tanpa teks.",
+    "files": [
+      "assets/logo-mark.png",
+      "assets/logo-mark-dark.png"
+    ],
+    "wordmark": "teks hidup 'Sela Retreats' dalam Lora Medium (K.logo), tidak dibakar ke PNG",
+    "generation": "gambar mark pada putih #FFFFFF lewat generate_image (prompt 6-bagian), dua-nada dipisah ke alpha PNG dengan .work/make_logo_2tone_07.py",
+    "minSize": "mark 24 px, lockup horizontal 120 px lebar",
+    "darkVariant": "oat + clay terang di atas #303B34"
+  },
+  "searchEngine": {
+    "name": "Zen Intention Pill Console",
+    "shape": "pil terpusat, lebar 1120 (di desain; DESIGN.md: max-w-4xl), radius 28, permukaan #FFFEFA, border lembut, bayangan halus; sel bundar dipisah garis sage",
+    "fields": [
+      "Pilih Lokasi Hening (destinasi)",
+      "Mulai Rehat (check-in)",
+      "Selesai Rehat (check-out)",
+      "Kapasitas Suaka (kamar / dewasa per kamar / anak per kamar)"
+    ],
+    "cta": "Cek tarif ketenangan (pil sage, 72 px, ikon search)",
+    "modeSwitch": "Penginapan | Pengalaman (tampil karena kedua mode aktif)",
+    "compact": "S.compactBar pada halaman hasil; sheet bawah pada mobile (M04)",
+    "states": [
+      "default",
+      "focus (cincin 2px focus blue)",
+      "error (cincin error + pesan)",
+      "loading (Mengecek tarif...)",
+      "empty",
+      "system error"
+    ],
+    "constraints": {
+      "nightsMax": 30,
+      "nightsMin": 1,
+      "rooms": [
+        1,
+        9
+      ],
+      "adultsPerRoom": [
+        1,
+        20
+      ],
+      "childrenPerRoom": [
+        0,
+        20
+      ],
+      "childAgeRequiredWhenChildren": true
+    },
+    "labels": "permanen di atas nilai, tidak pernah placeholder-saja"
+  },
+  "signature": {
+    "hero": "Centered Zen Pavilion Frame: headline Lora terpusat + panorama 1200x560 radius 32, konsol menindih tepi atas panorama",
+    "inventory": "Single-column slow-scroll sanctuary showcase 896: kartu horizontal 5/12 foto + 7/12 catatan jurnal (radius 24)",
+    "manifesto": "Daily slow-living rhythm: 06:00 Hening Fajar, 11:00 Kebun Nabati, 17:00 Sound Bath Senja (jam = contoh)",
+    "collections": "kartu berbentuk lengkung (arch) — satu-satunya bentuk organik, geometris"
+  },
+  "imagery": {
+    "model": "generate_image tool (configured image-model role), prompt dalam formula 6 bagian: Subject + Surface + Locked HEX + Lighting + Lens + Style",
+    "paletteLock": "sage #53665A, oat #F5F3EC, warm stone #D9C8AE, clay #B98270; low saturation, cahaya alami lembut",
+    "rules": "tanpa teks, watermark, logo; tanpa wajah dikenali (sosok kecil dari belakang); tanpa citra yang mengesankan perawatan medis",
+    "assets": [
+      {
+        "file": "hero.webp",
+        "ratio": "3:2",
+        "subject": "pavilion bambu tepi sawah Ubud berkabut + kolam refleksi"
+      },
+      {
+        "file": "dest-1.webp",
+        "ratio": "4:3",
+        "subject": "teras sawah Sayan saat fajar"
+      },
+      {
+        "file": "dest-2.webp",
+        "ratio": "4:3",
+        "subject": "hutan pinus berkabut kaki Rinjani, Senaru"
+      },
+      {
+        "file": "dest-3.webp",
+        "ratio": "4:3",
+        "subject": "tebing kapur dan samudra Nusa Penida"
+      },
+      {
+        "file": "stay-1.webp",
+        "ratio": "4:3",
+        "subject": "pavilion meditasi kayu tepi sungai, Sayan"
+      },
+      {
+        "file": "stay-2.webp",
+        "ratio": "4:3",
+        "subject": "kamar linen chalet kayu, Senaru"
+      },
+      {
+        "file": "stay-3.webp",
+        "ratio": "4:3",
+        "subject": "teras villa tebing dengan kolam air asin, Nusa Penida"
+      },
+      {
+        "file": "stay-4.webp",
+        "ratio": "4:3",
+        "subject": "ruang duduk lodge berperapian, Samosir"
+      },
+      {
+        "file": "tour-1.webp",
+        "ratio": "3:2",
+        "subject": "singing bowl dan matras yoga"
+      },
+      {
+        "file": "tour-2.webp",
+        "ratio": "3:2",
+        "subject": "lesung jamu kunyit dan rempah"
+      },
+      {
+        "file": "tour-3.webp",
+        "ratio": "3:2",
+        "subject": "pancuran mata air batu berlumut"
+      },
+      {
+        "file": "about.webp",
+        "ratio": "3:4",
+        "subject": "yoga shala bambu terbuka"
+      },
+      {
+        "file": "room-1.webp",
+        "ratio": "4:3",
+        "subject": "bak batu vulkanik di kamar mandi kayu"
+      },
+      {
+        "file": "deck-1.webp",
+        "ratio": "4:3",
+        "subject": "dek meditasi fajar dengan dua zafu"
+      },
+      {
+        "file": "garden-1.webp",
+        "ratio": "4:3",
+        "subject": "kebun rempah dengan bedeng kayu"
+      },
+      {
+        "file": "brand-mockup.webp",
+        "ratio": "3:2",
+        "subject": "logo pada tote linen, kartu, cangkir, papan kayu (logo-mark sebagai input)"
+      }
+    ]
+  },
+  "copyRules": {
+    "language": "Bahasa Indonesia natural, tenang, tanpa tanda seru atau urgensi",
+    "forbidden": [
+      "menyembuhkan",
+      "detoks / detox",
+      "terapi medis",
+      "menurunkan stres/tekanan darah",
+      "bersertifikat tanpa bukti",
+      "rating / ulasan / penghargaan",
+      "terbaik / #1",
+      "sisa kamar / stok"
+    ],
+    "sampleTag": "Contoh konten agen",
+    "promise": "Setiap harga dicek langsung saat Anda mencari"
+  },
+  "ortasysInvariants": {
+    "agentMayChange": [
+      "logo",
+      "nama merek",
+      "warna override yang disetujui",
+      "foto hero/galeri",
+      "teks",
+      "kontak",
+      "modul navigasi aktif"
+    ],
+    "agentMayNotChange": [
+      "logika pemesanan",
+      "field wajib pemesanan",
+      "aturan visibilitas harga",
+      "perilaku aksesibilitas",
+      "hierarki halaman inti"
+    ],
+    "price": "hanya harga jual agen dalam IDR, tidak pernah net/margin/pemasok/saldo",
+    "payment": "DOKU hosted fields (tanpa input kartu polos), SNAP BI virtual account, QRIS; konfirmasi hanya setelah respons server terverifikasi",
+    "footer": "identitas agen, kontak, tentang, FAQ, kebijakan; 'Didukung sistem pemesanan Ortasys'",
+    "sampleBooking": {
+      "property": "Sayan Valley Pavilion Sanctuary",
+      "dates": "9 – 12 Nov 2026",
+      "nights": 3,
+      "rooms": 1,
+      "adults": 2,
+      "ratePerNight": 3200000,
+      "total": 9600000,
+      "ref": "SELA-2026-0001"
+    }
+  },
+  "programmaticTints": [
+    "#B9BBB5",
+    "#C3C9C2",
+    "#C5C7C3",
+    "#CFD1C7",
+    "#D9D9D9",
+    "#DEDDD0",
+    "#E3E6E0",
+    "#E6EBE4",
+    "#EAECE7",
+    "#EAEEE7",
+    "#EEEFEA",
+    "#F0F0EC",
+    "#F1F2ED",
+    "#F3F3EF",
+    "#F6F5EE"
+  ]
+}

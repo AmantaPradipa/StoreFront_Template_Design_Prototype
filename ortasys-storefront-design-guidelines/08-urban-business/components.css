@@ -1,0 +1,437 @@
+/* Branded controls and viewport-safe booking surfaces. */
+#toast {
+  pointer-events: none;
+  z-index: 40;
+}
+.ui-select {
+  display: block;
+  min-width: 0;
+  width: 100%;
+}
+.ui-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  height: auto;
+  padding: 10px 12px;
+  border: 1px solid var(--field);
+  border-radius: var(--control-radius);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+}
+.ui-select-value {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.ui-select-chevron {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  transition: transform 150ms;
+}
+.ui-select-trigger[aria-expanded="true"] .ui-select-chevron {
+  transform: rotate(180deg);
+}
+.ui-select-menu {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 6px;
+  border: 1px solid var(--field);
+  border-radius: var(--menu-radius);
+  background: var(--surface);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 13px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--ink) 15%, transparent);
+  z-index: 100;
+}
+.ui-select-option {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  height: auto;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: var(--control-radius);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+.ui-select-option:hover,
+.ui-select-option[data-active="true"] {
+  background: var(--soft);
+  color: var(--ink);
+}
+.ui-select-option:is([aria-selected="true"], [aria-pressed="true"]) {
+  background: var(--primary);
+  color: var(--on);
+}
+.ui-select-option:focus-visible {
+  outline-offset: -3px !important;
+}
+.ui-select-empty {
+  padding: 12px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.ui-select-trigger:hover:not(:disabled) {
+  border-color: var(--primary);
+}
+.ui-select-trigger[aria-expanded="true"] {
+  border-color: var(--focus);
+}
+.ui-select-trigger:disabled,
+.ui-select-option:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+button {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+button svg {
+  flex-shrink: 0;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+.primary,
+.outline,
+.trip-trigger,
+.filter-btn {
+  height: auto;
+  min-height: 44px;
+}
+.primary {
+  min-height: 48px;
+}
+.filter-btn {
+  padding-block: 10px;
+  max-width: 100%;
+}
+input[type="date"] {
+  color: var(--ink);
+  accent-color: var(--primary);
+  max-width: 100%;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--primary);
+  flex-shrink: 0;
+}
+input[type="number"] {
+  font-variant-numeric: tabular-nums;
+}
+.age-grid > * {
+  min-width: 0;
+}
+.age-grid .ui-select-trigger {
+  font-size: 13px;
+}
+#detailModal,
+#checkoutModal {
+  padding: 16px;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+#detailModal > div,
+#checkoutModal > div {
+  max-height: calc(100dvh - 32px);
+  min-height: 0;
+  max-width: 512px;
+  border-radius: var(--panel-radius);
+  width: 100%;
+}
+#detailModal > div > div:first-child {
+  max-height: 30dvh;
+  min-height: 100px;
+  overflow: hidden;
+}
+#modalImg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+#detailModal > div > div:nth-child(2) {
+  min-height: 0;
+  overscroll-behavior: contain;
+}
+#detailModal > div > div:last-child {
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px;
+}
+#detailModal > div > div:last-child > div {
+  min-width: 0;
+  flex: 1 1 160px;
+}
+#modalSelectBtn {
+  height: auto;
+  min-height: 48px;
+  max-width: 100%;
+  padding: 12px 20px;
+  flex: 1 1 180px;
+}
+#modalPrice {
+  overflow-wrap: anywhere;
+}
+#tripDrawer {
+  height: 100dvh;
+  max-height: 100dvh;
+  min-width: 0;
+}
+#tripDrawer > div:first-child,
+#checkoutModal > div > div:first-child {
+  height: auto;
+  min-height: 80px;
+  flex-shrink: 0;
+  padding: 16px 24px;
+  gap: 12px;
+  align-items: center;
+}
+#tripDrawer > div:first-child > div,
+#checkoutModal > div > div:first-child > div {
+  min-width: 0;
+  flex: 1;
+}
+#tripTitle,
+#checkoutHeading,
+#modalTitle {
+  overflow-wrap: anywhere;
+}
+[data-close-trip],
+[data-close-checkout],
+[data-close-modal] {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  flex: 0 0 44px;
+  color: inherit;
+}
+#tripItems {
+  min-height: 0;
+  overscroll-behavior: contain;
+}
+#tripItems > div {
+  flex-shrink: 0;
+}
+#tripItems .flex > div {
+  min-width: 0;
+}
+#tripItems [data-remove] {
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+#tripItems p,
+#tripItems h4,
+#coItemList,
+#successRef,
+#successGuest {
+  overflow-wrap: anywhere;
+}
+#tripDrawer > div:last-child {
+  flex-shrink: 0;
+  max-height: 55dvh;
+  overflow: auto;
+}
+#tripDrawer .justify-between,
+#checkoutFormContent .justify-between,
+#checkoutSuccessContent .justify-between {
+  gap: 8px;
+  flex-wrap: wrap;
+}
+#checkoutModal > div > div:nth-child(2) {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 8px 12px;
+  flex-shrink: 0;
+}
+#checkoutModal > div > div:nth-child(2) > span {
+  min-width: 0;
+}
+#checkoutModal > div > div:nth-child(2) > span > span {
+  flex: 0 0 20px;
+}
+#checkoutModal .flow-note {
+  flex-shrink: 0;
+}
+#checkoutFormContent,
+#checkoutSuccessContent {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+#checkoutFormContent > * {
+  flex-shrink: 0;
+}
+#coForm label {
+  min-width: 0;
+  min-height: 44px;
+}
+#coForm label > div {
+  min-width: 0;
+}
+#coForm input:not([type="radio"]) {
+  width: 100%;
+}
+#coSubmitBtn {
+  height: auto;
+  min-height: 48px;
+  padding: 14px 20px;
+}
+@media (max-width: 900px) {
+  .header-inner {
+    flex-wrap: wrap;
+    padding-block: 12px;
+    gap: 8px 16px;
+  }
+  .header-inner > .site-nav {
+    display: flex;
+    order: 3;
+    flex: 1 0 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 20px;
+  }
+  .site-nav a {
+    min-height: 44px;
+  }
+  .header-inner > .brand {
+    position: static;
+    transform: none;
+  }
+  .header-inner > .trip-trigger {
+    margin-left: auto;
+  }
+}
+@media (max-width: 480px) {
+  #detailModal,
+  #checkoutModal {
+    padding: 12px;
+  }
+  #detailModal > div,
+  #checkoutModal > div {
+    max-height: calc(100dvh - 24px);
+  }
+  #detailModal > div > div:nth-child(2),
+  #checkoutFormContent,
+  #checkoutSuccessContent {
+    padding: 16px;
+  }
+  #detailModal > div > div:last-child {
+    padding: 16px;
+  }
+  #tripDrawer > div:first-child,
+  #checkoutModal > div > div:first-child {
+    padding: 16px;
+  }
+  #checkoutModal > div > div:nth-child(2),
+  #checkoutModal .flow-note {
+    padding: 12px 16px;
+  }
+  .header-inner > .brand {
+    font-size: 18px;
+  }
+  .site-nav {
+    font-size: 12px;
+  }
+  .age-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-height: 520px) {
+  #detailModal > div > div:first-child {
+    display: none;
+  }
+  #checkoutModal .flow-note {
+    padding-block: 6px;
+  }
+  #checkoutModal > div > div:nth-child(2) {
+    padding-block: 6px;
+  }
+}
+:root {
+  --control-radius: 8px;
+  --menu-radius: 12px;
+  --panel-radius: 12px;
+}
+.ui-select-trigger,
+.ui-select-menu {
+  font-family: Inter, sans-serif;
+}
+.ui-select-trigger {
+  font-weight: 500;
+}
+.ribbon .search-field > span {
+  font-family: "IBM Plex Sans", sans-serif;
+  white-space: normal;
+  line-height: 1.5;
+}
+.ribbon .search-field input[type="number"] {
+  border-radius: 8px;
+}
+.ribbon .mode-bar {
+  flex-wrap: wrap;
+}
+.ribbon .mode-tab {
+  white-space: normal;
+}
+.ribbon .age-grid {
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+}
+.ledger-price .primary {
+  max-width: 100%;
+  white-space: normal;
+}
+.metro-contact .primary {
+  white-space: normal;
+}
+@media (max-width: 767px) {
+  .ledger-price {
+    flex-wrap: wrap;
+  }
+  .ledger-price > div {
+    min-width: 0;
+    flex: 1 1 160px;
+  }
+  .ledger-price > .primary {
+    flex: 1 1 130px;
+  }
+  .ribbon .search-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ribbon .search-field {
+    min-width: 0;
+  }
+  .ribbon .age-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .metro-contact .wrap {
+    flex-wrap: wrap;
+  }
+  .route-stations > span {
+    overflow-wrap: anywhere;
+  }
+}

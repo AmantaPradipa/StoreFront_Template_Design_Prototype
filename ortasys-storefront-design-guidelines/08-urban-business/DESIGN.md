@@ -188,6 +188,8 @@ Use compact, structured geometry: 8px inputs, 12px cards, 16px panels, and 8px b
 
 ## Components
 
+- **Branded calendar:** single-month Indonesian picker with 12px menu corners, the same option surfaces/type/selected colors as this preset, and a fixed-size calendar icon separate from the editable date text. Arrow keys move by day/week, Home/End by week and Page Up/Down by month; Enter selects, Escape dismisses, and min/max dates disable unavailable days. The top-layer picker flips/clamps to the viewport and preserves native date values plus input/change events. Browsers without Popover API retain native controls; this is not the D12 dual-month calendar.
+
 - **Navigation:** compact, predictable, and high-contrast.
 - **Primary button:** slate navy fill, white text, 8px radius, minimum 46px height.
 - **Secondary button:** white surface, navy text, thin border.
@@ -197,28 +199,30 @@ Use compact, structured geometry: 8px inputs, 12px cards, 16px panels, and 8px b
 - **Date and guest controls:** use shared booking components with clear labels and validation.
 - **Business services:** do not display corporate account, invoicing, approval, or expense-management UI unless those capabilities are confirmed.
 - **Footer:** organized information groups and complete policy links.
+- **Interactive geometry:** `components.css` uses existing navy/blue/cool-surface tokens, Inter body and IBM Plex Sans labels. Dropdown triggers have 8px corners, 48px minimum height, 12px insets and a reserved 16px chevron; 12px menus have 6px inset and wrapping 44px options. Selected rows use navy/white, hover uses cool muted surface, and keyboard focus uses blue.
+- **Opened booking surfaces:** detail and checkout preserve precise 12px shells with 16px viewport gutters (12px mobile), scrollable content and 44px non-shrinking close controls. Gallery height is capped at 30dvh; price/actions wrap. Checkout stages wrap around fixed 20px markers. Inline occupancy and generated child-age fields remain in the ribbon; mobile navigation occupies a visible wrapping row. Ledger price/actions wrap on narrow screens.
 
 ## Unique Architectural & Component DNA (Preset 08)
 
 To make this corporate & urban business storefront feel like an executive rapid-booking terminal rather than a leisure holiday brochure, its layout and search engine use a high-density tabular architecture:
 
-- **Hero Architecture (Compact Executive KPI Strip Banner):** Instead of a tall lifestyle banner, the hero is a compact, high-efficiency corporate header (`py-8`) displaying metropolitan district telemetry (`JAKARTA CBD`, `SENAYAN MICE`, `ITDC NUSA DUA`) and a 3-metric SLA readout bar (`< 650ms Live Sync`, `1 Gbps Workstation Verified`, `SNAP BI / DOKU Tax Invoice`).
-- **Search Engine UI (Inline Single-Row Corporate Ribbon Bar):** A dense, single-row horizontal toolbar (`rounded-xs`) where mode tabs, district selector, check-in/out dates, delegate/room steppers, and the navy `Query Rates` button sit flush in a unified executive command ribbon.
-- **Inventory Section Layout (High-Density Tabular Ledger List):** Replaces vertical photo cards with a structured **Corporate Property Ledger Table** (`divide-y divide-line`): each row displays a compact thumbnail + property code (`[ML-01]`), a middle column for CBD/MRT transit proximity & workstation specs, a policy/tax compliance column, and a right-aligned tabular price & instant booking column.
-- **Corporate Capabilities (4-Column SLA Specification Bar):** A crisp 4-column specification grid detailing instant confirmation, e-Faktur PPN 11% readiness, net-final transparency, and multi-bank virtual account clearing.
+- **Hero Architecture (Compact Executive Strip Banner):** Navy executive header, right-aligned skyline photograph, direct IBM Plex Sans headline and a district route strip. The three factual readouts describe **local simulation**, **1–30 nights**, and **demo payment**; do not claim measured latency, verified internet speed, tax readiness or live availability.
+- **Search Engine UI (Inline Single-Row Corporate Ribbon Bar):** A flush, 4px-radius command ribbon overlaps the hero bottom. Its toolbar contains mode tabs and the mandatory price promise. At 1440px, one row holds district/city, check-in, check-out, rooms, adults per room, children per room and the navy search action. Persistent labels sit above the values. Rooms 1–9, adults 1–20 and children 0–20 are integer fields; children expand an explicit age selector for each child in each room, 0–17, with no default age.
+- **Inventory Section Layout (High-Density Tabular Ledger List):** Four aligned columns use identical 33/29/21/17 widths for header and rows: property code/thumbnail/name, connectivity/work specifications, policy/service information, and right-aligned IDR price/action. Zebra surfaces and hairlines provide structure without a generic property card grid. Property facilities, policies and prices are tagged as examples, not verified facts.
+- **Corporate Capabilities (4-Column Service Specification Bar):** Four factual specification cells explain confirmation requirements, unconnected invoice support, customer-facing price visibility and provider-only payment. A four-zone photographic index and clearly labeled schematic transit line provide metropolitan editorial context. No fictional SLA or corporate account functionality is implied. Design dials: variance 3, motion 1, density 8.
 
 ## Homepage Composition
 
 Recommended fixed homepage sequence:
 
-1. Header and navigation.
-2. City-led hero with direct search.
-3. Popular city destinations.
-4. Business-ready or centrally located stays, where factual data supports the claim.
-5. Featured hotels.
-6. Neighborhood or city guide content.
-7. Agency service information.
-8. Contact CTA and footer.
+1. Compact agency header and local-example strip.
+2. Skyline-led corporate hero, district line and factual status readouts.
+3. Overlapping inline corporate ribbon.
+4. Filtered property ledger with aligned service and policy columns.
+5. Four-zone index.
+6. Transit-corridor schematic and practical area guidance.
+7. Four-column service specifications and booking FAQ.
+8. Group-planning contact context and agency footer.
 
 Search should be available in the first viewport. Avoid a long lifestyle introduction before the booking interface.
 
@@ -232,13 +236,18 @@ Do not claim corporate rates, preferred supplier status, airport proximity, busi
 
 ## Interaction & Responsive Behavior
 
-- Desktop: compact search panel with horizontal fields where space allows.
-- Tablet: wrap search controls into two rows.
-- Mobile: stack fields and keep primary search action full-width.
-- Maintain clear price hierarchy and readable hotel details.
-- Use visible keyboard focus and minimum 44px touch targets.
-- Respect reduced-motion preferences.
-- Preserve shared Ortasys booking and payment behavior.
+- Desktop 1440px: all seven search segments stay in one row; the ledger retains four aligned columns, not independent cards.
+- Tablet 768px: ribbon fields wrap into three columns with a full-width action; ledger remains aligned with smaller property thumbnails and two-line names.
+- Mobile 390px: destination spans the ribbon, dates form a pair, room/adult fields form a pair and child count gets its own row. Action is full-width. Each ledger entry becomes a labeled editorial row: property first, specifications/policy side-by-side, price/action across the bottom. There is no wide table forcing page overflow.
+- Search labels are persistent; editable fields are 48px and touch targets at least 44px. Capacity inputs describe per-room counts. Explicit child ages, date bounds, loading and empty states are part of the working interaction, not only the D12 documentation.
+- Native validation and search validation keep destination, integer guest bounds, ages and 1–30-night dates consistent. Unsupported searches do not silently repopulate all properties.
+- Destination suggestions use exact area and name values from the active hotel or transit catalogue, rather than a shared hard-coded hotel-area list. Every suggested value matches its mode's text filter.
+- Detail, trip and checkout interactions remain local. Payment and completion are explicitly simulated, not a live booking or verified transaction; download creates a real `.txt` simulation summary.
+- Keyboard focus, modal focus trapping/restoration, Escape dismissal and reduced motion are supported. AA derivatives for text, focus and input outlines come from the existing `brand-dna.json`.
+
+## Standalone Documentation
+
+The former embedded documentation views have moved intact into `guidelines.html`, `search-board.html` and `figcraft.html`, with ordinary relative navigation. `index.html` has no documentation router, hidden documentation sections, prominent specification links or merchandise mockups. A quiet footer link opens guidelines; these pages do not depend on a parent hub.
 
 ## Do’s and Don’ts
 

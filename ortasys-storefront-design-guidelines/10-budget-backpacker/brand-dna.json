@@ -1,0 +1,160 @@
+{
+  "project": "Ortasys_StoreFront",
+  "template": "10-jalan-hemat-travel",
+  "brand": "Jalan Hemat Travel",
+  "preset": "Budget & Backpacker",
+  "tagline": "Trip mandiri, hostel & open trip dengan harga jujur.",
+  "tokens": {
+    "primary": "#263C5A",
+    "primaryHover": "#192C45",
+    "secondary": "#B25336",
+    "tertiary": "#E9B94F",
+    "accent": "#407767",
+    "bg": "#F7F7F2",
+    "surface": "#FFFFFF",
+    "surfaceMuted": "#ECEEE8",
+    "text": "#252E36",
+    "muted": "#636B74",
+    "border": "#84909E",
+    "success": "#28734E",
+    "warning": "#966121",
+    "error": "#B54545",
+    "focus": "#1769AA",
+    "onPrimary": "#FFFFFF",
+    "fieldBorder": "#84909E",
+    "onDark": "#FFFFFF",
+    "mutedRaw": "#68717A",
+    "accentText": "#407767",
+    "secondaryText": "#B25336",
+    "cta": "#E56B45",
+    "onCta": "#121B29",
+    "ctaHover": "#EE8260",
+    "ctaPressed": "#D95A33",
+    "ink": "#121B29",
+    "coral": "#E56B45",
+    "accentFill": "#4F927E",
+    "hair": "#D9DED8",
+    "board": "#192C45",
+    "mustard": "#E9B94F",
+    "tealOnDark": "#7EAEA0",
+    "coralOnDark": "#EA8C6F",
+    "mutedOnDark": "#C3CBD6"
+  },
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#68717A",
+      "to": "#636B74",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "accentText",
+      "from": "#4F927E",
+      "to": "#407767",
+      "why": "accent used as text/label ≥4.5:1"
+    },
+    {
+      "token": "secondaryText",
+      "from": "#E56B45",
+      "to": "#B25336",
+      "why": "secondary used as text ≥4.5:1"
+    },
+    {
+      "token": "fieldBorder",
+      "from": "#D9DED8",
+      "to": "#898C88",
+      "why": "input outline ≥3:1 (WCAG 1.4.11)"
+    },
+    {
+      "token": "warning",
+      "from": "#A66B25",
+      "to": "#966121",
+      "why": "warning text ≥4.5:1"
+    },
+    {
+      "token": "onCta",
+      "from": "#FFFFFF",
+      "to": "#121B29",
+      "why": "white on coral #E56B45 = 3.22:1 (fails). Deep ink on coral = 5.37:1"
+    },
+    {
+      "token": "ink",
+      "from": null,
+      "to": "#121B29",
+      "why": "deep indigo-black for text on coral/mustard fills and 2px ticket outlines"
+    },
+    {
+      "token": "secondary",
+      "from": "#E56B45",
+      "to": "#B25336",
+      "why": "coral as TEXT on light = 3:1 → coral-text #B25336. Original coral kept as cta fill"
+    },
+    {
+      "token": "accent",
+      "from": "#4F927E",
+      "to": "#407767",
+      "why": "teal-green as TEXT on light fails (3.40:1) → #407767; original kept as accentFill for status dots/fills"
+    },
+    {
+      "token": "border",
+      "from": "#D9DED8",
+      "to": "#84909E",
+      "why": "UI outline ≥3:1 (WCAG 1.4.11); original #D9DED8 kept as 'hair' for decorative dividers"
+    },
+    {
+      "token": "tealOnDark",
+      "from": "#4F927E",
+      "to": "#7EAEA0",
+      "why": "teal text on indigo board ≥4.5:1"
+    },
+    {
+      "token": "coralOnDark",
+      "from": "#E56B45",
+      "to": "#EA8C6F",
+      "why": "coral text on indigo board ≥4.5:1"
+    },
+    {
+      "token": "mutedOnDark",
+      "from": null,
+      "to": "#C3CBD6",
+      "why": "secondary text on indigo ≥4.5:1 (6.84:1)"
+    }
+  ],
+  "fonts": {
+    "display": "Space Grotesk",
+    "displaySt": "Bold",
+    "displayLs": "-4.5%",
+    "head": "Inter",
+    "headSt": "Bold",
+    "body": "Inter"
+  },
+  "radii": {
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 18,
+    "xl": 24,
+    "pill": 999
+  },
+  "searchEngine": {
+    "signature": "Perforated Boarding-Pass / Ticket-Stub Console",
+    "modes": [
+      "Hostel & Capsule Pod",
+      "Open-Trip & Sharing Jeep"
+    ],
+    "limits": {
+      "rooms": "1-9",
+      "adultsPerRoom": "1-20",
+      "childrenPerRoom": "0-20",
+      "maxNights": 30
+    }
+  },
+  "programmaticTints": [
+    "#73623A",
+    "#E5EEEA",
+    "#E9ECEF",
+    "#EEEFF2",
+    "#F5F6F2",
+    "#F9EBCE"
+  ]
+}

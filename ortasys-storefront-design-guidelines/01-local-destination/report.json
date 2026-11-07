@@ -1,0 +1,171 @@
+{
+  "template": "01-jelajah-lombok",
+  "pageId": 2,
+  "artboards": [
+    {
+      "name": "01·D01 Home",
+      "id": 1061,
+      "w": 1440,
+      "h": 6374
+    },
+    {
+      "name": "01·D02 Stays — hasil pencarian",
+      "id": 7637,
+      "w": 1440,
+      "h": 2865
+    },
+    {
+      "name": "01·D03 Detail penginapan",
+      "id": 9338,
+      "w": 1440,
+      "h": 3270
+    },
+    {
+      "name": "01·D04 Pengalaman & tur",
+      "id": 10273,
+      "w": 1440,
+      "h": 2686
+    },
+    {
+      "name": "01·D05 Detail pengalaman",
+      "id": 10612,
+      "w": 1440,
+      "h": 2384
+    },
+    {
+      "name": "01·D06 Booking 1 — data tamu",
+      "id": 13831,
+      "w": 1440,
+      "h": 1542
+    },
+    {
+      "name": "01·D07 Booking 2 — pembayaran",
+      "id": 14056,
+      "w": 1440,
+      "h": 1710
+    },
+    {
+      "name": "01·D08 Booking 3 — konfirmasi",
+      "id": 14282,
+      "w": 1440,
+      "h": 1662
+    },
+    {
+      "name": "01·D10 Tentang & pendekatan",
+      "id": 16019,
+      "w": 1440,
+      "h": 3708
+    },
+    {
+      "name": "01·D11 Kontak & FAQ",
+      "id": 16263,
+      "w": 1440,
+      "h": 2155
+    },
+    {
+      "name": "01·D12 Search engine board",
+      "id": 19831,
+      "w": 1440,
+      "h": 6036
+    },
+    {
+      "name": "01·M01 Home (mobile)",
+      "id": 30632,
+      "w": 390,
+      "h": 6096
+    },
+    {
+      "name": "01·M02 Hasil pencarian (mobile)",
+      "id": 31030,
+      "w": 390,
+      "h": 2878
+    },
+    {
+      "name": "01·M03 Detail penginapan (mobile)",
+      "id": 31276,
+      "w": 390,
+      "h": 1747
+    },
+    {
+      "name": "01·M04 Sheet pencarian (mobile)",
+      "id": 31422,
+      "w": 390,
+      "h": 980
+    },
+    {
+      "name": "01·M05 Checkout data tamu (mobile)",
+      "id": 31556,
+      "w": 390,
+      "h": 961
+    },
+    {
+      "name": "01 · Brand Guidelines",
+      "id": 50333,
+      "w": 1440,
+      "h": 15462
+    }
+  ],
+  "assets": [
+    "about.webp",
+    "brand-mockup.webp",
+    "dest-1.webp",
+    "dest-2.webp",
+    "dest-3.webp",
+    "detail-1.webp",
+    "gili-sunset.webp",
+    "hero.webp",
+    "logo-mark-dark.png",
+    "logo-mark.png",
+    "polaroid-1.webp",
+    "polaroid-2.webp",
+    "room-2.webp",
+    "stay-1.webp",
+    "stay-2.webp",
+    "stay-3.webp",
+    "stay-4.webp",
+    "stay-5.webp",
+    "tour-1.webp",
+    "tour-2.webp",
+    "tour-3.webp"
+  ],
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#68766F",
+      "to": "#59655F",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "accentText",
+      "from": "#C66F4E",
+      "to": "#9A563D",
+      "why": "accent used as text/label ≥4.5:1"
+    },
+    {
+      "token": "secondaryText",
+      "from": "#78A9A1",
+      "to": "#50706A",
+      "why": "secondary used as text ≥4.5:1"
+    },
+    {
+      "token": "fieldBorder",
+      "from": "#D9D2C6",
+      "to": "#89847D",
+      "why": "input outline ≥3:1 (WCAG 1.4.11)"
+    },
+    {
+      "token": "warning",
+      "from": "#A96524",
+      "to": "#995B20",
+      "why": "warning text ≥4.5:1"
+    }
+  ],
+  "issues": [],
+  "deviations": [
+    "muted: #68766F -> #59655F (text-muted ≥4.5:1 on bg, surface, surface-muted)",
+    "accentText: #C66F4E -> #9A563D (accent used as text/label ≥4.5:1)",
+    "secondaryText: #78A9A1 -> #50706A (secondary used as text ≥4.5:1)",
+    "fieldBorder: #D9D2C6 -> #89847D (input outline ≥3:1 (WCAG 1.4.11))",
+    "warning: #A96524 -> #995B20 (warning text ≥4.5:1)"
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "project": "Ortasys_StoreFront",
+  "template": "09-nusa-tide-escapes",
+  "brand": "Nusa Tide Escapes",
+  "preset": "Coastal & Island Escape",
+  "tagline": "Spesialis liburan pesisir & eksplorasi kepulauan. Bungalow tepi laut, fast boat, dan pelayaran katamaran antar-pulau.",
+  "tokens": {
+    "primary": "#176B73",
+    "primaryHover": "#10545B",
+    "secondary": "#96664A",
+    "tertiary": "#B9D8D3",
+    "accent": "#7D6C4D",
+    "bg": "#F3F8F6",
+    "surface": "#FFFFFF",
+    "surfaceMuted": "#E5F0ED",
+    "text": "#20383A",
+    "muted": "#5A6E6D",
+    "border": "#D4E3DF",
+    "success": "#2F785C",
+    "warning": "#996229",
+    "error": "#B34B45",
+    "focus": "#1A6593",
+    "onPrimary": "#FFFFFF",
+    "fieldBorder": "#858F8C",
+    "onDark": "#FFFFFF",
+    "cta": "#E29A70",
+    "onCta": "#20383A",
+    "mutedRaw": "#647A79",
+    "accentText": "#7D6C4D",
+    "secondaryText": "#96664A",
+    "coral": "#E29A70",
+    "sand": "#E8C98D",
+    "seafoam": "#B9D8D3",
+    "deep": "#10545B",
+    "seafoamTint": "#E0EDEB",
+    "seafoamSoft": "#F0F6F5",
+    "ctaHover": "#C78C68",
+    "onDeepMuted": "#D4E0E1",
+    "onDeepLine": "#457A7F"
+  },
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#647A79",
+      "to": "#5A6E6D",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "accentText",
+      "from": "#E8C98D",
+      "to": "#7D6C4D",
+      "why": "accent used as text/label ≥4.5:1"
+    },
+    {
+      "token": "secondaryText",
+      "from": "#E29A70",
+      "to": "#96664A",
+      "why": "secondary used as text ≥4.5:1"
+    },
+    {
+      "token": "fieldBorder",
+      "from": "#D4E3DF",
+      "to": "#858F8C",
+      "why": "input outline ≥3:1 (WCAG 1.4.11)"
+    },
+    {
+      "token": "warning",
+      "from": "#A96C2D",
+      "to": "#996229",
+      "why": "warning text ≥4.5:1"
+    }
+  ],
+  "fonts": {
+    "display": "Fraunces",
+    "displaySt": "SemiBold",
+    "displayLs": "-3.5%",
+    "head": "Manrope",
+    "headSt": "Bold",
+    "body": "Manrope"
+  },
+  "radii": {
+    "xs": 6,
+    "sm": 10,
+    "md": 16,
+    "lg": 24,
+    "xl": 32,
+    "pill": 999
+  },
+  "searchEngine": {
+    "signature": "Split-Deck Harbor & Beachfront Console + 4-Island Visual Hopping Strip",
+    "modes": [
+      "Beachfront Stays",
+      "Catamaran & Reef Tours"
+    ],
+    "limits": {
+      "rooms": "1-9",
+      "adultsPerRoom": "1-20",
+      "childrenPerRoom": "0-20",
+      "maxNights": 30
+    }
+  },
+  "programmaticTints": [
+    "#E6EFEB",
+    "#E8F0F1",
+    "#ECF3F4",
+    "#F7EDEC"
+  ]
+}

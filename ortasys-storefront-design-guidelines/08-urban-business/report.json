@@ -1,0 +1,234 @@
+{
+  "template": "08-metrolink-travel",
+  "pageId": 9,
+  "artboards": [
+    {
+      "name": "08·D01 Home",
+      "id": 1469,
+      "w": 1440,
+      "h": 3783
+    },
+    {
+      "name": "08·D02 Stays — hasil pencarian",
+      "id": 10861,
+      "w": 1440,
+      "h": 1844
+    },
+    {
+      "name": "08·D03 Stay detail",
+      "id": 11557,
+      "w": 1440,
+      "h": 2531
+    },
+    {
+      "name": "08·D04 Experiences — layanan MICE & transit",
+      "id": 17469,
+      "w": 1440,
+      "h": 2053
+    },
+    {
+      "name": "08·D05 Experience detail",
+      "id": 17978,
+      "w": 1440,
+      "h": 2134
+    },
+    {
+      "name": "08·D06 Booking 1 — data tamu",
+      "id": 22334,
+      "w": 1440,
+      "h": 1818
+    },
+    {
+      "name": "08·D08 Booking 3 — konfirmasi",
+      "id": 23295,
+      "w": 1440,
+      "h": 1645
+    },
+    {
+      "name": "08·D07 Booking 2 — pembayaran",
+      "id": 27104,
+      "w": 1440,
+      "h": 1581
+    },
+    {
+      "name": "08·D09 Destination — Jakarta CBD",
+      "id": 27345,
+      "w": 1440,
+      "h": 2466
+    },
+    {
+      "name": "08·D11 Contact & FAQ",
+      "id": 28223,
+      "w": 1440,
+      "h": 1915
+    },
+    {
+      "name": "08·D10 About — pendekatan MetroLink",
+      "id": 28485,
+      "w": 1440,
+      "h": 2757
+    },
+    {
+      "name": "08·D12 Search engine board",
+      "id": 42621,
+      "w": 1440,
+      "h": 4198
+    },
+    {
+      "name": "08·M01 Home (mobile)",
+      "id": 50982,
+      "w": 390,
+      "h": 4383
+    },
+    {
+      "name": "08·M02 Results (mobile)",
+      "id": 51911,
+      "w": 390,
+      "h": 2642
+    },
+    {
+      "name": "08·M03 Stay detail (mobile)",
+      "id": 52235,
+      "w": 390,
+      "h": 2539
+    },
+    {
+      "name": "08·M04 Search sheet (mobile)",
+      "id": 52520,
+      "w": 390,
+      "h": 844
+    },
+    {
+      "name": "08·M05 Search sheet — tanggal & tamu (mobile)",
+      "id": 52662,
+      "w": 390,
+      "h": 844
+    },
+    {
+      "name": "08 · Brand Guidelines",
+      "id": 68439,
+      "w": 1440,
+      "h": 9706
+    }
+  ],
+  "assets": [
+    "about.webp",
+    "brand-mockup.webp",
+    "contact.webp",
+    "dest-1.webp",
+    "dest-2.webp",
+    "dest-3.webp",
+    "dest-4.webp",
+    "hero.webp",
+    "logo-mark-dark.png",
+    "logo-mark.png",
+    "stay-1.webp",
+    "stay-2.webp",
+    "stay-3.webp",
+    "stay-4.webp",
+    "stay-5.webp",
+    "stay-6.webp",
+    "stay-7.webp",
+    "stay-8.webp",
+    "tour-1.webp",
+    "tour-2.webp",
+    "tour-3.webp",
+    "tour-4.webp"
+  ],
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#65717D",
+      "to": "#606B77",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "accentText",
+      "from": "#C28A4B",
+      "to": "#886034",
+      "why": "brass used as small text/label ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "secondaryText",
+      "from": "#3D78A8",
+      "to": "#3A72A0",
+      "why": "secondary used as text ≥4.5:1"
+    },
+    {
+      "token": "fieldBorder",
+      "from": "#D5DDE4",
+      "to": "#868B90",
+      "why": "input outline ≥3:1 (WCAG 1.4.11)"
+    },
+    {
+      "token": "warning",
+      "from": "#A66B25",
+      "to": "#966121",
+      "why": "warning text ≥4.5:1"
+    },
+    {
+      "token": "secondary",
+      "from": "#3D78A8",
+      "to": "#376C98",
+      "why": "links / selected text ≥4.5:1 on bg, surface, surface-muted (raw #3D78A8 kept as secondaryRaw for fills/graphics)"
+    },
+    {
+      "token": "accent",
+      "from": "#C28A4B",
+      "to": "#886034",
+      "why": "accent token holds the AA-safe text variant; raw brass stays as c.brass / c.cta for fills, dots and icons on navy (UI >=3:1)"
+    },
+    {
+      "token": "brassLight",
+      "from": "#C28A4B",
+      "to": "#C8965D",
+      "why": "brass as small text on navy surfaces ≥4.5:1"
+    },
+    {
+      "token": "onDarkMuted",
+      "from": "-",
+      "to": "#B7C7D5",
+      "why": "secondary text on navy: tertiary #B7C7D5 = 7.12:1 on primary"
+    },
+    {
+      "token": "greenLight",
+      "from": "#28734E",
+      "to": "#3FB980",
+      "why": "live/success dot+text on navy ≥4.5:1"
+    },
+    {
+      "token": "focusDark",
+      "from": "#1769AA",
+      "to": "#4284BA",
+      "why": "focus ring on navy ≥3:1"
+    },
+    {
+      "token": "surfaceAlt",
+      "from": "-",
+      "to": "#F4F6F8",
+      "why": "zebra/alt row tint (derived mix surface+surface-muted)"
+    },
+    {
+      "token": "ledgerLine",
+      "from": "-",
+      "to": "#D5DDE4",
+      "why": "ledger row divider (decorative, exempt from 3:1; inputs use fieldBorder)"
+    }
+  ],
+  "issues": [],
+  "deviations": [
+    "muted: #65717D -> #606B77",
+    "accentText: #C28A4B -> #886034",
+    "secondaryText: #3D78A8 -> #3A72A0",
+    "fieldBorder: #D5DDE4 -> #868B90",
+    "warning: #A66B25 -> #966121",
+    "secondary: #3D78A8 -> #376C98",
+    "accent: #C28A4B -> #886034",
+    "brassLight: #C28A4B -> #C8965D",
+    "onDarkMuted: - -> #B7C7D5",
+    "greenLight: #28734E -> #3FB980",
+    "focusDark: #1769AA -> #4284BA",
+    "surfaceAlt: - -> #F4F6F8",
+    "ledgerLine: - -> #D5DDE4"
+  ]
+}

@@ -1,0 +1,430 @@
+{
+  "template": "02",
+  "slug": "02-aurelia-private-journeys",
+  "brand": "Aurelia Private Journeys",
+  "preset": "Luxury & Bespoke",
+  "figcraftPage": 3,
+  "tokens": {
+    "primary": "#24221F",
+    "primaryHover": "#11100F",
+    "secondary": "#6B6257",
+    "tertiary": "#B29A70",
+    "accent": "#7D6B52",
+    "bg": "#F7F5F0",
+    "surface": "#FFFFFF",
+    "surfaceMuted": "#E8E1D5",
+    "text": "#24221F",
+    "muted": "#69645C",
+    "border": "#908C85",
+    "success": "#356B50",
+    "warning": "#93662D",
+    "error": "#A94442",
+    "focus": "#315F8B",
+    "onPrimary": "#FFFFFF",
+    "fieldBorder": "#908C85",
+    "onDark": "#F7F5F0",
+    "hair": "#D9D3C9",
+    "brass": "#B29A70",
+    "mutedRaw": "#756F66",
+    "accentText": "#7D6B52",
+    "secondaryText": "#6B6257",
+    "ink": "#24221F",
+    "paper": "#F7F5F0",
+    "white": "#FFFFFF",
+    "stone": "#E8E1D5",
+    "rule": "#908C85",
+    "brassInk": "#71614A",
+    "dark": "#24221F",
+    "dark2": "#11100F",
+    "taupe": "#6B6257",
+    "onDarkMuted": "#BCBAB5",
+    "darkHair": "#F7F5F038"
+  },
+  "derivedTokens": [
+    {
+      "token": "muted",
+      "from": "#756F66",
+      "to": "#69645C",
+      "why": "text-muted ≥4.5:1 on bg, surface, surface-muted"
+    },
+    {
+      "token": "warning",
+      "from": "#9B6B2F",
+      "to": "#93662D",
+      "why": "warning text ≥4.5:1"
+    },
+    {
+      "token": "hair",
+      "from": "border #D9D3C9",
+      "to": "#D9D3C9 (decorative hairlines only; border→fieldBorder)",
+      "why": "Hairline separators are decorative (exempt from WCAG 1.4.11); functional borders use border/fieldBorder ≥3:1"
+    },
+    {
+      "token": "border",
+      "from": "#D9D3C9",
+      "to": "#908C85",
+      "why": "UI-boundary outline ≥3:1 on bg (K.ensure)"
+    },
+    {
+      "token": "brassInk",
+      "from": "tertiary #B29A70 (2.49:1 on bg)",
+      "to": "#71614A",
+      "why": "Brass used as small text on light → accent earth #7D6B52 ≥4.5:1; brass #B29A70 only for rules, frames and text on charcoal (5.85:1)"
+    },
+    {
+      "token": "onDarkMuted",
+      "from": "—",
+      "to": "#BCBAB5",
+      "why": "secondary text on charcoal ≥4.5:1"
+    }
+  ],
+  "fonts": {
+    "display": "Cormorant Garamond (Medium) — display/headings; old-style numerals so never for prices/dates",
+    "body": "DM Sans — functional, labels (SemiBold 10–11px uppercase tracking 18%), prices with tabular numerals"
+  },
+  "radii": {
+    "xs": 2,
+    "sm": 4,
+    "md": 8,
+    "lg": 12,
+    "xl": 18
+  },
+  "radiusUsage": "2px for buttons/cards/inputs; popovers 2px; no pills",
+  "spacing": {
+    "section": "80–128px desktop, 48–64px mobile",
+    "content": "1240px frame, 100px side padding",
+    "grid": "12 columns"
+  },
+  "elevation": "zero shadows; only floating popovers use 0 10 32 #24221F1A",
+  "logo": {
+    "concept": "Serif capital A monogram (Cormorant-style, high contrast) with an extended fine brass hairline crossbar; flat vector, no text in the mark. Wordmark AURELIA = Cormorant Garamond Medium, tracking 22%, with PRIVATE JOURNEYS in DM Sans 8–10px tracking 20%.",
+    "files": [
+      "assets/logo-mark.png",
+      "assets/logo-mark.webp",
+      "assets/logo-mark-dark.png"
+    ],
+    "minSize": "mark 20px high; lockup 28px high",
+    "clearSpace": "0.35x mark height on all sides"
+  },
+  "searchEngine": {
+    "name": "Architectural Ledger Console",
+    "modes": [
+      "Hunian privat (Stays, always)",
+      "Charter & pengalaman (Experiences, only if enabled)"
+    ],
+    "cells": [
+      "01 Tujuan",
+      "02 Check-in",
+      "03 Check-out",
+      "04 Tamu & kamar"
+    ],
+    "button": "flush full-height charcoal 'Cek ketersediaan'",
+    "limits": {
+      "nights": [
+        1,
+        30
+      ],
+      "rooms": [
+        1,
+        9
+      ],
+      "adultsPerRoom": [
+        1,
+        20
+      ],
+      "childrenPerRoom": [
+        0,
+        20
+      ],
+      "childAgesRequiredWhenChildren": true
+    },
+    "states": [
+      "default",
+      "focus",
+      "error-nights",
+      "error-ages",
+      "loading",
+      "empty",
+      "server-error"
+    ],
+    "variants": [
+      "compact results bar",
+      "mobile sheet"
+    ]
+  },
+  "imagery": {
+    "generator": "generate_image (configured image role), 6-part VizSpec formula: Subject + Surface + Locked HEX + Lighting + Camera lens + Style",
+    "lockedHex": [
+      "#24221F",
+      "#B29A70",
+      "#F7F5F0",
+      "#E8E1D5"
+    ],
+    "assets": [
+      "logo-mark",
+      "hero",
+      "hero-portrait",
+      "dest-1..3",
+      "stay-1..8",
+      "tour-1..3",
+      "charter-2",
+      "about",
+      "brand-mockup"
+    ],
+    "rules": "no faces, no text, no watermark, muted editorial grade"
+  },
+  "ortasysInvariants": [
+    "search contract (30 nights, 1–9 rooms, 1–20 adults/room, 0–20 children/room, child ages)",
+    "customer selling price only (IDR)",
+    "promise line 'Setiap harga dicek langsung saat Anda mencari'",
+    "'Contoh konten agen' tag on all sample content",
+    "DOKU hosted fields / SNAP BI VA / QRIS",
+    "footer: identity, contact, About, FAQ, policies, 'Didukung sistem pemesanan Ortasys'"
+  ],
+  "contrastAudit": [
+    {
+      "pair": "text/bg",
+      "fg": "#24221F",
+      "bg": "#F7F5F0",
+      "ratio": 14.56,
+      "pass": true,
+      "min": 4.5
+    },
+    {
+      "pair": "text/surface",
+      "fg": "#24221F",
+      "bg": "#FFFFFF",
+      "ratio": 15.87,
+      "pass": true,
+      "min": 4.5
+    },
+    {
+      "pair": "muted/bg",
+      "fg": "#69645C",
+      "bg": "#F7F5F0",
+      "ratio": 5.39,
+      "pass": true,
+      "min": 4.5
+    },
+    {
+      "pair": "muted/surface",
+      "fg": "#69645C",
+      "bg": "#FFFFFF",
+      "ratio": 5.87,
+      "pass": true,
+      "min": 4.5
+    },
+    {
+      "pair": "muted/surfaceMuted",
+      "fg": "#69645C",
+      "bg": "#E8E1D5",
+      "ratio": 4.52,
+      "pass": true,
+      "min": 4.5
+    },
+    {
+      "pair": "onPrimary/primary",
+      "fg": "#FFFFFF",
+      "bg": "#24221F",
+      "ratio": 15.87,
+      "pass": true,
+      "min": 4.5
+    },
+    {
+      "pair": "onPrimary/primaryHover",
+      "fg": "#FFFFFF",
+      "bg": "#11100F",
+      "ratio": 19.01,
+      "pass": true,
+      "min": 4.5
+    },
+    {
+      "pair": "primary/bg(link)",
+      "fg": "#24221F",
+      "bg": "#F7F5F0",
+      "ratio": 14.56,
+      "pass": true,
+      "min": 4.5
+    },
+    {
+      "pair": "primary/surface(link)",
+      "fg": "#24221F",
+      "bg": "#FFFFFF",
+      "ratio": 15.87,
+      "pass": true,
+      "min": 4.5
+    },
+    {
+      "pair": "accent/bg",
+      "fg": "#7D6B52",
+      "bg": "#F7F5F0",
+      "ratio": 4.7,
+      "pass": true,
+      "min": 4.5
+    },
+    {
+      "pair": "accent/surface",
+      "fg": "#7D6B52",
+      "bg": "#FFFFFF",
+      "ratio": 5.13,
+      "pass": true,
+      "min": 4.5
+    },
+    {
+      "pair": "secondary/bg",
+      "fg": "#6B6257",
+      "bg": "#F7F5F0",
+      "ratio": 5.49,
+      "pass": true,
+      "min": 4.5
+    },
+    {
+      "pair": "fieldBorder/surface (UI 3:1)",
+      "fg": "#908C85",
+      "bg": "#FFFFFF",
+      "ratio": 3.35,
+      "pass": true,
+      "min": 3
+    },
+    {
+      "pair": "success/surface",
+      "fg": "#356B50",
+      "bg": "#FFFFFF",
+      "ratio": 6.23,
+      "pass": true,
+      "min": 4.5
+    },
+    {
+      "pair": "warning/surface",
+      "fg": "#93662D",
+      "bg": "#FFFFFF",
+      "ratio": 5.03,
+      "pass": true,
+      "min": 4.5
+    },
+    {
+      "pair": "error/surface",
+      "fg": "#A94442",
+      "bg": "#FFFFFF",
+      "ratio": 5.85,
+      "pass": true,
+      "min": 4.5
+    },
+    {
+      "pair": "focus/surface (UI 3:1)",
+      "fg": "#315F8B",
+      "bg": "#FFFFFF",
+      "ratio": 6.69,
+      "pass": true,
+      "min": 3
+    },
+    {
+      "pair": "brassInk/bg",
+      "fg": "#71614A",
+      "bg": "#F7F5F0",
+      "ratio": 5.49,
+      "min": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "brassInk/surface",
+      "fg": "#71614A",
+      "bg": "#FFFFFF",
+      "ratio": 5.98,
+      "min": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "brassInk/surfaceMuted",
+      "fg": "#71614A",
+      "bg": "#E8E1D5",
+      "ratio": 4.6,
+      "min": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "brass/primary (text on charcoal)",
+      "fg": "#B29A70",
+      "bg": "#24221F",
+      "ratio": 5.85,
+      "min": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "onDark/primary",
+      "fg": "#F7F5F0",
+      "bg": "#24221F",
+      "ratio": 14.56,
+      "min": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "onDarkMuted/primaryHover",
+      "fg": "#BCBAB5",
+      "bg": "#11100F",
+      "ratio": 9.8,
+      "min": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "onDarkMuted/primary",
+      "fg": "#BCBAB5",
+      "bg": "#24221F",
+      "ratio": 8.18,
+      "min": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "primary on brass (brass button)",
+      "fg": "#24221F",
+      "bg": "#B29A70",
+      "ratio": 5.85,
+      "min": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "text/surfaceMuted",
+      "fg": "#24221F",
+      "bg": "#E8E1D5",
+      "ratio": 12.21,
+      "min": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "border(rule)/surface UI 3:1",
+      "fg": "#908C85",
+      "bg": "#FFFFFF",
+      "ratio": 3.35,
+      "min": 3,
+      "pass": true
+    },
+    {
+      "pair": "focus/bg UI 3:1",
+      "fg": "#315F8B",
+      "bg": "#F7F5F0",
+      "ratio": 6.14,
+      "min": 3,
+      "pass": true
+    },
+    {
+      "pair": "error/bg",
+      "fg": "#A94442",
+      "bg": "#F7F5F0",
+      "ratio": 5.37,
+      "min": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "hair/bg decorative (exempt)",
+      "fg": "#D9D3C9",
+      "bg": "#F7F5F0",
+      "ratio": 1.37,
+      "min": 1,
+      "pass": true
+    }
+  ],
+  "programmaticTints": [
+    "#E7EDEA",
+    "#E9E9E9"
+  ]
+}

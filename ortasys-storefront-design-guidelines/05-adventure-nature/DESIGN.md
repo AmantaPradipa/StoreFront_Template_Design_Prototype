@@ -190,6 +190,8 @@ Use sturdy, moderately rounded geometry. Buttons and inputs use 8px; cards use 1
 
 ## Components
 
+- **Branded calendar:** single-month Indonesian picker with 8px menu corners, the same option surfaces/type/selected colors as this preset, and a fixed-size calendar icon separate from the editable date text. Arrow keys move by day/week, Home/End by week and Page Up/Down by month; Enter selects, Escape dismisses, and min/max dates disable unavailable days. The top-layer picker flips/clamps to the viewport and preserves native date values plus input/change events. Browsers without Popover API retain native controls; this is not the D12 dual-month calendar.
+
 - **Navigation:** compact, high-contrast, with a clear active state.
 - **Primary button:** trail-orange fill with white label, 8px radius, 50px minimum height. Verify contrast before use; if the chosen text contrast fails, use a darker accessible orange or dark text treatment.
 - **Secondary button:** forest-green fill or outline. It must remain visually subordinate to the primary action.
@@ -200,30 +202,31 @@ Use sturdy, moderately rounded geometry. Buttons and inputs use 8px; cards use 1
 - **Hotel card:** use the shared hotel-card information hierarchy, not an activity-specific treatment.
 - **Safety information:** present clear, factual, agency-approved requirements. Do not imply certifications, insurance, guide qualifications, or safety guarantees without evidence.
 - **Trust block:** show real operational facts only; avoid unsupported claims about safety records or environmental impact.
+- **Opened controls:** `components.css` gives native-backed custom selects and destination suggestions a white field-dispatch surface, Manrope labels, 8px menu/trigger radii, 48px triggers, 44px wrapping options, pine selection and registered blue focus. Menus occupy the browser top layer and scroll within runtime-calculated viewport bounds.
+- **Overlay geometry:** Detail photography, badge and 44px gallery targets occupy separate rows; thumbnails never cover the badge. Detail actions wrap with flexible price/action columns. Dialogs use 16px outer gutters (10px on mobile), dynamic viewport height bounds and scrollable content. Drawer/checkout headers reserve a nonshrinking 44px close target beside shrinkable titles. Occupancy controls reserve 140px for minus/value/plus; trip summaries wrap independently of removal controls.
 
 ## Unique Architectural & Component DNA (Preset 05)
 
 To make this outdoor expedition preset feel like an authentic wilderness field-station dispatch rather than a hotel brochure, its layout and search engine use a rugged tactical workspace architecture:
 
-- **Hero Architecture (Tactical Expedition Telemetry Banner):** A high-contrast forest-pine banner (`#183B32`) with a bottom telemetry ticker bar displaying elevation peaks (`3.726 MDPL`), APGI guide certification status, and national park Simaksi live sync.
-- **Main Workspace Layout (2-Column Sticky Field-Station Split):** Instead of a full-width top search bar over a 3-column grid, the main body is a 12-column split workspace: the **Left 4 Columns** house a sticky vertical **Field-Station Dispatch Search Console** (`lg:sticky lg:top-24`), and the **Right 8 Columns** display the live expedition & basecamp catalog.
-- **Search Engine UI (Vertical Field-Station Dispatch Console):** Stacked vertical tactical controls with high-contrast condensed labels (`SECTOR / CONSERVATION ZONE`, `EXPEDITION WINDOW`, `SQUAD & TENT MATRIX`) and a full-width trail-orange (`#D97736`) quota check trigger.
-- **Inventory Section Layout (2-Column Topographic Dossier Cards):** Cards feature a top technical spec strip (`ELEVATION / DURATION / GRADE`), bold condensed titles, gear/logistics tags, and an orange-accented bottom quota bar.
-- **Safety & Preparation Section (Expedition Gear & Protocol Matrix):** A 4-column tactical checklist grid detailing mandatory APGI safety gear, Simaksi permit sync, zero-waste mountaineering, and DOKU/SNAP BI settlement.
+- **Hero Architecture (Landscape Dispatch):** Full-width landscape photography, opaque pine-backed condensed headline on the left, a small `3.726 MDPL` Rinjani elevation note on the right, and a four-part operational readout below. No certification, safety guarantee, permit integration, or live-stock claims.
+- **Main Workspace (Field-Station Split):** At desktop widths the shared 1240px container divides into a 340px vertical console and flexible dossier inventory. The console is sticky, with viewport-bounded internal scrolling when the party/age controls grow. It is not a horizontal search bar.
+- **Search Anatomy:** Two real catalogue modes; destination; paired start/end dates; three separate occupancy rows; required ages for every child in each room; validation; full-width orange search action; persistent summary and explicit local-simulation note. Rooms are 1–9, adults per room 1–20, children per room 0–20, child ages 0–17, and dates 1–30 nights.
+- **Inventory Hierarchy:** Two expedition dossiers per row, with a compact sector strip, landscape, condensed title, sample logistics, customer-facing IDR price, dossier button, and add-to-trip action. Basecamp mode uses horizontal image-and-detail dossiers on desktop, matching the D02 sidebar/results relationship. Destination and sector filters genuinely restrict the sample catalogue, including an empty state.
+- **Editorial Story:** Four image-led terrain selectors lead back into the real console, followed by a camp photograph and preparation story. A pine topographic four-column preparation matrix gives practical questions, not unsupported operational guarantees. FAQ, policy disclosures, agency contact, and a quiet footer close the page.
+- **Documentation Split:** `guidelines.html`, `search-board.html`, and `figcraft.html` preserve the former reference sections and their styling as independent pages with ordinary relative links. No documentation DOM, view switcher, technical navigation, or merchandise mockup remains on the customer landing page. The footer quietly links to the guidelines.
+- **Prototype Honesty:** Catalogue, facilities, policies, and prices are labelled “Contoh konten agen”. “Setiap harga dicek langsung saat Anda mencari” is paired with explicit simulation context. Search calculates local examples; checkout never claims payment, booking, or permit issuance. Its download is a real local `.txt` simulation summary, not a pretend PDF voucher.
 
 ## Homepage Composition
 
 Recommended fixed homepage sequence:
 
-1. Header and navigation.
-2. Full-width adventure hero with clear proposition and search entry point.
-3. Activity category selector or curated activity collections.
-4. Featured adventures and experiences.
-5. Destination / nature collections.
-6. Accommodation options, if supported.
-7. Practical preparation or trip information, only when verified.
-8. Agency-specific service and expertise section.
-9. Contact CTA and footer.
+1. Customer navigation and landscape dispatch hero.
+2. Sticky vertical console beside expedition/basecamp dossiers.
+3. Four terrain selectors and camp preparation story.
+4. Topographic preparation matrix.
+5. FAQ, terms, privacy, and example agency contact.
+6. Pine agency footer with one quiet guidelines link.
 
 The hero should establish energy and destination context, but search and activity discovery must remain immediately actionable.
 
@@ -237,12 +240,13 @@ Do not fabricate difficulty levels, trip duration, safety standards, environment
 
 ## Interaction & Responsive Behavior
 
-- Desktop: use a visible search panel and a balanced activity grid.
-- Tablet: reduce grid columns and keep activity metadata readable.
-- Mobile: stack search fields, use full-width CTA, and show activity details before the booking action.
-- Avoid auto-playing video and parallax that interferes with reading or performance.
-- Respect reduced-motion preferences.
-- Use clear keyboard focus, labels, validation, and minimum 44px touch targets.
+- Desktop (1024px+): 340px sticky console, two expedition dossiers per row, or horizontal basecamp dossiers. The console may scroll internally without pushing its action off the page.
+- Tablet (768px): console precedes inventory; terrain and preparation grids use two columns. Compact navigation avoids crowding the booking controls.
+- Mobile (390px): console, inventory, and story stack. Dates retain two labelled compact columns; occupancy uses full-width rows with separate minus/input/plus controls. Terrain stays two columns; the preparation matrix becomes one column.
+- **Mobile header sizing:** The brand and its text wrapper may shrink (`min-width: 0`); only the 17px wordmark is shown, with the uppercase descriptor explicitly hidden. The trip counter and 44px menu retain their own width. Closed drawers leave layout entirely; page-wide overflow masking is not used.
+- Fields are at least 48px tall; interactive controls have 44px minimum targets. Keyboard focus uses the registered focus token; dialogs support Escape, Tab containment, and focus return.
+- Reduced-motion preferences suppress animation and smooth CSS scrolling. No autoplay or parallax is used.
+- Registered AA text tokens are used instead of raw muted/accent swatches; orange CTAs use `onCta`, never white small text. Hero photo scrims are registered primary-derived decorative tokens in `brand-dna.json`.
 - Keep the same booking and payment behavior as the shared Ortasys storefront engine.
 
 ## Do’s and Don’ts

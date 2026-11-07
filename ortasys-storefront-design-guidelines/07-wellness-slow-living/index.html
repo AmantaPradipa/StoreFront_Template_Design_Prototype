@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sela Retreats · Tempat Rehat, Ketenangan &amp; Slow Travel</title>
-  <meta name="description" content="Sela Retreats — Suaka retret holistik, sound healing, yoga, dan perjalanan restoratif di pelosok alam Nusantara. Ditenagai oleh Ortasys S4.">
+  <link rel="icon" type="image/png" href="./assets/logo-mark.png">
+  <meta name="description" content="Sela Retreats — Suaka retret holistik, sound healing, yoga, dan perjalanan restoratif di pelosok alam Nusantara. Contoh konten agen · prototipe lokal.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -18,13 +19,13 @@
             primary: { DEFAULT: '#53665A', hover: '#3D5045' },
             secondary: '#A7A88A',
             tertiary: '#D9C8AE',
-            accent: '#B98270',
+            accent: '#8F6456',
             canvas: '#F5F3EC',
             surface: { DEFAULT: '#FFFEFA', muted: '#EAE9DF' },
-            ink: { DEFAULT: '#303B34', muted: '#737B70' },
+            ink: { DEFAULT: '#303B34', muted: '#636960' },
             line: '#DADBCF',
             success: '#4F765B',
-            warning: '#A7793D',
+            warning: '#8F6834',
             danger: '#A94F49'
           },
           fontFamily: {
@@ -62,288 +63,24 @@
     details > summary::-webkit-details-marker { display: none; }
     details[open] .faq-icon { transform: rotate(45deg); }
   </style>
-</head>
-<body class="bg-canvas text-ink antialiased">
 
-  <a href="#searchSection" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-pill">Skip to search</a>
+<style>:root{--primary:#53665A;--primaryHover:#3D5045;--bg:#F5F3EC;--surface:#FFFEFA;--soft:#EAE9DF;--ink:#303B34;--muted:#636960;--line:#DADBCF;--field:#8A8B83;--focus:#315F8B;--accent:#8F6456;--on:#FFFFFF;--error:#A94F49;--success:#4F765B;--secondary:#A7A88A;}
+*{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0}button,input,select{font:inherit}button,a,input,select,summary{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:wait}img{max-width:100%}button,summary{min-height:44px}input:not([type=radio]):not([type=checkbox]),select{min-height:48px;min-width:0}input[type=radio],input[type=checkbox]{min-height:20px;width:20px}input,select{border-color:var(--field)}:focus-visible{outline:2px solid var(--focus);outline-offset:4px!important}.wrap{width:min(1240px,calc(100% - 48px));margin-inline:auto}.brand{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none}.brand img{width:36px;height:40px;object-fit:contain}.site-header{border-bottom:1px solid var(--line);background:var(--surface);position:relative;z-index:30}.header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:84px}.site-nav{display:flex;align-items:center;gap:28px;font-size:13px}.site-nav a{text-decoration:none;color:inherit;display:inline-flex;align-items:center;min-height:44px}.trip-trigger,.outline{border:1px solid var(--field);background:var(--surface);padding:10px 20px;min-height:44px;color:var(--ink)}.primary{background:var(--primary);color:var(--on);border:0;min-height:48px;padding:12px 24px;font-size:13px;font-weight:600}.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:11px;color:var(--accent)}.section-head h2{margin:10px 0;font-size:38px;line-height:1.16}.section-head p{color:var(--muted);font-size:14px;line-height:1.7}.sample{font-size:11px;color:var(--muted)}.search-row{display:grid;align-items:stretch;background:var(--surface)}.search-field{display:flex;flex-direction:column;justify-content:center;min-width:0;padding:8px 16px}.search-field>span{font-size:11px;color:var(--muted)}.search-field input{width:100%;padding:0;background:transparent;border:0;font-size:13px;color:var(--ink)}.mode-bar{display:flex;justify-content:center;gap:4px}.mode-tab{min-height:44px!important}.guest-controls{display:grid;gap:16px}.guest-controls label{display:flex;justify-content:space-between;align-items:center;gap:14px;font-size:13px}.guest-controls input{width:76px;border:1px solid var(--field);border-radius:6px;text-align:center;background:var(--surface)}.guest-controls small{display:block;color:var(--muted);font-size:11px}.age-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.age-grid label{display:flex;flex-direction:column;align-items:stretch;gap:6px;font-size:12px}.age-grid select{border:1px solid var(--field);border-radius:6px;padding:4px;background:var(--surface);width:100%}.search-notes{font-size:11px;color:var(--muted);line-height:1.7;text-align:center;margin:16px 0}.search-notes strong{font-weight:500}.search-popover{position:absolute;z-index:25;width:360px;max-width:calc(100vw - 48px);padding:24px;background:var(--surface);border:1px solid var(--line);box-shadow:0 16px 40px color-mix(in srgb,var(--ink) 14%,transparent);text-align:left}.search-popover h3{font-size:20px;margin:0 0 16px}.search-popover p{font-size:12px;color:var(--muted)}.search-popover .primary{width:100%;margin-top:20px}.filter-bar{display:flex;gap:8px;flex-wrap:wrap}.filter-btn{font-size:12px!important;text-transform:none!important;letter-spacing:0!important}.inventory-note{display:flex;justify-content:space-between;gap:16px;align-items:center;margin:20px 0;font-size:12px;color:var(--muted)}.site-footer{background:var(--ink);color:var(--on);padding:56px 0 24px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px}.footer-grid a{color:inherit;display:block;min-height:44px;font-size:13px}.footer-grid p{font-size:13px;line-height:1.7}.footer-bottom{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:24px;margin-top:28px;font-size:11px}.contact-band{text-align:center;padding:100px 24px}.contact-band h2{font-size:38px;max-width:620px;margin:12px auto 20px;line-height:1.2}.faq-list{max-width:760px;margin:32px auto 0}.faq-list details{border-bottom:1px solid var(--line);padding:14px 0}.faq-list summary{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:14px;cursor:pointer}.faq-list p{color:var(--muted);font-size:13px;line-height:1.7}.flow-note{font-size:12px!important;color:var(--muted)}#toast{max-width:calc(100% - 32px);width:max-content}#tripDrawer[aria-hidden=true]{visibility:hidden}#tripDrawer[aria-hidden=false]{visibility:visible}#detailModal img{max-height:300px}#modalGalleryStrip{display:none}#coItemList>div{gap:16px;flex-wrap:wrap}#checkoutModal button,#detailModal button{flex-shrink:0}#childAgeBox{margin-top:20px}#childAgeBox h4{font-size:12px;margin-bottom:12px}#formErrors{color:var(--error);font-size:13px;text-align:center;padding-top:6px}#formErrors:empty{display:none}[aria-invalid=true]{outline:2px solid var(--error)}@media(max-width:900px){.site-nav{display:none}.wrap{width:calc(100% - 40px)}.header-inner{min-height:72px}.footer-grid{grid-template-columns:1fr 1fr;gap:24px}.footer-grid>div:first-child{grid-column:1/-1}.contact-band{padding-block:64px}.section-head h2,.contact-band h2{font-size:30px}.footer-bottom{flex-direction:column}}@media(max-width:480px){.wrap{width:calc(100% - 32px)}.brand{font-size:16px}.brand img{width:28px}.trip-trigger{font-size:11px;padding:8px 10px}.age-grid{grid-template-columns:1fr 1fr}.search-popover{max-width:calc(100vw - 32px);padding:20px}.footer-grid{gap:20px}.inventory-note{align-items:flex-start;flex-direction:column}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 
-  <!-- Illustrative Sample Banner -->
-  <aside class="bg-primary text-tertiary px-4 py-1.5 text-xs font-medium flex justify-between items-center border-b border-primary-hover z-50">
-    <div class="max-w-container mx-auto w-full flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-        <span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
-        <span class="font-serif tracking-wide text-xs">PRESET 07 // WELLNESS &amp; SLOW LIVING</span>
-        <span class="hidden sm:inline text-white/60 text-[11px]">— Illustrative Sample Data</span>
-      </div>
-      <div class="text-[11px] text-white/75 font-mono">Ditenagai Mesin B2B Ortasys S4</div>
-    </div>
-  </aside>
-
-  <!-- ============ HEADER ============ -->
-  <header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-line shadow-2xs">
-    <div class="max-w-container mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
-      <a href="#home" class="flex items-center gap-3 shrink-0 group">
-        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-2xs transition-transform group-hover:scale-105">
-          <span class="font-serif text-lg italic text-tertiary">S</span>
-        </div>
-        <div>
-          <span class="font-serif text-2xl font-normal tracking-tight text-ink block leading-none">SELA RETREATS</span>
-          <span class="text-[10px] font-semibold text-accent tracking-[0.2em] uppercase block mt-1">Slow Living &amp; Restorative Travel</span>
-        </div>
-      </a>
-
-      <nav class="hidden md:flex items-center gap-8 text-[14px] font-medium text-ink" aria-label="Main Navigation">
-        <a href="#searchSection" class="hover:text-primary transition-colors">Cari Suaka</a>
-        <a href="#sanctuaries" class="hover:text-primary transition-colors">Pondok &amp; Suaka</a>
-        <a href="#manifesto" class="hover:text-primary transition-colors">Filosofi Hening</a>
-        <a href="#faq" class="hover:text-primary transition-colors">Bantuan Retret</a>
-      </nav>
-
-      <div class="flex items-center gap-3">
-        <button type="button" data-open-trip class="flex items-center gap-2 bg-surface-muted hover:bg-line text-primary px-4 py-2 rounded-pill text-xs font-semibold tracking-wider uppercase transition">
-          <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-          <span class="font-serif">Jurnal Retret</span>
-          <span data-trip-count class="w-5 h-5 rounded-full bg-primary text-white text-[11px] flex items-center justify-center font-bold">0</span>
-        </button>
-
-        <button id="menuBtn" type="button" class="md:hidden w-10 h-10 rounded-full flex items-center justify-center text-ink hover:bg-surface-muted" aria-label="Buka menu" aria-expanded="false">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Navigation -->
-    <nav id="mobileNav" class="md:hidden hidden border-t border-line bg-surface px-4 py-4 flex flex-col gap-2 font-medium text-[15px]">
-      <a href="#searchSection" class="py-2 text-ink hover:text-primary">Cari Suaka</a>
-      <a href="#sanctuaries" class="py-2 text-ink hover:text-primary">Pondok &amp; Suaka</a>
-      <a href="#manifesto" class="py-2 text-ink hover:text-primary">Filosofi Hening</a>
-      <a href="#faq" class="py-2 text-ink hover:text-primary">Bantuan Retret</a>
-    </nav>
-  </header>
-
-  <main id="home">
-    <!-- ============ CENTERED ZEN PAVILION HERO (PRESET 07 DNA) ============ -->
-    <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-12 pb-8 text-center">
-      <div class="inline-flex items-center gap-2 bg-surface px-4 py-1.5 rounded-pill border border-line mb-5 shadow-2xs">
-        <span class="w-2 h-2 rounded-full bg-accent"></span>
-        <span class="text-[11px] font-medium text-ink-muted uppercase tracking-[0.2em] font-serif">Jeda Batin &amp; Perlambatan Waktu</span>
-      </div>
-      <h1 class="font-serif text-4xl sm:text-6xl font-normal leading-[1.06] tracking-tight text-ink max-w-3xl mx-auto">
-        Menemukan Kembali Hening di Tengah Alam Liar Nusantara.
-      </h1>
-      <p class="mt-5 text-[16px] sm:text-[18px] text-ink-muted max-w-2xl mx-auto leading-relaxed font-light">
-        Suaka meditasi sunyi, terapi frekuensi mangkuk kristal, dan pondok lereng berkabut. Setiap tarif suaka dicek seketika secara langsung tanpa distorsi markup.
-      </p>
-
-      <!-- Framed Panoramic Sanctuary Arch -->
-      <div class="mt-9 rounded-[32px] overflow-hidden border border-line bg-surface p-2.5 shadow-soft">
-        <div class="relative aspect-[21/9] rounded-[24px] overflow-hidden bg-surface-muted">
-          <img src="../../assets/bagus_travel/ubud.jpg" alt="Wellness Sanctuary Valley in Sayan Ubud" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent"></div>
-          <div class="absolute bottom-4 left-6 right-6 flex flex-wrap items-center justify-between gap-2 text-white text-xs font-serif">
-            <span>Sayan Ridge Sanctuary · Ubud, Bali</span>
-            <span class="px-3 py-1 rounded-pill bg-white/20 backdrop-blur-md text-[11px]">Suaka Bebas Polusi Suara · Farm-to-Table</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ FLOATING ZEN INTENTION PILL CONSOLE (PRESET 07 DNA) ============ -->
-    <section id="searchSection" class="max-w-4xl mx-auto px-4 sm:px-6 pt-2 relative z-20" aria-labelledby="searchHeading">
-      <div class="bg-surface rounded-[28px] p-6 sm:p-8 border border-line shadow-elevated">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-line text-center sm:text-left">
-          <div>
-            <span class="text-[11px] font-serif italic text-accent block">Niat Perjalanan Restoratif</span>
-            <h2 id="searchHeading" class="font-serif text-2xl font-normal text-primary">Atur Jadwal Hening &amp; Terapi Anda</h2>
-          </div>
-          <div class="inline-flex rounded-pill bg-surface-muted p-1 self-center sm:self-auto" role="tablist">
-            <button type="button" role="tab" data-mode="hotels" aria-selected="true" class="mode-tab h-9 px-5 rounded-pill text-xs font-bold uppercase tracking-wider transition bg-primary text-white">Suaka &amp; Pondok</button>
-            <button type="button" role="tab" data-mode="activities" aria-selected="false" class="mode-tab h-9 px-5 rounded-pill text-xs font-bold uppercase tracking-wider transition text-ink-muted hover:text-ink">Ritual &amp; Terapi</button>
-          </div>
-        </div>
-
-        <form id="searchForm" class="mt-6" novalidate>
-          <!-- Serene Divided Pill Row -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-4 bg-canvas/80 rounded-2xl p-4 border border-line items-end">
-            <!-- Destination -->
-            <label class="md:col-span-4 flex flex-col gap-1.5">
-              <span class="text-[11px] font-bold text-ink uppercase tracking-wider font-serif" data-dest-label>Lokasi Ketenangan</span>
-              <input id="dest" list="destList" placeholder="Sayan Ubud, Senaru, Penida, Toba…" autocomplete="off" class="h-11 px-3.5 rounded-xl bg-surface border border-line text-[13px] text-ink focus:border-primary focus:outline-none">
-              <datalist id="destList"></datalist>
-            </label>
-
-            <!-- Dates -->
-            <label class="md:col-span-2 flex flex-col gap-1.5">
-              <span class="text-[11px] font-bold text-ink uppercase tracking-wider font-serif">Mulai Rehat</span>
-              <input id="checkIn" type="date" aria-describedby="dateRuleHint" class="tnum h-11 px-2.5 rounded-xl bg-surface border border-line text-[12px] focus:border-primary focus:outline-none font-mono">
-            </label>
-            <label class="md:col-span-2 flex flex-col gap-1.5" data-hotel-only>
-              <span class="text-[11px] font-bold text-ink uppercase tracking-wider font-serif">Selesai Rehat</span>
-              <input id="checkOut" type="date" aria-describedby="dateRuleHint" class="tnum h-11 px-2.5 rounded-xl bg-surface border border-line text-[12px] focus:border-primary focus:outline-none font-mono">
-            </label>
-
-            <!-- Occupancy Steppers -->
-            <div class="md:col-span-4 grid grid-cols-3 gap-2">
-              <div class="flex flex-col gap-1.5" data-hotel-only>
-                <span id="lbl-rooms" class="text-[10px] font-bold text-ink-muted font-serif">Pondok</span>
-                <div class="stepper flex items-center h-11 rounded-xl bg-surface border border-line" role="group" aria-labelledby="lbl-rooms">
-                  <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="rooms" data-dir="-1" aria-label="Kurangi kamar">−</button>
-                  <input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
-                  <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="rooms" data-dir="1" aria-label="Tambah kamar">+</button>
-                </div>
-              </div>
-              <div class="flex flex-col gap-1.5">
-                <span id="lbl-adults" class="text-[10px] font-bold text-ink-muted font-serif" data-adults-label>Peziarah</span>
-                <div class="stepper flex items-center h-11 rounded-xl bg-surface border border-line" role="group" aria-labelledby="lbl-adults">
-                  <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="adults" data-dir="-1" aria-label="Kurangi tamu">−</button>
-                  <input id="adults" type="number" min="1" max="20" value="1" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
-                  <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="adults" data-dir="1" aria-label="Tambah tamu">+</button>
-                </div>
-              </div>
-              <div class="flex flex-col gap-1.5">
-                <span id="lbl-children" class="text-[10px] font-bold text-ink-muted font-serif" data-children-label>Pendamping</span>
-                <div class="stepper flex items-center h-11 rounded-xl bg-surface border border-line" role="group" aria-labelledby="lbl-children">
-                  <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="children" data-dir="-1" aria-label="Kurangi anak">−</button>
-                  <input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" class="tnum font-mono w-full min-w-0 text-center bg-transparent text-[13px] font-bold focus:outline-none">
-                  <button type="button" class="w-7 h-full text-[16px] text-primary hover:bg-surface-muted" data-step="children" data-dir="1" aria-label="Tambah anak">+</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="formErrors" class="mt-2 text-[13px] text-danger font-semibold text-center" role="alert" aria-live="assertive"></div>
-
-          <!-- Bottom Serene Action Bar -->
-          <div class="mt-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-2.5 text-xs text-ink-muted">
-              <span class="w-2.5 h-2.5 rounded-full bg-success"></span>
-              <span class="font-medium text-ink">Every price is checked live when you ask for it</span>
-              <span>·</span>
-              <span id="summary" class="font-mono" aria-live="polite">Tentukan tanggal rehat</span>
-              <span id="dateRuleHint" class="sr-only">Maks. 30 malam</span>
-            </div>
-
-            <button id="checkBtn" type="submit" class="w-full sm:w-auto h-11 px-8 rounded-pill bg-primary hover:bg-primary-hover text-white text-xs font-bold tracking-wider uppercase transition shadow-soft flex items-center justify-center gap-2">
-              <span data-btn-label>Cek Tarif Ketenangan Live</span>
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- ============ SINGLE-COLUMN SLOW-SCROLL SANCTUARY SHOWCASE (PRESET 07 DNA) ============ -->
-    <section id="sanctuaries" class="max-w-4xl mx-auto px-4 sm:px-6 pt-20">
-      <div class="text-center pb-6 border-b border-line">
-        <span class="text-xs font-bold uppercase tracking-[0.2em] text-accent font-serif">Katalog Suaka Restoratif</span>
-        <h2 id="sectionHeading" class="font-serif text-3xl sm:text-4xl font-normal text-primary mt-1">Pondok &amp; Suaka Hening Terkurasi</h2>
-        <p id="resultsNote" class="text-[14px] text-ink-muted mt-1 max-w-xl mx-auto font-light">Satu demi satu suaka ditampilkan dengan ruang bernapas yang lapang untuk menjaga ketenangan Anda saat memilih.</p>
-
-        <!-- Centered Filter Pills -->
-        <div id="filterBar" class="mt-6 flex flex-wrap justify-center gap-2 items-center" role="group" aria-label="Filter Suaka">
-          <button type="button" data-filter="all" class="filter-btn h-9 px-4 rounded-pill text-[12px] font-bold uppercase tracking-wider bg-primary text-white shadow-xs transition">Semua Suaka</button>
-          <button type="button" data-filter="soundhealing" class="filter-btn h-9 px-4 rounded-pill text-[12px] font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Sound Healing &amp; Yoga</button>
-          <button type="button" data-filter="mist" class="filter-btn h-9 px-4 rounded-pill text-[12px] font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Herbal &amp; Kabut Gunung</button>
-          <button type="button" data-filter="ocean" class="filter-btn h-9 px-4 rounded-pill text-[12px] font-bold uppercase tracking-wider bg-surface border border-line text-ink-muted hover:text-ink transition">Hening Tepi Laut</button>
-        </div>
-      </div>
-
-      <!-- Centered Single-Column Vertical Sanctuary Stack -->
-      <div id="results" class="mt-8 flex flex-col gap-7"></div>
-    </section>
-
-    <!-- ============ DAILY SLOW-LIVING RHYTHM SCHEDULE (PRESET 07 DNA) ============ -->
-    <section id="manifesto" class="max-w-4xl mx-auto px-4 sm:px-6 pt-20">
-      <div class="bg-surface rounded-3xl p-8 sm:p-12 border border-line shadow-soft">
-        <div class="text-center max-w-xl mx-auto mb-10">
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-accent font-serif">Ritme Harian di Suaka</span>
-          <h2 class="font-serif text-3xl font-normal text-primary mt-1">Bagaimana Hari Mengalir di Sela Retreats</h2>
-        </div>
-
-        <div class="divide-y divide-line">
-          <div class="py-5 grid sm:grid-cols-12 gap-4 items-center">
-            <span class="sm:col-span-3 font-mono text-sm text-accent font-bold">06:00 · FAJAR</span>
-            <h3 class="sm:col-span-4 font-serif text-xl text-ink">Pranayama &amp; Hening Pagi</h3>
-            <p class="sm:col-span-5 text-xs text-ink-muted leading-relaxed font-light">Menyambut matahari terbit di yoga shala bambu tanpa gangguan gawai, dilanjutkan seduhan teh rempah hangat.</p>
-          </div>
-          <div class="py-5 grid sm:grid-cols-12 gap-4 items-center">
-            <span class="sm:col-span-3 font-mono text-sm text-accent font-bold">11:00 · SIANG</span>
-            <h3 class="sm:col-span-4 font-serif text-xl text-ink">Santap Kebun Farm-to-Table</h3>
-            <p class="sm:col-span-5 text-xs text-ink-muted leading-relaxed font-light">Hidangan nabati organik yang dipetik dari kebun mitra petani desa setempat, mendukung kesehatan pencernaan dan kejernihan pikiran.</p>
-          </div>
-          <div class="py-5 grid sm:grid-cols-12 gap-4 items-center">
-            <span class="sm:col-span-3 font-mono text-sm text-accent font-bold">17:00 · SENJA</span>
-            <h3 class="sm:col-span-4 font-serif text-xl text-ink">Tibetan Sound Bath &amp; Rehat</h3>
-            <p class="sm:col-span-5 text-xs text-ink-muted leading-relaxed font-light">Relaksasi gelombang suara mangkuk kristal sebelum beristirahat. Seluruh reservasi dijamin sah melalui DOKU &amp; SNAP BI.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ FAQ SECTION ============ -->
-    <section id="faq" class="max-w-container mx-auto px-4 sm:px-6 pt-16 pb-20">
-      <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-10">
-          <span class="text-xs font-bold uppercase tracking-wider text-accent font-serif">Pertanyaan yang Sering Diajukan</span>
-          <h2 class="font-serif text-3xl sm:text-4xl font-normal text-primary mt-1">Panduan Menuju Suaka</h2>
-        </div>
-
-        <div class="space-y-3">
-          <details class="bg-surface rounded-2xl border border-line p-5">
-            <summary class="font-serif text-lg font-normal text-ink cursor-pointer flex justify-between items-center">
-              <span>Apakah pemula dapat mengikuti retret sound healing dan yoga?</span>
-              <span class="faq-icon text-accent text-xl font-bold transition-transform font-mono">+</span>
-            </summary>
-            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Seluruh sesi dirancang ramah bagi pemula. Instruktur praktisi kami membimbing dengan ritme yang lembut, menghargai batas kenyamanan tubuh Anda.</p>
-          </details>
-
-          <details class="bg-surface rounded-2xl border border-line p-5">
-            <summary class="font-serif text-lg font-normal text-ink cursor-pointer flex justify-between items-center">
-              <span>Apakah tersedia pilihan menu vegan, vegetarian, atau bebas gluten?</span>
-              <span class="faq-icon text-accent text-xl font-bold transition-transform font-mono">+</span>
-            </summary>
-            <p class="text-xs text-ink-muted mt-2 leading-relaxed">Ya, seluruh suaka mitra Sela Retreats menyediakan menu nabati organik (plant-based), bebas gluten, dan bebas pengawet yang dapat disesuaikan dengan kebutuhan diet Anda.</p>
-          </details>
-
-          <details class="bg-surface rounded-2xl border border-line p-5">
-            <summary class="font-serif text-lg font-normal text-ink cursor-pointer flex justify-between items-center">
-              <span>Bagaimana kebijakan penggunaan gawai (digital detox)?</span>
-              <summary-p class="text-xs text-ink-muted mt-2 leading-relaxed block">Kami sangat menganjurkan mode hening selama berada di paviliun meditasi dan yoga shala. WiFi tetap tersedia di ruang kerja privat bila Anda tetap perlu terhubung.</summary-p>
-            </p>
-          </details>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="bg-surface border-t border-line py-12 text-xs text-ink-muted">
-    <div class="max-w-container mx-auto px-4 sm:px-6">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-line">
-        <div>
-          <span class="font-serif text-2xl text-primary block">Sela Retreats</span>
-          <p class="text-[12px] mt-0.5">Spesialis Suaka Restoratif &amp; Slow Living · Ditenagai Arsitektur Ortasys S4.</p>
-        </div>
-        <div class="flex gap-6 font-medium text-ink text-[13px]">
-          <a href="#sanctuaries" class="hover:text-primary">Suaka</a>
-          <a href="#manifesto" class="hover:text-primary">Filosofi</a>
-          <a href="#faq" class="hover:text-primary">Bantuan</a>
-        </div>
-      </div>
-
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] gap-2">
-        <p>Penyelesaian terjamin melalui gateway resmi <strong class="text-ink">DOKU</strong> dan <strong class="text-ink">SNAP BI</strong>. Mockup data bersifat ilustratif [PRD 9.2].</p>
-        <p>© <span id="year"></span> Sela Retreats. Hak Cipta Dilindungi.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ============ TRIP DRAWER / JOURNAL ============ -->
-  <div id="tripOverlay" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden" aria-hidden="true"></div>
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink)}h1,h2,h3,.brand{font-family:'Lora',serif;font-weight:400}.site-header{background:var(--bg)}.header-inner{position:relative}.header-inner>.brand{position:absolute;left:50%;transform:translateX(-50%);font-size:24px}.site-nav{gap:24px}.trip-trigger,.outline,.primary{border-radius:999px}.hero-copy{text-align:center;padding:96px 0 66px}.hero-copy h1{font-size:62px;line-height:1.1;letter-spacing:-.035em;margin:16px auto 20px;max-width:900px}.hero-copy p{max-width:570px;margin:auto;color:var(--muted);font-size:15px;line-height:1.8}.pavilion{position:relative;padding-top:22px}.pavilion-image{width:100%;height:560px;object-fit:cover;border-radius:32px;display:block}.pavilion-caption{position:absolute;left:24px;bottom:24px;background:var(--surface);padding:10px 16px;font-size:11px;border-radius:99px}.zen-search{width:min(1120px,calc(100% - 64px));position:relative;z-index:20;margin:auto auto -40px}.zen-search .mode-bar{position:absolute;bottom:100%;margin-bottom:18px;left:50%;transform:translateX(-50%);background:var(--surface);border-radius:999px;padding:4px;border:1px solid var(--line);white-space:nowrap}.zen-search .search-row{grid-template-columns:1.35fr 1fr 1fr 1.2fr 1.2fr;padding:8px;border:1px solid var(--line);border-radius:32px;box-shadow:0 12px 24px color-mix(in srgb,var(--ink) 10%,transparent)}.zen-search .search-field{border-right:1px solid var(--line);padding:6px 16px}.zen-search .search-field>span{font-family:Lora,serif}.zen-search .search-field input{min-height:34px!important}.zen-search .search-row>.primary{margin-left:8px}.guest-anchor{position:relative}.guest-trigger{width:100%;height:100%;background:transparent;border:0;text-align:left;padding:6px 16px}.guest-trigger span{display:block;font:11px Lora,serif;color:var(--muted);margin-bottom:8px}.guest-trigger strong{font-size:12px;font-weight:500}.zen-search .search-popover{right:0;top:calc(100% + 12px);border-radius:24px;max-height:70vh;overflow:auto}.zen-search .search-notes{position:absolute;top:100%;width:100%;background:var(--bg);border-radius:0 0 16px 16px;margin:10px 0 0;padding:4px 10px}.zen-search #formErrors{position:relative;background:var(--surface);border-radius:16px}.collections{padding:120px 0 96px;max-width:1120px}.section-head{text-align:center}.arches{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:48px}.arch{color:inherit;text-decoration:none;text-align:center}.arch img{aspect-ratio:4/5;width:100%;object-fit:cover;border-radius:50% 50% 18px 18px}.arch h3{font-size:23px;margin:20px 0 8px}.arch p{font-size:12px;color:var(--muted);margin:0}.sanctuaries-section{padding:100px 0;background:var(--soft)}.sanctuary-wrap{width:min(896px,calc(100% - 48px));margin:auto}.sanctuaries-section .filter-bar{justify-content:center;margin-top:32px}.sanctuary-list{display:flex;flex-direction:column;gap:32px}.sanctuary{display:grid;grid-template-columns:42% 58%;background:var(--surface);border-radius:24px;overflow:hidden;min-width:0}.sanctuary-photo{width:100%;height:100%;min-height:360px;object-fit:cover}.sanctuary-body{padding:32px;display:flex;flex-direction:column;gap:16px;min-width:0}.sanctuary-body h3{font-size:25px;line-height:1.25;margin:0}.sanctuary-body p{font-size:13px;line-height:1.8;color:var(--muted);margin:0}.inclusions{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}.inclusions span{font:11px Lora,serif;padding:6px 10px;border:1px solid var(--line);border-radius:99px;color:var(--muted)}.sanctuary-bottom{border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;align-items:center;gap:12px}.price{font-size:22px;font-weight:600;font-variant-numeric:tabular-nums}.price small{font:11px 'DM Sans',sans-serif;display:block;color:var(--muted)}.detail-link{border:0;background:transparent;color:var(--primary);text-align:left;padding:0;font:inherit;min-height:44px}.rhythm{background:var(--primary);color:var(--on);padding:100px 0}.rhythm .eyebrow,.rhythm .section-head p{color:var(--on)}.rhythm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}.rhythm article{border-radius:20px;overflow:hidden;background:var(--surface);color:var(--ink)}.rhythm img{width:100%;height:210px;object-fit:cover}.rhythm-text{padding:24px}.rhythm h3{font-size:28px;margin:0 0 12px}.rhythm p{font-size:13px;line-height:1.8;color:var(--muted)}.philosophy{padding:100px 0;display:grid;grid-template-columns:42% 1fr;align-items:center;gap:80px;max-width:1060px}.philosophy>img{height:500px;width:100%;object-fit:cover;border-radius:28px}.philosophy h2{font-size:36px;line-height:1.2;margin:16px 0}.philosophy p{font-size:14px;line-height:1.9;color:var(--muted)}.faq-section{padding:80px 0;background:var(--soft)}.sela-footer{background:var(--ink)}@media(max-width:1100px){.header-inner>.brand{position:static;transform:none}.site-nav{gap:12px;font-size:11px}.hero-copy h1{font-size:54px}.zen-search{width:calc(100% - 40px)}.zen-search .search-row{grid-template-columns:1.2fr 1fr 1fr 1fr}.zen-search .search-row>.primary{grid-column:1/-1;margin:8px 0 0}.pavilion-image{height:500px}.sanctuary-body{padding:24px}.sanctuary-bottom{flex-wrap:wrap}}@media(max-width:767px){.hero-copy{padding:64px 16px 76px}.hero-copy h1{font-size:39px}.hero-copy p{font-size:14px}.pavilion{padding-top:0}.pavilion-image{height:400px;border-radius:24px}.zen-search{width:calc(100% - 32px);margin-bottom:-32px}.zen-search .search-row{grid-template-columns:1fr 1fr;border-radius:24px;padding:12px}.zen-search .search-field:first-child{grid-column:1/-1;border-bottom:1px solid var(--line)}.zen-search .search-field{padding:10px 8px}.zen-search .guest-anchor{grid-column:1/-1;border-top:1px solid var(--line)}.guest-trigger{padding:14px 8px}.guest-trigger span{display:inline-block;margin-right:12px}.zen-search .search-row>.primary{margin-top:6px}.zen-search .search-popover{left:0;right:auto;width:100%}.zen-search .search-notes{font-size:10px}.collections{padding-top:132px;padding-bottom:64px}.arches{gap:16px;margin-top:32px}.arch h3{font-size:16px}.arch p{font-size:11px}.sanctuaries-section{padding:64px 0}.sanctuary-wrap{width:calc(100% - 32px)}.sanctuary{grid-template-columns:1fr}.sanctuary-photo{height:270px;min-height:0}.sanctuary-body{gap:14px}.sanctuary-body h3{font-size:25px}.rhythm{padding:64px 0}.rhythm-grid{grid-template-columns:1fr}.rhythm article{display:grid;grid-template-columns:38% 1fr}.rhythm img{height:100%}.rhythm-text{padding:20px}.rhythm h3{font-size:24px}.philosophy{grid-template-columns:1fr;gap:28px;padding:64px 0}.philosophy>img{height:360px}.philosophy h2{font-size:30px}.faq-section{padding:64px 0}} 
+</style>
+<style>.zen-search .search-field input{min-height:48px!important}#tripDrawer>div:first-child{min-height:80px}#tripDrawer .text-tertiary,#checkoutModal .bg-primary .text-tertiary{color:var(--on)}#detailModal .text-accent{color:var(--accent)}#detailModal .aspect-\[16\/9\]{aspect-ratio:16/9}#guestPanel{overscroll-behavior:contain}#childAgeBox:empty{display:none}.sanctuary-photo{align-self:stretch}.zen-search .mode-tab{font-size:11px!important;letter-spacing:0!important;text-transform:none!important}</style>
+<style>:focus-visible{outline:2px solid var(--focus)!important}input:not([type=radio]):not([type=checkbox]),select{border-color:var(--field)!important}button[aria-label^="Tutup"]{min-width:44px;min-height:44px}.site-footer .brand{font-size:22px}.search-field>span{line-height:1.5}</style>
+<style>#tripDrawer[aria-hidden=true]{display:none}.pavilion-caption{max-width:calc(100% - 48px)}.search-row>[data-hotel-only]{min-width:0}.site-header .trip-trigger{flex-shrink:0}</style>
+<style>.sanctuaries-section .eyebrow,.faq-section .eyebrow{color:var(--primary);font-size:12px}</style>
+<link rel="stylesheet" href="./components.css">
+<script src="./components.js" defer></script>
+</head><body><a href="#searchSection" class="sr-only focus:not-sr-only">Lewati ke pencarian</a><header class="site-header"><div class="header-inner wrap"><nav class="site-nav" aria-label="Navigasi utama"><a href="#searchSection">Cari suaka</a><a href="#sanctuaries">Pondok & suaka</a><a href="#manifesto">Filosofi</a><a href="#faq">Bantuan</a></nav><a class="brand" href="./index.html"><img src="./assets/logo-mark.png" alt=""><span>Sela Retreats</span></a><button type="button" data-open-trip class="trip-trigger">Jurnal rehat <span data-trip-count>0</span></button></div></header><main id="home"><section class="hero-copy wrap"><span class="eyebrow">Ruang untuk melambat</span><h1>Jeda yang tidak terburu-buru.</h1><p>Suaka tenang di lembah, kabut, dan tebing Nusantara. Duduk sejenak sebelum memilih perjalanan yang ingin Anda jalani.</p></section><div class="pavilion wrap"><section id="searchSection" class="zen-search" aria-label="Atur rehat Anda"><div class="mode-bar" role="tablist" aria-label="Jenis perjalanan"><button type="button" role="tab" data-mode="hotels" aria-selected="true" class="mode-tab bg-primary text-white rounded-pill px-4">Penginapan</button><button type="button" role="tab" data-mode="activities" aria-selected="false" class="mode-tab px-4">Pengalaman</button></div><form id="searchForm" novalidate><div class="search-row"><label class="search-field"><span data-dest-label>Pilih lokasi hening</span><input id="dest" type="text" list="destList" autocomplete="off" placeholder="Desa, gunung, atau pesisir"></label><label class="search-field"><span >Mulai rehat</span><input id="checkIn" type="date" aria-describedby="dateRuleHint"></label><div data-hotel-only><label class="search-field"><span >Selesai rehat</span><input id="checkOut" type="date" aria-describedby="dateRuleHint"></label></div><div class="guest-anchor"><button type="button" id="guestToggle" class="guest-trigger" aria-expanded="false" aria-controls="guestPanel"><span>Kapasitas suaka</span><strong id="guestSummary">1 kamar · 2 dewasa</strong>⌄</button><div id="guestPanel" class="search-popover hidden"><h3>Kapasitas suaka</h3><p>Jumlah dewasa dan anak berlaku untuk setiap kamar.</p><div class="guest-controls"><label><span>Kamar<small>1–9 kamar</small></span><input id="rooms" type="number" min="1" max="9" value="1" inputmode="numeric" aria-label="Kamar"></label><label><span>Dewasa per kamar<small>1–20 orang per kamar</small></span><input id="adults" type="number" min="1" max="20" value="2" inputmode="numeric" aria-label="Dewasa per kamar"></label><label><span>Anak per kamar<small>0–20 orang per kamar</small></span><input id="qChildren" type="number" min="0" max="20" value="0" inputmode="numeric" aria-label="Anak per kamar"></label></div><div id="childAgeBox"></div><button type="button" class="primary" id="applyGuests">Terapkan kapasitas</button></div></div><button id="checkBtn" type="submit" class="primary"><span data-btn-label>Cek tarif ketenangan →</span></button></div><datalist id="destList"></datalist><div id="formErrors" role="alert" aria-live="assertive"></div><div class="search-notes"><strong>Setiap harga dicek langsung saat Anda mencari</strong> · Demo lokal, bukan tarif langsung.<br><span id="summary" aria-live="polite">Atur tanggal rehat Anda</span> · <span id="dateRuleHint">Menginap 1–30 malam</span></div></form></section><img class="pavilion-image" src="./assets/hero.webp" alt="Paviliun terbuka menghadap lembah hijau di Ubud"><span class="pavilion-caption">Paviliun tepi lembah · Ubud, Bali · Contoh konten agen</span></div><section class="collections wrap"><div class="section-head"><span class="eyebrow">Pilih suasana Anda</span><h2>Tiga cara untuk melambat.</h2><p>Pilih lanskap yang paling dekat dengan ritme Anda.</p></div><div class="arches"><a class="arch" href="#searchSection" data-destination="Ubud"><img src="./assets/dest-1.webp" alt="Lembah sunyi Ubud"><h3>Lembah sunyi Ubud</h3><p>Sungai, bambu, dan pagi yang pelan →</p></a><a class="arch" href="#searchSection" data-destination="Senaru"><img src="./assets/dest-2.webp" alt="Kabut gunung Rinjani"><h3>Kabut gunung Rinjani</h3><p>Udara sejuk dan langkah kecil →</p></a><a class="arch" href="#searchSection" data-destination="Penida"><img src="./assets/dest-3.webp" alt="Tebing & samudra"><h3>Tebing & samudra</h3><p>Horizon terbuka, tanpa terburu-buru →</p></a></div></section><section id="sanctuaries" class="sanctuaries-section"><div class="sanctuary-wrap"><div class="section-head"><span class="eyebrow">Catatan suaka</span><h2 id="sectionHeading">Pondok & suaka hening, satu per satu.</h2><p id="resultsNote">Setiap suaka ditampilkan dengan ruang bernapas. Lihat satu per satu, tanpa tergesa.</p></div><div id="filterBar" class="filter-bar" role="group" aria-label="Filter suasana"><button type="button" data-filter="all" class="filter-btn h-11 px-4 rounded-pill bg-primary text-white">Semua suaka</button><button type="button" data-filter="soundhealing" class="filter-btn h-11 px-4 rounded-pill bg-surface border border-line">Sound bath & yoga</button><button type="button" data-filter="mist" class="filter-btn h-11 px-4 rounded-pill bg-surface border border-line">Herbal & kabut gunung</button><button type="button" data-filter="ocean" class="filter-btn h-11 px-4 rounded-pill bg-surface border border-line">Hening tepi laut</button></div><div class="inventory-note"><span id="resultCount" aria-live="polite"></span><span>Contoh konten agen · Harga jual dalam IDR</span></div><div id="results" class="sanctuary-list" aria-live="polite"></div></div></section><section id="manifesto" class="rhythm"><div class="wrap"><div class="section-head"><span class="eyebrow">Ritme harian</span><h2>Bagaimana satu hari mengalir</h2><p>Gambaran kegiatan, bukan jadwal yang harus Anda kejar. Contoh konten agen.</p></div><div class="rhythm-grid"><article><img src="./assets/tour-1.webp" alt="Pranayama & hening pagi"><div class="rhythm-text"><h3>06:00</h3><strong>Pranayama & hening pagi</strong><p>Ruang untuk menyambut cahaya pertama dan mengatur napas dengan nyaman.</p></div></article><article><img src="./assets/tour-2.webp" alt="Santap kebun, perlahan"><div class="rhythm-text"><h3>11:00</h3><strong>Santap kebun, perlahan</strong><p>Kenali bahan lokal dan nikmati waktu makan yang tidak tergesa.</p></div></article><article><img src="./assets/tour-3.webp" alt="Mengalir menuju rehat"><div class="rhythm-text"><h3>17:00</h3><strong>Mengalir menuju rehat</strong><p>Sesi suara dan waktu luang untuk menutup hari dengan ritme Anda sendiri.</p></div></article></div></div></section><section class="philosophy wrap"><img src="./assets/about.webp" alt="Ruang duduk terbuka dengan bahan alami"><div><span class="eyebrow">Pendekatan kami</span><h2>Kami memilih suaka yang membiarkan Anda melambat.</h2><p>Bukan daftar panjang yang harus dituntaskan. Kami mengajak Anda membaca suasana, melihat ruang, dan memilih tempat yang terasa sesuai.</p><p>Kegiatan wellness adalah pengalaman perjalanan, bukan perawatan medis atau janji hasil kesehatan. Periksa kebutuhan akses, pola makan, dan jadwal bersama agen sebelum berangkat.</p><a class="outline inline-flex items-center" href="#faq">Baca panduan rehat →</a></div></section><section id="faq" class="faq-section"><div class="wrap"><div class="section-head"><span class="eyebrow">Sebelum berangkat</span><h2>Pertanyaan yang sering diajukan</h2></div><div class="faq-list"><details><summary>Apakah ini pemesanan sungguhan?<span>+</span></summary><p>Belum. Situs ini adalah prototipe lokal. Properti, fasilitas, kebijakan, dan harga adalah contoh konten agen. Pencarian dan pembayaran hanya simulasi, tidak mengirim reservasi atau menagih dana.</p></details><details><summary>Bagaimana mengatur tamu dan usia anak?<span>+</span></summary><p>Pilih 1–9 kamar, 1–20 dewasa serta 0–20 anak per kamar. Isi usia setiap anak di setiap kamar, 0–17 tahun, sesuai usia saat check-in.</p></details><details><summary>Bagaimana ketentuan pembatalan?<span>+</span></summary><p>Lihat kebijakan contoh pada detail properti sebelum memasukkannya ke rencana perjalanan. Dalam layanan aktif, ketentuan harus diperiksa kembali bersama agen sebelum membayar.</p></details><details><summary>Bagaimana pembayaran dilakukan?<span>+</span></summary><p>Prototipe ini tidak terhubung ke penyedia pembayaran. Pada layanan aktif, pembayaran diproses lewat halaman penyedia seperti DOKU, virtual account SNAP BI, atau QRIS. Jangan masukkan data kartu di sini.</p></details></div></div></section><section class="contact-band"><span class="eyebrow">Bicara dulu, putuskan perlahan</span><h2>Masih menimbang? Ceritakan rencana rehat Anda.</h2><p class="flow-note">Kontak agen belum dikonfigurasi pada contoh ini.</p><a href="#searchSection" class="primary inline-flex items-center">Mulai dari suaka →</a></section></main><footer class="site-footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="./index.html"><img src="./assets/logo-mark.png" alt=""><span>Sela Retreats</span></a><p>Rehat yang tidak terburu-buru: suaka tenang, ritme harian lembut, harga jual yang jelas.</p><p>Contoh konten agen · Demo lokal<br>Kontak agen belum dikonfigurasi.</p></div><div><a href="#sanctuaries">Pondok & suaka</a><a href="#manifesto">Pendekatan kami</a><a href="#faq">FAQ & kontak</a></div><div><a href="#faq">Kebijakan pembatalan</a><a href="#faq">Syarat pemesanan</a><a href="#faq">Privasi & pembayaran</a><a href="./guidelines.html">Panduan merek</a></div></div><div class="footer-bottom"><span>© <span id="year">2026</span> Sela Retreats</span><span>Didukung sistem pemesanan Ortasys · Prototipe lokal</span></div></div></footer><div id="tripOverlay" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden" aria-hidden="true"></div>
   <aside id="tripDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-[420px] bg-surface shadow-elevated translate-x-full transition-transform duration-300 flex flex-col border-l border-line" role="dialog" aria-modal="true" aria-labelledby="tripTitle" aria-hidden="true">
     <div class="bg-primary text-white px-6 h-20 flex items-center justify-between border-b border-primary-hover">
       <div>
         <h2 id="tripTitle" class="font-serif text-2xl">Jurnal Retret Anda</h2>
-        <p class="text-xs text-tertiary">Build Your Trip — Suaka &amp; Terapi Terpilih</p>
+        <p class="text-xs text-white">Suaka &amp; pengalaman pilihan · Contoh konten agen</p>
       </div>
       <button type="button" data-close-trip class="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white" aria-label="Tutup jurnal retret">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -360,18 +97,18 @@
         </div>
         <div class="flex justify-between text-[11px]">
           <span>Pajak &amp; Makanan Sehat:</span>
-          <span class="text-success font-semibold">Termasuk (Net Ritel Sah)</span>
+          <span class="text-success font-semibold">Lihat rincian contoh</span>
         </div>
         <div class="flex items-baseline justify-between pt-2 border-t border-line/60 text-[14px]">
-          <span class="font-serif text-base text-ink">Total Penyelesaian:</span>
+          <span class="font-serif text-base text-ink">Total contoh:</span>
           <span id="tripTotal" class="text-2xl font-bold text-primary font-mono">Rp 0</span>
         </div>
       </div>
 
       <button id="payBtn" type="button" class="mt-4 w-full py-3.5 bg-primary hover:bg-primary-hover text-white rounded-pill text-xs font-bold tracking-wider uppercase transition shadow-soft disabled:opacity-40">
-        Konfirmasi Suaka (DOKU / SNAP)
+        Lanjut simulasi reservasi
       </button>
-      <p id="payNote" class="mt-2 text-[11px] text-center text-ink-muted" aria-live="polite">Penyelesaian resmi Bank Indonesia SNAP BI &amp; DOKU.</p>
+      <p id="payNote" class="mt-2 text-[11px] text-center text-ink-muted" aria-live="polite">Simulasi lokal. Tidak ada pembayaran atau pemesanan nyata.</p>
     </div>
   </aside>
 
@@ -400,7 +137,7 @@
       </div>
       <div class="p-5 border-t border-line bg-canvas flex items-center justify-between gap-4 shrink-0">
         <div>
-          <p class="text-[11px] text-ink-muted font-mono">Tarif Ritel Sah Multi-Supplier</p>
+          <p class="text-[11px] text-ink-muted font-mono">Harga jual contoh · IDR</p>
           <p id="modalPrice" class="font-mono text-[20px] font-bold text-primary"></p>
         </div>
         <button id="modalSelectBtn" type="button" class="h-11 px-6 rounded-pill bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider transition shadow-xs">
@@ -415,15 +152,23 @@
     <div class="bg-surface rounded-2xl max-w-lg w-full overflow-hidden border border-line shadow-elevated flex flex-col max-h-[92vh]">
       <div class="bg-primary text-white flex items-center justify-between px-6 py-4 border-b border-primary-hover">
         <div>
-          <h3 id="checkoutHeading" class="font-serif text-2xl font-normal">Penyelesaian Reservasi Suaka</h3>
-          <p class="text-xs text-tertiary">Penyelesaian Terjamin DOKU &amp; SNAP BI</p>
+          <h3 id="checkoutHeading" class="font-serif text-2xl font-normal">Simulasi reservasi suaka</h3>
+          <p class="text-xs text-tertiary">Demo lokal · tidak terhubung ke pembayaran</p>
         </div>
         <button type="button" data-close-checkout class="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white" aria-label="Tutup checkout">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
         </button>
       </div>
 
-      <div id="checkoutFormContent" class="p-6 overflow-y-auto flex-1 flex flex-col gap-4">
+      
+      <div class="px-6 py-3 bg-surface-muted/60 border-b border-line flex items-center justify-between text-[11px] font-bold">
+        <span class="inline-flex items-center gap-1.5 text-primary"><span class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-[10px]">1</span> Data tamu</span>
+        <span class="text-ink-muted">→</span>
+        <span class="inline-flex items-center gap-1.5 text-primary"><span class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-[10px]">2</span> Simulasi kanal pembayaran</span>
+        <span class="text-ink-muted">→</span>
+        <span class="inline-flex items-center gap-1.5 text-ink-muted"><span class="w-5 h-5 rounded-full border border-line flex items-center justify-center text-[10px]">3</span> Ringkasan demo</span>
+      </div>
+      <p class="px-6 py-3 flow-note">Contoh konten agen · Simulasi lokal. Data tidak dikirim ke server. Tidak ada dana ditagih.</p><div id="checkoutFormContent" class="p-6 overflow-y-auto flex-1 flex flex-col gap-4">
         <div class="p-4 rounded-xl bg-canvas border border-line text-[13px]">
           <div class="flex justify-between font-serif text-ink text-sm">
             <span>Rincian Jurnal Retret:</span>
@@ -437,7 +182,7 @@
         </div>
 
         <form id="coForm" class="flex flex-col gap-3">
-          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-serif">Data Peziarah / Tamu Utama</h4>
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-serif">Data tamu utama</h4>
           <label class="flex flex-col gap-1 text-[12px] font-medium text-ink">
             Nama Lengkap
             <input id="coName" type="text" required placeholder="Contoh: Saraswati Paramitha" class="h-10 px-3 rounded-xl bg-white border border-line text-[13px] focus:border-primary focus:outline-none">
@@ -453,26 +198,26 @@
             </label>
           </div>
 
-          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-serif mt-2">Kanal Pembayaran Terverifikasi</h4>
+          <h4 class="text-[12px] font-bold uppercase tracking-wider text-ink font-serif mt-2">Pilihan kanal pembayaran (simulasi)</h4>
           <div class="space-y-2 text-[12px]">
             <label class="flex items-center gap-3 p-3 rounded-xl bg-white border border-line cursor-pointer hover:border-primary">
               <input type="radio" name="payMethod" value="qris" checked class="accent-primary">
               <div class="flex-1">
-                <span class="font-serif font-bold text-ink block text-sm">QRIS SNAP BI (Penyelesaian Instan)</span>
-                <span class="text-[11px] text-ink-muted block">BCA, Mandiri, BRI, BNI, GoPay, OVO</span>
+                <span class="font-serif font-bold text-ink block text-sm">QRIS · simulasi</span>
+                <span class="text-[11px] text-ink-muted block">Tidak membuat kode pembayaran nyata</span>
               </div>
             </label>
             <label class="flex items-center gap-3 p-3 rounded-xl bg-white border border-line cursor-pointer hover:border-primary">
               <input type="radio" name="payMethod" value="va" class="accent-primary">
               <div class="flex-1">
-                <span class="font-serif font-bold text-ink block text-sm">DOKU Virtual Account Multi-Bank</span>
-                <span class="text-[11px] text-ink-muted block">Virtual account otomatis terverifikasi tanpa upload struk</span>
+                <span class="font-serif font-bold text-ink block text-sm">Virtual account · simulasi</span>
+                <span class="text-[11px] text-ink-muted block">Tidak menerbitkan nomor virtual account nyata</span>
               </div>
             </label>
           </div>
 
           <button type="submit" id="coSubmitBtn" class="mt-3 w-full py-3.5 bg-primary hover:bg-primary-hover text-white rounded-pill text-xs font-bold uppercase tracking-wider transition shadow-soft flex items-center justify-center gap-2">
-            <span>Konfirmasi &amp; Masuki Suaka</span>
+            <span>Selesaikan simulasi (tanpa pembayaran)</span>
           </button>
         </form>
       </div>
@@ -483,27 +228,27 @@
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
         </div>
         <div>
-          <span class="text-[11px] font-bold uppercase tracking-wider text-success font-serif">Penyelesaian Terverifikasi</span>
-          <h4 class="font-serif text-3xl font-normal text-primary mt-1">Suaka Telah Direservasi</h4>
-          <p class="text-[13px] text-ink-muted mt-1">Pengelola suaka telah menerima reservasi Anda. Persiapan penyambutan hening siap menanti kedatangan Anda.</p>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-success font-serif">Simulasi selesai</span>
+          <h4 class="font-display text-2xl text-primary">Simulasi selesai, bukan konfirmasi pemesanan</h4>
+          <p class="text-[13px] text-ink-muted">Tidak ada reservasi dikirim atau pembayaran diproses. Ringkasan ini bukan voucher perjalanan.</p>
         </div>
         <div class="w-full p-4 rounded-xl bg-canvas border border-line text-left text-[12px] space-y-1.5 font-mono">
           <div class="flex justify-between">
-            <span class="text-ink-muted">Kode Reservasi:</span>
+            <span class="text-ink-muted">Referensi demo:</span>
             <span id="successRef" class="font-bold text-ink">SELA-2026-0001</span>
           </div>
           <div class="flex justify-between">
-            <span class="text-ink-muted">Nama Peziarah:</span>
+            <span class="text-ink-muted">Nama tamu:</span>
             <span id="successGuest" class="font-bold text-ink">-</span>
           </div>
           <div class="flex justify-between">
-            <span class="text-ink-muted">Total Pembayaran:</span>
+            <span class="text-ink-muted">Total simulasi:</span>
             <span id="successAmount" class="font-bold text-primary font-bold">Rp 0</span>
           </div>
         </div>
         <div class="w-full flex flex-col gap-2 pt-2">
           <button type="button" id="btnDownloadVoucher" class="w-full py-3 rounded-pill bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider transition">
-            Unduh E-Voucher &amp; Panduan Hening (PDF)
+            Unduh ringkasan simulasi (.txt)
           </button>
           <button type="button" data-finish-checkout class="w-full py-2.5 rounded-pill bg-surface-muted hover:bg-line text-ink text-xs font-semibold uppercase tracking-wider transition">
             Kembali ke Beranda
@@ -521,32 +266,32 @@
     /* Data Sampel Ilustratif Preset 07 (Sela Retreats) */
     const WELLNESS_STAYS = [
       {
-        id: 'ws-ubud-sanctuary', name: 'Sayan Valley Sound Healing Sanctuary', area: 'Sayan Ridge · Ubud, Bali', filter: 'soundhealing',
-        keys: 'ubud sayan bali sound healing yoga vegan meditasi suaka', img: '../../assets/bagus_travel/ubud.jpg', alt: 'Suaka ketenangan di lembah Sayan Ubud',
+        id: 'ws-ubud-sanctuary', name: 'Sayan Valley Pavilion Sanctuary', area: 'Sayan Ridge · Ubud, Bali', filter: 'soundhealing',
+        keys: 'ubud sayan bali sound healing yoga vegan meditasi suaka', img: './assets/stay-1.webp', alt: 'Suaka ketenangan di lembah Sayan Ubud',
         stars: 5, room: 'Riverfront Wooden Meditation Pavilion', meal: 'Termasuk Makanan Nabati Organik (Farm-to-Table)', policy: 'Bebas pembatalan hingga H-7 kedatangan.',
         desc: 'Suaka hening di tepian Sungai Ayung, Sayan. Dikelilingi pepohonan rimbun dan gemericik air alami, dilengkapi yoga shala terbuka berbahan bambu arsitektural dan sesi sound bath harian.',
         amenities: ['Yoga Shala Bambu Terbuka', 'Sesi Harian Sound Bath Kristal', 'Menu Organik Bebas Gluten', 'Kolam Air Alami Bebas Kaporit', 'Jurnal Meditasi & Teh Herbal'],
         nightly: 3200000
       },
       {
-        id: 'ws-rinjani-retreat', name: 'Senaru Mountain Herbal & Mist Retreat', area: 'Senaru · Kaki Gunung Rinjani', filter: 'mist',
-        keys: 'senaru rinjani gunung herbal kabut jamu retreat', img: '../../assets/mandalika_escape/rinjani.jpg', alt: 'Pondok retret di tengah kabut sejuk Rinjani',
+        id: 'ws-rinjani-retreat', name: 'Senaru Mist & Herb Chalet', area: 'Senaru · Kaki Gunung Rinjani', filter: 'mist',
+        keys: 'senaru rinjani gunung herbal kabut jamu retreat', img: './assets/stay-2.webp', alt: 'Pondok retret di tengah kabut sejuk Rinjani',
         stars: 4, room: 'Mist Valley Herbal Eco Chalet', meal: 'Sarapan Sehat Nabati & Jamu Tradisional', policy: 'Bebas pembatalan hingga H-5 tanpa penalti.',
-        desc: 'Pondok kayu di ketinggian berhawa sejuk berkabut. Fokus pada terapi herbal Nusantara, mandi uap rempah tradisional, dan keheningan reflektif di lereng gunung.',
+        desc: 'Pondok kayu di ketinggian berhawa sejuk berkabut. Kegiatan contoh meliputi meracik jamu Nusantara, mengenal rempah tradisional, dan menikmati waktu luang di lereng gunung.',
         amenities: ['Mandi Uap Herbal Tradisional', 'Jamu Racikan Segar Harian', 'Jalur Meditasi Hutan Pinus', 'Bebas Polusi Suara', 'Teh Rempah Hangat 24 Jam'],
         nightly: 1650000
       },
       {
-        id: 'ws-penida-cliff', name: 'Nusa Tide Ocean Silence Pavilions', area: 'Tebing Penida · Bali', filter: 'ocean',
-        keys: 'nusa penida tebing laut hening ombak silence retreat', img: '../../assets/bagus_travel/nusa-penida.jpg', alt: 'Paviliun di atas tebing laut biru',
-        stars: 5, room: 'Oceanfront Silence Sanctuary Villa', meal: 'Sarapan dan Makan Malam Detox', policy: 'Bebas pembatalan hingga H-10 tanpa biaya.',
-        desc: 'Menghadap langsung ke luasnya Samudra Hindia dari atas tebing kapur. Suaka untuk digital detox dan terapi suara deburan ombak laut lepas yang menenangkan sistem saraf.',
-        amenities: ['Digital Detox Safe (Kunci Gawai)', 'Terapi Suara Ombak Alami', 'Kolam Rendam Air Garam Laut', 'Sesi Meditasi Fajar & Senja', 'Balkon Sunset Samudra'],
+        id: 'ws-penida-cliff', name: 'Penida Ocean Silence Villas', area: 'Tebing Penida · Bali', filter: 'ocean',
+        keys: 'nusa penida tebing laut hening ombak silence retreat', img: './assets/stay-3.webp', alt: 'Paviliun di atas tebing laut biru',
+        stars: 5, room: 'Oceanfront Silence Sanctuary Villa', meal: 'Sarapan dan Makan Malam', policy: 'Bebas pembatalan hingga H-10 tanpa biaya.',
+        desc: 'Menghadap langsung ke luasnya Samudra Hindia dari atas tebing kapur. Suaka untuk menikmati waktu luang dan suara ombak laut lepas.',
+        amenities: ['Ruang Simpan Gawai', 'Suara Ombak Alami', 'Kolam Rendam Air Garam Laut', 'Sesi Meditasi Fajar & Senja', 'Balkon Sunset Samudra'],
         nightly: 3600000
       },
       {
         id: 'ws-toba-peace', name: 'Samosir Island Pine Restorative Lodge', area: 'Danau Toba · Sumatera Utara', filter: 'mist',
-        keys: 'danau toba samosir pinus air panas hening slow travel', img: '../../assets/serenity_umrah_privilege/toba.jpg', alt: 'Danau Toba yang tenang dikelilingi pinus',
+        keys: 'danau toba samosir pinus air panas hening slow travel', img: './assets/stay-4.webp', alt: 'Danau Toba yang tenang dikelilingi pinus',
         stars: 4, room: 'Lakeside Pine Stone Lodge', meal: 'Makanan Tradisional Sehat & Kopi Organik', policy: 'Bebas pembatalan hingga H-4 kedatangan.',
         desc: 'Terletak di semenanjung terpencil Pulau Samosir. Udara sejuk beraroma pohon pinus, pemandangan air danau yang membiru tanpa riak bising perahu motor, dan kolam rendam air panas alami.',
         amenities: ['Mandi Air Hangat Alami', 'Hutan Pinus Pribadi', 'Kayak Hening Danau', 'Perapian Api Kayu Malam'],
@@ -557,16 +302,16 @@
     const WELLNESS_ACTIVITIES = [
       {
         id: 'ws-sound-bath', kind: 'tour', name: 'Sesi Privat Tibetan Sound Bath & Pranayama', area: 'Sayan Valley · Ubud', filter: 'soundhealing',
-        keys: 'sound bath tibetan mangkuk kristal pranayama yoga hening', img: '../../assets/bagus_travel/tanah-lot.jpg', alt: 'Sesi meditasi suara mangkuk bernyanyi',
-        duration: '90 Menit Terapi Gelombang Suara',
-        desc: 'Terapi relaksasi mendalam menggunakan getaran frekuensi singing bowls Himalaya dan mangkuk kristal kuarsa untuk menyelaraskan kembali pusat energi dan menurunkan stres.',
-        amenities: ['Praktisi Bersertifikat Sound Therapy', 'Matras Yoga & Eye Pillow Sutra', 'Minuman Rehidrasi Herbal'],
+        keys: 'sound bath tibetan mangkuk kristal pranayama yoga hening', img: './assets/tour-1.webp', alt: 'Sesi mendengarkan bunyi mangkuk bernyanyi',
+        duration: '90 Menit Sesi Sound Bath',
+        desc: 'Sesi mendengarkan bunyi singing bowl dan mangkuk kristal dalam suasana tenang. Pengalaman ini bukan layanan medis dan tidak menjanjikan hasil kesehatan.',
+        amenities: ['Pendamping Sesi Sound Bath', 'Matras Yoga & Eye Pillow Sutra', 'Minuman Rehidrasi Herbal'],
         policy: 'Bebas penyesuaian jadwal hingga 24 jam sebelumnya.',
         perPerson: 450000
       },
       {
         id: 'ws-jamu-workshop', kind: 'tour', name: 'Lokakarya Jamu Rempah & Tanaman Obat Nusantara', area: 'Senaru Heritage Garden', filter: 'mist',
-        keys: 'jamu rempah herbal tanaman obat kunyit jahe workshop', img: '../../assets/mandalika_escape/sade-weaving.jpg', alt: 'Peracikan rempah tradisional jamu',
+        keys: 'jamu rempah herbal tanaman obat kunyit jahe workshop', img: './assets/tour-2.webp', alt: 'Peracikan rempah tradisional jamu',
         duration: '2.5 Jam Edukasi Kearifan Obat Alami',
         desc: 'Mengenal khasiat rimpang kunyit, temulawak, jahe merah, dan daun sirih langsung dari kebun herbal, serta praktik menumbuk jamu segar yang menyehatkan tubuh.',
         amenities: ['Bahan Rempah Segar Pilihan', 'Buku Resep Jamu Kuno Nusantara', 'Botol Jamu Hasil Buatan Dibawa Pulang'],
@@ -575,7 +320,7 @@
       },
       {
         id: 'ws-water-blessing', kind: 'tour', name: 'Melukat Ritual Pembersihan Jiwa di Mata Air Suci', area: 'Tirta Sebatu · Bali', filter: 'soundhealing',
-        keys: 'melukat pembersihan jiwa air suci ritual bali', img: '../../assets/serenity_umrah_privilege/prambanan.jpg', alt: 'Pancuran mata air suci alami',
+        keys: 'melukat pembersihan jiwa air suci ritual bali', img: './assets/tour-3.webp', alt: 'Pancuran mata air suci alami',
         duration: '3 Jam Ritual Pemurnian Tradisional',
         desc: 'Didampingi pemangku adat setempat, melangkah ke mata air pegunungan yang jernih untuk prosesi pembersihan pikiran dan pelepasan energi negatif secara khidmat.',
         amenities: ['Kain Kamen & Selendang Upacara', 'Sesajen Canang Sari & Dupa Harum', 'Pemandu Budaya Pendamping'],
@@ -593,6 +338,7 @@
     const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
     const addDays = (s, n) => iso(new Date(new Date(s + 'T00:00:00').getTime() + n * DAY));
     const today = iso(new Date());
+    let searchVersion=0;
 
     const state = { mode: 'hotels', filter: 'all', priced: false, checking: false, checkedAt: null, trip: [] };
     const el = {
@@ -608,38 +354,66 @@
       return Math.round((new Date(el.checkOut.value) - new Date(el.checkIn.value)) / DAY);
     };
 
-    function validate() {
-      const errs = [];
-      if (!el.checkIn.value) {
-        errs.push('Silakan tentukan tanggal mulai rehat.');
-      } else if (el.checkIn.value < today) {
-        errs.push('Tanggal mulai tidak boleh di masa lampau.');
-      }
 
-      if (state.mode === 'hotels') {
-        if (!el.checkOut.value) errs.push('Silakan tentukan tanggal selesai rehat.');
-        else {
-          const n = nights();
-          if (n < 1) errs.push('Tanggal selesai harus minimal 1 malam setelah tanggal mulai.');
-          if (n > MAX_NIGHTS) errs.push(`Batas masa inap maksimal adalah ${MAX_NIGHTS} malam.`);
-        }
+    const ageValues = new Map();
+    function syncChildAges() {
+      const box = $('#childAgeBox');
+      $$('[data-child-age]').forEach(x => ageValues.set(x.dataset.childAge,x.value));
+      const rooms = num('rooms'), children = num('children');
+      const keys = [];
+      for(let room=1;room<=rooms;room++) for(let child=1;child<=children;child++) keys.push(`${room}-${child}`);
+      for(const key of ageValues.keys()) if(!keys.includes(key)) ageValues.delete(key);
+      const signature = `${rooms}:${children}`;
+      if(box.dataset.signature === signature) return;
+      box.dataset.signature = signature;
+      box.hidden = !children;
+      box.innerHTML = children ? '<h4>Usia setiap anak saat check-in · wajib 0–17 tahun</h4><div class="age-grid">'+keys.map(key => {
+        const [room,child]=key.split('-');
+        return `<label for="age-${key}">Kamar ${room} · Anak ${child}<select id="age-${key}" data-child-age="${key}" required aria-label="Usia anak ${child} kamar ${room}"><option value="">Pilih usia</option>${Array.from({length:18},(_,age)=>`<option value="${age}" ${ageValues.get(key)===String(age)?'selected':''}>${age} tahun</option>`).join('')}</select></label>`;
+      }).join('')+'</div>' : '';
+    }
+    function validate() {
+      const errs=[];
+      $$('[aria-invalid]').forEach(x=>x.removeAttribute('aria-invalid'));
+      const invalid=(field,message)=>{errs.push(message);field.setAttribute('aria-invalid','true');};
+      if(!el.dest.value.trim()) invalid(el.dest,'Pilih lokasi atau kawasan perjalanan.');
+      if(!el.checkIn.value) invalid(el.checkIn,'Pilih tanggal mulai perjalanan.');
+      else if(el.checkIn.value<today) invalid(el.checkIn,'Tanggal mulai tidak boleh di masa lampau.');
+      if(state.mode==='hotels') {
+        if(!el.checkOut.value) invalid(el.checkOut,'Pilih tanggal check-out.');
+        else if(nights()<1 || nights()>MAX_NIGHTS) invalid(el.checkOut,'Lama menginap harus 1–30 malam.');
       }
+      for(const key of ['rooms','adults','children']) {
+        const value=Number(el[key].value),[min,max]=LIMITS[key];
+        if(!el[key].value || !Number.isInteger(value) || value<min || value>max) invalid(el[key],`${key==='rooms'?'Kamar':key==='adults'?'Dewasa per kamar':'Anak per kamar'} harus ${min}–${max}.`);
+      }
+      syncChildAges();
+      $$('[data-child-age]').forEach(x=>{if(x.value==='' || Number(x.value)<0 || Number(x.value)>17) invalid(x,`Pilih ${x.getAttribute('aria-label').toLowerCase()} (0–17 tahun).`);});
       return errs;
     }
+    function showErrors(errs) {
+      el.errors.innerHTML=errs.map(x=>`<p>• ${x}</p>`).join('');
+      const first=$('[aria-invalid="true"]');
+      if(first && $('#guestPanel')?.contains(first)) {$('#guestPanel').classList.remove('hidden');$('#guestToggle').setAttribute('aria-expanded','true');}
+      first?.focus();
+    }
+    function guestDescription() {return `${num('rooms')} kamar · ${num('adults')} dewasa${num('children')?' · '+num('children')+' anak':''} per kamar`;}
+    function childDescription() {return $$('[data-child-age]').map(x=>`Kamar ${x.dataset.childAge.split('-')[0]} anak ${x.dataset.childAge.split('-')[1]}: ${x.value} tahun`).join('; ');}
 
     const roomRate = s => Math.round(s.nightly * (1 + 0.12 * Math.max(0, num('adults') - 2) + 0.05 * num('children')) / 1000) * 1000;
     const stayTotal = s => roomRate(s) * Math.max(1, nights()) * num('rooms');
     const actTotal = a => (a.perPerson * num('adults') + Math.round(a.perPerson * 0.6) * num('children')) * num('rooms');
 
+    const formatDate = value => new Intl.DateTimeFormat('id-ID', {day:'numeric',month:'short',year:'numeric'}).format(new Date(value+'T00:00:00'));
     function summaryText() {
       const r = num('rooms'), a = num('adults'), c = num('children');
-      const g = `${a} Peziarah${c ? ` + ${c} Anak` : ''}`;
+      const g = `${a} dewasa${c ? ` + ${c} anak` : ''}`;
       if (state.mode === 'hotels') {
         const n = nights();
         if (!n || n < 1) return 'Pilih tanggal untuk kalkulasi suaka';
-        return `${n} Malam × ${r} Suaka (${g} / suaka)`;
+        return `${formatDate(el.checkIn.value)} – ${formatDate(el.checkOut.value)} · ${n} malam · ${r} kamar (${g} per kamar)`;
       }
-      return el.checkIn.value ? `${el.checkIn.value} · ${r * a} Peziarah Terdaftar` : 'Pilih tanggal ritual / terapi';
+      return el.checkIn.value ? `${formatDate(el.checkIn.value)} · ${r * a} peserta dewasa` : 'Pilih tanggal pengalaman';
     }
 
     function renderMode() {
@@ -651,83 +425,27 @@
       const hotels = state.mode === 'hotels';
       $$('[data-hotel-only]').forEach(n => n.classList.toggle('hidden', !hotels));
       
-      $('#sectionHeading').textContent = hotels ? 'Pondok & Suaka Hening Terkurasi' : 'Ritual Tradisi & Terapi Holistik';
-      $('[data-dest-label]').textContent = hotels ? 'Lokasi Ketenangan' : 'Lokasi Ritual / Terapi';
+      $('#sectionHeading').textContent = hotels ? 'Pondok & suaka hening, satu per satu.' : 'Sesi pelan, boleh Anda ikuti sesuai tenaga';
+      $('[data-dest-label]').textContent = hotels ? 'Pilih lokasi hening' : 'Pilih lokasi pengalaman';
       el.dest.placeholder = hotels ? 'Sayan Ubud, Senaru Rinjani, Nusa Penida, Danau Toba…' : 'Sound Bath, Workshop Jamu, Melukat Tirta…';
 
-      const datalistItems = hotels ? WELLNESS_STAYS.map(s => s.name) : WELLNESS_ACTIVITIES.map(e => e.name);
-      $('#destList').innerHTML = ['Sayan Valley, Ubud', 'Senaru Rinjani', 'Tebing Penida Bali', 'Danau Toba Samosir', ...datalistItems]
-        .map(v => `<option value="${v}">`).join('');
+      const catalogue = hotels ? WELLNESS_STAYS : WELLNESS_ACTIVITIES;
+      const datalistItems = [...new Set(catalogue.flatMap(item => [item.area, item.name]))];
+      $('#destList').replaceChildren(...datalistItems.map(value => {
+        const option = document.createElement('option');
+        option.value = value;
+        return option;
+      }));
     }
 
+
     function renderResults() {
-      const isHotels = state.mode === 'hotels';
-      const q = el.dest.value.trim().toLowerCase();
-      let list = (isHotels ? WELLNESS_STAYS : WELLNESS_ACTIVITIES).filter(it => {
-        const matchQ = !q || (it.name + ' ' + it.area + ' ' + it.keys).toLowerCase().includes(q);
-        const matchFilter = state.filter === 'all' || it.filter === state.filter;
-        return matchQ && matchFilter;
-      });
-      if (!list.length && state.filter === 'all') list = isHotels ? WELLNESS_STAYS : WELLNESS_ACTIVITIES;
-
-      if (!list.length) {
-        el.results.innerHTML = `
-          <div class="col-span-full py-12 text-center text-ink-muted bg-surface rounded-2xl border border-line">
-            <p class="font-serif text-2xl text-primary">Tidak ada suaka yang cocok dengan filter "${state.filter}"</p>
-            <button type="button" data-reset-filter class="mt-3 px-4 py-2 rounded-pill bg-primary text-white text-xs font-bold uppercase tracking-wider">Reset Filter</button>
-          </div>`;
-        return;
-      }
-
-      el.results.innerHTML = list.map((it, idx) => {
-        const total = isHotels ? stayTotal(it) : actTotal(it);
-        const sub = isHotels ? `${idr.format(roomRate(it))} / malam / suaka` : `${idr.format(it.perPerson)} / peziarah`;
-        const priceHTML = state.checking
-          ? `<div class="h-8 w-28 bg-surface-muted animate-pulse rounded-md"></div>`
-          : state.priced
-            ? `<div><p class="tnum font-mono text-[22px] font-bold text-primary">${idr.format(total)}</p><p class="tnum font-mono text-[11px] text-ink-muted">${sub}</p></div>`
-            : `<div><p class="text-[13px] text-ink-muted italic font-serif">Cek tarif ketenangan live</p><p class="text-[11px] text-ink-muted font-mono">Mulai ${idr.format(isHotels ? it.nightly : it.perPerson)}</p></div>`;
-
-        return `
-        <article class="bg-surface rounded-3xl border border-line overflow-hidden shadow-soft grid md:grid-cols-12 hover:border-primary/50 transition duration-300 group">
-          <!-- Left 5-Col Natural Light Image -->
-          <div class="md:col-span-5 relative min-h-[240px] bg-surface-muted overflow-hidden p-3 bg-canvas/50">
-            <div class="relative w-full h-full rounded-2xl overflow-hidden">
-              <img src="${it.img}" alt="${it.alt}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-              <span class="absolute top-3 left-3 bg-surface/95 text-ink text-[11px] font-serif px-3 py-1 rounded-pill shadow-2xs">
-                ${isHotels ? `Suaka Hening · ${'★'.repeat(it.stars)}` : 'Ritual Restoratif'}
-              </span>
-            </div>
-          </div>
-
-          <!-- Right 7-Col Restorative Journal Entry -->
-          <div class="md:col-span-7 p-6 sm:p-8 flex flex-col justify-between gap-4">
-            <div class="space-y-2.5">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-bold uppercase tracking-[0.16em] text-accent font-serif">CATATAN 0${idx + 1} · ${it.area}</span>
-                <button type="button" data-detail="${it.id}" class="text-[12px] font-serif italic text-primary hover:text-accent underline">
-                  Baca Jurnal Suaka →
-                </button>
-              </div>
-              <h3 class="font-serif text-2xl font-normal text-ink leading-snug cursor-pointer hover:text-primary transition-colors" data-detail="${it.id}">${it.name}</h3>
-              <p class="text-[13px] text-ink-muted leading-relaxed font-light">${it.desc}</p>
-              <p class="text-[12px] font-medium text-primary pt-1">${isHotels ? `${it.room} · ${it.meal}` : it.duration}</p>
-
-              <!-- Inclusions preview tags -->
-              <div class="flex flex-wrap gap-1.5 pt-1">
-                ${(it.amenities || []).slice(0, 3).map(a => `<span class="px-3 py-1 rounded-pill bg-canvas border border-line text-ink-muted text-[11px] font-serif">${a}</span>`).join('')}
-              </div>
-            </div>
-
-            <div class="pt-4 border-t border-line flex items-end justify-between gap-4">
-              ${priceHTML}
-              <button type="button" data-select="${it.id}" class="h-11 px-6 rounded-pill ${state.priced ? 'bg-primary hover:bg-primary-hover text-white' : 'bg-surface-muted hover:bg-line text-ink font-semibold'} text-xs font-bold uppercase tracking-wider transition shadow-2xs">
-                ${state.priced ? 'Masuk Jurnal Retret' : 'Cek &amp; Pilih'}
-              </button>
-            </div>
-          </div>
-        </article>`;
-      }).join('');
+      const isHotels=state.mode==='hotels',q=el.dest.value.trim().toLowerCase();
+      const list=(isHotels?WELLNESS_STAYS:WELLNESS_ACTIVITIES).filter(it=>(!q || (it.name+' '+it.area+' '+it.keys).toLowerCase().includes(q)) && (state.filter==='all' || it.filter===state.filter));
+      $('#resultCount').textContent=state.checking?'Menelusuri katalog contoh…':`${list.length} ${isHotels?'suaka':'pengalaman'} dalam katalog contoh`;
+      if(state.checking){el.results.innerHTML='<div class="p-8 text-center" role="status">Menyiapkan pilihan rehat Anda…</div>';return;}
+      if(!list.length){el.results.innerHTML='<div class="p-8 text-center"><h3>Belum ada suaka yang sesuai.</h3><p>Coba lokasi lain atau hapus filter suasana.</p><button type="button" data-reset-filter class="outline">Atur ulang pencarian</button></div>';return;}
+      el.results.innerHTML=list.map((it,idx)=>`<article class="sanctuary"><img class="sanctuary-photo" src="${it.img}" alt="${it.alt}" loading="lazy"><div class="sanctuary-body"><span class="eyebrow">Catatan 0${idx+1} · ${it.area}</span><h3><button type="button" class="detail-link" data-detail="${it.id}">${it.name}</button></h3><p>${it.desc}</p><p>${isHotels?it.room+' · '+it.meal:it.duration}</p><div class="inclusions">${it.amenities.slice(0,3).map(x=>`<span>${x}</span>`).join('')}</div><div class="sanctuary-bottom"><div class="price"><small>${state.priced?'Total contoh perjalanan':'Mulai dari'}</small>${idr.format(state.priced?(isHotels?stayTotal(it):actTotal(it)):(isHotels?it.nightly:it.perPerson))}<small>${state.priced?'Simulasi · bukan tarif langsung':isHotels?'per kamar / malam · harga contoh':'per peserta · harga contoh'}</small></div><button type="button" class="primary" data-select="${it.id}">${state.priced?'Simpan rehat →':'Cek & pilih →'}</button></div></div></article>`).join('');
     }
 
     function syncBounds() {
@@ -742,23 +460,22 @@
     }
 
     function invalidate() {
-      state.priced = false; el.errors.textContent = '';
+      state.priced = false; state.checking=false;searchVersion++;el.btn.disabled=false;el.btn.querySelector('[data-btn-label]').textContent='Cek tarif ketenangan →';el.errors.textContent = ''; syncChildAges(); if($('#guestSummary'))$('#guestSummary').textContent=guestDescription();
+      el.form.removeAttribute('aria-busy');
       el.summary.textContent = summaryText();
       renderResults();
     }
 
     $$('.mode-tab').forEach(t => t.addEventListener('click', () => { state.mode = t.dataset.mode; renderMode(); invalidate(); }));
-    $$('[data-step]').forEach(b => b.addEventListener('click', () => {
-      const k = b.dataset.step; el[k].value = clamp(num(k) + Number(b.dataset.dir), LIMITS[k]); invalidate();
-    }));
-    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('change', () => { el[k].value = num(k); invalidate(); }));
+    ['rooms', 'adults', 'children'].forEach(k => el[k].addEventListener('input', invalidate));
+    $('#childAgeBox').addEventListener('change',invalidate);
     el.checkIn.addEventListener('change', () => {
       syncBounds();
       if (el.checkIn.value && (!el.checkOut.value || el.checkOut.value <= el.checkIn.value)) el.checkOut.value = addDays(el.checkIn.value, 2);
       invalidate();
     });
     el.checkOut.addEventListener('change', invalidate);
-    el.dest.addEventListener('input', renderResults);
+    el.dest.addEventListener('input', invalidate);
 
     // Filter Buttons
     $$('.filter-btn').forEach(btn => {
@@ -774,21 +491,20 @@
 
     el.form.addEventListener('submit', e => {
       e.preventDefault();
-      const errs = validate();
-      el.errors.innerHTML = errs.map(x => `<p>• ${x}</p>`).join('');
-      if (errs.length) return;
-
-      state.checking = true; el.btn.disabled = true;
-      el.btn.querySelector('[data-btn-label]').textContent = 'Memverifikasi Kuota Suaka…';
-      renderResults();
-
-      setTimeout(() => {
-        state.checking = false; state.priced = true; state.checkedAt = new Date();
-        el.btn.disabled = false; el.btn.querySelector('[data-btn-label]').textContent = 'Cek Tarif Ketenangan Live';
-        el.summary.textContent = `Live Terverifikasi: ${summaryText()}`;
-        renderResults();
-        document.getElementById('sanctuaries').scrollIntoView({ behavior: 'smooth' });
-      }, 650);
+      if(state.checking)return;
+      const errs=validate();showErrors(errs);if(errs.length)return;
+      const version=++searchVersion;
+      state.checking=true;state.priced=false;el.btn.disabled=true;
+      el.btn.querySelector('[data-btn-label]').textContent='Memeriksa contoh…';
+      el.form.setAttribute('aria-busy','true');renderResults();
+      if($('#guestPanel')){$('#guestPanel').classList.add('hidden');$('#guestToggle').setAttribute('aria-expanded','false');}
+      setTimeout(()=>{
+        if(version!==searchVersion){el.form.removeAttribute('aria-busy');return;}
+        state.checking=false;state.priced=true;state.checkedAt=new Date();el.btn.disabled=false;
+        el.form.removeAttribute('aria-busy');el.btn.querySelector('[data-btn-label]').textContent='Cek tarif ketenangan →';
+        el.summary.textContent='Simulasi: '+summaryText();renderResults();
+        document.getElementById('sanctuaries').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+      },650);
     });
 
     document.addEventListener('click', e => {
@@ -796,15 +512,16 @@
       const det = e.target.closest('[data-detail]'); if (det) return openDetail(det.dataset.detail);
       const rm = e.target.closest('[data-remove]'); if (rm) { state.trip.splice(Number(rm.dataset.remove), 1); renderTrip(); }
       const rst = e.target.closest('[data-reset-filter]'); if (rst) {
-        state.filter = 'all';
+        state.filter = 'all';el.dest.value='';
         $$('.filter-btn').forEach((b, i) => b.className = `filter-btn h-9 px-4 rounded-pill text-[12px] font-bold uppercase tracking-wider transition ${i === 0 ? 'bg-primary text-white shadow-xs' : 'bg-surface border border-line text-ink-muted hover:text-ink'}`);
         renderResults();
       }
     });
 
     function selectItem(id) {
+      const errors=validate();if(errors.length){document.getElementById('searchSection').scrollIntoView();showErrors(errors);return;}
       if (!state.priced) {
-        toast('Memverifikasi kuota ketersediaan suaka...');
+        toast('Memakai tarif contoh, bukan ketersediaan langsung.');
         const errs = validate();
         if (errs.length) {
           document.getElementById('searchSection').scrollIntoView({ behavior: 'smooth' });
@@ -817,7 +534,7 @@
       const isHotel = id.startsWith('ws-ubud-sanctuary') || id.startsWith('ws-rinjani-retreat') || id.startsWith('ws-penida-cliff') || id.startsWith('ws-toba-peace');
       const it = (isHotels => isHotels ? WELLNESS_STAYS : WELLNESS_ACTIVITIES)(isHotel).find(x => x.id === id);
       const total = isHotel ? stayTotal(it) : actTotal(it);
-      state.trip.push({ id: it.id, name: it.name, area: it.area, detail: summaryText(), total });
+      state.trip.push({ id: it.id, name: it.name, area: it.area, detail: summaryText()+' · '+guestDescription()+' '+childDescription(), total });
       renderTrip();
       toast(`Ditambahkan ke jurnal retret: ${it.name}`);
       closeDetail();
@@ -837,7 +554,7 @@
           </div>
           <p class="tnum font-mono text-[14px] font-bold text-primary mt-1">${idr.format(t.total)}</p>
         </div>`).join('')
-        : `<p class="py-12 text-center text-[13px] text-ink-muted font-serif">Jurnal retret Anda masih kosong.<br>Pilih suaka atau ritual untuk memulai pemulihan diri.</p>`;
+        : `<p class="py-12 text-center text-[13px] text-ink-muted font-serif">Jurnal rehat Anda masih kosong.<br>Pilih suaka atau pengalaman untuk menyusun perjalanan.</p>`;
       
       const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
       $('#tripSubtotal').textContent = idr.format(totalVal);
@@ -856,7 +573,7 @@
 
       $('#modalImg').src = it.img;
       $('#modalImg').alt = it.alt;
-      $('#modalBadge').textContent = isHotel ? `Peringkat Bintang ${'★'.repeat(it.stars)}` : it.duration;
+      $('#modalBadge').textContent = 'Contoh konten agen · '+(isHotel?'Penginapan':it.duration);
       $('#modalArea').textContent = it.area;
       $('#modalTitle').textContent = it.name;
       $('#modalDesc').textContent = it.desc;
@@ -883,7 +600,7 @@
       if (!state.trip.length) return;
       closeTrip();
       $('#coItemCount').textContent = `${state.trip.length} Suaka / Ritual`;
-      $('#coItemList').innerHTML = state.trip.map(t => `<div class="flex justify-between font-serif text-sm"><span>• ${t.name}</span><span class="font-mono font-bold">${idr.format(t.total)}</span></div>`).join('');
+      $('#coItemList').innerHTML = state.trip.map(t => `<div class="flex flex-col gap-2 border-b border-line pb-3"><strong>${t.name}</strong><span class="text-xs text-ink-muted">${t.detail}</span><span class="font-mono font-bold">${idr.format(t.total)}</span></div>`).join('');
       const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
       $('#coTotal').textContent = idr.format(totalVal);
       $('#checkoutFormContent').classList.remove('hidden');
@@ -902,14 +619,14 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
     $('#btnDownloadVoucher').addEventListener('click', () => {
-      toast('E-Voucher & Panduan Hening sedang diunduh (Simulasi PDF)...');
+      downloadSummary();
     });
 
     $('#coForm').addEventListener('submit', e => {
       e.preventDefault();
       const guestName = $('#coName').value.trim();
       const totalVal = state.trip.reduce((s, t) => s + t.total, 0);
-      const randomRef = 'SELA-2026-' + Math.floor(1000 + Math.random() * 9000);
+      const randomRef = 'DEMO-SELA-2026-' + Math.floor(1000 + Math.random() * 9000);
 
       $('#successRef').textContent = randomRef;
       $('#successGuest').textContent = guestName;
@@ -919,6 +636,11 @@
       $('#checkoutSuccessContent').classList.remove('hidden');
     });
 
+    function downloadSummary(){
+      const text='SIMULASI LOKAL — BUKAN VOUCHER ATAU BUKTI PEMBAYARAN\n'+$('#successRef').textContent+'\n'+state.trip.map(x=>x.name+' — '+x.detail+' — '+idr.format(x.total)).join('\n');
+      const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));
+      const a=document.createElement('a');a.href=url;a.download='ringkasan-simulasi.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    }
     // Drawer Navigation
     const drawer = $('#tripDrawer'), overlay = $('#tripOverlay');
     function openTrip() { overlay.classList.remove('hidden'); drawer.classList.remove('translate-x-full'); drawer.setAttribute('aria-hidden', 'false'); }
@@ -935,14 +657,44 @@
       clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.add('hidden'), 2500);
     }
 
-    $('#menuBtn').addEventListener('click', () => {
-      const open = $('#mobileNav').classList.toggle('hidden') === false;
-      $('#menuBtn').setAttribute('aria-expanded', open);
-    });
     $('#year').textContent = new Date().getFullYear();
+
+
+    if($('#guestToggle')){
+      const toggle=$('#guestToggle'),panel=$('#guestPanel');
+      const close=()=>{panel.classList.add('hidden');toggle.setAttribute('aria-expanded','false');};
+      toggle.addEventListener('click',()=>{const open=panel.classList.toggle('hidden')===false;toggle.setAttribute('aria-expanded',open);if(open)$('#rooms').focus();});
+      $('#applyGuests').addEventListener('click',()=>{const errors=validate().filter(x=>/Kamar|Dewasa|Anak|usia/i.test(x));if(errors.length){showErrors(errors);return;}close();toggle.focus();});
+      document.addEventListener('click',e=>{if(!e.target.closest('.guest-anchor'))close();});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.classList.contains('hidden')){close();toggle.focus();}});
+    }
+    $$('[data-destination]').forEach(a=>a.addEventListener('click',()=>{el.dest.value=a.dataset.destination;state.filter='all';invalidate();el.dest.focus();}));
+    const dialogs=[$('#detailModal'),$('#checkoutModal'),$('#tripDrawer')];
+    const activeDialog=d=>d.id==='tripDrawer'?d.getAttribute('aria-hidden')==='false':!d.classList.contains('hidden');
+    let restoreFocus=null,lastDialog=null;
+    function syncDialogs(){
+      const active=dialogs.find(activeDialog);
+      dialogs.forEach(d=>d.inert=!activeDialog(d));
+      if(active!==lastDialog){
+        if(active){if(!lastDialog)restoreFocus=document.activeElement;requestAnimationFrame(()=>active.querySelector('button,input,a')?.focus());}
+        else if(lastDialog)restoreFocus?.focus();
+        lastDialog=active;
+      }
+    }
+    dialogs.forEach(d=>new MutationObserver(syncDialogs).observe(d,{attributes:true,attributeFilter:['class','aria-hidden']}));syncDialogs();
+    document.addEventListener('keydown',e=>{
+      const active=dialogs.find(activeDialog);if(!active)return;
+      if(e.key==='Escape'){e.preventDefault();closeDetail();closeCheckout();closeTrip();return;}
+      if(e.key==='Tab'){
+        const focusable=[...active.querySelectorAll('button:not([disabled]),a[href],input,select,textarea,[tabindex="0"]')].filter(x=>x.getClientRects().length&&!x.closest('.hidden'));
+        const first=focusable[0],last=focusable[focusable.length-1];
+        if(e.shiftKey&&(document.activeElement===first||!active.contains(document.activeElement))){e.preventDefault();last?.focus();}
+        else if(!e.shiftKey&&(document.activeElement===last||!active.contains(document.activeElement))){e.preventDefault();first?.focus();}
+      }
+    });
+    el.checkIn.value=addDays(today,2);el.checkOut.value=addDays(today,5);
 
     syncBounds(); renderMode(); invalidate(); renderTrip();
   })();
   </script>
-</body>
-</html>
+</body></html>

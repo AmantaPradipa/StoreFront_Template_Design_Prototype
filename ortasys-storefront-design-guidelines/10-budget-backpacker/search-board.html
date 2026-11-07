@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jalan Hemat Travel · Trip Mandiri, Hostel &amp; Open Trip Hemat</title>
+  <link rel="icon" type="image/png" href="./assets/logo-mark.png">
+  <meta name="description" content="Jalan Hemat Travel — Platform akomodasi hostel terverifikasi, pod kapsul hemat, dan open trip sharing keliling Indonesia tanpa biaya tersembunyi. Ditenagai oleh Ortasys S4.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* Ortasys Storefront Preset 10 · Budget & Backpacker (10-budget-backpacker/DESIGN.md) */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#263C5A', hover: '#192C45' },
+            secondary: '#E56B45',
+            tertiary: '#E9B94F',
+            accent: '#4F927E',
+            canvas: '#F7F7F2',
+            surface: { DEFAULT: '#FFFFFF', muted: '#ECEEE8' },
+            ink: { DEFAULT: '#252E36', muted: '#68717A' },
+            line: '#D9DED8',
+            success: '#28734E',
+            warning: '#A66B25',
+            danger: '#B54545'
+          },
+          fontFamily: {
+            display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            mono: ['ui-monospace', 'monospace']
+          },
+          borderRadius: {
+            xs: '4px',
+            sm: '8px',
+            md: '12px',
+            lg: '18px',
+            xl: '24px',
+            pill: '9999px'
+          },
+          boxShadow: {
+            soft: '0 4px 16px -2px rgba(38, 60, 90, 0.08)',
+            elevated: '0 12px 32px -4px rgba(38, 60, 90, 0.14)'
+          },
+          maxWidth: { container: '1240px' }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #F7F7F2; color: #252E36; }
+    .font-display { font-family: 'Space Grotesk', system-ui, sans-serif; }
+    .tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on; }
+    .stepper input::-webkit-outer-spin-button,
+    .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .stepper input { -moz-appearance: textfield; }
+    :focus-visible { outline: 2px solid #E56B45; outline-offset: 2px; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+  </style>
+</head>
+<body><nav class="max-w-container mx-auto px-4 py-5 flex flex-wrap gap-5 text-sm font-bold" aria-label="Dokumentasi"><a href="./index.html">← Etalase</a><a href="./guidelines.html">Panduan merek</a><a href="./search-board.html">Papan pencarian</a><a href="./figcraft.html">Referensi FigCraft</a></nav><p class="max-w-container mx-auto px-4 text-sm">Dokumentasi prototipe · Contoh konten agen. Pencarian etalase memakai katalog lokal; tidak terhubung ke tarif, ketersediaan, atau pembayaran nyata. Warna aksesibel dan perilaku implementasi mengikuti brand-dna.json dan DESIGN.md.</p><main id="viewSearchBoard" class="max-w-container mx-auto px-4 sm:px-6 py-12 space-y-10"><div class="rounded-xl bg-surface border border-line p-6 sm:p-10 shadow-soft">
+  <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-line">
+    <div>
+      <span class="text-[11px] font-bold uppercase tracking-widest text-accent">10·D12 SEARCH ENGINE SPECIFICATION BOARD</span>
+      <h1 class="font-display text-[32px] sm:text-[42px] text-ink mt-1 leading-tight">Perforated Boarding-Pass / Ticket-Stub Console</h1>
+      <p class="text-[14px] text-ink-muted mt-2 max-w-3xl">Arsitektur mesin pencari khusus untuk <strong>Jalan Hemat Travel (Budget &amp; Backpacker)</strong> yang mematuhi kontrak transaksi tunggal Ortasys S4.</p>
+    </div>
+    <a type="button" href="./index.html" class="h-11 px-5 rounded-full bg-primary text-white text-[13px] font-bold">← Uji Langsung di Beranda</a>
+  </div>
+
+  <!-- S4 Contract Invariants -->
+  <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="p-5 rounded-lg bg-canvas border border-line">
+      <span class="text-[11px] font-bold uppercase tracking-wider text-primary">Mode Pencarian</span>
+      <p class="font-display text-[20px] text-ink mt-1">Stays &amp; Experiences</p>
+      <p class="text-[12px] text-ink-muted mt-1">Pemilih mode tampil bila kedua inventori diaktifkan oleh agen.</p>
+    </div>
+    <div class="p-5 rounded-lg bg-canvas border border-line">
+      <span class="text-[11px] font-bold uppercase tracking-wider text-primary">Batas Durasi Menginap</span>
+      <p class="font-display text-[20px] text-ink mt-1">1 – 30 Malam</p>
+      <p class="text-[12px] text-ink-muted mt-1">Validasi otomatis menolak rentang tanggal 0 malam atau &gt; 30 malam.</p>
+    </div>
+    <div class="p-5 rounded-lg bg-canvas border border-line">
+      <span class="text-[11px] font-bold uppercase tracking-wider text-primary">Kapasitas Kamar &amp; Tamu</span>
+      <p class="font-display text-[20px] text-ink mt-1">1–9 Kamar · 1–20 Dewasa</p>
+      <p class="text-[12px] text-ink-muted mt-1">0–20 anak per kamar; pemilih usia anak wajib muncul saat anak &gt; 0.</p>
+    </div>
+    <div class="p-5 rounded-lg bg-canvas border border-line">
+      <span class="text-[11px] font-bold uppercase tracking-wider text-primary">Janji Harga Live</span>
+      <p class="font-display text-[20px] text-ink mt-1">Harga Jual Ritel IDR</p>
+      <p class="text-[12px] text-ink-muted mt-1">"Setiap harga dicek langsung saat Anda mencari" · Tarif net B2B tersembunyi.</p>
+    </div>
+  </div>
+
+  <!-- Interactive State Specimens -->
+  <div class="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div class="p-6 rounded-lg bg-canvas border border-line space-y-3">
+      <span class="px-2.5 py-1 rounded-full bg-primary text-white text-[11px] font-bold uppercase">State 01 · Popover Tamu &amp; Usia Anak</span>
+      <h3 class="font-display text-[20px] text-ink">Pemilih Kamar (1–9) &amp; Usia Anak</h3>
+      <div class="p-4 rounded-md bg-surface border border-line space-y-2.5 text-[13px]">
+        <div class="flex justify-between items-center"><span>Kamar / Unit (1–9)</span><span class="font-mono font-bold px-2.5 py-0.5 rounded bg-surface-muted">2</span></div>
+        <div class="flex justify-between items-center"><span>Dewasa / Kamar (1–20)</span><span class="font-mono font-bold px-2.5 py-0.5 rounded bg-surface-muted">2</span></div>
+        <div class="flex justify-between items-center"><span>Anak / Kamar (0–20)</span><span class="font-mono font-bold px-2.5 py-0.5 rounded bg-surface-muted">1</span></div>
+        <div class="pt-2 border-t border-line flex justify-between items-center text-[12px]">
+          <span class="font-bold text-primary">Usia Anak 1 (Wajib)</span>
+          <span class="px-2.5 py-1 rounded border border-line bg-canvas font-bold">6 Tahun ▾</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-6 rounded-lg bg-canvas border border-line space-y-3">
+      <span class="px-2.5 py-1 rounded-full bg-amber-700 text-white text-[11px] font-bold uppercase">State 02 · Loading Skeleton</span>
+      <h3 class="font-display text-[20px] text-ink">Pengecekan Ketersediaan &amp; Tarif Live</h3>
+      <div class="p-4 rounded-md bg-surface border border-line space-y-3 animate-pulse">
+        <div class="h-4 bg-surface-muted rounded w-2/3"></div>
+        <div class="h-3 bg-surface-muted rounded w-1/2"></div>
+        <div class="h-8 bg-surface-muted rounded w-full"></div>
+      </div>
+      <p class="text-[12px] text-ink-muted">Menarik harga jual ritel langsung dari mesin pemesanan Ortasys S4...</p>
+    </div>
+
+    <div class="p-6 rounded-lg bg-canvas border border-line space-y-3">
+      <span class="px-2.5 py-1 rounded-full bg-danger text-white text-[11px] font-bold uppercase">State 03 · Validasi &amp; Error</span>
+      <h3 class="font-display text-[20px] text-ink">Penanganan Input Tidak Valid</h3>
+      <div class="p-4 rounded-md bg-red-50 border border-red-300 text-red-900 text-[12px] space-y-1.5 font-semibold">
+        <p>• Durasi menginap maksimal 30 malam (dipilih: 34 malam).</p>
+        <p>• Silakan pilih usia untuk Anak 1 (0–17 tahun).</p>
+      </div>
+      <p class="text-[12px] text-ink-muted">Pesan validasi tampil secara spesifik tanpa menghapus input pengguna.</p>
+    </div>
+  </div>
+
+  <!-- FigCraft D12 Artboard Render -->
+  <div class="mt-10 pt-8 border-t border-line">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="font-display text-[24px] text-ink">Referensi Artboard FigCraft · 10·D12 Search Engine Board</h3>
+      <a href="./previews/D12.png" target="_blank" class="text-[12px] font-bold text-primary hover:underline">Buka Ukuran Penuh ↗</a>
+    </div>
+    <div class="rounded-xl overflow-hidden border border-line bg-canvas p-3">
+      <img src="./previews/D12.png" alt="FigCraft D12 Search Engine Board" class="w-full h-auto rounded-lg">
+    </div>
+  </div>
+</div></main></body></html>
